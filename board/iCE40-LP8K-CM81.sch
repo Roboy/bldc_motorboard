@@ -1028,66 +1028,48 @@ Text Label 7150 1700 2    50   ~ 0
 SDO
 Text Label 7150 1900 2    50   ~ 0
 SDI
-Text Label 7700 2600 2    50   ~ 0
-INLB
-Text Label 7700 2800 2    50   ~ 0
-INHC
-Text Label 7700 3200 2    50   ~ 0
-INLC
 Text Label 7700 3800 2    50   ~ 0
 HALL1
 Text Label 7600 3900 2    50   ~ 0
 109
 Text Label 7700 4000 2    50   ~ 0
 HALL2
-Text Label 7750 4600 2    50   ~ 0
-OP[0]
 Text Label 7450 4800 2    50   ~ 0
 USB_PU
 Text Label 7450 4900 2    50   ~ 0
 USB_N
-Text Label 7750 5000 2    50   ~ 0
-INHA
-Text Label 7750 5100 2    50   ~ 0
-INLA
-Text Label 7750 5200 2    50   ~ 0
-INHB
 Text Label 7450 5400 2    50   ~ 0
 USB_P
 Text Label 9450 1100 2    50   ~ 0
 SS
 Text Label 9750 1300 2    50   ~ 0
-OP[6]
+OP[1]
 Text Label 9350 1400 2    50   ~ 0
 82
 Text Label 9750 1500 2    50   ~ 0
-OP[7]
+OP[0]
 Text Label 9750 1600 2    50   ~ 0
-WM_SCK
-Text Label 9750 1700 2    50   ~ 0
 WM_SDI
-Text Label 9750 1800 2    50   ~ 0
+Text Label 7750 4600 2    50   ~ 0
 HALL3
 Text Label 9750 2600 2    50   ~ 0
-OP[1]
+OP[2]
 Text Label 9600 2700 2    50   ~ 0
 CLK
 Text Label 9750 2800 2    50   ~ 0
-OP[2]
-Text Label 9750 3100 2    50   ~ 0
-OP[3]
-Text Label 9750 2900 2    50   ~ 0
-VSMP
-Text Label 9750 3200 2    50   ~ 0
-RSMP
-Text Label 9750 3400 2    50   ~ 0
 OP[4]
-Text Label 9750 3500 2    50   ~ 0
+Text Label 9750 3100 2    50   ~ 0
+OP[6]
+Text Label 9250 2850 2    50   ~ 0
+VSMP
+Text Label 9200 2950 2    50   ~ 0
+RSMP
+Text Label 9750 3200 2    50   ~ 0
+OP[5]
+Text Label 9750 1700 2    50   ~ 0
 MCLK
 Text Label 9750 4000 2    50   ~ 0
-OP[5]
-Text Label 9750 4100 2    50   ~ 0
-OEB
+OP[7]
 Text Label 9750 4300 2    50   ~ 0
 WM_SEN
 Wire Wire Line
@@ -1148,4 +1130,22 @@ Text Label 5300 3450 2    50   ~ 0
 HALL2
 Text Label 5300 3550 2    50   ~ 0
 HALL3
+Text GLabel 7750 5000 0    50   Input ~ 0
+INHA
+Text GLabel 7750 5100 0    50   Input ~ 0
+INLA
+Text GLabel 7750 5200 0    50   Input ~ 0
+INHB
+Text GLabel 7700 2600 0    50   Input ~ 0
+INLB
+Text GLabel 7700 2800 0    50   Input ~ 0
+INHC
+Text GLabel 7700 3200 0    50   Input ~ 0
+INLC
+Text Label 9750 4100 2    50   ~ 0
+WM_SCK
+Text Label 9750 1800 2    50   ~ 0
+OEB
+Text Label 9750 2900 2    50   ~ 0
+OP[3]
 $EndSCHEMATC

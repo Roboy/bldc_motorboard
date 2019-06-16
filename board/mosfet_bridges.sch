@@ -1165,18 +1165,6 @@ Wire Wire Line
 	4100 5450 4100 5650
 Wire Wire Line
 	4200 5450 4200 5650
-Text Label 3700 5450 3    50   ~ 0
-INLC
-Text Label 3800 5450 3    50   ~ 0
-INHC
-Text Label 3900 5450 3    50   ~ 0
-INLB
-Text Label 4000 5450 3    50   ~ 0
-INHB
-Text Label 4100 5450 3    50   ~ 0
-INLA
-Text Label 4200 5450 3    50   ~ 0
-INHA
 Text Label 5300 1550 2    50   ~ 0
 GHA
 Text Label 5300 1900 2    50   ~ 0
@@ -1238,4 +1226,53 @@ Text Label 10050 6200 2    50   ~ 0
 PH2
 Text Label 10050 6300 2    50   ~ 0
 PH3
+$Comp
+L Connector:Conn_01x02_Female J3
+U 1 1 5D4AC6D4
+P 1350 6950
+F 0 "J3" H 1378 6926 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 1378 6835 50  0000 L CNN
+F 2 "custom_lib:Wago_2060_2_SMD" H 1350 6950 50  0001 C CNN
+F 3 "~" H 1350 6950 50  0001 C CNN
+	1    1350 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+36V #PWR?
+U 1 1 5D4AD3FC
+P 1150 7050
+AR Path="/5D4AD3FC" Ref="#PWR?"  Part="1" 
+AR Path="/5D0530DE/5D4AD3FC" Ref="#PWR0117"  Part="1" 
+F 0 "#PWR0117" H 1150 6900 50  0001 C CNN
+F 1 "+36V" V 1165 7178 50  0000 L CNN
+F 2 "" H 1150 7050 50  0001 C CNN
+F 3 "" H 1150 7050 50  0001 C CNN
+	1    1150 7050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D4AE021
+P 1150 6950
+AR Path="/5D4AE021" Ref="#PWR?"  Part="1" 
+AR Path="/5D0530DE/5D4AE021" Ref="#PWR0151"  Part="1" 
+F 0 "#PWR0151" H 1150 6700 50  0001 C CNN
+F 1 "GND" H 1155 6777 50  0000 C CNN
+F 2 "" H 1150 6950 50  0001 C CNN
+F 3 "" H 1150 6950 50  0001 C CNN
+	1    1150 6950
+	0    1    1    0   
+$EndComp
+Text GLabel 3700 5450 1    50   Input ~ 0
+INLC
+Text GLabel 3800 5450 1    50   Input ~ 0
+INHC
+Text GLabel 3900 5450 1    50   Input ~ 0
+INLB
+Text GLabel 4000 5450 1    50   Input ~ 0
+INHB
+Text GLabel 4100 5450 1    50   Input ~ 0
+INLA
+Text GLabel 4200 5450 1    50   Input ~ 0
+INHA
 $EndSCHEMATC
