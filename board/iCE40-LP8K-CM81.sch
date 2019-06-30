@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 4
+Sheet 3 4
 Title ""
 Date ""
 Rev ""
@@ -14,17 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L custom:WM8214 WM1
-U 1 1 5D05AB7B
-P 2350 1750
-F 0 "WM1" H 2325 2575 50  0000 C CNN
-F 1 "WM8214" H 2325 2484 50  0000 C CNN
-F 2 "custom_lib:SSOP-28_5.3x10.2mm_Pitch0.65mm" H 2150 1900 50  0001 C CNN
-F 3 "" H 2150 1900 50  0001 C CNN
-	1    2350 1750
-	1    0    0    -1  
-$EndComp
 $Comp
 L custom:iCE40-LP8K-CM81 U4
 U 1 1 5D05C150
@@ -293,8 +282,6 @@ Wire Wire Line
 Wire Wire Line
 	9150 3800 9150 3600
 Connection ~ 9150 3600
-Wire Wire Line
-	9750 2700 9600 2700
 Wire Wire Line
 	7600 3900 7700 3900
 Wire Wire Line
@@ -624,346 +611,9 @@ F 3 "" H 6650 2200 50  0001 C CNN
 	1    6650 2200
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0140
-U 1 1 5D273C25
-P 1100 1850
-F 0 "#PWR0140" H 1100 1600 50  0001 C CNN
-F 1 "GND" H 1105 1677 50  0000 C CNN
-F 2 "" H 1100 1850 50  0001 C CNN
-F 3 "" H 1100 1850 50  0001 C CNN
-	1    1100 1850
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR0141
-U 1 1 5D27454B
-P 2850 1750
-F 0 "#PWR0141" H 2850 1500 50  0001 C CNN
-F 1 "GND" H 2855 1577 50  0000 C CNN
-F 2 "" H 2850 1750 50  0001 C CNN
-F 3 "" H 2850 1750 50  0001 C CNN
-	1    2850 1750
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	1800 1250 1100 1250
-Wire Wire Line
-	1100 1250 1100 1850
-Connection ~ 1100 1850
-$Comp
-L power:+3.3V #PWR0142
-U 1 1 5D27F750
-P 3250 2000
-F 0 "#PWR0142" H 3250 1850 50  0001 C CNN
-F 1 "+3.3V" H 3265 2173 50  0000 C CNN
-F 2 "" H 3250 2000 50  0001 C CNN
-F 3 "" H 3250 2000 50  0001 C CNN
-	1    3250 2000
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3250 1850 2850 1850
-$Comp
-L power:+3.3V #PWR0143
-U 1 1 5D291424
-P 1300 700
-F 0 "#PWR0143" H 1300 550 50  0001 C CNN
-F 1 "+3.3V" H 1315 873 50  0000 C CNN
-F 2 "" H 1300 700 50  0001 C CNN
-F 3 "" H 1300 700 50  0001 C CNN
-	1    1300 700 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1800 1350 1300 1350
-Wire Wire Line
-	1800 2050 1300 2050
-Wire Wire Line
-	1300 2050 1300 1600
-Connection ~ 1300 1350
-Wire Wire Line
-	1100 1850 1800 1850
 Wire Wire Line
 	6650 1800 7700 1800
 Connection ~ 6650 1800
-$Comp
-L Device:C C19
-U 1 1 5D2C1943
-P 800 800
-F 0 "C19" V 650 750 50  0000 L CNN
-F 1 "100nF" V 950 700 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 838 650 50  0001 C CNN
-F 3 "~" H 800 800 50  0001 C CNN
-	1    800  800 
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C22
-U 1 1 5D2C69AF
-P 800 2050
-F 0 "C22" V 650 2000 50  0000 L CNN
-F 1 "100nF" V 950 1950 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 838 1900 50  0001 C CNN
-F 3 "~" H 800 2050 50  0001 C CNN
-	1    800  2050
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR0144
-U 1 1 5D2C6EF4
-P 600 700
-F 0 "#PWR0144" H 600 450 50  0001 C CNN
-F 1 "GND" H 605 527 50  0000 C CNN
-F 2 "" H 600 700 50  0001 C CNN
-F 3 "" H 600 700 50  0001 C CNN
-	1    600  700 
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	650  800  600  800 
-Wire Wire Line
-	600  800  600  700 
-Connection ~ 600  800 
-Wire Wire Line
-	950  800  1300 800 
-Wire Wire Line
-	1300 800  1300 700 
-Wire Wire Line
-	1300 800  1300 1200
-Connection ~ 1300 800 
-Wire Wire Line
-	600  2050 650  2050
-Wire Wire Line
-	600  800  600  1200
-Wire Wire Line
-	950  2050 1300 2050
-Connection ~ 1300 2050
-$Comp
-L Device:C C29
-U 1 1 5D2DFADE
-P 3800 1850
-F 0 "C29" V 3650 1800 50  0000 L CNN
-F 1 "100nF" V 3950 1750 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 3838 1700 50  0001 C CNN
-F 3 "~" H 3800 1850 50  0001 C CNN
-	1    3800 1850
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR0145
-U 1 1 5D2E0074
-P 3950 1850
-F 0 "#PWR0145" H 3950 1600 50  0001 C CNN
-F 1 "GND" H 3955 1677 50  0000 C CNN
-F 2 "" H 3950 1850 50  0001 C CNN
-F 3 "" H 3950 1850 50  0001 C CNN
-	1    3950 1850
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:C C27
-U 1 1 5D2E0D2C
-P 3400 800
-F 0 "C27" V 3250 750 50  0000 L CNN
-F 1 "10nF" V 3550 700 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 3438 650 50  0001 C CNN
-F 3 "~" H 3400 800 50  0001 C CNN
-	1    3400 800 
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:C C28
-U 1 1 5D2E1C97
-P 3400 1150
-F 0 "C28" V 3250 1100 50  0000 L CNN
-F 1 "1uF" V 3550 1050 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 3438 1000 50  0001 C CNN
-F 3 "~" H 3400 1150 50  0001 C CNN
-	1    3400 1150
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3250 800  3250 1150
-Wire Wire Line
-	3250 1150 3250 1550
-Wire Wire Line
-	3250 1550 2850 1550
-Connection ~ 3250 1150
-Wire Wire Line
-	3250 2000 3250 1850
-Wire Wire Line
-	3550 800  3550 1150
-Wire Wire Line
-	3550 1650 2850 1650
-Wire Wire Line
-	3550 1150 3550 1650
-Connection ~ 3550 1150
-$Comp
-L Device:C C31
-U 1 1 5D3591AB
-P 3900 1250
-F 0 "C31" V 3750 1200 50  0000 L CNN
-F 1 "100nF" V 4050 1150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 3938 1100 50  0001 C CNN
-F 3 "~" H 3900 1250 50  0001 C CNN
-	1    3900 1250
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C32
-U 1 1 5D35A2F4
-P 4300 1250
-F 0 "C32" V 4150 1200 50  0000 L CNN
-F 1 "100nF" V 4450 1150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 4338 1100 50  0001 C CNN
-F 3 "~" H 4300 1250 50  0001 C CNN
-	1    4300 1250
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C33
-U 1 1 5D35A679
-P 4700 1250
-F 0 "C33" V 4550 1200 50  0000 L CNN
-F 1 "100nF" V 4850 1150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 4738 1100 50  0001 C CNN
-F 3 "~" H 4700 1250 50  0001 C CNN
-	1    4700 1250
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR0146
-U 1 1 5D35DBF4
-P 4300 750
-F 0 "#PWR0146" H 4300 500 50  0001 C CNN
-F 1 "GND" H 4305 577 50  0000 C CNN
-F 2 "" H 4300 750 50  0001 C CNN
-F 3 "" H 4300 750 50  0001 C CNN
-	1    4300 750 
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3900 1100 3900 900 
-Wire Wire Line
-	3900 900  4300 900 
-Wire Wire Line
-	4300 900  4300 750 
-Wire Wire Line
-	4300 900  4700 900 
-Wire Wire Line
-	4700 900  4700 1100
-Connection ~ 4300 900 
-Wire Wire Line
-	4300 1100 4300 900 
-Wire Wire Line
-	3900 1400 3900 1450
-Wire Wire Line
-	3900 1450 2850 1450
-Wire Wire Line
-	4300 1400 4300 1550
-Wire Wire Line
-	4300 1550 3250 1550
-Connection ~ 3250 1550
-Wire Wire Line
-	4700 1400 4700 1650
-Wire Wire Line
-	4700 1650 3550 1650
-Connection ~ 3550 1650
-$Comp
-L Device:C C25
-U 1 1 5D36FF78
-P 2850 850
-F 0 "C25" V 2700 800 50  0000 L CNN
-F 1 "100nF" V 3000 750 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 2888 700 50  0001 C CNN
-F 3 "~" H 2850 850 50  0001 C CNN
-	1    2850 850 
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2850 1350 3150 1350
-Wire Wire Line
-	3150 1350 3150 1000
-Wire Wire Line
-	3150 1000 2850 1000
-$Comp
-L power:GND #PWR0147
-U 1 1 5D373D8E
-P 2850 700
-F 0 "#PWR0147" H 2850 450 50  0001 C CNN
-F 1 "GND" H 2855 527 50  0000 C CNN
-F 2 "" H 2850 700 50  0001 C CNN
-F 3 "" H 2850 700 50  0001 C CNN
-	1    2850 700 
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C20
-U 1 1 5D374879
-P 800 1200
-F 0 "C20" V 650 1150 50  0000 L CNN
-F 1 "10uF" V 950 1100 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 838 1050 50  0001 C CNN
-F 3 "~" H 800 1200 50  0001 C CNN
-	1    800  1200
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C21
-U 1 1 5D374C22
-P 800 1600
-F 0 "C21" V 650 1550 50  0000 L CNN
-F 1 "10uF" V 950 1500 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 838 1450 50  0001 C CNN
-F 3 "~" H 800 1600 50  0001 C CNN
-	1    800  1600
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	650  1200 600  1200
-Connection ~ 600  1200
-Wire Wire Line
-	600  1200 600  1600
-Wire Wire Line
-	950  1200 1300 1200
-Connection ~ 1300 1200
-Wire Wire Line
-	1300 1200 1300 1350
-Wire Wire Line
-	950  1600 1300 1600
-Connection ~ 1300 1600
-Wire Wire Line
-	1300 1600 1300 1350
-Wire Wire Line
-	650  1600 600  1600
-Connection ~ 600  1600
-Wire Wire Line
-	600  1600 600  2050
-$Comp
-L Device:C C30
-U 1 1 5D384172
-P 3800 2250
-F 0 "C30" V 3650 2200 50  0000 L CNN
-F 1 "10uF" V 3950 2150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 3838 2100 50  0001 C CNN
-F 3 "~" H 3800 2250 50  0001 C CNN
-	1    3800 2250
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3250 1850 3500 1850
-Connection ~ 3250 1850
-Wire Wire Line
-	3500 1850 3500 2250
-Wire Wire Line
-	3500 2250 3650 2250
-Connection ~ 3500 1850
-Wire Wire Line
-	3500 1850 3650 1850
-Wire Wire Line
-	3950 2250 3950 1850
-Connection ~ 3950 1850
 Text Label 3100 5450 0    50   ~ 0
 USB_P
 Text Label 3100 5550 0    50   ~ 0
@@ -984,42 +634,6 @@ Text Label 4500 6450 2    50   ~ 0
 SS
 Text Label 5700 6250 0    50   ~ 0
 SDI
-Text Label 1800 1150 2    50   ~ 0
-SOA
-Text Label 2850 1250 0    50   ~ 0
-SOB
-Text Label 2850 1150 0    50   ~ 0
-SOC
-Text Label 1800 1450 2    50   ~ 0
-OEB
-Text Label 1800 1550 2    50   ~ 0
-VSMP
-Text Label 1800 1650 2    50   ~ 0
-RSMP
-Text Label 1800 1750 2    50   ~ 0
-MCLK
-Text Label 1800 1950 2    50   ~ 0
-WM_SEN
-Text Label 1800 2150 2    50   ~ 0
-WM_SDI
-Text Label 1800 2250 2    50   ~ 0
-WM_SCK
-Text Label 1800 2350 2    50   ~ 0
-OP[0]
-Text Label 1800 2450 2    50   ~ 0
-OP[1]
-Text Label 2850 2450 0    50   ~ 0
-OP[2]
-Text Label 2850 2350 0    50   ~ 0
-OP[3]
-Text Label 2850 2250 0    50   ~ 0
-OP[4]
-Text Label 2850 2150 0    50   ~ 0
-OP[5]
-Text Label 2850 2050 0    50   ~ 0
-OP[6]
-Text Label 2850 1950 0    50   ~ 0
-OP[7]
 Text Label 7150 1500 2    50   ~ 0
 SDO
 Text Label 7150 1600 2    50   ~ 0
@@ -1028,11 +642,11 @@ Text Label 7150 1700 2    50   ~ 0
 SDO
 Text Label 7150 1900 2    50   ~ 0
 SDI
-Text Label 7700 3800 2    50   ~ 0
+Text Label 9750 1700 2    50   ~ 0
 HALL1
 Text Label 7600 3900 2    50   ~ 0
 109
-Text Label 7700 4000 2    50   ~ 0
+Text Label 9750 1600 2    50   ~ 0
 HALL2
 Text Label 7450 4800 2    50   ~ 0
 USB_PU
@@ -1042,42 +656,14 @@ Text Label 7450 5400 2    50   ~ 0
 USB_P
 Text Label 9450 1100 2    50   ~ 0
 SS
-Text Label 9750 1300 2    50   ~ 0
-OP[1]
 Text Label 9350 1400 2    50   ~ 0
 82
-Text Label 9750 1500 2    50   ~ 0
-OP[0]
-Text Label 9750 1600 2    50   ~ 0
-WM_SDI
-Text Label 7750 4600 2    50   ~ 0
-HALL3
-Text Label 9750 2600 2    50   ~ 0
-OP[2]
-Text Label 9600 2700 2    50   ~ 0
-CLK
-Text Label 9750 2800 2    50   ~ 0
-OP[4]
-Text Label 9750 3100 2    50   ~ 0
-OP[6]
-Text Label 9250 2850 2    50   ~ 0
-VSMP
-Text Label 9200 2950 2    50   ~ 0
-RSMP
-Text Label 9750 3200 2    50   ~ 0
-OP[5]
-Text Label 9750 1700 2    50   ~ 0
-MCLK
-Text Label 9750 4000 2    50   ~ 0
-OP[7]
 Text Label 9750 4300 2    50   ~ 0
-WM_SEN
+HALL3
 Wire Wire Line
 	7750 6200 7400 6200
 Wire Wire Line
 	7400 6200 7400 6250
-Text Label 7700 3600 2    50   ~ 0
-SCK
 $Comp
 L Connector:Conn_01x06_Female J?
 U 1 1 5D496D87
@@ -1142,10 +728,62 @@ Text GLabel 7700 2800 0    50   Input ~ 0
 INHC
 Text GLabel 7700 3200 0    50   Input ~ 0
 INLC
-Text Label 9750 4100 2    50   ~ 0
-WM_SCK
-Text Label 9750 1800 2    50   ~ 0
-OEB
+Text GLabel 7700 3700 0    50   Input ~ 0
+CS_A
+Text GLabel 7700 2700 0    50   Input ~ 0
+CS_OCD_A
+Text GLabel 9750 1300 0    50   Input ~ 0
+CS_B
+Text GLabel 9750 4000 0    50   Input ~ 0
+CS_OCD_B
+Text GLabel 9750 1500 0    50   Input ~ 0
+CS_C
+Text GLabel 9750 4100 0    50   Input ~ 0
+CS_OCD_C
+Text GLabel 7700 3800 0    50   Input ~ 0
+CS_CLK
+Text GLabel 9750 3900 0    50   Input ~ 0
+CS_MISO
+$Comp
+L Connector:Conn_01x05_Female J4
+U 1 1 5D61E287
+P 4950 1950
+F 0 "J4" H 4978 1976 50  0000 L CNN
+F 1 "SPI" H 4978 1885 50  0000 L CNN
+F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x03_Pitch_1.27mm" H 4950 1950 50  0001 C CNN
+F 3 "~" H 4950 1950 50  0001 C CNN
+	1    4950 1950
+	1    0    0    -1  
+$EndComp
+Text Label 4750 1750 2    50   ~ 0
+SPI_MISO
+Text Label 4750 1850 2    50   ~ 0
+SPI_MOSI
+Text Label 4750 1950 2    50   ~ 0
+SPI_SS
+Text Label 4750 2050 2    50   ~ 0
+SPI_CLK
+$Comp
+L power:GND #PWR?
+U 1 1 5D628666
+P 4750 2150
+AR Path="/5D628666" Ref="#PWR?"  Part="1" 
+AR Path="/5D056FB0/5D628666" Ref="#PWR0146"  Part="1" 
+F 0 "#PWR0146" H 4750 1900 50  0001 C CNN
+F 1 "GND" V 4755 2022 50  0000 R CNN
+F 2 "" H 4750 2150 50  0001 C CNN
+F 3 "" H 4750 2150 50  0001 C CNN
+	1    4750 2150
+	0    1    1    0   
+$EndComp
+Text Label 7750 4600 2    50   ~ 0
+SPI_MOSI
+Text Label 9750 2800 2    50   ~ 0
+SPI_CLK
+Text Label 9750 2700 2    50   ~ 0
+CLK
 Text Label 9750 2900 2    50   ~ 0
-OP[3]
+SPI_SS
+Text Label 9750 2600 2    50   ~ 0
+SPI_MISO
 $EndSCHEMATC
