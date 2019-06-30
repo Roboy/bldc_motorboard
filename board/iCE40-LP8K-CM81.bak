@@ -716,21 +716,21 @@ Text Label 5300 3450 2    50   ~ 0
 HALL2
 Text Label 5300 3550 2    50   ~ 0
 HALL3
-Text GLabel 7750 5000 0    50   Input ~ 0
-INHA
-Text GLabel 7750 5100 0    50   Input ~ 0
-INLA
 Text GLabel 7750 5200 0    50   Input ~ 0
-INHB
+INHA
+Text GLabel 7750 5800 0    50   Input ~ 0
+INLA
 Text GLabel 7700 2600 0    50   Input ~ 0
+INHB
+Text GLabel 7700 2700 0    50   Input ~ 0
 INLB
 Text GLabel 7700 2800 0    50   Input ~ 0
 INHC
 Text GLabel 7700 3200 0    50   Input ~ 0
 INLC
-Text GLabel 7700 3700 0    50   Input ~ 0
+Text GLabel 7700 3800 0    50   Input ~ 0
 CS_A
-Text GLabel 5950 4750 0    50   Input ~ 0
+Text GLabel 7700 3700 0    50   Input ~ 0
 CS_OCD_A
 Text GLabel 9750 1300 0    50   Input ~ 0
 CS_B
@@ -740,7 +740,7 @@ Text GLabel 9750 1500 0    50   Input ~ 0
 CS_C
 Text GLabel 9750 4100 0    50   Input ~ 0
 CS_OCD_C
-Text GLabel 7700 3800 0    50   Input ~ 0
+Text GLabel 7700 4000 0    50   Input ~ 0
 CS_CLK
 Text GLabel 9750 3900 0    50   Input ~ 0
 CS_MISO
@@ -776,7 +776,7 @@ F 3 "" H 4750 2150 50  0001 C CNN
 	1    4750 2150
 	0    1    1    0   
 $EndComp
-Text Label 7750 4600 2    50   ~ 0
+Text Label 9750 2600 2    50   ~ 0
 SPI_MOSI
 Text Label 9750 2800 2    50   ~ 0
 SPI_CLK
@@ -784,6 +784,106 @@ Text Label 9750 2700 2    50   ~ 0
 CLK
 Text Label 9750 2900 2    50   ~ 0
 SPI_SS
-Text Label 9750 2600 2    50   ~ 0
+Text Label 7750 4600 2    50   ~ 0
 SPI_MISO
+$Comp
+L Connector:Conn_01x06_Female J6
+U 1 1 5D1A11D8
+P 5800 4050
+F 0 "J6" H 5828 4026 50  0000 L CNN
+F 1 "OpticalEncoder" H 5828 3935 50  0000 L CNN
+F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x03_Pitch_1.27mm" H 5800 4050 50  0001 C CNN
+F 3 "~" H 5800 4050 50  0001 C CNN
+	1    5800 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D1A35BD
+P 5600 3850
+AR Path="/5D1A35BD" Ref="#PWR?"  Part="1" 
+AR Path="/5D056FB0/5D1A35BD" Ref="#PWR0147"  Part="1" 
+F 0 "#PWR0147" H 5600 3600 50  0001 C CNN
+F 1 "GND" V 5605 3722 50  0000 R CNN
+F 2 "" H 5600 3850 50  0001 C CNN
+F 3 "" H 5600 3850 50  0001 C CNN
+	1    5600 3850
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5D1A3A6C
+P 5600 3950
+AR Path="/5D1A3A6C" Ref="#PWR?"  Part="1" 
+AR Path="/5D056FB0/5D1A3A6C" Ref="#PWR0152"  Part="1" 
+F 0 "#PWR0152" H 5600 3800 50  0001 C CNN
+F 1 "+3.3V" V 5615 4078 50  0000 L CNN
+F 2 "" H 5600 3950 50  0001 C CNN
+F 3 "" H 5600 3950 50  0001 C CNN
+	1    5600 3950
+	0    -1   -1   0   
+$EndComp
+Text Label 5600 4050 2    50   ~ 0
+OpticalEncoder_A
+Text Label 5600 4150 2    50   ~ 0
+OpticalEncoder_B
+Text Label 5600 4250 2    50   ~ 0
+OpticalEncoder_Index
+NoConn ~ 5600 4350
+Text Label 9750 3200 2    50   ~ 0
+OpticalEncoder_A
+Text Label 9750 3100 2    50   ~ 0
+OpticalEncoder_B
+Text Label 9750 3400 2    50   ~ 0
+OpticalEncoder_Index
+$Comp
+L Connector:Conn_01x06_Female J7
+U 1 1 5D227868
+P 5800 4750
+F 0 "J7" H 5828 4726 50  0000 L CNN
+F 1 "AngleSensor" H 5828 4635 50  0000 L CNN
+F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x03_Pitch_1.27mm" H 5800 4750 50  0001 C CNN
+F 3 "~" H 5800 4750 50  0001 C CNN
+	1    5800 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D227872
+P 5600 4550
+AR Path="/5D227872" Ref="#PWR?"  Part="1" 
+AR Path="/5D056FB0/5D227872" Ref="#PWR0153"  Part="1" 
+F 0 "#PWR0153" H 5600 4300 50  0001 C CNN
+F 1 "GND" V 5605 4422 50  0000 R CNN
+F 2 "" H 5600 4550 50  0001 C CNN
+F 3 "" H 5600 4550 50  0001 C CNN
+	1    5600 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5D22787C
+P 5600 4650
+AR Path="/5D22787C" Ref="#PWR?"  Part="1" 
+AR Path="/5D056FB0/5D22787C" Ref="#PWR0154"  Part="1" 
+F 0 "#PWR0154" H 5600 4500 50  0001 C CNN
+F 1 "+3.3V" V 5615 4778 50  0000 L CNN
+F 2 "" H 5600 4650 50  0001 C CNN
+F 3 "" H 5600 4650 50  0001 C CNN
+	1    5600 4650
+	0    -1   -1   0   
+$EndComp
+Text Label 5600 4750 2    50   ~ 0
+MagneticEncoder_A
+Text Label 5600 4850 2    50   ~ 0
+MagneticEncoder_B
+Text Label 5600 4950 2    50   ~ 0
+MagneticEncoder_Index
+NoConn ~ 5600 5050
+Text Label 7750 5600 2    50   ~ 0
+MagneticEncoder_A
+Text Label 7750 5100 2    50   ~ 0
+MagneticEncoder_B
+Text Label 7750 5000 2    50   ~ 0
+MagneticEncoder_Index
 $EndSCHEMATC
