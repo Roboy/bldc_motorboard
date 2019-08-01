@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/letrend/workspace/bldc_motorboard/board/board.sch)
-    (date "So 30 Jun 2019 22:19:49 CEST")
+    (date "Do 01 Aug 2019 11:40:07 CEST")
     (tool "Eeschema 5.1.2-f72e74a~84~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -415,7 +415,7 @@
       (tstamp 5D0E162E))
     (comp (ref U2)
       (value DSC6001CI2A-016.0000T)
-      (footprint custom_lib:4-DFN)
+      (footprint custom_lib:CDFN3225-4LD-PL-1)
       (libsource (lib custom) (part DSC6001CI2A-016.0000T) (description ""))
       (sheetpath (names /iCE40-LP8K-CM81/) (tstamps /5D056FB0/))
       (tstamp 5D0FCBBA))
