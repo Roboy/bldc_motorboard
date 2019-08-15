@@ -107,19 +107,6 @@ F 3 "" H 3000 3700 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector:Conn_01x06_Female J?
-U 1 1 5D481FFB
-P 3150 5000
-AR Path="/5D056FB0/5D481FFB" Ref="J?"  Part="1" 
-AR Path="/5D481FFB" Ref="J4"  Part="1" 
-F 0 "J4" H 3178 4976 50  0000 L CNN
-F 1 "OpticalEncoder" H 3178 4885 50  0000 L CNN
-F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x03_Pitch_1.27mm" H 3150 5000 50  0001 C CNN
-F 3 "~" H 3150 5000 50  0001 C CNN
-	1    3150 5000
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0113
 U 1 1 5D482001
 P 2950 4800
@@ -174,14 +161,6 @@ F 3 "~" H 7650 3850 50  0001 C CNN
 	1    7650 3850
 	1    0    0    -1  
 $EndComp
-Text Label 5550 4250 2    50   ~ 0
-SPI_MISO
-Text Label 5550 4350 2    50   ~ 0
-SPI_MOSI
-Text Label 5550 4550 2    50   ~ 0
-SPI_CLK
-Text Label 5550 4450 2    50   ~ 0
-SPI_SS
 $Comp
 L power:GND #PWR0115
 U 1 1 5D4A202B
@@ -202,23 +181,17 @@ HALL2
 Text Label 5550 3850 2    50   ~ 0
 HALL3
 Text Label 5550 3950 2    50   ~ 0
-OpticalEncoder_A
+Encoder0_A
 Text Label 5550 4050 2    50   ~ 0
-OpticalEncoder_B
+Encoder0_B
 Text Label 5550 4150 2    50   ~ 0
-OpticalEncoder_Index
+Encoder0_Index
 Text GLabel 7450 4050 0    50   Input ~ 0
 CS_MISO
 Text GLabel 7450 4150 0    50   Input ~ 0
 CS_CLK
 Text GLabel 7450 4450 0    50   Input ~ 0
 CS_A
-Text GLabel 7450 4550 0    50   Input ~ 0
-CS_OCD_A
-Text GLabel 7450 4350 0    50   Input ~ 0
-CS_OCD_B
-Text GLabel 7450 3950 0    50   Input ~ 0
-CS_OCD_C
 Text GLabel 7450 4250 0    50   Input ~ 0
 CS_B
 Text GLabel 7450 3850 0    50   Input ~ 0
@@ -249,7 +222,6 @@ F 3 "" H 7450 3350 50  0001 C CNN
 	1    7450 3350
 	0    1    1    0   
 $EndComp
-NoConn ~ 7450 3250
 Text GLabel 7450 3750 0    50   Input ~ 0
 INLC
 Text GLabel 7450 3650 0    50   Input ~ 0
@@ -262,4 +234,19 @@ Text GLabel 5550 3450 0    50   Input ~ 0
 INLA
 Text GLabel 5550 3350 0    50   Input ~ 0
 INHA
+$Comp
+L power:+5V #PWR?
+U 1 1 5D600918
+P 7450 3250
+F 0 "#PWR?" H 7450 3100 50  0001 C CNN
+F 1 "+5V" V 7465 3378 50  0000 L CNN
+F 2 "" H 7450 3250 50  0001 C CNN
+F 3 "" H 7450 3250 50  0001 C CNN
+	1    7450 3250
+	0    -1   -1   0   
+$EndComp
+Text GLabel 5550 4250 0    50   Input ~ 0
+TX
+Text GLabel 5550 4350 0    50   Input ~ 0
+RX
 $EndSCHEMATC
