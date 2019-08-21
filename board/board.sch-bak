@@ -255,7 +255,7 @@ U 1 1 5D6D1AB6
 P 4150 5600
 F 0 "J9" H 4067 4925 50  0000 C CNN
 F 1 "TE-Connectivity_Micro_Match_215079-10" H 4067 5016 50  0000 C CNN
-F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x05_Pitch_1.27mm" H 4150 5900 50  0001 C CNN
+F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x10_Pitch_1.27mm" H 4150 5900 50  0001 C CNN
 F 3 "" H 4150 5900 50  0001 C CNN
 	1    4150 5600
 	-1   0    0    1   
