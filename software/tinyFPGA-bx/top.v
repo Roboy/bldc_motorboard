@@ -1,4 +1,6 @@
 // look in pins.pcf for all the pin names on the TinyFPGA BX board
+`include "verilog-lfsr/rtl/lfsr.v"
+`include "verilog-lfsr/rtl/lfsr_crc.v"
 module top (
   input CLK,    // 16MHz clock
   output LED,   // User/boot LED next to power LED
@@ -141,24 +143,36 @@ module top (
 
   wire rx_data_ready;
   wire [7:0] rx_data;
-  wire rx_transmission = ~PIN_10, tx_transmission = ~PIN11;
-  uart_rx rx(CLK,PIN_12,rx_data_ready,rx_data);
+  wire rx_transmission = ~PIN_10;
+
+  reg trigger_response;
   reg [7:0] state;
   reg [7:0] rx_byte_counter;
-  wire [127:0]rx_data_container;
-  reg rx_crc_enable;
+  reg [7:0] rx_data_frame[15:0];
+  wire [(RX_FRAME_BYTES-2)*8-1:0] rx_data_container;
+
+  genvar j;
+  generate
+    for(j=0;j<RX_FRAME_BYTES-2;j=j+1) begin
+      assign rx_data_container[(8*(j+1))-1:(8*j)] = rx_data_frame[j];
+    end
+  endgenerate
+
+  localparam  RX_FRAME_BYTES = 16+2;
+  reg rx_crc_reset;
+  reg rx_crc_calculate;
   reg [15:0] rx_crc;
 
-  localparam  RX_FRAME_BYTES = 16;
+  lfsr_crc crc_check_rx(CLK,rx_crc_reset,rx_data_container,rx_crc_calculate,rx_crc);
+  uart_rx rx(CLK,PIN_12,rx_data_ready,rx_data);
 
-  crc crc_check_rx(rx_data_container,rx_crc_enable,rx_crc,1'b0,CLK);
-
-  localparam  IDLE = 8'd0, RECEIVE = 8'd1, TRANSMIT = 8'd2, CRC = 8'd3, RX_ERROR = 8'd4;
   always @(posedge CLK) begin: UART_RECEIVER
-    rx_crc_enable <= 0;
+    localparam  IDLE = 8'd0, RECEIVE = 8'd1, TRANSMIT = 8'd2, CRC = 8'd3, RX_ERROR = 8'd4;
+    rx_crc_calculate <= 0;
+    trigger_response <= 0;
     case(state)
       IDLE: begin
-          if(frame_start)begin
+          if(rx_transmission)begin
             rx_byte_counter <= 0;
             state <= RECEIVE;
           end
@@ -166,25 +180,88 @@ module top (
       RECEIVE: begin
           if(rx_transmission)begin
             if(rx_data_ready)begin
-              rx_data_container[rx_byte_counter*8-1:(rx_byte_counter-1)*8] <= rx_data;
+              rx_data_frame[rx_byte_counter] <= rx_data;
               rx_byte_counter <= rx_byte_counter + 1;
             end
           end else begin
             if(rx_byte_counter!=RX_FRAME_BYTES)begin
-              state <= RX_ERROR;
+              state <= IDLE;
             end else begin
-              rx_crc_enable <= 1; // check crc
+              rx_crc_calculate <= 1; // check crc
               state <= CRC;
+              trigger_response <= 1;
             end
           end
         end
       CRC: begin
-          if(rx_crc==rx_data_container[127:112]) begin
-            // crc check passed, write values
+          // if(rx_crc==rx_data_frame[RX_FRAME_BYTES-1:RX_FRAME_BYTES-3]) begin
+          //   state <= IDLE;
+          // end else begin
+          //   state <= IDLE;
+          // end
+        end
+    endcase
+  end
 
-          end else begin
+  localparam  TX_FRAME_BYTES = 16+2;
 
+  assign PIN_11 = !tx_transmission;
+  reg tx_transmission;
+  reg tx_tansmit;
+  wire [7:0] tx_data_frame[15:0];
+  wire [7:0] tx_data;
+  reg [7:0] tx_byte_counter;
+  wire tx_active;
+  wire tx_serial;
+  wire tx_done;
+  wire [(TX_FRAME_BYTES-2)*8-1:0] tx_data_container;
+
+  generate
+    for(j=0;j<TX_FRAME_BYTES-2;j=j+1) begin
+      assign tx_data_container[(8*(j+1))-1:(8*j)] = tx_data_frame[j];
+    end
+  endgenerate
+
+  reg tx_crc_reset;
+  reg tx_crc_calculate;
+  reg [15:0] tx_crc;
+
+  lfsr_crc crc_check_tx(CLK,tx_crc_reset,tx_data_container,tx_crc_calculate,tx_crc);
+  uart_tx tx(CLK,tx_tansmit,tx_data,tx_active,tx_serial,tx_done);
+
+  assign tx_data = tx_data_frame[tx_byte_counter];
+
+  always @(posedge CLK) begin: UART_RECEIVER
+    localparam  IDLE = 8'd0, TRANSMIT = 8'd1, WAIT_FOR_TRANSMISSION= 8'd2, CRC = 8'd3, TX_ERROR = 8'd4;
+    tx_crc_calculate <= 0;
+    tx_tansmit <= 0;
+    case(state)
+      IDLE: begin
+          if(trigger_response)begin
+            tx_byte_counter <= 0;
+            state <= TRANSMIT;
+            tx_transmission <= 1;
           end
+        end
+      TRANSMIT: begin
+        if(!tx_active)begin
+          tx_tansmit <= 1;
+          state <= WAIT_FOR_TRANSMISSION;
+        end
+      end
+      WAIT_FOR_TRANSMISSION: begin
+        if(tx_done)begin
+          if(tx_byte_counter<(TX_FRAME_BYTES-1)) begin
+            tx_byte_counter <= tx_byte_counter + 1;
+            state <= TRANSMIT;
+          end else begin
+            tx_crc_calculate <= 1;
+            state <= CRC;
+          end
+        end
+      end
+      CRC: begin
+          state <= IDLE;
         end
     endcase
   end

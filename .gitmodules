@@ -7,3 +7,6 @@
 [submodule "software/tinyFPGA-bx/roboy_fpga_code"]
 	path = software/tinyFPGA-bx/roboy_fpga_code
 	url = https://github.com/Roboy/roboy_fpga_code
+[submodule "software/tinyFPGA-bx/verilog-lfsr"]
+	path = software/tinyFPGA-bx/verilog-lfsr
+	url = https://github.com/alexforencich/verilog-lfsr
