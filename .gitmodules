@@ -10,3 +10,6 @@
 [submodule "software/tinyFPGA-bx/verilog-lfsr"]
 	path = software/tinyFPGA-bx/verilog-lfsr
 	url = https://github.com/alexforencich/verilog-lfsr
+[submodule "software/icecube2_template/roboy_fpga_code"]
+	path = software/icecube2_template/roboy_fpga_code
+	url = https://github.com/Roboy/roboy_fpga_code

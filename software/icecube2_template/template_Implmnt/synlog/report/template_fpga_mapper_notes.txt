@@ -1,0 +1,22 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: MO111 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":40:9:40:15|Tristate driver SPI_SCK (in view: work.top(verilog)) on net SPI_SCK (in view: work.top(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":39:9:39:14|Tristate driver SPI_SS (in view: work.top(verilog)) on net SPI_SS (in view: work.top(verilog)) has its enable tied to GND.
+@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Removing sequential instance tx_crc_calculate (in view: work.top(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Removing sequential instance tx_crc_reset (in view: work.top(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Removing sequential instance rx_crc_reset (in view: work.top(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v":207:0:207:5|Removing sequential instance crc_check_tx.output_reg[15:0] (in view: work.top(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v":207:0:207:5|Removing sequential instance crc_check_rx.output_reg[15:0] (in view: work.top(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v":16:2:16:7|Removing sequential instance quad_counter0.count[31:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v":11:2:11:7|Removing sequential instance quad_counter0.quadB_delayed (in view: work.top(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v":10:2:10:7|Removing sequential instance quad_counter0.quadA_delayed (in view: work.top(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: MT206 |Auto Constrain mode is enabled
+@N: MO106 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":65:15:65:50|Found ROM .delname. (in view: work.top(verilog)) with 32 words by 1 bit.
+@N: MO231 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":60:2:60:7|Found counter in view:work.top(verilog) instance blink_counter[25:0] 
+@N: FX271 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v":49:2:49:7|Replicating instance rx.r_SM_Main[2] (in view: work.top(verilog)) with 31 loads 2 times to improve timing.
+@N: FX1016 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":3:8:3:10|SB_GB_IO inserted on the port CLK.
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@N: FX1056 |Writing EDF file: /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/template.edf
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

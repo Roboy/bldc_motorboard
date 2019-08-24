@@ -1,0 +1,2 @@
+@E: CG906 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":165:21:165:27|Reference to unknown variable RECEIVE.
+

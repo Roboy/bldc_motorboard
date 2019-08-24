@@ -1,0 +1,8 @@
+|lighthouse_sensor|parameter sensor_id 10'b0000000000;,parameter CLK_SPEED 16000000;|
+|lighthouse_sensor|parameter sensor_id 10'b0000000001;,parameter CLK_SPEED 16000000;|
+|lighthouse_sensor|parameter sensor_id 10'b0000000010;,parameter CLK_SPEED 16000000;|
+|lighthouse_sensor|parameter sensor_id 10'b0000000011;,parameter CLK_SPEED 16000000;|
+|lighthouse_sensor|parameter sensor_id 10'b0000000100;,parameter CLK_SPEED 16000000;|
+|lighthouse_sensor|parameter sensor_id 10'b0000000101;,parameter CLK_SPEED 16000000;|
+|lighthouse_sensor|parameter sensor_id 10'b0000000110;,parameter CLK_SPEED 16000000;|
+|lighthouse_sensor|parameter sensor_id 10'b0000000111;,parameter CLK_SPEED 16000000;|

@@ -1,0 +1,79 @@
+%%% protect protected_file
+#OPTIONS:"|-bldtbl|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work"
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/linux_a_64/c_vhdl":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/location.map":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/std.vhd":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/snps_haps_pkg.vhd":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/std1164.vhd":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/numeric.vhd":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/umr_capim.vhd":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/arith.vhd":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/unsigned.vhd":1559394833
+#CUR:"/home/letrend/workspace/roboy_control/src/roboy_plexus/roboy_de10_nano_soc/ip/roboy_fpga_code/lighthouse_tracking/lighthouse_ootx_decoder.vhdl":1549141529
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vhd/signed.vhd":1559394833
+#CUR:"/home/letrend/workspace/roboy_control/src/roboy_plexus/roboy_de10_nano_soc/ip/roboy_fpga_code/lighthouse_tracking/lighthouse_sensor.vhd":1549141529
+#CUR:"/home/letrend/workspace/roboy_control/src/roboy_plexus/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control/spi_master_slave/trunk/rtl/spi_master_slave/spi_master.vhd":1549141529
+@E8lFkRDC#_bHl0N#CDs
+HNLssI$RF
+s	bNNslCC0sRRhHCM0o
+CsbNNslCC0suRBm#pR0D8_FOoH
+sbNN0lCCBsRuR]q#_08DHFoON
+bsCNl0RCsuw)  ]aBR0HMCsoC
+sbNN0lCC1sRu.Q_Xp_BiQ_7eMRH0CCosM
+HbRk0#	OD_-HR4M
+HbRk0b	OD_-HR4M
+HbRk0s_#0H4R-
+0FkbRk0#_bH#D#C_-FR4k
+F00bkRH#b_	#O_-FR4k
+F00bkRH#b_#lFHR_F-H4
+M0bkRH#b_#lHFR_H-F4
+kk0b0HR8_JsC_-FR4M
+HbRk08HH_R
+-4HkMb0sRICHM_R
+-4Fbk0kI0RsO_N	R_F-F4
+kk0b0FR8_DPNHF8_R
+-4Fbk0k80RFR_F-F4
+kk0b0OR#	M_CNR_F-F4
+kk0b0OR#	M_CNC_O_-FR4k
+F00bkR_8F0MsN#sVC_-FR4k
+F00bkRCIsMR_F-F4
+kk0b0GRs_0LH_osC_-FR4k
+F00bkRN#008C_LFo_R
+-4Fbk0kO0RF_sCO_D	F4R-
+0FkbRk0OCFs_OM_DF	_R
+-4Fbk0kO0RF_sCOFC_R
+-4Fbk0kO0RF_sCMC_O_-FR4k
+F00bkR_#Es_Co8_LoF4R-
+8CMlkF8DlC
+FD8kCHRDoEE0FCk#_M#C#
+FsDsHLNRs$I	Fs
+sbNN0lCC#sRCFM#s8_HR#kMHCoM8N
+bsCNl0RCsB_pi1 u 7MRH0CCosM
+HbRk0ORD	-H4
+M0bkRM#C#RFs-F4
+kk0b0kR8sHN0FMM_#b	H__0F#CICb4R-
+0FkbRk0DEHo0kEF#HC_84R-
+0FkbRk0N#GHR
+-4Fbk0kP0RN8DHR
+-4Fbk0kO0RFHlLM_C88NN0R
+-4Fbk0k#0R$RMO-F4
+kk0b0CRD84R-
+0FkbRk0bDN$FRN8-F4
+kk0b0sROORd.-C4
+MF8l8CkD
+8lFkRDCDEHo0kEF#FC_F_0G8FCO8
+CsDsHLNRs$I	Fs
+bHMkO0RD4	R
+bHMks0RC0#CRH4
+M0bkRM#C#RFs4k
+F00bkRM#$O
+R.Fbk0kD0RCU8R
+0FkbRk0FGF0_$bND8FN_MDCo_0E4R_F4Fn
+kk0b0FRF0bG_NF$DND8_C0MoE__.FnR4
+0FkbRk0FGF0_$bND8FN_F4_R..(
+0FkbRk0FGF0_$bND8FN_F._R..(
+0FkbRk0FGF0_OOsd4.__dFR.k
+F00bkR0FFGs_OO_d..R_FdC.
+MF8l8CkD
+
+@ 

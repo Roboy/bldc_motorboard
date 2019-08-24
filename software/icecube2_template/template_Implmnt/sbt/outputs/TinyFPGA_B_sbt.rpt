@@ -1,0 +1,113 @@
+* ******************************************************************************
+
+* iCEcube Report
+
+* Version:            2017.08.27940
+
+* Build Date:         Sep 12 2017 08:02:28
+
+* File Generated:     Jun 1 2019 17:25:27
+
+* Purpose:            General info of design implementation
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Synthesis/Placement Summary:
+----------------------------
+    Status:  Successful
+    Runtime: 2 seconds
+
+Device Info:
+------------
+    Device Family: iCE40
+    Device:        iCE40LP8K
+    Package:       CM81
+
+Design statistics:
+------------------
+    FFs:                  64
+    LUTs:                 2125
+    RAMs:                 0
+    IOBs:                 21
+    GBs:                  1
+    PLLs:                 0
+    Warm Boots:           0
+
+Logic Resource Utilization:
+---------------------------
+    Total Logic Cells: 2170/7680
+        Combinational Logic Cells: 2106     out of   7680      27.4219%
+        Sequential Logic Cells:    64       out of   7680      0.833333%
+        Logic Tiles:               312      out of   960       32.5%
+    Registers: 
+        Logic Registers:           64       out of   7680      0.833333%
+        IO Registers:              0        out of   1280      0
+    Block RAMs:                    0        out of   32        0%
+    Warm Boots:                    0        out of   1         0%
+    Pins:
+        Input Pins:                1        out of   63        1.5873%
+        Output Pins:               20       out of   63        31.746%
+        InOut Pins:                0        out of   63        0%
+    Global Buffers:                1        out of   8         12.5%
+    PLLs:                          0        out of   1         0%
+
+IO Bank Utilization:
+--------------------
+    Bank 3: 5        out of   18        27.7778%
+    Bank 1: 4        out of   15        26.6667%
+    Bank 0: 6        out of   17        35.2941%
+    Bank 2: 6        out of   13        46.1538%
+
+Detailed I/O Info:
+------------------
+    Input Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function                   Signal Name     
+    ----------  ---------  -----------  -------  -------  -----------                   -----------     
+    B4          Input      SB_LVCMOS    No       0        Simple Input                  pin3_clk_16mhz  
+
+    Output Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function                   Signal Name     
+    ----------  ---------  -----------  -------  -------  -----------                   -----------     
+    A3          Output     SB_LVCMOS    No       0        Output Tristatable by Enable  pin1_usb_dp     
+    A4          Output     SB_LVCMOS    No       0        Output Tristatable by Enable  pin2_usb_dn     
+    A6          Output     SB_LVCMOS    No       0        Output Tristatable by Enable  pin24           
+    A7          Output     SB_LVCMOS    No       0        Output Tristatable by Enable  pin23           
+    A8          Output     SB_LVCMOS    No       0        Output Tristatable by Enable  pin22           
+    A9          Output     SB_LVCMOS    No       1        Output Tristatable by Enable  pin21           
+    B1          Output     SB_LVCMOS    No       3        Output Tristatable by Enable  pin7            
+    C1          Output     SB_LVCMOS    No       3        Output Tristatable by Enable  pin8            
+    C9          Output     SB_LVCMOS    No       1        Output Tristatable by Enable  pin19           
+    D1          Output     SB_LVCMOS    No       3        Output Tristatable by Enable  pin9            
+    D9          Output     SB_LVCMOS    No       1        Output Tristatable by Enable  pin18           
+    E1          Output     SB_LVCMOS    No       3        Output Tristatable by Enable  pin10           
+    E8          Output     SB_LVCMOS    No       1        Output Tristatable by Enable  pin20           
+    F7          Output     SB_LVCMOS    No       2        Output Tristatable by Enable  pin17_ss        
+    G1          Output     SB_LVCMOS    No       3        Output Tristatable by Enable  pin11           
+    G6          Output     SB_LVCMOS    No       2        Output Tristatable by Enable  pin14_sdo       
+    G7          Output     SB_LVCMOS    No       2        Output Tristatable by Enable  pin16_sck       
+    H1          Output     SB_LVCMOS    No       2        Output Tristatable by Enable  pin12           
+    H7          Output     SB_LVCMOS    No       2        Output Tristatable by Enable  pin15_sdi       
+    J1          Output     SB_LVCMOS    No       2        Output Tristatable by Enable  pin13           
+
+Detailed Global Buffer Info:
+----------------------------
+    Buffer Number  IO Bank  Driven By  Fanout  Signal Name       
+    -------------  -------  ---------  ------  -----------       
+    3              3                   64      pin3_clk_16mhz_N  
+
+
+Router Summary:
+---------------
+    Status:  Successful
+    Runtime: 16 seconds
+
+Routing Resource Utilization:
+-----------------------------
+              Local line of tile    14423 out of 146184      9.86633%
+                          Span 4     2641 out of  29696      8.89345%
+                         Span 12      381 out of   5632      6.76491%
+                  Global network        1 out of      8      12.5%
+      Vertical Inter-LUT Connect       85 out of   6720      1.26488%
+
