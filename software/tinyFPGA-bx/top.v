@@ -51,6 +51,9 @@ module top (
   // light up the LED according to the pattern
   assign LED = blink_pattern[blink_counter[25:21]];
 
+  localparam  FRAME_LENGTH = 6;
+  localparam  MAGICNUMBER = 32'hDABBAD00;
+
   wire tx_o, rx_i, tx2_o;
   reg[7:0] counter;
   reg[7:0] data_out[5:0];
@@ -67,28 +70,43 @@ module top (
   uart_tx tx(CLK,tx_tansmit,tx_data,tx_active,tx_o,tx_done);
 
   always @(posedge CLK) begin: UART_TRANSMITTER
-    data_out[0] <= 8'hDA;
-    data_out[1] <= 8'hBB;
-    data_out[2] <= 8'hAD;
-    data_out[3] <= 8'h00;
     tx_tansmit <= 0;
     if(!tx_active && !tx_tansmit)begin
       tx_tansmit <= 1;
+      tx_crc_calculate<=1;
       if(counter<FRAME_LENGTH-1)begin
         counter <= counter+1;
       end else begin
+        tx_crc_reset <= 1;
+        data_out[0] <= 8'hDA;
+        data_out[1] <= 8'hBB;
+        data_out[2] <= 8'hAD;
+        data_out[3] <= 8'h00;
+        data_out[4] <= tx_crc[15:8];
+        data_out[5] <= tx_crc[7:0];
         counter <= 0;
       end
     end
   end
 
+  reg tx_crc_reset;
+  reg tx_crc_calculate;
+  reg [15:0] tx_crc;
+
+  wire [(FRAME_LENGTH-2)*8-1:0] data_out_field;
+  genvar j;
+  generate
+    for(j=0;j<FRAME_LENGTH-2;j=j+1) begin
+      assign data_out_field[(8*(j+1))-1:(8*j)] = data_out[j];
+    end
+  endgenerate
+
+  lfsr_crc crc_tx(CLK,tx_crc_reset,data_out_field,tx_crc_calculate,tx_crc);
+
   wire rx_data_ready, rx_data_ready_prev;
   wire [7:0] rx_data;
 
   uart_rx rx(CLK,rx_i,rx_data_ready,rx_data);
-
-  localparam  FRAME_LENGTH = 6;
-  localparam  MAGICNUMBER = 32'hDABBAD00;
 
   reg [7:0] incoming_data[5:0];
   reg signed [7:0] i;
@@ -96,6 +114,7 @@ module top (
   always @(posedge CLK) begin: UART_RECEIVER
     frame_received <= 0;
     rx_crc_calculate <= 0;
+    rx_crc_reset <= 0;
     if(rx_data_ready)begin
       incoming_data[FRAME_LENGTH-1] <= rx_data;
       for(i=FRAME_LENGTH-2;i>=0;i=i-1)begin
@@ -103,29 +122,30 @@ module top (
       end
       rx_crc_calculate <= 1;
     end
-    if({incoming_data[0],incoming_data[1],incoming_data[2],incoming_data[3]}==MAGICNUMBER)begin
+    if({incoming_data[0],incoming_data[1],incoming_data[2],incoming_data[3]}==MAGICNUMBER
+          && rx_crc=={incoming_data[4],incoming_data[5]})begin
       frame_received <= 1;
+      rx_crc_reset <= 1;
     end
   end
 
   wire tx2_active;
   wire tx2_done;
-  uart_tx tx2(CLK,frame_received,8'hF00D,tx2_active,tx2_o,tx2_done);
-
+  uart_tx tx2(CLK,frame_received,8'hFF,tx2_active,tx2_o,tx2_done);
 
   reg rx_crc_reset;
   reg rx_crc_calculate;
   reg [15:0] rx_crc;
 
-  wire [(FRAME_LENGTH-2)*8-1:0] incoming_data_field
+  wire [(FRAME_LENGTH-2)*8-1:0] incoming_data_field;
   genvar j;
   generate
-    for(j=0;j<RX_FRAME_BYTES-2;j=j+1) begin
-      assign rx_data_container[(8*(j+1))-1:(8*j)] = incoming_data[j];
+    for(j=0;j<FRAME_LENGTH-2;j=j+1) begin
+      assign incoming_data_field[(8*(j+1))-1:(8*j)] = incoming_data[j];
     end
   endgenerate
 
-  lfsr_crc crc_check_rx(CLK,rx_crc_reset,rx_data_container,rx_crc_calculate,rx_crc);
+  lfsr_crc crc_check_rx(CLK,rx_crc_reset,incoming_data_field,rx_crc_calculate,rx_crc);
 
   // wire hall1, hall2, hall3;
   // // PULLUP for hall sensors
