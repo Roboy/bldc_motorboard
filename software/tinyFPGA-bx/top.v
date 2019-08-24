@@ -95,20 +95,34 @@ module top (
   reg frame_received;
   always @(posedge CLK) begin: UART_RECEIVER
     frame_received <= 0;
+    rx_crc_calculate <= 0;
     if(rx_data_ready)begin
       incoming_data[FRAME_LENGTH-1] <= rx_data;
       for(i=FRAME_LENGTH-2;i>=0;i=i-1)begin
         incoming_data[i] <= incoming_data[i+1];
       end
-      if({incoming_data[0],incoming_data[1],incoming_data[2],incoming_data[3]}==MAGICNUMBER)begin
-        frame_received <= 1;
-      end
+      rx_crc_calculate <= 1;
     end
   end
 
   wire tx2_active;
   wire tx2_done;
   uart_tx tx2(CLK,frame_received,8'hF00D,tx2_active,tx2_o,tx2_done);
+
+
+  reg rx_crc_reset;
+  reg rx_crc_calculate;
+  reg [15:0] rx_crc;
+
+  wire [(FRAME_LENGTH-2)*8-1:0] incoming_data_field
+  genvar j;
+  generate
+    for(j=0;j<RX_FRAME_BYTES-2;j=j+1) begin
+      assign rx_data_container[(8*(j+1))-1:(8*j)] = incoming_data[j];
+    end
+  endgenerate
+
+  lfsr_crc crc_check_rx(CLK,rx_crc_reset,rx_data_container,rx_crc_calculate,rx_crc);
 
   // wire hall1, hall2, hall3;
   // // PULLUP for hall sensors
