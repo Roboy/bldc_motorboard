@@ -103,6 +103,9 @@ module top (
       end
       rx_crc_calculate <= 1;
     end
+    if({incoming_data[0],incoming_data[1],incoming_data[2],incoming_data[3]}==MAGICNUMBER)begin
+      frame_received <= 1;
+    end
   end
 
   wire tx2_active;
