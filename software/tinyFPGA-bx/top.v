@@ -53,34 +53,62 @@ module top (
 
   wire tx_o, rx_i, tx2_o;
   reg[7:0] counter;
+  reg[7:0] data_out[5:0];
   wire [7:0] tx_data;
   wire tx_active;
   wire tx_done;
+  reg tx_tansmit;
 
   assign tx_o = PIN_1;
-  assign PIN_2 = tx_0;
-  assign rx_i = PIN_3;
-  assign tx2_o = PIN_4;
+  assign rx_i = PIN_2;
+  assign tx2_o = PIN_3;
+  assign tx_data = data_out[counter];
 
-  uart_tx tx(CLK,tx_tansmit,counter,tx_active,tx_o,tx_done);
+  uart_tx tx(CLK,tx_tansmit,tx_data,tx_active,tx_o,tx_done);
 
   always @(posedge CLK) begin: UART_TRANSMITTER
+    data_out[0] <= 8'hDA;
+    data_out[1] <= 8'hBB;
+    data_out[2] <= 8'hAD;
+    data_out[3] <= 8'h00;
     tx_tansmit <= 0;
     if(!tx_active && !tx_tansmit)begin
       tx_tansmit <= 1;
-      counter <= counter+1;
+      if(counter<FRAME_LENGTH-1)begin
+        counter <= counter+1;
+      end else begin
+        counter <= 0;
+      end
     end
   end
 
-  wire rx_data_ready;
+  wire rx_data_ready, rx_data_ready_prev;
   wire [7:0] rx_data;
 
   uart_rx rx(CLK,rx_i,rx_data_ready,rx_data);
-  assign PIN11 = PIN10;
+
+  localparam  FRAME_LENGTH = 6;
+  localparam  MAGICNUMBER = 32'hDABBAD00;
+
+  reg [7:0] incoming_data[5:0];
+  reg signed [7:0] i;
+  reg frame_received;
+  always @(posedge CLK) begin: UART_RECEIVER
+    frame_received <= 0;
+    if(rx_data_ready)begin
+      incoming_data[FRAME_LENGTH-1] <= rx_data;
+      for(i=FRAME_LENGTH-2;i>=0;i=i-1)begin
+        incoming_data[i] <= incoming_data[i+1];
+      end
+      if({incoming_data[0],incoming_data[1],incoming_data[2],incoming_data[3]}==MAGICNUMBER)begin
+        frame_received <= 1;
+      end
+    end
+  end
 
   wire tx2_active;
   wire tx2_done;
-  uart_tx tx2(CLK,rx_data_ready,rx_data,tx2_active,tx2_o,tx2_done);
+  uart_tx tx2(CLK,frame_received,8'hF00D,tx2_active,tx2_o,tx2_done);
 
   // wire hall1, hall2, hall3;
   // // PULLUP for hall sensors
