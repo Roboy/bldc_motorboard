@@ -1,7 +1,7 @@
-/home/letrend/lscc/iCEcube2.2017.08/synpbase/bin/syn_nfilter  -link  -multisrs  /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_comp.srs  -osyn  /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_mult.srs  -log  /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synlog/template_multi_srs_gen.srr 
-rc:0 success:1 runtime:1
-file:/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_comp.srs|io:i|time:1566646890|size:18052|exec:0
-file:/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_mult.srs|io:o|time:1566646891|size:9731|exec:0
-file:/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synlog/template_multi_srs_gen.srr|io:o|time:1566646891|size:871|exec:0
+/home/letrend/lscc/iCEcube2.2017.08/synpbase/bin/syn_nfilter  -link  -top  top  -multisrs  /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_comp.srs  -osyn  /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_mult.srs  -log  /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synlog/template_multi_srs_gen.srr 
+rc:0 success:1 runtime:0
+file:/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_comp.srs|io:i|time:1566760503|size:16191|exec:0
+file:/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_mult.srs|io:o|time:1566760504|size:2609|exec:0
+file:/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synlog/template_multi_srs_gen.srr|io:o|time:1566760504|size:535|exec:0
 file:/home/letrend/lscc/iCEcube2.2017.08/synpbase/linux_a_64/syn_nfilter|io:i|time:1559394834|size:11473624|exec:1
 file:/home/letrend/lscc/iCEcube2.2017.08/synpbase/bin/syn_nfilter|io:i|time:1559397560|size:368|exec:1

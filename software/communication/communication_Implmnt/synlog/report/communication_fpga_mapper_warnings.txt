@@ -1,0 +1,22 @@
+@W: FA239 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":50:15:50:50|ROM LED_1 (in view: work.top(verilog)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@W: FA239 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":50:15:50:50|ROM LED_1 (in view: work.top(verilog)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx.r_SM_Main[2:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx.r_Bit_Index[2:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx.r_Clock_Count[3:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx.r_Tx_Done is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx.r_Tx_Active is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx.r_Tx_Data[7:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":49:2:49:7|User-specified initial value defined for instance c0.rx.r_Clock_Count[7:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":49:2:49:7|User-specified initial value defined for instance c0.rx.r_SM_Main[2:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":49:2:49:7|User-specified initial value defined for instance c0.rx.r_Bit_Index[2:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":49:2:49:7|User-specified initial value defined for instance c0.rx.r_Rx_DV is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":49:2:49:7|User-specified initial value defined for instance c0.rx.r_Rx_Byte[7:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":41:2:41:7|User-specified initial value defined for instance c0.rx.r_Rx_Data_R is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":41:2:41:7|User-specified initial value defined for instance c0.rx.r_Rx_Data is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx2.r_SM_Main[2:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx2.r_Bit_Index[2:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx2.r_Clock_Count[3:0] is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx2.r_Tx_Done is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx2.r_Tx_Active is being ignored. 
+@W: FX1039 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|User-specified initial value defined for instance c0.tx2.r_Tx_Data[7:0] is being ignored. 
+@W: MT420 |Found inferred clock top|CLK with period 15.69ns. Please declare a user-defined clock on object "p:CLK"

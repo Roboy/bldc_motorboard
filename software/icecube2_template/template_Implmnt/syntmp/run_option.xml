@@ -3,14 +3,14 @@
   Synopsys, Inc.
   Version L-2016.09L+ice40
   Project file /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/syntmp/run_option.xml
-  Written on Sat Aug 24 13:41:26 2019
+  Written on Sun Aug 25 21:15:03 2019
 
 
 --> 
 <project_attribute_list name="Project Settings"> 
      <option name="project_name" display_name="Project Name">template_syn</option>
      <option name="impl_name" display_name="Implementation Name">template_Implmnt</option>
-     <option name="top_module" display_name="Top Module"></option>
+     <option name="top_module" display_name="Top Module">top</option>
      <option name="pipe" display_name="Pipelining">1</option>
      <option name="retiming" display_name="Retiming">0</option>
      <option name="resource_sharing" display_name="Resource Sharing">1</option>

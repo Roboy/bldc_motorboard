@@ -1,0 +1,101 @@
+* ******************************************************************************
+
+* iCEcube Report
+
+* Version:            2017.08.27940
+
+* Build Date:         Sep 12 2017 08:02:28
+
+* File Generated:     Aug 25 2019 21:31:54
+
+* Purpose:            General info of design implementation
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Synthesis/Placement Summary:
+----------------------------
+    Status:  Successful
+    Runtime: 1 seconds
+
+Device Info:
+------------
+    Device Family: iCE40
+    Device:        iCE40LP8K
+    Package:       CM81
+
+Design statistics:
+------------------
+    FFs:                  318
+    LUTs:                 657
+    RAMs:                 0
+    IOBs:                 6
+    GBs:                  4
+    PLLs:                 0
+    Warm Boots:           0
+
+Logic Resource Utilization:
+---------------------------
+    Total Logic Cells: 667/7680
+        Combinational Logic Cells: 349      out of   7680      4.54427%
+        Sequential Logic Cells:    318      out of   7680      4.14062%
+        Logic Tiles:               136      out of   960       14.1667%
+    Registers: 
+        Logic Registers:           318      out of   7680      4.14062%
+        IO Registers:              0        out of   1280      0
+    Block RAMs:                    0        out of   32        0%
+    Warm Boots:                    0        out of   1         0%
+    Pins:
+        Input Pins:                2        out of   63        3.1746%
+        Output Pins:               4        out of   63        6.34921%
+        InOut Pins:                0        out of   63        0%
+    Global Buffers:                4        out of   8         50%
+    PLLs:                          0        out of   1         0%
+
+IO Bank Utilization:
+--------------------
+    Bank 3: 2        out of   18        11.1111%
+    Bank 1: 0        out of   15        0%
+    Bank 0: 4        out of   17        23.5294%
+    Bank 2: 0        out of   13        0%
+
+Detailed I/O Info:
+------------------
+    Input Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function    Signal Name
+    ----------  ---------  -----------  -------  -------  -----------    -----------
+    A1          Input      SB_LVCMOS    No       0        Simple Input   PIN_2  
+    B2          Input      SB_LVCMOS    No       3        Simple Input   CLK    
+
+    Output Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function    Signal Name
+    ----------  ---------  -----------  -------  -------  -----------    -----------
+    A2          Output     SB_LVCMOS    No       0        Simple Output  PIN_1  
+    A3          Output     SB_LVCMOS    No       0        Simple Output  USBPU  
+    B1          Output     SB_LVCMOS    No       3        Simple Output  PIN_3  
+    B3          Output     SB_LVCMOS    No       0        Simple Output  LED    
+
+Detailed Global Buffer Info:
+----------------------------
+    Buffer Number  IO Bank  Driven By  Fanout  Signal Name                     
+    -------------  -------  ---------  ------  -----------                     
+    6              3                   318     CLK_c_g                         
+    3              3                   64      c0.rx_data_ready_g              
+    1              0                   64      c0.data_out_0__1_sqmuxa_g       
+    7              1                   64      c0.data_in_frame_0__0_sqmuxa_g  
+
+
+Router Summary:
+---------------
+    Status:  Successful
+    Runtime: 11 seconds
+
+Routing Resource Utilization:
+-----------------------------
+              Local line of tile     4376 out of 146184      2.99349%
+                          Span 4      932 out of  29696      3.13847%
+                         Span 12      109 out of   5632      1.93537%
+                  Global network        4 out of      8      50%
+      Vertical Inter-LUT Connect      116 out of   6720      1.72619%
+

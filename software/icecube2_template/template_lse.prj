@@ -1,12 +1,11 @@
 #-- Lattice, Inc.
-#-- Project file C:\lscc\iCEcube2.2017.01\sbt_backend\Projects\template\template_lse.prj
+#-- Project file /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_lse.prj
 
 #device
 -a SBTiCE40
 -d iCE40LP8K
 -t CM81
 #constraint file
--sdc "constraints/clk.sdc"
 
 #options
 -optimization_goal Area
@@ -29,7 +28,10 @@
 -loop_limit 1950
 
 -ver "verilog/TinyFPGA_B.v"
--p "C:/lscc/iCEcube2.2017.01/sbt_backend/Projects/template"
+-ver "roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v"
+-ver "roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v"
+-ver "coms.v"
+-p "/home/letrend/workspace/bldc_motorboard/software/icecube2_template"
 
 #set result format/file last
 -output_edif template_Implmnt/template.edf

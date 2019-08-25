@@ -15,826 +15,96 @@ Running on host :base
 @I::"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v" (library work)
 @I::"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v" (library work)
 @I::"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v" (library work)
-@I::"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v" (library work)
-@N: CG334 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v":355:13:355:25|Read directive translate_off.
-@N: CG333 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v":357:13:357:24|Read directive translate_on.
-@I::"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v" (library work)
 @I::"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v" (library work)
+@I::"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v" (library work)
 Verilog syntax check successful!
-File /home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v changed - recompiling
+
+Compiler output is up to date.  No re-compile necessary
+
 Selecting top level module top
-@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v":3:7:3:10|Synthesizing module quad in library work.
-
-@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v":32:7:32:10|Synthesizing module lfsr in library work.
-
-	LFSR_WIDTH=32'b00000000000000000000000000010000
-	LFSR_POLY=16'b0001110110110111
-	LFSR_CONFIG=48'b010001110100000101001100010011110100100101010011
-	LFSR_FEED_FORWARD=32'b00000000000000000000000000000000
-	REVERSE=32'b00000000000000000000000000000001
-	DATA_WIDTH=32'b00000000000000000000000010000000
-	STYLE=32'b01000001010101010101010001001111
-	STYLE_INT=32'b01001100010011110100111101010000
-   Generated name = lfsr_16s_7607_GALOIS_0s_1s_128s_AUTO_LOOP
-
-@W: CG532 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v":209:0:209:6|Within an initial block, only Verilog force statements and memory $readmemh/$readmemb initialization statements are recognized, and all other content is ignored.
-@W: CG133 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v":207:14:207:14|Object k is declared but not assigned. Either assign a value or remove the declaration.
-@W: CG133 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v":367:7:367:7|Object n is declared but not assigned. Either assign a value or remove the declaration.
-@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v":32:7:32:14|Synthesizing module lfsr_crc in library work.
+@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":14:7:14:13|Synthesizing module uart_tx in library work.
 
 @N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v":14:7:14:13|Synthesizing module uart_rx in library work.
 
-@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":14:7:14:13|Synthesizing module uart_tx in library work.
+@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":1:7:1:10|Synthesizing module coms in library work.
 
+@W: CG360 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":138:22:138:39|Removing wire rx_data_ready_prev, as there is no assignment to it.
+@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":164:2:164:7|Pruning unused register rx_crc[15:0]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":115:2:115:7|Pruning unused register tx_crc[15:0]. Make sure that there are no unused intermediate registers.
 @N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":2:7:2:9|Synthesizing module top in library work.
 
-@W: CG875 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":235:26:235:26|Index 16 is out of range for memory tx_data_frame -- bypassing assign ...
-@W: CG875 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":235:26:235:26|Index 17 is out of range for memory tx_data_frame -- bypassing assign ...
-@W: CG360 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":39:9:39:14|Removing wire SPI_SS, as there is no assignment to it.
-@W: CG360 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":40:9:40:15|Removing wire SPI_SCK, as there is no assignment to it.
-@W: CG133 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":75:20:75:22|Object pwm is declared but not assigned. Either assign a value or remove the declaration.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register i[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":77:2:77:7|Pruning unused register pwm_delay[9:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":77:2:77:7|Register bit PHASES[0] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":77:2:77:7|Register bit PHASES[1] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":77:2:77:7|Register bit PHASES[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":77:2:77:7|Register bit PHASES[3] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":77:2:77:7|Register bit PHASES[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":77:2:77:7|Register bit PHASES[5] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_transmission is always 1.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_byte_counter[5] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_byte_counter[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_byte_counter[7] is always 0.
-@W: CL279 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning register bits 7 to 5 of tx_byte_counter[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_0_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_1_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_2_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_3_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_4_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_5_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_6_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_7_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_8_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_9_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_10_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_11_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_12_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_13_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_14_[0] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[7] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[6] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[5] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[4] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[3] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[2] is always 0.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[1] is always 1.
-@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Register bit tx_data_frame_15_[0] is always 1.
-@W: CL177 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Sharing sequential element trigger_response. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":154:2:154:7|Pruning unused register rx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Pruning unused register tx_crc_calculate. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_0_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_1_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_2_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_3_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_4_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_5_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_6_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_7_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_8_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_9_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_10_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_11_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_12_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_13_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_14_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Pruning unused register rx_data_frame_15_[7:0]. Make sure that there are no unused intermediate registers.
-@W: CL157 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":39:9:39:14|*Output SPI_SS has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the output.
-@W: CL157 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":40:9:40:15|*Output SPI_SCK has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the output.
-@N: CL159 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":14:8:14:12|Input PIN_4 is unused.
-@N: CL159 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":15:8:15:12|Input PIN_5 is unused.
-@N: CL159 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":16:8:16:12|Input PIN_6 is unused.
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":19:8:19:12|Inout PIN_9 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":24:8:24:13|Inout PIN_14 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":25:8:25:13|Inout PIN_15 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":26:8:26:13|Inout PIN_16 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":27:8:27:13|Inout PIN_17 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":28:8:28:13|Inout PIN_18 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":29:8:29:13|Inout PIN_19 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":30:8:30:13|Inout PIN_20 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":31:8:31:13|Inout PIN_21 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":32:8:32:13|Inout PIN_25 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":33:8:33:13|Inout PIN_26 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":34:8:34:13|Inout PIN_27 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":35:8:35:13|Inout PIN_28 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":36:8:36:13|Inout PIN_29 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":37:8:37:13|Inout PIN_30 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":38:8:38:13|Inout PIN_31 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":41:8:41:14|Inout SPI_IO0 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":42:8:42:14|Inout SPI_IO1 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":43:8:43:14|Inout SPI_IO2 is unused
-@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":44:8:44:14|Inout SPI_IO3 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":9:8:9:12|Inout PIN_4 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":10:8:10:12|Inout PIN_5 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":11:8:11:12|Inout PIN_6 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":12:8:12:12|Inout PIN_7 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":13:8:13:12|Inout PIN_8 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":14:8:14:12|Inout PIN_9 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":15:8:15:13|Inout PIN_10 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":16:8:16:13|Inout PIN_11 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":17:8:17:13|Inout PIN_12 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":18:8:18:13|Inout PIN_13 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":19:8:19:13|Inout PIN_14 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":20:8:20:13|Inout PIN_15 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":21:8:21:13|Inout PIN_16 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":22:8:22:13|Inout PIN_17 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":23:8:23:13|Inout PIN_18 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":24:8:24:13|Inout PIN_19 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":25:8:25:13|Inout PIN_20 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":26:8:26:13|Inout PIN_21 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":27:8:27:13|Inout PIN_22 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":28:8:28:13|Inout PIN_23 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":29:8:29:13|Inout PIN_24 is unused
+@N: CL201 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v":49:2:49:7|Trying to extract state machine for register r_SM_Main.
+Extracted state machine for register r_SM_Main
+State machine has 5 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+   100
+@W: CL249 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v":49:2:49:7|Initial value is not supported on state machine r_SM_Main
+@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[4] is always 0.
+@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[5] is always 0.
+@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[6] is always 0.
 @N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[7] is always 0.
 @N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[8] is always 0.
-@W: CL279 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Pruning register bits 8 to 7 of r_Clock_Count[8:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Pruning register bits 8 to 4 of r_Clock_Count[8:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @N: CL201 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Trying to extract state machine for register r_SM_Main.
-@N: CL201 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v":49:2:49:7|Trying to extract state machine for register r_SM_Main.
-@N: CL159 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v":50:33:50:39|Input data_in is unused.
-@N: CL159 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v":51:33:51:40|Input state_in is unused.
+Extracted state machine for register r_SM_Main
+State machine has 5 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+   100
+@W: CL249 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":37:2:37:7|Initial value is not supported on state machine r_SM_Main
 
-At c_ver Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 110MB peak: 226MB)
-
-Process took 0h:00m:04s realtime, 0h:00m:04s cputime
-
-Process completed successfully.
-# Sat Aug 24 13:41:30 2019
-
-###########################################################]
-Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
-@N|Running in 64-bit mode
-File /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/layer0.srs changed - recompiling
-@N: NF107 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":2:7:2:9|Selected library: work cell: top view verilog as top level
-@N: NF107 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":2:7:2:9|Selected library: work cell: top view verilog as top level
-
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 69MB peak: 70MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 71MB peak: 72MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Aug 24 13:41:30 2019
+# Sun Aug 25 21:15:03 2019
+
+###########################################################]
+Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 69MB peak: 69MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Sun Aug 25 21:15:03 2019
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 4MB peak: 5MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 4MB peak: 5MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:04s cputime
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Aug 24 13:41:30 2019
+# Sun Aug 25 21:15:03 2019
 
 ###########################################################]

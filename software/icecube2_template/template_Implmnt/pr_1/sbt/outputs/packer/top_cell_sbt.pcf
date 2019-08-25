@@ -1,0 +1,44 @@
+ble_pack LED_obuf_RNO_0_LC_1_8_0 { LED_obuf_RNO_0 }
+ble_pack LED_obuf_RNO_1_LC_1_8_1 { LED_obuf_RNO_1 }
+ble_pack LED_obuf_RNO_LC_1_8_2 { LED_obuf_RNO }
+clb_pack LT_1_8 { LED_obuf_RNO_0_LC_1_8_0, LED_obuf_RNO_1_LC_1_8_1, LED_obuf_RNO_LC_1_8_2 }
+set_location LT_1_8 1 8
+ble_pack blink_counter_0_LC_1_9_0 { blink_counter_RNO[0], blink_counter[0], blink_counter_cry_c[0] }
+ble_pack blink_counter_1_LC_1_9_1 { blink_counter_RNO[1], blink_counter[1], blink_counter_cry_c[1] }
+ble_pack blink_counter_2_LC_1_9_2 { blink_counter_RNO[2], blink_counter[2], blink_counter_cry_c[2] }
+ble_pack blink_counter_3_LC_1_9_3 { blink_counter_RNO[3], blink_counter[3], blink_counter_cry_c[3] }
+ble_pack blink_counter_4_LC_1_9_4 { blink_counter_RNO[4], blink_counter[4], blink_counter_cry_c[4] }
+ble_pack blink_counter_5_LC_1_9_5 { blink_counter_RNO[5], blink_counter[5], blink_counter_cry_c[5] }
+ble_pack blink_counter_6_LC_1_9_6 { blink_counter_RNO[6], blink_counter[6], blink_counter_cry_c[6] }
+ble_pack blink_counter_7_LC_1_9_7 { blink_counter_RNO[7], blink_counter[7], blink_counter_cry_c[7] }
+clb_pack LT_1_9 { blink_counter_0_LC_1_9_0, blink_counter_1_LC_1_9_1, blink_counter_2_LC_1_9_2, blink_counter_3_LC_1_9_3, blink_counter_4_LC_1_9_4, blink_counter_5_LC_1_9_5, blink_counter_6_LC_1_9_6, blink_counter_7_LC_1_9_7 }
+set_location LT_1_9 1 9
+ble_pack blink_counter_8_LC_1_10_0 { blink_counter_RNO[8], blink_counter[8], blink_counter_cry_c[8] }
+ble_pack blink_counter_9_LC_1_10_1 { blink_counter_RNO[9], blink_counter[9], blink_counter_cry_c[9] }
+ble_pack blink_counter_10_LC_1_10_2 { blink_counter_RNO[10], blink_counter[10], blink_counter_cry_c[10] }
+ble_pack blink_counter_11_LC_1_10_3 { blink_counter_RNO[11], blink_counter[11], blink_counter_cry_c[11] }
+ble_pack blink_counter_12_LC_1_10_4 { blink_counter_RNO[12], blink_counter[12], blink_counter_cry_c[12] }
+ble_pack blink_counter_13_LC_1_10_5 { blink_counter_RNO[13], blink_counter[13], blink_counter_cry_c[13] }
+ble_pack blink_counter_14_LC_1_10_6 { blink_counter_RNO[14], blink_counter[14], blink_counter_cry_c[14] }
+ble_pack blink_counter_15_LC_1_10_7 { blink_counter_RNO[15], blink_counter[15], blink_counter_cry_c[15] }
+clb_pack LT_1_10 { blink_counter_8_LC_1_10_0, blink_counter_9_LC_1_10_1, blink_counter_10_LC_1_10_2, blink_counter_11_LC_1_10_3, blink_counter_12_LC_1_10_4, blink_counter_13_LC_1_10_5, blink_counter_14_LC_1_10_6, blink_counter_15_LC_1_10_7 }
+set_location LT_1_10 1 10
+ble_pack blink_counter_16_LC_1_11_0 { blink_counter_RNO[16], blink_counter[16], blink_counter_cry_c[16] }
+ble_pack blink_counter_17_LC_1_11_1 { blink_counter_RNO[17], blink_counter[17], blink_counter_cry_c[17] }
+ble_pack blink_counter_18_LC_1_11_2 { blink_counter_RNO[18], blink_counter[18], blink_counter_cry_c[18] }
+ble_pack blink_counter_19_LC_1_11_3 { blink_counter_RNO[19], blink_counter[19], blink_counter_cry_c[19] }
+ble_pack blink_counter_20_LC_1_11_4 { blink_counter_RNO[20], blink_counter[20], blink_counter_cry_c[20] }
+ble_pack blink_counter_21_LC_1_11_5 { blink_counter_RNO[21], blink_counter[21], blink_counter_cry_c[21] }
+ble_pack blink_counter_22_LC_1_11_6 { blink_counter_RNO[22], blink_counter[22], blink_counter_cry_c[22] }
+ble_pack blink_counter_23_LC_1_11_7 { blink_counter_RNO[23], blink_counter[23], blink_counter_cry_c[23] }
+clb_pack LT_1_11 { blink_counter_16_LC_1_11_0, blink_counter_17_LC_1_11_1, blink_counter_18_LC_1_11_2, blink_counter_19_LC_1_11_3, blink_counter_20_LC_1_11_4, blink_counter_21_LC_1_11_5, blink_counter_22_LC_1_11_6, blink_counter_23_LC_1_11_7 }
+set_location LT_1_11 1 11
+ble_pack blink_counter_24_LC_1_12_0 { blink_counter_RNO[24], blink_counter[24], blink_counter_cry_c[24] }
+ble_pack blink_counter_25_LC_1_12_1 { blink_counter_RNO[25], blink_counter[25] }
+clb_pack LT_1_12 { blink_counter_24_LC_1_12_0, blink_counter_25_LC_1_12_1 }
+set_location LT_1_12 1 12
+set_io USBPU G3
+set_io PIN_3 F3
+set_io PIN_1 E4
+set_io LED H2
+set_io CLK D3

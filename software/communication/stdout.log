@@ -1,0 +1,78 @@
+Running in Lattice mode
+
+
+Starting:    /home/letrend/lscc/iCEcube2.2017.08/synpbase/linux_a_64/mbin/synbatch
+Install:     /home/letrend/lscc/iCEcube2.2017.08/synpbase
+Hostname:    base
+Date:        Sun Aug 25 21:31:20 2019
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch communication_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "/home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/communication.srr"
+Running: communication_Implmnt in foreground
+
+Running communication_syn|communication_Implmnt
+
+Running: compile (Compile) on communication_syn|communication_Implmnt
+# Sun Aug 25 21:31:20 2019
+
+Running: compile_flow (Compile Process) on communication_syn|communication_Implmnt
+# Sun Aug 25 21:31:20 2019
+
+Running: compiler (Compile Input) on communication_syn|communication_Implmnt
+# Sun Aug 25 21:31:20 2019
+Copied /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/synwork/communication_comp.srs to /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/communication.srs
+
+compiler completed
+# Sun Aug 25 21:31:21 2019
+
+Return Code: 0
+Run Time:00h:00m:01s
+
+Running: multi_srs_gen (Multi-srs Generator) on communication_syn|communication_Implmnt
+# Sun Aug 25 21:31:21 2019
+
+multi_srs_gen completed
+# Sun Aug 25 21:31:21 2019
+
+Return Code: 0
+Run Time:00h:00m:00s
+Copied /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/synwork/communication_mult.srs to /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/communication.srs
+Complete: Compile Process on communication_syn|communication_Implmnt
+
+Running: premap (Pre-mapping) on communication_syn|communication_Implmnt
+# Sun Aug 25 21:31:21 2019
+
+premap completed with warnings
+# Sun Aug 25 21:31:22 2019
+
+Return Code: 1
+Run Time:00h:00m:01s
+Complete: Compile on communication_syn|communication_Implmnt
+
+Running: map (Map) on communication_syn|communication_Implmnt
+# Sun Aug 25 21:31:22 2019
+License granted for 4 parallel jobs
+
+Running: fpga_mapper (Map & Optimize) on communication_syn|communication_Implmnt
+# Sun Aug 25 21:31:22 2019
+Copied /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/synwork/communication_m.srm to /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/communication.srm
+
+fpga_mapper completed with warnings
+# Sun Aug 25 21:31:24 2019
+
+Return Code: 1
+Run Time:00h:00m:02s
+Complete: Map on communication_syn|communication_Implmnt
+Complete: Logic Synthesis on communication_syn|communication_Implmnt
+
+exit status=0
+
+exit status=0
+

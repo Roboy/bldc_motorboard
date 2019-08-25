@@ -1,0 +1,11 @@
+/home/letrend/lscc/iCEcube2.2017.08/synpbase/bin/c_hdl  -osyn  /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/synwork/communication_comp.srs  -hdllog  /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/synlog/communication_compiler.srr  -encrypt  -mp  4  -verification_mode 0  -verilog  -prodtype  synplify_pro  -primux -fixsmult -infer_seqShift -ice -sdff_counter -nram -divnmod -nostructver   -I /home/letrend/workspace/bldc_motorboard/software/communication/  -I /home/letrend/lscc/iCEcube2.2017.08/synpbase/lib   -v2001  -devicelib  /home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/generic/sb_ice40.v  -encrypt  -pro  -dmgen  /home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/dm  -ui -fid2 -ram -sharing on -ll 2000 -autosm  -lib work /home/letrend/workspace/bldc_motorboard/software/communication/top.v -lib work /home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v -lib work /home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v -lib work /home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v 
+rc:0 success:1 runtime:1
+file:/home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/synwork/communication_comp.srs|io:o|time:1566761480|size:15735|exec:0
+file:/home/letrend/workspace/bldc_motorboard/software/communication/communication_Implmnt/synlog/communication_compiler.srr|io:o|time:1566761480|size:8038|exec:0
+file:/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/generic/sb_ice40.v|io:i|time:1559394833|size:220434|exec:0
+file:/home/letrend/workspace/bldc_motorboard/software/communication/top.v|io:i|time:1566761407|size:1275|exec:0
+file:/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v|io:i|time:1566746970|size:4349|exec:0
+file:/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v|io:i|time:1566751992|size:4172|exec:0
+file:/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v|io:i|time:1566755486|size:8551|exec:0
+file:/home/letrend/lscc/iCEcube2.2017.08/synpbase/linux_a_64/c_hdl|io:i|time:1559394833|size:5690328|exec:1
+file:/home/letrend/lscc/iCEcube2.2017.08/synpbase/bin/c_hdl|io:i|time:1559397421|size:367|exec:1

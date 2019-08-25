@@ -3,7 +3,7 @@
 Part:			ICE40LP8KCM81 (Lattice)
 
 Click here to go to specific block report:
-<a href="rpt_top_areasrr.htm#top"><h5 align="center">top</h5></a><br><a href="rpt_top_areasrr.htm#top.uart_rx"><h5 align="center">uart_rx</h5></a><br><a href="rpt_top_areasrr.htm#top.uart_tx"><h5 align="center">uart_tx</h5></a><br><a name=top>
+<a href="rpt_top_areasrr.htm#top"><h5 align="center">top</h5></a><br><a href="rpt_top_areasrr.htm#top.coms"><h5 align="center">coms</h5></a><br><a href="rpt_top_areasrr.htm#coms.uart_tx"><h5 align="center">uart_tx</h5></a><br><a href="rpt_top_areasrr.htm#coms.uart_rx"><h5 align="center">uart_rx</h5></a><br><a href="rpt_top_areasrr.htm#coms.uart_tx_0"><h5 align="center">uart_tx_0</h5></a><br><a name=top>
 -------------------------------------------------------------------
 ########   Utilization report for  Top level view:   top   ########
 ===================================================================
@@ -11,74 +11,142 @@ Click here to go to specific block report:
 SEQUENTIAL ELEMENTS
 Name      Total elements     Utilization     Notes
 --------------------------------------------------
-FLOPS     108                100 %                
+FLOPS     324                100 %                
 ==================================================
-Total SEQUENTIAL ELEMENTS in the block top:	108 (27.62 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top:	324 (32.63 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 COMBINATIONAL LOGIC
 Name       Total elements     Utilization     Notes
 ---------------------------------------------------
-LUTS       191                100 %                
-CARRYS     25                 100 %                
+LUTS       437                100 %                
+CARRYS     76                 100 %                
 ===================================================
-Total COMBINATIONAL LOGIC in the block top:	216 (55.24 % Utilization)
+Total COMBINATIONAL LOGIC in the block top:	513 (51.66 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 IO PADS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-PADS     15                 100 %                
+PADS     9                  100 %                
 =================================================
-Total IO PADS in the block top:	15 (3.84 % Utilization)
+Total IO PADS in the block top:	9 (0.91 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
-<a name=top.uart_rx>
+<a name=top.coms>
+----------------------------------------------------------
+########   Utilization report for  cell:   coms   ########
+Instance path:   top.coms                                 
+==========================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     298                92 %                 
+==================================================
+Total SEQUENTIAL ELEMENTS in the block top.coms:	298 (30.01 % Utilization)
+
+<a href="#TopSummary"><h5 align="right">Top</h5></a>
+
+COMBINATIONAL LOGIC
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       408                93.4 %               
+CARRYS     51                 67.1 %               
+===================================================
+Total COMBINATIONAL LOGIC in the block top.coms:	459 (46.22 % Utilization)
+
+<a href="#TopSummary"><h5 align="right">Top</h5></a>
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+PADS     3                  33.3 %               
+=================================================
+Total IO PADS in the block top.coms:	3 (0.30 % Utilization)
+
+<a href="#TopSummary"><h5 align="right">Top</h5></a>
+<a name=coms.uart_rx>
 -------------------------------------------------------------
 ########   Utilization report for  cell:   uart_rx   ########
-Instance path:   top.uart_rx                                 
+Instance path:   coms.uart_rx                                
 =============================================================
 
 SEQUENTIAL ELEMENTS
 Name      Total elements     Utilization     Notes
 --------------------------------------------------
-FLOPS     27                 25 %                 
+FLOPS     27                 8.33 %               
 ==================================================
-Total SEQUENTIAL ELEMENTS in the block top.uart_rx:	27 (6.91 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block coms.uart_rx:	27 (2.72 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 COMBINATIONAL LOGIC
-Name     Total elements     Utilization     Notes
--------------------------------------------------
-LUTS     84                 44 %                 
-=================================================
-Total COMBINATIONAL LOGIC in the block top.uart_rx:	84 (21.48 % Utilization)
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       66                 15.1 %               
+CARRYS     7                  9.21 %               
+===================================================
+Total COMBINATIONAL LOGIC in the block coms.uart_rx:	73 (7.35 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
-<a name=top.uart_tx>
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+PADS     1                  11.1 %               
+=================================================
+Total IO PADS in the block coms.uart_rx:	1 (0.10 % Utilization)
+
+<a href="#TopSummary"><h5 align="right">Top</h5></a>
+<a name=coms.uart_tx>
 -------------------------------------------------------------
 ########   Utilization report for  cell:   uart_tx   ########
-Instance path:   top.uart_tx                                 
+Instance path:   coms.uart_tx                                
 =============================================================
 
 SEQUENTIAL ELEMENTS
 Name      Total elements     Utilization     Notes
 --------------------------------------------------
-FLOPS     24                 22.2 %               
+FLOPS     22                 6.79 %               
 ==================================================
-Total SEQUENTIAL ELEMENTS in the block top.uart_tx:	24 (6.14 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block coms.uart_tx:	22 (2.22 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 COMBINATIONAL LOGIC
-Name     Total elements     Utilization     Notes
--------------------------------------------------
-LUTS     40                 20.9 %               
-=================================================
-Total COMBINATIONAL LOGIC in the block top.uart_tx:	40 (10.23 % Utilization)
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       45                 10.3 %               
+CARRYS     7                  9.21 %               
+===================================================
+Total COMBINATIONAL LOGIC in the block coms.uart_tx:	52 (5.24 % Utilization)
+
+<a href="#TopSummary"><h5 align="right">Top</h5></a>
+<a name=coms.uart_tx_0>
+---------------------------------------------------------------
+########   Utilization report for  cell:   uart_tx_0   ########
+Instance path:   coms.uart_tx_0                                
+===============================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     22                 6.79 %               
+==================================================
+Total SEQUENTIAL ELEMENTS in the block coms.uart_tx_0:	22 (2.22 % Utilization)
+
+<a href="#TopSummary"><h5 align="right">Top</h5></a>
+
+COMBINATIONAL LOGIC
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       39                 8.92 %               
+CARRYS     7                  9.21 %               
+===================================================
+Total COMBINATIONAL LOGIC in the block coms.uart_tx_0:	46 (4.63 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 

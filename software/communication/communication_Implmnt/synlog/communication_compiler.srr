@@ -1,0 +1,93 @@
+Synopsys HDL Compiler, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+Synopsys Verilog Compiler, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+Running on host :base
+@I::"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/generic/sb_ice40.v" (library work)
+@I::"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vlog/hypermods.v" (library __hyper__lib__)
+@I::"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vlog/umr_capim.v" (library snps_haps)
+@I::"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vlog/scemi_objects.v" (library snps_haps)
+@I::"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vlog/scemi_pipes.svh" (library snps_haps)
+@I::"/home/letrend/workspace/bldc_motorboard/software/communication/top.v" (library work)
+@I::"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v" (library work)
+@I::"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v" (library work)
+@I::"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v" (library work)
+Verilog syntax check successful!
+Options changed - recompiling
+Selecting top level module top
+@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":14:7:14:13|Synthesizing module uart_tx in library work.
+
+@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":14:7:14:13|Synthesizing module uart_rx in library work.
+
+@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":1:7:1:10|Synthesizing module coms in library work.
+
+@W: CG360 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":138:22:138:39|Removing wire rx_data_ready_prev, as there is no assignment to it.
+@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":164:2:164:7|Pruning unused register rx_crc[15:0]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":115:2:115:7|Pruning unused register tx_crc[15:0]. Make sure that there are no unused intermediate registers.
+@N: CG364 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":2:7:2:9|Synthesizing module top in library work.
+
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":9:8:9:12|Inout PIN_4 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":10:8:10:12|Inout PIN_5 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":11:8:11:12|Inout PIN_6 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":12:8:12:12|Inout PIN_7 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":13:8:13:12|Inout PIN_8 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":14:8:14:12|Inout PIN_9 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":15:8:15:13|Inout PIN_10 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":16:8:16:13|Inout PIN_11 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":17:8:17:13|Inout PIN_12 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":18:8:18:13|Inout PIN_13 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":19:8:19:13|Inout PIN_14 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":20:8:20:13|Inout PIN_15 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":21:8:21:13|Inout PIN_16 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":22:8:22:13|Inout PIN_17 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":23:8:23:13|Inout PIN_18 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":24:8:24:13|Inout PIN_19 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":25:8:25:13|Inout PIN_20 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":26:8:26:13|Inout PIN_21 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":27:8:27:13|Inout PIN_22 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":28:8:28:13|Inout PIN_23 is unused
+@W: CL158 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":29:8:29:13|Inout PIN_24 is unused
+@N: CL201 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_rx.v":49:2:49:7|Trying to extract state machine for register r_SM_Main.
+@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[4] is always 0.
+@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[5] is always 0.
+@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[6] is always 0.
+@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[7] is always 0.
+@N: CL189 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|Register bit r_Clock_Count[8] is always 0.
+@W: CL279 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|Pruning register bits 8 to 4 of r_Clock_Count[8:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL201 :"/home/letrend/workspace/bldc_motorboard/software/communication/uart_tx.v":37:2:37:7|Trying to extract state machine for register r_SM_Main.
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 75MB peak: 76MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Sun Aug 25 21:31:20 2019
+
+###########################################################]
+Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+@N: NF107 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":2:7:2:9|Selected library: work cell: top view verilog as top level
+@N: NF107 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":2:7:2:9|Selected library: work cell: top view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 69MB peak: 69MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Sun Aug 25 21:31:20 2019
+
+###########################################################]
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 4MB peak: 5MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Sun Aug 25 21:31:20 2019
+
+###########################################################]

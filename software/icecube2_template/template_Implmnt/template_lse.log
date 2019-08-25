@@ -3,7 +3,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Sat Jun 29 15:06:19 2019
+Mon Aug 26 00:02:59 2019
 
 
 Command Line:  /home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f template_lse.prj 
@@ -37,8 +37,8 @@ The -d option is iCE40LP8K.
                                                           
 
 Optimization goal = Area
-Top-level module name = TinyFPGA_B.
-Target frequency = 16.000000 MHz.
+The -top option is not used.
+Target frequency = 1.000000 MHz.
 Maximum fanout = 10000.
 Timing path count = 3
 RWCheckOnRam = 0
@@ -66,25 +66,13 @@ ROM style = auto
 RAM style = auto
 The -comp option is FALSE.
 The -syn option is FALSE.
--p /home/letrend/workspace/TinyFPGA-BX/icecube2_template (searchpath added)
+-p /home/letrend/workspace/bldc_motorboard/software/icecube2_template (searchpath added)
 Verilog design file = verilog/TinyFPGA_B.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Clarke_Transform.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/D_Current_Control.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/DQ_Current_Control.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/foc.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/FOC_Current_Control.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Inverse_Clarke_Transform.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Inverse_Park_Transform.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Max.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Min.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Park_Transform.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Saturate_Output.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Sine_Cosine.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Sine_Cosine_LUT.v
-Verilog design file = ../../hdlcoderFocCurrentFixptHdl/Space_Vector_Modulation.v
--sdc option: SDC file input is constraints/clk.sdc.
--vh2008
-
+Verilog design file = roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v
+Verilog design file = roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v
+Verilog design file = coms.v
+-sdc option: SDC file input not used.
+WARNING - synthesis: Setting TinyFPGA_B as the top-level module. To specify the top-level module explicitly, use the -top option.
 Technology check ok...
 
 Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
@@ -92,20 +80,10 @@ Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYN
 Compile design.
 Compile Design Begin
 Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Clarke_Transform.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/D_Current_Control.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/DQ_Current_Control.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/foc.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/FOC_Current_Control.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Inverse_Clarke_Transform.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Inverse_Park_Transform.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Max.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Min.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Park_Transform.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Saturate_Output.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Sine_Cosine.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Sine_Cosine_LUT.v. VERI-1482
-Analyzing Verilog file ../../hdlcoderFocCurrentFixptHdl/Space_Vector_Modulation.v. VERI-1482
+Analyzing Verilog file roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v. VERI-1482
+Analyzing Verilog file roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v. VERI-1482
+Analyzing Verilog file coms.v. VERI-1482
+WARNING - synthesis: coms.v(113): identifier data_in_frame is used before its declaration. VERI-1875
 Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
@@ -119,474 +97,289 @@ WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTH
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(209): assignment to input EVERI-1214
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(3725): empty port in module declaration. VERI-1294
 Top module name (Verilog): TinyFPGA_B
-INFO - synthesis: verilog/TinyFPGA_B.v(1): compiling module TinyFPGA_B. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/FOC_Current_Control.v(42): compiling module FOC_Current_Control. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Clarke_Transform.v(21): compiling module Clarke_Transform. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Sine_Cosine.v(21): compiling module Sine_Cosine. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Sine_Cosine_LUT.v(21): compiling module Sine_Cosine_LUT. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Park_Transform.v(21): compiling module Park_Transform. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/DQ_Current_Control.v(21): compiling module DQ_Current_Control. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/D_Current_Control.v(21): compiling module D_Current_Control. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Saturate_Output.v(21): compiling module Saturate_Output. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Inverse_Park_Transform.v(21): compiling module Inverse_Park_Transform. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Inverse_Clarke_Transform.v(21): compiling module Inverse_Clarke_Transform. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Space_Vector_Modulation.v(21): compiling module Space_Vector_Modulation. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Max.v(21): compiling module Max. VERI-1018
-INFO - synthesis: ../../hdlcoderFocCurrentFixptHdl/Min.v(21): compiling module Min. VERI-1018
-WARNING - synthesis: verilog/TinyFPGA_B.v(70): input port Current_Command[15] is not connected on this instance. VDB-1013
+INFO - synthesis: verilog/TinyFPGA_B.v(2): compiling module TinyFPGA_B. VERI-1018
+INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b101001,PULLUP=1'b1). VERI-1018
+WARNING - synthesis: verilog/TinyFPGA_B.v(65): expression size 32 truncated to fit in target size 26. VERI-1209
+INFO - synthesis: coms.v(1): compiling module coms. VERI-1018
+INFO - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(14): compiling module uart_tx. VERI-1018
+WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(70): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: coms.v(123): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING - synthesis: coms.v(125): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(145): expression size 32 truncated to fit in target size 8. VERI-1209
+INFO - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(14): compiling module uart_rx. VERI-1018
+WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(197): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(55): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/xo2c00/data/xo2clib.ngl'...
 Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/or5g00/data/orc5glib.ngl'...
 Top-level module name = TinyFPGA_B.
-WARNING - synthesis: net n116 does not have a driver. VDB-1002
-WARNING - synthesis: net n119 does not have a driver. VDB-1002
-WARNING - synthesis: net n122 does not have a driver. VDB-1002
-WARNING - synthesis: net n125 does not have a driver. VDB-1002
-WARNING - synthesis: net n128 does not have a driver. VDB-1002
-WARNING - synthesis: net n131 does not have a driver. VDB-1002
-WARNING - synthesis: net n134 does not have a driver. VDB-1002
-WARNING - synthesis: net n137 does not have a driver. VDB-1002
-WARNING - synthesis: net n140 does not have a driver. VDB-1002
-WARNING - synthesis: net n143 does not have a driver. VDB-1002
-WARNING - synthesis: net n146 does not have a driver. VDB-1002
-WARNING - synthesis: net n149 does not have a driver. VDB-1002
-WARNING - synthesis: net n152 does not have a driver. VDB-1002
-WARNING - synthesis: net n155 does not have a driver. VDB-1002
-WARNING - synthesis: net n158 does not have a driver. VDB-1002
-WARNING - synthesis: net n161 does not have a driver. VDB-1002
-WARNING - synthesis: net n164 does not have a driver. VDB-1002
-WARNING - synthesis: net n167 does not have a driver. VDB-1002
-WARNING - synthesis: net n170 does not have a driver. VDB-1002
-WARNING - synthesis: net n173 does not have a driver. VDB-1002
-WARNING - synthesis: net n176 does not have a driver. VDB-1002
-WARNING - synthesis: net n179 does not have a driver. VDB-1002
-WARNING - synthesis: net n182 does not have a driver. VDB-1002
-WARNING - synthesis: net n185 does not have a driver. VDB-1002
-WARNING - synthesis: net n188 does not have a driver. VDB-1002
-WARNING - synthesis: net n191 does not have a driver. VDB-1002
-WARNING - synthesis: net n194 does not have a driver. VDB-1002
-WARNING - synthesis: net n197 does not have a driver. VDB-1002
-WARNING - synthesis: net n200 does not have a driver. VDB-1002
-WARNING - synthesis: net n203 does not have a driver. VDB-1002
-WARNING - synthesis: net n206 does not have a driver. VDB-1002
-WARNING - synthesis: net n209 does not have a driver. VDB-1002
-WARNING - synthesis: net n212 does not have a driver. VDB-1002
-WARNING - synthesis: net n215 does not have a driver. VDB-1002
-WARNING - synthesis: net n218 does not have a driver. VDB-1002
-WARNING - synthesis: net n221 does not have a driver. VDB-1002
-WARNING - synthesis: net n224 does not have a driver. VDB-1002
-WARNING - synthesis: net n227 does not have a driver. VDB-1002
-WARNING - synthesis: net n230 does not have a driver. VDB-1002
-WARNING - synthesis: net n233 does not have a driver. VDB-1002
-WARNING - synthesis: net n236 does not have a driver. VDB-1002
-WARNING - synthesis: net n239 does not have a driver. VDB-1002
-WARNING - synthesis: net n242 does not have a driver. VDB-1002
-WARNING - synthesis: net n245 does not have a driver. VDB-1002
-WARNING - synthesis: net n248 does not have a driver. VDB-1002
-WARNING - synthesis: net n251 does not have a driver. VDB-1002
-WARNING - synthesis: net n254 does not have a driver. VDB-1002
-WARNING - synthesis: net n257 does not have a driver. VDB-1002
-WARNING - synthesis: net n260 does not have a driver. VDB-1002
-WARNING - synthesis: net n263 does not have a driver. VDB-1002
-WARNING - synthesis: net n266 does not have a driver. VDB-1002
-WARNING - synthesis: net n269 does not have a driver. VDB-1002
-WARNING - synthesis: net n272 does not have a driver. VDB-1002
-WARNING - synthesis: net n275 does not have a driver. VDB-1002
-WARNING - synthesis: net n278 does not have a driver. VDB-1002
-WARNING - synthesis: net n281 does not have a driver. VDB-1002
-WARNING - synthesis: net n284 does not have a driver. VDB-1002
-WARNING - synthesis: net n287 does not have a driver. VDB-1002
-WARNING - synthesis: net n290 does not have a driver. VDB-1002
-WARNING - synthesis: net n293 does not have a driver. VDB-1002
-WARNING - synthesis: net n296 does not have a driver. VDB-1002
-WARNING - synthesis: net n299 does not have a driver. VDB-1002
-WARNING - synthesis: net n302 does not have a driver. VDB-1002
-WARNING - synthesis: net n305 does not have a driver. VDB-1002
-WARNING - synthesis: net n308 does not have a driver. VDB-1002
-WARNING - synthesis: net n311 does not have a driver. VDB-1002
-WARNING - synthesis: net n314 does not have a driver. VDB-1002
-WARNING - synthesis: net n317 does not have a driver. VDB-1002
-WARNING - synthesis: net n320 does not have a driver. VDB-1002
-WARNING - synthesis: net n323 does not have a driver. VDB-1002
-WARNING - synthesis: net n326 does not have a driver. VDB-1002
-WARNING - synthesis: net n329 does not have a driver. VDB-1002
-WARNING - synthesis: net n332 does not have a driver. VDB-1002
-WARNING - synthesis: net n335 does not have a driver. VDB-1002
-WARNING - synthesis: net n338 does not have a driver. VDB-1002
-WARNING - synthesis: net n341 does not have a driver. VDB-1002
-WARNING - synthesis: net n344 does not have a driver. VDB-1002
-WARNING - synthesis: net n347 does not have a driver. VDB-1002
-WARNING - synthesis: net n350 does not have a driver. VDB-1002
-WARNING - synthesis: net n353 does not have a driver. VDB-1002
-WARNING - synthesis: net n356 does not have a driver. VDB-1002
-WARNING - synthesis: net n359 does not have a driver. VDB-1002
-WARNING - synthesis: net n362 does not have a driver. VDB-1002
-WARNING - synthesis: net n365 does not have a driver. VDB-1002
-WARNING - synthesis: net n368 does not have a driver. VDB-1002
-WARNING - synthesis: net n371 does not have a driver. VDB-1002
-WARNING - synthesis: net n374 does not have a driver. VDB-1002
-WARNING - synthesis: net n377 does not have a driver. VDB-1002
-WARNING - synthesis: net n380 does not have a driver. VDB-1002
-WARNING - synthesis: net n383 does not have a driver. VDB-1002
-WARNING - synthesis: net n386 does not have a driver. VDB-1002
-WARNING - synthesis: net n389 does not have a driver. VDB-1002
-WARNING - synthesis: net n392 does not have a driver. VDB-1002
-WARNING - synthesis: net n395 does not have a driver. VDB-1002
-WARNING - synthesis: net n398 does not have a driver. VDB-1002
-WARNING - synthesis: net n401 does not have a driver. VDB-1002
-WARNING - synthesis: net n116 does not have a driver. VDB-1002
-WARNING - synthesis: net n119 does not have a driver. VDB-1002
-WARNING - synthesis: net n122 does not have a driver. VDB-1002
-WARNING - synthesis: net n125 does not have a driver. VDB-1002
-WARNING - synthesis: net n128 does not have a driver. VDB-1002
-WARNING - synthesis: net n131 does not have a driver. VDB-1002
-WARNING - synthesis: net n134 does not have a driver. VDB-1002
-WARNING - synthesis: net n137 does not have a driver. VDB-1002
-WARNING - synthesis: net n140 does not have a driver. VDB-1002
-WARNING - synthesis: net n143 does not have a driver. VDB-1002
-WARNING - synthesis: net n146 does not have a driver. VDB-1002
-WARNING - synthesis: net n149 does not have a driver. VDB-1002
-WARNING - synthesis: net n152 does not have a driver. VDB-1002
-WARNING - synthesis: net n155 does not have a driver. VDB-1002
-WARNING - synthesis: net n158 does not have a driver. VDB-1002
-WARNING - synthesis: net n161 does not have a driver. VDB-1002
-WARNING - synthesis: net n164 does not have a driver. VDB-1002
-WARNING - synthesis: net n167 does not have a driver. VDB-1002
-WARNING - synthesis: net n170 does not have a driver. VDB-1002
-WARNING - synthesis: net n173 does not have a driver. VDB-1002
-WARNING - synthesis: net n176 does not have a driver. VDB-1002
-WARNING - synthesis: net n179 does not have a driver. VDB-1002
-WARNING - synthesis: net n182 does not have a driver. VDB-1002
-WARNING - synthesis: net n185 does not have a driver. VDB-1002
-WARNING - synthesis: net n188 does not have a driver. VDB-1002
-WARNING - synthesis: net n191 does not have a driver. VDB-1002
-WARNING - synthesis: net n194 does not have a driver. VDB-1002
-WARNING - synthesis: net n197 does not have a driver. VDB-1002
-WARNING - synthesis: net n200 does not have a driver. VDB-1002
-WARNING - synthesis: net n203 does not have a driver. VDB-1002
-WARNING - synthesis: net n206 does not have a driver. VDB-1002
-WARNING - synthesis: net n209 does not have a driver. VDB-1002
-WARNING - synthesis: net n212 does not have a driver. VDB-1002
-WARNING - synthesis: net n215 does not have a driver. VDB-1002
-WARNING - synthesis: net n218 does not have a driver. VDB-1002
-WARNING - synthesis: net n221 does not have a driver. VDB-1002
-WARNING - synthesis: net n224 does not have a driver. VDB-1002
-WARNING - synthesis: net n227 does not have a driver. VDB-1002
-WARNING - synthesis: net n230 does not have a driver. VDB-1002
-WARNING - synthesis: net n233 does not have a driver. VDB-1002
-WARNING - synthesis: net n236 does not have a driver. VDB-1002
-WARNING - synthesis: net n239 does not have a driver. VDB-1002
-WARNING - synthesis: net n242 does not have a driver. VDB-1002
-WARNING - synthesis: net n245 does not have a driver. VDB-1002
-WARNING - synthesis: net n248 does not have a driver. VDB-1002
-WARNING - synthesis: net n251 does not have a driver. VDB-1002
-WARNING - synthesis: net n254 does not have a driver. VDB-1002
-WARNING - synthesis: net n257 does not have a driver. VDB-1002
-WARNING - synthesis: net n260 does not have a driver. VDB-1002
-WARNING - synthesis: net n263 does not have a driver. VDB-1002
-WARNING - synthesis: net n266 does not have a driver. VDB-1002
-WARNING - synthesis: net n269 does not have a driver. VDB-1002
-WARNING - synthesis: net n272 does not have a driver. VDB-1002
-WARNING - synthesis: net n275 does not have a driver. VDB-1002
-WARNING - synthesis: net n278 does not have a driver. VDB-1002
-WARNING - synthesis: net n281 does not have a driver. VDB-1002
-WARNING - synthesis: net n284 does not have a driver. VDB-1002
-WARNING - synthesis: net n287 does not have a driver. VDB-1002
-WARNING - synthesis: net n290 does not have a driver. VDB-1002
-WARNING - synthesis: net n293 does not have a driver. VDB-1002
-WARNING - synthesis: net n296 does not have a driver. VDB-1002
-WARNING - synthesis: net n299 does not have a driver. VDB-1002
-WARNING - synthesis: net n302 does not have a driver. VDB-1002
-WARNING - synthesis: net n305 does not have a driver. VDB-1002
-WARNING - synthesis: net n308 does not have a driver. VDB-1002
-WARNING - synthesis: net n311 does not have a driver. VDB-1002
-WARNING - synthesis: net n314 does not have a driver. VDB-1002
-WARNING - synthesis: net n317 does not have a driver. VDB-1002
-WARNING - synthesis: net n320 does not have a driver. VDB-1002
-WARNING - synthesis: net n323 does not have a driver. VDB-1002
-WARNING - synthesis: net n326 does not have a driver. VDB-1002
-WARNING - synthesis: net n329 does not have a driver. VDB-1002
-WARNING - synthesis: net n332 does not have a driver. VDB-1002
-WARNING - synthesis: net n335 does not have a driver. VDB-1002
-WARNING - synthesis: net n338 does not have a driver. VDB-1002
-WARNING - synthesis: net n341 does not have a driver. VDB-1002
-WARNING - synthesis: net n344 does not have a driver. VDB-1002
-WARNING - synthesis: net n347 does not have a driver. VDB-1002
-WARNING - synthesis: net n350 does not have a driver. VDB-1002
-WARNING - synthesis: net n353 does not have a driver. VDB-1002
-WARNING - synthesis: net n356 does not have a driver. VDB-1002
-WARNING - synthesis: net n359 does not have a driver. VDB-1002
-WARNING - synthesis: net n362 does not have a driver. VDB-1002
-WARNING - synthesis: net n365 does not have a driver. VDB-1002
-WARNING - synthesis: net n368 does not have a driver. VDB-1002
-WARNING - synthesis: net n371 does not have a driver. VDB-1002
-WARNING - synthesis: net n374 does not have a driver. VDB-1002
-WARNING - synthesis: net n377 does not have a driver. VDB-1002
-WARNING - synthesis: net n380 does not have a driver. VDB-1002
-WARNING - synthesis: net n383 does not have a driver. VDB-1002
-WARNING - synthesis: net n386 does not have a driver. VDB-1002
-WARNING - synthesis: net n389 does not have a driver. VDB-1002
-WARNING - synthesis: net n392 does not have a driver. VDB-1002
-WARNING - synthesis: net n395 does not have a driver. VDB-1002
-WARNING - synthesis: net n398 does not have a driver. VDB-1002
-WARNING - synthesis: net n401 does not have a driver. VDB-1002
-######## Converting I/O port pin1_usb_dp to output.
-######## Converting I/O port pin2_usb_dn to output.
-######## Converting I/O port pin4 to input.
-######## Converting I/O port pin5 to input.
-######## Converting I/O port pin6 to input.
-######## Converting I/O port pin7 to output.
-######## Converting I/O port pin8 to output.
-######## Converting I/O port pin9 to output.
-######## Converting I/O port pin10 to output.
-######## Converting I/O port pin11 to output.
-######## Converting I/O port pin12 to output.
-######## Converting I/O port pin13 to output.
-######## Converting I/O port pin14_sdo to output.
-######## Converting I/O port pin15_sdi to output.
-######## Converting I/O port pin16_sck to output.
-######## Converting I/O port pin17_ss to output.
-######## Converting I/O port pin18 to output.
-######## Converting I/O port pin19 to output.
-######## Converting I/O port pin20 to output.
-######## Converting I/O port pin21 to output.
-######## Converting I/O port pin22 to output.
-######## Converting I/O port pin23 to output.
-######## Converting I/O port pin24 to output.
-WARNING - synthesis: net n116 does not have a driver. VDB-1002
-WARNING - synthesis: net n119 does not have a driver. VDB-1002
-WARNING - synthesis: net n122 does not have a driver. VDB-1002
-WARNING - synthesis: net n125 does not have a driver. VDB-1002
-WARNING - synthesis: net n128 does not have a driver. VDB-1002
-WARNING - synthesis: net n131 does not have a driver. VDB-1002
-WARNING - synthesis: net n134 does not have a driver. VDB-1002
-WARNING - synthesis: net n137 does not have a driver. VDB-1002
-WARNING - synthesis: net n140 does not have a driver. VDB-1002
-WARNING - synthesis: net n143 does not have a driver. VDB-1002
-WARNING - synthesis: net n146 does not have a driver. VDB-1002
-WARNING - synthesis: net n149 does not have a driver. VDB-1002
-WARNING - synthesis: net n152 does not have a driver. VDB-1002
-WARNING - synthesis: net n155 does not have a driver. VDB-1002
-WARNING - synthesis: net n158 does not have a driver. VDB-1002
-WARNING - synthesis: net n161 does not have a driver. VDB-1002
-WARNING - synthesis: net n164 does not have a driver. VDB-1002
-WARNING - synthesis: net n167 does not have a driver. VDB-1002
-WARNING - synthesis: net n170 does not have a driver. VDB-1002
-WARNING - synthesis: net n173 does not have a driver. VDB-1002
-WARNING - synthesis: net n176 does not have a driver. VDB-1002
-WARNING - synthesis: net n179 does not have a driver. VDB-1002
-WARNING - synthesis: net n182 does not have a driver. VDB-1002
-WARNING - synthesis: net n185 does not have a driver. VDB-1002
-WARNING - synthesis: net n188 does not have a driver. VDB-1002
-WARNING - synthesis: net n191 does not have a driver. VDB-1002
-WARNING - synthesis: net n194 does not have a driver. VDB-1002
-WARNING - synthesis: net n197 does not have a driver. VDB-1002
-WARNING - synthesis: net n200 does not have a driver. VDB-1002
-WARNING - synthesis: net n203 does not have a driver. VDB-1002
-WARNING - synthesis: net n206 does not have a driver. VDB-1002
-WARNING - synthesis: net n209 does not have a driver. VDB-1002
-WARNING - synthesis: net n212 does not have a driver. VDB-1002
-WARNING - synthesis: net n215 does not have a driver. VDB-1002
-WARNING - synthesis: net n218 does not have a driver. VDB-1002
-WARNING - synthesis: net n221 does not have a driver. VDB-1002
-WARNING - synthesis: net n224 does not have a driver. VDB-1002
-WARNING - synthesis: net n227 does not have a driver. VDB-1002
-WARNING - synthesis: net n230 does not have a driver. VDB-1002
-WARNING - synthesis: net n233 does not have a driver. VDB-1002
-WARNING - synthesis: net n236 does not have a driver. VDB-1002
-WARNING - synthesis: net n239 does not have a driver. VDB-1002
-WARNING - synthesis: net n242 does not have a driver. VDB-1002
-WARNING - synthesis: net n245 does not have a driver. VDB-1002
-WARNING - synthesis: net n248 does not have a driver. VDB-1002
-WARNING - synthesis: net n251 does not have a driver. VDB-1002
-WARNING - synthesis: net n254 does not have a driver. VDB-1002
-WARNING - synthesis: net n257 does not have a driver. VDB-1002
-WARNING - synthesis: net n260 does not have a driver. VDB-1002
-WARNING - synthesis: net n263 does not have a driver. VDB-1002
-WARNING - synthesis: net n266 does not have a driver. VDB-1002
-WARNING - synthesis: net n269 does not have a driver. VDB-1002
-WARNING - synthesis: net n272 does not have a driver. VDB-1002
-WARNING - synthesis: net n275 does not have a driver. VDB-1002
-WARNING - synthesis: net n278 does not have a driver. VDB-1002
-WARNING - synthesis: net n281 does not have a driver. VDB-1002
-WARNING - synthesis: net n284 does not have a driver. VDB-1002
-WARNING - synthesis: net n287 does not have a driver. VDB-1002
-WARNING - synthesis: net n290 does not have a driver. VDB-1002
-WARNING - synthesis: net n293 does not have a driver. VDB-1002
-WARNING - synthesis: net n296 does not have a driver. VDB-1002
-WARNING - synthesis: net n299 does not have a driver. VDB-1002
-WARNING - synthesis: net n302 does not have a driver. VDB-1002
-WARNING - synthesis: net n305 does not have a driver. VDB-1002
-WARNING - synthesis: net n308 does not have a driver. VDB-1002
-WARNING - synthesis: net n311 does not have a driver. VDB-1002
-WARNING - synthesis: net n314 does not have a driver. VDB-1002
-WARNING - synthesis: net n317 does not have a driver. VDB-1002
-WARNING - synthesis: net n320 does not have a driver. VDB-1002
-WARNING - synthesis: net n323 does not have a driver. VDB-1002
-WARNING - synthesis: net n326 does not have a driver. VDB-1002
-WARNING - synthesis: net n329 does not have a driver. VDB-1002
-WARNING - synthesis: net n332 does not have a driver. VDB-1002
-WARNING - synthesis: net n335 does not have a driver. VDB-1002
-WARNING - synthesis: net n338 does not have a driver. VDB-1002
-WARNING - synthesis: net n341 does not have a driver. VDB-1002
-WARNING - synthesis: net n344 does not have a driver. VDB-1002
-WARNING - synthesis: net n347 does not have a driver. VDB-1002
-WARNING - synthesis: net n350 does not have a driver. VDB-1002
-WARNING - synthesis: net n353 does not have a driver. VDB-1002
-WARNING - synthesis: net n356 does not have a driver. VDB-1002
-WARNING - synthesis: net n359 does not have a driver. VDB-1002
-WARNING - synthesis: net n362 does not have a driver. VDB-1002
-WARNING - synthesis: net n365 does not have a driver. VDB-1002
-WARNING - synthesis: net n368 does not have a driver. VDB-1002
-WARNING - synthesis: net n371 does not have a driver. VDB-1002
-WARNING - synthesis: net n374 does not have a driver. VDB-1002
-WARNING - synthesis: net n377 does not have a driver. VDB-1002
-WARNING - synthesis: net n380 does not have a driver. VDB-1002
-WARNING - synthesis: net n383 does not have a driver. VDB-1002
-WARNING - synthesis: net n386 does not have a driver. VDB-1002
-WARNING - synthesis: net n389 does not have a driver. VDB-1002
-WARNING - synthesis: net n392 does not have a driver. VDB-1002
-WARNING - synthesis: net n395 does not have a driver. VDB-1002
-WARNING - synthesis: net n398 does not have a driver. VDB-1002
-WARNING - synthesis: net n401 does not have a driver. VDB-1002
-######## Missing driver on net n116. Patching with GND.
-######## Missing driver on net n119. Patching with GND.
-######## Missing driver on net n122. Patching with GND.
-######## Missing driver on net n125. Patching with GND.
-######## Missing driver on net n128. Patching with GND.
-######## Missing driver on net n131. Patching with GND.
-######## Missing driver on net n134. Patching with GND.
-######## Missing driver on net n137. Patching with GND.
-######## Missing driver on net n140. Patching with GND.
-######## Missing driver on net n143. Patching with GND.
-######## Missing driver on net n146. Patching with GND.
-######## Missing driver on net n149. Patching with GND.
-######## Missing driver on net n152. Patching with GND.
-######## Missing driver on net n155. Patching with GND.
-######## Missing driver on net n158. Patching with GND.
-######## Missing driver on net n161. Patching with GND.
-######## Missing driver on net n164. Patching with GND.
-######## Missing driver on net n167. Patching with GND.
-######## Missing driver on net n170. Patching with GND.
-######## Missing driver on net n173. Patching with GND.
-######## Missing driver on net n176. Patching with GND.
-######## Missing driver on net n179. Patching with GND.
-######## Missing driver on net n182. Patching with GND.
-######## Missing driver on net n185. Patching with GND.
-######## Missing driver on net n188. Patching with GND.
-######## Missing driver on net n191. Patching with GND.
-######## Missing driver on net n194. Patching with GND.
-######## Missing driver on net n197. Patching with GND.
-######## Missing driver on net n200. Patching with GND.
-######## Missing driver on net n203. Patching with GND.
-######## Missing driver on net n206. Patching with GND.
-######## Missing driver on net n209. Patching with GND.
-######## Missing driver on net n212. Patching with GND.
-######## Missing driver on net n215. Patching with GND.
-######## Missing driver on net n218. Patching with GND.
-######## Missing driver on net n221. Patching with GND.
-######## Missing driver on net n224. Patching with GND.
-######## Missing driver on net n227. Patching with GND.
-######## Missing driver on net n230. Patching with GND.
-######## Missing driver on net n233. Patching with GND.
-######## Missing driver on net n236. Patching with GND.
-######## Missing driver on net n239. Patching with GND.
-######## Missing driver on net n242. Patching with GND.
-######## Missing driver on net n245. Patching with GND.
-######## Missing driver on net n248. Patching with GND.
-######## Missing driver on net n251. Patching with GND.
-######## Missing driver on net n254. Patching with GND.
-######## Missing driver on net n257. Patching with GND.
-######## Missing driver on net n260. Patching with GND.
-######## Missing driver on net n263. Patching with GND.
-######## Missing driver on net n266. Patching with GND.
-######## Missing driver on net n269. Patching with GND.
-######## Missing driver on net n272. Patching with GND.
-######## Missing driver on net n275. Patching with GND.
-######## Missing driver on net n278. Patching with GND.
-######## Missing driver on net n281. Patching with GND.
-######## Missing driver on net n284. Patching with GND.
-######## Missing driver on net n287. Patching with GND.
-######## Missing driver on net n290. Patching with GND.
-######## Missing driver on net n293. Patching with GND.
-######## Missing driver on net n296. Patching with GND.
-######## Missing driver on net n299. Patching with GND.
-######## Missing driver on net n302. Patching with GND.
-######## Missing driver on net n305. Patching with GND.
-######## Missing driver on net n308. Patching with GND.
-######## Missing driver on net n311. Patching with GND.
-######## Missing driver on net n314. Patching with GND.
-######## Missing driver on net n317. Patching with GND.
-######## Missing driver on net n320. Patching with GND.
-######## Missing driver on net n323. Patching with GND.
-######## Missing driver on net n326. Patching with GND.
-######## Missing driver on net n329. Patching with GND.
-######## Missing driver on net n332. Patching with GND.
-######## Missing driver on net n335. Patching with GND.
-######## Missing driver on net n338. Patching with GND.
-######## Missing driver on net n341. Patching with GND.
-######## Missing driver on net n344. Patching with GND.
-######## Missing driver on net n347. Patching with GND.
-######## Missing driver on net n350. Patching with GND.
-######## Missing driver on net n353. Patching with GND.
-######## Missing driver on net n356. Patching with GND.
-######## Missing driver on net n359. Patching with GND.
-######## Missing driver on net n362. Patching with GND.
-######## Missing driver on net n365. Patching with GND.
-######## Missing driver on net n368. Patching with GND.
-######## Missing driver on net n371. Patching with GND.
-######## Missing driver on net n374. Patching with GND.
-######## Missing driver on net n377. Patching with GND.
-######## Missing driver on net n380. Patching with GND.
-######## Missing driver on net n383. Patching with GND.
-######## Missing driver on net n386. Patching with GND.
-######## Missing driver on net n389. Patching with GND.
-######## Missing driver on net n392. Patching with GND.
-######## Missing driver on net n395. Patching with GND.
-######## Missing driver on net n398. Patching with GND.
-######## Missing driver on net n401. Patching with GND.
+WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(55): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: net n1983 does not have a driver. VDB-1002
+WARNING - synthesis: net n1984 does not have a driver. VDB-1002
+WARNING - synthesis: net n1985 does not have a driver. VDB-1002
+WARNING - synthesis: net n1986 does not have a driver. VDB-1002
+WARNING - synthesis: net n1987 does not have a driver. VDB-1002
+WARNING - synthesis: net n1988 does not have a driver. VDB-1002
+WARNING - synthesis: net n1989 does not have a driver. VDB-1002
+WARNING - synthesis: net n1990 does not have a driver. VDB-1002
+WARNING - synthesis: net n1991 does not have a driver. VDB-1002
+WARNING - synthesis: net n1992 does not have a driver. VDB-1002
+WARNING - synthesis: net n1993 does not have a driver. VDB-1002
+WARNING - synthesis: net n1994 does not have a driver. VDB-1002
+WARNING - synthesis: net n1995 does not have a driver. VDB-1002
+WARNING - synthesis: net n1996 does not have a driver. VDB-1002
+WARNING - synthesis: net n1997 does not have a driver. VDB-1002
+WARNING - synthesis: net n1998 does not have a driver. VDB-1002
+WARNING - synthesis: net n1999 does not have a driver. VDB-1002
+WARNING - synthesis: net n2000 does not have a driver. VDB-1002
+WARNING - synthesis: net n2001 does not have a driver. VDB-1002
+WARNING - synthesis: net n2002 does not have a driver. VDB-1002
+WARNING - synthesis: net n2003 does not have a driver. VDB-1002
+WARNING - synthesis: net n2004 does not have a driver. VDB-1002
+WARNING - synthesis: net n2005 does not have a driver. VDB-1002
+WARNING - synthesis: net n2006 does not have a driver. VDB-1002
+WARNING - synthesis: net n2007 does not have a driver. VDB-1002
+WARNING - synthesis: net n2008 does not have a driver. VDB-1002
+WARNING - synthesis: net n2009 does not have a driver. VDB-1002
+WARNING - synthesis: net n2010 does not have a driver. VDB-1002
+WARNING - synthesis: net n2011 does not have a driver. VDB-1002
+WARNING - synthesis: net n2012 does not have a driver. VDB-1002
+WARNING - synthesis: net n2013 does not have a driver. VDB-1002
+WARNING - synthesis: net n2014 does not have a driver. VDB-1002
+WARNING - synthesis: net n2015 does not have a driver. VDB-1002
+WARNING - synthesis: net n2016 does not have a driver. VDB-1002
+WARNING - synthesis: net n2017 does not have a driver. VDB-1002
+WARNING - synthesis: net n2018 does not have a driver. VDB-1002
+WARNING - synthesis: net n2019 does not have a driver. VDB-1002
+WARNING - synthesis: net n2020 does not have a driver. VDB-1002
+WARNING - synthesis: net n2021 does not have a driver. VDB-1002
+WARNING - synthesis: net n2022 does not have a driver. VDB-1002
+WARNING - synthesis: net n2023 does not have a driver. VDB-1002
+WARNING - synthesis: net n2024 does not have a driver. VDB-1002
+WARNING - synthesis: net n2025 does not have a driver. VDB-1002
+WARNING - synthesis: net n2026 does not have a driver. VDB-1002
+WARNING - synthesis: net n2027 does not have a driver. VDB-1002
+WARNING - synthesis: net n2028 does not have a driver. VDB-1002
+WARNING - synthesis: net n2029 does not have a driver. VDB-1002
+WARNING - synthesis: net n2030 does not have a driver. VDB-1002
+WARNING - synthesis: net n2031 does not have a driver. VDB-1002
+WARNING - synthesis: net n2032 does not have a driver. VDB-1002
+WARNING - synthesis: net n2033 does not have a driver. VDB-1002
+WARNING - synthesis: net n2034 does not have a driver. VDB-1002
+WARNING - synthesis: net n2035 does not have a driver. VDB-1002
+WARNING - synthesis: net n2036 does not have a driver. VDB-1002
+WARNING - synthesis: net n2037 does not have a driver. VDB-1002
+WARNING - synthesis: net n2038 does not have a driver. VDB-1002
+WARNING - synthesis: net n2039 does not have a driver. VDB-1002
+WARNING - synthesis: net n2040 does not have a driver. VDB-1002
+WARNING - synthesis: net n2041 does not have a driver. VDB-1002
+WARNING - synthesis: net n2042 does not have a driver. VDB-1002
+WARNING - synthesis: net n2043 does not have a driver. VDB-1002
+WARNING - synthesis: net n2044 does not have a driver. VDB-1002
+WARNING - synthesis: net n2045 does not have a driver. VDB-1002
+WARNING - synthesis: net n2046 does not have a driver. VDB-1002
+######## Converting I/O port PIN_2 to input.
+######## Converting I/O port PIN_4 to input.
+######## Converting I/O port PIN_5 to input.
+######## Converting I/O port PIN_6 to input.
+######## Converting I/O port PIN_7 to input.
+######## Converting I/O port PIN_8 to input.
+######## Converting I/O port PIN_9 to input.
+######## Converting I/O port PIN_10 to input.
+######## Converting I/O port PIN_11 to input.
+######## Converting I/O port PIN_12 to input.
+######## Converting I/O port PIN_13 to input.
+######## Converting I/O port PIN_14 to input.
+######## Converting I/O port PIN_15 to input.
+######## Converting I/O port PIN_16 to input.
+######## Converting I/O port PIN_17 to input.
+######## Converting I/O port PIN_18 to input.
+######## Converting I/O port PIN_19 to input.
+######## Converting I/O port PIN_20 to input.
+######## Converting I/O port PIN_21 to input.
+######## Converting I/O port PIN_22 to input.
+######## Converting I/O port PIN_23 to input.
+######## Converting I/O port PIN_24 to input.
+WARNING - synthesis: net \c0/n1983 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1984 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1985 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1986 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1987 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1988 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1989 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1990 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1991 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1992 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1993 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1994 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1995 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1996 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1997 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1998 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n1999 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2000 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2001 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2002 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2003 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2004 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2005 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2006 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2007 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2008 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2009 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2010 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2011 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2012 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2013 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2014 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2015 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2016 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2017 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2018 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2019 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2020 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2021 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2022 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2023 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2024 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2025 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2026 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2027 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2028 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2029 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2030 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2031 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2032 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2033 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2034 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2035 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2036 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2037 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2038 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2039 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2040 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2041 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2042 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2043 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2044 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2045 does not have a driver. VDB-1002
+WARNING - synthesis: net \c0/n2046 does not have a driver. VDB-1002
+######## Missing driver on net \c0/n1983. Patching with GND.
+######## Missing driver on net \c0/n1984. Patching with GND.
+######## Missing driver on net \c0/n1985. Patching with GND.
+######## Missing driver on net \c0/n1986. Patching with GND.
+######## Missing driver on net \c0/n1987. Patching with GND.
+######## Missing driver on net \c0/n1988. Patching with GND.
+######## Missing driver on net \c0/n1989. Patching with GND.
+######## Missing driver on net \c0/n1990. Patching with GND.
+######## Missing driver on net \c0/n1991. Patching with GND.
+######## Missing driver on net \c0/n1992. Patching with GND.
+######## Missing driver on net \c0/n1993. Patching with GND.
+######## Missing driver on net \c0/n1994. Patching with GND.
+######## Missing driver on net \c0/n1995. Patching with GND.
+######## Missing driver on net \c0/n1996. Patching with GND.
+######## Missing driver on net \c0/n1997. Patching with GND.
+######## Missing driver on net \c0/n1998. Patching with GND.
+######## Missing driver on net \c0/n1999. Patching with GND.
+######## Missing driver on net \c0/n2000. Patching with GND.
+######## Missing driver on net \c0/n2001. Patching with GND.
+######## Missing driver on net \c0/n2002. Patching with GND.
+######## Missing driver on net \c0/n2003. Patching with GND.
+######## Missing driver on net \c0/n2004. Patching with GND.
+######## Missing driver on net \c0/n2005. Patching with GND.
+######## Missing driver on net \c0/n2006. Patching with GND.
+######## Missing driver on net \c0/n2007. Patching with GND.
+######## Missing driver on net \c0/n2008. Patching with GND.
+######## Missing driver on net \c0/n2009. Patching with GND.
+######## Missing driver on net \c0/n2010. Patching with GND.
+######## Missing driver on net \c0/n2011. Patching with GND.
+######## Missing driver on net \c0/n2012. Patching with GND.
+######## Missing driver on net \c0/n2013. Patching with GND.
+######## Missing driver on net \c0/n2014. Patching with GND.
+######## Missing driver on net \c0/n2015. Patching with GND.
+######## Missing driver on net \c0/n2016. Patching with GND.
+######## Missing driver on net \c0/n2017. Patching with GND.
+######## Missing driver on net \c0/n2018. Patching with GND.
+######## Missing driver on net \c0/n2019. Patching with GND.
+######## Missing driver on net \c0/n2020. Patching with GND.
+######## Missing driver on net \c0/n2021. Patching with GND.
+######## Missing driver on net \c0/n2022. Patching with GND.
+######## Missing driver on net \c0/n2023. Patching with GND.
+######## Missing driver on net \c0/n2024. Patching with GND.
+######## Missing driver on net \c0/n2025. Patching with GND.
+######## Missing driver on net \c0/n2026. Patching with GND.
+######## Missing driver on net \c0/n2027. Patching with GND.
+######## Missing driver on net \c0/n2028. Patching with GND.
+######## Missing driver on net \c0/n2029. Patching with GND.
+######## Missing driver on net \c0/n2030. Patching with GND.
+######## Missing driver on net \c0/n2031. Patching with GND.
+######## Missing driver on net \c0/n2032. Patching with GND.
+######## Missing driver on net \c0/n2033. Patching with GND.
+######## Missing driver on net \c0/n2034. Patching with GND.
+######## Missing driver on net \c0/n2035. Patching with GND.
+######## Missing driver on net \c0/n2036. Patching with GND.
+######## Missing driver on net \c0/n2037. Patching with GND.
+######## Missing driver on net \c0/n2038. Patching with GND.
+######## Missing driver on net \c0/n2039. Patching with GND.
+######## Missing driver on net \c0/n2040. Patching with GND.
+######## Missing driver on net \c0/n2041. Patching with GND.
+######## Missing driver on net \c0/n2042. Patching with GND.
+######## Missing driver on net \c0/n2043. Patching with GND.
+######## Missing driver on net \c0/n2044. Patching with GND.
+######## Missing driver on net \c0/n2045. Patching with GND.
+######## Missing driver on net \c0/n2046. Patching with GND.
 
 
 
-Writing scf file : template_Implmnt/template.scf
-
-Writing scf file : template_Implmnt/template.scf
-
-Writing scf file : template_Implmnt/template.scf
-
-Writing scf file : template_Implmnt/template.scf
+WARNING - synthesis: Skipping pad insertion on PIN_1 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on PIN_3 due to black_box_pad_pin attribute.
+WARNING - synthesis: Initial value found on instance \c0/tx/r_Tx_Done_44 will be ignored.
+WARNING - synthesis: Initial value found on instance \c0/tx2/r_Tx_Done_44 will be ignored.
+Applying 1.000000 MHz constraint to all clocks
 
 Writing scf file : template_Implmnt/template.scf
 
 Results of NGD DRC are available in TinyFPGA_B_drc.log.
 
 ################### Begin Area Report (TinyFPGA_B)######################
-Number of register bits => 112 of 7680 (1 % )
-SB_CARRY => 2952
-SB_DFF => 112
+Number of register bits => 334 of 7680 (4 % )
+SB_CARRY => 79
+SB_DFF => 319
+SB_DFFE => 11
+SB_DFFESR => 3
+SB_DFFSR => 1
 SB_GB_IO => 1
-SB_IO => 20
-SB_LUT4 => 4293
+SB_IO => 5
+SB_LUT4 => 674
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : pin3_clk_16mhz_N, loads : 111
+  Net : CLK_c, loads : 334
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : foc/u_DQ_Current_Control/u_Q_Current_Control/u_Saturate_Output/Out_31__N_333, loads : 158
-  Net : foc/u_DQ_Current_Control/u_Q_Current_Control/u_Saturate_Output/Out_31__N_332, loads : 158
-  Net : foc/u_DQ_Current_Control/u_D_Current_Control/u_Saturate_Output/Out_31__N_333, loads : 158
-  Net : foc/u_DQ_Current_Control/u_D_Current_Control/u_Saturate_Output/Out_31__N_332, loads : 158
-  Net : foc/u_Sine_Cosine/u_Sine_Cosine_LUT/n2652, loads : 64
-  Net : foc/u_Park_Transform/n604, loads : 60
-  Net : foc/u_Park_Transform/n598, loads : 60
-  Net : foc/u_Park_Transform/n592, loads : 60
-  Net : foc/u_Park_Transform/n610, loads : 60
-  Net : foc/u_Park_Transform/n607, loads : 60
+  Net : c0/FRAME_MATCHER.wait_for_transmission, loads : 68
+  Net : c0/n1197, loads : 65
+  Net : c0/rx/rx_data_ready, loads : 63
+  Net : c0/n3580, loads : 57
+  Net : c0/n7_adj_886, loads : 54
+  Net : c0/byte_transmit_counter2_0, loads : 35
+  Net : c0/tx/r_SM_Main_2, loads : 34
+  Net : c0/byte_transmit_counter_0, loads : 30
+  Net : c0/tx2/r_SM_Main_2, loads : 26
+  Net : c0/byte_transmit_counter2_2, loads : 18
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -595,19 +388,17 @@ Timing Report Summary
 Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
-create_clock -period 62.500000          |             |             |
--waveform { 0.000000 31.250000 } -name  |             |             |
-pin3_clk_16mhz [ get_ports {            |             |             |
-pin3_clk_16mhz } ]                      |   16.000 MHz|    4.185 MHz|   154 *
+create_clock -period 1000.000000 -name  |             |             |
+clk0 [get_nets CLK_c]                   |    1.000 MHz|   23.698 MHz|    27  
                                         |             |             |
 --------------------------------------------------------------------------------
 
 
-1 constraints not met.
+All constraints were met.
 
 
-Peak Memory Usage: 249.695  MB
+Peak Memory Usage: 163.230  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 13.411  secs
+Elapsed CPU time for LSE flow : 1.145  secs
 --------------------------------------------------------------

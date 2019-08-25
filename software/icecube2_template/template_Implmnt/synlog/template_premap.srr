@@ -1,4 +1,4 @@
-# Sat Aug 24 13:41:32 2019
+# Sun Aug 25 21:15:04 2019
 
 Synopsys Lattice Technology Pre-mapping, Version maplat, Build 1612R, Built Dec  5 2016 09:30:53
 Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -6,85 +6,88 @@ Product Version L-2016.09L+ice40
 
 Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 100MB)
 
-@A: MF827 |No constraint file specified.
+Reading constraint file: /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc
 @L: /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/template_scck.rpt 
-Printing clock  summary report in "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/template_scck.rpt" file 
+@W: MF499 |Found issues with constraints. Please check report file /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/template_scck.rpt.
 @N: MF248 |Running in 64-bit mode.
 @N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 102MB peak: 104MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 102MB peak: 104MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
+
+Adding property syn_insert_buffer, value "B4", to port CLK
+Adding property syn_insert_buffer, value "B3", to port LED
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 102MB peak: 103MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 103MB peak: 104MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 102MB peak: 105MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 103MB peak: 105MB)
-
-@N: MO111 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":40:9:40:15|Tristate driver SPI_SCK (in view: work.top(verilog)) on net SPI_SCK (in view: work.top(verilog)) has its enable tied to GND.
-@N: MO111 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":39:9:39:14|Tristate driver SPI_SS (in view: work.top(verilog)) on net SPI_SS (in view: work.top(verilog)) has its enable tied to GND.
-@W: MO129 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Sequential instance tx_data_frame_0_[3] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Sequential instance tx_data_frame_0_[5] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":221:2:221:7|Sequential instance tx_data_frame_0_[7] is reduced to a combinational gate by constant propagation.
-@N: BN115 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v":200:0:200:8|Removing instance lfsr_inst (in view: work.lfsr_crc_1(verilog)) of type view:work.lfsr_16s_7607_GALOIS_0s_1s_128s_AUTO_LOOP_0(verilog) because it does not drive other instances.
-@N: BN115 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v":200:0:200:8|Removing instance lfsr_inst (in view: work.lfsr_crc_0(verilog)) of type view:work.lfsr_16s_7607_GALOIS_0s_1s_128s_AUTO_LOOP_1(verilog) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v":207:0:207:5|Removing sequential instance state_reg[15:0] (in view: work.lfsr_crc_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v":207:0:207:5|Removing sequential instance state_reg[15:0] (in view: work.lfsr_crc_0(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_0_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_1_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_2_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_3_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_4_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_5_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_6_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_7_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_8_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_9_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_10_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_11_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_12_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_13_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_14_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":217:10:217:11|Removing sequential instance rx_data_frame_15_[7:0] (in view: work.top(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
 ICG Latch Removal Summary:
 Number of ICG latches removed:	0
 Number of ICG latches not removed:	0
 syn_allowed_resources : blockrams=32  set on top level netlist top
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 134MB peak: 135MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 133MB peak: 134MB)
 
 
 
 Clock Summary
 *****************
 
-Start       Requested     Requested     Clock        Clock                     Clock
-Clock       Frequency     Period        Type         Group                     Load 
-------------------------------------------------------------------------------------
-top|CLK     144.2 MHz     6.935         inferred     Autoconstr_clkgroup_0     177  
-====================================================================================
-
-@W: MT529 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v":16:2:16:7|Found inferred clock top|CLK which controls 177 sequential elements including quad_counter0.count[31:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+Start      Requested     Requested     Clock        Clock                Clock
+Clock      Frequency     Period        Type         Group                Load 
+------------------------------------------------------------------------------
+CLK        16.0 MHz      62.500        declared     default_clkgroup     326  
+System     1.0 MHz       1000.000      system       system_clkgroup      0    
+==============================================================================
 
 Finished Pre Mapping Phase.
-@N: MO111 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":40:9:40:15|Tristate driver SPI_SCK (in view: work.top(verilog)) on net SPI_SCK (in view: work.top(verilog)) has its enable tied to GND.
-@N: MO111 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":39:9:39:14|Tristate driver SPI_SS (in view: work.top(verilog)) on net SPI_SS (in view: work.top(verilog)) has its enable tied to GND.
 @N: BN225 |Writing default property annotation file /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/template.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 134MB peak: 135MB)
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
 
+Found Transition to recovery state 0 from every state
+Encoding state machine r_SM_Main[4:0] (in view: work.uart_tx_1(verilog))
+original code -> new code
+   000 -> 00001
+   001 -> 00010
+   010 -> 00100
+   011 -> 01000
+   100 -> 10000
+@N: MO222 |Using Safe Case FSMs technique,FSM error recovery to default state is enabled for r_SM_Main[4:0] 
+Found Transition to recovery state 0 from every state
+Encoding state machine r_SM_Main[4:0] (in view: work.uart_rx(verilog))
+original code -> new code
+   000 -> 00001
+   001 -> 00010
+   010 -> 00100
+   011 -> 01000
+   100 -> 10000
+@N: MO222 |Using Safe Case FSMs technique,FSM error recovery to default state is enabled for r_SM_Main[4:0] 
+Found Transition to recovery state 0 from every state
+Encoding state machine r_SM_Main[4:0] (in view: work.uart_tx_0(verilog))
+original code -> new code
+   000 -> 00001
+   001 -> 00010
+   010 -> 00100
+   011 -> 01000
+   100 -> 10000
+@N: MO222 |Using Safe Case FSMs technique,FSM error recovery to default state is enabled for r_SM_Main[4:0] 
 None
 None
+@W: MF511 |Found issues with constraints. Please check constraint checker report "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/template_cck.rpt" .
 
 Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 134MB peak: 135MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 49MB peak: 135MB)
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 50MB peak: 135MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Sat Aug 24 13:41:32 2019
+# Sun Aug 25 21:15:05 2019
 
 ###########################################################]

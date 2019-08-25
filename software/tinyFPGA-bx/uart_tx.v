@@ -11,7 +11,7 @@
 // Example: 10 MHz Clock, 115200 baud UART
 // (10000000)/(115200) = 87
 
-module uart_tx 
+module uart_tx
   (
    input       i_Clock,
    input       i_Tx_DV,
@@ -20,7 +20,7 @@ module uart_tx
    output reg  o_Tx_Serial,
    output      o_Tx_Done
    );
-  localparam CLKS_PER_BIT   = 139; // at 16MHz this is 115200 baudrate
+  localparam CLKS_PER_BIT   = 16; // 139 at 16MHz this is 115200 baudrate
   localparam s_IDLE         = 3'b000;
   localparam s_TX_START_BIT = 3'b001;
   localparam s_TX_DATA_BITS = 3'b010;
@@ -40,7 +40,7 @@ module uart_tx
       case (r_SM_Main)
         s_IDLE :
           begin
-            o_Tx_Serial   <= 1'b1;         // Drive Line High for Idle
+            o_Tx_Serial   <= 1'bz;         // Drive Line High for Idle
             r_Tx_Done     <= 1'b0;
             r_Clock_Count <= 0;
             r_Bit_Index   <= 0;
@@ -78,7 +78,7 @@ module uart_tx
         // Wait CLKS_PER_BIT-1 clock cycles for data bits to finish
         s_TX_DATA_BITS :
           begin
-            o_Tx_Serial <= r_Tx_Data[r_Bit_Index];
+            o_Tx_Serial <= r_Tx_Data[r_Bit_Index]?1'bz:0;
 
             if (r_Clock_Count < CLKS_PER_BIT-1)
               begin
@@ -107,7 +107,7 @@ module uart_tx
         // Send out Stop bit.  Stop bit = 1
         s_TX_STOP_BIT :
           begin
-            o_Tx_Serial <= 1'b1;
+            o_Tx_Serial <= 1'bz;
 
             // Wait CLKS_PER_BIT-1 clock cycles for Stop bit to finish
             if (r_Clock_Count < CLKS_PER_BIT-1)

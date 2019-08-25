@@ -6,9 +6,9 @@
 add_file -verilog "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v"
 add_file -verilog "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v"
 add_file -verilog "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v"
-add_file -verilog "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr.v"
-add_file -verilog "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog-lfsr/rtl/lfsr_crc.v"
 add_file -verilog "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v"
+add_file -verilog "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v"
+add_file -fpga_constraint "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc"
 
 
 
@@ -22,6 +22,10 @@ set_option -vlog_std v2001
 set_option -project_relative_includes 1
 set_option -include_path {/home/letrend/workspace/bldc_motorboard/software/icecube2_template/}
 
+#pr_2 attributes
+set_option -job pr_2 -add par
+set_option -job pr_2 -option enable_run 1
+
 #device options
 set_option -technology SBTiCE40
 set_option -part iCE40LP8K
@@ -30,6 +34,7 @@ set_option -speed_grade ""
 set_option -part_companion ""
 
 #compilation/mapping options
+set_option -top_module "top"
 
 # hdl_compiler_options
 set_option -distributed_compile 0
@@ -61,6 +66,7 @@ set_option -symbolic_fsm_compiler 1
 # Compiler Options
 set_option -compiler_compatible 0
 set_option -resource_sharing 1
+set_option -safe_case 1
 
 # Compiler Options
 set_option -auto_infer_blackbox 0
