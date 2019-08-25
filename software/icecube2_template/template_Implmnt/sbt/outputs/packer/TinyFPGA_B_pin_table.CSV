@@ -6,7 +6,7 @@
 
 * Build Date:         Sep 12 2017 08:02:28
 
-* File Generated:     Aug 26 2019 00:03:36
+* File Generated:     Aug 26 2019 01:17:13
 
 * Purpose:            Detailed IO and package pin info
 
@@ -19,7 +19,7 @@ Package, CM81
 
 Pin Number, Pin Type Name, Signal Name, Direction, Global Buffer, IO Standard, Pull Up, IO Function, IO Bank, 
 ---------------, ---------------, ---------------, ---------------, ---------------, ---------------, ---------------, ---------------, ---------------, 
-A1, PIO, PIN_2, Input, , SB_LVCMOS, No Pull Up, Simple Input, topBank
+A1, PIO, PIN_2, InOut, , SB_LVCMOS, Pull Up, Input Registered No Output, topBank
 A2, PIO, PIN_1, Output, , SB_LVCMOS, Pull Up, Output Tristatable by Enable, topBank
 A3, PIO, USBPU, Output, , SB_LVCMOS, No Pull Up, Simple Output, topBank
 A4, PIO, not used, , , , , , topBank

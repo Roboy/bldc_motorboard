@@ -69,14 +69,20 @@ module top (
     .PACKAGE_PIN(PIN_1),
     .D_IN_0(tx_o)
   );
-
-  // PULLUP for UART transmitters
   SB_IO #(
     .PIN_TYPE(6'b 0000_01),
     .PULLUP(1'b 1)
   ) tx2_output(
     .PACKAGE_PIN(PIN_3),
     .D_IN_0(tx2_o) 
+  );
+  // PULLUP for UART receivers
+  SB_IO #(
+    .PIN_TYPE(6'b 0000_01),
+    .PULLUP(1'b 1)
+  ) tx2_output(
+    .PACKAGE_PIN(PIN_2),
+    .D_IN_0(rx_i) 
   );
 
   // assign tx_o = PIN_1;

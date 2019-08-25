@@ -1,6 +1,6 @@
 OUTPUT USBPU 	 location (6, 33, 0) 	 A3 	 SB_LVCMOS
 INOUT PIN_3 	 location (0, 28, 1) 	 B1 	 SB_LVCMOS
-INPUT  PIN_2 	 location (2, 33, 1) 	 A1 	 SB_LVCMOS
+INOUT PIN_2 	 location (2, 33, 1) 	 A1 	 SB_LVCMOS
 INOUT PIN_1 	 location (4, 33, 0) 	 A2 	 SB_LVCMOS
 OUTPUT LED 	 location (5, 33, 1) 	 B3 	 SB_LVCMOS
 INPUT  CLK 	 location (0, 30, 0) 	 B2 	 SB_LVCMOS

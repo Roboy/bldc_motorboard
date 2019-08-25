@@ -3,7 +3,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Aug 26 00:02:59 2019
+Mon Aug 26 01:16:33 2019
 
 
 Command Line:  /home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f template_lse.prj 
@@ -83,7 +83,7 @@ Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
 Analyzing Verilog file roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v. VERI-1482
 Analyzing Verilog file roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v. VERI-1482
 Analyzing Verilog file coms.v. VERI-1482
-WARNING - synthesis: coms.v(113): identifier data_in_frame is used before its declaration. VERI-1875
+WARNING - synthesis: coms.v(116): identifier data_in_frame is used before its declaration. VERI-1875
 Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
@@ -99,94 +99,32 @@ WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTH
 Top module name (Verilog): TinyFPGA_B
 INFO - synthesis: verilog/TinyFPGA_B.v(2): compiling module TinyFPGA_B. VERI-1018
 INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b101001,PULLUP=1'b1). VERI-1018
-WARNING - synthesis: verilog/TinyFPGA_B.v(65): expression size 32 truncated to fit in target size 26. VERI-1209
+INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b01,PULLUP=1'b1). VERI-1018
+WARNING - synthesis: verilog/TinyFPGA_B.v(71): expression size 32 truncated to fit in target size 26. VERI-1209
 INFO - synthesis: coms.v(1): compiling module coms. VERI-1018
 INFO - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(14): compiling module uart_tx. VERI-1018
 WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(70): expression size 32 truncated to fit in target size 9. VERI-1209
 WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
 WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
-WARNING - synthesis: coms.v(123): expression size 32 truncated to fit in target size 16. VERI-1209
-WARNING - synthesis: coms.v(125): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: coms.v(145): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(126): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING - synthesis: coms.v(128): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(160): expression size 32 truncated to fit in target size 11. VERI-1209
 INFO - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(14): compiling module uart_rx. VERI-1018
 WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: coms.v(197): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(212): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(55): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/xo2c00/data/xo2clib.ngl'...
 Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/or5g00/data/orc5glib.ngl'...
 Top-level module name = TinyFPGA_B.
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(55): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: net n1983 does not have a driver. VDB-1002
-WARNING - synthesis: net n1984 does not have a driver. VDB-1002
-WARNING - synthesis: net n1985 does not have a driver. VDB-1002
-WARNING - synthesis: net n1986 does not have a driver. VDB-1002
-WARNING - synthesis: net n1987 does not have a driver. VDB-1002
-WARNING - synthesis: net n1988 does not have a driver. VDB-1002
-WARNING - synthesis: net n1989 does not have a driver. VDB-1002
-WARNING - synthesis: net n1990 does not have a driver. VDB-1002
-WARNING - synthesis: net n1991 does not have a driver. VDB-1002
-WARNING - synthesis: net n1992 does not have a driver. VDB-1002
-WARNING - synthesis: net n1993 does not have a driver. VDB-1002
-WARNING - synthesis: net n1994 does not have a driver. VDB-1002
-WARNING - synthesis: net n1995 does not have a driver. VDB-1002
-WARNING - synthesis: net n1996 does not have a driver. VDB-1002
-WARNING - synthesis: net n1997 does not have a driver. VDB-1002
-WARNING - synthesis: net n1998 does not have a driver. VDB-1002
-WARNING - synthesis: net n1999 does not have a driver. VDB-1002
-WARNING - synthesis: net n2000 does not have a driver. VDB-1002
-WARNING - synthesis: net n2001 does not have a driver. VDB-1002
-WARNING - synthesis: net n2002 does not have a driver. VDB-1002
-WARNING - synthesis: net n2003 does not have a driver. VDB-1002
-WARNING - synthesis: net n2004 does not have a driver. VDB-1002
-WARNING - synthesis: net n2005 does not have a driver. VDB-1002
-WARNING - synthesis: net n2006 does not have a driver. VDB-1002
-WARNING - synthesis: net n2007 does not have a driver. VDB-1002
-WARNING - synthesis: net n2008 does not have a driver. VDB-1002
-WARNING - synthesis: net n2009 does not have a driver. VDB-1002
-WARNING - synthesis: net n2010 does not have a driver. VDB-1002
-WARNING - synthesis: net n2011 does not have a driver. VDB-1002
-WARNING - synthesis: net n2012 does not have a driver. VDB-1002
-WARNING - synthesis: net n2013 does not have a driver. VDB-1002
-WARNING - synthesis: net n2014 does not have a driver. VDB-1002
-WARNING - synthesis: net n2015 does not have a driver. VDB-1002
-WARNING - synthesis: net n2016 does not have a driver. VDB-1002
-WARNING - synthesis: net n2017 does not have a driver. VDB-1002
-WARNING - synthesis: net n2018 does not have a driver. VDB-1002
-WARNING - synthesis: net n2019 does not have a driver. VDB-1002
-WARNING - synthesis: net n2020 does not have a driver. VDB-1002
-WARNING - synthesis: net n2021 does not have a driver. VDB-1002
-WARNING - synthesis: net n2022 does not have a driver. VDB-1002
-WARNING - synthesis: net n2023 does not have a driver. VDB-1002
-WARNING - synthesis: net n2024 does not have a driver. VDB-1002
-WARNING - synthesis: net n2025 does not have a driver. VDB-1002
-WARNING - synthesis: net n2026 does not have a driver. VDB-1002
-WARNING - synthesis: net n2027 does not have a driver. VDB-1002
-WARNING - synthesis: net n2028 does not have a driver. VDB-1002
-WARNING - synthesis: net n2029 does not have a driver. VDB-1002
-WARNING - synthesis: net n2030 does not have a driver. VDB-1002
-WARNING - synthesis: net n2031 does not have a driver. VDB-1002
-WARNING - synthesis: net n2032 does not have a driver. VDB-1002
-WARNING - synthesis: net n2033 does not have a driver. VDB-1002
-WARNING - synthesis: net n2034 does not have a driver. VDB-1002
-WARNING - synthesis: net n2035 does not have a driver. VDB-1002
-WARNING - synthesis: net n2036 does not have a driver. VDB-1002
-WARNING - synthesis: net n2037 does not have a driver. VDB-1002
-WARNING - synthesis: net n2038 does not have a driver. VDB-1002
-WARNING - synthesis: net n2039 does not have a driver. VDB-1002
-WARNING - synthesis: net n2040 does not have a driver. VDB-1002
-WARNING - synthesis: net n2041 does not have a driver. VDB-1002
-WARNING - synthesis: net n2042 does not have a driver. VDB-1002
-WARNING - synthesis: net n2043 does not have a driver. VDB-1002
-WARNING - synthesis: net n2044 does not have a driver. VDB-1002
-WARNING - synthesis: net n2045 does not have a driver. VDB-1002
-WARNING - synthesis: net n2046 does not have a driver. VDB-1002
-######## Converting I/O port PIN_2 to input.
+WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 ######## Converting I/O port PIN_4 to input.
 ######## Converting I/O port PIN_5 to input.
 ######## Converting I/O port PIN_6 to input.
@@ -208,141 +146,141 @@ WARNING - synthesis: net n2046 does not have a driver. VDB-1002
 ######## Converting I/O port PIN_22 to input.
 ######## Converting I/O port PIN_23 to input.
 ######## Converting I/O port PIN_24 to input.
-WARNING - synthesis: net \c0/n1983 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1984 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1985 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1986 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1987 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1988 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1989 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1990 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1991 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1992 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1993 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1994 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1995 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1996 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1997 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1998 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n1999 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2000 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2001 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2002 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2003 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2004 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2005 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2006 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2007 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2008 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2009 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2010 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2011 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2012 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2013 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2014 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2015 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2016 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2017 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2018 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2019 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2020 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2021 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2022 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2023 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2024 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2025 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2026 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2027 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2028 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2029 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2030 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2031 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2032 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2033 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2034 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2035 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2036 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2037 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2038 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2039 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2040 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2041 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2042 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2043 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2044 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2045 does not have a driver. VDB-1002
-WARNING - synthesis: net \c0/n2046 does not have a driver. VDB-1002
-######## Missing driver on net \c0/n1983. Patching with GND.
-######## Missing driver on net \c0/n1984. Patching with GND.
-######## Missing driver on net \c0/n1985. Patching with GND.
-######## Missing driver on net \c0/n1986. Patching with GND.
-######## Missing driver on net \c0/n1987. Patching with GND.
-######## Missing driver on net \c0/n1988. Patching with GND.
-######## Missing driver on net \c0/n1989. Patching with GND.
-######## Missing driver on net \c0/n1990. Patching with GND.
-######## Missing driver on net \c0/n1991. Patching with GND.
-######## Missing driver on net \c0/n1992. Patching with GND.
-######## Missing driver on net \c0/n1993. Patching with GND.
-######## Missing driver on net \c0/n1994. Patching with GND.
-######## Missing driver on net \c0/n1995. Patching with GND.
-######## Missing driver on net \c0/n1996. Patching with GND.
-######## Missing driver on net \c0/n1997. Patching with GND.
-######## Missing driver on net \c0/n1998. Patching with GND.
-######## Missing driver on net \c0/n1999. Patching with GND.
-######## Missing driver on net \c0/n2000. Patching with GND.
-######## Missing driver on net \c0/n2001. Patching with GND.
-######## Missing driver on net \c0/n2002. Patching with GND.
-######## Missing driver on net \c0/n2003. Patching with GND.
-######## Missing driver on net \c0/n2004. Patching with GND.
-######## Missing driver on net \c0/n2005. Patching with GND.
-######## Missing driver on net \c0/n2006. Patching with GND.
-######## Missing driver on net \c0/n2007. Patching with GND.
-######## Missing driver on net \c0/n2008. Patching with GND.
-######## Missing driver on net \c0/n2009. Patching with GND.
-######## Missing driver on net \c0/n2010. Patching with GND.
-######## Missing driver on net \c0/n2011. Patching with GND.
-######## Missing driver on net \c0/n2012. Patching with GND.
-######## Missing driver on net \c0/n2013. Patching with GND.
-######## Missing driver on net \c0/n2014. Patching with GND.
-######## Missing driver on net \c0/n2015. Patching with GND.
-######## Missing driver on net \c0/n2016. Patching with GND.
-######## Missing driver on net \c0/n2017. Patching with GND.
-######## Missing driver on net \c0/n2018. Patching with GND.
-######## Missing driver on net \c0/n2019. Patching with GND.
-######## Missing driver on net \c0/n2020. Patching with GND.
-######## Missing driver on net \c0/n2021. Patching with GND.
-######## Missing driver on net \c0/n2022. Patching with GND.
-######## Missing driver on net \c0/n2023. Patching with GND.
-######## Missing driver on net \c0/n2024. Patching with GND.
-######## Missing driver on net \c0/n2025. Patching with GND.
-######## Missing driver on net \c0/n2026. Patching with GND.
-######## Missing driver on net \c0/n2027. Patching with GND.
-######## Missing driver on net \c0/n2028. Patching with GND.
-######## Missing driver on net \c0/n2029. Patching with GND.
-######## Missing driver on net \c0/n2030. Patching with GND.
-######## Missing driver on net \c0/n2031. Patching with GND.
-######## Missing driver on net \c0/n2032. Patching with GND.
-######## Missing driver on net \c0/n2033. Patching with GND.
-######## Missing driver on net \c0/n2034. Patching with GND.
-######## Missing driver on net \c0/n2035. Patching with GND.
-######## Missing driver on net \c0/n2036. Patching with GND.
-######## Missing driver on net \c0/n2037. Patching with GND.
-######## Missing driver on net \c0/n2038. Patching with GND.
-######## Missing driver on net \c0/n2039. Patching with GND.
-######## Missing driver on net \c0/n2040. Patching with GND.
-######## Missing driver on net \c0/n2041. Patching with GND.
-######## Missing driver on net \c0/n2042. Patching with GND.
-######## Missing driver on net \c0/n2043. Patching with GND.
-######## Missing driver on net \c0/n2044. Patching with GND.
-######## Missing driver on net \c0/n2045. Patching with GND.
-######## Missing driver on net \c0/n2046. Patching with GND.
 
 
 
+WARNING - synthesis: Bit 16 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 17 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 18 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 19 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 20 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 21 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 22 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 23 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 24 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 25 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 26 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 27 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 28 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 29 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 30 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 31 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 32 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 33 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 34 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 35 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 36 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 37 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 38 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 39 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 40 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 41 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 42 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 43 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 44 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 45 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 46 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 47 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 48 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 49 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 50 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 51 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 52 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 53 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 54 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 55 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 56 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 57 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 58 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 59 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 60 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 61 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 62 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 63 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 80 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 81 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 82 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 83 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 84 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 85 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 86 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 87 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 88 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 89 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 90 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 91 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 92 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 93 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 94 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 95 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 96 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 97 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 98 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 99 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 100 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 101 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 102 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 103 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 104 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 105 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 106 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 107 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 108 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 109 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 110 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 111 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 112 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 113 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 114 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 115 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 116 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 117 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 118 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 119 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 120 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 121 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 122 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 123 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 124 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 125 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 126 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 127 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 128 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 129 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 130 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 131 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 132 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 133 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 134 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 135 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 136 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 137 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 138 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 139 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 140 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 141 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 142 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 143 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 144 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 145 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 146 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 147 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 148 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 149 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 150 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 151 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 152 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 153 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 154 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 155 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 156 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 157 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 158 of Register \c0/data_out[0] is stuck at One
+WARNING - synthesis: Bit 159 of Register \c0/data_out[0] is stuck at Zero
 WARNING - synthesis: Skipping pad insertion on PIN_1 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on PIN_2 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_3 due to black_box_pad_pin attribute.
 WARNING - synthesis: Initial value found on instance \c0/tx/r_Tx_Done_44 will be ignored.
-WARNING - synthesis: Initial value found on instance \c0/tx2/r_Tx_Done_44 will be ignored.
 Applying 1.000000 MHz constraint to all clocks
 
 Writing scf file : template_Implmnt/template.scf
@@ -350,36 +288,35 @@ Writing scf file : template_Implmnt/template.scf
 Results of NGD DRC are available in TinyFPGA_B_drc.log.
 
 ################### Begin Area Report (TinyFPGA_B)######################
-Number of register bits => 334 of 7680 (4 % )
-SB_CARRY => 79
-SB_DFF => 319
-SB_DFFE => 11
-SB_DFFESR => 3
-SB_DFFSR => 1
+Number of register bits => 498 of 7680 (6 % )
+SB_CARRY => 84
+SB_DFF => 466
+SB_DFFE => 21
+SB_DFFESR => 11
 SB_GB_IO => 1
 SB_IO => 5
-SB_LUT4 => 674
+SB_LUT4 => 991
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : CLK_c, loads : 334
+  Net : CLK_c, loads : 498
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : c0/FRAME_MATCHER.wait_for_transmission, loads : 68
-  Net : c0/n1197, loads : 65
-  Net : c0/rx/rx_data_ready, loads : 63
-  Net : c0/n3580, loads : 57
-  Net : c0/n7_adj_886, loads : 54
-  Net : c0/byte_transmit_counter2_0, loads : 35
-  Net : c0/tx/r_SM_Main_2, loads : 34
-  Net : c0/byte_transmit_counter_0, loads : 30
-  Net : c0/tx2/r_SM_Main_2, loads : 26
-  Net : c0/byte_transmit_counter2_2, loads : 18
+  Net : c0/FRAME_MATCHER.wait_for_transmission, loads : 164
+  Net : c0/n1729, loads : 161
+  Net : c0/rx/rx_data_ready, loads : 159
+  Net : c0/byte_transmit_counter2_1, loads : 83
+  Net : c0/byte_transmit_counter2_0, loads : 43
+  Net : c0/byte_transmit_counter_0, loads : 22
+  Net : c0/tx/r_SM_Main_2, loads : 20
+  Net : c0/n4333, loads : 19
+  Net : c0/byte_transmit_counter2_3, loads : 19
+  Net : c0/n21_adj_1883, loads : 18
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -397,8 +334,8 @@ clk0 [get_nets CLK_c]                   |    1.000 MHz|   23.698 MHz|    27
 All constraints were met.
 
 
-Peak Memory Usage: 163.230  MB
+Peak Memory Usage: 172.047  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 1.145  secs
+Elapsed CPU time for LSE flow : 1.881  secs
 --------------------------------------------------------------

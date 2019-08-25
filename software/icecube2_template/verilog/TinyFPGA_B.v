@@ -31,7 +31,7 @@ module TinyFPGA_B (
   // drive USB pull-up resistor to '0' to disable USB
   assign USBPU = 0;
 
-  wire tx_o, tx2_o, tx_enable, tx2_enable;
+  wire tx_o, tx2_o, tx_enable, tx2_enable, rx_i;
   //assign PIN_1 = tx_o;
   //assign PIN_3 = tx2_o;
   // PULLUP for UART transmitters
@@ -43,8 +43,6 @@ module TinyFPGA_B (
     .D_OUT_0(tx_o),
     .OUTPUT_ENABLE(tx_enable)
   );
-
-  // PULLUP for UART transmitters
   SB_IO #(
     .PIN_TYPE(6'b101001),
     .PULLUP(1'b1)
@@ -52,6 +50,14 @@ module TinyFPGA_B (
     .PACKAGE_PIN(PIN_3),
     .D_OUT_0(tx2_o),
     .OUTPUT_ENABLE(tx2_enable)
+  );
+  // PULLUP for UART receiver
+  SB_IO #(
+     .PIN_TYPE(6'b 0000_01),
+     .PULLUP(1'b 1)
+  ) rx_input(
+     .PACKAGE_PIN(PIN_2),
+     .D_IN_0(rx_i)
   );
 
   // keep track of time and location in blink_pattern
@@ -74,7 +80,7 @@ module TinyFPGA_B (
 	.tx_enable(tx_enable),
   	.tx2_o(tx2_o),
 	.tx2_enable(tx2_enable),
-  	.rx_i(PIN_2)
+  	.rx_i(rx_i)
   );
 
 endmodule
