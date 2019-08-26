@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 2
+Sheet 3 3
 Title "BLDC_MotorBoard"
 Date ""
 Rev ""
@@ -328,30 +328,12 @@ F 3 "~" H 1400 6100 50  0001 C CNN
 	1    1400 6100
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C?
-U 1 1 5D13A2CB
-P 900 6100
-AR Path="/5D13A2CB" Ref="C?"  Part="1" 
-AR Path="/5D0530DE/5D13A2CB" Ref="C1"  Part="1" 
-F 0 "C1" H 1015 6146 50  0000 L CNN
-F 1 "10uF" H 1015 6055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 938 5950 50  0001 C CNN
-F 3 "~" H 900 6100 50  0001 C CNN
-	1    900  6100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	900  5550 900  5950
 Wire Wire Line
 	900  5550 1150 5550
 Wire Wire Line
-	900  6250 900  6350
-Wire Wire Line
-	900  6350 1400 6350
-Wire Wire Line
 	1400 6250 1400 6350
-Connection ~ 1400 6350
 Wire Wire Line
 	1400 6350 2100 6350
 Wire Wire Line
@@ -466,20 +448,6 @@ F 3 "" H 3600 5300 50  0001 C CNN
 	1    3600 5300
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:+36V #PWR?
-U 1 1 5D13A311
-P 900 6350
-AR Path="/5D13A311" Ref="#PWR?"  Part="1" 
-AR Path="/5D0530DE/5D13A311" Ref="#PWR0102"  Part="1" 
-F 0 "#PWR0102" H 900 6200 50  0001 C CNN
-F 1 "+36V" V 915 6478 50  0000 L CNN
-F 2 "" H 900 6350 50  0001 C CNN
-F 3 "" H 900 6350 50  0001 C CNN
-	1    900  6350
-	0    -1   -1   0   
-$EndComp
-Connection ~ 900  6350
 Wire Wire Line
 	3150 6450 3000 6450
 Wire Wire Line
@@ -761,37 +729,6 @@ Text Label 8950 4500 2    50   ~ 0
 SNC
 Text Label 8900 1900 2    50   ~ 0
 SHC
-Text Label 7100 2150 0    50   ~ 0
-PH1
-Text Label 9050 2150 0    50   ~ 0
-PH2
-Text Label 10800 2150 0    50   ~ 0
-PH3
-$Comp
-L Connector:Conn_01x03_Female J?
-U 1 1 5D46B6CF
-P 10500 6200
-AR Path="/5D46B6CF" Ref="J?"  Part="1" 
-AR Path="/5D0530DE/5D46B6CF" Ref="J1"  Part="1" 
-F 0 "J1" H 10528 6226 50  0000 L CNN
-F 1 "PHASES" H 10528 6135 50  0000 L CNN
-F 2 "custom_lib:Wago_2060_3_SMD" H 10500 6200 50  0001 C CNN
-F 3 "~" H 10500 6200 50  0001 C CNN
-	1    10500 6200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10300 6100 10050 6100
-Wire Wire Line
-	10300 6200 10050 6200
-Wire Wire Line
-	10300 6300 10050 6300
-Text Label 10050 6300 2    50   ~ 0
-PH1
-Text Label 10050 6200 2    50   ~ 0
-PH2
-Text Label 10050 6100 2    50   ~ 0
-PH3
 $Comp
 L Connector:Conn_01x02_Female J3
 U 1 1 5D4AC6D4
@@ -1245,4 +1182,42 @@ F 3 "" H 1200 7100 50  0001 C CNN
 	1    1200 7100
 	0    1    1    0   
 $EndComp
+Connection ~ 1400 6350
+Connection ~ 900  6350
+$Comp
+L power:+36V #PWR?
+U 1 1 5D13A311
+P 900 6350
+AR Path="/5D13A311" Ref="#PWR?"  Part="1" 
+AR Path="/5D0530DE/5D13A311" Ref="#PWR0102"  Part="1" 
+F 0 "#PWR0102" H 900 6200 50  0001 C CNN
+F 1 "+36V" V 915 6478 50  0000 L CNN
+F 2 "" H 900 6350 50  0001 C CNN
+F 3 "" H 900 6350 50  0001 C CNN
+	1    900  6350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	900  6350 1400 6350
+Wire Wire Line
+	900  6250 900  6350
+$Comp
+L Device:C C?
+U 1 1 5D13A2CB
+P 900 6100
+AR Path="/5D13A2CB" Ref="C?"  Part="1" 
+AR Path="/5D0530DE/5D13A2CB" Ref="C1"  Part="1" 
+F 0 "C1" H 1015 6146 50  0000 L CNN
+F 1 "10uF" H 1015 6055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 938 5950 50  0001 C CNN
+F 3 "~" H 900 6100 50  0001 C CNN
+	1    900  6100
+	1    0    0    -1  
+$EndComp
+Text HLabel 7100 2150 2    50   Input ~ 0
+PH1
+Text HLabel 9050 2150 2    50   Input ~ 0
+PH2
+Text HLabel 10800 2150 2    50   Input ~ 0
+PH3
 $EndSCHEMATC
