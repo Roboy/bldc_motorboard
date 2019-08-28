@@ -729,10 +729,6 @@ Text Label 8950 4500 2    50   ~ 0
 SNC
 Text Label 8900 1900 2    50   ~ 0
 SHC
-Text Label 9050 2150 0    50   ~ 0
-PH2
-Text Label 10800 2150 0    50   ~ 0
-PH3
 $Comp
 L Connector:Conn_01x02_Female J3
 U 1 1 5D4AC6D4
@@ -1220,4 +1216,8 @@ F 3 "~" H 900 6100 50  0001 C CNN
 $EndComp
 Text HLabel 7100 2150 2    50   Input ~ 0
 PH1
+Text HLabel 9050 2150 2    50   Input ~ 0
+PH2
+Text HLabel 10800 2150 2    50   Input ~ 0
+PH3
 $EndSCHEMATC
