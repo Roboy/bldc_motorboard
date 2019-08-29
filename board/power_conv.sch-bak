@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 3
+Sheet 2 4
 Title ""
 Date ""
 Rev ""
@@ -81,10 +81,10 @@ F 3 "" H 4300 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R Rfb?
 U 1 1 5D67994F
 P 5900 3050
-AR Path="/5D67994F" Ref="R?"  Part="1" 
+AR Path="/5D67994F" Ref="Rfb?"  Part="1" 
 AR Path="/5D0530DE/5D67994F" Ref="R?"  Part="1" 
 AR Path="/5D65053E/5D67994F" Ref="Rfb1"  Part="1" 
 F 0 "Rfb1" H 5970 3096 50  0000 L CNN
@@ -259,10 +259,10 @@ Connection ~ 7150 2850
 Wire Wire Line
 	7150 2850 7600 2850
 $Comp
-L Device:R R?
+L Device:R Rt?
 U 1 1 5D6874B0
 P 4800 3100
-AR Path="/5D6874B0" Ref="R?"  Part="1" 
+AR Path="/5D6874B0" Ref="Rt?"  Part="1" 
 AR Path="/5D0530DE/5D6874B0" Ref="R?"  Part="1" 
 AR Path="/5D65053E/5D6874B0" Ref="Rt1"  Part="1" 
 F 0 "Rt1" H 4870 3146 50  0000 L CNN
