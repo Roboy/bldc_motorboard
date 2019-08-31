@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:board-cache
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -27,7 +27,7 @@ P 5225 5225
 AR Path="/5D056FB0/5D481FEB" Ref="J?"  Part="1" 
 AR Path="/5D481FEB" Ref="J5"  Part="1" 
 F 0 "J5" H 5253 5251 50  0000 L CNN
-F 1 "SPI" H 5253 5160 50  0000 L CNN
+F 1 "UART" H 5253 5160 50  0000 L CNN
 F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x03_Pitch_1.27mm" H 5225 5225 50  0001 C CNN
 F 3 "~" H 5225 5225 50  0001 C CNN
 	1    5225 5225
@@ -146,7 +146,7 @@ L Connector:Conn_01x08_Male J2
 U 1 1 5D6DCD64
 P 3175 5175
 F 0 "J2" H 3283 5656 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 3283 5565 50  0000 C CNN
+F 1 "PHASES" H 3283 5565 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 3175 5175 50  0001 C CNN
 F 3 "~" H 3175 5175 50  0001 C CNN
 	1    3175 5175
@@ -285,7 +285,7 @@ $EndComp
 Text Label 2875 3425 2    50   ~ 0
 +5V
 $Comp
-L LTC2852HDDPBF:LTC2852HDDPBF U3
+L board-rescue:LTC2852HDDPBF-LTC2852HDDPBF U3
 U 1 1 5D67574C
 P 8000 5200
 F 0 "U3" H 9100 5565 50  0000 C CNN
@@ -305,7 +305,7 @@ L Connector:Conn_01x10_Female J1
 U 1 1 5D6A8C66
 P 3075 3725
 F 0 "J1" H 2967 3000 50  0000 C CNN
-F 1 "Conn_01x10_Female" H 2967 3091 50  0000 C CNN
+F 1 "OpticalEncoder" H 2967 3091 50  0000 C CNN
 F 2 "motor drive 9y_protection:MIRCO_MATCH" H 3075 3725 50  0001 C CNN
 F 3 "~" H 3075 3725 50  0001 C CNN
 	1    3075 3725
@@ -441,14 +441,8 @@ F 3 "" H 8925 1875 50  0001 C CNN
 	1    8925 1875
 	1    0    0    -1  
 $EndComp
-Text Label 8625 2175 2    50   ~ 0
-NEO_DIN
-Text Label 9225 2175 0    50   ~ 0
-NEO_DOUT
 Text Label 5900 3675 2    50   ~ 0
-NEO_DIN
-Text Label 5900 3575 2    50   ~ 0
-NEO_DOUT
+NEOPXL
 Text GLabel 5000 3550 0    50   Input ~ 0
 INLB
 Text Label 2875 3725 2    50   ~ 0
@@ -530,4 +524,7 @@ F 3 "" H 7150 5200 50  0001 C CNN
 	1    7150 5200
 	1    0    0    -1  
 $EndComp
+NoConn ~ 9225 2175
+Text Label 8625 2175 2    50   ~ 0
+NEOPXL
 $EndSCHEMATC
