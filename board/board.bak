@@ -27,7 +27,7 @@ P 5225 5225
 AR Path="/5D056FB0/5D481FEB" Ref="J?"  Part="1" 
 AR Path="/5D481FEB" Ref="J5"  Part="1" 
 F 0 "J5" H 5253 5251 50  0000 L CNN
-F 1 "SPI" H 5253 5160 50  0000 L CNN
+F 1 "UART" H 5253 5160 50  0000 L CNN
 F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x03_Pitch_1.27mm" H 5225 5225 50  0001 C CNN
 F 3 "~" H 5225 5225 50  0001 C CNN
 	1    5225 5225
@@ -146,7 +146,7 @@ L Connector:Conn_01x08_Male J2
 U 1 1 5D6DCD64
 P 3175 5175
 F 0 "J2" H 3283 5656 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 3283 5565 50  0000 C CNN
+F 1 "PHASES" H 3283 5565 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 3175 5175 50  0001 C CNN
 F 3 "~" H 3175 5175 50  0001 C CNN
 	1    3175 5175
@@ -305,7 +305,7 @@ L Connector:Conn_01x10_Female J1
 U 1 1 5D6A8C66
 P 3075 3725
 F 0 "J1" H 2967 3000 50  0000 C CNN
-F 1 "Conn_01x10_Female" H 2967 3091 50  0000 C CNN
+F 1 "OpticalEncoder" H 2967 3091 50  0000 C CNN
 F 2 "motor drive 9y_protection:MIRCO_MATCH" H 3075 3725 50  0001 C CNN
 F 3 "~" H 3075 3725 50  0001 C CNN
 	1    3075 3725
@@ -527,4 +527,55 @@ $EndComp
 NoConn ~ 9225 2175
 Text Label 8625 2175 2    50   ~ 0
 NEOPXL
+$Comp
+L Switch:SW_DIP_x04 SW1
+U 1 1 5D6A9BD3
+P 7850 3625
+F 0 "SW1" H 7850 4092 50  0000 C CNN
+F 1 "ID_DIPSWITCH" H 7850 4001 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 7850 3625 50  0001 C CNN
+F 3 "" H 7850 3625 50  0001 C CNN
+	1    7850 3625
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0154
+U 1 1 5D6A9F1E
+P 8150 3875
+AR Path="/5D6A9F1E" Ref="#PWR0154"  Part="1" 
+AR Path="/5D056FB0/5D6A9F1E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0154" H 8150 3625 50  0001 C CNN
+F 1 "GND" V 8155 3747 50  0000 R CNN
+F 2 "" H 8150 3875 50  0001 C CNN
+F 3 "" H 8150 3875 50  0001 C CNN
+	1    8150 3875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 3425 8150 3525
+Connection ~ 8150 3525
+Wire Wire Line
+	8150 3525 8150 3625
+Connection ~ 8150 3625
+Wire Wire Line
+	8150 3625 8150 3725
+Connection ~ 8150 3725
+Wire Wire Line
+	8150 3725 8150 3875
+Text Label 5000 3950 2    50   ~ 0
+ID_0
+Text Label 5000 4250 2    50   ~ 0
+ID_1
+Text Label 5000 4350 2    50   ~ 0
+ID_2
+Text Label 5900 3575 2    50   ~ 0
+ID_3
+Text Label 7550 3425 2    50   ~ 0
+ID_0
+Text Label 7550 3525 2    50   ~ 0
+ID_1
+Text Label 7550 3625 2    50   ~ 0
+ID_2
+Text Label 7550 3725 2    50   ~ 0
+ID_3
 $EndSCHEMATC

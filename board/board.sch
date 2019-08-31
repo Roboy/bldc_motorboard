@@ -527,4 +527,55 @@ $EndComp
 NoConn ~ 9225 2175
 Text Label 8625 2175 2    50   ~ 0
 NEOPXL
+$Comp
+L Switch:SW_DIP_x04 SW1
+U 1 1 5D6A9BD3
+P 7850 3625
+F 0 "SW1" H 7850 4092 50  0000 C CNN
+F 1 "ID_DIPSWITCH" H 7850 4001 50  0000 C CNN
+F 2 "Button_Switch_SMD:SW_DIP_SPSTx04_Slide_6.7x11.72mm_W6.73mm_P2.54mm_LowProfile_JPin" H 7850 3625 50  0001 C CNN
+F 3 "" H 7850 3625 50  0001 C CNN
+	1    7850 3625
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0154
+U 1 1 5D6A9F1E
+P 8150 3875
+AR Path="/5D6A9F1E" Ref="#PWR0154"  Part="1" 
+AR Path="/5D056FB0/5D6A9F1E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0154" H 8150 3625 50  0001 C CNN
+F 1 "GND" V 8155 3747 50  0000 R CNN
+F 2 "" H 8150 3875 50  0001 C CNN
+F 3 "" H 8150 3875 50  0001 C CNN
+	1    8150 3875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 3425 8150 3525
+Connection ~ 8150 3525
+Wire Wire Line
+	8150 3525 8150 3625
+Connection ~ 8150 3625
+Wire Wire Line
+	8150 3625 8150 3725
+Connection ~ 8150 3725
+Wire Wire Line
+	8150 3725 8150 3875
+Text Label 5000 3950 2    50   ~ 0
+ID_0
+Text Label 5000 4250 2    50   ~ 0
+ID_1
+Text Label 5000 4350 2    50   ~ 0
+ID_2
+Text Label 5900 3575 2    50   ~ 0
+ID_3
+Text Label 7550 3425 2    50   ~ 0
+ID_0
+Text Label 7550 3525 2    50   ~ 0
+ID_1
+Text Label 7550 3625 2    50   ~ 0
+ID_2
+Text Label 7550 3725 2    50   ~ 0
+ID_3
 $EndSCHEMATC
