@@ -123,8 +123,6 @@ F 3 "" H 5825 3600 50  0001 C CNN
 	1    5825 3600
 	1    0    0    -1  
 $EndComp
-Text Label 5825 3000 2    50   ~ 0
-+5V
 $Comp
 L Device:R R?
 U 1 1 5D8D4FF5
@@ -139,8 +137,6 @@ F 3 "~" H 6475 4000 50  0001 C CNN
 	1    6475 4000
 	-1   0    0    1   
 $EndComp
-Text Label 6725 3650 2    50   ~ 0
-+5V
 $Comp
 L Device:R R?
 U 1 1 5D8D4FFC
@@ -454,8 +450,6 @@ F 3 "~" H 6700 2850 50  0001 C CNN
 	1    6700 2850
 	1    0    0    -1  
 $EndComp
-Text Label 6700 2700 2    50   ~ 0
-+5V
 $Comp
 L power:GND #PWR?
 U 1 1 5D8D5096
@@ -505,4 +499,39 @@ Wire Wire Line
 Connection ~ 6475 4200
 Wire Wire Line
 	6475 4200 7025 4200
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5D6B4377
+P 5825 2700
+F 0 "#PWR?" H 5825 2550 50  0001 C CNN
+F 1 "+3.3V" H 5840 2873 50  0000 C CNN
+F 2 "" H 5825 2700 50  0001 C CNN
+F 3 "" H 5825 2700 50  0001 C CNN
+	1    5825 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5825 2700 5825 3000
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5D6B4E63
+P 6700 2700
+F 0 "#PWR?" H 6700 2550 50  0001 C CNN
+F 1 "+3.3V" H 6715 2873 50  0000 C CNN
+F 2 "" H 6700 2700 50  0001 C CNN
+F 3 "" H 6700 2700 50  0001 C CNN
+	1    6700 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5D6B547A
+P 6725 3650
+F 0 "#PWR?" H 6725 3500 50  0001 C CNN
+F 1 "+3.3V" V 6740 3778 50  0000 L CNN
+F 2 "" H 6725 3650 50  0001 C CNN
+F 3 "" H 6725 3650 50  0001 C CNN
+	1    6725 3650
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
