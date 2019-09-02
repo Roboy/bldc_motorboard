@@ -152,7 +152,7 @@ F 3 "" H 6050 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L custom:LTM8074 U1
+L board-rescue:LTM8074-custom U1
 U 1 1 5D6540B3
 P 5750 2500
 F 0 "U1" H 6067 2815 50  0000 C CNN

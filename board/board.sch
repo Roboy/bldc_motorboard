@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:board-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -542,12 +542,6 @@ Text Label 5000 4250 2    50   ~ 0
 ID_1
 Text Label 5000 4350 2    50   ~ 0
 ID_2
-Text Label 7550 3425 2    50   ~ 0
-ID_0
-Text Label 7550 3525 2    50   ~ 0
-ID_1
-Text Label 7550 3625 2    50   ~ 0
-ID_2
 Text Label 5900 3575 2    50   ~ 0
 Encoder1_A
 Text Label 5900 3675 2    50   ~ 0
@@ -613,12 +607,94 @@ Wire Wire Line
 Connection ~ 8150 3625
 Connection ~ 8150 3525
 $Comp
+L Device:C C26
+U 1 1 5D6EE22D
+P 9850 3500
+AR Path="/5D6EE22D" Ref="C26"  Part="1" 
+AR Path="/5D0530DE/5D6EE22D" Ref="C?"  Part="1" 
+F 0 "C26" H 9965 3546 50  0000 L CNN
+F 1 "0.1uF" H 9965 3455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 9888 3350 50  0001 C CNN
+F 3 "~" H 9850 3500 50  0001 C CNN
+	1    9850 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0160
+U 1 1 5D6EE233
+P 9850 3650
+AR Path="/5D6EE233" Ref="#PWR0160"  Part="1" 
+AR Path="/5D0530DE/5D6EE233" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0160" H 9850 3400 50  0001 C CNN
+F 1 "GND" V 9850 3450 50  0000 C CNN
+F 2 "" H 9850 3650 50  0001 C CNN
+F 3 "" H 9850 3650 50  0001 C CNN
+	1    9850 3650
+	1    0    0    -1  
+$EndComp
+$Comp
 L power:+3.3V #PWR?
+U 1 1 5D6EE239
+P 9850 3350
+AR Path="/5D0530DE/5D6EE239" Ref="#PWR?"  Part="1" 
+AR Path="/5D6EE239" Ref="#PWR0161"  Part="1" 
+F 0 "#PWR0161" H 9850 3200 50  0001 C CNN
+F 1 "+3.3V" V 9865 3478 50  0000 L CNN
+F 2 "" H 9850 3350 50  0001 C CNN
+F 3 "" H 9850 3350 50  0001 C CNN
+	1    9850 3350
+	1    0    0    -1  
+$EndComp
+Text Label 7550 3625 2    50   ~ 0
+ID_2
+Text Label 7550 3525 2    50   ~ 0
+ID_1
+Text Label 7550 3425 2    50   ~ 0
+ID_0
+$Comp
+L Device:C C29
+U 1 1 5D723058
+P 9325 3450
+AR Path="/5D723058" Ref="C29"  Part="1" 
+AR Path="/5D0530DE/5D723058" Ref="C?"  Part="1" 
+F 0 "C29" H 9440 3496 50  0000 L CNN
+F 1 "0.1uF" H 9440 3405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 9363 3300 50  0001 C CNN
+F 3 "~" H 9325 3450 50  0001 C CNN
+	1    9325 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0167
+U 1 1 5D72305E
+P 9325 3600
+AR Path="/5D72305E" Ref="#PWR0167"  Part="1" 
+AR Path="/5D0530DE/5D72305E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0167" H 9325 3350 50  0001 C CNN
+F 1 "GND" V 9325 3400 50  0000 C CNN
+F 2 "" H 9325 3600 50  0001 C CNN
+F 3 "" H 9325 3600 50  0001 C CNN
+	1    9325 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0168
+U 1 1 5D72EED4
+P 9325 3300
+F 0 "#PWR0168" H 9325 3150 50  0001 C CNN
+F 1 "+5V" V 9340 3428 50  0000 L CNN
+F 2 "" H 9325 3300 50  0001 C CNN
+F 3 "" H 9325 3300 50  0001 C CNN
+	1    9325 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0159
 U 1 1 5D6B5C45
 P 2875 3425
-AR Path="/5D6B5C45" Ref="#PWR?"  Part="1" 
+AR Path="/5D6B5C45" Ref="#PWR0159"  Part="1" 
 AR Path="/5D056FB0/5D6B5C45" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 2875 3275 50  0001 C CNN
+F 0 "#PWR0159" H 2875 3275 50  0001 C CNN
 F 1 "+3.3V" V 2890 3553 50  0000 L CNN
 F 2 "" H 2875 3425 50  0001 C CNN
 F 3 "" H 2875 3425 50  0001 C CNN
