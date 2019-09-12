@@ -6,7 +6,7 @@
 
 * Build Date:         Sep 12 2017 08:02:28
 
-* File Generated:     Sep 12 2019 18:03:40
+* File Generated:     Sep 12 2019 19:18:00
 
 * Purpose:            General info of design implementation
 
@@ -27,8 +27,8 @@ Device Info:
 
 Design statistics:
 ------------------
-    FFs:                  668
-    LUTs:                 1376
+    FFs:                  558
+    LUTs:                 1392
     RAMs:                 0
     IOBs:                 6
     GBs:                  1
@@ -37,12 +37,12 @@ Design statistics:
 
 Logic Resource Utilization:
 ---------------------------
-    Total Logic Cells: 1376/7680
-        Combinational Logic Cells: 708      out of   7680      9.21875%
-        Sequential Logic Cells:    668      out of   7680      8.69792%
-        Logic Tiles:               207      out of   960       21.5625%
+    Total Logic Cells: 1392/7680
+        Combinational Logic Cells: 834      out of   7680      10.8594%
+        Sequential Logic Cells:    558      out of   7680      7.26562%
+        Logic Tiles:               269      out of   960       28.0208%
     Registers: 
-        Logic Registers:           668      out of   7680      8.69792%
+        Logic Registers:           558      out of   7680      7.26562%
         IO Registers:              1        out of   1280      0.078125
     Block RAMs:                    0        out of   32        0%
     Warm Boots:                    0        out of   1         0%
@@ -84,4 +84,4 @@ Detailed Global Buffer Info:
 ----------------------------
     Buffer Number  IO Bank  Driven By  Fanout  Signal Name
     -------------  -------  ---------  ------  -----------
-    3              3                   669     CLK_c  
+    3              3                   559     CLK_c  

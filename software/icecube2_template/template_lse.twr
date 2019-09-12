@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 Lattice Synthesis Timing Report, Version  
-Thu Sep 12 18:02:55 2019
+Thu Sep 12 19:16:24 2019
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -19,274 +19,282 @@ Report level:    verbose report, limited to 3 items per constraint
 
 ================================================================================
 Constraint: create_clock -period 1000.000000 -name clk0 [get_nets CLK_c]
-            851 items scored, 0 timing errors detected.
+            605 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Passed:  The following path meets requirements by 948.129ns
+Passed:  The following path meets requirements by 944.149ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         SB_DFF     C              rand_data_2269__i0  (from CLK_c +)
-   Destination:    SB_DFF     D              rand_setpoint_2270__i31  (to CLK_c +)
+   Source:         SB_DFF     C              \c0/rx/r_Rx_DV_52  (from CLK_c +)
+   Destination:    SB_DFFSS   D              \c0/FRAME_MATCHER.i_i31  (to CLK_c +)
 
-   Delay:                  51.738ns  (25.9% logic, 74.1% route), 33 logic levels.
+   Delay:                  55.718ns  (25.6% logic, 74.4% route), 35 logic levels.
 
  Constraint Details:
 
-     51.738ns data_path rand_data_2269__i0 to rand_setpoint_2270__i31 meets
+     55.718ns data_path \c0/rx/r_Rx_DV_52 to \c0/FRAME_MATCHER.i_i31 meets
     1000.000ns delay constraint less
-      0.133ns L_S requirement (totaling 999.867ns) by 948.129ns
+      0.133ns L_S requirement (totaling 999.867ns) by 944.149ns
 
- Path Details: rand_data_2269__i0 to rand_setpoint_2270__i31
+ Path Details: \c0/rx/r_Rx_DV_52 to \c0/FRAME_MATCHER.i_i31
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367              C to Q              rand_data_2269__i0 (from CLK_c)
-Route         8   e 1.535                                  rand_data[0]
-LUT4        ---     0.408             I0 to CO             rand_setpoint_2270_add_4_2
-Route         2   e 1.158                                  n16412
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_3
-Route         2   e 1.158                                  n16413
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_4
-Route         2   e 1.158                                  n16414
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_5
-Route         2   e 1.158                                  n16415
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_6
-Route         2   e 1.158                                  n16416
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_7
-Route         2   e 1.158                                  n16417
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_8
-Route         2   e 1.158                                  n16418
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_9
-Route         2   e 1.158                                  n16419
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_10
-Route         2   e 1.158                                  n16420
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_11
-Route         2   e 1.158                                  n16421
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_12
-Route         2   e 1.158                                  n16422
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_13
-Route         2   e 1.158                                  n16423
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_14
-Route         2   e 1.158                                  n16424
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_15
-Route         2   e 1.158                                  n16425
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_16
-Route         2   e 1.158                                  n16426
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_17
-Route         2   e 1.158                                  n16427
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_18
-Route         2   e 1.158                                  n16428
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_19
-Route         2   e 1.158                                  n16429
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_20
-Route         2   e 1.158                                  n16430
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_21
-Route         2   e 1.158                                  n16431
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_22
-Route         2   e 1.158                                  n16432
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_23
-Route         2   e 1.158                                  n16433
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_24
-Route         2   e 1.158                                  n16434
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_25
-Route         2   e 1.158                                  n16435
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_26
-Route         2   e 1.158                                  n16436
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_27
-Route         2   e 1.158                                  n16437
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_28
-Route         2   e 1.158                                  n16438
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_29
-Route         2   e 1.158                                  n16439
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_30
-Route         2   e 1.158                                  n16440
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_31
-Route         2   e 1.158                                  n16441
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_32
-Route         1   e 1.020                                  n16442
-LUT4        ---     0.408             I3 to O              rand_setpoint_2270_add_4_33_lut
-Route         1   e 1.020                                  n134
+L_CO        ---     0.367              C to Q              \c0/rx/r_Rx_DV_52 (from CLK_c)
+Route        35   e 1.831                                  rx_data_ready
+LUT4        ---     0.408             I0 to O              \c0/rx/i15448_1_lut
+Route        63   e 1.848                                  \c0/n17889
+LUT4        ---     0.408             I1 to CO             \c0/add_997_2
+Route         2   e 1.158                                  \c0/n15622
+LUT4        ---     0.408             CI to CO             \c0/add_997_3
+Route         2   e 1.158                                  \c0/n15623
+LUT4        ---     0.408             CI to CO             \c0/add_997_4
+Route         2   e 1.158                                  \c0/n15624
+LUT4        ---     0.408             CI to CO             \c0/add_997_5
+Route         2   e 1.158                                  \c0/n15625
+LUT4        ---     0.408             CI to CO             \c0/add_997_6
+Route         2   e 1.158                                  \c0/n15626
+LUT4        ---     0.408             CI to CO             \c0/add_997_7
+Route         2   e 1.158                                  \c0/n15627
+LUT4        ---     0.408             CI to CO             \c0/add_997_8
+Route         2   e 1.158                                  \c0/n15628
+LUT4        ---     0.408             CI to CO             \c0/add_997_9
+Route         2   e 1.158                                  \c0/n15629
+LUT4        ---     0.408             CI to CO             \c0/add_997_10
+Route         2   e 1.158                                  \c0/n15630
+LUT4        ---     0.408             CI to CO             \c0/add_997_11
+Route         2   e 1.158                                  \c0/n15631
+LUT4        ---     0.408             CI to CO             \c0/add_997_12
+Route         2   e 1.158                                  \c0/n15632
+LUT4        ---     0.408             CI to CO             \c0/add_997_13
+Route         2   e 1.158                                  \c0/n15633
+LUT4        ---     0.408             CI to CO             \c0/add_997_14
+Route         2   e 1.158                                  \c0/n15634
+LUT4        ---     0.408             CI to CO             \c0/add_997_15
+Route         2   e 1.158                                  \c0/n15635
+LUT4        ---     0.408             CI to CO             \c0/add_997_16
+Route         2   e 1.158                                  \c0/n15636
+LUT4        ---     0.408             CI to CO             \c0/add_997_17
+Route         2   e 1.158                                  \c0/n15637
+LUT4        ---     0.408             CI to CO             \c0/add_997_18
+Route         2   e 1.158                                  \c0/n15638
+LUT4        ---     0.408             CI to CO             \c0/add_997_19
+Route         2   e 1.158                                  \c0/n15639
+LUT4        ---     0.408             CI to CO             \c0/add_997_20
+Route         2   e 1.158                                  \c0/n15640
+LUT4        ---     0.408             CI to CO             \c0/add_997_21
+Route         2   e 1.158                                  \c0/n15641
+LUT4        ---     0.408             CI to CO             \c0/add_997_22
+Route         2   e 1.158                                  \c0/n15642
+LUT4        ---     0.408             CI to CO             \c0/add_997_23
+Route         2   e 1.158                                  \c0/n15643
+LUT4        ---     0.408             CI to CO             \c0/add_997_24
+Route         2   e 1.158                                  \c0/n15644
+LUT4        ---     0.408             CI to CO             \c0/add_997_25
+Route         2   e 1.158                                  \c0/n15645
+LUT4        ---     0.408             CI to CO             \c0/add_997_26
+Route         2   e 1.158                                  \c0/n15646
+LUT4        ---     0.408             CI to CO             \c0/add_997_27
+Route         2   e 1.158                                  \c0/n15647
+LUT4        ---     0.408             CI to CO             \c0/add_997_28
+Route         2   e 1.158                                  \c0/n15648
+LUT4        ---     0.408             CI to CO             \c0/add_997_29
+Route         2   e 1.158                                  \c0/n15649
+LUT4        ---     0.408             CI to CO             \c0/add_997_30
+Route         2   e 1.158                                  \c0/n15650
+LUT4        ---     0.408             CI to CO             \c0/add_997_31
+Route         2   e 1.158                                  \c0/n15651
+LUT4        ---     0.408             CI to CO             \c0/add_997_32
+Route         1   e 1.020                                  \c0/n15652
+LUT4        ---     0.408             I3 to O              \c0/add_997_33_lut
+Route         1   e 1.020                                  \c0/FRAME_MATCHER.i_31__N_1280[31]
+LUT4        ---     0.408             I2 to O              \c0/select_238_Select_31_i2_2_lut_3_lut
+Route         1   e 1.020                                  \c0/n2_adj_2209
                   --------
-                   51.738  (25.9% logic, 74.1% route), 33 logic levels.
+                   55.718  (25.6% logic, 74.4% route), 35 logic levels.
 
 
-Passed:  The following path meets requirements by 948.129ns
+Passed:  The following path meets requirements by 945.577ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         SB_DFF     C              rand_data_2269__i0  (from CLK_c +)
-   Destination:    SB_DFF     D              rand_data_2269__i31  (to CLK_c +)
+   Source:         SB_DFF     C              \c0/rx/r_Rx_DV_52  (from CLK_c +)
+   Destination:    SB_DFFSS   D              \c0/FRAME_MATCHER.i_i30  (to CLK_c +)
 
-   Delay:                  51.738ns  (25.9% logic, 74.1% route), 33 logic levels.
+   Delay:                  54.290ns  (25.5% logic, 74.5% route), 34 logic levels.
 
  Constraint Details:
 
-     51.738ns data_path rand_data_2269__i0 to rand_data_2269__i31 meets
+     54.290ns data_path \c0/rx/r_Rx_DV_52 to \c0/FRAME_MATCHER.i_i30 meets
     1000.000ns delay constraint less
-      0.133ns L_S requirement (totaling 999.867ns) by 948.129ns
+      0.133ns L_S requirement (totaling 999.867ns) by 945.577ns
 
- Path Details: rand_data_2269__i0 to rand_data_2269__i31
+ Path Details: \c0/rx/r_Rx_DV_52 to \c0/FRAME_MATCHER.i_i30
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367              C to Q              rand_data_2269__i0 (from CLK_c)
-Route         8   e 1.535                                  rand_data[0]
-LUT4        ---     0.408             I1 to CO             rand_data_2269_add_4_2
-Route         2   e 1.158                                  n16319
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_3
-Route         2   e 1.158                                  n16320
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_4
-Route         2   e 1.158                                  n16321
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_5
-Route         2   e 1.158                                  n16322
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_6
-Route         2   e 1.158                                  n16323
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_7
-Route         2   e 1.158                                  n16324
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_8
-Route         2   e 1.158                                  n16325
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_9
-Route         2   e 1.158                                  n16326
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_10
-Route         2   e 1.158                                  n16327
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_11
-Route         2   e 1.158                                  n16328
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_12
-Route         2   e 1.158                                  n16329
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_13
-Route         2   e 1.158                                  n16330
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_14
-Route         2   e 1.158                                  n16331
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_15
-Route         2   e 1.158                                  n16332
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_16
-Route         2   e 1.158                                  n16333
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_17
-Route         2   e 1.158                                  n16334
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_18
-Route         2   e 1.158                                  n16335
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_19
-Route         2   e 1.158                                  n16336
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_20
-Route         2   e 1.158                                  n16337
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_21
-Route         2   e 1.158                                  n16338
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_22
-Route         2   e 1.158                                  n16339
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_23
-Route         2   e 1.158                                  n16340
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_24
-Route         2   e 1.158                                  n16341
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_25
-Route         2   e 1.158                                  n16342
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_26
-Route         2   e 1.158                                  n16343
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_27
-Route         2   e 1.158                                  n16344
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_28
-Route         2   e 1.158                                  n16345
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_29
-Route         2   e 1.158                                  n16346
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_30
-Route         2   e 1.158                                  n16347
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_31
-Route         2   e 1.158                                  n16348
-LUT4        ---     0.408             CI to CO             rand_data_2269_add_4_32
-Route         1   e 1.020                                  n16349
-LUT4        ---     0.408             I3 to O              rand_data_2269_add_4_33_lut
-Route         1   e 1.020                                  n134_adj_2602
+L_CO        ---     0.367              C to Q              \c0/rx/r_Rx_DV_52 (from CLK_c)
+Route        35   e 1.831                                  rx_data_ready
+LUT4        ---     0.408             I0 to O              \c0/rx/i15448_1_lut
+Route        63   e 1.848                                  \c0/n17889
+LUT4        ---     0.408             I1 to CO             \c0/add_997_2
+Route         2   e 1.158                                  \c0/n15622
+LUT4        ---     0.408             CI to CO             \c0/add_997_3
+Route         2   e 1.158                                  \c0/n15623
+LUT4        ---     0.408             CI to CO             \c0/add_997_4
+Route         2   e 1.158                                  \c0/n15624
+LUT4        ---     0.408             CI to CO             \c0/add_997_5
+Route         2   e 1.158                                  \c0/n15625
+LUT4        ---     0.408             CI to CO             \c0/add_997_6
+Route         2   e 1.158                                  \c0/n15626
+LUT4        ---     0.408             CI to CO             \c0/add_997_7
+Route         2   e 1.158                                  \c0/n15627
+LUT4        ---     0.408             CI to CO             \c0/add_997_8
+Route         2   e 1.158                                  \c0/n15628
+LUT4        ---     0.408             CI to CO             \c0/add_997_9
+Route         2   e 1.158                                  \c0/n15629
+LUT4        ---     0.408             CI to CO             \c0/add_997_10
+Route         2   e 1.158                                  \c0/n15630
+LUT4        ---     0.408             CI to CO             \c0/add_997_11
+Route         2   e 1.158                                  \c0/n15631
+LUT4        ---     0.408             CI to CO             \c0/add_997_12
+Route         2   e 1.158                                  \c0/n15632
+LUT4        ---     0.408             CI to CO             \c0/add_997_13
+Route         2   e 1.158                                  \c0/n15633
+LUT4        ---     0.408             CI to CO             \c0/add_997_14
+Route         2   e 1.158                                  \c0/n15634
+LUT4        ---     0.408             CI to CO             \c0/add_997_15
+Route         2   e 1.158                                  \c0/n15635
+LUT4        ---     0.408             CI to CO             \c0/add_997_16
+Route         2   e 1.158                                  \c0/n15636
+LUT4        ---     0.408             CI to CO             \c0/add_997_17
+Route         2   e 1.158                                  \c0/n15637
+LUT4        ---     0.408             CI to CO             \c0/add_997_18
+Route         2   e 1.158                                  \c0/n15638
+LUT4        ---     0.408             CI to CO             \c0/add_997_19
+Route         2   e 1.158                                  \c0/n15639
+LUT4        ---     0.408             CI to CO             \c0/add_997_20
+Route         2   e 1.158                                  \c0/n15640
+LUT4        ---     0.408             CI to CO             \c0/add_997_21
+Route         2   e 1.158                                  \c0/n15641
+LUT4        ---     0.408             CI to CO             \c0/add_997_22
+Route         2   e 1.158                                  \c0/n15642
+LUT4        ---     0.408             CI to CO             \c0/add_997_23
+Route         2   e 1.158                                  \c0/n15643
+LUT4        ---     0.408             CI to CO             \c0/add_997_24
+Route         2   e 1.158                                  \c0/n15644
+LUT4        ---     0.408             CI to CO             \c0/add_997_25
+Route         2   e 1.158                                  \c0/n15645
+LUT4        ---     0.408             CI to CO             \c0/add_997_26
+Route         2   e 1.158                                  \c0/n15646
+LUT4        ---     0.408             CI to CO             \c0/add_997_27
+Route         2   e 1.158                                  \c0/n15647
+LUT4        ---     0.408             CI to CO             \c0/add_997_28
+Route         2   e 1.158                                  \c0/n15648
+LUT4        ---     0.408             CI to CO             \c0/add_997_29
+Route         2   e 1.158                                  \c0/n15649
+LUT4        ---     0.408             CI to CO             \c0/add_997_30
+Route         2   e 1.158                                  \c0/n15650
+LUT4        ---     0.408             CI to CO             \c0/add_997_31
+Route         2   e 1.158                                  \c0/n15651
+LUT4        ---     0.408             I3 to O              \c0/add_997_32_lut
+Route         1   e 1.020                                  \c0/FRAME_MATCHER.i_31__N_1280[30]
+LUT4        ---     0.408             I2 to O              \c0/select_238_Select_30_i2_2_lut_3_lut
+Route         1   e 1.020                                  \c0/n2_adj_2214
                   --------
-                   51.738  (25.9% logic, 74.1% route), 33 logic levels.
+                   54.290  (25.5% logic, 74.5% route), 34 logic levels.
 
 
-Passed:  The following path meets requirements by 948.325ns
+Passed:  The following path meets requirements by 945.715ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         SB_DFF     C              rand_setpoint_2270__i0  (from CLK_c +)
-   Destination:    SB_DFF     D              rand_setpoint_2270__i31  (to CLK_c +)
+   Source:         SB_DFF     C              \c0/rx/r_Rx_DV_52  (from CLK_c +)
+   Destination:    SB_DFFSS   D              \c0/FRAME_MATCHER.i_i31  (to CLK_c +)
 
-   Delay:                  51.542ns  (26.0% logic, 74.0% route), 33 logic levels.
+   Delay:                  54.152ns  (25.5% logic, 74.5% route), 34 logic levels.
 
  Constraint Details:
 
-     51.542ns data_path rand_setpoint_2270__i0 to rand_setpoint_2270__i31 meets
+     54.152ns data_path \c0/rx/r_Rx_DV_52 to \c0/FRAME_MATCHER.i_i31 meets
     1000.000ns delay constraint less
-      0.133ns L_S requirement (totaling 999.867ns) by 948.325ns
+      0.133ns L_S requirement (totaling 999.867ns) by 945.715ns
 
- Path Details: rand_setpoint_2270__i0 to rand_setpoint_2270__i31
+ Path Details: \c0/rx/r_Rx_DV_52 to \c0/FRAME_MATCHER.i_i31
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367              C to Q              rand_setpoint_2270__i0 (from CLK_c)
-Route         3   e 1.339                                  rand_setpoint[0]
-LUT4        ---     0.408             I1 to CO             rand_setpoint_2270_add_4_2
-Route         2   e 1.158                                  n16412
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_3
-Route         2   e 1.158                                  n16413
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_4
-Route         2   e 1.158                                  n16414
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_5
-Route         2   e 1.158                                  n16415
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_6
-Route         2   e 1.158                                  n16416
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_7
-Route         2   e 1.158                                  n16417
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_8
-Route         2   e 1.158                                  n16418
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_9
-Route         2   e 1.158                                  n16419
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_10
-Route         2   e 1.158                                  n16420
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_11
-Route         2   e 1.158                                  n16421
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_12
-Route         2   e 1.158                                  n16422
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_13
-Route         2   e 1.158                                  n16423
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_14
-Route         2   e 1.158                                  n16424
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_15
-Route         2   e 1.158                                  n16425
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_16
-Route         2   e 1.158                                  n16426
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_17
-Route         2   e 1.158                                  n16427
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_18
-Route         2   e 1.158                                  n16428
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_19
-Route         2   e 1.158                                  n16429
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_20
-Route         2   e 1.158                                  n16430
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_21
-Route         2   e 1.158                                  n16431
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_22
-Route         2   e 1.158                                  n16432
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_23
-Route         2   e 1.158                                  n16433
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_24
-Route         2   e 1.158                                  n16434
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_25
-Route         2   e 1.158                                  n16435
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_26
-Route         2   e 1.158                                  n16436
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_27
-Route         2   e 1.158                                  n16437
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_28
-Route         2   e 1.158                                  n16438
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_29
-Route         2   e 1.158                                  n16439
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_30
-Route         2   e 1.158                                  n16440
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_31
-Route         2   e 1.158                                  n16441
-LUT4        ---     0.408             CI to CO             rand_setpoint_2270_add_4_32
-Route         1   e 1.020                                  n16442
-LUT4        ---     0.408             I3 to O              rand_setpoint_2270_add_4_33_lut
-Route         1   e 1.020                                  n134
+L_CO        ---     0.367              C to Q              \c0/rx/r_Rx_DV_52 (from CLK_c)
+Route        35   e 1.831                                  rx_data_ready
+LUT4        ---     0.408             I0 to O              \c0/rx/i15448_1_lut
+Route        63   e 1.848                                  \c0/n17889
+LUT4        ---     0.408             I1 to CO             \c0/add_997_3
+Route         2   e 1.158                                  \c0/n15623
+LUT4        ---     0.408             CI to CO             \c0/add_997_4
+Route         2   e 1.158                                  \c0/n15624
+LUT4        ---     0.408             CI to CO             \c0/add_997_5
+Route         2   e 1.158                                  \c0/n15625
+LUT4        ---     0.408             CI to CO             \c0/add_997_6
+Route         2   e 1.158                                  \c0/n15626
+LUT4        ---     0.408             CI to CO             \c0/add_997_7
+Route         2   e 1.158                                  \c0/n15627
+LUT4        ---     0.408             CI to CO             \c0/add_997_8
+Route         2   e 1.158                                  \c0/n15628
+LUT4        ---     0.408             CI to CO             \c0/add_997_9
+Route         2   e 1.158                                  \c0/n15629
+LUT4        ---     0.408             CI to CO             \c0/add_997_10
+Route         2   e 1.158                                  \c0/n15630
+LUT4        ---     0.408             CI to CO             \c0/add_997_11
+Route         2   e 1.158                                  \c0/n15631
+LUT4        ---     0.408             CI to CO             \c0/add_997_12
+Route         2   e 1.158                                  \c0/n15632
+LUT4        ---     0.408             CI to CO             \c0/add_997_13
+Route         2   e 1.158                                  \c0/n15633
+LUT4        ---     0.408             CI to CO             \c0/add_997_14
+Route         2   e 1.158                                  \c0/n15634
+LUT4        ---     0.408             CI to CO             \c0/add_997_15
+Route         2   e 1.158                                  \c0/n15635
+LUT4        ---     0.408             CI to CO             \c0/add_997_16
+Route         2   e 1.158                                  \c0/n15636
+LUT4        ---     0.408             CI to CO             \c0/add_997_17
+Route         2   e 1.158                                  \c0/n15637
+LUT4        ---     0.408             CI to CO             \c0/add_997_18
+Route         2   e 1.158                                  \c0/n15638
+LUT4        ---     0.408             CI to CO             \c0/add_997_19
+Route         2   e 1.158                                  \c0/n15639
+LUT4        ---     0.408             CI to CO             \c0/add_997_20
+Route         2   e 1.158                                  \c0/n15640
+LUT4        ---     0.408             CI to CO             \c0/add_997_21
+Route         2   e 1.158                                  \c0/n15641
+LUT4        ---     0.408             CI to CO             \c0/add_997_22
+Route         2   e 1.158                                  \c0/n15642
+LUT4        ---     0.408             CI to CO             \c0/add_997_23
+Route         2   e 1.158                                  \c0/n15643
+LUT4        ---     0.408             CI to CO             \c0/add_997_24
+Route         2   e 1.158                                  \c0/n15644
+LUT4        ---     0.408             CI to CO             \c0/add_997_25
+Route         2   e 1.158                                  \c0/n15645
+LUT4        ---     0.408             CI to CO             \c0/add_997_26
+Route         2   e 1.158                                  \c0/n15646
+LUT4        ---     0.408             CI to CO             \c0/add_997_27
+Route         2   e 1.158                                  \c0/n15647
+LUT4        ---     0.408             CI to CO             \c0/add_997_28
+Route         2   e 1.158                                  \c0/n15648
+LUT4        ---     0.408             CI to CO             \c0/add_997_29
+Route         2   e 1.158                                  \c0/n15649
+LUT4        ---     0.408             CI to CO             \c0/add_997_30
+Route         2   e 1.158                                  \c0/n15650
+LUT4        ---     0.408             CI to CO             \c0/add_997_31
+Route         2   e 1.158                                  \c0/n15651
+LUT4        ---     0.408             CI to CO             \c0/add_997_32
+Route         1   e 1.020                                  \c0/n15652
+LUT4        ---     0.408             I3 to O              \c0/add_997_33_lut
+Route         1   e 1.020                                  \c0/FRAME_MATCHER.i_31__N_1280[31]
+LUT4        ---     0.408             I2 to O              \c0/select_238_Select_31_i2_2_lut_3_lut
+Route         1   e 1.020                                  \c0/n2_adj_2209
                   --------
-                   51.542  (26.0% logic, 74.0% route), 33 logic levels.
+                   54.152  (25.5% logic, 74.5% route), 34 logic levels.
 
-Report: 51.871 ns is the maximum delay for this constraint.
+Report: 55.851 ns is the maximum delay for this constraint.
 
 
 Timing Report Summary
@@ -296,7 +304,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 1000.000000 -name  |             |             |
-clk0 [get_nets CLK_c]                   |  1000.000 ns|    51.871 ns|    33  
+clk0 [get_nets CLK_c]                   |  1000.000 ns|    55.851 ns|    35  
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -310,8 +318,8 @@ Timing summary:
 
 Timing errors: 0  Score: 0
 
-Constraints cover  788671 paths, 2176 nets, and 6115 connections (99.7% coverage)
+Constraints cover  90142 paths, 2113 nets, and 6116 connections (99.7% coverage)
 
 
-Peak memory: 187850752 bytes, TRCE: 2605056 bytes, DLYMAN: 491520 bytes
+Peak memory: 186347520 bytes, TRCE: 733184 bytes, DLYMAN: 307200 bytes
 CPU_TIME_REPORT: 0 secs 
