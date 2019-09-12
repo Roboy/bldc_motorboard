@@ -6,7 +6,7 @@
 
 * Build Date:         Sep 12 2017 08:02:28
 
-* File Generated:     Aug 26 2019 01:17:13
+* File Generated:     Sep 12 2019 13:57:41
 
 * Purpose:            General info of design implementation
 
@@ -17,7 +17,7 @@
 Synthesis/Placement Summary:
 ----------------------------
     Status:  Successful
-    Runtime: 0 seconds
+    Runtime: 1 seconds
 
 Device Info:
 ------------
@@ -28,7 +28,7 @@ Device Info:
 Design statistics:
 ------------------
     FFs:                  497
-    LUTs:                 993
+    LUTs:                 983
     RAMs:                 0
     IOBs:                 6
     GBs:                  1
@@ -37,10 +37,10 @@ Design statistics:
 
 Logic Resource Utilization:
 ---------------------------
-    Total Logic Cells: 993/7680
-        Combinational Logic Cells: 496      out of   7680      6.45833%
+    Total Logic Cells: 983/7680
+        Combinational Logic Cells: 486      out of   7680      6.32812%
         Sequential Logic Cells:    497      out of   7680      6.47135%
-        Logic Tiles:               179      out of   960       18.6458%
+        Logic Tiles:               163      out of   960       16.9792%
     Registers: 
         Logic Registers:           497      out of   7680      6.47135%
         IO Registers:              1        out of   1280      0.078125
@@ -90,13 +90,13 @@ Detailed Global Buffer Info:
 Router Summary:
 ---------------
     Status:  Successful
-    Runtime: 13 seconds
+    Runtime: 12 seconds
 
 Routing Resource Utilization:
 -----------------------------
-              Local line of tile     7620 out of 146184      5.21261%
-                          Span 4     1855 out of  29696      6.24663%
-                         Span 12      223 out of   5632      3.95952%
+              Local line of tile     7568 out of 146184      5.17704%
+                          Span 4     1807 out of  29696      6.08499%
+                         Span 12      216 out of   5632      3.83523%
                   Global network        1 out of      8      12.5%
-      Vertical Inter-LUT Connect      154 out of   6720      2.29167%
+      Vertical Inter-LUT Connect      157 out of   6720      2.33631%
 

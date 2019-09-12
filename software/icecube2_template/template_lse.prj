@@ -28,9 +28,9 @@
 -loop_limit 1950
 
 -ver "verilog/TinyFPGA_B.v"
--ver "roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v"
--ver "roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v"
 -ver "coms.v"
+-ver "verilog/uart_rx.v"
+-ver "verilog/uart_tx.v"
 -p "/home/letrend/workspace/bldc_motorboard/software/icecube2_template"
 
 #set result format/file last

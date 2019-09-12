@@ -3,10 +3,10 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Aug 26 01:16:33 2019
+Thu Sep 12 13:57:00 2019
 
 
-Command Line:  /home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f template_lse.prj 
+Command Line:  /media/external/iCEcube2/LSE/bin/lin64/synthesis -f template_lse.prj 
 
 Synthesis options:
 The -a option is SBTiCE40.
@@ -68,59 +68,59 @@ The -comp option is FALSE.
 The -syn option is FALSE.
 -p /home/letrend/workspace/bldc_motorboard/software/icecube2_template (searchpath added)
 Verilog design file = verilog/TinyFPGA_B.v
-Verilog design file = roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v
-Verilog design file = roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v
 Verilog design file = coms.v
+Verilog design file = verilog/uart_rx.v
+Verilog design file = verilog/uart_tx.v
 -sdc option: SDC file input not used.
 WARNING - synthesis: Setting TinyFPGA_B as the top-level module. To specify the top-level module explicitly, use the -top option.
 Technology check ok...
 
-Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
-Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
+Analyzing Verilog file /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
+Analyzing Verilog file /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
 Compile design.
 Compile Design Begin
 Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
-Analyzing Verilog file roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v. VERI-1482
-Analyzing Verilog file roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v. VERI-1482
 Analyzing Verilog file coms.v. VERI-1482
 WARNING - synthesis: coms.v(116): identifier data_in_frame is used before its declaration. VERI-1875
-Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(98): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(108): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(118): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(170): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(179): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(189): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(199): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(209): assignment to input EVERI-1214
-WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(3725): empty port in module declaration. VERI-1294
+Analyzing Verilog file verilog/uart_rx.v. VERI-1482
+Analyzing Verilog file verilog/uart_tx.v. VERI-1482
+Analyzing Verilog file /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(98): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(108): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(118): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(170): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(179): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(189): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(199): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(209): assignment to input EVERI-1214
+WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(3725): empty port in module declaration. VERI-1294
 Top module name (Verilog): TinyFPGA_B
 INFO - synthesis: verilog/TinyFPGA_B.v(2): compiling module TinyFPGA_B. VERI-1018
-INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b101001,PULLUP=1'b1). VERI-1018
-INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b01,PULLUP=1'b1). VERI-1018
+INFO - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b101001,PULLUP=1'b1). VERI-1018
+INFO - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b01,PULLUP=1'b1). VERI-1018
 WARNING - synthesis: verilog/TinyFPGA_B.v(71): expression size 32 truncated to fit in target size 26. VERI-1209
 INFO - synthesis: coms.v(1): compiling module coms. VERI-1018
-INFO - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(14): compiling module uart_tx. VERI-1018
-WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(70): expression size 32 truncated to fit in target size 9. VERI-1209
-WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
-WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
-WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
+INFO - synthesis: verilog/uart_tx.v(14): compiling module uart_tx. VERI-1018
+WARNING - synthesis: verilog/uart_tx.v(70): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
 WARNING - synthesis: coms.v(126): expression size 32 truncated to fit in target size 16. VERI-1209
 WARNING - synthesis: coms.v(128): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: coms.v(160): expression size 32 truncated to fit in target size 11. VERI-1209
-INFO - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(14): compiling module uart_rx. VERI-1018
-WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
-WARNING - synthesis: roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
+INFO - synthesis: verilog/uart_rx.v(14): compiling module uart_rx. VERI-1018
+WARNING - synthesis: verilog/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING - synthesis: verilog/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: coms.v(212): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/xo2c00/data/xo2clib.ngl'...
-Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/or5g00/data/orc5glib.ngl'...
+Loading NGL library '/media/external/iCEcube2/LSE/xo2c00/data/xo2clib.ngl'...
+Loading NGL library '/media/external/iCEcube2/LSE/or5g00/data/orc5glib.ngl'...
 Top-level module name = TinyFPGA_B.
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
@@ -290,12 +290,12 @@ Results of NGD DRC are available in TinyFPGA_B_drc.log.
 ################### Begin Area Report (TinyFPGA_B)######################
 Number of register bits => 498 of 7680 (6 % )
 SB_CARRY => 84
-SB_DFF => 466
-SB_DFFE => 21
-SB_DFFESR => 11
+SB_DFF => 464
+SB_DFFE => 25
+SB_DFFESR => 9
 SB_GB_IO => 1
 SB_IO => 5
-SB_LUT4 => 991
+SB_LUT4 => 981
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
@@ -308,15 +308,15 @@ Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
   Net : c0/FRAME_MATCHER.wait_for_transmission, loads : 164
-  Net : c0/n1729, loads : 161
+  Net : c0/n1686, loads : 161
   Net : c0/rx/rx_data_ready, loads : 159
   Net : c0/byte_transmit_counter2_1, loads : 83
   Net : c0/byte_transmit_counter2_0, loads : 43
+  Net : c0/tx2/r_SM_Main_2, loads : 33
   Net : c0/byte_transmit_counter_0, loads : 22
-  Net : c0/tx/r_SM_Main_2, loads : 20
-  Net : c0/n4333, loads : 19
+  Net : c0/n4315, loads : 19
   Net : c0/byte_transmit_counter2_3, loads : 19
-  Net : c0/n21_adj_1883, loads : 18
+  Net : c0/n21, loads : 18
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -334,8 +334,8 @@ clk0 [get_nets CLK_c]                   |    1.000 MHz|   23.698 MHz|    27
 All constraints were met.
 
 
-Peak Memory Usage: 172.047  MB
+Peak Memory Usage: 173.930  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 1.881  secs
+Elapsed CPU time for LSE flow : 1.975  secs
 --------------------------------------------------------------

@@ -6,7 +6,7 @@
 
 * Build Date:         Sep 12 2017 08:09:20
 
-* File Generated:     Aug 26 2019 01:17:13
+* File Generated:     Sep 12 2019 13:57:41
 
 * Purpose:            Router runtime info
 
@@ -14,15 +14,15 @@
 
 * ******************************************************************************
 
-Executing : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbrouter /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/sbt/outputs/packer/TinyFPGA_B_pk.sdc --outdir /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/sbt/outputs/router --sdf_file /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.sdf --pin_permutation 
+Executing : /media/external/iCEcube2/sbt_backend/bin/linux/opt/sbrouter /media/external/iCEcube2/sbt_backend/devices/ICE40P08.dev /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B /media/external/iCEcube2/sbt_backend/devices/ice40LP8K.lib /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/sbt/outputs/packer/TinyFPGA_B_pk.sdc --outdir /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/sbt/outputs/router --sdf_file /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.sdf --pin_permutation 
 I1203: Reading Design TinyFPGA_B
 I1202: Reading Architecture of device iCE40LP8K
 SDC-Info-1101: Duty cycle not specified for clock. Assuming 50 percent dutycycle.
 I1209: Started routing
-I1223: Total Nets : 1135 
-I1212: Iteration  1 :   210 unrouted : 2 seconds
-I1212: Iteration  2 :    37 unrouted : 0 seconds
-I1212: Iteration  3 :    15 unrouted : 1 seconds
+I1223: Total Nets : 1132 
+I1212: Iteration  1 :   229 unrouted : 1 seconds
+I1212: Iteration  2 :    38 unrouted : 1 seconds
+I1212: Iteration  3 :     8 unrouted : 0 seconds
 I1212: Iteration  4 :     0 unrouted : 0 seconds
 I1215: Routing is successful
 I1206: Completed routing

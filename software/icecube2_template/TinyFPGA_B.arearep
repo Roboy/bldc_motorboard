@@ -5,63 +5,61 @@ I/O cells:      0
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY        84          100.0
-                             SB_DFF       466          100.0
-                            SB_DFFE        21          100.0
-                          SB_DFFESR        11          100.0
+                             SB_DFF       464          100.0
+                            SB_DFFE        25          100.0
+                          SB_DFFESR         9          100.0
                            SB_GB_IO         1          100.0
                               SB_IO         5          100.0
-                            SB_LUT4       991          100.0
+                            SB_LUT4       981          100.0
 SUB MODULES
                                coms         1
                             uart_rx         1
                             uart_tx         1
                          uart_tx_U0         1
-                              TOTAL      1583
+                              TOTAL      1573
 ----------------------------------------------------------------------
 Report for cell coms.v1
 Instance Path : c0
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY        59           70.2
-                             SB_DFF       440           94.4
-                            SB_DFFE        21          100.0
-                          SB_DFFESR        11          100.0
-                            SB_LUT4       739           74.6
+                             SB_DFF       438           94.4
+                            SB_DFFE        25          100.0
+                          SB_DFFESR         9          100.0
+                            SB_LUT4       713           72.7
 SUB MODULES
                             uart_rx         1
                             uart_tx         1
                          uart_tx_U0         1
-                              TOTAL      1273
+                              TOTAL      1247
 ----------------------------------------------------------------------
 Report for cell uart_tx.v1
 Instance Path : c0.tx
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY         8            9.5
-                             SB_DFF        20            4.3
-                            SB_DFFE         4           19.0
-                          SB_DFFESR         2           18.2
-                            SB_LUT4        47            4.7
-                              TOTAL        81
+                             SB_DFF        19            4.1
+                            SB_DFFE         7           28.0
+                            SB_LUT4        37            3.8
+                              TOTAL        71
 ----------------------------------------------------------------------
 Report for cell uart_tx_U0.v1
 Instance Path : c0.tx2
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY         8            9.5
-                             SB_DFF         8            1.7
-                            SB_DFFE        15           71.4
-                          SB_DFFESR         2           18.2
-                            SB_LUT4        44            4.4
-                              TOTAL        77
+                             SB_DFF         5            1.1
+                            SB_DFFE        18           72.0
+                          SB_DFFESR         2           22.2
+                            SB_LUT4        31            3.2
+                              TOTAL        64
 ----------------------------------------------------------------------
 Report for cell uart_rx.v1
 Instance Path : c0.rx
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY         7            8.3
-                             SB_DFF        21            4.5
-                            SB_DFFE         2            9.5
-                          SB_DFFESR         2           18.2
-                            SB_LUT4        46            4.6
-                              TOTAL        78
+                             SB_DFF        23            5.0
+                          SB_DFFESR         2           22.2
+                            SB_LUT4        50            5.1
+                              TOTAL        82

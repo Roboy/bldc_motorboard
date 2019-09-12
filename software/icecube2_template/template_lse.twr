@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 Lattice Synthesis Timing Report, Version  
-Mon Aug 26 01:16:35 2019
+Thu Sep 12 13:57:01 2019
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -19,7 +19,7 @@ Report level:    verbose report, limited to 3 items per constraint
 
 ================================================================================
 Constraint: create_clock -period 1000.000000 -name clk0 [get_nets CLK_c]
-            1213 items scored, 0 timing errors detected.
+            1308 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
@@ -44,55 +44,55 @@ Passed:  The following path meets requirements by 957.802ns
 L_CO        ---     0.367              C to Q              blink_counter_523__i0 (from CLK_c)
 Route         2   e 1.258                                  n26
 LUT4        ---     0.408             I1 to CO             blink_counter_523_add_4_2
-Route         2   e 1.158                                  n4710
+Route         2   e 1.158                                  n4437
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_3
-Route         2   e 1.158                                  n4711
+Route         2   e 1.158                                  n4438
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_4
-Route         2   e 1.158                                  n4712
+Route         2   e 1.158                                  n4439
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_5
-Route         2   e 1.158                                  n4713
+Route         2   e 1.158                                  n4440
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_6
-Route         2   e 1.158                                  n4714
+Route         2   e 1.158                                  n4441
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_7
-Route         2   e 1.158                                  n4715
+Route         2   e 1.158                                  n4442
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_8
-Route         2   e 1.158                                  n4716
+Route         2   e 1.158                                  n4443
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_9
-Route         2   e 1.158                                  n4717
+Route         2   e 1.158                                  n4444
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_10
-Route         2   e 1.158                                  n4718
+Route         2   e 1.158                                  n4445
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_11
-Route         2   e 1.158                                  n4719
+Route         2   e 1.158                                  n4446
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_12
-Route         2   e 1.158                                  n4720
+Route         2   e 1.158                                  n4447
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_13
-Route         2   e 1.158                                  n4721
+Route         2   e 1.158                                  n4448
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_14
-Route         2   e 1.158                                  n4722
+Route         2   e 1.158                                  n4449
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_15
-Route         2   e 1.158                                  n4723
+Route         2   e 1.158                                  n4450
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_16
-Route         2   e 1.158                                  n4724
+Route         2   e 1.158                                  n4451
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_17
-Route         2   e 1.158                                  n4725
+Route         2   e 1.158                                  n4452
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_18
-Route         2   e 1.158                                  n4726
+Route         2   e 1.158                                  n4453
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_19
-Route         2   e 1.158                                  n4727
+Route         2   e 1.158                                  n4454
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_20
-Route         2   e 1.158                                  n4728
+Route         2   e 1.158                                  n4455
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_21
-Route         2   e 1.158                                  n4729
+Route         2   e 1.158                                  n4456
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_22
-Route         2   e 1.158                                  n4730
+Route         2   e 1.158                                  n4457
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_23
-Route         2   e 1.158                                  n4731
+Route         2   e 1.158                                  n4458
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_24
-Route         2   e 1.158                                  n4732
+Route         2   e 1.158                                  n4459
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_25
-Route         2   e 1.158                                  n4733
+Route         2   e 1.158                                  n4460
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_26
-Route         1   e 1.020                                  n4734
+Route         1   e 1.020                                  n4461
 LUT4        ---     0.408             I3 to O              blink_counter_523_add_4_27_lut
 Route         1   e 1.020                                  n110
                   --------
@@ -120,53 +120,53 @@ Passed:  The following path meets requirements by 959.230ns
 L_CO        ---     0.367              C to Q              blink_counter_523__i0 (from CLK_c)
 Route         2   e 1.258                                  n26
 LUT4        ---     0.408             I1 to CO             blink_counter_523_add_4_2
-Route         2   e 1.158                                  n4710
+Route         2   e 1.158                                  n4437
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_3
-Route         2   e 1.158                                  n4711
+Route         2   e 1.158                                  n4438
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_4
-Route         2   e 1.158                                  n4712
+Route         2   e 1.158                                  n4439
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_5
-Route         2   e 1.158                                  n4713
+Route         2   e 1.158                                  n4440
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_6
-Route         2   e 1.158                                  n4714
+Route         2   e 1.158                                  n4441
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_7
-Route         2   e 1.158                                  n4715
+Route         2   e 1.158                                  n4442
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_8
-Route         2   e 1.158                                  n4716
+Route         2   e 1.158                                  n4443
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_9
-Route         2   e 1.158                                  n4717
+Route         2   e 1.158                                  n4444
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_10
-Route         2   e 1.158                                  n4718
+Route         2   e 1.158                                  n4445
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_11
-Route         2   e 1.158                                  n4719
+Route         2   e 1.158                                  n4446
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_12
-Route         2   e 1.158                                  n4720
+Route         2   e 1.158                                  n4447
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_13
-Route         2   e 1.158                                  n4721
+Route         2   e 1.158                                  n4448
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_14
-Route         2   e 1.158                                  n4722
+Route         2   e 1.158                                  n4449
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_15
-Route         2   e 1.158                                  n4723
+Route         2   e 1.158                                  n4450
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_16
-Route         2   e 1.158                                  n4724
+Route         2   e 1.158                                  n4451
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_17
-Route         2   e 1.158                                  n4725
+Route         2   e 1.158                                  n4452
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_18
-Route         2   e 1.158                                  n4726
+Route         2   e 1.158                                  n4453
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_19
-Route         2   e 1.158                                  n4727
+Route         2   e 1.158                                  n4454
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_20
-Route         2   e 1.158                                  n4728
+Route         2   e 1.158                                  n4455
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_21
-Route         2   e 1.158                                  n4729
+Route         2   e 1.158                                  n4456
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_22
-Route         2   e 1.158                                  n4730
+Route         2   e 1.158                                  n4457
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_23
-Route         2   e 1.158                                  n4731
+Route         2   e 1.158                                  n4458
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_24
-Route         2   e 1.158                                  n4732
+Route         2   e 1.158                                  n4459
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_25
-Route         2   e 1.158                                  n4733
+Route         2   e 1.158                                  n4460
 LUT4        ---     0.408             I3 to O              blink_counter_523_add_4_26_lut
 Route         1   e 1.020                                  n111
                   --------
@@ -194,53 +194,53 @@ Passed:  The following path meets requirements by 959.368ns
 L_CO        ---     0.367              C to Q              blink_counter_523__i1 (from CLK_c)
 Route         2   e 1.258                                  n25
 LUT4        ---     0.408             I1 to CO             blink_counter_523_add_4_3
-Route         2   e 1.158                                  n4711
+Route         2   e 1.158                                  n4438
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_4
-Route         2   e 1.158                                  n4712
+Route         2   e 1.158                                  n4439
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_5
-Route         2   e 1.158                                  n4713
+Route         2   e 1.158                                  n4440
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_6
-Route         2   e 1.158                                  n4714
+Route         2   e 1.158                                  n4441
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_7
-Route         2   e 1.158                                  n4715
+Route         2   e 1.158                                  n4442
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_8
-Route         2   e 1.158                                  n4716
+Route         2   e 1.158                                  n4443
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_9
-Route         2   e 1.158                                  n4717
+Route         2   e 1.158                                  n4444
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_10
-Route         2   e 1.158                                  n4718
+Route         2   e 1.158                                  n4445
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_11
-Route         2   e 1.158                                  n4719
+Route         2   e 1.158                                  n4446
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_12
-Route         2   e 1.158                                  n4720
+Route         2   e 1.158                                  n4447
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_13
-Route         2   e 1.158                                  n4721
+Route         2   e 1.158                                  n4448
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_14
-Route         2   e 1.158                                  n4722
+Route         2   e 1.158                                  n4449
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_15
-Route         2   e 1.158                                  n4723
+Route         2   e 1.158                                  n4450
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_16
-Route         2   e 1.158                                  n4724
+Route         2   e 1.158                                  n4451
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_17
-Route         2   e 1.158                                  n4725
+Route         2   e 1.158                                  n4452
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_18
-Route         2   e 1.158                                  n4726
+Route         2   e 1.158                                  n4453
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_19
-Route         2   e 1.158                                  n4727
+Route         2   e 1.158                                  n4454
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_20
-Route         2   e 1.158                                  n4728
+Route         2   e 1.158                                  n4455
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_21
-Route         2   e 1.158                                  n4729
+Route         2   e 1.158                                  n4456
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_22
-Route         2   e 1.158                                  n4730
+Route         2   e 1.158                                  n4457
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_23
-Route         2   e 1.158                                  n4731
+Route         2   e 1.158                                  n4458
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_24
-Route         2   e 1.158                                  n4732
+Route         2   e 1.158                                  n4459
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_25
-Route         2   e 1.158                                  n4733
+Route         2   e 1.158                                  n4460
 LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_26
-Route         1   e 1.020                                  n4734
+Route         1   e 1.020                                  n4461
 LUT4        ---     0.408             I3 to O              blink_counter_523_add_4_27_lut
 Route         1   e 1.020                                  n110
                   --------
@@ -270,8 +270,8 @@ Timing summary:
 
 Timing errors: 0  Score: 0
 
-Constraints cover  21791 paths, 1569 nets, and 4525 connections (99.6% coverage)
+Constraints cover  21774 paths, 1559 nets, and 4513 connections (99.6% coverage)
 
 
-Peak memory: 180404224 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
+Peak memory: 182378496 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
 CPU_TIME_REPORT: 0 secs 
