@@ -96,4 +96,93 @@ module TinyFPGA_B (
 	.setpoint(rand_setpoint)
   );
 
+  // wire hall1, hall2, hall3;
+  // // PULLUP for hall sensors
+  // SB_IO #(
+  //   .PIN_TYPE(6'b 0000_01),
+  //   .PULLUP(1'b 1)
+  // ) hall1_input(
+  //   .PACKAGE_PIN(PIN_4),
+  //   .D_IN_0(hall1)
+  // );
+  //
+  // SB_IO #(
+  //   .PIN_TYPE(6'b 0000_01),
+  //   .PULLUP(1'b 1)
+  // ) hall2_input(
+  //   .PACKAGE_PIN(PIN_5),
+  //   .D_IN_0(hall2)
+  // );
+  //
+  // SB_IO #(
+  //   .PIN_TYPE(6'b 0000_01),
+  //   .PULLUP(1'b 1)
+  // ) hall3_input(
+  //   .PACKAGE_PIN(PIN_6),
+  //   .D_IN_0(hall3)
+  // );
+  //
+  // assign PIN_1 = PHASES[0];
+  // assign PIN_2 = PHASES[1];
+  // assign PIN_3 = PHASES[2];
+  // assign PIN_24 = PHASES[3];
+  // assign PIN_23 = PHASES[4];
+  // assign PIN_22 = PHASES[5];
+  // reg [5:0] PHASES;
+  // reg [9:0] pwm_delay;
+  // reg signed [31:0] pwm;
+  //
+  // always @(posedge CLK) begin: BLDC_COMMUTATION
+  // 	if( pwm>=0 && pwm_delay>(1023-pwm))begin
+  //     if(hall1 && ~hall2 && hall3) begin
+  //       PHASES <= 6'b100100;
+  //     end
+  //     if(hall1 && ~hall2 && ~hall3)begin
+  //       PHASES <= 6'b100001;
+  //     end
+  //     if(hall1 && hall2 && ~hall3) begin
+  //       PHASES <= 6'b001001;
+  //     end
+  //     if(~hall1 && hall2 && ~hall3)begin
+  //       PHASES <= 6'b011000;
+  //     end
+  //     if(~hall1 && hall2 && hall3) begin
+  //       PHASES <= 6'b010010;
+  //     end
+  //     if(~hall1 && ~hall2 && hall3)begin
+  //       PHASES <= 6'b000110;
+  //     end
+  // 	end else if ( pwm<0 && pwm_delay>(1023+pwm)) begin
+  //     if(hall1 && ~hall2 && hall3) begin
+  //       PHASES <= 6'b011000;
+  //     end
+  //     if(hall1 && ~hall2 && ~hall3)begin
+  //       PHASES <= 6'b010010;
+  //     end
+  //     if(hall1 && hall2 && ~hall3) begin
+  //       PHASES <= 6'b000110;
+  //     end
+  //     if(~hall1 && hall2 && ~hall3)begin
+  //       PHASES <= 6'b100100;
+  //     end
+  //     if(~hall1 && hall2 && hall3) begin
+  //       PHASES <= 6'b100001;
+  //     end
+  //     if(~hall1 && ~hall2 && hall3)begin
+  //       PHASES <= 6'b001001;
+  //     end
+  //   end else begin
+  // 		PHASES <= 0;
+  // 	end
+  // 	pwm_delay <= pwm_delay+1;
+  // end
+//
+  // // optical encoder
+  // reg signed [7:0] position_encoder0;
+  // quad quad_counter0(CLK, PIN_7, PIN_8, position_encoder0
+
+  // // magnetic encoder
+  // reg signed [31:0] position_encoder1;
+  // quad quad_counter0(CLK, PIN_10, PIN_11, position_encoder1);
+
 endmodule

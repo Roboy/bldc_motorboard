@@ -1,0 +1,96 @@
+* ******************************************************************************
+
+* iCEcube Report
+
+* Version:            2017.08.27940
+
+* Build Date:         Sep 12 2017 08:02:28
+
+* File Generated:     Sep 12 2019 21:12:20
+
+* Purpose:            General info of design implementation
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Synthesis/Placement Summary:
+----------------------------
+    Status:  Successful
+    Runtime: 0 seconds
+
+Device Info:
+------------
+    Device Family: iCE40
+    Device:        iCE40LP8K
+    Package:       CM81
+
+Design statistics:
+------------------
+    FFs:                  564
+    LUTs:                 1378
+    RAMs:                 0
+    IOBs:                 15
+    GBs:                  1
+    PLLs:                 0
+    Warm Boots:           0
+
+Logic Resource Utilization:
+---------------------------
+    Total Logic Cells: 1378/7680
+        Combinational Logic Cells: 814      out of   7680      10.599%
+        Sequential Logic Cells:    564      out of   7680      7.34375%
+        Logic Tiles:               269      out of   960       28.0208%
+    Registers: 
+        Logic Registers:           564      out of   7680      7.34375%
+        IO Registers:              2        out of   1280      0.15625
+    Block RAMs:                    0        out of   32        0%
+    Warm Boots:                    0        out of   1         0%
+    Pins:
+        Input Pins:                1        out of   63        1.5873%
+        Output Pins:               10       out of   63        15.873%
+        InOut Pins:                4        out of   63        6.34921%
+    Global Buffers:                1        out of   8         12.5%
+    PLLs:                          0        out of   1         0%
+
+IO Bank Utilization:
+--------------------
+    Bank 3: 6        out of   18        33.3333%
+    Bank 1: 0        out of   15        0%
+    Bank 0: 7        out of   17        41.1765%
+    Bank 2: 2        out of   13        15.3846%
+
+Detailed I/O Info:
+------------------
+    Input Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function                   Signal Name
+    ----------  ---------  -----------  -------  -------  -----------                   -----------
+    B2          Input      SB_LVCMOS    No       3        Simple Input                  CLK     
+
+    Output Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function                   Signal Name
+    ----------  ---------  -----------  -------  -------  -----------                   -----------
+    A1          Output     SB_LVCMOS    No       0        Simple Output                 PIN_2   
+    A2          Output     SB_LVCMOS    No       0        Simple Output                 PIN_1   
+    A3          Output     SB_LVCMOS    No       0        Simple Output                 USBPU   
+    A6          Output     SB_LVCMOS    No       0        Simple Output                 PIN_24  
+    A7          Output     SB_LVCMOS    No       0        Output Registered             PIN_22  
+    B1          Output     SB_LVCMOS    No       3        Simple Output                 PIN_3   
+    B3          Output     SB_LVCMOS    No       0        Simple Output                 LED     
+    B6          Output     SB_LVCMOS    No       0        Simple Output                 PIN_23  
+    G2          Output     SB_LVCMOS    Yes      3        Output Tristatable by Enable  PIN_10  
+    H1          Output     SB_LVCMOS    Yes      2        Output Tristatable by Enable  PIN_11  
+
+    Inoutput Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function                   Signal Name
+    ----------  ---------  -----------  -------  -------  -----------                   -----------
+    C1          InOut      SB_LVCMOS    Yes      3        Simple Input No Output        PIN_5   
+    C2          InOut      SB_LVCMOS    Yes      3        Simple Input No Output        PIN_4   
+    D2          InOut      SB_LVCMOS    Yes      3        Simple Input No Output        PIN_6   
+    J1          InOut      SB_LVCMOS    Yes      2        Input Registered No Output    PIN_12  
+
+Detailed Global Buffer Info:
+----------------------------
+    Buffer Number  IO Bank  Driven By  Fanout  Signal Name
+    -------------  -------  ---------  ------  -----------
+    3              3                   566     CLK_c  

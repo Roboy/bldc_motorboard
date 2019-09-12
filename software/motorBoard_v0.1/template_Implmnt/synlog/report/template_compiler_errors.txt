@@ -1,0 +1,6 @@
+@E: CS180 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":149:10:149:12|Assignment target int must be a register or integer
+@E: CG295 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":149:14:149:14|Expecting =, <=, or arithmetic-assignment operator.
+@E: CG426 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":166:4:166:15|Assignment target tx2_transmit must be of type reg or genvar
+@E: CG342 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":176:12:176:33|Expecting target variable, found byte_transmit_counter2 -- possible misspelling
+@E: CS187 :"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":193:0:193:8|Expecting endmodule
+

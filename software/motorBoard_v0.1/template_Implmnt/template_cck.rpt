@@ -1,0 +1,99 @@
+# Synopsys Constraint Checker, version maplat, Build 1612R, built Dec  5 2016
+# Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+# Written on Sun Aug 25 21:15:05 2019
+
+
+##### DESIGN INFO #######################################################
+
+Top View:                "top"
+Constraint File(s):      "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc"
+
+
+
+
+##### SUMMARY ############################################################
+
+Found 8 issues in 4 out of 7 constraints
+
+
+##### DETAILS ############################################################
+
+
+
+Clock Relationships
+*******************
+
+Starting     Ending     |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
+-----------------------------------------------------------------------------------------------------------------------------------
+CLK          CLK        |     62.500           |     No paths         |     No paths         |     No paths                         
+===================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+Unconstrained Start/End Points
+******************************
+
+p:LED
+p:PIN_4
+p:PIN_5
+p:PIN_6
+p:PIN_7
+p:PIN_8
+p:PIN_9
+p:PIN_10
+p:PIN_11
+p:PIN_12
+p:PIN_13
+p:PIN_14
+p:PIN_15
+p:PIN_16
+p:PIN_17
+p:PIN_18
+p:PIN_19
+p:PIN_20
+p:PIN_21
+p:PIN_22
+p:PIN_23
+p:PIN_24
+p:USBPU
+
+
+Inapplicable constraints
+************************
+
+set_input_delay { p:LED } -clock { p:CLK }
+	@E:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":27:0:27:0|object "p:CLK" is incorrect type; "-clock"  objects must be of type clock (c: or get_clocks)
+	@E:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":27:0:27:0|param { value } must be defined 
+	@N:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":27:0:27:0|Constraint will be disabled. 
+set_input_delay { p:PIN_2 } -clock { p:CLK }
+	@E:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":29:0:29:0|object "p:CLK" is incorrect type; "-clock"  objects must be of type clock (c: or get_clocks)
+	@E:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":29:0:29:0|param { value } must be defined 
+	@N:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":29:0:29:0|Constraint will be disabled. 
+set_output_delay { p:PIN_1 } -clock { p:CLK }
+	@E:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":28:0:28:0|object "p:CLK" is incorrect type; "-clock"  objects must be of type clock (c: or get_clocks)
+	@E:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":28:0:28:0|param { value } must be defined 
+	@N:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":28:0:28:0|Constraint will be disabled. 
+set_output_delay { p:PIN_3 } -clock { p:CLK }
+	@E:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":30:0:30:0|object "p:CLK" is incorrect type; "-clock"  objects must be of type clock (c: or get_clocks)
+	@E:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":30:0:30:0|param { value } must be defined 
+	@N:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_syn.fdc":30:0:30:0|Constraint will be disabled. 
+
+Applicable constraints with issues
+**********************************
+
+(none)
+
+
+Constraints with matching wildcard expressions
+**********************************************
+
+(none)
+
+
+Library Report
+**************
+
+
+# End of Constraint Checker Report

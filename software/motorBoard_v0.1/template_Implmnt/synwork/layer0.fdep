@@ -1,0 +1,37 @@
+#OPTIONS:"|-layerid|0|-orig_srs|/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/synwork/template_comp.srs|-top|top|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-I|/home/letrend/workspace/bldc_motorboard/software/icecube2_template/|-I|/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib|-v2001|-devicelib|/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/generic/sb_ice40.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-safe_case|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/linux_a_64/c_ver":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/generic/sb_ice40.v":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vlog/hypermods.v":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vlog/umr_capim.v":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vlog/scemi_objects.v":1559394833
+#CUR:"/home/letrend/lscc/iCEcube2.2017.08/synpbase/lib/vlog/scemi_pipes.svh":1559394833
+#CUR:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v":1566754141
+#CUR:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v":1566749008
+#CUR:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v":1566753101
+#CUR:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v":1566643309
+#CUR:"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v":1566755486
+#numinternalfiles:5
+#defaultlanguage:verilog
+0			"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/verilog/TinyFPGA_B.v" verilog
+1			"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_rx.v" verilog
+2			"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/roboy_fpga_code/roboy_fpga_code/uart/uart_tx.v" verilog
+3			"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/quad.v" verilog
+4			"/home/letrend/workspace/bldc_motorboard/software/icecube2_template/coms.v" verilog
+#Dependency Lists(Uses List)
+0 4
+1 -1
+2 -1
+3 -1
+4 2 1
+#Dependency Lists(Users Of)
+0 -1
+1 4
+2 4
+3 -1
+4 0
+#Design Unit to File Association
+module work coms 4
+module work top 0
+module work uart_rx 1
+module work uart_tx 2
+module work quad 3
