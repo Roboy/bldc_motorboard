@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 Lattice Synthesis Timing Report, Version  
-Thu Sep 12 13:57:01 2019
+Thu Sep 12 16:23:52 2019
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -19,234 +19,270 @@ Report level:    verbose report, limited to 3 items per constraint
 
 ================================================================================
 Constraint: create_clock -period 1000.000000 -name clk0 [get_nets CLK_c]
-            1308 items scored, 0 timing errors detected.
+            1289 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Passed:  The following path meets requirements by 957.802ns
+Passed:  The following path meets requirements by 948.186ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         SB_DFF     C              blink_counter_523__i0  (from CLK_c +)
-   Destination:    SB_DFF     D              blink_counter_523__i25  (to CLK_c +)
+   Source:         SB_DFF     C              rand_data_422__i0  (from CLK_c +)
+   Destination:    SB_DFF     D              rand_data_422__i31  (to CLK_c +)
 
-   Delay:                  42.065ns  (26.1% logic, 73.9% route), 27 logic levels.
+   Delay:                  51.681ns  (26.0% logic, 74.0% route), 33 logic levels.
 
  Constraint Details:
 
-     42.065ns data_path blink_counter_523__i0 to blink_counter_523__i25 meets
+     51.681ns data_path rand_data_422__i0 to rand_data_422__i31 meets
     1000.000ns delay constraint less
-      0.133ns L_S requirement (totaling 999.867ns) by 957.802ns
+      0.133ns L_S requirement (totaling 999.867ns) by 948.186ns
 
- Path Details: blink_counter_523__i0 to blink_counter_523__i25
+ Path Details: rand_data_422__i0 to rand_data_422__i31
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367              C to Q              blink_counter_523__i0 (from CLK_c)
-Route         2   e 1.258                                  n26
-LUT4        ---     0.408             I1 to CO             blink_counter_523_add_4_2
-Route         2   e 1.158                                  n4437
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_3
-Route         2   e 1.158                                  n4438
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_4
-Route         2   e 1.158                                  n4439
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_5
-Route         2   e 1.158                                  n4440
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_6
-Route         2   e 1.158                                  n4441
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_7
-Route         2   e 1.158                                  n4442
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_8
-Route         2   e 1.158                                  n4443
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_9
-Route         2   e 1.158                                  n4444
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_10
-Route         2   e 1.158                                  n4445
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_11
-Route         2   e 1.158                                  n4446
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_12
-Route         2   e 1.158                                  n4447
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_13
-Route         2   e 1.158                                  n4448
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_14
-Route         2   e 1.158                                  n4449
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_15
-Route         2   e 1.158                                  n4450
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_16
-Route         2   e 1.158                                  n4451
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_17
-Route         2   e 1.158                                  n4452
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_18
-Route         2   e 1.158                                  n4453
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_19
-Route         2   e 1.158                                  n4454
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_20
-Route         2   e 1.158                                  n4455
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_21
-Route         2   e 1.158                                  n4456
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_22
-Route         2   e 1.158                                  n4457
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_23
-Route         2   e 1.158                                  n4458
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_24
-Route         2   e 1.158                                  n4459
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_25
-Route         2   e 1.158                                  n4460
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_26
-Route         1   e 1.020                                  n4461
-LUT4        ---     0.408             I3 to O              blink_counter_523_add_4_27_lut
-Route         1   e 1.020                                  n110
+L_CO        ---     0.367              C to Q              rand_data_422__i0 (from CLK_c)
+Route         6   e 1.478                                  rand_data[0]
+LUT4        ---     0.408             I1 to CO             rand_data_422_add_4_2
+Route         2   e 1.158                                  n8155
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_3
+Route         2   e 1.158                                  n8156
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_4
+Route         2   e 1.158                                  n8157
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_5
+Route         2   e 1.158                                  n8158
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_6
+Route         2   e 1.158                                  n8159
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_7
+Route         2   e 1.158                                  n8160
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_8
+Route         2   e 1.158                                  n8161
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_9
+Route         2   e 1.158                                  n8162
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_10
+Route         2   e 1.158                                  n8163
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_11
+Route         2   e 1.158                                  n8164
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_12
+Route         2   e 1.158                                  n8165
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_13
+Route         2   e 1.158                                  n8166
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_14
+Route         2   e 1.158                                  n8167
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_15
+Route         2   e 1.158                                  n8168
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_16
+Route         2   e 1.158                                  n8169
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_17
+Route         2   e 1.158                                  n8170
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_18
+Route         2   e 1.158                                  n8171
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_19
+Route         2   e 1.158                                  n8172
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_20
+Route         2   e 1.158                                  n8173
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_21
+Route         2   e 1.158                                  n8174
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_22
+Route         2   e 1.158                                  n8175
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_23
+Route         2   e 1.158                                  n8176
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_24
+Route         2   e 1.158                                  n8177
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_25
+Route         2   e 1.158                                  n8178
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_26
+Route         2   e 1.158                                  n8179
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_27
+Route         2   e 1.158                                  n8180
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_28
+Route         2   e 1.158                                  n8181
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_29
+Route         2   e 1.158                                  n8182
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_30
+Route         2   e 1.158                                  n8183
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_31
+Route         2   e 1.158                                  n8184
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_32
+Route         1   e 1.020                                  n8185
+LUT4        ---     0.408             I3 to O              rand_data_422_add_4_33_lut
+Route         1   e 1.020                                  n134
                   --------
-                   42.065  (26.1% logic, 73.9% route), 27 logic levels.
+                   51.681  (26.0% logic, 74.0% route), 33 logic levels.
 
 
-Passed:  The following path meets requirements by 959.230ns
+Passed:  The following path meets requirements by 949.614ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         SB_DFF     C              blink_counter_523__i0  (from CLK_c +)
-   Destination:    SB_DFF     D              blink_counter_523__i24  (to CLK_c +)
+   Source:         SB_DFF     C              rand_data_422__i0  (from CLK_c +)
+   Destination:    SB_DFF     D              rand_data_422__i30  (to CLK_c +)
 
-   Delay:                  40.637ns  (26.0% logic, 74.0% route), 26 logic levels.
+   Delay:                  50.253ns  (25.9% logic, 74.1% route), 32 logic levels.
 
  Constraint Details:
 
-     40.637ns data_path blink_counter_523__i0 to blink_counter_523__i24 meets
+     50.253ns data_path rand_data_422__i0 to rand_data_422__i30 meets
     1000.000ns delay constraint less
-      0.133ns L_S requirement (totaling 999.867ns) by 959.230ns
+      0.133ns L_S requirement (totaling 999.867ns) by 949.614ns
 
- Path Details: blink_counter_523__i0 to blink_counter_523__i24
+ Path Details: rand_data_422__i0 to rand_data_422__i30
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367              C to Q              blink_counter_523__i0 (from CLK_c)
-Route         2   e 1.258                                  n26
-LUT4        ---     0.408             I1 to CO             blink_counter_523_add_4_2
-Route         2   e 1.158                                  n4437
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_3
-Route         2   e 1.158                                  n4438
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_4
-Route         2   e 1.158                                  n4439
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_5
-Route         2   e 1.158                                  n4440
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_6
-Route         2   e 1.158                                  n4441
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_7
-Route         2   e 1.158                                  n4442
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_8
-Route         2   e 1.158                                  n4443
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_9
-Route         2   e 1.158                                  n4444
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_10
-Route         2   e 1.158                                  n4445
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_11
-Route         2   e 1.158                                  n4446
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_12
-Route         2   e 1.158                                  n4447
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_13
-Route         2   e 1.158                                  n4448
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_14
-Route         2   e 1.158                                  n4449
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_15
-Route         2   e 1.158                                  n4450
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_16
-Route         2   e 1.158                                  n4451
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_17
-Route         2   e 1.158                                  n4452
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_18
-Route         2   e 1.158                                  n4453
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_19
-Route         2   e 1.158                                  n4454
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_20
-Route         2   e 1.158                                  n4455
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_21
-Route         2   e 1.158                                  n4456
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_22
-Route         2   e 1.158                                  n4457
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_23
-Route         2   e 1.158                                  n4458
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_24
-Route         2   e 1.158                                  n4459
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_25
-Route         2   e 1.158                                  n4460
-LUT4        ---     0.408             I3 to O              blink_counter_523_add_4_26_lut
-Route         1   e 1.020                                  n111
+L_CO        ---     0.367              C to Q              rand_data_422__i0 (from CLK_c)
+Route         6   e 1.478                                  rand_data[0]
+LUT4        ---     0.408             I1 to CO             rand_data_422_add_4_2
+Route         2   e 1.158                                  n8155
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_3
+Route         2   e 1.158                                  n8156
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_4
+Route         2   e 1.158                                  n8157
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_5
+Route         2   e 1.158                                  n8158
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_6
+Route         2   e 1.158                                  n8159
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_7
+Route         2   e 1.158                                  n8160
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_8
+Route         2   e 1.158                                  n8161
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_9
+Route         2   e 1.158                                  n8162
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_10
+Route         2   e 1.158                                  n8163
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_11
+Route         2   e 1.158                                  n8164
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_12
+Route         2   e 1.158                                  n8165
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_13
+Route         2   e 1.158                                  n8166
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_14
+Route         2   e 1.158                                  n8167
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_15
+Route         2   e 1.158                                  n8168
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_16
+Route         2   e 1.158                                  n8169
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_17
+Route         2   e 1.158                                  n8170
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_18
+Route         2   e 1.158                                  n8171
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_19
+Route         2   e 1.158                                  n8172
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_20
+Route         2   e 1.158                                  n8173
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_21
+Route         2   e 1.158                                  n8174
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_22
+Route         2   e 1.158                                  n8175
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_23
+Route         2   e 1.158                                  n8176
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_24
+Route         2   e 1.158                                  n8177
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_25
+Route         2   e 1.158                                  n8178
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_26
+Route         2   e 1.158                                  n8179
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_27
+Route         2   e 1.158                                  n8180
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_28
+Route         2   e 1.158                                  n8181
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_29
+Route         2   e 1.158                                  n8182
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_30
+Route         2   e 1.158                                  n8183
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_31
+Route         2   e 1.158                                  n8184
+LUT4        ---     0.408             I3 to O              rand_data_422_add_4_32_lut
+Route         1   e 1.020                                  n135
                   --------
-                   40.637  (26.0% logic, 74.0% route), 26 logic levels.
+                   50.253  (25.9% logic, 74.1% route), 32 logic levels.
 
 
-Passed:  The following path meets requirements by 959.368ns
+Passed:  The following path meets requirements by 949.752ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         SB_DFF     C              blink_counter_523__i1  (from CLK_c +)
-   Destination:    SB_DFF     D              blink_counter_523__i25  (to CLK_c +)
+   Source:         SB_DFF     C              rand_data_422__i1  (from CLK_c +)
+   Destination:    SB_DFF     D              rand_data_422__i31  (to CLK_c +)
 
-   Delay:                  40.499ns  (26.1% logic, 73.9% route), 26 logic levels.
+   Delay:                  50.115ns  (26.0% logic, 74.0% route), 32 logic levels.
 
  Constraint Details:
 
-     40.499ns data_path blink_counter_523__i1 to blink_counter_523__i25 meets
+     50.115ns data_path rand_data_422__i1 to rand_data_422__i31 meets
     1000.000ns delay constraint less
-      0.133ns L_S requirement (totaling 999.867ns) by 959.368ns
+      0.133ns L_S requirement (totaling 999.867ns) by 949.752ns
 
- Path Details: blink_counter_523__i1 to blink_counter_523__i25
+ Path Details: rand_data_422__i1 to rand_data_422__i31
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367              C to Q              blink_counter_523__i1 (from CLK_c)
-Route         2   e 1.258                                  n25
-LUT4        ---     0.408             I1 to CO             blink_counter_523_add_4_3
-Route         2   e 1.158                                  n4438
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_4
-Route         2   e 1.158                                  n4439
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_5
-Route         2   e 1.158                                  n4440
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_6
-Route         2   e 1.158                                  n4441
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_7
-Route         2   e 1.158                                  n4442
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_8
-Route         2   e 1.158                                  n4443
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_9
-Route         2   e 1.158                                  n4444
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_10
-Route         2   e 1.158                                  n4445
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_11
-Route         2   e 1.158                                  n4446
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_12
-Route         2   e 1.158                                  n4447
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_13
-Route         2   e 1.158                                  n4448
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_14
-Route         2   e 1.158                                  n4449
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_15
-Route         2   e 1.158                                  n4450
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_16
-Route         2   e 1.158                                  n4451
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_17
-Route         2   e 1.158                                  n4452
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_18
-Route         2   e 1.158                                  n4453
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_19
-Route         2   e 1.158                                  n4454
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_20
-Route         2   e 1.158                                  n4455
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_21
-Route         2   e 1.158                                  n4456
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_22
-Route         2   e 1.158                                  n4457
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_23
-Route         2   e 1.158                                  n4458
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_24
-Route         2   e 1.158                                  n4459
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_25
-Route         2   e 1.158                                  n4460
-LUT4        ---     0.408             CI to CO             blink_counter_523_add_4_26
-Route         1   e 1.020                                  n4461
-LUT4        ---     0.408             I3 to O              blink_counter_523_add_4_27_lut
-Route         1   e 1.020                                  n110
+L_CO        ---     0.367              C to Q              rand_data_422__i1 (from CLK_c)
+Route         6   e 1.478                                  rand_data[1]
+LUT4        ---     0.408             I1 to CO             rand_data_422_add_4_3
+Route         2   e 1.158                                  n8156
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_4
+Route         2   e 1.158                                  n8157
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_5
+Route         2   e 1.158                                  n8158
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_6
+Route         2   e 1.158                                  n8159
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_7
+Route         2   e 1.158                                  n8160
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_8
+Route         2   e 1.158                                  n8161
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_9
+Route         2   e 1.158                                  n8162
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_10
+Route         2   e 1.158                                  n8163
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_11
+Route         2   e 1.158                                  n8164
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_12
+Route         2   e 1.158                                  n8165
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_13
+Route         2   e 1.158                                  n8166
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_14
+Route         2   e 1.158                                  n8167
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_15
+Route         2   e 1.158                                  n8168
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_16
+Route         2   e 1.158                                  n8169
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_17
+Route         2   e 1.158                                  n8170
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_18
+Route         2   e 1.158                                  n8171
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_19
+Route         2   e 1.158                                  n8172
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_20
+Route         2   e 1.158                                  n8173
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_21
+Route         2   e 1.158                                  n8174
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_22
+Route         2   e 1.158                                  n8175
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_23
+Route         2   e 1.158                                  n8176
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_24
+Route         2   e 1.158                                  n8177
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_25
+Route         2   e 1.158                                  n8178
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_26
+Route         2   e 1.158                                  n8179
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_27
+Route         2   e 1.158                                  n8180
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_28
+Route         2   e 1.158                                  n8181
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_29
+Route         2   e 1.158                                  n8182
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_30
+Route         2   e 1.158                                  n8183
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_31
+Route         2   e 1.158                                  n8184
+LUT4        ---     0.408             CI to CO             rand_data_422_add_4_32
+Route         1   e 1.020                                  n8185
+LUT4        ---     0.408             I3 to O              rand_data_422_add_4_33_lut
+Route         1   e 1.020                                  n134
                   --------
-                   40.499  (26.1% logic, 73.9% route), 26 logic levels.
+                   50.115  (26.0% logic, 74.0% route), 32 logic levels.
 
-Report: 42.198 ns is the maximum delay for this constraint.
+Report: 51.814 ns is the maximum delay for this constraint.
 
 
 Timing Report Summary
@@ -256,7 +292,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 1000.000000 -name  |             |             |
-clk0 [get_nets CLK_c]                   |  1000.000 ns|    42.198 ns|    27  
+clk0 [get_nets CLK_c]                   |  1000.000 ns|    51.814 ns|    33  
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -270,8 +306,8 @@ Timing summary:
 
 Timing errors: 0  Score: 0
 
-Constraints cover  21774 paths, 1559 nets, and 4513 connections (99.6% coverage)
+Constraints cover  59557 paths, 1603 nets, and 4461 connections (99.6% coverage)
 
 
-Peak memory: 182378496 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
+Peak memory: 182616064 bytes, TRCE: 1363968 bytes, DLYMAN: 327680 bytes
 CPU_TIME_REPORT: 0 secs 

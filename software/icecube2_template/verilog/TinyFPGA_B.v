@@ -74,13 +74,23 @@ module TinyFPGA_B (
   // light up the LED according to the pattern
   assign LED = blink_pattern[blink_counter[25:21]];
 
+  reg [31:0] rand_data;
+  always @(posedge CLK) begin
+      rand_data <= rand_data + 1;
+  end
+
   coms c0(
   	.CLK(CLK),
+	.reset(1'b0),
   	.tx_o(tx_o),
 	.tx_enable(tx_enable),
   	.tx2_o(tx2_o),
 	.tx2_enable(tx2_enable),
-  	.rx_i(rx_i)
+  	.rx_i(rx_i),
+	.position(rand_data),
+	.velocity(rand_data),
+	.displacement(rand_data),
+	.current(rand_data)
   );
 
 endmodule

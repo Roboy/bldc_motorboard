@@ -3,7 +3,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Sep 12 13:57:00 2019
+Thu Sep 12 16:23:50 2019
 
 
 Command Line:  /media/external/iCEcube2/LSE/bin/lin64/synthesis -f template_lse.prj 
@@ -68,9 +68,9 @@ The -comp option is FALSE.
 The -syn option is FALSE.
 -p /home/letrend/workspace/bldc_motorboard/software/icecube2_template (searchpath added)
 Verilog design file = verilog/TinyFPGA_B.v
-Verilog design file = coms.v
 Verilog design file = verilog/uart_rx.v
 Verilog design file = verilog/uart_tx.v
+Verilog design file = coms.v
 -sdc option: SDC file input not used.
 WARNING - synthesis: Setting TinyFPGA_B as the top-level module. To specify the top-level module explicitly, use the -top option.
 Technology check ok...
@@ -80,10 +80,10 @@ Analyzing Verilog file /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEAD
 Compile design.
 Compile Design Begin
 Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
-Analyzing Verilog file coms.v. VERI-1482
-WARNING - synthesis: coms.v(116): identifier data_in_frame is used before its declaration. VERI-1875
 Analyzing Verilog file verilog/uart_rx.v. VERI-1482
 Analyzing Verilog file verilog/uart_tx.v. VERI-1482
+Analyzing Verilog file coms.v. VERI-1482
+WARNING - synthesis: coms.v(152): identifier data_in_frame is used before its declaration. VERI-1875
 Analyzing Verilog file /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
 WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
 WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
@@ -107,24 +107,28 @@ WARNING - synthesis: verilog/uart_tx.v(70): expression size 32 truncated to fit 
 WARNING - synthesis: verilog/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
 WARNING - synthesis: verilog/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: verilog/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
-WARNING - synthesis: coms.v(126): expression size 32 truncated to fit in target size 16. VERI-1209
-WARNING - synthesis: coms.v(128): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: coms.v(160): expression size 32 truncated to fit in target size 11. VERI-1209
+WARNING - synthesis: coms.v(177): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(196): expression size 32 truncated to fit in target size 11. VERI-1209
 INFO - synthesis: verilog/uart_rx.v(14): compiling module uart_rx. VERI-1018
 WARNING - synthesis: verilog/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: coms.v(212): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(292): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(20): net data_out[20][7] does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(93): actual bit length 32 differs from formal bit length 16 for port current. VERI-1330
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(94): input port ID[7] is not connected on this instance. VDB-1013
 Loading NGL library '/media/external/iCEcube2/LSE/xo2c00/data/xo2clib.ngl'...
 Loading NGL library '/media/external/iCEcube2/LSE/or5g00/data/orc5glib.ngl'...
 Top-level module name = TinyFPGA_B.
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(94): input port ID[7] is not connected on this instance. VDB-1013
+WARNING - synthesis: coms.v(20): net data_out[20][7] does not have a driver. VDB-1002
 ######## Converting I/O port PIN_4 to input.
 ######## Converting I/O port PIN_5 to input.
 ######## Converting I/O port PIN_6 to input.
@@ -146,140 +150,143 @@ WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is n
 ######## Converting I/O port PIN_22 to input.
 ######## Converting I/O port PIN_23 to input.
 ######## Converting I/O port PIN_24 to input.
+WARNING - synthesis: coms.v(9): net \c0/ID[7] does not have a driver. VDB-1002
+######## Missing driver on net \c0/ID[7]. Patching with GND.
+######## Missing driver on net \c0/ID[6]. Patching with GND.
+######## Missing driver on net \c0/ID[5]. Patching with GND.
+######## Missing driver on net \c0/ID[4]. Patching with GND.
+######## Missing driver on net \c0/ID[3]. Patching with GND.
+######## Missing driver on net \c0/ID[2]. Patching with GND.
+######## Missing driver on net \c0/ID[1]. Patching with GND.
+######## Missing driver on net \c0/ID[0]. Patching with GND.
+######## Missing driver on net \c0/data_out[20][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[20][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[20][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[20][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[20][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[20][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[20][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[20][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[19][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[19][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[19][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[19][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[19][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[19][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[19][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[19][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[18][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[18][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[18][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[18][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[18][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[18][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[18][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[18][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[17][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[17][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[17][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[17][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[17][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[17][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[17][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[17][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[16][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[16][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[16][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[16][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[16][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[16][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[16][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[16][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[15][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[15][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[15][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[15][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[15][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[15][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[15][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[15][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[14][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[14][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[14][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[14][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[14][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[14][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[14][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[14][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[13][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[13][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[13][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[13][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[13][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[13][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[13][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[13][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[12][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[12][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[12][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[12][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[12][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[12][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[12][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[12][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[11][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[11][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[11][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[11][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[11][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[11][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[11][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[11][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[10][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[10][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[10][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[10][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[10][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[10][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[10][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[10][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[9][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[9][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[9][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[9][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[9][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[9][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[9][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[9][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[8][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[8][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[8][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[8][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[8][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[8][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[8][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[8][0]. Patching with GND.
+######## Missing driver on net \c0/data_out[7][7]. Patching with GND.
+######## Missing driver on net \c0/data_out[7][6]. Patching with GND.
+######## Missing driver on net \c0/data_out[7][5]. Patching with GND.
+######## Missing driver on net \c0/data_out[7][4]. Patching with GND.
+######## Missing driver on net \c0/data_out[7][3]. Patching with GND.
+######## Missing driver on net \c0/data_out[7][2]. Patching with GND.
+######## Missing driver on net \c0/data_out[7][1]. Patching with GND.
+######## Missing driver on net \c0/data_out[7][0]. Patching with GND.
 
 
 
-WARNING - synthesis: Bit 16 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 17 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 18 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 19 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 20 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 21 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 22 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 23 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 24 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 25 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 26 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 27 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 28 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 29 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 30 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 31 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 32 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 33 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 34 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 35 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 36 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 37 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 38 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 39 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 40 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 41 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 42 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 43 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 44 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 45 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 46 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 47 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 48 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 49 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 50 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 51 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 52 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 53 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 54 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 55 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 56 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 57 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 58 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 59 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 60 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 61 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 62 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 63 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 80 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 81 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 82 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 83 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 84 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 85 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 86 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 87 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 88 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 89 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 90 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 91 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 92 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 93 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 94 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 95 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 96 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 97 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 98 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 99 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 100 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 101 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 102 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 103 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 104 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 105 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 106 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 107 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 108 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 109 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 110 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 111 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 112 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 113 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 114 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 115 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 116 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 117 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 118 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 119 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 120 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 121 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 122 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 123 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 124 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 125 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 126 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 127 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 128 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 129 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 130 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 131 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 132 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 133 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 134 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 135 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 136 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 137 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 138 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 139 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 140 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 141 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 142 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 143 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 144 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 145 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 146 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 147 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 148 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 149 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 150 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 151 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 152 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 153 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 154 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 155 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 156 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 157 of Register \c0/data_out[0] is stuck at Zero
-WARNING - synthesis: Bit 158 of Register \c0/data_out[0] is stuck at One
-WARNING - synthesis: Bit 159 of Register \c0/data_out[0] is stuck at Zero
+WARNING - synthesis: Bit 0 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 1 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 2 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 3 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 4 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 5 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 6 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
 WARNING - synthesis: Skipping pad insertion on PIN_1 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_2 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_3 due to black_box_pad_pin attribute.
+WARNING - synthesis: coms.v(202): Register \c0/data_out[4][7]_2014 is stuck at Zero. VDB-5013
+WARNING - synthesis: coms.v(202): Register \c0/data_out[0][1]_2052 is stuck at One. VDB-5014
+WARNING - synthesis: coms.v(301): Register \c0/FRAME_MATCHER.state__i1 is stuck at Zero. VDB-5013
 WARNING - synthesis: Initial value found on instance \c0/tx/r_Tx_Done_44 will be ignored.
 Applying 1.000000 MHz constraint to all clocks
 
@@ -288,35 +295,36 @@ Writing scf file : template_Implmnt/template.scf
 Results of NGD DRC are available in TinyFPGA_B_drc.log.
 
 ################### Begin Area Report (TinyFPGA_B)######################
-Number of register bits => 498 of 7680 (6 % )
-SB_CARRY => 84
-SB_DFF => 464
-SB_DFFE => 25
-SB_DFFESR => 9
+Number of register bits => 503 of 7680 (6 % )
+SB_CARRY => 103
+SB_DFF => 416
+SB_DFFE => 69
+SB_DFFESR => 17
+SB_DFFSR => 1
 SB_GB_IO => 1
 SB_IO => 5
-SB_LUT4 => 981
+SB_LUT4 => 1001
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : CLK_c, loads : 498
+  Net : CLK_c, loads : 503
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : c0/FRAME_MATCHER.wait_for_transmission, loads : 164
-  Net : c0/n1686, loads : 161
-  Net : c0/rx/rx_data_ready, loads : 159
+  Net : c0/rx/rx_data_ready, loads : 167
+  Net : c0/n4806, loads : 111
   Net : c0/byte_transmit_counter2_1, loads : 83
+  Net : c0/FRAME_MATCHER.state_0, loads : 63
+  Net : c0/n9069, loads : 55
   Net : c0/byte_transmit_counter2_0, loads : 43
-  Net : c0/tx2/r_SM_Main_2, loads : 33
-  Net : c0/byte_transmit_counter_0, loads : 22
-  Net : c0/n4315, loads : 19
-  Net : c0/byte_transmit_counter2_3, loads : 19
-  Net : c0/n21, loads : 18
+  Net : c0/byte_transmit_counter2_3, loads : 27
+  Net : c0/UART_TRANSMITTER.state_0, loads : 20
+  Net : c0/byte_transmit_counter2_2, loads : 19
+  Net : c0/tx/r_SM_Main_2, loads : 18
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -326,7 +334,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 1000.000000 -name  |             |             |
-clk0 [get_nets CLK_c]                   |    1.000 MHz|   23.698 MHz|    27  
+clk0 [get_nets CLK_c]                   |    1.000 MHz|   19.300 MHz|    33  
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -334,8 +342,8 @@ clk0 [get_nets CLK_c]                   |    1.000 MHz|   23.698 MHz|    27
 All constraints were met.
 
 
-Peak Memory Usage: 173.930  MB
+Peak Memory Usage: 174.156  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 1.975  secs
+Elapsed CPU time for LSE flow : 2.357  secs
 --------------------------------------------------------------

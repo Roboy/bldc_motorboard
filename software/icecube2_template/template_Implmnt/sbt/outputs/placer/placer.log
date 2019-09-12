@@ -6,7 +6,7 @@
 
 * Build Date:         Sep 12 2017 08:14:10
 
-* File Generated:     Sep 12 2019 13:57:02
+* File Generated:     Sep 12 2019 16:23:53
 
 * Purpose:            
 
@@ -56,10 +56,10 @@ W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_8, as it i
 W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_9, as it is not connected to any PAD
 
 Input Design Statistics
-    Number of LUTs      	:	981
-    Number of DFFs      	:	498
+    Number of LUTs      	:	1001
+    Number of DFFs      	:	503
     Number of DFFs packed to IO	:	0
-    Number of Carrys    	:	84
+    Number of Carrys    	:	103
     Number of RAMs      	:	0
     Number of ROMs      	:	0
     Number of IOs       	:	5
@@ -76,14 +76,14 @@ W2216: SB_GB_IO 'CLK_pad' is assigned to a non-GB pin 'B2'. Replacing it with SB
 Design Legalization Statistics
     Number of feedthru LUTs inserted to legalize input of DFFs     	:	2
     Number of feedthru LUTs inserted for LUTs driving multiple DFFs	:	0
-    Number of LUTs replicated for LUTs driving multiple DFFs       	:	0
+    Number of LUTs replicated for LUTs driving multiple DFFs       	:	1
     Number of feedthru LUTs inserted to legalize output of CARRYs  	:	0
     Number of feedthru LUTs inserted to legalize global signals    	:	0
     Number of feedthru CARRYs inserted to legalize input of CARRYs 	:	0
     Number of inserted LUTs to Legalize IOs with PIN_TYPE= 01xxxx  	:	0
     Number of inserted LUTs to Legalize IOs with PIN_TYPE= 10xxxx  	:	0
     Number of inserted LUTs to Legalize IOs with PIN_TYPE= 11xxxx  	:	0
-    Total LUTs inserted                                            	:	2
+    Total LUTs inserted                                            	:	3
     Total CARRYs inserted                                          	:	0
 
 
@@ -99,42 +99,42 @@ SDC-Info-1101: Duty cycle not specified for clock. Assuming 50 percent dutycycle
 Warning-1034: Found non-unate timing arc, from pin "PACKAGEPIN" to pin "DIN0" of instance "CLK_pad", in the clock network. Converting the timing arc to positive-unate
 
 Design Statistics after Packing
-    Number of LUTs      	:	983
-    Number of DFFs      	:	497
+    Number of LUTs      	:	1004
+    Number of DFFs      	:	502
     Number of DFFs packed to IO	:	1
-    Number of Carrys    	:	84
+    Number of Carrys    	:	103
 
 Device Utilization Summary after Packing
     Sequential LogicCells
-        LUT and DFF      	:	441
-        LUT, DFF and CARRY	:	56
+        LUT and DFF      	:	421
+        LUT, DFF and CARRY	:	81
     Combinational LogicCells
-        Only LUT         	:	458
+        Only LUT         	:	480
         CARRY Only       	:	0
-        LUT with CARRY   	:	28
-    LogicCells                  :	983/7680
+        LUT with CARRY   	:	22
+    LogicCells                  :	1004/7680
     PLBs                        :	134/960
     BRAMs                       :	0/32
     IOs and GBIOs               :	6/63
     PLLs                        :	0/1
 
 
-I2088: Phase 3, elapsed time : 0.9 (sec)
+I2088: Phase 3, elapsed time : 1.0 (sec)
 
 Phase 4
-I2088: Phase 4, elapsed time : 0.1 (sec)
+I2088: Phase 4, elapsed time : 0.2 (sec)
 
 Phase 5
-I2088: Phase 5, elapsed time : 2.0 (sec)
+I2088: Phase 5, elapsed time : 2.1 (sec)
 
 Phase 6
-I2088: Phase 6, elapsed time : 34.1 (sec)
+I2088: Phase 6, elapsed time : 30.2 (sec)
 
 Final Design Statistics
-    Number of LUTs      	:	983
-    Number of DFFs      	:	497
+    Number of LUTs      	:	1004
+    Number of DFFs      	:	502
     Number of DFFs packed to IO	:	1
-    Number of Carrys    	:	84
+    Number of Carrys    	:	103
     Number of RAMs      	:	0
     Number of ROMs      	:	0
     Number of IOs       	:	6
@@ -144,7 +144,7 @@ Final Design Statistics
     Number of PLLs      	:	0
 
 Device Utilization Summary
-    LogicCells                  :	983/7680
+    LogicCells                  :	1004/7680
     PLBs                        :	163/960
     BRAMs                       :	0/32
     IOs and GBIOs               :	6/63
@@ -164,7 +164,7 @@ analysis after routing.
                      Clock Summary 
 =====================================================================
 Number of clocks: 2
-Clock: CLK | Frequency: 60.94 MHz | Target: 16.00 MHz
+Clock: CLK | Frequency: 65.57 MHz | Target: 16.00 MHz
 Clock: TinyFPGA_B|CLK | Frequency: N/A | Target: 1.00 MHz
 
 =====================================================================
@@ -173,5 +173,5 @@ Clock: TinyFPGA_B|CLK | Frequency: N/A | Target: 1.00 MHz
 
 I2054: Placement of design completed successfully
 
-I2076: Placer run-time: 37.6 sec.
+I2076: Placer run-time: 33.9 sec.
 
