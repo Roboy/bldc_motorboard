@@ -3,7 +3,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Sep 12 21:11:03 2019
+Thu Sep 12 23:45:04 2019
 
 
 Command Line:  /media/external/iCEcube2/LSE/bin/lin64/synthesis -f template_lse.prj 
@@ -72,7 +72,10 @@ Verilog design file = verilog/uart_rx.v
 Verilog design file = verilog/uart_tx.v
 Verilog design file = verilog/coms.v
 Verilog design file = verilog/motorControl.v
+Verilog design file = quad.v
 -sdc option: SDC file input not used.
+-vh2008
+
 WARNING - synthesis: Setting TinyFPGA_B as the top-level module. To specify the top-level module explicitly, use the -top option.
 Technology check ok...
 
@@ -81,16 +84,17 @@ Analyzing Verilog file /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEAD
 Compile design.
 Compile Design Begin
 Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
+WARNING - synthesis: verilog/TinyFPGA_B.v(122): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(123): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(124): identifier PHASES is used before its declaration. VERI-1875
 WARNING - synthesis: verilog/TinyFPGA_B.v(125): identifier PHASES is used before its declaration. VERI-1875
 WARNING - synthesis: verilog/TinyFPGA_B.v(126): identifier PHASES is used before its declaration. VERI-1875
 WARNING - synthesis: verilog/TinyFPGA_B.v(127): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(128): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(129): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(130): identifier PHASES is used before its declaration. VERI-1875
 Analyzing Verilog file verilog/uart_rx.v. VERI-1482
 Analyzing Verilog file verilog/uart_tx.v. VERI-1482
 Analyzing Verilog file verilog/coms.v. VERI-1482
 Analyzing Verilog file verilog/motorControl.v. VERI-1482
+Analyzing Verilog file quad.v. VERI-1482
 Analyzing Verilog file /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
 WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
 WARNING - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
@@ -114,39 +118,47 @@ WARNING - synthesis: verilog/uart_tx.v(70): expression size 32 truncated to fit 
 WARNING - synthesis: verilog/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
 WARNING - synthesis: verilog/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: verilog/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
-WARNING - synthesis: verilog/coms.v(300): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: verilog/coms.v(311): expression size 32 truncated to fit in target size 14. VERI-1209
-WARNING - synthesis: verilog/coms.v(333): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: verilog/coms.v(358): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/coms.v(297): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/coms.v(309): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING - synthesis: verilog/coms.v(331): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/coms.v(342): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING - synthesis: verilog/coms.v(361): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/coms.v(372): expression size 32 truncated to fit in target size 14. VERI-1209
 INFO - synthesis: verilog/uart_rx.v(14): compiling module uart_rx. VERI-1018
 WARNING - synthesis: verilog/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: verilog/coms.v(388): index 152 is out of range [151:0] for data_in_field. VERI-1216
-WARNING - synthesis: verilog/coms.v(394): index 152 is out of range [151:0] for data_out_field2. VERI-1216
-WARNING - synthesis: verilog/coms.v(485): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/coms.v(396): index 152 is out of range [151:0] for data_in_field. VERI-1216
+WARNING - synthesis: verilog/coms.v(402): index 152 is out of range [151:0] for data_out_field2. VERI-1216
+WARNING - synthesis: verilog/coms.v(492): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/coms.v(21): net data_out[20][7] does not have a driver. VDB-1002
-WARNING - synthesis: verilog/TinyFPGA_B.v(95): actual bit length 32 differs from formal bit length 16 for port current. VERI-1330
 INFO - synthesis: verilog/motorControl.v(1): compiling module motorControl. VERI-1018
-WARNING - synthesis: verilog/motorControl.v(55): expression size 32 truncated to fit in target size 10. VERI-1209
+WARNING - synthesis: verilog/motorControl.v(82): expression size 32 truncated to fit in target size 10. VERI-1209
+INFO - synthesis: quad.v(3): compiling module quad(BUFFER_LENGTH=40). VERI-1018
+WARNING - synthesis: quad.v(15): index 39 is out of range [31:0] for quadAbuf. VERI-1216
+WARNING - synthesis: quad.v(16): index 39 is out of range [31:0] for quadBbuf. VERI-1216
+WARNING - synthesis: quad.v(18): index 39 is out of range [31:0] for quadAbuf. VERI-1216
+WARNING - synthesis: quad.v(18): index 38 is out of range [31:0] for quadAbuf. VERI-1216
+WARNING - synthesis: quad.v(19): index 39 is out of range [31:0] for quadBbuf. VERI-1216
+WARNING - synthesis: quad.v(19): index 38 is out of range [31:0] for quadBbuf. VERI-1216
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(97): input port ID[7] is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(107): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(115): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(123): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(94): input port ID[7] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(104): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(112): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(120): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 Loading NGL library '/media/external/iCEcube2/LSE/xo2c00/data/xo2clib.ngl'...
 Loading NGL library '/media/external/iCEcube2/LSE/or5g00/data/orc5glib.ngl'...
 Top-level module name = TinyFPGA_B.
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(97): input port ID[7] is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(107): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(115): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(123): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(94): input port ID[7] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(104): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(112): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(120): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/coms.v(21): net data_out[20][7] does not have a driver. VDB-1002
 ######## Converting I/O port PIN_1 to output.
 ######## Converting I/O port PIN_2 to output.
@@ -255,10 +267,75 @@ WARNING - synthesis: verilog/coms.v(9): net \c0/ID[7] does not have a driver. VD
 ######## Missing driver on net \c0/data_out[11][2]. Patching with GND.
 ######## Missing driver on net \c0/data_out[11][1]. Patching with GND.
 ######## Missing driver on net \c0/data_out[11][0]. Patching with GND.
-WARNING - synthesis: verilog/motorControl.v(56): Register \control/pwm_i0 is stuck at Zero. VDB-5013
-WARNING - synthesis: verilog/motorControl.v(56): Register \control/pwm_i2 is stuck at One. VDB-5014
-WARNING - synthesis: verilog/coms.v(370): Register \c0/data_out[4][7]_2217 is stuck at Zero. VDB-5013
-WARNING - synthesis: verilog/coms.v(370): Register \c0/data_out[1][5]_2243 is stuck at One. VDB-5014
+WARNING - synthesis: Bit 0 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 1 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 2 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 3 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 4 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 5 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 6 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 7 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 8 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 9 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 10 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 11 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 12 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 13 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 14 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 15 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 16 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 17 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 18 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 19 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 20 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 21 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 22 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 23 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 24 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 25 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 26 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 27 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 28 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 29 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 30 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 31 of Register \quad_counter0/quadAbuf is stuck at Zero
+WARNING - synthesis: Bit 0 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 1 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 2 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 3 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 4 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 5 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 6 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 7 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 8 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 9 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 10 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 11 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 12 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 13 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 14 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 15 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 16 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 17 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 18 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 19 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 20 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 21 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 22 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 23 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 24 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 25 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 26 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 27 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 28 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 29 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 30 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: Bit 31 of Register \quad_counter0/quadBbuf is stuck at Zero
+WARNING - synthesis: verilog/coms.v(378): Register \c0/data_out[9][6]_1861 is stuck at One. VDB-5014
+WARNING - synthesis: verilog/coms.v(378): Register \c0/data_out[4][7]_1900 is stuck at Zero. VDB-5013
+WARNING - synthesis: quad.v(31): Register \quad_counter0/A_31 is stuck at Zero. VDB-5013
+WARNING - synthesis: quad.v(34): Register \quad_counter0/A_delayed_33 is stuck at Zero. VDB-5013
+WARNING - synthesis: quad.v(35): Register \quad_counter0/B_delayed_34 is stuck at Zero. VDB-5013
 
 
 
@@ -273,8 +350,9 @@ WARNING - synthesis: Skipping pad insertion on PIN_6 due to black_box_pad_pin at
 WARNING - synthesis: Skipping pad insertion on PIN_10 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_11 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_12 due to black_box_pad_pin attribute.
-WARNING - synthesis: verilog/coms.v(543): Register \c0/data_out_frame2[0]__i9 is stuck at One. VDB-5014
-WARNING - synthesis: verilog/coms.v(543): Register \c0/data_out_frame2[0]__i11 is stuck at Zero. VDB-5013
+WARNING - synthesis: quad.v(46): Register \quad_counter0/count_i0 is stuck at Zero. VDB-5013
+WARNING - synthesis: verilog/coms.v(554): Register \c0/rx_crc_i10 is stuck at One. VDB-5014
+WARNING - synthesis: verilog/coms.v(554): Register \c0/data_out_frame2[0]__i11 is stuck at Zero. VDB-5013
 Applying 1.000000 MHz constraint to all clocks
 
 Writing scf file : template_Implmnt/template.scf
@@ -282,38 +360,38 @@ Writing scf file : template_Implmnt/template.scf
 Results of NGD DRC are available in TinyFPGA_B_drc.log.
 
 ################### Begin Area Report (TinyFPGA_B)######################
-Number of register bits => 566 of 7680 (7 % )
-SB_CARRY => 177
-SB_DFF => 381
-SB_DFFE => 75
-SB_DFFESR => 31
+Number of register bits => 481 of 7680 (6 % )
+SB_CARRY => 229
+SB_DFF => 322
+SB_DFFE => 70
+SB_DFFESR => 9
 SB_DFFESS => 7
-SB_DFFSR => 2
+SB_DFFSR => 3
 SB_DFFSS => 70
 SB_GB_IO => 1
 SB_IO => 14
-SB_LUT4 => 1375
+SB_LUT4 => 1168
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : CLK_c, loads : 566
+  Net : CLK_c, loads : 481
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : c0/n11114, loads : 127
-  Net : c0/byte_transmit_counter2_1, loads : 69
-  Net : c0/rx/n18631, loads : 62
-  Net : c0/byte_transmit_counter2_0, loads : 53
-  Net : c0/n63_adj_2263, loads : 49
-  Net : c0/byte_transmit_counter_0, loads : 48
-  Net : c0/UART_TRANSMITTER.state_1, loads : 47
-  Net : c0/UART_TRANSMITTER.state_0, loads : 40
-  Net : c0/n11017, loads : 38
-  Net : c0/n1166, loads : 35
+  Net : c0/n19017, loads : 61
+  Net : c0/UART_TRANSMITTER.state_2, loads : 56
+  Net : c0/UART_TRANSMITTER.state_1, loads : 52
+  Net : c0/UART_TRANSMITTER.state_0, loads : 43
+  Net : c0/n3898, loads : 40
+  Net : c0/byte_transmit_counter_0, loads : 37
+  Net : c0/rx/rx_data_ready, loads : 35
+  Net : c0/n11172, loads : 35
+  Net : c0/n10515, loads : 35
+  Net : c0/n63, loads : 33
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -323,7 +401,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 1000.000000 -name  |             |             |
-clk0 [get_nets CLK_c]                   |    1.000 MHz|   17.905 MHz|    35  
+clk0 [get_nets CLK_c]                   |    1.000 MHz|   13.674 MHz|    46  
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -331,8 +409,8 @@ clk0 [get_nets CLK_c]                   |    1.000 MHz|   17.905 MHz|    35
 All constraints were met.
 
 
-Peak Memory Usage: 178.430  MB
+Peak Memory Usage: 186.738  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 3.621  secs
+Elapsed CPU time for LSE flow : 4.339  secs
 --------------------------------------------------------------

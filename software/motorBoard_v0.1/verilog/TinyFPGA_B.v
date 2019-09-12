@@ -74,12 +74,9 @@ module TinyFPGA_B (
   // light up the LED according to the pattern
   assign LED = blink_pattern[blink_counter[25:21]];
 
-  reg [31:0] rand_data;
-  reg [31:0] rand_setpoint;
-  always @(posedge CLK) begin
-      rand_data <= rand_data + 1;
-	  rand_setpoint <= rand_setpoint+rand_data;
-  end
+
+  wire signed [31:0] position;
+  wire signed [31:0] setpoint;
 
   coms c0(
   	.CLK(CLK),
@@ -89,11 +86,11 @@ module TinyFPGA_B (
   	.tx2_o(tx2_o),
 	.tx2_enable(tx2_enable),
   	.rx_i(rx_i),
-	.position(rand_data),
-	.velocity(rand_data),
-	.displacement(rand_data),
-	.current(rand_data),
-	.setpoint(rand_setpoint)
+	.position(32'h0),
+	.velocity(32'h0),
+	.displacement(position),
+	.current(16'h0),
+	.setpoint(setpoint)
   );
 
   wire hall1, hall2, hall3;
@@ -132,15 +129,19 @@ module TinyFPGA_B (
 
   motorControl control(
     .CLK(CLK),
+    .reset(1'b0),
     .hall1(hall1),
     .hall2(hall2),
     .hall3(hall3),
-    .PHASES(PHASES)
+    .PHASES(PHASES),
+    .setpoint(setpoint),
+    .state(position),
+    .Kp(32'h1),
+    .Kd(32'h0)
     );
 
-  // // optical encoder
-  // reg signed [7:0] position_encoder0;
-  // quad quad_counter0(CLK, PIN_7, PIN_8, position_encoder0);
+  // optical encoder
+  quad #(40) quad_counter0 (CLK, PIN_7, PIN_8, position);
   //
   // // magnetic encoder
   // reg signed [31:0] position_encoder1;

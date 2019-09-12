@@ -1,5 +1,5 @@
 // Verilog netlist produced by program LSE :  version Diamond Version 0.0.0
-// Netlist written on Thu Sep 12 21:11:06 2019
+// Netlist written on Thu Sep 12 23:45:08 2019
 //
 // Verilog Description of module TinyFPGA_B
 //
@@ -42,153 +42,112 @@ module TinyFPGA_B (CLK, LED, USBPU, PIN_1, PIN_2, PIN_3, PIN_4,
         PIN_22_c_5, PIN_23_c_4, PIN_24_c_3, tx_o, tx2_o, tx_enable, 
         tx2_enable, rx_i;
     wire [25:0]blink_counter;   // verilog/TinyFPGA_B.v(64[14:27])
-    wire [31:0]rand_data;   // verilog/TinyFPGA_B.v(77[14:23])
-    wire [31:0]rand_setpoint;   // verilog/TinyFPGA_B.v(78[14:27])
+    wire [31:0]setpoint;   // verilog/TinyFPGA_B.v(79[22:30])
     
-    wire hall1, hall2, hall3, n141;
+    wire hall1, hall2, hall3;
     wire [7:0]byte_transmit_counter;   // verilog/coms.v(19[11:32])
     
-    wire n134, n113, n16571, n136;
-    wire [7:0]\data_out[10] ;   // verilog/coms.v(21[11:19])
-    wire [7:0]\data_out[9] ;   // verilog/coms.v(21[11:19])
+    wire n17047, n16, n17046;
     wire [7:0]\data_out[8] ;   // verilog/coms.v(21[11:19])
-    wire [7:0]\data_out[6] ;   // verilog/coms.v(21[11:19])
-    wire [7:0]\data_out[5] ;   // verilog/coms.v(21[11:19])
-    
-    wire n16628;
+    wire [7:0]\data_out[7] ;   // verilog/coms.v(21[11:19])
     wire [7:0]\data_out[3] ;   // verilog/coms.v(21[11:19])
     wire [7:0]\data_out[2] ;   // verilog/coms.v(21[11:19])
     wire [7:0]\data_out[1] ;   // verilog/coms.v(21[11:19])
     wire [7:0]\data_out[0] ;   // verilog/coms.v(21[11:19])
-    
-    wire n16627;
-    wire [7:0]\UART_TRANSMITTER.state ;   // verilog/coms.v(277[13:18])
+    wire [7:0]\UART_TRANSMITTER.state ;   // verilog/coms.v(273[13:18])
+    wire [31:0]\UART_TRANSMITTER.sp ;   // verilog/coms.v(274[21:23])
     
     wire rx_data_ready;
-    wire [7:0]rx_data;   // verilog/coms.v(374[13:20])
-    wire [7:0]\data_in[3] ;   // verilog/coms.v(378[12:19])
-    wire [7:0]\data_in[2] ;   // verilog/coms.v(378[12:19])
-    wire [7:0]\data_in[1] ;   // verilog/coms.v(378[12:19])
-    wire [7:0]\data_in[0] ;   // verilog/coms.v(378[12:19])
+    wire [7:0]rx_data;   // verilog/coms.v(382[13:20])
+    wire [7:0]\data_in[3] ;   // verilog/coms.v(386[12:19])
+    wire [7:0]\data_in[2] ;   // verilog/coms.v(386[12:19])
+    wire [7:0]\data_in[1] ;   // verilog/coms.v(386[12:19])
+    wire [7:0]\data_in[0] ;   // verilog/coms.v(386[12:19])
+    wire [7:0]\data_in_frame[6] ;   // verilog/coms.v(387[12:25])
+    wire [7:0]\data_in_frame[0] ;   // verilog/coms.v(387[12:25])
+    wire [7:0]\data_out_frame2[20] ;   // verilog/coms.v(388[12:27])
+    wire [7:0]\data_out_frame2[19] ;   // verilog/coms.v(388[12:27])
     
-    wire n10973, n4;
-    wire [7:0]\data_in_frame[6] ;   // verilog/coms.v(379[12:25])
-    wire [7:0]\data_in_frame[5] ;   // verilog/coms.v(379[12:25])
-    wire [7:0]\data_in_frame[2] ;   // verilog/coms.v(379[12:25])
-    wire [7:0]\data_in_frame[0] ;   // verilog/coms.v(379[12:25])
-    wire [7:0]\data_out_frame2[18] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[17] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[16] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[15] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[14] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[13] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[12] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[11] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[10] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[9] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[8] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[7] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[6] ;   // verilog/coms.v(380[12:27])
-    wire [7:0]\data_out_frame2[5] ;   // verilog/coms.v(380[12:27])
+    wire n17045, n11195, n11926;
+    wire [7:0]\data_out_frame2[0] ;   // verilog/coms.v(388[12:27])
+    wire [15:0]rx_crc;   // verilog/coms.v(391[13:19])
+    wire [31:0]\FRAME_MATCHER.state ;   // verilog/coms.v(417[11:16])
+    wire [7:0]tx_transmit_N_1750;
     
-    wire tx2_active;
-    wire [31:0]\FRAME_MATCHER.i ;   // verilog/coms.v(412[11:12])
+    wire n19058, n19052, n19046, n19040, n19034, n147, n18388, 
+        n14, n3, n6, n17, n11875, n17769, n9, n11874, n11, 
+        n7, n8, n11569, n5, n11931, n11150, n11567, n11863, 
+        n11953, n11862, n11861, n18342, n11844, n11566, n11840, 
+        n11925, n18366, n18583, n7_adj_2409, n11823, n19, n11950, 
+        n4, n11936, n17599, n18364, n1566;
+    wire [31:0]\FRAME_MATCHER.state_31__N_1161 ;
     
-    wire n16626;
-    wire [7:0]tx_transmit_N_1947;
+    wire n18370, n18329, n11563, n41, n10, n18091, n2169, n18382, 
+        n11924, n18712, n14713, n18045, n12, n17597, n15937, n15, 
+        n24, n11172, n5558, n18362, n11562, n12_adj_2410, n18368, 
+        n4_adj_2411, n11923, n15_adj_2412, n2787, n2752, n18, n11807, 
+        n5_adj_2413, n11806, n8_adj_2414, n11922, n11560, n12_adj_2415, 
+        n11921, n7_adj_2416, n4_adj_2417, n11805, n11804, n10_adj_2418, 
+        n11557, n12_adj_2419, n11920, n3811;
+    wire [31:0]\FRAME_MATCHER.state_31__N_1289 ;
     
-    wire n14, n26;
-    wire [7:0]\UART_TRANSMITTER.state_7__N_1223 ;
+    wire n12_adj_2420, n11962, n11556, n13, n41_adj_2421, n12_adj_2422, 
+        n24_adj_2423, n18386, n12_adj_2424, n9_adj_2425, n8_adj_2426, 
+        n11_adj_2427, n10_adj_2428, n7_adj_2429, n6_adj_2430, n26, 
+        n25, n24_adj_2431, n23, n22, n21, n11918, n20, n6_adj_2432, 
+        n11800, n11799, n4428, n5759, n11798, n19_adj_2433, n18_adj_2434, 
+        n17_adj_2435, n16_adj_2436, n15_adj_2437, n11797, n11553, 
+        n11793, n11792, n11790, n11778, n18356, n10_adj_2438, n18073, 
+        n18358, n10_adj_2439, n10_adj_2440, n18065, n17601, n11713, 
+        n11681, n1, n135, n134, n133, n132, n131, n130, n129, 
+        n128, n127, n126, n125, n124, n123, n122, n121, n120, 
+        n119, n118, n117, n116, n115, n114, n113, n112, n111, 
+        n110, n18390, n13_adj_2441, n18684, n4_adj_2442, n14_adj_2443;
+    wire [9:0]pwm_delay;   // verilog/motorControl.v(14[13:22])
+    wire [31:0]pwm;   // verilog/motorControl.v(15[21:24])
     
-    wire n18012, n16570, n16569, n16625, n16624, n16623, n16568, 
-        n1, n16622, n16621, n10, n17694, n17541, data_out_10__7__N_110, 
-        n17177, n16620, n1166, n63, n16619, n10429, n2837, n165, 
-        n164, n135, n16618, n127, n5, n17533, n10_adj_2461, n16617, 
-        n1437, n16616;
-    wire [31:0]\FRAME_MATCHER.state_31__N_1406 ;
+    wire n11162;
+    wire [31:0]pwm_31__N_2046;
     
-    wire n18910, n12965, n12966, n134_adj_2462, n12999, n16615, 
-        n120, n16802, n22, n16567, n16566, n16565, n16614, n16564, 
-        n16613, n16612, n16611, n16610, n16609, n16563, n16608, 
-        n16562, n16607, n16606, n16605, n16604, n16561, n16560, 
-        n16603, n16559, n16558, n16557, n16556, n16602, n16601, 
-        n16600, n12527, n158, n151, n12582, n12600, n145, n135_adj_2463, 
-        n164_adj_2464, n22_adj_2465, n16599, n16555, n16598, n16597, 
-        n16554, n16553, n16596, n13849, n16552, n16551, n18908, 
-        n16595, n16550, n26_adj_2466, n129, n12227, n25, n24, 
-        n20, n13, n12, n11, n10_adj_2467, n6, n18, n16594, n16549, 
-        n7, n18906, n140, n25_adj_2468, n142, n15, n13_adj_2469, 
-        n6_adj_2470, n18876, n18202, n4_adj_2471, n16548, n4_adj_2472, 
-        n16593, n18870, n135_adj_2473, n133, n132, n131, n130, 
-        n129_adj_2474, n128, n126, n125, n124, n122, n121, n120_adj_2475, 
-        n119, n118, n117, n116, n115, n114, n18864, n112, n111, 
-        n110, n11669, n11668, n11667, n11666, n11665, n11664, 
-        n11663, n11662, n11661, n11660, n11659, n11658, n11657, 
-        n18852, n15118, n11656, n11655, n123, n16592, n11654, 
-        n11653, n11652, n16591, n11651, n11650, n11649, n11648, 
-        n11647, n11646, n11645, n237, n11644, n11643, n11642, 
-        n11641, n11640, n11639, n11638, n11637, n11636, n242, 
-        n7_adj_2476, n8, n9, n2732, n11635, n11634, n11633, n11632, 
-        n143, n144, n11631, n11630, n11629, n11628, n139, n11627, 
-        n11626, n11625, n11624, n11623, n11343, n11622, n11621, 
-        n11620, n138, n137, n9_adj_2477, n11619, n11342, n11618, 
-        n11341, n612, n14_adj_2478, n15_adj_2479, n16, n17, n18_adj_2480, 
-        n19, n11617, n21, n22_adj_2481, n23, n11340, n574, n11616, 
-        n5155, n165_adj_2482, n164_adj_2483, \FRAME_MATCHER.i_31__N_1270 , 
-        \FRAME_MATCHER.i_31__N_1272 , \FRAME_MATCHER.i_31__N_1273 , \FRAME_MATCHER.i_31__N_1275 , 
-        n11615, n11614, n11613, n11612, n11611, n11610, n11609, 
-        n11608, n11607, n11606, n11605, n11604, n11603, n11602, 
-        n11601, n11600, n11599, n11598, n11597, n11596, n11595, 
-        n11594, n11593, n11592, n11591, n11590, n11589, n11588, 
-        n11587, n11586, n11585, n11584, n18696, n16590, n16589, 
-        n16588, n16547, n16587, n6707, n11583, n11582, n11581, 
-        n11580, n11579, n11578, n11577, n11576, n11575, n11574, 
-        n11573, n11572, n11571, n11570, n11569, n11568, n11567, 
-        n11566, n11565, n11564, n11563, n11562, n11561, n11560, 
-        n11559, n11558, n11555, n11549, n11546, n11545, n11542, 
-        n11535, n11532, n11531, n11530, n11529, n11528, n11527, 
-        n11526, n11525, n11524, n11523, n11519, n11518, n11517, 
-        n11516, n11515, n11514, n11513, n11512, n11511, n11510, 
-        n11509, n11508, n11507, n11506, n163, n162, n161, n160, 
-        n159, n158_adj_2484, n157, n156, n155, n154, n153, n152, 
-        n151_adj_2485, n150, n149, n148, n147, n146, n145_adj_2486, 
-        n144_adj_2487, n143_adj_2488, n142_adj_2489, n141_adj_2490, 
-        n140_adj_2491, n139_adj_2492, n138_adj_2493, n137_adj_2494, 
-        n136_adj_2495, n135_adj_2496, n134_adj_2497, n17758, n11503, 
-        n11502, n11501, n11500, n11499, n11498, n11497, n11496, 
-        n16586, n11495, n11494, n16585, n16584, n11490, n11489, 
-        n11488, n11487, n11486, n11485, n16583, n11336, n11484, 
-        n11483, n11335, n5440, n16582, n8_adj_2498, n17181, n11334, 
-        n16581, n11480, n16580, n16579, n11479, n11478, n16578, 
-        n11477, n11476, n11475, n11474, n16577, n11333, n16576, 
-        n11465, n16575, n11464, n11463, n11462, n11461, n11460, 
-        n11459, n10_adj_2499, n11458, n163_adj_2500, n162_adj_2501, 
-        n161_adj_2502, n11326, n160_adj_2503, n159_adj_2504, n17978, 
-        n10_adj_2505, n158_adj_2506, n157_adj_2507, n156_adj_2508, n155_adj_2509, 
-        n154_adj_2510, n153_adj_2511, n152_adj_2512, n18044, n11114, 
-        n11331, n11330, n11329, n151_adj_2513, n150_adj_2514;
-    wire [2:0]r_Bit_Index;   // verilog/uart_tx.v(33[16:27])
+    wire pwm_31__N_2045, n233;
+    wire [31:0]PHASES_5__N_2093;
+    
+    wire n19100, PHASES_5__N_2090, n11932, n11933, n11934, n11935, 
+        n507, n509, n532, n11910, n11927, n11937, n11938, n11939, 
+        n4_adj_2444, n11909, n11908;
+    wire [2:0]r_SM_Main;   // verilog/uart_tx.v(31[16:25])
+    wire [8:0]r_Clock_Count;   // verilog/uart_tx.v(32[16:29])
     wire [7:0]r_Tx_Data;   // verilog/uart_tx.v(34[16:25])
     
-    wire n11449, n11448, n149_adj_2515, n11447, n11446, n11445, 
-        n11444, n11443, n11442, n11441, n11440, n11439, n11438, 
-        n11437, n11096, n11436, n148_adj_2516, n11435, r_Rx_Data, 
-        n11431, n16797, n11429, n11428, n11427, n11423, n11421, 
-        n11328;
-    wire [2:0]r_SM_Main_adj_2559;   // verilog/uart_tx.v(31[16:25])
-    wire [2:0]r_Bit_Index_adj_2561;   // verilog/uart_tx.v(33[16:27])
-    wire [2:0]r_SM_Main_2__N_2031_adj_2566;
+    wire n19070, n11645, n11644, n11643, n11637, n317, n318, n19064, 
+        r_Rx_Data;
+    wire [7:0]r_Clock_Count_adj_2476;   // verilog/uart_rx.v(32[17:30])
+    wire [2:0]r_SM_Main_adj_2478;   // verilog/uart_rx.v(36[17:26])
     
-    wire n11412, n147_adj_2520, n11409, n5341, n11408, n11407, n11406, 
-        n17573, n146_adj_2521, n22_adj_2522, n17575, n18756, n18750, 
-        n11058, n3, n11324, n24_adj_2523, n16633, n21_adj_2524, 
-        n3_adj_2525, n18_adj_2526, n17577, n10_adj_2527, n10_adj_2528, 
-        n17579, n11017, n17581, n17583, n10_adj_2529, n16574, n18043, 
-        n10_adj_2530, n11327, n17689, n10_adj_2531, n18014, n11382, 
-        n16632, n10_adj_2532, n10_adj_2533, n63_adj_2534, n11379, 
-        n10_adj_2535, n16573, n16631, n16572, n16630, n10_adj_2536, 
-        n17571, n10_adj_2537, n9667, n18368, n21_adj_2538, n16629, 
-        n18_adj_2539, n15_adj_2540, n8_adj_2541, n18016;
+    wire n219, n220, n222, n223, n224, n225;
+    wire [2:0]r_SM_Main_2__N_1891;
+    wire [2:0]r_Bit_Index_adj_2483;   // verilog/uart_tx.v(33[16:27])
+    
+    wire n18396, n11622, n12_adj_2448, n12015, n12014, n12013, n12012, 
+        n12005, n11995, n18067, n11930, n11365, n10_adj_2449, n11364, 
+        n11901, n11900, n11899, n11898, n11340, n11550, n11897, 
+        n18_adj_2450, n11896, n16_adj_2451, n11895, n14_adj_2452, 
+        n11894, n12_adj_2453, n10_adj_2454, n2, n11302, n6_adj_2455, 
+        n4_adj_2456, n11889, n10_adj_2457, n18043, n11272, n10_adj_2458, 
+        n18035, n11888, n11941, n11148, n14605, n9972, n15079, 
+        n18380, n16065, n18759, n18752, n11584, n11583, n10424, 
+        n11582, n11581, n11580, n11579, n11008, n11578, n11577, 
+        n11576, n18745, n18538, n11575, n11574, n11218, n18536, 
+        n18532, n11211, n11210, n16_adj_2459, n13_adj_2460, n17895, 
+        n18408, n18406, n18404, n18530, n10974, n18402, n18400, 
+        n18398, n18627, n11946, n11940, n11928, n11887, n11886, 
+        n11945, n11885, n3_adj_2461, n11881, n11929, n1_adj_2462, 
+        n18615, n18612, n11944, n11879, n11943, n11942, n17069, 
+        n17068, n11546, n17067, n17066, n17065, n18378, n17064, 
+        n17063, n17062, n11179, n17061, n8_adj_2463, n18584, n18394, 
+        n19113, n18392, n19112, n17060, n17059, n17058, n17057, 
+        n17056, n17055, n17054, n17053, n17052, n17051, n17050, 
+        n17049, n17048;
     
     VCC i2 (.Y(VCC_net));
     SB_IO tx2_output (.PACKAGE_PIN(PIN_11), .LATCH_INPUT_VALUE(GND_net), 
@@ -233,876 +192,302 @@ module TinyFPGA_B (CLK, LED, USBPU, PIN_1, PIN_2, PIN_3, PIN_4,
     defparam hall3_input.PULLUP = 1'b1;
     defparam hall3_input.NEG_TRIGGER = 1'b0;
     defparam hall3_input.IO_STANDARD = "SB_LVCMOS";
-    SB_LUT4 i8884_3_lut (.I0(\data_out_frame2[18] [1]), .I1(rand_data[1]), 
-            .I2(n11114), .I3(GND_net), .O(n11663));   // verilog/coms.v(416[12] 543[6])
-    defparam i8884_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8885_3_lut (.I0(\data_out_frame2[18] [2]), .I1(rand_data[2]), 
-            .I2(n11114), .I3(GND_net), .O(n11664));   // verilog/coms.v(416[12] 543[6])
-    defparam i8885_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i24_4_lut (.I0(n18852), .I1(n10_adj_2527), .I2(byte_transmit_counter[3]), 
-            .I3(byte_transmit_counter[2]), .O(n10));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i24_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8886_3_lut (.I0(\data_out_frame2[18] [3]), .I1(rand_data[3]), 
-            .I2(n11114), .I3(GND_net), .O(n11665));   // verilog/coms.v(416[12] 543[6])
-    defparam i8886_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_setpoint_2482_add_4_18 (.CI(n16593), .I0(rand_data[16]), 
-            .I1(rand_setpoint[16]), .CO(n16594));
-    SB_LUT4 rand_data_2481_add_4_5_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[3]), 
-            .I3(n16549), .O(n162)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_5_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8887_3_lut (.I0(\data_out_frame2[18] [4]), .I1(rand_data[4]), 
-            .I2(n11114), .I3(GND_net), .O(n11666));   // verilog/coms.v(416[12] 543[6])
-    defparam i8887_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8888_3_lut (.I0(\data_out_frame2[18] [5]), .I1(rand_data[5]), 
-            .I2(n11114), .I3(GND_net), .O(n11667));   // verilog/coms.v(416[12] 543[6])
-    defparam i8888_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8889_3_lut (.I0(\data_out_frame2[18] [6]), .I1(rand_data[6]), 
-            .I2(n11114), .I3(GND_net), .O(n11668));   // verilog/coms.v(416[12] 543[6])
-    defparam i8889_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_setpoint_2482_add_4_17_lut (.I0(GND_net), .I1(rand_data[15]), 
-            .I2(rand_setpoint[15]), .I3(n16592), .O(n150_adj_2514)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_17_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i15183_4_lut (.I0(blink_counter[22]), .I1(blink_counter[23]), 
-            .I2(blink_counter[24]), .I3(blink_counter[21]), .O(n18044));
-    defparam i15183_4_lut.LUT_INIT = 16'hfec4;
-    SB_LUT4 i15182_4_lut (.I0(blink_counter[23]), .I1(blink_counter[22]), 
-            .I2(blink_counter[24]), .I3(blink_counter[21]), .O(n18043));
-    defparam i15182_4_lut.LUT_INIT = 16'hcf08;
-    SB_LUT4 i15184_3_lut (.I0(n18043), .I1(n18044), .I2(blink_counter[25]), 
+    SB_LUT4 i16021_4_lut (.I0(r_Clock_Count_adj_2476[2]), .I1(n15), .I2(n224), 
+            .I3(n11218), .O(n12_adj_2410));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i16021_4_lut.LUT_INIT = 16'h3022;
+    SB_LUT4 i9004_3_lut (.I0(\data_in[0] [1]), .I1(\data_in[1] [1]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11790));   // verilog/coms.v(424[12] 554[6])
+    defparam i9004_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9132_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[3]), .I2(n233), 
+            .I3(GND_net), .O(n11918));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9132_3_lut.LUT_INIT = 16'haeae;
+    SB_LUT4 i9006_3_lut (.I0(\data_in[0] [2]), .I1(\data_in[1] [2]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11792));   // verilog/coms.v(424[12] 554[6])
+    defparam i9006_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9007_3_lut (.I0(\data_in[0] [3]), .I1(\data_in[1] [3]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11793));   // verilog/coms.v(424[12] 554[6])
+    defparam i9007_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15609_4_lut (.I0(blink_counter[22]), .I1(blink_counter[23]), 
+            .I2(blink_counter[24]), .I3(blink_counter[21]), .O(n18584));
+    defparam i15609_4_lut.LUT_INIT = 16'hfec4;
+    SB_LUT4 i15608_4_lut (.I0(blink_counter[23]), .I1(blink_counter[22]), 
+            .I2(blink_counter[24]), .I3(blink_counter[21]), .O(n18583));
+    defparam i15608_4_lut.LUT_INIT = 16'hcf08;
+    SB_LUT4 i15610_3_lut (.I0(n18583), .I1(n18584), .I2(blink_counter[25]), 
             .I3(GND_net), .O(LED_c));
-    defparam i15184_3_lut.LUT_INIT = 16'h3535;
-    SB_CARRY rand_data_2481_add_4_5 (.CI(n16549), .I0(GND_net), .I1(rand_data[3]), 
-            .CO(n16550));
-    SB_CARRY rand_setpoint_2482_add_4_17 (.CI(n16592), .I0(rand_data[15]), 
-            .I1(rand_setpoint[15]), .CO(n16593));
-    SB_LUT4 i23_4_lut (.I0(r_Tx_Data[0]), .I1(n10), .I2(n9667), .I3(byte_transmit_counter[4]), 
-            .O(n17541));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15610_3_lut.LUT_INIT = 16'h3535;
+    SB_LUT4 i9153_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[23]), .I2(n233), 
+            .I3(GND_net), .O(n11939));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9153_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9134_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[4]), .I2(n233), 
+            .I3(GND_net), .O(n11920));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9134_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9135_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[5]), .I2(n233), 
+            .I3(GND_net), .O(n11921));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9135_3_lut.LUT_INIT = 16'haeae;
+    SB_LUT4 i9011_3_lut (.I0(\data_in[0] [4]), .I1(\data_in[1] [4]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11797));   // verilog/coms.v(424[12] 554[6])
+    defparam i9011_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9012_3_lut (.I0(\data_in[0] [5]), .I1(\data_in[1] [5]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11798));   // verilog/coms.v(424[12] 554[6])
+    defparam i9012_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9013_4_lut (.I0(r_Rx_Data), .I1(rx_data[0]), .I2(n10974), 
+            .I3(n4_adj_2411), .O(n11799));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i9013_4_lut.LUT_INIT = 16'hccca;
+    SB_LUT4 i9014_3_lut (.I0(\data_in[0] [6]), .I1(\data_in[1] [6]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11800));   // verilog/coms.v(424[12] 554[6])
+    defparam i9014_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15813_2_lut (.I0(\data_out[8] [7]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18612));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15813_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i24_4_lut (.I0(n19070), .I1(n18612), .I2(byte_transmit_counter[3]), 
+            .I3(n9972), .O(n10_adj_2449));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i24_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i23_4_lut (.I0(r_Tx_Data[7]), .I1(n10_adj_2449), .I2(n10424), 
+            .I3(byte_transmit_counter[4]), .O(n18045));   // verilog/uart_tx.v(40[10] 143[8])
     defparam i23_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8890_3_lut (.I0(\data_out_frame2[18] [7]), .I1(rand_data[7]), 
-            .I2(n11114), .I3(GND_net), .O(n11669));   // verilog/coms.v(416[12] 543[6])
-    defparam i8890_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_setpoint_2482_add_4_16_lut (.I0(GND_net), .I1(rand_data[14]), 
-            .I2(rand_setpoint[14]), .I3(n16591), .O(n151_adj_2513)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_16_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8744_3_lut (.I0(n11545), .I1(r_Bit_Index_adj_2561[0]), .I2(n18014), 
-            .I3(GND_net), .O(n11523));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8744_3_lut.LUT_INIT = 16'h8282;
-    SB_CARRY rand_setpoint_2482_add_4_16 (.CI(n16591), .I0(rand_data[14]), 
-            .I1(rand_setpoint[14]), .CO(n16592));
-    SB_LUT4 i8727_4_lut (.I0(n5341), .I1(byte_transmit_counter[3]), .I2(tx_transmit_N_1947[3]), 
-            .I3(n10973), .O(n11506));   // verilog/coms.v(280[12] 370[6])
-    defparam i8727_4_lut.LUT_INIT = 16'h5044;
-    SB_LUT4 rand_setpoint_2482_add_4_15_lut (.I0(GND_net), .I1(rand_data[13]), 
-            .I2(rand_setpoint[13]), .I3(n16590), .O(n152_adj_2512)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_15_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 rand_data_2481_add_4_4_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[2]), 
-            .I3(n16548), .O(n163)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_4_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_15 (.CI(n16590), .I0(rand_data[13]), 
-            .I1(rand_setpoint[13]), .CO(n16591));
-    SB_LUT4 rand_setpoint_2482_add_4_14_lut (.I0(GND_net), .I1(rand_data[12]), 
-            .I2(rand_setpoint[12]), .I3(n16589), .O(n153_adj_2511)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_14_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_14 (.CI(n16589), .I0(rand_data[12]), 
-            .I1(rand_setpoint[12]), .CO(n16590));
-    SB_LUT4 i11_4_lut (.I0(rand_setpoint[16]), .I1(\data_out[6] [0]), .I2(n11017), 
-            .I3(n2732), .O(n17533));   // verilog/coms.v(280[12] 370[6])
-    defparam i11_4_lut.LUT_INIT = 16'hac0c;
-    SB_LUT4 i2_4_lut (.I0(n12227), .I1(n25_adj_2468), .I2(n129), .I3(n26_adj_2466), 
-            .O(\UART_TRANSMITTER.state_7__N_1223 [1]));   // verilog/coms.v(280[12] 370[6])
-    defparam i2_4_lut.LUT_INIT = 16'h0010;
-    SB_LUT4 rand_setpoint_2482_add_4_13_lut (.I0(GND_net), .I1(rand_data[11]), 
-            .I2(rand_setpoint[11]), .I3(n16588), .O(n154_adj_2510)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_13_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8752_3_lut (.I0(\data_in[3] [7]), .I1(rx_data[7]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11531));   // verilog/coms.v(416[12] 543[6])
-    defparam i8752_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8770_4_lut (.I0(n11545), .I1(r_Bit_Index_adj_2561[1]), .I2(r_Bit_Index_adj_2561[0]), 
-            .I3(n18014), .O(n11549));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8770_4_lut.LUT_INIT = 16'h8828;
-    SB_LUT4 i8767_4_lut (.I0(n11545), .I1(r_Bit_Index_adj_2561[2]), .I2(n4_adj_2472), 
-            .I3(n18014), .O(n11546));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8767_4_lut.LUT_INIT = 16'h8828;
-    SB_LUT4 i8763_4_lut (.I0(n5341), .I1(byte_transmit_counter[6]), .I2(tx_transmit_N_1947[6]), 
-            .I3(n10973), .O(n11542));   // verilog/coms.v(280[12] 370[6])
-    defparam i8763_4_lut.LUT_INIT = 16'h5044;
-    SB_CARRY rand_setpoint_2482_add_4_13 (.CI(n16588), .I0(rand_data[11]), 
-            .I1(rand_setpoint[11]), .CO(n16589));
-    SB_LUT4 i8776_4_lut (.I0(n5341), .I1(byte_transmit_counter[7]), .I2(tx_transmit_N_1947[7]), 
-            .I3(n10973), .O(n11555));   // verilog/coms.v(280[12] 370[6])
-    defparam i8776_4_lut.LUT_INIT = 16'h5044;
-    SB_LUT4 i8756_4_lut (.I0(n5341), .I1(byte_transmit_counter[4]), .I2(tx_transmit_N_1947[4]), 
-            .I3(n10973), .O(n11535));   // verilog/coms.v(280[12] 370[6])
-    defparam i8756_4_lut.LUT_INIT = 16'h5044;
-    SB_CARRY rand_data_2481_add_4_4 (.CI(n16548), .I0(GND_net), .I1(rand_data[2]), 
-            .CO(n16549));
-    SB_LUT4 rand_setpoint_2482_add_4_12_lut (.I0(GND_net), .I1(rand_data[10]), 
-            .I2(rand_setpoint[10]), .I3(n16587), .O(n155_adj_2509)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_12_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 rand_data_2481_add_4_3_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[1]), 
-            .I3(n16547), .O(n164)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_3_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_12 (.CI(n16587), .I0(rand_data[10]), 
-            .I1(rand_setpoint[10]), .CO(n16588));
-    SB_CARRY rand_data_2481_add_4_3 (.CI(n16547), .I0(GND_net), .I1(rand_data[1]), 
-            .CO(n16548));
-    SB_LUT4 i8779_3_lut (.I0(\data_out_frame2[5] [0]), .I1(rand_data[24]), 
-            .I2(n11114), .I3(GND_net), .O(n11558));   // verilog/coms.v(416[12] 543[6])
-    defparam i8779_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_setpoint_2482_add_4_11_lut (.I0(GND_net), .I1(rand_data[9]), 
-            .I2(rand_setpoint[9]), .I3(n16586), .O(n156_adj_2508)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_11_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8780_3_lut (.I0(\data_out_frame2[5] [1]), .I1(rand_data[25]), 
-            .I2(n11114), .I3(GND_net), .O(n11559));   // verilog/coms.v(416[12] 543[6])
-    defparam i8780_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8781_3_lut (.I0(\data_out_frame2[5] [2]), .I1(rand_data[26]), 
-            .I2(n11114), .I3(GND_net), .O(n11560));   // verilog/coms.v(416[12] 543[6])
-    defparam i8781_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_setpoint_2482_add_4_11 (.CI(n16586), .I0(rand_data[9]), 
-            .I1(rand_setpoint[9]), .CO(n16587));
-    SB_LUT4 i8782_3_lut (.I0(\data_out_frame2[5] [3]), .I1(rand_data[27]), 
-            .I2(n11114), .I3(GND_net), .O(n11561));   // verilog/coms.v(416[12] 543[6])
-    defparam i8782_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8783_3_lut (.I0(\data_out_frame2[5] [4]), .I1(rand_data[28]), 
-            .I2(n11114), .I3(GND_net), .O(n11562));   // verilog/coms.v(416[12] 543[6])
-    defparam i8783_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_setpoint_2482_add_4_10_lut (.I0(GND_net), .I1(rand_data[8]), 
-            .I2(rand_setpoint[8]), .I3(n16585), .O(n157_adj_2507)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_10_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_10 (.CI(n16585), .I0(rand_data[8]), 
-            .I1(rand_setpoint[8]), .CO(n16586));
-    SB_LUT4 i8784_3_lut (.I0(\data_out_frame2[5] [5]), .I1(rand_data[29]), 
-            .I2(n11114), .I3(GND_net), .O(n11563));   // verilog/coms.v(416[12] 543[6])
-    defparam i8784_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_2_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[0]), 
-            .I3(VCC_net), .O(n165)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_2_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 rand_setpoint_2482_add_4_9_lut (.I0(GND_net), .I1(rand_data[7]), 
-            .I2(rand_setpoint[7]), .I3(n16584), .O(n158_adj_2506)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_9_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_9 (.CI(n16584), .I0(rand_data[7]), 
-            .I1(rand_setpoint[7]), .CO(n16585));
-    SB_LUT4 i8785_3_lut (.I0(\data_out_frame2[5] [6]), .I1(rand_data[30]), 
-            .I2(n11114), .I3(GND_net), .O(n11564));   // verilog/coms.v(416[12] 543[6])
-    defparam i8785_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_setpoint_2482_add_4_8_lut (.I0(GND_net), .I1(rand_data[6]), 
-            .I2(rand_setpoint[6]), .I3(n16583), .O(n159_adj_2504)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_8_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8786_3_lut (.I0(\data_out_frame2[5] [7]), .I1(rand_data[31]), 
-            .I2(n11114), .I3(GND_net), .O(n11565));   // verilog/coms.v(416[12] 543[6])
-    defparam i8786_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_setpoint_2482_add_4_8 (.CI(n16583), .I0(rand_data[6]), 
-            .I1(rand_setpoint[6]), .CO(n16584));
-    SB_CARRY rand_data_2481_add_4_2 (.CI(VCC_net), .I0(GND_net), .I1(rand_data[0]), 
-            .CO(n16547));
-    SB_LUT4 rand_setpoint_2482_add_4_7_lut (.I0(GND_net), .I1(rand_data[5]), 
-            .I2(rand_setpoint[5]), .I3(n16582), .O(n160_adj_2503)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_7_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_7 (.CI(n16582), .I0(rand_data[5]), 
-            .I1(rand_setpoint[5]), .CO(n16583));
-    SB_LUT4 i24_4_lut_adj_815 (.I0(n18756), .I1(n10_adj_2537), .I2(byte_transmit_counter[3]), 
-            .I3(byte_transmit_counter[2]), .O(n10_adj_2535));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i24_4_lut_adj_815.LUT_INIT = 16'h0aca;
-    SB_LUT4 i23_4_lut_adj_816 (.I0(r_Tx_Data[7]), .I1(n10_adj_2535), .I2(n9667), 
-            .I3(byte_transmit_counter[4]), .O(n17571));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i23_4_lut_adj_816.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8787_3_lut (.I0(\data_out_frame2[6] [0]), .I1(rand_data[16]), 
-            .I2(n11114), .I3(GND_net), .O(n11566));   // verilog/coms.v(416[12] 543[6])
-    defparam i8787_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_setpoint_2482_add_4_6_lut (.I0(GND_net), .I1(rand_data[4]), 
-            .I2(rand_setpoint[4]), .I3(n16581), .O(n161_adj_2502)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_6_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i24_4_lut_adj_817 (.I0(n18750), .I1(n10_adj_2536), .I2(byte_transmit_counter[3]), 
-            .I3(byte_transmit_counter[2]), .O(n10_adj_2532));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i24_4_lut_adj_817.LUT_INIT = 16'h0aca;
-    SB_LUT4 i23_4_lut_adj_818 (.I0(r_Tx_Data[6]), .I1(n10_adj_2532), .I2(n9667), 
-            .I3(byte_transmit_counter[4]), .O(n17573));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i23_4_lut_adj_818.LUT_INIT = 16'h0aca;
-    SB_CARRY rand_setpoint_2482_add_4_6 (.CI(n16581), .I0(rand_data[4]), 
-            .I1(rand_setpoint[4]), .CO(n16582));
-    SB_LUT4 rand_setpoint_2482_add_4_5_lut (.I0(GND_net), .I1(rand_data[3]), 
-            .I2(rand_setpoint[3]), .I3(n16580), .O(n162_adj_2501)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_5_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i24_4_lut_adj_819 (.I0(n18876), .I1(n10_adj_2533), .I2(byte_transmit_counter[3]), 
-            .I3(byte_transmit_counter[2]), .O(n10_adj_2531));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i24_4_lut_adj_819.LUT_INIT = 16'h0aca;
-    SB_CARRY rand_setpoint_2482_add_4_5 (.CI(n16580), .I0(rand_data[3]), 
-            .I1(rand_setpoint[3]), .CO(n16581));
-    SB_LUT4 i23_4_lut_adj_820 (.I0(r_Tx_Data[5]), .I1(n10_adj_2531), .I2(n9667), 
-            .I3(byte_transmit_counter[4]), .O(n17575));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i23_4_lut_adj_820.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8548_3_lut (.I0(\data_out[3] [4]), .I1(n2837), .I2(n11017), 
-            .I3(GND_net), .O(n11327));   // verilog/coms.v(280[12] 370[6])
-    defparam i8548_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i24_4_lut_adj_821 (.I0(n18870), .I1(n10_adj_2505), .I2(byte_transmit_counter[3]), 
-            .I3(byte_transmit_counter[2]), .O(n10_adj_2530));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i24_4_lut_adj_821.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8549_3_lut (.I0(\data_out[3] [2]), .I1(n2837), .I2(n11017), 
-            .I3(GND_net), .O(n11328));   // verilog/coms.v(280[12] 370[6])
-    defparam i8549_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8788_3_lut (.I0(\data_out_frame2[6] [1]), .I1(rand_data[17]), 
-            .I2(n11114), .I3(GND_net), .O(n11567));   // verilog/coms.v(416[12] 543[6])
-    defparam i8788_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_setpoint_2482_add_4_4_lut (.I0(GND_net), .I1(rand_data[2]), 
-            .I2(rand_setpoint[2]), .I3(n16579), .O(n163_adj_2500)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_4_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8789_3_lut (.I0(\data_out_frame2[6] [2]), .I1(rand_data[18]), 
-            .I2(n11114), .I3(GND_net), .O(n11568));   // verilog/coms.v(416[12] 543[6])
-    defparam i8789_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8790_3_lut (.I0(\data_out_frame2[6] [3]), .I1(rand_data[19]), 
-            .I2(n11114), .I3(GND_net), .O(n11569));   // verilog/coms.v(416[12] 543[6])
-    defparam i8790_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i23_4_lut_adj_822 (.I0(r_Tx_Data[4]), .I1(n10_adj_2530), .I2(n9667), 
-            .I3(byte_transmit_counter[4]), .O(n17577));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i23_4_lut_adj_822.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8791_3_lut (.I0(\data_out_frame2[6] [4]), .I1(rand_data[20]), 
-            .I2(n11114), .I3(GND_net), .O(n11570));   // verilog/coms.v(416[12] 543[6])
-    defparam i8791_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8792_3_lut (.I0(\data_out_frame2[6] [5]), .I1(rand_data[21]), 
-            .I2(n11114), .I3(GND_net), .O(n11571));   // verilog/coms.v(416[12] 543[6])
-    defparam i8792_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8793_3_lut (.I0(\data_out_frame2[6] [6]), .I1(rand_data[22]), 
-            .I2(n11114), .I3(GND_net), .O(n11572));   // verilog/coms.v(416[12] 543[6])
-    defparam i8793_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_setpoint_2482_add_4_4 (.CI(n16579), .I0(rand_data[2]), 
-            .I1(rand_setpoint[2]), .CO(n16580));
-    SB_LUT4 i8794_3_lut (.I0(\data_out_frame2[6] [7]), .I1(rand_data[23]), 
-            .I2(n11114), .I3(GND_net), .O(n11573));   // verilog/coms.v(416[12] 543[6])
-    defparam i8794_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8795_3_lut (.I0(\data_out_frame2[7] [0]), .I1(rand_data[8]), 
-            .I2(n11114), .I3(GND_net), .O(n11574));   // verilog/coms.v(416[12] 543[6])
-    defparam i8795_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8796_3_lut (.I0(\data_out_frame2[7] [1]), .I1(rand_data[9]), 
-            .I2(n11114), .I3(GND_net), .O(n11575));   // verilog/coms.v(416[12] 543[6])
-    defparam i8796_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8797_3_lut (.I0(\data_out_frame2[7] [2]), .I1(rand_data[10]), 
-            .I2(n11114), .I3(GND_net), .O(n11576));   // verilog/coms.v(416[12] 543[6])
-    defparam i8797_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8798_3_lut (.I0(\data_out_frame2[7] [3]), .I1(rand_data[11]), 
-            .I2(n11114), .I3(GND_net), .O(n11577));   // verilog/coms.v(416[12] 543[6])
-    defparam i8798_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8799_3_lut (.I0(\data_out_frame2[7] [4]), .I1(rand_data[12]), 
-            .I2(n11114), .I3(GND_net), .O(n11578));   // verilog/coms.v(416[12] 543[6])
-    defparam i8799_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8800_3_lut (.I0(\data_out_frame2[7] [5]), .I1(rand_data[13]), 
-            .I2(n11114), .I3(GND_net), .O(n11579));   // verilog/coms.v(416[12] 543[6])
-    defparam i8800_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8801_3_lut (.I0(\data_out_frame2[7] [6]), .I1(rand_data[14]), 
-            .I2(n11114), .I3(GND_net), .O(n11580));   // verilog/coms.v(416[12] 543[6])
-    defparam i8801_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8802_3_lut (.I0(\data_out_frame2[7] [7]), .I1(rand_data[15]), 
-            .I2(n11114), .I3(GND_net), .O(n11581));   // verilog/coms.v(416[12] 543[6])
-    defparam i8802_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8803_3_lut (.I0(\data_out_frame2[8] [0]), .I1(rand_data[0]), 
-            .I2(n11114), .I3(GND_net), .O(n11582));   // verilog/coms.v(416[12] 543[6])
-    defparam i8803_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8804_3_lut (.I0(\data_out_frame2[8] [1]), .I1(rand_data[1]), 
-            .I2(n11114), .I3(GND_net), .O(n11583));   // verilog/coms.v(416[12] 543[6])
-    defparam i8804_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8805_3_lut (.I0(\data_out_frame2[8] [2]), .I1(rand_data[2]), 
-            .I2(n11114), .I3(GND_net), .O(n11584));   // verilog/coms.v(416[12] 543[6])
-    defparam i8805_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8806_3_lut (.I0(\data_out_frame2[8] [3]), .I1(rand_data[3]), 
-            .I2(n11114), .I3(GND_net), .O(n11585));   // verilog/coms.v(416[12] 543[6])
-    defparam i8806_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8807_3_lut (.I0(\data_out_frame2[8] [4]), .I1(rand_data[4]), 
-            .I2(n11114), .I3(GND_net), .O(n11586));   // verilog/coms.v(416[12] 543[6])
-    defparam i8807_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8808_3_lut (.I0(\data_out_frame2[8] [5]), .I1(rand_data[5]), 
-            .I2(n11114), .I3(GND_net), .O(n11587));   // verilog/coms.v(416[12] 543[6])
-    defparam i8808_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8809_3_lut (.I0(\data_out_frame2[8] [6]), .I1(rand_data[6]), 
-            .I2(n11114), .I3(GND_net), .O(n11588));   // verilog/coms.v(416[12] 543[6])
-    defparam i8809_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8810_3_lut (.I0(\data_out_frame2[8] [7]), .I1(rand_data[7]), 
-            .I2(n11114), .I3(GND_net), .O(n11589));   // verilog/coms.v(416[12] 543[6])
-    defparam i8810_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i24_4_lut_adj_823 (.I0(n18864), .I1(n10_adj_2499), .I2(byte_transmit_counter[3]), 
-            .I3(byte_transmit_counter[2]), .O(n10_adj_2529));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i24_4_lut_adj_823.LUT_INIT = 16'h0aca;
-    SB_LUT4 i23_4_lut_adj_824 (.I0(r_Tx_Data[3]), .I1(n10_adj_2529), .I2(n9667), 
-            .I3(byte_transmit_counter[4]), .O(n17579));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i23_4_lut_adj_824.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8811_3_lut (.I0(\data_out_frame2[9] [0]), .I1(rand_data[24]), 
-            .I2(n11114), .I3(GND_net), .O(n11590));   // verilog/coms.v(416[12] 543[6])
-    defparam i8811_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8812_3_lut (.I0(\data_out_frame2[9] [1]), .I1(rand_data[25]), 
-            .I2(n11114), .I3(GND_net), .O(n11591));   // verilog/coms.v(416[12] 543[6])
-    defparam i8812_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_setpoint_2482_add_4_3_lut (.I0(GND_net), .I1(rand_data[1]), 
-            .I2(rand_setpoint[1]), .I3(n16578), .O(n164_adj_2483)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_3_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8813_3_lut (.I0(\data_out_frame2[9] [2]), .I1(rand_data[26]), 
-            .I2(n11114), .I3(GND_net), .O(n11592));   // verilog/coms.v(416[12] 543[6])
-    defparam i8813_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_setpoint_2482_add_4_3 (.CI(n16578), .I0(rand_data[1]), 
-            .I1(rand_setpoint[1]), .CO(n16579));
-    SB_LUT4 rand_setpoint_2482_add_4_2_lut (.I0(GND_net), .I1(rand_data[0]), 
-            .I2(rand_setpoint[0]), .I3(GND_net), .O(n165_adj_2482)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_2_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8814_3_lut (.I0(\data_out_frame2[9] [3]), .I1(rand_data[27]), 
-            .I2(n11114), .I3(GND_net), .O(n11593));   // verilog/coms.v(416[12] 543[6])
-    defparam i8814_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8815_3_lut (.I0(\data_out_frame2[9] [4]), .I1(rand_data[28]), 
-            .I2(n11114), .I3(GND_net), .O(n11594));   // verilog/coms.v(416[12] 543[6])
-    defparam i8815_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8816_3_lut (.I0(\data_out_frame2[9] [5]), .I1(rand_data[29]), 
-            .I2(n11114), .I3(GND_net), .O(n11595));   // verilog/coms.v(416[12] 543[6])
-    defparam i8816_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8817_3_lut (.I0(\data_out_frame2[9] [6]), .I1(rand_data[30]), 
-            .I2(n11114), .I3(GND_net), .O(n11596));   // verilog/coms.v(416[12] 543[6])
-    defparam i8817_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8818_3_lut (.I0(\data_out_frame2[9] [7]), .I1(rand_data[31]), 
-            .I2(n11114), .I3(GND_net), .O(n11597));   // verilog/coms.v(416[12] 543[6])
-    defparam i8818_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8819_3_lut (.I0(\data_out_frame2[10] [0]), .I1(rand_data[16]), 
-            .I2(n11114), .I3(GND_net), .O(n11598));   // verilog/coms.v(416[12] 543[6])
-    defparam i8819_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_setpoint_2482_add_4_2 (.CI(GND_net), .I0(rand_data[0]), 
-            .I1(rand_setpoint[0]), .CO(n16578));
-    SB_LUT4 i24_4_lut_adj_825 (.I0(n18696), .I1(n10_adj_2461), .I2(byte_transmit_counter[3]), 
-            .I3(byte_transmit_counter[2]), .O(n10_adj_2528));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i24_4_lut_adj_825.LUT_INIT = 16'h0aca;
-    SB_LUT4 i23_4_lut_adj_826 (.I0(r_Tx_Data[2]), .I1(n10_adj_2528), .I2(n9667), 
-            .I3(byte_transmit_counter[4]), .O(n17581));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i23_4_lut_adj_826.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8820_3_lut (.I0(\data_out_frame2[10] [1]), .I1(rand_data[17]), 
-            .I2(n11114), .I3(GND_net), .O(n11599));   // verilog/coms.v(416[12] 543[6])
-    defparam i8820_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8821_3_lut (.I0(\data_out_frame2[10] [2]), .I1(rand_data[18]), 
-            .I2(n11114), .I3(GND_net), .O(n11600));   // verilog/coms.v(416[12] 543[6])
-    defparam i8821_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8822_3_lut (.I0(\data_out_frame2[10] [3]), .I1(rand_data[19]), 
-            .I2(n11114), .I3(GND_net), .O(n11601));   // verilog/coms.v(416[12] 543[6])
-    defparam i8822_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8823_3_lut (.I0(\data_out_frame2[10] [4]), .I1(rand_data[20]), 
-            .I2(n11114), .I3(GND_net), .O(n11602));   // verilog/coms.v(416[12] 543[6])
-    defparam i8823_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8824_3_lut (.I0(\data_out_frame2[10] [5]), .I1(rand_data[21]), 
-            .I2(n11114), .I3(GND_net), .O(n11603));   // verilog/coms.v(416[12] 543[6])
-    defparam i8824_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i43_4_lut (.I0(\data_out[5] [1]), .I1(n5), .I2(byte_transmit_counter[1]), 
-            .I3(byte_transmit_counter[0]), .O(n24_adj_2523));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i43_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 rand_data_2481_add_4_33_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[31]), 
-            .I3(n16577), .O(n134_adj_2497)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_33_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 blink_counter_2483_add_4_27_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(blink_counter[25]), .I3(n16633), .O(n110)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_27_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8825_3_lut (.I0(\data_out_frame2[10] [6]), .I1(rand_data[22]), 
-            .I2(n11114), .I3(GND_net), .O(n11604));   // verilog/coms.v(416[12] 543[6])
-    defparam i8825_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i41_4_lut (.I0(n1), .I1(n24_adj_2523), .I2(byte_transmit_counter[2]), 
-            .I3(byte_transmit_counter[1]), .O(n18_adj_2526));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i41_4_lut.LUT_INIT = 16'hc0ca;
-    SB_LUT4 i8826_3_lut (.I0(\data_out_frame2[10] [7]), .I1(rand_data[23]), 
-            .I2(n11114), .I3(GND_net), .O(n11605));   // verilog/coms.v(416[12] 543[6])
-    defparam i8826_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i42_4_lut (.I0(n18_adj_2526), .I1(n22), .I2(byte_transmit_counter[3]), 
-            .I3(byte_transmit_counter[2]), .O(n21_adj_2524));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i42_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFF rand_data_2481__i0 (.Q(rand_data[0]), .C(CLK_c), .D(n165));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_LUT4 i40_4_lut (.I0(r_Tx_Data[1]), .I1(n21_adj_2524), .I2(n9667), 
-            .I3(byte_transmit_counter[4]), .O(n17583));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i40_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 blink_counter_2483_add_4_26_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(blink_counter[24]), .I3(n16632), .O(n111)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_26_lut.LUT_INIT = 16'hC33C;
-    SB_DFF rand_setpoint_2482__i0 (.Q(rand_setpoint[0]), .C(CLK_c), .D(n165_adj_2482));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF blink_counter_2483__i0 (.Q(n26), .C(CLK_c), .D(n135_adj_2473));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_IO PIN_3_pad (.PACKAGE_PIN(PIN_3), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_3_c_2));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
-    defparam PIN_3_pad.PIN_TYPE = 6'b011001;
-    defparam PIN_3_pad.PULLUP = 1'b0;
-    defparam PIN_3_pad.NEG_TRIGGER = 1'b0;
-    defparam PIN_3_pad.IO_STANDARD = "SB_LVCMOS";
-    SB_LUT4 rand_data_2481_add_4_32_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[30]), 
-            .I3(n16576), .O(n135_adj_2496)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_32_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_32 (.CI(n16576), .I0(GND_net), .I1(rand_data[30]), 
-            .CO(n16577));
-    SB_LUT4 rand_data_2481_add_4_31_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[29]), 
-            .I3(n16575), .O(n136_adj_2495)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_31_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_31 (.CI(n16575), .I0(GND_net), .I1(rand_data[29]), 
-            .CO(n16576));
-    SB_LUT4 rand_data_2481_add_4_30_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[28]), 
-            .I3(n16574), .O(n137_adj_2494)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_30_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_30 (.CI(n16574), .I0(GND_net), .I1(rand_data[28]), 
-            .CO(n16575));
-    SB_LUT4 rand_data_2481_add_4_29_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[27]), 
-            .I3(n16573), .O(n138_adj_2493)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_29_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_29 (.CI(n16573), .I0(GND_net), .I1(rand_data[27]), 
-            .CO(n16574));
-    SB_LUT4 rand_data_2481_add_4_28_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[26]), 
-            .I3(n16572), .O(n139_adj_2492)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_28_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8827_3_lut (.I0(\data_out_frame2[11] [0]), .I1(rand_data[8]), 
-            .I2(n11114), .I3(GND_net), .O(n11606));   // verilog/coms.v(416[12] 543[6])
-    defparam i8827_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8828_3_lut (.I0(\data_out_frame2[11] [1]), .I1(rand_data[9]), 
-            .I2(n11114), .I3(GND_net), .O(n11607));   // verilog/coms.v(416[12] 543[6])
-    defparam i8828_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8829_3_lut (.I0(\data_out_frame2[11] [2]), .I1(rand_data[10]), 
-            .I2(n11114), .I3(GND_net), .O(n11608));   // verilog/coms.v(416[12] 543[6])
-    defparam i8829_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_data_2481_add_4_28 (.CI(n16572), .I0(GND_net), .I1(rand_data[26]), 
-            .CO(n16573));
-    SB_CARRY blink_counter_2483_add_4_26 (.CI(n16632), .I0(GND_net), .I1(blink_counter[24]), 
-            .CO(n16633));
-    SB_LUT4 i8830_3_lut (.I0(\data_out_frame2[11] [3]), .I1(rand_data[11]), 
-            .I2(n11114), .I3(GND_net), .O(n11609));   // verilog/coms.v(416[12] 543[6])
-    defparam i8830_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_27_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[25]), 
-            .I3(n16571), .O(n140_adj_2491)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_27_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8831_3_lut (.I0(\data_out_frame2[11] [4]), .I1(rand_data[12]), 
-            .I2(n11114), .I3(GND_net), .O(n11610));   // verilog/coms.v(416[12] 543[6])
-    defparam i8831_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8550_3_lut (.I0(\data_out[3] [0]), .I1(n2837), .I2(n11017), 
-            .I3(GND_net), .O(n11329));   // verilog/coms.v(280[12] 370[6])
-    defparam i8550_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_data_2481_add_4_27 (.CI(n16571), .I0(GND_net), .I1(rand_data[25]), 
-            .CO(n16572));
-    SB_LUT4 i8832_3_lut (.I0(\data_out_frame2[11] [5]), .I1(rand_data[13]), 
-            .I2(n11114), .I3(GND_net), .O(n11611));   // verilog/coms.v(416[12] 543[6])
-    defparam i8832_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8833_3_lut (.I0(\data_out_frame2[11] [6]), .I1(rand_data[14]), 
-            .I2(n11114), .I3(GND_net), .O(n11612));   // verilog/coms.v(416[12] 543[6])
-    defparam i8833_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8834_3_lut (.I0(\data_out_frame2[11] [7]), .I1(rand_data[15]), 
-            .I2(n11114), .I3(GND_net), .O(n11613));   // verilog/coms.v(416[12] 543[6])
-    defparam i8834_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8835_3_lut (.I0(\data_out_frame2[12] [0]), .I1(rand_data[0]), 
-            .I2(n11114), .I3(GND_net), .O(n11614));   // verilog/coms.v(416[12] 543[6])
-    defparam i8835_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8836_3_lut (.I0(\data_out_frame2[12] [1]), .I1(rand_data[1]), 
-            .I2(n11114), .I3(GND_net), .O(n11615));   // verilog/coms.v(416[12] 543[6])
-    defparam i8836_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8837_3_lut (.I0(\data_out_frame2[12] [2]), .I1(rand_data[2]), 
-            .I2(n11114), .I3(GND_net), .O(n11616));   // verilog/coms.v(416[12] 543[6])
-    defparam i8837_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8838_3_lut (.I0(\data_out_frame2[12] [3]), .I1(rand_data[3]), 
-            .I2(n11114), .I3(GND_net), .O(n11617));   // verilog/coms.v(416[12] 543[6])
-    defparam i8838_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8839_3_lut (.I0(\data_out_frame2[12] [4]), .I1(rand_data[4]), 
-            .I2(n11114), .I3(GND_net), .O(n11618));   // verilog/coms.v(416[12] 543[6])
-    defparam i8839_3_lut.LUT_INIT = 16'hcaca;
-    SB_IO PIN_2_pad (.PACKAGE_PIN(PIN_2), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_2_c_1));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
-    defparam PIN_2_pad.PIN_TYPE = 6'b011001;
-    defparam PIN_2_pad.PULLUP = 1'b0;
-    defparam PIN_2_pad.NEG_TRIGGER = 1'b0;
-    defparam PIN_2_pad.IO_STANDARD = "SB_LVCMOS";
-    SB_IO PIN_1_pad (.PACKAGE_PIN(PIN_1), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_1_c_0));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
-    defparam PIN_1_pad.PIN_TYPE = 6'b011001;
-    defparam PIN_1_pad.PULLUP = 1'b0;
-    defparam PIN_1_pad.NEG_TRIGGER = 1'b0;
-    defparam PIN_1_pad.IO_STANDARD = "SB_LVCMOS";
+    SB_LUT4 i9018_3_lut (.I0(\data_in[0] [7]), .I1(\data_in[1] [7]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11804));   // verilog/coms.v(424[12] 554[6])
+    defparam i9018_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9019_3_lut (.I0(\data_in[1] [0]), .I1(\data_in[2] [0]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11805));   // verilog/coms.v(424[12] 554[6])
+    defparam i9019_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9020_3_lut (.I0(\data_in[1] [1]), .I1(\data_in[2] [1]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11806));   // verilog/coms.v(424[12] 554[6])
+    defparam i9020_3_lut.LUT_INIT = 16'hcaca;
     SB_IO USBPU_pad (.PACKAGE_PIN(USBPU), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(GND_net));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam USBPU_pad.PIN_TYPE = 6'b011001;
     defparam USBPU_pad.PULLUP = 1'b0;
     defparam USBPU_pad.NEG_TRIGGER = 1'b0;
     defparam USBPU_pad.IO_STANDARD = "SB_LVCMOS";
+    SB_LUT4 i9136_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[6]), .I2(n233), 
+            .I3(GND_net), .O(n11922));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9136_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i16034_4_lut (.I0(r_Clock_Count_adj_2476[7]), .I1(n15), .I2(n219), 
+            .I3(n11218), .O(n12_adj_2422));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i16034_4_lut.LUT_INIT = 16'h3022;
+    SB_LUT4 i9021_3_lut (.I0(\data_in[1] [2]), .I1(\data_in[2] [2]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11807));   // verilog/coms.v(424[12] 554[6])
+    defparam i9021_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9154_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[24]), .I2(n233), 
+            .I3(GND_net), .O(n11940));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9154_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9158_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[28]), .I2(n233), 
+            .I3(GND_net), .O(n11944));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9158_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9159_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[29]), .I2(n233), 
+            .I3(GND_net), .O(n11945));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9159_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 LessThan_614_i4_4_lut (.I0(n532), .I1(pwm_delay[1]), .I2(n3), 
+            .I3(pwm_delay[0]), .O(n4));   // verilog/motorControl.v(60[28:48])
+    defparam LessThan_614_i4_4_lut.LUT_INIT = 16'hc5c0;
+    SB_LUT4 LessThan_614_i6_3_lut (.I0(n4), .I1(pwm_delay[2]), .I2(n5), 
+            .I3(GND_net), .O(n6_adj_2432));   // verilog/motorControl.v(60[28:48])
+    defparam LessThan_614_i6_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 LessThan_614_i8_3_lut (.I0(n6_adj_2432), .I1(pwm_delay[3]), 
+            .I2(n7), .I3(GND_net), .O(n8_adj_2414));   // verilog/motorControl.v(60[28:48])
+    defparam LessThan_614_i8_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 LessThan_614_i10_3_lut (.I0(n8_adj_2414), .I1(pwm_delay[4]), 
+            .I2(n9), .I3(GND_net), .O(n10_adj_2418));   // verilog/motorControl.v(60[28:48])
+    defparam LessThan_614_i10_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 LessThan_614_i12_3_lut (.I0(n10_adj_2418), .I1(pwm_delay[5]), 
+            .I2(n11), .I3(GND_net), .O(n12_adj_2448));   // verilog/motorControl.v(60[28:48])
+    defparam LessThan_614_i12_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 LessThan_614_i14_3_lut (.I0(n12_adj_2448), .I1(pwm_delay[6]), 
+            .I2(n13), .I3(GND_net), .O(n14));   // verilog/motorControl.v(60[28:48])
+    defparam LessThan_614_i14_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 LessThan_614_i16_3_lut (.I0(n14), .I1(pwm_delay[7]), .I2(n15_adj_2412), 
+            .I3(GND_net), .O(n16));   // verilog/motorControl.v(60[28:48])
+    defparam LessThan_614_i16_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 LessThan_614_i18_3_lut (.I0(n16), .I1(pwm_delay[8]), .I2(n17), 
+            .I3(GND_net), .O(n18));   // verilog/motorControl.v(60[28:48])
+    defparam LessThan_614_i18_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i1_4_lut (.I0(n18), .I1(n507), .I2(pwm_delay[9]), .I3(n19), 
+            .O(n24));
+    defparam i1_4_lut.LUT_INIT = 16'h3022;
+    SB_LUT4 i15557_4_lut (.I0(n18378), .I1(n18368), .I2(n18370), .I3(n18366), 
+            .O(n18532));
+    defparam i15557_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i18_4_lut (.I0(n509), .I1(n18382), .I2(n24), .I3(n18380), 
+            .O(n41));
+    defparam i18_4_lut.LUT_INIT = 16'h0010;
+    SB_LUT4 i15555_4_lut (.I0(n18364), .I1(n18358), .I2(n18362), .I3(n18356), 
+            .O(n18530));
+    defparam i15555_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 LessThan_611_i4_4_lut (.I0(pwm_delay[1]), .I1(pwm[0]), .I2(pwm[1]), 
+            .I3(pwm_delay[0]), .O(n4_adj_2456));   // verilog/motorControl.v(41[19:39])
+    defparam LessThan_611_i4_4_lut.LUT_INIT = 16'he8a0;
+    SB_LUT4 i15816_2_lut (.I0(\data_out[8] [6]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18615));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15816_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i24_4_lut_adj_369 (.I0(n19064), .I1(n18615), .I2(byte_transmit_counter[3]), 
+            .I3(n9972), .O(n10_adj_2457));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i24_4_lut_adj_369.LUT_INIT = 16'h0aca;
+    SB_LUT4 i9219_4_lut (.I0(n11546), .I1(r_Bit_Index_adj_2483[1]), .I2(r_Bit_Index_adj_2483[0]), 
+            .I3(n11364), .O(n12005));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i9219_4_lut.LUT_INIT = 16'h1444;
+    SB_LUT4 i9077_3_lut (.I0(\data_in[1] [6]), .I1(\data_in[2] [6]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11863));   // verilog/coms.v(424[12] 554[6])
+    defparam i9077_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i23_4_lut_adj_370 (.I0(r_Tx_Data[6]), .I1(n10_adj_2457), .I2(n10424), 
+            .I3(byte_transmit_counter[4]), .O(n18043));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i23_4_lut_adj_370.LUT_INIT = 16'h0aca;
+    SB_LUT4 i9155_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[25]), .I2(n233), 
+            .I3(GND_net), .O(n11941));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9155_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i16028_4_lut (.I0(r_Clock_Count_adj_2476[3]), .I1(n15), .I2(n223), 
+            .I3(n11218), .O(n12_adj_2415));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i16028_4_lut.LUT_INIT = 16'h3022;
+    SB_LUT4 LessThan_611_i6_3_lut (.I0(pwm_delay[2]), .I1(n4_adj_2456), 
+            .I2(pwm[2]), .I3(GND_net), .O(n6_adj_2455));   // verilog/motorControl.v(41[19:39])
+    defparam LessThan_611_i6_3_lut.LUT_INIT = 16'he8e8;
+    SB_LUT4 LessThan_611_i8_3_lut (.I0(pwm_delay[3]), .I1(n6_adj_2455), 
+            .I2(pwm[3]), .I3(GND_net), .O(n8));   // verilog/motorControl.v(41[19:39])
+    defparam LessThan_611_i8_3_lut.LUT_INIT = 16'he8e8;
+    SB_LUT4 LessThan_611_i10_3_lut (.I0(pwm_delay[4]), .I1(n8), .I2(pwm[4]), 
+            .I3(GND_net), .O(n10_adj_2454));   // verilog/motorControl.v(41[19:39])
+    defparam LessThan_611_i10_3_lut.LUT_INIT = 16'he8e8;
+    SB_LUT4 i9137_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[7]), .I2(n233), 
+            .I3(GND_net), .O(n11923));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9137_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 LessThan_611_i12_3_lut (.I0(pwm_delay[5]), .I1(n10_adj_2454), 
+            .I2(pwm[5]), .I3(GND_net), .O(n12_adj_2453));   // verilog/motorControl.v(41[19:39])
+    defparam LessThan_611_i12_3_lut.LUT_INIT = 16'he8e8;
+    SB_LUT4 LessThan_611_i14_3_lut (.I0(pwm_delay[6]), .I1(n12_adj_2453), 
+            .I2(pwm[6]), .I3(GND_net), .O(n14_adj_2452));   // verilog/motorControl.v(41[19:39])
+    defparam LessThan_611_i14_3_lut.LUT_INIT = 16'he8e8;
+    SB_LUT4 LessThan_611_i16_3_lut (.I0(pwm_delay[7]), .I1(n14_adj_2452), 
+            .I2(pwm[7]), .I3(GND_net), .O(n16_adj_2451));   // verilog/motorControl.v(41[19:39])
+    defparam LessThan_611_i16_3_lut.LUT_INIT = 16'he8e8;
+    SB_LUT4 LessThan_611_i18_3_lut (.I0(pwm_delay[8]), .I1(n16_adj_2451), 
+            .I2(pwm[8]), .I3(GND_net), .O(n18_adj_2450));   // verilog/motorControl.v(41[19:39])
+    defparam LessThan_611_i18_3_lut.LUT_INIT = 16'he8e8;
+    SB_LUT4 i1_4_lut_adj_371 (.I0(pwm_delay[9]), .I1(PHASES_5__N_2093[25]), 
+            .I2(n18_adj_2450), .I3(pwm[9]), .O(n24_adj_2423));
+    defparam i1_4_lut_adj_371.LUT_INIT = 16'h3220;
+    SB_LUT4 i15563_4_lut (.I0(n18402), .I1(n18398), .I2(n18400), .I3(n18396), 
+            .O(n18538));
+    defparam i15563_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i18_4_lut_adj_372 (.I0(PHASES_5__N_2093[23]), .I1(n18406), .I2(n24_adj_2423), 
+            .I3(n18404), .O(n41_adj_2421));
+    defparam i18_4_lut_adj_372.LUT_INIT = 16'h0010;
+    SB_LUT4 i15561_4_lut (.I0(n18394), .I1(n18390), .I2(n18392), .I3(n18388), 
+            .O(n18536));
+    defparam i15561_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i1_4_lut_adj_373 (.I0(pwm[31]), .I1(n18536), .I2(n41_adj_2421), 
+            .I3(n18538), .O(PHASES_5__N_2090));
+    defparam i1_4_lut_adj_373.LUT_INIT = 16'h0010;
     SB_IO LED_pad (.PACKAGE_PIN(LED), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(LED_c));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam LED_pad.PIN_TYPE = 6'b011001;
     defparam LED_pad.PULLUP = 1'b0;
     defparam LED_pad.NEG_TRIGGER = 1'b0;
     defparam LED_pad.IO_STANDARD = "SB_LVCMOS";
-    SB_IO PIN_23_pad (.PACKAGE_PIN(PIN_23), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_23_c_4));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+    SB_LUT4 i9089_3_lut (.I0(\data_in[3] [2]), .I1(rx_data[2]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11875));   // verilog/coms.v(424[12] 554[6])
+    defparam i9089_3_lut.LUT_INIT = 16'hcaca;
+    SB_IO PIN_2_pad (.PACKAGE_PIN(PIN_2), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_2_c_1)) /* synthesis IO_FF_OUT=TRUE */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+    defparam PIN_2_pad.PIN_TYPE = 6'b011001;
+    defparam PIN_2_pad.PULLUP = 1'b0;
+    defparam PIN_2_pad.NEG_TRIGGER = 1'b0;
+    defparam PIN_2_pad.IO_STANDARD = "SB_LVCMOS";
+    SB_LUT4 i8789_3_lut (.I0(\UART_TRANSMITTER.sp [0]), .I1(n147), .I2(n5558), 
+            .I3(GND_net), .O(n11575));   // verilog/coms.v(277[12] 378[6])
+    defparam i8789_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i8790_3_lut (.I0(\data_in_frame[6] [7]), .I1(rx_data[7]), .I2(n18329), 
+            .I3(GND_net), .O(n11576));   // verilog/coms.v(424[12] 554[6])
+    defparam i8790_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i8791_3_lut (.I0(\data_in_frame[6] [6]), .I1(rx_data[6]), .I2(n18329), 
+            .I3(GND_net), .O(n11577));   // verilog/coms.v(424[12] 554[6])
+    defparam i8791_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i8792_3_lut (.I0(\data_in_frame[6] [5]), .I1(rx_data[5]), .I2(n18329), 
+            .I3(GND_net), .O(n11578));   // verilog/coms.v(424[12] 554[6])
+    defparam i8792_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i9160_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[30]), .I2(n233), 
+            .I3(GND_net), .O(n11946));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9160_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i8793_3_lut (.I0(\data_in_frame[6] [4]), .I1(rx_data[4]), .I2(n18329), 
+            .I3(GND_net), .O(n11579));   // verilog/coms.v(424[12] 554[6])
+    defparam i8793_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i8794_4_lut (.I0(r_Rx_Data), .I1(rx_data[6]), .I2(n10974), 
+            .I3(n14605), .O(n11580));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i8794_4_lut.LUT_INIT = 16'hcacc;
+    SB_LUT4 i8795_3_lut (.I0(\data_in_frame[6] [3]), .I1(rx_data[3]), .I2(n18329), 
+            .I3(GND_net), .O(n11581));   // verilog/coms.v(424[12] 554[6])
+    defparam i8795_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i13_4_lut_4_lut (.I0(r_SM_Main_adj_2478[1]), .I1(r_SM_Main_adj_2478[2]), 
+            .I2(r_SM_Main_2__N_1891[2]), .I3(r_SM_Main_adj_2478[0]), .O(n11272));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i13_4_lut_4_lut.LUT_INIT = 16'h2055;
+    SB_LUT4 i8796_3_lut (.I0(\data_in_frame[6] [2]), .I1(rx_data[2]), .I2(n18329), 
+            .I3(GND_net), .O(n11582));   // verilog/coms.v(424[12] 554[6])
+    defparam i8796_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i8797_3_lut (.I0(\data_in_frame[6] [1]), .I1(rx_data[1]), .I2(n18329), 
+            .I3(GND_net), .O(n11583));   // verilog/coms.v(424[12] 554[6])
+    defparam i8797_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i8798_3_lut (.I0(\data_in_frame[6] [0]), .I1(rx_data[0]), .I2(n18329), 
+            .I3(GND_net), .O(n11584));   // verilog/coms.v(424[12] 554[6])
+    defparam i8798_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i15920_2_lut (.I0(\data_out[8] [0]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18684));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15920_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i33_4_lut (.I0(n1_adj_2462), .I1(n19100), .I2(byte_transmit_counter[0]), 
+            .I3(byte_transmit_counter[1]), .O(n13_adj_2460));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i33_4_lut.LUT_INIT = 16'hcac0;
+    SB_LUT4 i32_4_lut (.I0(n13_adj_2460), .I1(n18684), .I2(byte_transmit_counter[3]), 
+            .I3(n9972), .O(n16_adj_2459));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i32_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i12_4_lut (.I0(byte_transmit_counter[0]), .I1(tx_transmit_N_1750[0]), 
+            .I2(n11340), .I3(n11195), .O(n17597));   // verilog/coms.v(277[12] 378[6])
+    defparam i12_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i9138_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[8]), .I2(n233), 
+            .I3(GND_net), .O(n11924));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9138_3_lut.LUT_INIT = 16'haeae;
+    SB_LUT4 i9093_3_lut (.I0(\data_in[3] [1]), .I1(rx_data[1]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11879));   // verilog/coms.v(424[12] 554[6])
+    defparam i9093_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i31_4_lut (.I0(r_Tx_Data[0]), .I1(n16_adj_2459), .I2(n10424), 
+            .I3(byte_transmit_counter[4]), .O(n17895));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i31_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i9095_3_lut (.I0(\data_in[3] [0]), .I1(rx_data[0]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11881));   // verilog/coms.v(424[12] 554[6])
+    defparam i9095_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9099_3_lut (.I0(\data_in[2] [7]), .I1(\data_in[3] [7]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11885));   // verilog/coms.v(424[12] 554[6])
+    defparam i9099_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9100_3_lut (.I0(\data_in[2] [6]), .I1(\data_in[3] [6]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11886));   // verilog/coms.v(424[12] 554[6])
+    defparam i9100_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9101_3_lut (.I0(\data_in[3] [4]), .I1(rx_data[4]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11887));   // verilog/coms.v(424[12] 554[6])
+    defparam i9101_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9054_4_lut (.I0(n16065), .I1(r_Clock_Count[3]), .I2(n318), 
+            .I3(r_SM_Main[2]), .O(n11840));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i9054_4_lut.LUT_INIT = 16'h88a0;
+    SB_LUT4 i9102_3_lut (.I0(\data_in[2] [5]), .I1(\data_in[3] [5]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11888));   // verilog/coms.v(424[12] 554[6])
+    defparam i9102_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9103_3_lut (.I0(\data_in[2] [4]), .I1(\data_in[3] [4]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11889));   // verilog/coms.v(424[12] 554[6])
+    defparam i9103_3_lut.LUT_INIT = 16'hcaca;
+    SB_DFF blink_counter_2813__i0 (.Q(n26), .C(CLK_c), .D(n135));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_LUT4 i9075_3_lut (.I0(\data_in[1] [4]), .I1(\data_in[2] [4]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11861));   // verilog/coms.v(424[12] 554[6])
+    defparam i9075_3_lut.LUT_INIT = 16'hcaca;
+    SB_IO PIN_3_pad (.PACKAGE_PIN(PIN_3), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_3_c_2)) /* synthesis IO_FF_OUT=TRUE */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+    defparam PIN_3_pad.PIN_TYPE = 6'b011001;
+    defparam PIN_3_pad.PULLUP = 1'b0;
+    defparam PIN_3_pad.NEG_TRIGGER = 1'b0;
+    defparam PIN_3_pad.IO_STANDARD = "SB_LVCMOS";
+    SB_IO PIN_22_pad (.PACKAGE_PIN(PIN_22), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_22_c_5)) /* synthesis IO_FF_OUT=TRUE */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+    defparam PIN_22_pad.PIN_TYPE = 6'b011001;
+    defparam PIN_22_pad.PULLUP = 1'b0;
+    defparam PIN_22_pad.NEG_TRIGGER = 1'b0;
+    defparam PIN_22_pad.IO_STANDARD = "SB_LVCMOS";
+    SB_IO PIN_23_pad (.PACKAGE_PIN(PIN_23), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_23_c_4)) /* synthesis IO_FF_OUT=TRUE */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam PIN_23_pad.PIN_TYPE = 6'b011001;
     defparam PIN_23_pad.PULLUP = 1'b0;
     defparam PIN_23_pad.NEG_TRIGGER = 1'b0;
     defparam PIN_23_pad.IO_STANDARD = "SB_LVCMOS";
-    SB_LUT4 i8840_3_lut (.I0(\data_out_frame2[12] [5]), .I1(rand_data[5]), 
-            .I2(n11114), .I3(GND_net), .O(n11619));   // verilog/coms.v(416[12] 543[6])
-    defparam i8840_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8841_3_lut (.I0(\data_out_frame2[12] [6]), .I1(rand_data[6]), 
-            .I2(n11114), .I3(GND_net), .O(n11620));   // verilog/coms.v(416[12] 543[6])
-    defparam i8841_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_26_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[24]), 
-            .I3(n16570), .O(n141_adj_2490)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_26_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8842_3_lut (.I0(\data_out_frame2[12] [7]), .I1(rand_data[7]), 
-            .I2(n11114), .I3(GND_net), .O(n11621));   // verilog/coms.v(416[12] 543[6])
-    defparam i8842_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8843_3_lut (.I0(\data_out_frame2[13] [0]), .I1(rand_data[24]), 
-            .I2(n11114), .I3(GND_net), .O(n11622));   // verilog/coms.v(416[12] 543[6])
-    defparam i8843_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 blink_counter_2483_add_4_25_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(blink_counter[23]), .I3(n16631), .O(n112)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_25_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8844_3_lut (.I0(\data_out_frame2[13] [1]), .I1(rand_data[25]), 
-            .I2(n11114), .I3(GND_net), .O(n11623));   // verilog/coms.v(416[12] 543[6])
-    defparam i8844_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8845_3_lut (.I0(\data_out_frame2[13] [2]), .I1(rand_data[26]), 
-            .I2(n11114), .I3(GND_net), .O(n11624));   // verilog/coms.v(416[12] 543[6])
-    defparam i8845_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8846_3_lut (.I0(\data_out_frame2[13] [3]), .I1(rand_data[27]), 
-            .I2(n11114), .I3(GND_net), .O(n11625));   // verilog/coms.v(416[12] 543[6])
-    defparam i8846_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY blink_counter_2483_add_4_25 (.CI(n16631), .I0(GND_net), .I1(blink_counter[23]), 
-            .CO(n16632));
-    SB_LUT4 i8847_3_lut (.I0(\data_out_frame2[13] [4]), .I1(rand_data[28]), 
-            .I2(n11114), .I3(GND_net), .O(n11626));   // verilog/coms.v(416[12] 543[6])
-    defparam i8847_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_data_2481_add_4_26 (.CI(n16570), .I0(GND_net), .I1(rand_data[24]), 
-            .CO(n16571));
-    SB_LUT4 rand_data_2481_add_4_25_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[23]), 
-            .I3(n16569), .O(n142_adj_2489)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_25_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8848_3_lut (.I0(\data_out_frame2[13] [5]), .I1(rand_data[29]), 
-            .I2(n11114), .I3(GND_net), .O(n11627));   // verilog/coms.v(416[12] 543[6])
-    defparam i8848_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8849_3_lut (.I0(\data_out_frame2[13] [6]), .I1(rand_data[30]), 
-            .I2(n11114), .I3(GND_net), .O(n11628));   // verilog/coms.v(416[12] 543[6])
-    defparam i8849_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 blink_counter_2483_add_4_24_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(blink_counter[22]), .I3(n16630), .O(n113)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_24_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_25 (.CI(n16569), .I0(GND_net), .I1(rand_data[23]), 
-            .CO(n16570));
-    SB_LUT4 i8850_3_lut (.I0(\data_out_frame2[13] [7]), .I1(rand_data[31]), 
-            .I2(n11114), .I3(GND_net), .O(n11629));   // verilog/coms.v(416[12] 543[6])
-    defparam i8850_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8851_3_lut (.I0(\data_out_frame2[14] [0]), .I1(rand_data[16]), 
-            .I2(n11114), .I3(GND_net), .O(n11630));   // verilog/coms.v(416[12] 543[6])
-    defparam i8851_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8852_3_lut (.I0(\data_out_frame2[14] [1]), .I1(rand_data[17]), 
-            .I2(n11114), .I3(GND_net), .O(n11631));   // verilog/coms.v(416[12] 543[6])
-    defparam i8852_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8853_3_lut (.I0(\data_out_frame2[14] [2]), .I1(rand_data[18]), 
-            .I2(n11114), .I3(GND_net), .O(n11632));   // verilog/coms.v(416[12] 543[6])
-    defparam i8853_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8627_4_lut (.I0(rx_data[1]), .I1(r_Rx_Data), .I2(n12600), 
-            .I3(n164_adj_2464), .O(n11406));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i8627_4_lut.LUT_INIT = 16'hcaaa;
-    SB_LUT4 i8854_3_lut (.I0(\data_out_frame2[14] [3]), .I1(rand_data[19]), 
-            .I2(n11114), .I3(GND_net), .O(n11633));   // verilog/coms.v(416[12] 543[6])
-    defparam i8854_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8855_3_lut (.I0(\data_out_frame2[14] [4]), .I1(rand_data[20]), 
-            .I2(n11114), .I3(GND_net), .O(n11634));   // verilog/coms.v(416[12] 543[6])
-    defparam i8855_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8856_3_lut (.I0(\data_out_frame2[14] [5]), .I1(rand_data[21]), 
-            .I2(n11114), .I3(GND_net), .O(n11635));   // verilog/coms.v(416[12] 543[6])
-    defparam i8856_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY blink_counter_2483_add_4_24 (.CI(n16630), .I0(GND_net), .I1(blink_counter[22]), 
-            .CO(n16631));
-    SB_LUT4 i8857_3_lut (.I0(\data_out_frame2[14] [6]), .I1(rand_data[22]), 
-            .I2(n11114), .I3(GND_net), .O(n11636));   // verilog/coms.v(416[12] 543[6])
-    defparam i8857_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_24_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[22]), 
-            .I3(n16568), .O(n143_adj_2488)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_24_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8628_4_lut (.I0(rx_data[2]), .I1(r_Rx_Data), .I2(n12527), 
-            .I3(n4_adj_2471), .O(n11407));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i8628_4_lut.LUT_INIT = 16'hacaa;
-    SB_LUT4 i8858_3_lut (.I0(\data_out_frame2[14] [7]), .I1(rand_data[23]), 
-            .I2(n11114), .I3(GND_net), .O(n11637));   // verilog/coms.v(416[12] 543[6])
-    defparam i8858_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8629_4_lut (.I0(rx_data[3]), .I1(r_Rx_Data), .I2(n12600), 
-            .I3(n158), .O(n11408));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i8629_4_lut.LUT_INIT = 16'hcaaa;
-    SB_LUT4 i8859_3_lut (.I0(\data_out_frame2[15] [0]), .I1(rand_data[8]), 
-            .I2(n11114), .I3(GND_net), .O(n11638));   // verilog/coms.v(416[12] 543[6])
-    defparam i8859_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8630_4_lut (.I0(rx_data[4]), .I1(r_Rx_Data), .I2(n151), .I3(n164_adj_2464), 
-            .O(n11409));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i8630_4_lut.LUT_INIT = 16'hcaaa;
-    SB_LUT4 i8603_4_lut (.I0(n18016), .I1(r_Bit_Index[2]), .I2(n5440), 
-            .I3(n18012), .O(n11382));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8603_4_lut.LUT_INIT = 16'h8828;
-    SB_LUT4 i8860_3_lut (.I0(\data_out_frame2[15] [1]), .I1(rand_data[9]), 
-            .I2(n11114), .I3(GND_net), .O(n11639));   // verilog/coms.v(416[12] 543[6])
-    defparam i8860_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 blink_counter_2483_add_4_23_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(blink_counter[21]), .I3(n16629), .O(n114)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_23_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_23 (.CI(n16629), .I0(GND_net), .I1(blink_counter[21]), 
-            .CO(n16630));
-    SB_CARRY rand_data_2481_add_4_24 (.CI(n16568), .I0(GND_net), .I1(rand_data[22]), 
-            .CO(n16569));
-    SB_LUT4 blink_counter_2483_add_4_22_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n6), .I3(n16628), .O(n115)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_22_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8861_3_lut (.I0(\data_out_frame2[15] [2]), .I1(rand_data[10]), 
-            .I2(n11114), .I3(GND_net), .O(n11640));   // verilog/coms.v(416[12] 543[6])
-    defparam i8861_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY blink_counter_2483_add_4_22 (.CI(n16628), .I0(GND_net), .I1(n6), 
-            .CO(n16629));
-    SB_LUT4 i8862_3_lut (.I0(\data_out_frame2[15] [3]), .I1(rand_data[11]), 
-            .I2(n11114), .I3(GND_net), .O(n11641));   // verilog/coms.v(416[12] 543[6])
-    defparam i8862_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8863_3_lut (.I0(\data_out_frame2[15] [4]), .I1(rand_data[12]), 
-            .I2(n11114), .I3(GND_net), .O(n11642));   // verilog/coms.v(416[12] 543[6])
-    defparam i8863_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8864_3_lut (.I0(\data_out_frame2[15] [5]), .I1(rand_data[13]), 
-            .I2(n11114), .I3(GND_net), .O(n11643));   // verilog/coms.v(416[12] 543[6])
-    defparam i8864_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8561_3_lut (.I0(\data_out[0] [5]), .I1(n2837), .I2(n11017), 
-            .I3(GND_net), .O(n11340));   // verilog/coms.v(280[12] 370[6])
-    defparam i8561_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8633_4_lut (.I0(rx_data[7]), .I1(r_Rx_Data), .I2(n135_adj_2463), 
-            .I3(n12582), .O(n11412));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i8633_4_lut.LUT_INIT = 16'hcaaa;
-    SB_LUT4 i1_2_lut (.I0(\UART_TRANSMITTER.state [1]), .I1(n4), .I2(GND_net), 
-            .I3(GND_net), .O(n22_adj_2522));   // verilog/coms.v(280[12] 370[6])
-    defparam i1_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 blink_counter_2483_add_4_21_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n7_adj_2476), .I3(n16627), .O(n116)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_21_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_21 (.CI(n16627), .I0(GND_net), .I1(n7_adj_2476), 
-            .CO(n16628));
-    SB_LUT4 i15531_4_lut (.I0(n17978), .I1(\UART_TRANSMITTER.state [2]), 
-            .I2(\UART_TRANSMITTER.state_7__N_1223 [1]), .I3(\UART_TRANSMITTER.state [1]), 
-            .O(n18202));   // verilog/coms.v(280[12] 370[6])
-    defparam i15531_4_lut.LUT_INIT = 16'h7577;
-    SB_LUT4 blink_counter_2483_add_4_20_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n8), .I3(n16626), .O(n117)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_20_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_20 (.CI(n16626), .I0(GND_net), .I1(n8), 
-            .CO(n16627));
-    SB_LUT4 blink_counter_2483_add_4_19_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n9), .I3(n16625), .O(n118)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_19_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_19 (.CI(n16625), .I0(GND_net), .I1(n9), 
-            .CO(n16626));
-    SB_LUT4 blink_counter_2483_add_4_18_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n10_adj_2467), .I3(n16624), .O(n119)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_18_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_18 (.CI(n16624), .I0(GND_net), .I1(n10_adj_2467), 
-            .CO(n16625));
-    SB_LUT4 blink_counter_2483_add_4_17_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n11), .I3(n16623), .O(n120_adj_2475)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_17_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_17 (.CI(n16623), .I0(GND_net), .I1(n11), 
-            .CO(n16624));
-    SB_LUT4 i36_4_lut (.I0(n18202), .I1(n22_adj_2522), .I2(\UART_TRANSMITTER.state [0]), 
-            .I3(\UART_TRANSMITTER.state [2]), .O(n17177));   // verilog/coms.v(280[12] 370[6])
-    defparam i36_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i8642_3_lut (.I0(\data_in_frame[0] [0]), .I1(rx_data[0]), .I2(n16802), 
-            .I3(GND_net), .O(n11421));   // verilog/coms.v(416[12] 543[6])
-    defparam i8642_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 blink_counter_2483_add_4_16_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n12), .I3(n16622), .O(n121)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_16_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8557_3_lut_4_lut (.I0(\data_out[1] [6]), .I1(\UART_TRANSMITTER.state [0]), 
-            .I2(\UART_TRANSMITTER.state [1]), .I3(n11017), .O(n11336));   // verilog/coms.v(280[12] 370[6])
-    defparam i8557_3_lut_4_lut.LUT_INIT = 16'hc0aa;
-    SB_LUT4 i8644_3_lut (.I0(tx_o), .I1(n3_adj_2525), .I2(n5155), .I3(GND_net), 
-            .O(n11423));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8644_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8648_3_lut (.I0(tx2_o), .I1(n3), .I2(n11096), .I3(GND_net), 
-            .O(n11427));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8648_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_23_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[21]), 
-            .I3(n16567), .O(n144_adj_2487)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_23_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_23 (.CI(n16567), .I0(GND_net), .I1(rand_data[21]), 
-            .CO(n16568));
-    SB_CARRY blink_counter_2483_add_4_16 (.CI(n16622), .I0(GND_net), .I1(n12), 
-            .CO(n16623));
-    SB_LUT4 rand_data_2481_add_4_22_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[20]), 
-            .I3(n16566), .O(n145_adj_2486)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_22_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 blink_counter_2483_add_4_15_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n13), .I3(n16621), .O(n122)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_15_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_22 (.CI(n16566), .I0(GND_net), .I1(rand_data[20]), 
-            .CO(n16567));
-    SB_LUT4 rand_data_2481_add_4_21_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[19]), 
-            .I3(n16565), .O(n146)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_21_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i1_3_lut (.I0(\FRAME_MATCHER.i_31__N_1273 ), .I1(n12965), .I2(n15118), 
-            .I3(GND_net), .O(n18_adj_2539));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_3_lut.LUT_INIT = 16'ha8a8;
-    SB_LUT4 i1_4_lut (.I0(n1437), .I1(n8_adj_2541), .I2(n10429), .I3(n15), 
-            .O(n21_adj_2538));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_4_lut.LUT_INIT = 16'ha888;
-    SB_LUT4 i1_4_lut_adj_827 (.I0(\FRAME_MATCHER.i_31__N_1270 ), .I1(\FRAME_MATCHER.i [31]), 
-            .I2(n12965), .I3(n242), .O(n15_adj_2540));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_4_lut_adj_827.LUT_INIT = 16'ha2a0;
-    SB_CARRY rand_data_2481_add_4_21 (.CI(n16565), .I0(GND_net), .I1(rand_data[19]), 
-            .CO(n16566));
-    SB_LUT4 rand_data_2481_add_4_20_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[18]), 
-            .I3(n16564), .O(n147)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_20_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_15 (.CI(n16621), .I0(GND_net), .I1(n13), 
-            .CO(n16622));
-    SB_LUT4 blink_counter_2483_add_4_14_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n14_adj_2478), .I3(n16620), .O(n123)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_14_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i3_4_lut (.I0(n13849), .I1(n15_adj_2540), .I2(n21_adj_2538), 
-            .I3(n18_adj_2539), .O(n18910));   // verilog/coms.v(416[12] 543[6])
-    defparam i3_4_lut.LUT_INIT = 16'hfffd;
-    SB_CARRY blink_counter_2483_add_4_14 (.CI(n16620), .I0(GND_net), .I1(n14_adj_2478), 
-            .CO(n16621));
-    SB_LUT4 blink_counter_2483_add_4_13_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n15_adj_2479), .I3(n16619), .O(n124)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_13_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8652_3_lut (.I0(\data_in_frame[6] [7]), .I1(rx_data[7]), .I2(n16797), 
-            .I3(GND_net), .O(n11431));   // verilog/coms.v(416[12] 543[6])
-    defparam i8652_3_lut.LUT_INIT = 16'hacac;
-    SB_CARRY rand_data_2481_add_4_20 (.CI(n16564), .I0(GND_net), .I1(rand_data[18]), 
-            .CO(n16565));
-    SB_LUT4 i8656_3_lut (.I0(\data_in_frame[6] [6]), .I1(rx_data[6]), .I2(n16797), 
-            .I3(GND_net), .O(n11435));   // verilog/coms.v(416[12] 543[6])
-    defparam i8656_3_lut.LUT_INIT = 16'hacac;
-    SB_CARRY blink_counter_2483_add_4_13 (.CI(n16619), .I0(GND_net), .I1(n15_adj_2479), 
-            .CO(n16620));
-    SB_LUT4 blink_counter_2483_add_4_12_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n16), .I3(n16618), .O(n125)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_12_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_12 (.CI(n16618), .I0(GND_net), .I1(n16), 
-            .CO(n16619));
-    SB_LUT4 blink_counter_2483_add_4_11_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n17), .I3(n16617), .O(n126)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_11_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_11 (.CI(n16617), .I0(GND_net), .I1(n17), 
-            .CO(n16618));
-    SB_LUT4 i8657_3_lut (.I0(\data_in_frame[6] [5]), .I1(rx_data[5]), .I2(n16797), 
-            .I3(GND_net), .O(n11436));   // verilog/coms.v(416[12] 543[6])
-    defparam i8657_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 rand_data_2481_add_4_19_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[17]), 
-            .I3(n16563), .O(n148)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_19_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 blink_counter_2483_add_4_10_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n18_adj_2480), .I3(n16616), .O(n127)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_10_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8658_3_lut (.I0(\data_in_frame[6] [4]), .I1(rx_data[4]), .I2(n16797), 
-            .I3(GND_net), .O(n11437));   // verilog/coms.v(416[12] 543[6])
-    defparam i8658_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8659_3_lut (.I0(\data_in_frame[6] [3]), .I1(rx_data[3]), .I2(n16797), 
-            .I3(GND_net), .O(n11438));   // verilog/coms.v(416[12] 543[6])
-    defparam i8659_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8600_4_lut (.I0(n18016), .I1(r_Bit_Index[1]), .I2(r_Bit_Index[0]), 
-            .I3(n18012), .O(n11379));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8600_4_lut.LUT_INIT = 16'h8828;
-    SB_LUT4 i8660_3_lut (.I0(\data_in_frame[6] [2]), .I1(rx_data[2]), .I2(n16797), 
-            .I3(GND_net), .O(n11439));   // verilog/coms.v(416[12] 543[6])
-    defparam i8660_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8661_3_lut (.I0(\data_in_frame[6] [1]), .I1(rx_data[1]), .I2(n16797), 
-            .I3(GND_net), .O(n11440));   // verilog/coms.v(416[12] 543[6])
-    defparam i8661_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8562_3_lut (.I0(\data_out[0] [3]), .I1(\UART_TRANSMITTER.state [1]), 
-            .I2(n11017), .I3(GND_net), .O(n11341));   // verilog/coms.v(280[12] 370[6])
-    defparam i8562_3_lut.LUT_INIT = 16'h3a3a;
-    SB_LUT4 i8662_3_lut (.I0(\data_in_frame[6] [0]), .I1(rx_data[0]), .I2(n16797), 
-            .I3(GND_net), .O(n11441));   // verilog/coms.v(416[12] 543[6])
-    defparam i8662_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8663_3_lut (.I0(\data_in_frame[5] [7]), .I1(rx_data[7]), .I2(n11058), 
-            .I3(GND_net), .O(n11442));   // verilog/coms.v(416[12] 543[6])
-    defparam i8663_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8664_3_lut (.I0(\data_in_frame[5] [6]), .I1(rx_data[6]), .I2(n11058), 
-            .I3(GND_net), .O(n11443));   // verilog/coms.v(416[12] 543[6])
-    defparam i8664_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8665_3_lut (.I0(\data_in_frame[5] [5]), .I1(rx_data[5]), .I2(n11058), 
-            .I3(GND_net), .O(n11444));   // verilog/coms.v(416[12] 543[6])
-    defparam i8665_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8666_3_lut (.I0(\data_in_frame[5] [4]), .I1(rx_data[4]), .I2(n11058), 
-            .I3(GND_net), .O(n11445));   // verilog/coms.v(416[12] 543[6])
-    defparam i8666_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8745_3_lut_4_lut (.I0(\data_out[9] [2]), .I1(\data_out[10] [6]), 
-            .I2(n17758), .I3(data_out_10__7__N_110), .O(n11524));   // verilog/coms.v(280[12] 370[6])
-    defparam i8745_3_lut_4_lut.LUT_INIT = 16'h3caa;
-    SB_LUT4 i8667_3_lut (.I0(\data_in_frame[5] [3]), .I1(rx_data[3]), .I2(n11058), 
-            .I3(GND_net), .O(n11446));   // verilog/coms.v(416[12] 543[6])
-    defparam i8667_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8668_3_lut (.I0(\data_in_frame[5] [2]), .I1(rx_data[2]), .I2(n11058), 
-            .I3(GND_net), .O(n11447));   // verilog/coms.v(416[12] 543[6])
-    defparam i8668_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8669_3_lut (.I0(\data_in_frame[5] [1]), .I1(rx_data[1]), .I2(n11058), 
-            .I3(GND_net), .O(n11448));   // verilog/coms.v(416[12] 543[6])
-    defparam i8669_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY blink_counter_2483_add_4_10 (.CI(n16616), .I0(GND_net), .I1(n18_adj_2480), 
-            .CO(n16617));
-    SB_LUT4 blink_counter_2483_add_4_9_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n19), .I3(n16615), .O(n128)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_9_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_19 (.CI(n16563), .I0(GND_net), .I1(rand_data[17]), 
-            .CO(n16564));
-    SB_LUT4 rand_data_2481_add_4_18_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[16]), 
-            .I3(n16562), .O(n149)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_18_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_18 (.CI(n16562), .I0(GND_net), .I1(rand_data[16]), 
-            .CO(n16563));
-    SB_LUT4 rand_data_2481_add_4_17_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[15]), 
-            .I3(n16561), .O(n150)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_17_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8670_3_lut (.I0(\data_in_frame[5] [0]), .I1(rx_data[0]), .I2(n11058), 
-            .I3(GND_net), .O(n11449));   // verilog/coms.v(416[12] 543[6])
-    defparam i8670_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY blink_counter_2483_add_4_9 (.CI(n16615), .I0(GND_net), .I1(n19), 
-            .CO(n16616));
-    SB_LUT4 i8563_3_lut (.I0(\data_out[0] [1]), .I1(\UART_TRANSMITTER.state [1]), 
-            .I2(n11017), .I3(GND_net), .O(n11342));   // verilog/coms.v(280[12] 370[6])
-    defparam i8563_3_lut.LUT_INIT = 16'h3a3a;
-    SB_CARRY rand_data_2481_add_4_17 (.CI(n16561), .I0(GND_net), .I1(rand_data[15]), 
-            .CO(n16562));
-    SB_LUT4 rand_data_2481_add_4_16_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[14]), 
-            .I3(n16560), .O(n151_adj_2485)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_16_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 blink_counter_2483_add_4_8_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n20), .I3(n16614), .O(n129_adj_2474)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_8_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_8 (.CI(n16614), .I0(GND_net), .I1(n20), 
-            .CO(n16615));
-    SB_LUT4 i8679_3_lut (.I0(\data_in_frame[2] [7]), .I1(rx_data[7]), .I2(n120), 
-            .I3(GND_net), .O(n11458));   // verilog/coms.v(416[12] 543[6])
-    defparam i8679_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8680_3_lut (.I0(\data_in_frame[2] [6]), .I1(rx_data[6]), .I2(n120), 
-            .I3(GND_net), .O(n11459));   // verilog/coms.v(416[12] 543[6])
-    defparam i8680_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 blink_counter_2483_add_4_7_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n21), .I3(n16613), .O(n130)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_7_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8681_3_lut (.I0(\data_in_frame[2] [5]), .I1(rx_data[5]), .I2(n120), 
-            .I3(GND_net), .O(n11460));   // verilog/coms.v(416[12] 543[6])
-    defparam i8681_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8682_3_lut (.I0(\data_in_frame[2] [4]), .I1(rx_data[4]), .I2(n120), 
-            .I3(GND_net), .O(n11461));   // verilog/coms.v(416[12] 543[6])
-    defparam i8682_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8683_3_lut (.I0(\data_in_frame[2] [3]), .I1(rx_data[3]), .I2(n120), 
-            .I3(GND_net), .O(n11462));   // verilog/coms.v(416[12] 543[6])
-    defparam i8683_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8684_3_lut (.I0(\data_in_frame[2] [2]), .I1(rx_data[2]), .I2(n120), 
-            .I3(GND_net), .O(n11463));   // verilog/coms.v(416[12] 543[6])
-    defparam i8684_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8685_3_lut (.I0(\data_in_frame[2] [1]), .I1(rx_data[1]), .I2(n120), 
-            .I3(GND_net), .O(n11464));   // verilog/coms.v(416[12] 543[6])
-    defparam i8685_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8865_3_lut (.I0(\data_out_frame2[15] [6]), .I1(rand_data[14]), 
-            .I2(n11114), .I3(GND_net), .O(n11644));   // verilog/coms.v(416[12] 543[6])
-    defparam i8865_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8866_3_lut (.I0(\data_out_frame2[15] [7]), .I1(rand_data[15]), 
-            .I2(n11114), .I3(GND_net), .O(n11645));   // verilog/coms.v(416[12] 543[6])
-    defparam i8866_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8551_3_lut (.I0(\data_out[2] [7]), .I1(\UART_TRANSMITTER.state [1]), 
-            .I2(n11017), .I3(GND_net), .O(n11330));   // verilog/coms.v(280[12] 370[6])
-    defparam i8551_3_lut.LUT_INIT = 16'h3a3a;
-    SB_LUT4 i8867_3_lut (.I0(\data_out_frame2[16] [0]), .I1(rand_data[0]), 
-            .I2(n11114), .I3(GND_net), .O(n11646));   // verilog/coms.v(416[12] 543[6])
-    defparam i8867_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i1_3_lut_4_lut (.I0(n1166), .I1(n17694), .I2(n612), .I3(\FRAME_MATCHER.i_31__N_1272 ), 
-            .O(n15));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_3_lut_4_lut.LUT_INIT = 16'hf444;
-    SB_LUT4 i8686_3_lut (.I0(\data_in_frame[2] [0]), .I1(rx_data[0]), .I2(n120), 
-            .I3(GND_net), .O(n11465));   // verilog/coms.v(416[12] 543[6])
-    defparam i8686_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8868_3_lut (.I0(\data_out_frame2[16] [1]), .I1(rand_data[1]), 
-            .I2(n11114), .I3(GND_net), .O(n11647));   // verilog/coms.v(416[12] 543[6])
-    defparam i8868_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8552_3_lut (.I0(\data_out[2] [5]), .I1(\UART_TRANSMITTER.state [1]), 
-            .I2(n11017), .I3(GND_net), .O(n11331));   // verilog/coms.v(280[12] 370[6])
-    defparam i8552_3_lut.LUT_INIT = 16'h3a3a;
-    SB_LUT4 i8695_3_lut (.I0(\data_in_frame[0] [7]), .I1(rx_data[7]), .I2(n16802), 
-            .I3(GND_net), .O(n11474));   // verilog/coms.v(416[12] 543[6])
-    defparam i8695_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8696_3_lut (.I0(\data_in_frame[0] [6]), .I1(rx_data[6]), .I2(n16802), 
-            .I3(GND_net), .O(n11475));   // verilog/coms.v(416[12] 543[6])
-    defparam i8696_3_lut.LUT_INIT = 16'hacac;
-    SB_IO PIN_24_pad (.PACKAGE_PIN(PIN_24), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_24_c_3));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+    SB_IO PIN_24_pad (.PACKAGE_PIN(PIN_24), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_24_c_3)) /* synthesis IO_FF_OUT=TRUE */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam PIN_24_pad.PIN_TYPE = 6'b011001;
     defparam PIN_24_pad.PULLUP = 1'b0;
     defparam PIN_24_pad.NEG_TRIGGER = 1'b0;
@@ -1112,5786 +497,5511 @@ module TinyFPGA_B (CLK, LED, USBPU, PIN_1, PIN_2, PIN_3, PIN_4,
     defparam CLK_pad.PULLUP = 1'b0;
     defparam CLK_pad.NEG_TRIGGER = 1'b0;
     defparam CLK_pad.IO_STANDARD = "SB_LVCMOS";
-    SB_IO PIN_22_pad (.PACKAGE_PIN(PIN_22), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_22_c_5)) /* synthesis IO_FF_OUT=TRUE */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
-    defparam PIN_22_pad.PIN_TYPE = 6'b011001;
-    defparam PIN_22_pad.PULLUP = 1'b0;
-    defparam PIN_22_pad.NEG_TRIGGER = 1'b0;
-    defparam PIN_22_pad.IO_STANDARD = "SB_LVCMOS";
-    SB_LUT4 i8697_3_lut (.I0(\data_in_frame[0] [5]), .I1(rx_data[5]), .I2(n16802), 
-            .I3(GND_net), .O(n11476));   // verilog/coms.v(416[12] 543[6])
-    defparam i8697_3_lut.LUT_INIT = 16'hacac;
-    SB_DFF rand_data_2481__i1 (.Q(rand_data[1]), .C(CLK_c), .D(n164));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i2 (.Q(rand_data[2]), .C(CLK_c), .D(n163));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i3 (.Q(rand_data[3]), .C(CLK_c), .D(n162));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i4 (.Q(rand_data[4]), .C(CLK_c), .D(n161));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i5 (.Q(rand_data[5]), .C(CLK_c), .D(n160));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i6 (.Q(rand_data[6]), .C(CLK_c), .D(n159));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i7 (.Q(rand_data[7]), .C(CLK_c), .D(n158_adj_2484));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i8 (.Q(rand_data[8]), .C(CLK_c), .D(n157));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i9 (.Q(rand_data[9]), .C(CLK_c), .D(n156));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i10 (.Q(rand_data[10]), .C(CLK_c), .D(n155));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i11 (.Q(rand_data[11]), .C(CLK_c), .D(n154));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i12 (.Q(rand_data[12]), .C(CLK_c), .D(n153));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i13 (.Q(rand_data[13]), .C(CLK_c), .D(n152));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i14 (.Q(rand_data[14]), .C(CLK_c), .D(n151_adj_2485));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i15 (.Q(rand_data[15]), .C(CLK_c), .D(n150));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i16 (.Q(rand_data[16]), .C(CLK_c), .D(n149));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i17 (.Q(rand_data[17]), .C(CLK_c), .D(n148));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i18 (.Q(rand_data[18]), .C(CLK_c), .D(n147));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i19 (.Q(rand_data[19]), .C(CLK_c), .D(n146));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i20 (.Q(rand_data[20]), .C(CLK_c), .D(n145_adj_2486));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i21 (.Q(rand_data[21]), .C(CLK_c), .D(n144_adj_2487));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i22 (.Q(rand_data[22]), .C(CLK_c), .D(n143_adj_2488));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i23 (.Q(rand_data[23]), .C(CLK_c), .D(n142_adj_2489));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i24 (.Q(rand_data[24]), .C(CLK_c), .D(n141_adj_2490));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i25 (.Q(rand_data[25]), .C(CLK_c), .D(n140_adj_2491));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i26 (.Q(rand_data[26]), .C(CLK_c), .D(n139_adj_2492));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i27 (.Q(rand_data[27]), .C(CLK_c), .D(n138_adj_2493));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i28 (.Q(rand_data[28]), .C(CLK_c), .D(n137_adj_2494));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i29 (.Q(rand_data[29]), .C(CLK_c), .D(n136_adj_2495));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i30 (.Q(rand_data[30]), .C(CLK_c), .D(n135_adj_2496));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_data_2481__i31 (.Q(rand_data[31]), .C(CLK_c), .D(n134_adj_2497));   // verilog/TinyFPGA_B.v(80[20:33])
-    SB_DFF rand_setpoint_2482__i1 (.Q(rand_setpoint[1]), .C(CLK_c), .D(n164_adj_2483));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i2 (.Q(rand_setpoint[2]), .C(CLK_c), .D(n163_adj_2500));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i3 (.Q(rand_setpoint[3]), .C(CLK_c), .D(n162_adj_2501));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i4 (.Q(rand_setpoint[4]), .C(CLK_c), .D(n161_adj_2502));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i5 (.Q(rand_setpoint[5]), .C(CLK_c), .D(n160_adj_2503));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i6 (.Q(rand_setpoint[6]), .C(CLK_c), .D(n159_adj_2504));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i7 (.Q(rand_setpoint[7]), .C(CLK_c), .D(n158_adj_2506));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i8 (.Q(rand_setpoint[8]), .C(CLK_c), .D(n157_adj_2507));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i9 (.Q(rand_setpoint[9]), .C(CLK_c), .D(n156_adj_2508));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i10 (.Q(rand_setpoint[10]), .C(CLK_c), .D(n155_adj_2509));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i11 (.Q(rand_setpoint[11]), .C(CLK_c), .D(n154_adj_2510));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i12 (.Q(rand_setpoint[12]), .C(CLK_c), .D(n153_adj_2511));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i13 (.Q(rand_setpoint[13]), .C(CLK_c), .D(n152_adj_2512));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i14 (.Q(rand_setpoint[14]), .C(CLK_c), .D(n151_adj_2513));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i15 (.Q(rand_setpoint[15]), .C(CLK_c), .D(n150_adj_2514));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i16 (.Q(rand_setpoint[16]), .C(CLK_c), .D(n149_adj_2515));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i17 (.Q(rand_setpoint[17]), .C(CLK_c), .D(n148_adj_2516));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i18 (.Q(rand_setpoint[18]), .C(CLK_c), .D(n147_adj_2520));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i19 (.Q(rand_setpoint[19]), .C(CLK_c), .D(n146_adj_2521));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i20 (.Q(rand_setpoint[20]), .C(CLK_c), .D(n145));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i21 (.Q(rand_setpoint[21]), .C(CLK_c), .D(n144));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i22 (.Q(rand_setpoint[22]), .C(CLK_c), .D(n143));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i23 (.Q(rand_setpoint[23]), .C(CLK_c), .D(n142));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i24 (.Q(rand_setpoint[24]), .C(CLK_c), .D(n141));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i25 (.Q(rand_setpoint[25]), .C(CLK_c), .D(n140));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i26 (.Q(rand_setpoint[26]), .C(CLK_c), .D(n139));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i27 (.Q(rand_setpoint[27]), .C(CLK_c), .D(n138));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i28 (.Q(rand_setpoint[28]), .C(CLK_c), .D(n137));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i29 (.Q(rand_setpoint[29]), .C(CLK_c), .D(n136));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i30 (.Q(rand_setpoint[30]), .C(CLK_c), .D(n135));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF rand_setpoint_2482__i31 (.Q(rand_setpoint[31]), .C(CLK_c), .D(n134_adj_2462));   // verilog/TinyFPGA_B.v(81[21:44])
-    SB_DFF blink_counter_2483__i1 (.Q(n25), .C(CLK_c), .D(n134));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i2 (.Q(n24), .C(CLK_c), .D(n133));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i3 (.Q(n23), .C(CLK_c), .D(n132));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i4 (.Q(n22_adj_2481), .C(CLK_c), .D(n131));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i5 (.Q(n21), .C(CLK_c), .D(n130));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i6 (.Q(n20), .C(CLK_c), .D(n129_adj_2474));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i7 (.Q(n19), .C(CLK_c), .D(n128));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i8 (.Q(n18_adj_2480), .C(CLK_c), .D(n127));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i9 (.Q(n17), .C(CLK_c), .D(n126));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i10 (.Q(n16), .C(CLK_c), .D(n125));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i11 (.Q(n15_adj_2479), .C(CLK_c), .D(n124));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i12 (.Q(n14_adj_2478), .C(CLK_c), .D(n123));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i13 (.Q(n13), .C(CLK_c), .D(n122));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i14 (.Q(n12), .C(CLK_c), .D(n121));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i15 (.Q(n11), .C(CLK_c), .D(n120_adj_2475));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i16 (.Q(n10_adj_2467), .C(CLK_c), .D(n119));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i17 (.Q(n9), .C(CLK_c), .D(n118));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i18 (.Q(n8), .C(CLK_c), .D(n117));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i19 (.Q(n7_adj_2476), .C(CLK_c), .D(n116));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i20 (.Q(n6), .C(CLK_c), .D(n115));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i21 (.Q(blink_counter[21]), .C(CLK_c), .D(n114));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i22 (.Q(blink_counter[22]), .C(CLK_c), .D(n113));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i23 (.Q(blink_counter[23]), .C(CLK_c), .D(n112));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i24 (.Q(blink_counter[24]), .C(CLK_c), .D(n111));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_DFF blink_counter_2483__i25 (.Q(blink_counter[25]), .C(CLK_c), .D(n110));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_LUT4 i8698_3_lut (.I0(\data_in_frame[0] [4]), .I1(rx_data[4]), .I2(n16802), 
-            .I3(GND_net), .O(n11477));   // verilog/coms.v(416[12] 543[6])
-    defparam i8698_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8699_3_lut (.I0(\data_in_frame[0] [3]), .I1(rx_data[3]), .I2(n16802), 
-            .I3(GND_net), .O(n11478));   // verilog/coms.v(416[12] 543[6])
-    defparam i8699_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8700_3_lut (.I0(\data_in_frame[0] [2]), .I1(rx_data[2]), .I2(n16802), 
-            .I3(GND_net), .O(n11479));   // verilog/coms.v(416[12] 543[6])
-    defparam i8700_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i8564_3_lut_4_lut (.I0(\data_out[0] [0]), .I1(\UART_TRANSMITTER.state [0]), 
-            .I2(\UART_TRANSMITTER.state [1]), .I3(n11017), .O(n11343));   // verilog/coms.v(280[12] 370[6])
-    defparam i8564_3_lut_4_lut.LUT_INIT = 16'hc0aa;
-    SB_LUT4 i8701_3_lut (.I0(\data_in_frame[0] [1]), .I1(rx_data[1]), .I2(n16802), 
-            .I3(GND_net), .O(n11480));   // verilog/coms.v(416[12] 543[6])
-    defparam i8701_3_lut.LUT_INIT = 16'hacac;
-    SB_LUT4 i15708_4_lut (.I0(n574), .I1(\UART_TRANSMITTER.state [0]), .I2(\UART_TRANSMITTER.state [1]), 
-            .I3(n4), .O(n18368));   // verilog/coms.v(280[12] 370[6])
-    defparam i15708_4_lut.LUT_INIT = 16'h0032;
-    SB_LUT4 i31_4_lut (.I0(n2732), .I1(n18368), .I2(\UART_TRANSMITTER.state [2]), 
-            .I3(n6_adj_2470), .O(n14));   // verilog/coms.v(280[12] 370[6])
-    defparam i31_4_lut.LUT_INIT = 16'h303a;
-    SB_LUT4 i1_4_lut_adj_828 (.I0(\FRAME_MATCHER.i_31__N_1273 ), .I1(n12966), 
-            .I2(n237), .I3(n12999), .O(n22_adj_2465));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_4_lut_adj_828.LUT_INIT = 16'h8a88;
-    SB_LUT4 i2_4_lut_adj_829 (.I0(\FRAME_MATCHER.i_31__N_1270 ), .I1(\FRAME_MATCHER.state_31__N_1406 [0]), 
-            .I2(n18), .I3(n15), .O(n7));   // verilog/coms.v(416[12] 543[6])
-    defparam i2_4_lut_adj_829.LUT_INIT = 16'heca0;
-    SB_LUT4 i4_4_lut (.I0(n7), .I1(n22_adj_2465), .I2(n13849), .I3(n13_adj_2469), 
-            .O(n18906));   // verilog/coms.v(416[12] 543[6])
-    defparam i4_4_lut.LUT_INIT = 16'hffef;
-    SB_LUT4 i29_4_lut (.I0(\UART_TRANSMITTER.state [1]), .I1(n4), .I2(\UART_TRANSMITTER.state [2]), 
-            .I3(\UART_TRANSMITTER.state [0]), .O(n17181));   // verilog/coms.v(280[12] 370[6])
-    defparam i29_4_lut.LUT_INIT = 16'hb58a;
-    SB_LUT4 i8704_3_lut (.I0(\data_in[0] [0]), .I1(\data_in[1] [0]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11483));   // verilog/coms.v(416[12] 543[6])
-    defparam i8704_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8705_3_lut (.I0(\data_in[0] [1]), .I1(\data_in[1] [1]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11484));   // verilog/coms.v(416[12] 543[6])
-    defparam i8705_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8554_3_lut (.I0(\data_out[2] [2]), .I1(\UART_TRANSMITTER.state [1]), 
-            .I2(n11017), .I3(GND_net), .O(n11333));   // verilog/coms.v(280[12] 370[6])
-    defparam i8554_3_lut.LUT_INIT = 16'h3a3a;
-    SB_LUT4 i8869_3_lut (.I0(\data_out_frame2[16] [2]), .I1(rand_data[2]), 
-            .I2(n11114), .I3(GND_net), .O(n11648));   // verilog/coms.v(416[12] 543[6])
-    defparam i8869_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8870_3_lut (.I0(\data_out_frame2[16] [3]), .I1(rand_data[3]), 
-            .I2(n11114), .I3(GND_net), .O(n11649));   // verilog/coms.v(416[12] 543[6])
-    defparam i8870_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8706_3_lut (.I0(\data_in[0] [2]), .I1(\data_in[1] [2]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11485));   // verilog/coms.v(416[12] 543[6])
-    defparam i8706_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY blink_counter_2483_add_4_7 (.CI(n16613), .I0(GND_net), .I1(n21), 
-            .CO(n16614));
-    SB_LUT4 i8707_3_lut (.I0(\data_in[0] [3]), .I1(\data_in[1] [3]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11486));   // verilog/coms.v(416[12] 543[6])
-    defparam i8707_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8708_3_lut (.I0(\data_in[0] [4]), .I1(\data_in[1] [4]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11487));   // verilog/coms.v(416[12] 543[6])
-    defparam i8708_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8709_3_lut (.I0(\data_in[0] [5]), .I1(\data_in[1] [5]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11488));   // verilog/coms.v(416[12] 543[6])
-    defparam i8709_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8710_3_lut (.I0(\data_in[0] [6]), .I1(\data_in[1] [6]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11489));   // verilog/coms.v(416[12] 543[6])
-    defparam i8710_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8711_3_lut (.I0(\data_in[0] [7]), .I1(\data_in[1] [7]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11490));   // verilog/coms.v(416[12] 543[6])
-    defparam i8711_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8715_3_lut (.I0(\data_in[1] [0]), .I1(\data_in[2] [0]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11494));   // verilog/coms.v(416[12] 543[6])
-    defparam i8715_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8716_3_lut (.I0(\data_in[1] [1]), .I1(\data_in[2] [1]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11495));   // verilog/coms.v(416[12] 543[6])
-    defparam i8716_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8717_3_lut (.I0(\data_in[1] [2]), .I1(\data_in[2] [2]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11496));   // verilog/coms.v(416[12] 543[6])
-    defparam i8717_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8718_3_lut (.I0(\data_in[1] [3]), .I1(\data_in[2] [3]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11497));   // verilog/coms.v(416[12] 543[6])
-    defparam i8718_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8719_3_lut (.I0(\data_in[1] [4]), .I1(\data_in[2] [4]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11498));   // verilog/coms.v(416[12] 543[6])
-    defparam i8719_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8720_3_lut (.I0(\data_in[1] [5]), .I1(\data_in[2] [5]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11499));   // verilog/coms.v(416[12] 543[6])
-    defparam i8720_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8721_3_lut (.I0(\data_in[1] [6]), .I1(\data_in[2] [6]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11500));   // verilog/coms.v(416[12] 543[6])
-    defparam i8721_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_data_2481_add_4_16 (.CI(n16560), .I0(GND_net), .I1(rand_data[14]), 
-            .CO(n16561));
-    SB_LUT4 i8722_3_lut (.I0(\data_in[1] [7]), .I1(\data_in[2] [7]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11501));   // verilog/coms.v(416[12] 543[6])
-    defparam i8722_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 blink_counter_2483_add_4_6_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n22_adj_2481), .I3(n16612), .O(n131)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_6_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_6 (.CI(n16612), .I0(GND_net), .I1(n22_adj_2481), 
-            .CO(n16613));
-    SB_LUT4 i8723_3_lut (.I0(\data_in[2] [0]), .I1(\data_in[3] [0]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11502));   // verilog/coms.v(416[12] 543[6])
-    defparam i8723_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8724_3_lut (.I0(\data_in[2] [1]), .I1(\data_in[3] [1]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11503));   // verilog/coms.v(416[12] 543[6])
-    defparam i8724_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_15_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[13]), 
-            .I3(n16559), .O(n152)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_15_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8728_3_lut (.I0(\data_in[2] [2]), .I1(\data_in[3] [2]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11507));   // verilog/coms.v(416[12] 543[6])
-    defparam i8728_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_data_2481_add_4_15 (.CI(n16559), .I0(GND_net), .I1(rand_data[13]), 
-            .CO(n16560));
-    SB_LUT4 i8729_3_lut (.I0(\data_in[2] [3]), .I1(\data_in[3] [3]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11508));   // verilog/coms.v(416[12] 543[6])
-    defparam i8729_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_14_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[12]), 
-            .I3(n16558), .O(n153)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_14_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8730_3_lut (.I0(\data_in[2] [4]), .I1(\data_in[3] [4]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11509));   // verilog/coms.v(416[12] 543[6])
-    defparam i8730_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_data_2481_add_4_14 (.CI(n16558), .I0(GND_net), .I1(rand_data[12]), 
-            .CO(n16559));
-    SB_LUT4 i8731_3_lut (.I0(\data_in[2] [5]), .I1(\data_in[3] [5]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11510));   // verilog/coms.v(416[12] 543[6])
-    defparam i8731_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8732_3_lut (.I0(\data_in[2] [6]), .I1(\data_in[3] [6]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11511));   // verilog/coms.v(416[12] 543[6])
-    defparam i8732_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8733_3_lut (.I0(\data_in[2] [7]), .I1(\data_in[3] [7]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11512));   // verilog/coms.v(416[12] 543[6])
-    defparam i8733_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8734_3_lut (.I0(\data_in[3] [0]), .I1(rx_data[0]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11513));   // verilog/coms.v(416[12] 543[6])
-    defparam i8734_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8735_3_lut (.I0(\data_in[3] [1]), .I1(rx_data[1]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11514));   // verilog/coms.v(416[12] 543[6])
-    defparam i8735_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8736_3_lut (.I0(\data_in[3] [2]), .I1(rx_data[2]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11515));   // verilog/coms.v(416[12] 543[6])
-    defparam i8736_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8737_3_lut (.I0(\data_in[3] [3]), .I1(rx_data[3]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11516));   // verilog/coms.v(416[12] 543[6])
-    defparam i8737_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 blink_counter_2483_add_4_5_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n23), .I3(n16611), .O(n132)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_5_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8738_3_lut (.I0(\data_in[3] [4]), .I1(rx_data[4]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11517));   // verilog/coms.v(416[12] 543[6])
-    defparam i8738_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8739_3_lut (.I0(\data_in[3] [5]), .I1(rx_data[5]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11518));   // verilog/coms.v(416[12] 543[6])
-    defparam i8739_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8740_3_lut (.I0(\data_out[8] [0]), .I1(rand_setpoint[0]), .I2(data_out_10__7__N_110), 
-            .I3(GND_net), .O(n11519));   // verilog/coms.v(280[12] 370[6])
-    defparam i8740_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8746_3_lut (.I0(\data_out[8] [7]), .I1(rand_setpoint[7]), .I2(data_out_10__7__N_110), 
-            .I3(GND_net), .O(n11525));   // verilog/coms.v(280[12] 370[6])
-    defparam i8746_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8747_3_lut (.I0(\data_out[8] [6]), .I1(rand_setpoint[6]), .I2(data_out_10__7__N_110), 
-            .I3(GND_net), .O(n11526));   // verilog/coms.v(280[12] 370[6])
-    defparam i8747_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8748_3_lut (.I0(\data_out[8] [5]), .I1(rand_setpoint[5]), .I2(data_out_10__7__N_110), 
-            .I3(GND_net), .O(n11527));   // verilog/coms.v(280[12] 370[6])
-    defparam i8748_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8749_3_lut (.I0(\data_in[3] [6]), .I1(rx_data[6]), .I2(rx_data_ready), 
-            .I3(GND_net), .O(n11528));   // verilog/coms.v(416[12] 543[6])
-    defparam i8749_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8750_3_lut (.I0(\data_out[8] [4]), .I1(rand_setpoint[4]), .I2(data_out_10__7__N_110), 
-            .I3(GND_net), .O(n11529));   // verilog/coms.v(280[12] 370[6])
-    defparam i8750_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY blink_counter_2483_add_4_5 (.CI(n16611), .I0(GND_net), .I1(n23), 
-            .CO(n16612));
-    SB_LUT4 i8751_3_lut (.I0(\data_out[8] [3]), .I1(rand_setpoint[3]), .I2(data_out_10__7__N_110), 
-            .I3(GND_net), .O(n11530));   // verilog/coms.v(280[12] 370[6])
-    defparam i8751_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_13_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[11]), 
-            .I3(n16557), .O(n154)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_13_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 blink_counter_2483_add_4_4_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n24), .I3(n16610), .O(n133)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_4_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_4 (.CI(n16610), .I0(GND_net), .I1(n24), 
-            .CO(n16611));
-    SB_CARRY rand_data_2481_add_4_13 (.CI(n16557), .I0(GND_net), .I1(rand_data[11]), 
-            .CO(n16558));
-    SB_LUT4 blink_counter_2483_add_4_3_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n25), .I3(n16609), .O(n134)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_3_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_3 (.CI(n16609), .I0(GND_net), .I1(n25), 
-            .CO(n16610));
-    SB_LUT4 blink_counter_2483_add_4_2_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(n26), .I3(VCC_net), .O(n135_adj_2473)) /* synthesis syn_instantiated=1 */ ;
-    defparam blink_counter_2483_add_4_2_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 rand_data_2481_add_4_12_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[10]), 
-            .I3(n16556), .O(n155)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_12_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY blink_counter_2483_add_4_2 (.CI(VCC_net), .I0(GND_net), .I1(n26), 
-            .CO(n16609));
-    SB_LUT4 rand_setpoint_2482_add_4_33_lut (.I0(GND_net), .I1(rand_data[31]), 
-            .I2(rand_setpoint[31]), .I3(n16608), .O(n134_adj_2462)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_33_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8871_3_lut (.I0(\data_out_frame2[16] [4]), .I1(rand_data[4]), 
-            .I2(n11114), .I3(GND_net), .O(n11650));   // verilog/coms.v(416[12] 543[6])
-    defparam i8871_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i2_3_lut_4_lut (.I0(n63), .I1(n8_adj_2498), .I2(\FRAME_MATCHER.i_31__N_1275 ), 
-            .I3(n63_adj_2534), .O(n8_adj_2541));   // verilog/coms.v(416[12] 543[6])
-    defparam i2_3_lut_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 rand_setpoint_2482_add_4_32_lut (.I0(GND_net), .I1(rand_data[30]), 
-            .I2(rand_setpoint[30]), .I3(n16607), .O(n135)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_32_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8872_3_lut (.I0(\data_out_frame2[16] [5]), .I1(rand_data[5]), 
-            .I2(n11114), .I3(GND_net), .O(n11651));   // verilog/coms.v(416[12] 543[6])
-    defparam i8872_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8650_4_lut_4_lut (.I0(r_SM_Main_adj_2559[2]), .I1(n6707), .I2(r_SM_Main_2__N_2031_adj_2566[1]), 
-            .I3(r_SM_Main_adj_2559[0]), .O(n11429));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8650_4_lut_4_lut.LUT_INIT = 16'h0544;
-    SB_LUT4 i8649_4_lut_4_lut (.I0(tx2_active), .I1(r_SM_Main_adj_2559[1]), 
-            .I2(r_SM_Main_adj_2559[2]), .I3(n17689), .O(n11428));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i8649_4_lut_4_lut.LUT_INIT = 16'ha3aa;
-    SB_CARRY rand_data_2481_add_4_12 (.CI(n16556), .I0(GND_net), .I1(rand_data[10]), 
-            .CO(n16557));
-    SB_CARRY rand_setpoint_2482_add_4_32 (.CI(n16607), .I0(rand_data[30]), 
-            .I1(rand_setpoint[30]), .CO(n16608));
-    SB_LUT4 rand_setpoint_2482_add_4_31_lut (.I0(GND_net), .I1(rand_data[29]), 
-            .I2(rand_setpoint[29]), .I3(n16606), .O(n136)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_31_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_31 (.CI(n16606), .I0(rand_data[29]), 
-            .I1(rand_setpoint[29]), .CO(n16607));
-    SB_LUT4 rand_data_2481_add_4_11_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[9]), 
-            .I3(n16555), .O(n156)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_11_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 rand_setpoint_2482_add_4_30_lut (.I0(GND_net), .I1(rand_data[28]), 
-            .I2(rand_setpoint[28]), .I3(n16605), .O(n137)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_30_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_30 (.CI(n16605), .I0(rand_data[28]), 
-            .I1(rand_setpoint[28]), .CO(n16606));
-    SB_LUT4 rand_setpoint_2482_add_4_29_lut (.I0(GND_net), .I1(rand_data[27]), 
-            .I2(rand_setpoint[27]), .I3(n16604), .O(n138)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_29_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_29 (.CI(n16604), .I0(rand_data[27]), 
-            .I1(rand_setpoint[27]), .CO(n16605));
-    SB_LUT4 rand_setpoint_2482_add_4_28_lut (.I0(GND_net), .I1(rand_data[26]), 
-            .I2(rand_setpoint[26]), .I3(n16603), .O(n139)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_28_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i15119_2_lut_3_lut (.I0(n574), .I1(\UART_TRANSMITTER.state [1]), 
-            .I2(n4), .I3(GND_net), .O(n17978));
-    defparam i15119_2_lut_3_lut.LUT_INIT = 16'hfefe;
-    SB_CARRY rand_data_2481_add_4_11 (.CI(n16555), .I0(GND_net), .I1(rand_data[9]), 
-            .CO(n16556));
-    SB_CARRY rand_setpoint_2482_add_4_28 (.CI(n16603), .I0(rand_data[26]), 
-            .I1(rand_setpoint[26]), .CO(n16604));
-    SB_LUT4 rand_setpoint_2482_add_4_27_lut (.I0(GND_net), .I1(rand_data[25]), 
-            .I2(rand_setpoint[25]), .I3(n16602), .O(n140)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_27_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_27 (.CI(n16602), .I0(rand_data[25]), 
-            .I1(rand_setpoint[25]), .CO(n16603));
-    SB_LUT4 rand_data_2481_add_4_10_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[8]), 
-            .I3(n16554), .O(n157)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_10_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 rand_setpoint_2482_add_4_26_lut (.I0(GND_net), .I1(rand_data[24]), 
-            .I2(rand_setpoint[24]), .I3(n16601), .O(n141)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_26_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_10 (.CI(n16554), .I0(GND_net), .I1(rand_data[8]), 
-            .CO(n16555));
-    SB_LUT4 rand_data_2481_add_4_9_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[7]), 
-            .I3(n16553), .O(n158_adj_2484)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_9_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_26 (.CI(n16601), .I0(rand_data[24]), 
-            .I1(rand_setpoint[24]), .CO(n16602));
-    SB_LUT4 rand_setpoint_2482_add_4_25_lut (.I0(GND_net), .I1(rand_data[23]), 
-            .I2(rand_setpoint[23]), .I3(n16600), .O(n142)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_25_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_9 (.CI(n16553), .I0(GND_net), .I1(rand_data[7]), 
-            .CO(n16554));
-    SB_CARRY rand_setpoint_2482_add_4_25 (.CI(n16600), .I0(rand_data[23]), 
-            .I1(rand_setpoint[23]), .CO(n16601));
-    SB_LUT4 rand_setpoint_2482_add_4_24_lut (.I0(GND_net), .I1(rand_data[22]), 
-            .I2(rand_setpoint[22]), .I3(n16599), .O(n143)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_24_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 rand_data_2481_add_4_8_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[6]), 
-            .I3(n16552), .O(n159)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_8_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_24 (.CI(n16599), .I0(rand_data[22]), 
-            .I1(rand_setpoint[22]), .CO(n16600));
-    SB_CARRY rand_data_2481_add_4_8 (.CI(n16552), .I0(GND_net), .I1(rand_data[6]), 
-            .CO(n16553));
-    SB_LUT4 rand_setpoint_2482_add_4_23_lut (.I0(GND_net), .I1(rand_data[21]), 
-            .I2(rand_setpoint[21]), .I3(n16598), .O(n144)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_23_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_setpoint_2482_add_4_23 (.CI(n16598), .I0(rand_data[21]), 
-            .I1(rand_setpoint[21]), .CO(n16599));
-    SB_LUT4 rand_setpoint_2482_add_4_22_lut (.I0(GND_net), .I1(rand_data[20]), 
-            .I2(rand_setpoint[20]), .I3(n16597), .O(n145)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_22_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8547_3_lut_4_lut (.I0(\data_out[3] [5]), .I1(\UART_TRANSMITTER.state [0]), 
-            .I2(\UART_TRANSMITTER.state [1]), .I3(n11017), .O(n11326));   // verilog/coms.v(280[12] 370[6])
-    defparam i8547_3_lut_4_lut.LUT_INIT = 16'hc0aa;
-    SB_CARRY rand_setpoint_2482_add_4_22 (.CI(n16597), .I0(rand_data[20]), 
-            .I1(rand_setpoint[20]), .CO(n16598));
-    SB_LUT4 rand_data_2481_add_4_7_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[5]), 
-            .I3(n16551), .O(n160)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_7_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8545_3_lut_4_lut (.I0(\data_out[3] [7]), .I1(\UART_TRANSMITTER.state [0]), 
-            .I2(\UART_TRANSMITTER.state [1]), .I3(n11017), .O(n11324));   // verilog/coms.v(280[12] 370[6])
-    defparam i8545_3_lut_4_lut.LUT_INIT = 16'hc0aa;
-    SB_LUT4 rand_setpoint_2482_add_4_21_lut (.I0(GND_net), .I1(rand_data[19]), 
-            .I2(rand_setpoint[19]), .I3(n16596), .O(n146_adj_2521)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_21_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY rand_data_2481_add_4_7 (.CI(n16551), .I0(GND_net), .I1(rand_data[5]), 
-            .CO(n16552));
-    SB_LUT4 i3_4_lut_4_lut (.I0(r_SM_Main_adj_2559[1]), .I1(r_SM_Main_2__N_2031_adj_2566[1]), 
-            .I2(r_SM_Main_adj_2559[0]), .I3(r_SM_Main_adj_2559[2]), .O(n18908));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i3_4_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i8873_3_lut (.I0(\data_out_frame2[16] [6]), .I1(rand_data[6]), 
-            .I2(n11114), .I3(GND_net), .O(n11652));   // verilog/coms.v(416[12] 543[6])
-    defparam i8873_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8874_3_lut (.I0(\data_out_frame2[16] [7]), .I1(rand_data[7]), 
-            .I2(n11114), .I3(GND_net), .O(n11653));   // verilog/coms.v(416[12] 543[6])
-    defparam i8874_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_setpoint_2482_add_4_21 (.CI(n16596), .I0(rand_data[19]), 
-            .I1(rand_setpoint[19]), .CO(n16597));
-    SB_LUT4 i8875_3_lut (.I0(\data_out_frame2[17] [0]), .I1(rand_data[8]), 
-            .I2(n11114), .I3(GND_net), .O(n11654));   // verilog/coms.v(416[12] 543[6])
-    defparam i8875_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8876_3_lut (.I0(\data_out_frame2[17] [1]), .I1(rand_data[9]), 
-            .I2(n11114), .I3(GND_net), .O(n11655));   // verilog/coms.v(416[12] 543[6])
-    defparam i8876_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8877_3_lut (.I0(\data_out_frame2[17] [2]), .I1(rand_data[10]), 
-            .I2(n11114), .I3(GND_net), .O(n11656));   // verilog/coms.v(416[12] 543[6])
-    defparam i8877_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8878_3_lut (.I0(\data_out_frame2[17] [3]), .I1(rand_data[11]), 
-            .I2(n11114), .I3(GND_net), .O(n11657));   // verilog/coms.v(416[12] 543[6])
-    defparam i8878_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8753_3_lut_4_lut (.I0(\data_out[8] [2]), .I1(rand_setpoint[2]), 
-            .I2(\UART_TRANSMITTER.state [0]), .I3(n9_adj_2477), .O(n11532));   // verilog/coms.v(280[12] 370[6])
-    defparam i8753_3_lut_4_lut.LUT_INIT = 16'haaca;
-    SB_LUT4 i8879_3_lut (.I0(\data_out_frame2[17] [4]), .I1(rand_data[12]), 
-            .I2(n11114), .I3(GND_net), .O(n11658));   // verilog/coms.v(416[12] 543[6])
-    defparam i8879_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8880_3_lut (.I0(\data_out_frame2[17] [5]), .I1(rand_data[13]), 
-            .I2(n11114), .I3(GND_net), .O(n11659));   // verilog/coms.v(416[12] 543[6])
-    defparam i8880_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8555_3_lut (.I0(\data_out[2] [0]), .I1(\UART_TRANSMITTER.state [1]), 
-            .I2(n11017), .I3(GND_net), .O(n11334));   // verilog/coms.v(280[12] 370[6])
-    defparam i8555_3_lut.LUT_INIT = 16'h3a3a;
-    SB_LUT4 i8881_3_lut (.I0(\data_out_frame2[17] [6]), .I1(rand_data[14]), 
-            .I2(n11114), .I3(GND_net), .O(n11660));   // verilog/coms.v(416[12] 543[6])
-    defparam i8881_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 rand_data_2481_add_4_6_lut (.I0(GND_net), .I1(GND_net), .I2(rand_data[4]), 
-            .I3(n16550), .O(n161)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_data_2481_add_4_6_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 rand_setpoint_2482_add_4_20_lut (.I0(GND_net), .I1(rand_data[18]), 
-            .I2(rand_setpoint[18]), .I3(n16595), .O(n147_adj_2520)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_20_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8556_3_lut (.I0(\data_out[1] [7]), .I1(\UART_TRANSMITTER.state [1]), 
-            .I2(n11017), .I3(GND_net), .O(n11335));   // verilog/coms.v(280[12] 370[6])
-    defparam i8556_3_lut.LUT_INIT = 16'h3a3a;
-    motorControl control (.GND_net(GND_net), .hall3(hall3), .hall2(hall2), 
-            .hall1(hall1), .PIN_22_c_5(PIN_22_c_5), .CLK_c(CLK_c), .VCC_net(VCC_net), 
-            .PIN_24_c_3(PIN_24_c_3), .PIN_23_c_4(PIN_23_c_4), .PIN_3_c_2(PIN_3_c_2), 
-            .PIN_2_c_1(PIN_2_c_1), .PIN_1_c_0(PIN_1_c_0)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/TinyFPGA_B.v(133[16] 139[6])
+    SB_IO PIN_1_pad (.PACKAGE_PIN(PIN_1), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(PIN_1_c_0)) /* synthesis IO_FF_OUT=TRUE */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+    defparam PIN_1_pad.PIN_TYPE = 6'b011001;
+    defparam PIN_1_pad.PULLUP = 1'b0;
+    defparam PIN_1_pad.NEG_TRIGGER = 1'b0;
+    defparam PIN_1_pad.IO_STANDARD = "SB_LVCMOS";
+    SB_LUT4 i16030_4_lut (.I0(r_Clock_Count_adj_2476[4]), .I1(n15), .I2(n222), 
+            .I3(n11218), .O(n12_adj_2419));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i16030_4_lut.LUT_INIT = 16'h3022;
+    SB_LUT4 i9108_3_lut (.I0(\data_in[2] [3]), .I1(\data_in[3] [3]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11894));   // verilog/coms.v(424[12] 554[6])
+    defparam i9108_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9143_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[13]), .I2(n233), 
+            .I3(GND_net), .O(n11929));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9143_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9109_3_lut (.I0(\data_in[3] [5]), .I1(rx_data[5]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11895));   // verilog/coms.v(424[12] 554[6])
+    defparam i9109_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9110_3_lut (.I0(\data_in[2] [2]), .I1(\data_in[3] [2]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11896));   // verilog/coms.v(424[12] 554[6])
+    defparam i9110_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 blink_counter_2813_add_4_27_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(blink_counter[25]), .I3(n17069), .O(n110)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_27_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 blink_counter_2813_add_4_26_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(blink_counter[24]), .I3(n17068), .O(n111)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_26_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_26 (.CI(n17068), .I0(GND_net), .I1(blink_counter[24]), 
+            .CO(n17069));
+    SB_LUT4 blink_counter_2813_add_4_25_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(blink_counter[23]), .I3(n17067), .O(n112)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_25_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_25 (.CI(n17067), .I0(GND_net), .I1(blink_counter[23]), 
+            .CO(n17068));
+    SB_LUT4 blink_counter_2813_add_4_24_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(blink_counter[22]), .I3(n17066), .O(n113)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_24_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_24 (.CI(n17066), .I0(GND_net), .I1(blink_counter[22]), 
+            .CO(n17067));
+    SB_LUT4 blink_counter_2813_add_4_23_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(blink_counter[21]), .I3(n17065), .O(n114)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_23_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_23 (.CI(n17065), .I0(GND_net), .I1(blink_counter[21]), 
+            .CO(n17066));
+    SB_LUT4 blink_counter_2813_add_4_22_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n6), .I3(n17064), .O(n115)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_22_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_22 (.CI(n17064), .I0(GND_net), .I1(n6), 
+            .CO(n17065));
+    SB_LUT4 blink_counter_2813_add_4_21_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n7_adj_2409), .I3(n17063), .O(n116)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_21_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_21 (.CI(n17063), .I0(GND_net), .I1(n7_adj_2409), 
+            .CO(n17064));
+    SB_LUT4 blink_counter_2813_add_4_20_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n8_adj_2426), .I3(n17062), .O(n117)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_20_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_20 (.CI(n17062), .I0(GND_net), .I1(n8_adj_2426), 
+            .CO(n17063));
+    SB_LUT4 blink_counter_2813_add_4_19_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n9_adj_2425), .I3(n17061), .O(n118)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_19_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_19 (.CI(n17061), .I0(GND_net), .I1(n9_adj_2425), 
+            .CO(n17062));
+    SB_LUT4 blink_counter_2813_add_4_18_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n10_adj_2428), .I3(n17060), .O(n119)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_18_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_18 (.CI(n17060), .I0(GND_net), .I1(n10_adj_2428), 
+            .CO(n17061));
+    SB_LUT4 i9037_3_lut (.I0(\data_in[1] [3]), .I1(\data_in[2] [3]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11823));   // verilog/coms.v(424[12] 554[6])
+    defparam i9037_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 blink_counter_2813_add_4_17_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n11_adj_2427), .I3(n17059), .O(n120)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_17_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i8774_3_lut (.I0(\data_out[2] [2]), .I1(\UART_TRANSMITTER.state [1]), 
+            .I2(n11211), .I3(GND_net), .O(n11560));   // verilog/coms.v(277[12] 378[6])
+    defparam i8774_3_lut.LUT_INIT = 16'h3a3a;
+    SB_CARRY blink_counter_2813_add_4_17 (.CI(n17059), .I0(GND_net), .I1(n11_adj_2427), 
+            .CO(n17060));
+    SB_LUT4 i9144_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[14]), .I2(n233), 
+            .I3(GND_net), .O(n11930));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9144_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 blink_counter_2813_add_4_16_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n12_adj_2424), .I3(n17058), .O(n121)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_16_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i9058_4_lut (.I0(n16065), .I1(r_Clock_Count[4]), .I2(n317), 
+            .I3(r_SM_Main[2]), .O(n11844));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i9058_4_lut.LUT_INIT = 16'h88a0;
+    SB_LUT4 i9145_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[15]), .I2(n233), 
+            .I3(GND_net), .O(n11931));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9145_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9146_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[16]), .I2(n233), 
+            .I3(GND_net), .O(n11932));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9146_3_lut.LUT_INIT = 16'h5454;
+    SB_CARRY blink_counter_2813_add_4_16 (.CI(n17058), .I0(GND_net), .I1(n12_adj_2424), 
+            .CO(n17059));
+    SB_LUT4 i9111_3_lut (.I0(\data_in[3] [6]), .I1(rx_data[6]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11897));   // verilog/coms.v(424[12] 554[6])
+    defparam i9111_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9147_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[17]), .I2(n233), 
+            .I3(GND_net), .O(n11933));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9147_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9148_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[18]), .I2(n233), 
+            .I3(GND_net), .O(n11934));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9148_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9112_3_lut (.I0(\data_in[3] [7]), .I1(rx_data[7]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11898));   // verilog/coms.v(424[12] 554[6])
+    defparam i9112_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9113_3_lut (.I0(\data_in[2] [1]), .I1(\data_in[3] [1]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11899));   // verilog/coms.v(424[12] 554[6])
+    defparam i9113_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9139_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[9]), .I2(n233), 
+            .I3(GND_net), .O(n11925));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9139_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 blink_counter_2813_add_4_15_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n13_adj_2441), .I3(n17057), .O(n122)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_15_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i9149_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[19]), .I2(n233), 
+            .I3(GND_net), .O(n11935));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9149_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9114_3_lut (.I0(\data_in[2] [0]), .I1(\data_in[3] [0]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11900));   // verilog/coms.v(424[12] 554[6])
+    defparam i9114_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9150_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[20]), .I2(n233), 
+            .I3(GND_net), .O(n11936));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9150_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i8764_3_lut (.I0(\data_out[3] [6]), .I1(n2787), .I2(n11211), 
+            .I3(GND_net), .O(n11550));   // verilog/coms.v(277[12] 378[6])
+    defparam i8764_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9115_3_lut (.I0(\data_in[1] [7]), .I1(\data_in[2] [7]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11901));   // verilog/coms.v(424[12] 554[6])
+    defparam i9115_3_lut.LUT_INIT = 16'hcaca;
+    SB_CARRY blink_counter_2813_add_4_15 (.CI(n17057), .I0(GND_net), .I1(n13_adj_2441), 
+            .CO(n17058));
+    SB_LUT4 i12_4_lut_adj_374 (.I0(byte_transmit_counter[2]), .I1(tx_transmit_N_1750[2]), 
+            .I2(n11340), .I3(n11195), .O(n17599));   // verilog/coms.v(277[12] 378[6])
+    defparam i12_4_lut_adj_374.LUT_INIT = 16'h0aca;
+    SB_LUT4 i12_4_lut_adj_375 (.I0(byte_transmit_counter[3]), .I1(tx_transmit_N_1750[3]), 
+            .I2(n11340), .I3(n11195), .O(n17601));   // verilog/coms.v(277[12] 378[6])
+    defparam i12_4_lut_adj_375.LUT_INIT = 16'h0aca;
+    SB_LUT4 blink_counter_2813_add_4_14_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n14_adj_2443), .I3(n17056), .O(n123)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_14_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i8836_4_lut (.I0(r_Rx_Data), .I1(rx_data[5]), .I2(n4_adj_2442), 
+            .I3(n11162), .O(n11622));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i8836_4_lut.LUT_INIT = 16'hccca;
+    SB_CARRY blink_counter_2813_add_4_14 (.CI(n17056), .I0(GND_net), .I1(n14_adj_2443), 
+            .CO(n17057));
+    SB_LUT4 i9140_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[10]), .I2(n233), 
+            .I3(GND_net), .O(n11926));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9140_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 blink_counter_2813_add_4_13_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n15_adj_2437), .I3(n17055), .O(n124)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_13_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_13 (.CI(n17055), .I0(GND_net), .I1(n15_adj_2437), 
+            .CO(n17056));
+    SB_LUT4 blink_counter_2813_add_4_12_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n16_adj_2436), .I3(n17054), .O(n125)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_12_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_12 (.CI(n17054), .I0(GND_net), .I1(n16_adj_2436), 
+            .CO(n17055));
+    SB_LUT4 i15415_2_lut_3_lut_4_lut (.I0(r_SM_Main_adj_2478[1]), .I1(n18342), 
+            .I2(r_Clock_Count_adj_2476[6]), .I3(r_Clock_Count_adj_2476[7]), 
+            .O(n18386));
+    defparam i15415_2_lut_3_lut_4_lut.LUT_INIT = 16'h0002;
+    SB_LUT4 i9141_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[11]), .I2(n233), 
+            .I3(GND_net), .O(n11927));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9141_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9228_3_lut_4_lut (.I0(\data_out_frame2[19] [7]), .I1(\data_out_frame2[0] [0]), 
+            .I2(n11179), .I3(n11365), .O(n12014));   // verilog/coms.v(424[12] 554[6])
+    defparam i9228_3_lut_4_lut.LUT_INIT = 16'h3caa;
+    SB_LUT4 blink_counter_2813_add_4_11_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n17_adj_2435), .I3(n17053), .O(n126)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_11_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_11 (.CI(n17053), .I0(GND_net), .I1(n17_adj_2435), 
+            .CO(n17054));
+    SB_LUT4 blink_counter_2813_add_4_10_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n18_adj_2434), .I3(n17052), .O(n127)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_10_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_10 (.CI(n17052), .I0(GND_net), .I1(n18_adj_2434), 
+            .CO(n17053));
+    SB_LUT4 blink_counter_2813_add_4_9_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n19_adj_2433), .I3(n17051), .O(n128)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_9_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i8851_4_lut (.I0(r_Rx_Data), .I1(rx_data[4]), .I2(n10974), 
+            .I3(n4_adj_2442), .O(n11637));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i8851_4_lut.LUT_INIT = 16'hccca;
+    SB_LUT4 i12_3_lut_4_lut (.I0(r_SM_Main_adj_2478[1]), .I1(r_SM_Main_adj_2478[2]), 
+            .I2(n11272), .I3(rx_data_ready), .O(n17769));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i12_3_lut_4_lut.LUT_INIT = 16'h2f20;
+    SB_CARRY blink_counter_2813_add_4_9 (.CI(n17051), .I0(GND_net), .I1(n19_adj_2433), 
+            .CO(n17052));
+    SB_LUT4 blink_counter_2813_add_4_8_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n20), .I3(n17050), .O(n129)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_8_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_8 (.CI(n17050), .I0(GND_net), .I1(n20), 
+            .CO(n17051));
+    SB_LUT4 blink_counter_2813_add_4_7_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n21), .I3(n17049), .O(n130)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_7_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_7 (.CI(n17049), .I0(GND_net), .I1(n21), 
+            .CO(n17050));
+    SB_LUT4 blink_counter_2813_add_4_6_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n22), .I3(n17048), .O(n131)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_6_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_6 (.CI(n17048), .I0(GND_net), .I1(n22), 
+            .CO(n17049));
+    SB_LUT4 i8783_3_lut (.I0(\data_out[0] [7]), .I1(n2787), .I2(n11211), 
+            .I3(GND_net), .O(n11569));   // verilog/coms.v(277[12] 378[6])
+    defparam i8783_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9076_3_lut (.I0(\data_in[1] [5]), .I1(\data_in[2] [5]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11862));   // verilog/coms.v(424[12] 554[6])
+    defparam i9076_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i8767_3_lut_4_lut (.I0(\data_out[3] [2]), .I1(\UART_TRANSMITTER.state [2]), 
+            .I2(\UART_TRANSMITTER.state [1]), .I3(n11211), .O(n11553));   // verilog/coms.v(277[12] 378[6])
+    defparam i8767_3_lut_4_lut.LUT_INIT = 16'h0caa;
+    SB_LUT4 i15824_2_lut (.I0(\data_out[8] [5]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18627));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15824_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 blink_counter_2813_add_4_5_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n23), .I3(n17047), .O(n132)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_5_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_5 (.CI(n17047), .I0(GND_net), .I1(n23), 
+            .CO(n17048));
+    SB_LUT4 blink_counter_2813_add_4_4_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n24_adj_2431), .I3(n17046), .O(n133)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_4_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_4 (.CI(n17046), .I0(GND_net), .I1(n24_adj_2431), 
+            .CO(n17047));
+    SB_LUT4 i8857_4_lut (.I0(r_Rx_Data), .I1(rx_data[3]), .I2(n4_adj_2444), 
+            .I3(n11162), .O(n11643));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i8857_4_lut.LUT_INIT = 16'hccca;
+    SB_LUT4 i8858_4_lut (.I0(r_Rx_Data), .I1(rx_data[2]), .I2(n10974), 
+            .I3(n4_adj_2444), .O(n11644));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i8858_4_lut.LUT_INIT = 16'hccca;
+    SB_LUT4 i8859_3_lut (.I0(tx2_o), .I1(n3_adj_2461), .I2(n11302), .I3(GND_net), 
+            .O(n11645));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i8859_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 blink_counter_2813_add_4_3_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n25), .I3(n17045), .O(n134)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_3_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_3 (.CI(n17045), .I0(GND_net), .I1(n25), 
+            .CO(n17046));
+    SB_LUT4 i3_4_lut (.I0(n1566), .I1(n14713), .I2(n5_adj_2413), .I3(n6_adj_2430), 
+            .O(n8_adj_2463));   // verilog/coms.v(424[12] 554[6])
+    defparam i3_4_lut.LUT_INIT = 16'hffb3;
+    SB_LUT4 blink_counter_2813_add_4_2_lut (.I0(GND_net), .I1(GND_net), 
+            .I2(n26), .I3(VCC_net), .O(n135)) /* synthesis syn_instantiated=1 */ ;
+    defparam blink_counter_2813_add_4_2_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY blink_counter_2813_add_4_2 (.CI(VCC_net), .I0(GND_net), .I1(n26), 
+            .CO(n17045));
+    SB_LUT4 i4_4_lut (.I0(\FRAME_MATCHER.state_31__N_1289 [2]), .I1(n8_adj_2463), 
+            .I2(n7_adj_2429), .I3(n11150), .O(n19113));   // verilog/coms.v(424[12] 554[6])
+    defparam i4_4_lut.LUT_INIT = 16'hfcfe;
+    SB_LUT4 i9124_3_lut_4_lut (.I0(rx_crc[15]), .I1(n2169), .I2(\data_in_frame[0] [0]), 
+            .I3(n15079), .O(n11910));   // verilog/coms.v(424[12] 554[6])
+    defparam i9124_3_lut_4_lut.LUT_INIT = 16'haac3;
+    SB_LUT4 i9122_3_lut_4_lut (.I0(rx_crc[8]), .I1(\data_in_frame[0] [7]), 
+            .I2(\data_in_frame[0] [6]), .I3(n15079), .O(n11908));   // verilog/coms.v(424[12] 554[6])
+    defparam i9122_3_lut_4_lut.LUT_INIT = 16'haac3;
+    SB_LUT4 i3_4_lut_adj_376 (.I0(n14713), .I1(n4_adj_2417), .I2(n7_adj_2416), 
+            .I3(n1), .O(n19112));   // verilog/coms.v(424[12] 554[6])
+    defparam i3_4_lut_adj_376.LUT_INIT = 16'hfffd;
+    SB_LUT4 i24_4_lut_adj_377 (.I0(n19058), .I1(n18627), .I2(byte_transmit_counter[3]), 
+            .I3(n9972), .O(n10_adj_2458));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i24_4_lut_adj_377.LUT_INIT = 16'h0aca;
+    SB_LUT4 i8895_4_lut (.I0(r_Rx_Data), .I1(rx_data[1]), .I2(n4_adj_2411), 
+            .I3(n11162), .O(n11681));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i8895_4_lut.LUT_INIT = 16'hccca;
+    SB_LUT4 i1_3_lut_4_lut (.I0(n11008), .I1(n11148), .I2(n3811), .I3(\FRAME_MATCHER.state_31__N_1161 [1]), 
+            .O(n4_adj_2417));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_3_lut_4_lut.LUT_INIT = 16'h1110;
+    SB_LUT4 i8776_3_lut_4_lut (.I0(\data_out[2] [0]), .I1(\UART_TRANSMITTER.state [2]), 
+            .I2(\UART_TRANSMITTER.state [1]), .I3(n11211), .O(n11562));   // verilog/coms.v(277[12] 378[6])
+    defparam i8776_3_lut_4_lut.LUT_INIT = 16'h0caa;
+    SB_LUT4 i23_4_lut_adj_378 (.I0(r_Tx_Data[5]), .I1(n10_adj_2458), .I2(n10424), 
+            .I3(byte_transmit_counter[4]), .O(n18035));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i23_4_lut_adj_378.LUT_INIT = 16'h0aca;
+    SB_LUT4 i15437_2_lut_3_lut (.I0(\FRAME_MATCHER.state [2]), .I1(n11172), 
+            .I2(n4428), .I3(GND_net), .O(n18408));
+    defparam i15437_2_lut_3_lut.LUT_INIT = 16'hfefe;
+    SB_LUT4 i8927_3_lut (.I0(\data_in[0] [0]), .I1(\data_in[1] [0]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11713));   // verilog/coms.v(424[12] 554[6])
+    defparam i8927_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9156_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[26]), .I2(n233), 
+            .I3(GND_net), .O(n11942));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9156_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i16032_4_lut (.I0(r_Clock_Count_adj_2476[6]), .I1(n15), .I2(n220), 
+            .I3(n11218), .O(n12_adj_2420));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i16032_4_lut.LUT_INIT = 16'h3022;
+    SB_LUT4 i8777_3_lut (.I0(\data_out[1] [6]), .I1(n2752), .I2(n11211), 
+            .I3(GND_net), .O(n11563));   // verilog/coms.v(277[12] 378[6])
+    defparam i8777_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9157_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[27]), .I2(n233), 
+            .I3(GND_net), .O(n11943));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9157_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9123_3_lut (.I0(rx_crc[9]), .I1(\data_in_frame[0] [7]), .I2(n15079), 
+            .I3(GND_net), .O(n11909));   // verilog/coms.v(424[12] 554[6])
+    defparam i9123_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i8788_3_lut_4_lut (.I0(\data_out[0] [1]), .I1(\UART_TRANSMITTER.state [2]), 
+            .I2(\UART_TRANSMITTER.state [1]), .I3(n11211), .O(n11574));   // verilog/coms.v(277[12] 378[6])
+    defparam i8788_3_lut_4_lut.LUT_INIT = 16'h0caa;
+    SB_LUT4 i9142_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[12]), .I2(n233), 
+            .I3(GND_net), .O(n11928));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9142_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i15898_2_lut (.I0(\data_out[8] [3]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18745));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15898_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i24_4_lut_adj_379 (.I0(n19046), .I1(n18745), .I2(byte_transmit_counter[3]), 
+            .I3(n9972), .O(n10_adj_2438));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i24_4_lut_adj_379.LUT_INIT = 16'h0aca;
+    SB_LUT4 i23_4_lut_adj_380 (.I0(r_Tx_Data[3]), .I1(n10_adj_2438), .I2(n10424), 
+            .I3(byte_transmit_counter[4]), .O(n18073));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i23_4_lut_adj_380.LUT_INIT = 16'h0aca;
+    SB_LUT4 i8771_3_lut_4_lut (.I0(\data_out[2] [5]), .I1(\UART_TRANSMITTER.state [2]), 
+            .I2(\UART_TRANSMITTER.state [1]), .I3(n11211), .O(n11557));   // verilog/coms.v(277[12] 378[6])
+    defparam i8771_3_lut_4_lut.LUT_INIT = 16'h0caa;
+    SB_LUT4 i9167_4_lut (.I0(n2), .I1(\data_out[7] [3]), .I2(\UART_TRANSMITTER.sp [11]), 
+            .I3(n11210), .O(n11953));   // verilog/coms.v(277[12] 378[6])
+    defparam i9167_4_lut.LUT_INIT = 16'h5044;
+    SB_LUT4 i15842_3_lut (.I0(\data_out[8] [1]), .I1(byte_transmit_counter[2]), 
+            .I2(byte_transmit_counter[1]), .I3(GND_net), .O(n18759));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15842_3_lut.LUT_INIT = 16'h3232;
+    SB_LUT4 i24_4_lut_adj_381 (.I0(n19034), .I1(n18759), .I2(byte_transmit_counter[3]), 
+            .I3(byte_transmit_counter[0]), .O(n10_adj_2440));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i24_4_lut_adj_381.LUT_INIT = 16'h0aca;
+    SB_LUT4 i23_4_lut_adj_382 (.I0(r_Tx_Data[1]), .I1(n10_adj_2440), .I2(n10424), 
+            .I3(byte_transmit_counter[4]), .O(n18065));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i23_4_lut_adj_382.LUT_INIT = 16'h0aca;
+    SB_LUT4 i9164_4_lut (.I0(n2), .I1(\data_out[7] [2]), .I2(\UART_TRANSMITTER.sp [10]), 
+            .I3(n11210), .O(n11950));   // verilog/coms.v(277[12] 378[6])
+    defparam i9164_4_lut.LUT_INIT = 16'h5044;
+    SB_LUT4 i9209_4_lut (.I0(n11546), .I1(r_Bit_Index_adj_2483[2]), .I2(n5759), 
+            .I3(n11364), .O(n11995));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i9209_4_lut.LUT_INIT = 16'h1444;
+    SB_LUT4 i15899_2_lut (.I0(\data_out[8] [4]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18712));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15899_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i24_4_lut_adj_383 (.I0(n19052), .I1(n18712), .I2(byte_transmit_counter[3]), 
+            .I3(n9972), .O(n10));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i24_4_lut_adj_383.LUT_INIT = 16'h0aca;
+    SB_LUT4 i23_4_lut_adj_384 (.I0(r_Tx_Data[4]), .I1(n10), .I2(n10424), 
+            .I3(byte_transmit_counter[4]), .O(n18091));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i23_4_lut_adj_384.LUT_INIT = 16'h0aca;
+    SB_LUT4 i9176_4_lut (.I0(n2), .I1(\data_out[7] [6]), .I2(\UART_TRANSMITTER.sp [14]), 
+            .I3(n11210), .O(n11962));   // verilog/coms.v(277[12] 378[6])
+    defparam i9176_4_lut.LUT_INIT = 16'h5044;
+    SB_LUT4 i15897_2_lut (.I0(\data_out[8] [2]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18752));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i15897_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i24_4_lut_adj_385 (.I0(n19040), .I1(n18752), .I2(byte_transmit_counter[3]), 
+            .I3(n9972), .O(n10_adj_2439));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i24_4_lut_adj_385.LUT_INIT = 16'h0aca;
+    SB_LUT4 i23_4_lut_adj_386 (.I0(r_Tx_Data[2]), .I1(n10_adj_2439), .I2(n10424), 
+            .I3(byte_transmit_counter[4]), .O(n18067));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i23_4_lut_adj_386.LUT_INIT = 16'h0aca;
+    SB_LUT4 i8770_3_lut_4_lut (.I0(\data_out[2] [6]), .I1(n2752), .I2(\UART_TRANSMITTER.state [0]), 
+            .I3(n15937), .O(n11556));   // verilog/coms.v(277[12] 378[6])
+    defparam i8770_3_lut_4_lut.LUT_INIT = 16'haaca;
+    SB_LUT4 i9229_3_lut (.I0(\data_out_frame2[20] [1]), .I1(n11179), .I2(n11365), 
+            .I3(GND_net), .O(n12015));   // verilog/coms.v(424[12] 554[6])
+    defparam i9229_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9226_4_lut (.I0(r_Rx_Data), .I1(rx_data[7]), .I2(n14605), 
+            .I3(n11162), .O(n12012));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i9226_4_lut.LUT_INIT = 16'hccac;
+    SB_LUT4 i9227_3_lut (.I0(\data_out_frame2[19] [1]), .I1(\data_out_frame2[0] [7]), 
+            .I2(n11365), .I3(GND_net), .O(n12013));   // verilog/coms.v(424[12] 554[6])
+    defparam i9227_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9088_3_lut (.I0(\data_in[3] [3]), .I1(rx_data[3]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n11874));   // verilog/coms.v(424[12] 554[6])
+    defparam i9088_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i8781_3_lut_4_lut (.I0(\data_out[1] [2]), .I1(\UART_TRANSMITTER.state [2]), 
+            .I2(\UART_TRANSMITTER.state [1]), .I3(n11211), .O(n11567));   // verilog/coms.v(277[12] 378[6])
+    defparam i8781_3_lut_4_lut.LUT_INIT = 16'h0caa;
+    SB_LUT4 i8780_3_lut_4_lut (.I0(\data_out[1] [3]), .I1(\UART_TRANSMITTER.state [2]), 
+            .I2(\UART_TRANSMITTER.state [1]), .I3(n11211), .O(n11566));   // verilog/coms.v(277[12] 378[6])
+    defparam i8780_3_lut_4_lut.LUT_INIT = 16'h0caa;
     GND i1 (.Y(GND_net));
-    SB_CARRY rand_setpoint_2482_add_4_20 (.CI(n16595), .I0(rand_data[18]), 
-            .I1(rand_setpoint[18]), .CO(n16596));
-    SB_CARRY rand_data_2481_add_4_6 (.CI(n16550), .I0(GND_net), .I1(rand_data[4]), 
-            .CO(n16551));
-    SB_LUT4 i8882_3_lut (.I0(\data_out_frame2[17] [7]), .I1(rand_data[15]), 
-            .I2(n11114), .I3(GND_net), .O(n11661));   // verilog/coms.v(416[12] 543[6])
-    defparam i8882_3_lut.LUT_INIT = 16'hcaca;
-    coms c0 (.\data_out_frame2[17] ({\data_out_frame2[17] }), .\data_out_frame2[16] ({\data_out_frame2[16] }), 
-         .VCC_net(VCC_net), .CLK_c(CLK_c), .\UART_TRANSMITTER.state[2] (\UART_TRANSMITTER.state [2]), 
-         .\data_out_frame2[15] ({\data_out_frame2[15] }), .GND_net(GND_net), 
-         .\data_out[8] ({\data_out[8] [7:2], Open_0, \data_out[8] [0]}), 
-         .byte_transmit_counter({byte_transmit_counter[7], Open_1, Open_2, 
-         Open_3, Open_4, byte_transmit_counter[2:0]}), .n10(n10_adj_2527), 
-         .\rand_setpoint[8] (rand_setpoint[8]), .\UART_TRANSMITTER.state[1] (\UART_TRANSMITTER.state [1]), 
-         .\UART_TRANSMITTER.state[0] (\UART_TRANSMITTER.state [0]), .\data_out[5][1] (\data_out[5] [1]), 
-         .\data_out_frame2[6] ({\data_out_frame2[6] }), .\data_out_frame2[10] ({\data_out_frame2[10] }), 
-         .\data_out_frame2[13] ({\data_out_frame2[13] }), .\data_out_frame2[8] ({\data_out_frame2[8] }), 
-         .tx_transmit_N_1947({tx_transmit_N_1947[7], Open_5, Open_6, Open_7, 
-         tx_transmit_N_1947[3], Open_8, Open_9, Open_10}), .\data_out_frame2[14] ({\data_out_frame2[14] }), 
-         .\data_out_frame2[12] ({\data_out_frame2[12] }), .\data_out_frame2[9] ({\data_out_frame2[9] }), 
-         .\data_out_frame2[7] ({\data_out_frame2[7] }), .n11114(n11114), 
-         .\data_out_frame2[11] ({\data_out_frame2[11] }), .n12227(n12227), 
-         .n574(n574), .n10973(n10973), .n5341(n5341), .\data_out_frame2[18] ({\data_out_frame2[18] }), 
-         .n26(n26_adj_2466), .n25(n25_adj_2468), .\data_out[0][5] (\data_out[0] [5]), 
-         .\data_out[2][5] (\data_out[2] [5]), .\data_out[3][5] (\data_out[3] [5]), 
-         .\UART_TRANSMITTER.state_7__N_1223[1] (\UART_TRANSMITTER.state_7__N_1223 [1]), 
-         .\data_out_frame2[5] ({\data_out_frame2[5] }), .n9(n9_adj_2477), 
-         .n11017(n11017), .\rand_setpoint[9] (rand_setpoint[9]), .\rand_setpoint[10] (rand_setpoint[10]), 
-         .n11324(n11324), .\data_out[3][7] (\data_out[3] [7]), .\tx_transmit_N_1947[6] (tx_transmit_N_1947[6]), 
-         .\byte_transmit_counter[6] (byte_transmit_counter[6]), .\FRAME_MATCHER.i_31__N_1272 (\FRAME_MATCHER.i_31__N_1272 ), 
-         .n129(n129), .n10_adj_2(n10_adj_2537), .\rand_setpoint[11] (rand_setpoint[11]), 
-         .\data_out[10][6] (\data_out[10] [6]), .n10_adj_3(n10_adj_2536), 
-         .n18876(n18876), .n10_adj_4(n10_adj_2533), .n10_adj_5(n10_adj_2505), 
-         .n17533(n17533), .\data_out[6][0] (\data_out[6] [0]), .n18870(n18870), 
-         .n18864(n18864), .n18852(n18852), .n10_adj_6(n10_adj_2499), .\tx_transmit_N_1947[4] (tx_transmit_N_1947[4]), 
-         .\byte_transmit_counter[4] (byte_transmit_counter[4]), .\data_in_frame[0] ({\data_in_frame[0] }), 
-         .\data_out[1][7] (\data_out[1] [7]), .\data_out[2][7] (\data_out[2] [7]), 
-         .\data_out[9][2] (\data_out[9] [2]), .n10_adj_7(n10_adj_2461), 
-         .n5(n5), .\data_out[0][1] (\data_out[0] [1]), .n1(n1), .n22(n22), 
-         .n18906(n18906), .n11343(n11343), .\data_out[0][0] (\data_out[0] [0]), 
-         .n11342(n11342), .n11341(n11341), .\data_out[0][3] (\data_out[0] [3]), 
-         .n11340(n11340), .\byte_transmit_counter[3] (byte_transmit_counter[3]), 
-         .n63(n63_adj_2534), .n18756(n18756), .n63_adj_8(n63), .\FRAME_MATCHER.i_31__N_1270 (\FRAME_MATCHER.i_31__N_1270 ), 
-         .\FRAME_MATCHER.i[31] (\FRAME_MATCHER.i [31]), .n10429(n10429), 
-         .n1437(n1437), .n12965(n12965), .n17694(n17694), .n8(n8_adj_2498), 
-         .n15118(n15118), .\FRAME_MATCHER.i_31__N_1273 (\FRAME_MATCHER.i_31__N_1273 ), 
-         .n13849(n13849), .\FRAME_MATCHER.i_31__N_1275 (\FRAME_MATCHER.i_31__N_1275 ), 
-         .n15(n15), .n11506(n11506), .n11669(n11669), .n11668(n11668), 
-         .n11667(n11667), .n11666(n11666), .n11665(n11665), .n11664(n11664), 
-         .n11663(n11663), .n11662(n11662), .n18750(n18750), .n11661(n11661), 
-         .n11336(n11336), .\data_out[1][6] (\data_out[1] [6]), .n11335(n11335), 
-         .n11660(n11660), .n11334(n11334), .\data_out[2][0] (\data_out[2] [0]), 
-         .n11659(n11659), .n11658(n11658), .n11657(n11657), .n11656(n11656), 
-         .n11655(n11655), .n11654(n11654), .n11653(n11653), .n2836({n2837}), 
-         .n11652(n11652), .n11651(n11651), .n11650(n11650), .n17758(n17758), 
-         .n11649(n11649), .n11648(n11648), .n11333(n11333), .\data_out[2][2] (\data_out[2] [2]), 
-         .\data_in_frame[2] ({\data_in_frame[2] }), .n18696(n18696), .tx2_active(tx2_active), 
-         .n11331(n11331), .n11647(n11647), .n612(n612), .n11646(n11646), 
-         .\data_in_frame[6] ({\data_in_frame[6] }), .\data_in[0] ({\data_in[0] }), 
-         .\data_in[2] ({\data_in[2] }), .n1166(n1166), .n11330(n11330), 
-         .\data_in[3] ({\data_in[3] }), .\data_in[1] ({\data_in[1] }), .n11645(n11645), 
-         .n12966(n12966), .\rand_setpoint[25] (rand_setpoint[25]), .n12999(n12999), 
-         .n237(n237), .data_out_10__7__N_110(data_out_10__7__N_110), .n2731({n2732}), 
-         .\rand_setpoint[12] (rand_setpoint[12]), .\rand_setpoint[17] (rand_setpoint[17]), 
-         .\rand_setpoint[13] (rand_setpoint[13]), .\rand_setpoint[14] (rand_setpoint[14]), 
-         .\rand_setpoint[15] (rand_setpoint[15]), .n11644(n11644), .n6(n6_adj_2470), 
-         .n18(n18), .n13(n13_adj_2469), .n11643(n11643), .n11642(n11642), 
-         .n11641(n11641), .n11640(n11640), .n11639(n11639), .n11638(n11638), 
-         .n11637(n11637), .n11636(n11636), .n11635(n11635), .n11634(n11634), 
-         .n11633(n11633), .n11632(n11632), .n11631(n11631), .n11630(n11630), 
-         .n11629(n11629), .n11628(n11628), .n11627(n11627), .n11626(n11626), 
-         .n11625(n11625), .n11624(n11624), .n11623(n11623), .n11622(n11622), 
-         .n11621(n11621), .n11620(n11620), .n11619(n11619), .n11618(n11618), 
-         .n11617(n11617), .n11616(n11616), .n11615(n11615), .n11614(n11614), 
-         .n11613(n11613), .n11612(n11612), .n11611(n11611), .n11329(n11329), 
-         .\data_out[3][0] (\data_out[3] [0]), .n11610(n11610), .n11609(n11609), 
-         .n11608(n11608), .n11607(n11607), .\FRAME_MATCHER.state_31__N_1406[0] (\FRAME_MATCHER.state_31__N_1406 [0]), 
-         .n11606(n11606), .n11605(n11605), .n11604(n11604), .n11603(n11603), 
-         .n11602(n11602), .n11601(n11601), .n11600(n11600), .n11599(n11599), 
-         .n11598(n11598), .n11597(n11597), .n11596(n11596), .n11595(n11595), 
-         .n11594(n11594), .n11593(n11593), .n11592(n11592), .n11591(n11591), 
-         .n11590(n11590), .\data_out[3][2] (\data_out[3] [2]), .n11589(n11589), 
-         .n11588(n11588), .n11587(n11587), .n11586(n11586), .n11585(n11585), 
-         .n11584(n11584), .n11583(n11583), .n11582(n11582), .n11581(n11581), 
-         .n11580(n11580), .n11579(n11579), .n4(n4), .n11578(n11578), 
-         .n11577(n11577), .n11576(n11576), .n11575(n11575), .n11574(n11574), 
-         .n11573(n11573), .n11572(n11572), .n11571(n11571), .n11570(n11570), 
-         .n11569(n11569), .n11568(n11568), .n11567(n11567), .n11328(n11328), 
-         .n11327(n11327), .\data_out[3][4] (\data_out[3] [4]), .n11326(n11326), 
-         .n11566(n11566), .\rand_setpoint[18] (rand_setpoint[18]), .n11565(n11565), 
-         .n11564(n11564), .n11563(n11563), .n11562(n11562), .n11561(n11561), 
-         .n11560(n11560), .n11559(n11559), .n11558(n11558), .n11535(n11535), 
-         .n11555(n11555), .n11542(n11542), .\data_in_frame[5] ({\data_in_frame[5] }), 
-         .\rand_setpoint[19] (rand_setpoint[19]), .n11532(n11532), .\rand_setpoint[20] (rand_setpoint[20]), 
-         .n11531(n11531), .\rand_setpoint[1] (rand_setpoint[1]), .n11530(n11530), 
-         .n11529(n11529), .n11528(n11528), .n11527(n11527), .n11526(n11526), 
-         .n11525(n11525), .n11524(n11524), .n11519(n11519), .n11518(n11518), 
-         .n11517(n11517), .n11516(n11516), .n11515(n11515), .n11514(n11514), 
-         .n11513(n11513), .n11512(n11512), .n11511(n11511), .n11510(n11510), 
-         .n11509(n11509), .n11508(n11508), .n11507(n11507), .n11503(n11503), 
-         .n11502(n11502), .n11501(n11501), .n11500(n11500), .n11499(n11499), 
-         .n11498(n11498), .n11497(n11497), .n11496(n11496), .n242(n242), 
-         .n11495(n11495), .n11494(n11494), .n11490(n11490), .\rand_setpoint[21] (rand_setpoint[21]), 
-         .\rand_setpoint[22] (rand_setpoint[22]), .n11489(n11489), .n11488(n11488), 
-         .n11487(n11487), .n11486(n11486), .n11485(n11485), .n11484(n11484), 
-         .n11483(n11483), .n17181(n17181), .n14(n14), .n11480(n11480), 
-         .n11479(n11479), .n11478(n11478), .n11477(n11477), .n11476(n11476), 
-         .n11475(n11475), .n11474(n11474), .n11465(n11465), .n11464(n11464), 
-         .n11463(n11463), .n11462(n11462), .n11461(n11461), .n11460(n11460), 
-         .n11459(n11459), .n11458(n11458), .n11449(n11449), .n11448(n11448), 
-         .n11447(n11447), .n11446(n11446), .n11445(n11445), .n11444(n11444), 
-         .n11443(n11443), .n11442(n11442), .n11441(n11441), .n11440(n11440), 
-         .n11439(n11439), .n11438(n11438), .n11437(n11437), .\rand_setpoint[31] (rand_setpoint[31]), 
-         .n11436(n11436), .\rand_setpoint[30] (rand_setpoint[30]), .n11435(n11435), 
-         .\rand_setpoint[29] (rand_setpoint[29]), .n11431(n11431), .\rand_setpoint[28] (rand_setpoint[28]), 
-         .n18910(n18910), .\rand_setpoint[27] (rand_setpoint[27]), .n11421(n11421), 
-         .n17177(n17177), .\rand_setpoint[26] (rand_setpoint[26]), .\rand_setpoint[24] (rand_setpoint[24]), 
-         .\rand_setpoint[23] (rand_setpoint[23]), .r_Bit_Index({r_Bit_Index}), 
-         .n5440(n5440), .n17541(n17541), .r_Tx_Data({r_Tx_Data}), .n5155(n5155), 
-         .n11379(n11379), .n11382(n11382), .n17583(n17583), .n17581(n17581), 
-         .n17579(n17579), .n17577(n17577), .n17575(n17575), .n17573(n17573), 
-         .n17571(n17571), .n3(n3_adj_2525), .n18012(n18012), .n18016(n18016), 
-         .n9667(n9667), .n11423(n11423), .tx_o(tx_o), .tx_enable(tx_enable), 
-         .n11096(n11096), .r_Bit_Index_adj_15({r_Bit_Index_adj_2561}), .n4_adj_12(n4_adj_2472), 
-         .n18014(n18014), .r_SM_Main({r_SM_Main_adj_2559}), .n11545(n11545), 
-         .n11523(n11523), .n3_adj_13(n3), .\r_SM_Main_2__N_2031[1] (r_SM_Main_2__N_2031_adj_2566[1]), 
-         .n6707(n6707), .n17689(n17689), .n11546(n11546), .n11549(n11549), 
-         .n18908(n18908), .n11429(n11429), .n11428(n11428), .n11427(n11427), 
-         .tx2_o(tx2_o), .tx2_enable(tx2_enable), .r_Rx_Data(r_Rx_Data), 
-         .rx_data({rx_data}), .rx_data_ready(rx_data_ready), .rx_i(rx_i), 
-         .n151(n151), .n12527(n12527), .n158(n158), .n164(n164_adj_2464), 
-         .n16802(n16802), .n11058(n11058), .n120(n120), .n12582(n12582), 
-         .n12600(n12600), .n16797(n16797), .n135(n135_adj_2463), .n4_adj_14(n4_adj_2471), 
-         .n11412(n11412), .n11409(n11409), .n11408(n11408), .n11407(n11407), 
-         .n11406(n11406)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/TinyFPGA_B.v(84[8] 97[4])
-    SB_LUT4 rand_setpoint_2482_add_4_19_lut (.I0(GND_net), .I1(rand_data[17]), 
-            .I2(rand_setpoint[17]), .I3(n16594), .O(n148_adj_2516)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_19_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i8883_3_lut (.I0(\data_out_frame2[18] [0]), .I1(rand_data[0]), 
-            .I2(n11114), .I3(GND_net), .O(n11662));   // verilog/coms.v(416[12] 543[6])
-    defparam i8883_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY rand_setpoint_2482_add_4_19 (.CI(n16594), .I0(rand_data[17]), 
-            .I1(rand_setpoint[17]), .CO(n16595));
-    SB_LUT4 rand_setpoint_2482_add_4_18_lut (.I0(GND_net), .I1(rand_data[16]), 
-            .I2(rand_setpoint[16]), .I3(n16593), .O(n149_adj_2515)) /* synthesis syn_instantiated=1 */ ;
-    defparam rand_setpoint_2482_add_4_18_lut.LUT_INIT = 16'hC33C;
-    
-endmodule
-//
-// Verilog Description of module motorControl
-//
-
-module motorControl (GND_net, hall3, hall2, hall1, PIN_22_c_5, CLK_c, 
-            VCC_net, PIN_24_c_3, PIN_23_c_4, PIN_3_c_2, PIN_2_c_1, 
-            PIN_1_c_0) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
-    input GND_net;
-    input hall3;
-    input hall2;
-    input hall1;
-    output PIN_22_c_5;
-    input CLK_c;
-    input VCC_net;
-    output PIN_24_c_3;
-    output PIN_23_c_4;
-    output PIN_3_c_2;
-    output PIN_2_c_1;
-    output PIN_1_c_0;
-    
-    wire CLK_c /* synthesis SET_AS_NETWORK=CLK_c, is_clock=1 */ ;   // verilog/TinyFPGA_B.v(3[9:12])
-    wire [9:0]n45;
-    wire [9:0]pwm_delay;   // verilog/motorControl.v(9[13:22])
-    
-    wire n16655, n16654, n16653, n17926, PHASES_5__N_2160, n5, n6, 
-        n7250, n16652;
-    wire [5:0]PHASES_5__N_2130;
-    
-    wire n9, n16651, n16650, n16649, n16648;
-    wire [9:0]n79;
-    
-    wire n16647, n12, n18;
-    wire [5:0]PHASES_5__N_2152;
-    
-    wire n17950, n6967, n8, n6_adj_2460, n11, n10356, n10490, 
-        n170, n17251, n18909;
-    
-    SB_LUT4 pwm_delay_2485_add_4_11_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[9]), 
-            .I3(n16655), .O(n45[9])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_11_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 pwm_delay_2485_add_4_10_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[8]), 
-            .I3(n16654), .O(n45[8])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_10_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY pwm_delay_2485_add_4_10 (.CI(n16654), .I0(GND_net), .I1(pwm_delay[8]), 
-            .CO(n16655));
-    SB_LUT4 pwm_delay_2485_add_4_9_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[7]), 
-            .I3(n16653), .O(n45[7])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_9_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY pwm_delay_2485_add_4_9 (.CI(n16653), .I0(GND_net), .I1(pwm_delay[7]), 
-            .CO(n16654));
-    SB_LUT4 i15068_2_lut (.I0(hall3), .I1(hall2), .I2(GND_net), .I3(GND_net), 
-            .O(n17926));
-    defparam i15068_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 i15769_4_lut (.I0(PHASES_5__N_2160), .I1(n17926), .I2(n5), 
-            .I3(hall1), .O(n6));
-    defparam i15769_4_lut.LUT_INIT = 16'hafee;
-    SB_LUT4 i4688_2_lut (.I0(hall3), .I1(hall2), .I2(GND_net), .I3(GND_net), 
-            .O(n7250));   // verilog/motorControl.v(24[7] 26[10])
-    defparam i4688_2_lut.LUT_INIT = 16'h4444;
-    SB_LUT4 pwm_delay_2485_add_4_8_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[6]), 
-            .I3(n16652), .O(n45[6])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_8_lut.LUT_INIT = 16'hC33C;
-    SB_DFFE PHASES_i6 (.Q(PIN_22_c_5), .C(CLK_c), .E(n9), .D(PHASES_5__N_2130[5]));   // verilog/motorControl.v(12[10] 56[6])
-    SB_CARRY pwm_delay_2485_add_4_8 (.CI(n16652), .I0(GND_net), .I1(pwm_delay[6]), 
-            .CO(n16653));
-    SB_LUT4 pwm_delay_2485_add_4_7_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[5]), 
-            .I3(n16651), .O(n45[5])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_7_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY pwm_delay_2485_add_4_7 (.CI(n16651), .I0(GND_net), .I1(pwm_delay[5]), 
-            .CO(n16652));
-    SB_LUT4 pwm_delay_2485_add_4_6_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[4]), 
-            .I3(n16650), .O(n45[4])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_6_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY pwm_delay_2485_add_4_6 (.CI(n16650), .I0(GND_net), .I1(pwm_delay[4]), 
-            .CO(n16651));
-    SB_LUT4 pwm_delay_2485_add_4_5_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[3]), 
-            .I3(n16649), .O(n45[3])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_5_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY pwm_delay_2485_add_4_5 (.CI(n16649), .I0(GND_net), .I1(pwm_delay[3]), 
-            .CO(n16650));
-    SB_LUT4 pwm_delay_2485_add_4_4_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[2]), 
-            .I3(n16648), .O(n45[2])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_4_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY pwm_delay_2485_add_4_4 (.CI(n16648), .I0(GND_net), .I1(pwm_delay[2]), 
-            .CO(n16649));
-    SB_LUT4 pwm_delay_2485_add_4_3_lut (.I0(GND_net), .I1(GND_net), .I2(n79[1]), 
-            .I3(n16647), .O(n45[1])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_3_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY pwm_delay_2485_add_4_3 (.CI(n16647), .I0(GND_net), .I1(n79[1]), 
-            .CO(n16648));
-    SB_LUT4 pwm_delay_2485_add_4_2_lut (.I0(GND_net), .I1(GND_net), .I2(n79[0]), 
-            .I3(VCC_net), .O(n45[0])) /* synthesis syn_instantiated=1 */ ;
-    defparam pwm_delay_2485_add_4_2_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY pwm_delay_2485_add_4_2 (.CI(VCC_net), .I0(GND_net), .I1(n79[0]), 
-            .CO(n16647));
-    SB_LUT4 i2658_4_lut (.I0(pwm_delay[2]), .I1(pwm_delay[5]), .I2(pwm_delay[4]), 
-            .I3(pwm_delay[3]), .O(n12));
-    defparam i2658_4_lut.LUT_INIT = 16'hfcec;
-    SB_LUT4 i2661_4_lut (.I0(pwm_delay[6]), .I1(pwm_delay[8]), .I2(n12), 
-            .I3(pwm_delay[7]), .O(n18));
-    defparam i2661_4_lut.LUT_INIT = 16'heccc;
-    SB_LUT4 i5146_2_lut (.I0(hall3), .I1(hall1), .I2(GND_net), .I3(GND_net), 
-            .O(PHASES_5__N_2152[1]));   // verilog/motorControl.v(30[7] 32[10])
-    defparam i5146_2_lut.LUT_INIT = 16'h2222;
-    SB_LUT4 i1_2_lut (.I0(hall3), .I1(hall2), .I2(GND_net), .I3(GND_net), 
-            .O(n5));
-    defparam i1_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF pwm_delay_2485__i0 (.Q(n79[0]), .C(CLK_c), .D(n45[0]));   // verilog/motorControl.v(55[18:29])
-    SB_LUT4 i15757_2_lut (.I0(n18), .I1(pwm_delay[9]), .I2(GND_net), .I3(GND_net), 
-            .O(PHASES_5__N_2160));   // verilog/motorControl.v(6[22:28])
-    defparam i15757_2_lut.LUT_INIT = 16'h7777;
-    SB_LUT4 i15091_2_lut (.I0(hall2), .I1(PHASES_5__N_2152[1]), .I2(GND_net), 
-            .I3(GND_net), .O(n17950));
-    defparam i15091_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 i15762_4_lut (.I0(PHASES_5__N_2160), .I1(n17950), .I2(n5), 
-            .I3(hall1), .O(n9));
-    defparam i15762_4_lut.LUT_INIT = 16'hafee;
-    SB_LUT4 i1_4_lut (.I0(PHASES_5__N_2160), .I1(hall2), .I2(hall1), .I3(hall3), 
-            .O(PHASES_5__N_2130[5]));   // verilog/motorControl.v(33[14] 54[8])
-    defparam i1_4_lut.LUT_INIT = 16'h5011;
-    SB_LUT4 i1_2_lut_adj_813 (.I0(hall1), .I1(hall3), .I2(GND_net), .I3(GND_net), 
-            .O(n6967));   // verilog/motorControl.v(40[10:34])
-    defparam i1_2_lut_adj_813.LUT_INIT = 16'h2222;
-    SB_LUT4 i15748_2_lut_3_lut (.I0(n18), .I1(pwm_delay[9]), .I2(n8), 
-            .I3(GND_net), .O(n6_adj_2460));   // verilog/motorControl.v(21[7] 23[10])
-    defparam i15748_2_lut_3_lut.LUT_INIT = 16'h7f7f;
-    SB_DFF pwm_delay_2485__i1 (.Q(n79[1]), .C(CLK_c), .D(n45[1]));   // verilog/motorControl.v(55[18:29])
-    SB_DFF pwm_delay_2485__i2 (.Q(pwm_delay[2]), .C(CLK_c), .D(n45[2]));   // verilog/motorControl.v(55[18:29])
-    SB_DFF pwm_delay_2485__i3 (.Q(pwm_delay[3]), .C(CLK_c), .D(n45[3]));   // verilog/motorControl.v(55[18:29])
-    SB_DFF pwm_delay_2485__i4 (.Q(pwm_delay[4]), .C(CLK_c), .D(n45[4]));   // verilog/motorControl.v(55[18:29])
-    SB_DFF pwm_delay_2485__i5 (.Q(pwm_delay[5]), .C(CLK_c), .D(n45[5]));   // verilog/motorControl.v(55[18:29])
-    SB_DFF pwm_delay_2485__i6 (.Q(pwm_delay[6]), .C(CLK_c), .D(n45[6]));   // verilog/motorControl.v(55[18:29])
-    SB_DFF pwm_delay_2485__i7 (.Q(pwm_delay[7]), .C(CLK_c), .D(n45[7]));   // verilog/motorControl.v(55[18:29])
-    SB_DFF pwm_delay_2485__i8 (.Q(pwm_delay[8]), .C(CLK_c), .D(n45[8]));   // verilog/motorControl.v(55[18:29])
-    SB_DFF pwm_delay_2485__i9 (.Q(pwm_delay[9]), .C(CLK_c), .D(n45[9]));   // verilog/motorControl.v(55[18:29])
-    SB_LUT4 i15760_3_lut (.I0(pwm_delay[9]), .I1(n18), .I2(n8), .I3(GND_net), 
-            .O(n11));
-    defparam i15760_3_lut.LUT_INIT = 16'h7f7f;
-    SB_LUT4 i12_3_lut (.I0(hall2), .I1(hall3), .I2(hall1), .I3(GND_net), 
-            .O(PHASES_5__N_2152[2]));   // verilog/motorControl.v(30[7] 32[10])
-    defparam i12_3_lut.LUT_INIT = 16'hc5c5;
-    SB_LUT4 i1_2_lut_4_lut (.I0(hall1), .I1(hall2), .I2(PHASES_5__N_2160), 
-            .I3(PHASES_5__N_2152[1]), .O(n10356));   // verilog/motorControl.v(33[14] 54[8])
-    defparam i1_2_lut_4_lut.LUT_INIT = 16'hf7f4;
-    SB_LUT4 i19_3_lut (.I0(hall2), .I1(hall3), .I2(hall1), .I3(GND_net), 
-            .O(n8));   // verilog/motorControl.v(21[7] 23[10])
-    defparam i19_3_lut.LUT_INIT = 16'h8181;
-    SB_LUT4 i1_3_lut (.I0(hall2), .I1(PHASES_5__N_2160), .I2(PHASES_5__N_2152[1]), 
-            .I3(GND_net), .O(n10490));   // verilog/motorControl.v(33[14] 54[8])
-    defparam i1_3_lut.LUT_INIT = 16'hdcdc;
-    SB_LUT4 i53_2_lut (.I0(hall1), .I1(hall2), .I2(GND_net), .I3(GND_net), 
-            .O(n170));   // verilog/motorControl.v(43[10:25])
-    defparam i53_2_lut.LUT_INIT = 16'h4444;
-    SB_DFFESR PHASES_i4 (.Q(PIN_24_c_3), .C(CLK_c), .E(n6), .D(n7250), 
-            .R(n17251));   // verilog/motorControl.v(12[10] 56[6])
-    SB_DFFESR PHASES_i5 (.Q(PIN_23_c_4), .C(CLK_c), .E(n6_adj_2460), .D(n170), 
-            .R(n10490));   // verilog/motorControl.v(12[10] 56[6])
-    SB_DFFESR PHASES_i3 (.Q(PIN_3_c_2), .C(CLK_c), .E(n11), .D(PHASES_5__N_2152[2]), 
-            .R(PHASES_5__N_2160));   // verilog/motorControl.v(12[10] 56[6])
-    SB_DFFESR PHASES_i2 (.Q(PIN_2_c_1), .C(CLK_c), .E(n18909), .D(PHASES_5__N_2152[1]), 
-            .R(PHASES_5__N_2160));   // verilog/motorControl.v(12[10] 56[6])
-    SB_DFFESR PHASES_i1 (.Q(PIN_1_c_0), .C(CLK_c), .E(n6_adj_2460), .D(n6967), 
-            .R(n10356));   // verilog/motorControl.v(12[10] 56[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_814 (.I0(n18), .I1(pwm_delay[9]), .I2(hall3), 
-            .I3(hall1), .O(n17251));   // verilog/motorControl.v(12[10] 56[6])
-    defparam i1_2_lut_4_lut_adj_814.LUT_INIT = 16'h77f7;
-    SB_LUT4 i3_4_lut_4_lut (.I0(hall3), .I1(hall1), .I2(hall2), .I3(PHASES_5__N_2160), 
-            .O(n18909));   // verilog/motorControl.v(24[7] 26[10])
-    defparam i3_4_lut_4_lut.LUT_INIT = 16'hff7e;
+    SB_LUT4 i9151_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[21]), .I2(n233), 
+            .I3(GND_net), .O(n11937));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9151_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i9152_3_lut (.I0(pwm_31__N_2045), .I1(pwm_31__N_2046[22]), .I2(n233), 
+            .I3(GND_net), .O(n11938));   // verilog/motorControl.v(25[14] 36[8])
+    defparam i9152_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i8992_3_lut (.I0(n11546), .I1(r_Bit_Index_adj_2483[0]), .I2(n11364), 
+            .I3(GND_net), .O(n11778));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i8992_3_lut.LUT_INIT = 16'h1414;
+    SB_LUT4 i16019_4_lut (.I0(r_Clock_Count_adj_2476[1]), .I1(n15), .I2(n225), 
+            .I3(n11218), .O(n12));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i16019_4_lut.LUT_INIT = 16'h3022;
+    coms c0 (.n11874(n11874), .\data_in[3] ({\data_in[3] }), .CLK_c(CLK_c), 
+         .\data_out[8] ({\data_out[8] }), .GND_net(GND_net), .rx_data({rx_data}), 
+         .n11863(n11863), .\data_in[1] ({\data_in[1] }), .n11569(n11569), 
+         .\data_out[0][7] (\data_out[0] [7]), .n11862(n11862), .n11861(n11861), 
+         .n11210(n11210), .n11211(n11211), .\FRAME_MATCHER.state[2] (\FRAME_MATCHER.state [2]), 
+         .n11172(n11172), .n11148(n11148), .\UART_TRANSMITTER.state[1] (\UART_TRANSMITTER.state [1]), 
+         .\UART_TRANSMITTER.state[0] (\UART_TRANSMITTER.state [0]), .n5558(n5558), 
+         .n11567(n11567), .\data_out[1][2] (\data_out[1] [2]), .n11566(n11566), 
+         .\data_out[1][3] (\data_out[1] [3]), .n11150(n11150), .n3811(n3811), 
+         .n11563(n11563), .\data_out[1][6] (\data_out[1] [6]), .n2(n2), 
+         .n11562(n11562), .\data_out[2][0] (\data_out[2] [0]), .n11560(n11560), 
+         .\data_out[2][2] (\data_out[2] [2]), .n11823(n11823), .\UART_TRANSMITTER.state[2] (\UART_TRANSMITTER.state [2]), 
+         .n17597(n17597), .VCC_net(VCC_net), .byte_transmit_counter({Open_0, 
+         Open_1, Open_2, Open_3, Open_4, byte_transmit_counter[2:0]}), 
+         .n19100(n19100), .n19070(n19070), .n19064(n19064), .n19058(n19058), 
+         .n19052(n19052), .\data_in[2] ({\data_in[2] }), .\data_in[0] ({\data_in[0] }), 
+         .\data_out[7][3] (\data_out[7] [3]), .n11557(n11557), .\data_out[2][5] (\data_out[2] [5]), 
+         .n11556(n11556), .\data_out[2][6] (\data_out[2] [6]), .n11807(n11807), 
+         .n11806(n11806), .n11805(n11805), .tx_transmit_N_1750({Open_5, 
+         Open_6, Open_7, Open_8, tx_transmit_N_1750[3:2], Open_9, 
+         Open_10}), .n11804(n11804), .\data_out[3][6] (\data_out[3] [6]), 
+         .n11800(n11800), .\data_out[7][6] (\data_out[7] [6]), .n14713(n14713), 
+         .n18408(n18408), .n11798(n11798), .n11797(n11797), .n15079(n15079), 
+         .\data_out_frame2[0][0] (\data_out_frame2[0] [0]), .\data_in_frame[6] ({\data_in_frame[6] }), 
+         .n11793(n11793), .\data_in_frame[0] ({\data_in_frame[0] [7], Open_11, 
+         Open_12, Open_13, Open_14, Open_15, Open_16, Open_17}), 
+         .n11792(n11792), .n11790(n11790), .n2169(n2169), .\UART_TRANSMITTER.sp[14] (\UART_TRANSMITTER.sp [14]), 
+         .n2786({n2787}), .\data_out_frame2[0][7] (\data_out_frame2[0] [7]), 
+         .n11365(n11365), .\UART_TRANSMITTER.sp[0] (\UART_TRANSMITTER.sp [0]), 
+         .\data_in_frame[0][0] (\data_in_frame[0] [0]), .n18329(n18329), 
+         .n1(n1_adj_2462), .n15937(n15937), .\data_in_frame[0][6] (\data_in_frame[0] [6]), 
+         .n11195(n11195), .rx_data_ready(rx_data_ready), .n12014(n12014), 
+         .\data_out_frame2[19][7] (\data_out_frame2[19] [7]), .n12013(n12013), 
+         .\data_out_frame2[19][1] (\data_out_frame2[19] [1]), .n12015(n12015), 
+         .\data_out_frame2[20][1] (\data_out_frame2[20] [1]), .n11962(n11962), 
+         .n11950(n11950), .\data_out[7][2] (\data_out[7] [2]), .\pwm_31__N_2046[0] (pwm_31__N_2046[0]), 
+         .n11953(n11953), .n11008(n11008), .\setpoint[31] (setpoint[31]), 
+         .n11553(n11553), .\data_out[3][2] (\data_out[3] [2]), .\setpoint[30] (setpoint[30]), 
+         .\setpoint[29] (setpoint[29]), .n11910(n11910), .\rx_crc[15] (rx_crc[15]), 
+         .n11909(n11909), .\rx_crc[9] (rx_crc[9]), .n11908(n11908), .\rx_crc[8] (rx_crc[8]), 
+         .\setpoint[28] (setpoint[28]), .\setpoint[27] (setpoint[27]), .\setpoint[26] (setpoint[26]), 
+         .\setpoint[25] (setpoint[25]), .\setpoint[24] (setpoint[24]), .\setpoint[23] (setpoint[23]), 
+         .\setpoint[22] (setpoint[22]), .n19046(n19046), .\setpoint[21] (setpoint[21]), 
+         .n11713(n11713), .\UART_TRANSMITTER.sp[11] (\UART_TRANSMITTER.sp [11]), 
+         .\setpoint[20] (setpoint[20]), .n19040(n19040), .\setpoint[1] (setpoint[1]), 
+         .n147(n147), .\setpoint[2] (setpoint[2]), .\setpoint[3] (setpoint[3]), 
+         .n19034(n19034), .\setpoint[4] (setpoint[4]), .\setpoint[5] (setpoint[5]), 
+         .\setpoint[6] (setpoint[6]), .\setpoint[7] (setpoint[7]), .\setpoint[8] (setpoint[8]), 
+         .\setpoint[9] (setpoint[9]), .\setpoint[10] (setpoint[10]), .\setpoint[11] (setpoint[11]), 
+         .\setpoint[12] (setpoint[12]), .\setpoint[13] (setpoint[13]), .\setpoint[14] (setpoint[14]), 
+         .\setpoint[15] (setpoint[15]), .\tx_transmit_N_1750[0] (tx_transmit_N_1750[0]), 
+         .\setpoint[16] (setpoint[16]), .\setpoint[17] (setpoint[17]), .\setpoint[18] (setpoint[18]), 
+         .\setpoint[19] (setpoint[19]), .\UART_TRANSMITTER.sp[10] (\UART_TRANSMITTER.sp [10]), 
+         .n19112(n19112), .n19113(n19113), .\byte_transmit_counter[4] (byte_transmit_counter[4]), 
+         .n9972(n9972), .n17601(n17601), .\byte_transmit_counter[3] (byte_transmit_counter[3]), 
+         .n17599(n17599), .n11901(n11901), .n11550(n11550), .n11900(n11900), 
+         .n11899(n11899), .n11898(n11898), .n11897(n11897), .n11340(n11340), 
+         .n5(n5_adj_2413), .n1_adj_8(n1), .n2751({n2752}), .n11896(n11896), 
+         .n11895(n11895), .n11894(n11894), .n1566(n1566), .n4428(n4428), 
+         .n6(n6_adj_2430), .n7(n7_adj_2429), .\FRAME_MATCHER.state_31__N_1289[2] (\FRAME_MATCHER.state_31__N_1289 [2]), 
+         .n11889(n11889), .n11888(n11888), .n11887(n11887), .\FRAME_MATCHER.state_31__N_1161[1] (\FRAME_MATCHER.state_31__N_1161 [1]), 
+         .n11886(n11886), .n11885(n11885), .n11881(n11881), .n11879(n11879), 
+         .\data_out[0][1] (\data_out[0] [1]), .n7_adj_9(n7_adj_2416), .n11584(n11584), 
+         .n11583(n11583), .n11582(n11582), .n11581(n11581), .n11579(n11579), 
+         .n11179(n11179), .n11578(n11578), .n11577(n11577), .n11576(n11576), 
+         .n11575(n11575), .n11574(n11574), .n11875(n11875), .n18035(n18035), 
+         .r_Tx_Data({r_Tx_Data}), .n17895(n17895), .n11844(n11844), .\r_Clock_Count[4] (r_Clock_Count[4]), 
+         .n11840(n11840), .\r_Clock_Count[3] (r_Clock_Count[3]), .\r_SM_Main[2] (r_SM_Main[2]), 
+         .n18043(n18043), .n18045(n18045), .n16065(n16065), .n317(n317), 
+         .n18067(n18067), .n18091(n18091), .n18065(n18065), .n18073(n18073), 
+         .n318(n318), .tx_o(tx_o), .n10424(n10424), .tx_enable(tx_enable), 
+         .n11302(n11302), .n12005(n12005), .r_Bit_Index({r_Bit_Index_adj_2483}), 
+         .n5759(n5759), .n11364(n11364), .n11546(n11546), .n11778(n11778), 
+         .n11995(n11995), .n11645(n11645), .tx2_o(tx2_o), .n3(n3_adj_2461), 
+         .tx2_enable(tx2_enable), .r_SM_Main({r_SM_Main_adj_2478}), .\r_SM_Main_2__N_1891[2] (r_SM_Main_2__N_1891[2]), 
+         .r_Rx_Data(r_Rx_Data), .n11218(n11218), .n4(n4_adj_2411), .n10974(n10974), 
+         .n18386(n18386), .n15(n15), .n219(n219), .\r_Clock_Count[7] (r_Clock_Count_adj_2476[7]), 
+         .n220(n220), .\r_Clock_Count[6] (r_Clock_Count_adj_2476[6]), .n12(n12_adj_2422), 
+         .n12_adj_11(n12_adj_2420), .rx_i(rx_i), .n222(n222), .\r_Clock_Count[4]_adj_12 (r_Clock_Count_adj_2476[4]), 
+         .n12_adj_13(n12_adj_2419), .n12_adj_14(n12_adj_2415), .\r_Clock_Count[3]_adj_15 (r_Clock_Count_adj_2476[3]), 
+         .n223(n223), .n224(n224), .\r_Clock_Count[2] (r_Clock_Count_adj_2476[2]), 
+         .n11799(n11799), .n17769(n17769), .n225(n225), .\r_Clock_Count[1] (r_Clock_Count_adj_2476[1]), 
+         .n12_adj_16(n12_adj_2410), .n12_adj_17(n12), .n18342(n18342), 
+         .n12012(n12012), .n11681(n11681), .n11644(n11644), .n11643(n11643), 
+         .n11637(n11637), .n11622(n11622), .n4_adj_18(n4_adj_2442), .n4_adj_19(n4_adj_2444), 
+         .n11580(n11580), .n11162(n11162), .n14605(n14605)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/TinyFPGA_B.v(81[8] 94[4])
+    motorControl control (.n11924(n11924), .pwm({Open_18, Open_19, Open_20, 
+            Open_21, Open_22, Open_23, Open_24, Open_25, Open_26, 
+            Open_27, Open_28, Open_29, Open_30, Open_31, Open_32, 
+            Open_33, Open_34, Open_35, Open_36, Open_37, Open_38, 
+            Open_39, Open_40, pwm[8:2], Open_41, Open_42}), .CLK_c(CLK_c), 
+            .pwm_delay({pwm_delay}), .n11923(n11923), .\pwm_31__N_2046[18] (pwm_31__N_2046[18]), 
+            .n11922(n11922), .n11921(n11921), .n11920(n11920), .n11918(n11918), 
+            .PIN_2_c_1(PIN_2_c_1), .n11945(n11945), .n11944(n11944), .n11943(n11943), 
+            .n11942(n11942), .\pwm[31] (pwm[31]), .n18530(n18530), .n41(n41), 
+            .n18532(n18532), .hall3(hall3), .GND_net(GND_net), .hall1(hall1), 
+            .hall2(hall2), .n11941(n11941), .n11940(n11940), .PHASES_5__N_2090(PHASES_5__N_2090), 
+            .n11939(n11939), .\setpoint[31] (setpoint[31]), .VCC_net(VCC_net), 
+            .\pwm_31__N_2046[30] (pwm_31__N_2046[30]), .\setpoint[30] (setpoint[30]), 
+            .\pwm_31__N_2046[29] (pwm_31__N_2046[29]), .\setpoint[29] (setpoint[29]), 
+            .\pwm_31__N_2046[28] (pwm_31__N_2046[28]), .\setpoint[28] (setpoint[28]), 
+            .n11938(n11938), .\pwm_31__N_2046[27] (pwm_31__N_2046[27]), 
+            .\setpoint[27] (setpoint[27]), .n11937(n11937), .\pwm_31__N_2046[26] (pwm_31__N_2046[26]), 
+            .\setpoint[26] (setpoint[26]), .\pwm_31__N_2046[25] (pwm_31__N_2046[25]), 
+            .\setpoint[25] (setpoint[25]), .\pwm_31__N_2046[24] (pwm_31__N_2046[24]), 
+            .\setpoint[24] (setpoint[24]), .\pwm_31__N_2046[21] (pwm_31__N_2046[21]), 
+            .\pwm_31__N_2046[16] (pwm_31__N_2046[16]), .\pwm_31__N_2046[3] (pwm_31__N_2046[3]), 
+            .\pwm_31__N_2046[0] (pwm_31__N_2046[0]), .\pwm_31__N_2046[6] (pwm_31__N_2046[6]), 
+            .\pwm_31__N_2046[5] (pwm_31__N_2046[5]), .\pwm_31__N_2046[4] (pwm_31__N_2046[4]), 
+            .\pwm_31__N_2046[7] (pwm_31__N_2046[7]), .\pwm_31__N_2046[8] (pwm_31__N_2046[8]), 
+            .\pwm_31__N_2046[19] (pwm_31__N_2046[19]), .\pwm_31__N_2046[22] (pwm_31__N_2046[22]), 
+            .\pwm_31__N_2046[20] (pwm_31__N_2046[20]), .\pwm_31__N_2046[10] (pwm_31__N_2046[10]), 
+            .n11928(n11928), .\pwm[1] (pwm[1]), .\pwm_31__N_2046[11] (pwm_31__N_2046[11]), 
+            .\pwm_31__N_2046[17] (pwm_31__N_2046[17]), .\pwm_31__N_2046[13] (pwm_31__N_2046[13]), 
+            .\pwm_31__N_2046[12] (pwm_31__N_2046[12]), .\pwm_31__N_2046[23] (pwm_31__N_2046[23]), 
+            .\setpoint[23] (setpoint[23]), .\setpoint[22] (setpoint[22]), 
+            .\setpoint[21] (setpoint[21]), .\setpoint[20] (setpoint[20]), 
+            .\setpoint[19] (setpoint[19]), .n233(n233), .\pwm_31__N_2046[14] (pwm_31__N_2046[14]), 
+            .\pwm_31__N_2046[9] (pwm_31__N_2046[9]), .\pwm_31__N_2046[15] (pwm_31__N_2046[15]), 
+            .n18366(n18366), .n18368(n18368), .\setpoint[18] (setpoint[18]), 
+            .\setpoint[17] (setpoint[17]), .n18380(n18380), .\setpoint[16] (setpoint[16]), 
+            .\setpoint[15] (setpoint[15]), .n18382(n18382), .n11927(n11927), 
+            .\setpoint[14] (setpoint[14]), .n18364(n18364), .\setpoint[13] (setpoint[13]), 
+            .\pwm[0] (pwm[0]), .\setpoint[12] (setpoint[12]), .\setpoint[11] (setpoint[11]), 
+            .n11926(n11926), .\setpoint[10] (setpoint[10]), .n507(n507), 
+            .n18362(n18362), .\setpoint[9] (setpoint[9]), .n509(n509), 
+            .n18370(n18370), .\setpoint[8] (setpoint[8]), .n11936(n11936), 
+            .n11935(n11935), .n11925(n11925), .\pwm[9] (pwm[9]), .n11934(n11934), 
+            .n11933(n11933), .n11932(n11932), .n11931(n11931), .\setpoint[7] (setpoint[7]), 
+            .\setpoint[6] (setpoint[6]), .\setpoint[5] (setpoint[5]), .\setpoint[4] (setpoint[4]), 
+            .\setpoint[3] (setpoint[3]), .\setpoint[2] (setpoint[2]), .\setpoint[1] (setpoint[1]), 
+            .n18378(n18378), .n18356(n18356), .n18358(n18358), .pwm_31__N_2045(pwm_31__N_2045), 
+            .n11930(n11930), .n19(n19), .PIN_3_c_2(PIN_3_c_2), .PIN_22_c_5(PIN_22_c_5), 
+            .PIN_24_c_3(PIN_24_c_3), .PIN_23_c_4(PIN_23_c_4), .n17(n17), 
+            .n11929(n11929), .n15(n15_adj_2412), .n13(n13), .n11(n11), 
+            .n18396(n18396), .n9(n9), .n18398(n18398), .n7(n7), .n5(n5), 
+            .n18404(n18404), .n3(n3), .n18406(n18406), .n18394(n18394), 
+            .n532(n532), .\PHASES_5__N_2093[25] (PHASES_5__N_2093[25]), 
+            .n18392(n18392), .\PHASES_5__N_2093[23] (PHASES_5__N_2093[23]), 
+            .n18400(n18400), .n18402(n18402), .n18388(n18388), .PIN_1_c_0(PIN_1_c_0), 
+            .n18390(n18390), .n11946(n11946)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/TinyFPGA_B.v(130[16] 141[6])
+    SB_DFF blink_counter_2813__i1 (.Q(n25), .C(CLK_c), .D(n134));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i2 (.Q(n24_adj_2431), .C(CLK_c), .D(n133));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i3 (.Q(n23), .C(CLK_c), .D(n132));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i4 (.Q(n22), .C(CLK_c), .D(n131));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i5 (.Q(n21), .C(CLK_c), .D(n130));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i6 (.Q(n20), .C(CLK_c), .D(n129));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i7 (.Q(n19_adj_2433), .C(CLK_c), .D(n128));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i8 (.Q(n18_adj_2434), .C(CLK_c), .D(n127));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i9 (.Q(n17_adj_2435), .C(CLK_c), .D(n126));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i10 (.Q(n16_adj_2436), .C(CLK_c), .D(n125));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i11 (.Q(n15_adj_2437), .C(CLK_c), .D(n124));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i12 (.Q(n14_adj_2443), .C(CLK_c), .D(n123));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i13 (.Q(n13_adj_2441), .C(CLK_c), .D(n122));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i14 (.Q(n12_adj_2424), .C(CLK_c), .D(n121));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i15 (.Q(n11_adj_2427), .C(CLK_c), .D(n120));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i16 (.Q(n10_adj_2428), .C(CLK_c), .D(n119));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i17 (.Q(n9_adj_2425), .C(CLK_c), .D(n118));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i18 (.Q(n8_adj_2426), .C(CLK_c), .D(n117));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i19 (.Q(n7_adj_2409), .C(CLK_c), .D(n116));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i20 (.Q(n6), .C(CLK_c), .D(n115));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i21 (.Q(blink_counter[21]), .C(CLK_c), .D(n114));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i22 (.Q(blink_counter[22]), .C(CLK_c), .D(n113));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i23 (.Q(blink_counter[23]), .C(CLK_c), .D(n112));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i24 (.Q(blink_counter[24]), .C(CLK_c), .D(n111));   // verilog/TinyFPGA_B.v(71[24:41])
+    SB_DFF blink_counter_2813__i25 (.Q(blink_counter[25]), .C(CLK_c), .D(n110));   // verilog/TinyFPGA_B.v(71[24:41])
     
 endmodule
 //
 // Verilog Description of module coms
 //
 
-module coms (\data_out_frame2[17] , \data_out_frame2[16] , VCC_net, CLK_c, 
-            \UART_TRANSMITTER.state[2] , \data_out_frame2[15] , GND_net, 
-            \data_out[8] , byte_transmit_counter, n10, \rand_setpoint[8] , 
-            \UART_TRANSMITTER.state[1] , \UART_TRANSMITTER.state[0] , \data_out[5][1] , 
-            \data_out_frame2[6] , \data_out_frame2[10] , \data_out_frame2[13] , 
-            \data_out_frame2[8] , tx_transmit_N_1947, \data_out_frame2[14] , 
-            \data_out_frame2[12] , \data_out_frame2[9] , \data_out_frame2[7] , 
-            n11114, \data_out_frame2[11] , n12227, n574, n10973, n5341, 
-            \data_out_frame2[18] , n26, n25, \data_out[0][5] , \data_out[2][5] , 
-            \data_out[3][5] , \UART_TRANSMITTER.state_7__N_1223[1] , \data_out_frame2[5] , 
-            n9, n11017, \rand_setpoint[9] , \rand_setpoint[10] , n11324, 
-            \data_out[3][7] , \tx_transmit_N_1947[6] , \byte_transmit_counter[6] , 
-            \FRAME_MATCHER.i_31__N_1272 , n129, n10_adj_2, \rand_setpoint[11] , 
-            \data_out[10][6] , n10_adj_3, n18876, n10_adj_4, n10_adj_5, 
-            n17533, \data_out[6][0] , n18870, n18864, n18852, n10_adj_6, 
-            \tx_transmit_N_1947[4] , \byte_transmit_counter[4] , \data_in_frame[0] , 
-            \data_out[1][7] , \data_out[2][7] , \data_out[9][2] , n10_adj_7, 
-            n5, \data_out[0][1] , n1, n22, n18906, n11343, \data_out[0][0] , 
-            n11342, n11341, \data_out[0][3] , n11340, \byte_transmit_counter[3] , 
-            n63, n18756, n63_adj_8, \FRAME_MATCHER.i_31__N_1270 , \FRAME_MATCHER.i[31] , 
-            n10429, n1437, n12965, n17694, n8, n15118, \FRAME_MATCHER.i_31__N_1273 , 
-            n13849, \FRAME_MATCHER.i_31__N_1275 , n15, n11506, n11669, 
-            n11668, n11667, n11666, n11665, n11664, n11663, n11662, 
-            n18750, n11661, n11336, \data_out[1][6] , n11335, n11660, 
-            n11334, \data_out[2][0] , n11659, n11658, n11657, n11656, 
-            n11655, n11654, n11653, n2836, n11652, n11651, n11650, 
-            n17758, n11649, n11648, n11333, \data_out[2][2] , \data_in_frame[2] , 
-            n18696, tx2_active, n11331, n11647, n612, n11646, \data_in_frame[6] , 
-            \data_in[0] , \data_in[2] , n1166, n11330, \data_in[3] , 
-            \data_in[1] , n11645, n12966, \rand_setpoint[25] , n12999, 
-            n237, data_out_10__7__N_110, n2731, \rand_setpoint[12] , 
-            \rand_setpoint[17] , \rand_setpoint[13] , \rand_setpoint[14] , 
-            \rand_setpoint[15] , n11644, n6, n18, n13, n11643, n11642, 
-            n11641, n11640, n11639, n11638, n11637, n11636, n11635, 
-            n11634, n11633, n11632, n11631, n11630, n11629, n11628, 
-            n11627, n11626, n11625, n11624, n11623, n11622, n11621, 
-            n11620, n11619, n11618, n11617, n11616, n11615, n11614, 
-            n11613, n11612, n11611, n11329, \data_out[3][0] , n11610, 
-            n11609, n11608, n11607, \FRAME_MATCHER.state_31__N_1406[0] , 
-            n11606, n11605, n11604, n11603, n11602, n11601, n11600, 
-            n11599, n11598, n11597, n11596, n11595, n11594, n11593, 
-            n11592, n11591, n11590, \data_out[3][2] , n11589, n11588, 
-            n11587, n11586, n11585, n11584, n11583, n11582, n11581, 
-            n11580, n11579, n4, n11578, n11577, n11576, n11575, 
-            n11574, n11573, n11572, n11571, n11570, n11569, n11568, 
-            n11567, n11328, n11327, \data_out[3][4] , n11326, n11566, 
-            \rand_setpoint[18] , n11565, n11564, n11563, n11562, n11561, 
-            n11560, n11559, n11558, n11535, n11555, n11542, \data_in_frame[5] , 
-            \rand_setpoint[19] , n11532, \rand_setpoint[20] , n11531, 
-            \rand_setpoint[1] , n11530, n11529, n11528, n11527, n11526, 
-            n11525, n11524, n11519, n11518, n11517, n11516, n11515, 
-            n11514, n11513, n11512, n11511, n11510, n11509, n11508, 
-            n11507, n11503, n11502, n11501, n11500, n11499, n11498, 
-            n11497, n11496, n242, n11495, n11494, n11490, \rand_setpoint[21] , 
-            \rand_setpoint[22] , n11489, n11488, n11487, n11486, n11485, 
-            n11484, n11483, n17181, n14, n11480, n11479, n11478, 
-            n11477, n11476, n11475, n11474, n11465, n11464, n11463, 
-            n11462, n11461, n11460, n11459, n11458, n11449, n11448, 
-            n11447, n11446, n11445, n11444, n11443, n11442, n11441, 
-            n11440, n11439, n11438, n11437, \rand_setpoint[31] , n11436, 
-            \rand_setpoint[30] , n11435, \rand_setpoint[29] , n11431, 
-            \rand_setpoint[28] , n18910, \rand_setpoint[27] , n11421, 
-            n17177, \rand_setpoint[26] , \rand_setpoint[24] , \rand_setpoint[23] , 
-            r_Bit_Index, n5440, n17541, r_Tx_Data, n5155, n11379, 
-            n11382, n17583, n17581, n17579, n17577, n17575, n17573, 
-            n17571, n3, n18012, n18016, n9667, n11423, tx_o, tx_enable, 
-            n11096, r_Bit_Index_adj_15, n4_adj_12, n18014, r_SM_Main, 
-            n11545, n11523, n3_adj_13, \r_SM_Main_2__N_2031[1] , n6707, 
-            n17689, n11546, n11549, n18908, n11429, n11428, n11427, 
-            tx2_o, tx2_enable, r_Rx_Data, rx_data, rx_data_ready, 
-            rx_i, n151, n12527, n158, n164, n16802, n11058, n120, 
-            n12582, n12600, n16797, n135, n4_adj_14, n11412, n11409, 
-            n11408, n11407, n11406) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
-    output [7:0]\data_out_frame2[17] ;
-    output [7:0]\data_out_frame2[16] ;
-    input VCC_net;
+module coms (n11874, \data_in[3] , CLK_c, \data_out[8] , GND_net, 
+            rx_data, n11863, \data_in[1] , n11569, \data_out[0][7] , 
+            n11862, n11861, n11210, n11211, \FRAME_MATCHER.state[2] , 
+            n11172, n11148, \UART_TRANSMITTER.state[1] , \UART_TRANSMITTER.state[0] , 
+            n5558, n11567, \data_out[1][2] , n11566, \data_out[1][3] , 
+            n11150, n3811, n11563, \data_out[1][6] , n2, n11562, 
+            \data_out[2][0] , n11560, \data_out[2][2] , n11823, \UART_TRANSMITTER.state[2] , 
+            n17597, VCC_net, byte_transmit_counter, n19100, n19070, 
+            n19064, n19058, n19052, \data_in[2] , \data_in[0] , \data_out[7][3] , 
+            n11557, \data_out[2][5] , n11556, \data_out[2][6] , n11807, 
+            n11806, n11805, tx_transmit_N_1750, n11804, \data_out[3][6] , 
+            n11800, \data_out[7][6] , n14713, n18408, n11798, n11797, 
+            n15079, \data_out_frame2[0][0] , \data_in_frame[6] , n11793, 
+            \data_in_frame[0] , n11792, n11790, n2169, \UART_TRANSMITTER.sp[14] , 
+            n2786, \data_out_frame2[0][7] , n11365, \UART_TRANSMITTER.sp[0] , 
+            \data_in_frame[0][0] , n18329, n1, n15937, \data_in_frame[0][6] , 
+            n11195, rx_data_ready, n12014, \data_out_frame2[19][7] , 
+            n12013, \data_out_frame2[19][1] , n12015, \data_out_frame2[20][1] , 
+            n11962, n11950, \data_out[7][2] , \pwm_31__N_2046[0] , n11953, 
+            n11008, \setpoint[31] , n11553, \data_out[3][2] , \setpoint[30] , 
+            \setpoint[29] , n11910, \rx_crc[15] , n11909, \rx_crc[9] , 
+            n11908, \rx_crc[8] , \setpoint[28] , \setpoint[27] , \setpoint[26] , 
+            \setpoint[25] , \setpoint[24] , \setpoint[23] , \setpoint[22] , 
+            n19046, \setpoint[21] , n11713, \UART_TRANSMITTER.sp[11] , 
+            \setpoint[20] , n19040, \setpoint[1] , n147, \setpoint[2] , 
+            \setpoint[3] , n19034, \setpoint[4] , \setpoint[5] , \setpoint[6] , 
+            \setpoint[7] , \setpoint[8] , \setpoint[9] , \setpoint[10] , 
+            \setpoint[11] , \setpoint[12] , \setpoint[13] , \setpoint[14] , 
+            \setpoint[15] , \tx_transmit_N_1750[0] , \setpoint[16] , \setpoint[17] , 
+            \setpoint[18] , \setpoint[19] , \UART_TRANSMITTER.sp[10] , 
+            n19112, n19113, \byte_transmit_counter[4] , n9972, n17601, 
+            \byte_transmit_counter[3] , n17599, n11901, n11550, n11900, 
+            n11899, n11898, n11897, n11340, n5, n1_adj_8, n2751, 
+            n11896, n11895, n11894, n1566, n4428, n6, n7, \FRAME_MATCHER.state_31__N_1289[2] , 
+            n11889, n11888, n11887, \FRAME_MATCHER.state_31__N_1161[1] , 
+            n11886, n11885, n11881, n11879, \data_out[0][1] , n7_adj_9, 
+            n11584, n11583, n11582, n11581, n11579, n11179, n11578, 
+            n11577, n11576, n11575, n11574, n11875, n18035, r_Tx_Data, 
+            n17895, n11844, \r_Clock_Count[4] , n11840, \r_Clock_Count[3] , 
+            \r_SM_Main[2] , n18043, n18045, n16065, n317, n18067, 
+            n18091, n18065, n18073, n318, tx_o, n10424, tx_enable, 
+            n11302, n12005, r_Bit_Index, n5759, n11364, n11546, 
+            n11778, n11995, n11645, tx2_o, n3, tx2_enable, r_SM_Main, 
+            \r_SM_Main_2__N_1891[2] , r_Rx_Data, n11218, n4, n10974, 
+            n18386, n15, n219, \r_Clock_Count[7] , n220, \r_Clock_Count[6] , 
+            n12, n12_adj_11, rx_i, n222, \r_Clock_Count[4]_adj_12 , 
+            n12_adj_13, n12_adj_14, \r_Clock_Count[3]_adj_15 , n223, 
+            n224, \r_Clock_Count[2] , n11799, n17769, n225, \r_Clock_Count[1] , 
+            n12_adj_16, n12_adj_17, n18342, n12012, n11681, n11644, 
+            n11643, n11637, n11622, n4_adj_18, n4_adj_19, n11580, 
+            n11162, n14605) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
+    input n11874;
+    output [7:0]\data_in[3] ;
     input CLK_c;
-    output \UART_TRANSMITTER.state[2] ;
-    output [7:0]\data_out_frame2[15] ;
-    input GND_net;
     output [7:0]\data_out[8] ;
-    output [7:0]byte_transmit_counter;
-    output n10;
-    input \rand_setpoint[8] ;
+    input GND_net;
+    output [7:0]rx_data;
+    input n11863;
+    output [7:0]\data_in[1] ;
+    input n11569;
+    output \data_out[0][7] ;
+    input n11862;
+    input n11861;
+    output n11210;
+    output n11211;
+    output \FRAME_MATCHER.state[2] ;
+    output n11172;
+    output n11148;
     output \UART_TRANSMITTER.state[1] ;
     output \UART_TRANSMITTER.state[0] ;
-    output \data_out[5][1] ;
-    output [7:0]\data_out_frame2[6] ;
-    output [7:0]\data_out_frame2[10] ;
-    output [7:0]\data_out_frame2[13] ;
-    output [7:0]\data_out_frame2[8] ;
-    output [7:0]tx_transmit_N_1947;
-    output [7:0]\data_out_frame2[14] ;
-    output [7:0]\data_out_frame2[12] ;
-    output [7:0]\data_out_frame2[9] ;
-    output [7:0]\data_out_frame2[7] ;
-    output n11114;
-    output [7:0]\data_out_frame2[11] ;
-    output n12227;
-    output n574;
-    output n10973;
-    output n5341;
-    output [7:0]\data_out_frame2[18] ;
-    output n26;
-    output n25;
-    output \data_out[0][5] ;
-    output \data_out[2][5] ;
-    output \data_out[3][5] ;
-    input \UART_TRANSMITTER.state_7__N_1223[1] ;
-    output [7:0]\data_out_frame2[5] ;
-    output n9;
-    output n11017;
-    input \rand_setpoint[9] ;
-    input \rand_setpoint[10] ;
-    input n11324;
-    output \data_out[3][7] ;
-    output \tx_transmit_N_1947[6] ;
-    output \byte_transmit_counter[6] ;
-    output \FRAME_MATCHER.i_31__N_1272 ;
-    output n129;
-    output n10_adj_2;
-    input \rand_setpoint[11] ;
-    output \data_out[10][6] ;
-    output n10_adj_3;
-    output n18876;
-    output n10_adj_4;
-    output n10_adj_5;
-    input n17533;
-    output \data_out[6][0] ;
-    output n18870;
-    output n18864;
-    output n18852;
-    output n10_adj_6;
-    output \tx_transmit_N_1947[4] ;
-    output \byte_transmit_counter[4] ;
-    output [7:0]\data_in_frame[0] ;
-    output \data_out[1][7] ;
-    output \data_out[2][7] ;
-    output \data_out[9][2] ;
-    output n10_adj_7;
-    output n5;
-    output \data_out[0][1] ;
-    output n1;
-    output n22;
-    input n18906;
-    input n11343;
-    output \data_out[0][0] ;
-    input n11342;
-    input n11341;
-    output \data_out[0][3] ;
-    input n11340;
-    output \byte_transmit_counter[3] ;
-    output n63;
-    output n18756;
-    output n63_adj_8;
-    output \FRAME_MATCHER.i_31__N_1270 ;
-    output \FRAME_MATCHER.i[31] ;
-    output n10429;
-    output n1437;
-    output n12965;
-    output n17694;
-    output n8;
-    output n15118;
-    output \FRAME_MATCHER.i_31__N_1273 ;
-    output n13849;
-    output \FRAME_MATCHER.i_31__N_1275 ;
-    input n15;
-    input n11506;
-    input n11669;
-    input n11668;
-    input n11667;
-    input n11666;
-    input n11665;
-    input n11664;
-    input n11663;
-    input n11662;
-    output n18750;
-    input n11661;
-    input n11336;
+    output n5558;
+    input n11567;
+    output \data_out[1][2] ;
+    input n11566;
+    output \data_out[1][3] ;
+    output n11150;
+    output n3811;
+    input n11563;
     output \data_out[1][6] ;
-    input n11335;
-    input n11660;
-    input n11334;
+    output n2;
+    input n11562;
     output \data_out[2][0] ;
-    input n11659;
-    input n11658;
-    input n11657;
-    input n11656;
-    input n11655;
-    input n11654;
-    input n11653;
-    output [0:0]n2836;
-    input n11652;
-    input n11651;
-    input n11650;
-    output n17758;
-    input n11649;
-    input n11648;
-    input n11333;
+    input n11560;
     output \data_out[2][2] ;
-    output [7:0]\data_in_frame[2] ;
-    output n18696;
-    output tx2_active;
-    input n11331;
-    input n11647;
-    output n612;
-    input n11646;
-    output [7:0]\data_in_frame[6] ;
-    output [7:0]\data_in[0] ;
+    input n11823;
+    output \UART_TRANSMITTER.state[2] ;
+    input n17597;
+    input VCC_net;
+    output [7:0]byte_transmit_counter;
+    output n19100;
+    output n19070;
+    output n19064;
+    output n19058;
+    output n19052;
     output [7:0]\data_in[2] ;
-    output n1166;
-    input n11330;
-    output [7:0]\data_in[3] ;
-    output [7:0]\data_in[1] ;
-    input n11645;
-    output n12966;
-    input \rand_setpoint[25] ;
-    output n12999;
-    output n237;
-    output data_out_10__7__N_110;
-    output [0:0]n2731;
-    input \rand_setpoint[12] ;
-    input \rand_setpoint[17] ;
-    input \rand_setpoint[13] ;
-    input \rand_setpoint[14] ;
-    input \rand_setpoint[15] ;
-    input n11644;
-    output n6;
-    output n18;
-    output n13;
-    input n11643;
-    input n11642;
-    input n11641;
-    input n11640;
-    input n11639;
-    input n11638;
-    input n11637;
-    input n11636;
-    input n11635;
-    input n11634;
-    input n11633;
-    input n11632;
-    input n11631;
-    input n11630;
-    input n11629;
-    input n11628;
-    input n11627;
-    input n11626;
-    input n11625;
-    input n11624;
-    input n11623;
-    input n11622;
-    input n11621;
-    input n11620;
-    input n11619;
-    input n11618;
-    input n11617;
-    input n11616;
-    input n11615;
-    input n11614;
-    input n11613;
-    input n11612;
-    input n11611;
-    input n11329;
-    output \data_out[3][0] ;
-    input n11610;
-    input n11609;
-    input n11608;
-    input n11607;
-    output \FRAME_MATCHER.state_31__N_1406[0] ;
-    input n11606;
-    input n11605;
-    input n11604;
-    input n11603;
-    input n11602;
-    input n11601;
-    input n11600;
-    input n11599;
-    input n11598;
-    input n11597;
-    input n11596;
-    input n11595;
-    input n11594;
-    input n11593;
-    input n11592;
-    input n11591;
-    input n11590;
+    output [7:0]\data_in[0] ;
+    output \data_out[7][3] ;
+    input n11557;
+    output \data_out[2][5] ;
+    input n11556;
+    output \data_out[2][6] ;
+    input n11807;
+    input n11806;
+    input n11805;
+    output [7:0]tx_transmit_N_1750;
+    input n11804;
+    output \data_out[3][6] ;
+    input n11800;
+    output \data_out[7][6] ;
+    output n14713;
+    input n18408;
+    input n11798;
+    input n11797;
+    output n15079;
+    output \data_out_frame2[0][0] ;
+    output [7:0]\data_in_frame[6] ;
+    input n11793;
+    output [7:0]\data_in_frame[0] ;
+    input n11792;
+    input n11790;
+    output n2169;
+    output \UART_TRANSMITTER.sp[14] ;
+    output [0:0]n2786;
+    output \data_out_frame2[0][7] ;
+    output n11365;
+    output \UART_TRANSMITTER.sp[0] ;
+    output \data_in_frame[0][0] ;
+    output n18329;
+    output n1;
+    output n15937;
+    output \data_in_frame[0][6] ;
+    output n11195;
+    output rx_data_ready;
+    input n12014;
+    output \data_out_frame2[19][7] ;
+    input n12013;
+    output \data_out_frame2[19][1] ;
+    input n12015;
+    output \data_out_frame2[20][1] ;
+    input n11962;
+    input n11950;
+    output \data_out[7][2] ;
+    output \pwm_31__N_2046[0] ;
+    input n11953;
+    output n11008;
+    output \setpoint[31] ;
+    input n11553;
     output \data_out[3][2] ;
-    input n11589;
-    input n11588;
-    input n11587;
-    input n11586;
-    input n11585;
+    output \setpoint[30] ;
+    output \setpoint[29] ;
+    input n11910;
+    output \rx_crc[15] ;
+    input n11909;
+    output \rx_crc[9] ;
+    input n11908;
+    output \rx_crc[8] ;
+    output \setpoint[28] ;
+    output \setpoint[27] ;
+    output \setpoint[26] ;
+    output \setpoint[25] ;
+    output \setpoint[24] ;
+    output \setpoint[23] ;
+    output \setpoint[22] ;
+    output n19046;
+    output \setpoint[21] ;
+    input n11713;
+    output \UART_TRANSMITTER.sp[11] ;
+    output \setpoint[20] ;
+    output n19040;
+    output \setpoint[1] ;
+    output n147;
+    output \setpoint[2] ;
+    output \setpoint[3] ;
+    output n19034;
+    output \setpoint[4] ;
+    output \setpoint[5] ;
+    output \setpoint[6] ;
+    output \setpoint[7] ;
+    output \setpoint[8] ;
+    output \setpoint[9] ;
+    output \setpoint[10] ;
+    output \setpoint[11] ;
+    output \setpoint[12] ;
+    output \setpoint[13] ;
+    output \setpoint[14] ;
+    output \setpoint[15] ;
+    output \tx_transmit_N_1750[0] ;
+    output \setpoint[16] ;
+    output \setpoint[17] ;
+    output \setpoint[18] ;
+    output \setpoint[19] ;
+    output \UART_TRANSMITTER.sp[10] ;
+    input n19112;
+    input n19113;
+    output \byte_transmit_counter[4] ;
+    output n9972;
+    input n17601;
+    output \byte_transmit_counter[3] ;
+    input n17599;
+    input n11901;
+    input n11550;
+    input n11900;
+    input n11899;
+    input n11898;
+    input n11897;
+    output n11340;
+    output n5;
+    output n1_adj_8;
+    output [0:0]n2751;
+    input n11896;
+    input n11895;
+    input n11894;
+    output n1566;
+    output n4428;
+    output n6;
+    output n7;
+    output \FRAME_MATCHER.state_31__N_1289[2] ;
+    input n11889;
+    input n11888;
+    input n11887;
+    output \FRAME_MATCHER.state_31__N_1161[1] ;
+    input n11886;
+    input n11885;
+    input n11881;
+    input n11879;
+    output \data_out[0][1] ;
+    output n7_adj_9;
     input n11584;
     input n11583;
     input n11582;
     input n11581;
-    input n11580;
     input n11579;
-    output n4;
+    output n11179;
     input n11578;
     input n11577;
     input n11576;
     input n11575;
     input n11574;
-    input n11573;
-    input n11572;
-    input n11571;
-    input n11570;
-    input n11569;
-    input n11568;
-    input n11567;
-    input n11328;
-    input n11327;
-    output \data_out[3][4] ;
-    input n11326;
-    input n11566;
-    input \rand_setpoint[18] ;
-    input n11565;
-    input n11564;
-    input n11563;
-    input n11562;
-    input n11561;
-    input n11560;
-    input n11559;
-    input n11558;
-    input n11535;
-    input n11555;
-    input n11542;
-    output [7:0]\data_in_frame[5] ;
-    input \rand_setpoint[19] ;
-    input n11532;
-    input \rand_setpoint[20] ;
-    input n11531;
-    input \rand_setpoint[1] ;
-    input n11530;
-    input n11529;
-    input n11528;
-    input n11527;
-    input n11526;
-    input n11525;
-    input n11524;
-    input n11519;
-    input n11518;
-    input n11517;
-    input n11516;
-    input n11515;
-    input n11514;
-    input n11513;
-    input n11512;
-    input n11511;
-    input n11510;
-    input n11509;
-    input n11508;
-    input n11507;
-    input n11503;
-    input n11502;
-    input n11501;
-    input n11500;
-    input n11499;
-    input n11498;
-    input n11497;
-    input n11496;
-    output n242;
-    input n11495;
-    input n11494;
-    input n11490;
-    input \rand_setpoint[21] ;
-    input \rand_setpoint[22] ;
-    input n11489;
-    input n11488;
-    input n11487;
-    input n11486;
-    input n11485;
-    input n11484;
-    input n11483;
-    input n17181;
-    input n14;
-    input n11480;
-    input n11479;
-    input n11478;
-    input n11477;
-    input n11476;
-    input n11475;
-    input n11474;
-    input n11465;
-    input n11464;
-    input n11463;
-    input n11462;
-    input n11461;
-    input n11460;
-    input n11459;
-    input n11458;
-    input n11449;
-    input n11448;
-    input n11447;
-    input n11446;
-    input n11445;
-    input n11444;
-    input n11443;
-    input n11442;
-    input n11441;
-    input n11440;
-    input n11439;
-    input n11438;
-    input n11437;
-    input \rand_setpoint[31] ;
-    input n11436;
-    input \rand_setpoint[30] ;
-    input n11435;
-    input \rand_setpoint[29] ;
-    input n11431;
-    input \rand_setpoint[28] ;
-    input n18910;
-    input \rand_setpoint[27] ;
-    input n11421;
-    input n17177;
-    input \rand_setpoint[26] ;
-    input \rand_setpoint[24] ;
-    input \rand_setpoint[23] ;
-    output [2:0]r_Bit_Index;
-    output n5440;
-    input n17541;
+    input n11875;
+    input n18035;
     output [7:0]r_Tx_Data;
-    output n5155;
-    input n11379;
-    input n11382;
-    input n17583;
-    input n17581;
-    input n17579;
-    input n17577;
-    input n17575;
-    input n17573;
-    input n17571;
-    output n3;
-    output n18012;
-    output n18016;
-    output n9667;
-    input n11423;
+    input n17895;
+    input n11844;
+    output \r_Clock_Count[4] ;
+    input n11840;
+    output \r_Clock_Count[3] ;
+    output \r_SM_Main[2] ;
+    input n18043;
+    input n18045;
+    output n16065;
+    output n317;
+    input n18067;
+    input n18091;
+    input n18065;
+    input n18073;
+    output n318;
     output tx_o;
+    output n10424;
     output tx_enable;
-    output n11096;
-    output [2:0]r_Bit_Index_adj_15;
-    output n4_adj_12;
-    output n18014;
-    output [2:0]r_SM_Main;
-    output n11545;
-    input n11523;
-    output n3_adj_13;
-    output \r_SM_Main_2__N_2031[1] ;
-    output n6707;
-    output n17689;
-    input n11546;
-    input n11549;
-    input n18908;
-    input n11429;
-    input n11428;
-    input n11427;
+    output n11302;
+    input n12005;
+    output [2:0]r_Bit_Index;
+    output n5759;
+    output n11364;
+    output n11546;
+    input n11778;
+    input n11995;
+    input n11645;
     output tx2_o;
+    output n3;
     output tx2_enable;
+    output [2:0]r_SM_Main;
+    output \r_SM_Main_2__N_1891[2] ;
     output r_Rx_Data;
-    output [7:0]rx_data;
-    output rx_data_ready;
+    output n11218;
+    output n4;
+    output n10974;
+    input n18386;
+    output n15;
+    output n219;
+    output \r_Clock_Count[7] ;
+    output n220;
+    output \r_Clock_Count[6] ;
+    input n12;
+    input n12_adj_11;
     input rx_i;
-    output n151;
-    output n12527;
-    output n158;
-    output n164;
-    output n16802;
-    output n11058;
-    output n120;
-    output n12582;
-    output n12600;
-    output n16797;
-    output n135;
-    output n4_adj_14;
-    input n11412;
-    input n11409;
-    input n11408;
-    input n11407;
-    input n11406;
+    output n222;
+    output \r_Clock_Count[4]_adj_12 ;
+    input n12_adj_13;
+    input n12_adj_14;
+    output \r_Clock_Count[3]_adj_15 ;
+    output n223;
+    output n224;
+    output \r_Clock_Count[2] ;
+    input n11799;
+    input n17769;
+    output n225;
+    output \r_Clock_Count[1] ;
+    input n12_adj_16;
+    input n12_adj_17;
+    output n18342;
+    input n12012;
+    input n11681;
+    input n11644;
+    input n11643;
+    input n11637;
+    input n11622;
+    output n4_adj_18;
+    output n4_adj_19;
+    input n11580;
+    output n11162;
+    output n14605;
     
     wire CLK_c /* synthesis SET_AS_NETWORK=CLK_c, is_clock=1 */ ;   // verilog/TinyFPGA_B.v(3[9:12])
     
-    wire n18801;
-    wire [7:0]byte_transmit_counter2;   // verilog/coms.v(399[12:34])
+    wire n11873, n2_c;
+    wire [31:0]\FRAME_MATCHER.i ;   // verilog/coms.v(420[11:12])
     
-    wire n18804, n11376;
-    wire [7:0]\data_out[7] ;   // verilog/coms.v(21[11:19])
+    wire n16956, n1203, n7_c, n18328;
+    wire [7:0]\data_in_frame[4] ;   // verilog/coms.v(387[12:25])
     
-    wire n17816;
-    wire [7:0]\data_out[5] ;   // verilog/coms.v(21[11:19])
+    wire n11599, n11872, n11871, n11870, n11869, n11868, n18654;
+    wire [7:0]byte_transmit_counter2;   // verilog/coms.v(407[12:34])
     
-    wire n10680, n18250, n17804;
-    wire [7:0]\data_out[9] ;   // verilog/coms.v(21[11:19])
-    
-    wire n8_c;
-    wire [7:0]\data_out[10] ;   // verilog/coms.v(21[11:19])
-    wire [0:0]n2136;
-    
-    wire data_out_6__1__N_537, n17874, n16492;
-    wire [31:0]\FRAME_MATCHER.i ;   // verilog/coms.v(412[11:12])
-    
-    wire n18631, n16493, n10816, n20, n155, n14068, n18260;
-    wire [7:0]\data_out_frame2[0] ;   // verilog/coms.v(380[12:27])
-    
-    wire n10920, n19, n17715, n17908, n21, n17909, n10788;
-    wire [7:0]\data_out[6] ;   // verilog/coms.v(21[11:19])
-    
-    wire n5_c, data_out_7__2__N_447, n18311, n10720, n10778;
-    wire [31:0]\FRAME_MATCHER.state ;   // verilog/coms.v(409[11:16])
-    
-    wire n14161, n50, n17783, n10849, n17777, n16523, n11325;
-    wire [7:0]\data_out[3] ;   // verilog/coms.v(21[11:19])
-    
-    wire n18795, n18798, n17920, n10593, n14_c, n15_c, n17859, 
-        n17899, n17921;
-    wire [7:0]tx_transmit_N_1947_c;
-    
-    wire n17157, n18270, n6035, n12704, n18079, n4494, n6033, 
-        n18081, n28, n18082, n18084, n18085;
-    wire [7:0]\data_out_frame2[19] ;   // verilog/coms.v(380[12:27])
-    
-    wire n18789, n18087, n85;
-    wire [13:0]delay_counter;   // verilog/coms.v(272[12:25])
-    
-    wire n18_c, n24, n22_c, tx_active, tx_active_prev, n17786, n18184, 
-        n18792, n18189, n2, n5_adj_2196;
-    wire [31:0]\FRAME_MATCHER.i_31__N_1278 ;
-    
-    wire n16491;
-    wire [31:0]\FRAME_MATCHER.i_31__N_1310 ;
-    
-    wire n18335, n18019, n17146;
-    wire [2:0]r_SM_Main_2__N_2034;
-    
-    wire n4806, n4_c, n18256, n5_adj_2197, n6_c, n98, n17998, 
-        n11373;
-    wire [0:0]n2031;
-    
-    wire n11016;
-    wire [0:0]n2066;
-    wire [0:0]n2101;
-    wire [0:0]n2171;
-    wire [0:0]n2206;
-    wire [0:0]n2241;
-    wire [0:0]n2276;
-    wire [0:0]n2311;
-    wire [0:0]n2346;
-    wire [0:0]n2381;
-    wire [0:0]n2661;
-    
-    wire n18783;
-    wire [0:0]n3256;
-    wire [7:0]\data_out[1] ;   // verilog/coms.v(21[11:19])
-    
-    wire n11370, n2_adj_2198, n4_adj_2199, n13808, n11367, n14064, 
-        n2_adj_2200, n4_adj_2201, n17153, n18199, n2_adj_2202, n4_adj_2203, 
-        n17335, n4_adj_2204, tx2_transmit_N_1996;
-    wire [7:0]byte_transmit_counter_c;   // verilog/coms.v(19[11:32])
-    
-    wire n11556, n16522, n18362, n12359, n18897, n16505, n16506, 
-        n18057, n18891, n18060, n8_adj_2205, n18259, n18810, n18885, 
-        n18161, n16486, n16483, n16484, n16482, n16521, n16504, 
-        n18201, n16480, n16481, n8_adj_2207, n18318, n16485, n16490, 
-        n18315, n18253, n16479;
-    wire [13:0]n61;
-    
-    wire n16646, n18888, n16645, n18879, n18160, n16644, n18873, 
-        n16643, n16642, n8_adj_2209, n8_adj_2211, n16641, n17447;
-    wire [2:0]r_SM_Main_2__N_2034_adj_2457;
-    
-    wire n10513, n18334, n5_adj_2214, n18867;
-    wire [0:0]n2687;
-    
-    wire n11277, n16640;
-    wire [0:0]n2617;
-    wire [0:0]n2582;
-    wire [0:0]n2547;
-    wire [0:0]n2512;
-    wire [0:0]n2477;
-    wire [0:0]n2442;
-    
-    wire data_out_7__3__N_441, n2_adj_2215, n4_adj_2216, n18191, n18190, 
-        n18762, n18708, n18777, n18365, n5_adj_2217, n18861, n6_adj_2218, 
-        n18308, n18780, n18377, n18376, n18771, n18068, n18067, 
-        n18774, n18648, n18642, n18765, n18855, n18072, n8_adj_2219, 
-        n18317, n18322, n5_adj_2220, n18849, n2_adj_2221, n18264, 
-        n18816, n18843, n6_adj_2223, n18266, n18846, n18837, n16639, 
-        n16638, n2_adj_2224, n4_adj_2225, n16637, n16520, n18840, 
-        n17465, n4_adj_2226, n2122, n18100, n6_adj_2227, n18221, 
-        n18768, n2120, n18102, n16636, n2124, n10497, n17713, 
-        n13033, n17281, n18354, n2_adj_2228, n3_c, n2_adj_2229, 
-        n2_adj_2230, n4_adj_2231, n8_adj_2232, n18831, n18284, n18834, 
-        n16635, n2126, n16634, n8_adj_2234, n10569, n18287, n18828, 
-        n17813;
-    wire [13:0]n1693;
-    wire [7:0]\data_out[8]_c ;   // verilog/coms.v(21[11:19])
-    
-    wire n1_c, n18289, n18822, n18759, n2128, n2137_adj_2237, n2138, 
-        n18813;
-    wire [7:0]\data_out_frame2[20] ;   // verilog/coms.v(380[12:27])
-    
-    wire n7263, n22_adj_2239;
-    wire [7:0]tx2_data;   // verilog/coms.v(402[13:21])
-    
-    wire n18702, n22_adj_2240, n17259, n10613, n18807, n18265, n5_adj_2241, 
-        n18753, n11056, n17343, n17279, n18678, n22_adj_2242, n18744, 
-        n10958, n18705, n16503, n18672, n22_adj_2243, n17341, n17283, 
-        n17355, n8_adj_2244, n17357, n17299, n17359, n17277, n17361, 
-        n8_adj_2245, n13902, n13900, n7, n8_adj_2246, n17365, n17275, 
-        n17373, n17273, n17375, n8_adj_2247, n7_adj_2248, n8_adj_2249, 
-        n17377, n8_adj_2250, n17297, n17293, n7_adj_2251, n8_adj_2252, 
-        n7_adj_2253, n8_adj_2254, n17379, n17271, n17397, n17303, 
-        n17381, n17269, n17383, n17267, n17385, n17265, n17387, 
-        n17263, n7_adj_2255, n17239, n7_adj_2256, n8_adj_2257, n17389, 
-        n8_adj_2258, n17391, n17261, n17393, n16519, n18654, n22_adj_2259, 
-        n7_adj_2260, n63_adj_2262;
-    wire [31:0]n1472;
-    
-    wire n18738, n17395, n17301, n18907, n16518, n11339;
+    wire n16922, tx2_transmit_N_1799, n11864, n11571;
     wire [7:0]\data_out[0] ;   // verilog/coms.v(21[11:19])
     
-    wire n11338, n16502, n7528, n16685, n10522, n43, n6_adj_2265, 
-        n4_adj_2266, n6_adj_2267, n16517, n16489, n18636, n22_adj_2268, 
-        n22_adj_2270, n4_adj_2271, n11337, n18747, n16501, n44, 
-        n18188, n1_adj_2272;
-    wire [7:0]\data_in_frame[1] ;   // verilog/coms.v(379[12:25])
+    wire n11570, n11600, n11738;
+    wire [13:0]delay_counter;   // verilog/coms.v(268[12:25])
     
-    wire n23, n16488, n8_adj_2273, n18374, n5_adj_2274, n6_adj_2275, 
-        n17727, n17844, n10746, data_out_9__0__N_389, n17911, n17745, 
-        n6_adj_2276, data_out_9__1__N_378, n17771, n10749, n17850, 
-        data_out_9__3__N_356, n6_adj_2277, n2_adj_2278, n3_adj_2279, 
-        n17832, n17742, data_out_9__4__N_345, n2_adj_2280, n3_adj_2281, 
-        n2_adj_2282, n3_adj_2283, n2_adj_2284, n3_adj_2285, n2_adj_2286, 
-        n3_adj_2287, n2_adj_2288, n3_adj_2289, n2_adj_2290, n3_adj_2291, 
-        n2_adj_2292, n3_adj_2293, n2_adj_2294, n3_adj_2295, n2_adj_2296, 
-        n3_adj_2297, n2_adj_2298, n3_adj_2299, n2_adj_2300, n3_adj_2301, 
-        n2_adj_2302, n3_adj_2303, n2_adj_2304, n3_adj_2305, n2_adj_2306, 
-        n3_adj_2307, n2_adj_2308, n3_adj_2309, n2_adj_2310, n3_adj_2311, 
-        n2_adj_2312, n3_adj_2313, n6_adj_2314, n46, n9575, n2_adj_2315, 
-        n10558, data_out_9__5__N_334, n17149, n2_adj_2316, n3_adj_2317, 
-        n17730, n6_adj_2318, data_out_9__6__N_324, n10550, n18699, 
-        data_out_9__2__N_367, n16500, n10725, n17768, n17718, n17774, 
-        n15_adj_2319, n17826, n14_adj_2320, data_out_9__7__N_272, n16516, 
-        n17880, n18103, n18105, n2_adj_2321, n3_adj_2322, n10864, 
-        n2_adj_2323, n3_adj_2324, n2_adj_2325, n3_adj_2326, n2_adj_2327, 
-        n3_adj_2328, n17829, n17877, n12, n2_adj_2329, n3_adj_2330, 
-        n2_adj_2331, n3_adj_2332, n2_adj_2333, n3_adj_2334, n2_adj_2335, 
-        n3_adj_2336, n2_adj_2337, n3_adj_2338, n2_adj_2339, n3_adj_2340, 
-        n2_adj_2341, n10465, n2_adj_2342, n3_adj_2343, n2_adj_2344, 
-        n3_adj_2345, n10688, n22_adj_2346, n27, n17883, n10801, 
-        data_out_10__0__N_219, n18222, n5_adj_2347, n18693, n17886, 
-        n16, n2_adj_2348, n18223, n4_adj_2349, n17, n18687, n18690, 
-        n20_adj_2350, n18681, n18684, n17795, n19_adj_2351, n18675, 
-        n18741, n17917, n30, n18669, n25_adj_2352, n18663, n18666, 
-        n18657, n18660, n50_adj_2353, n18651, n48, n18645, n49, 
-        n18639, n16499, n16515, n17892, n6_adj_2354, n18360, n18316, 
-        n47, n18633, n30_adj_2355, n46_adj_2356, n17847, n6_adj_2357, 
-        n11332;
+    wire n11601, tx_active, tx_active_prev, n18263;
+    wire [2:0]r_SM_Main_2__N_1837;
+    
+    wire n5222, n21, n19, n20, n18211;
+    wire [0:0]n2121;
+    wire [7:0]\data_out[7] ;   // verilog/coms.v(21[11:19])
+    wire [0:0]n2191;
+    wire [7:0]\data_out[6] ;   // verilog/coms.v(21[11:19])
+    wire [0:0]n2226;
+    wire [0:0]n2261;
+    wire [0:0]n2296;
+    wire [0:0]n2331;
+    wire [0:0]n2366;
+    wire [0:0]n2401;
+    wire [0:0]n2436;
+    wire [0:0]n2681;
+    wire [7:0]\data_out[5] ;   // verilog/coms.v(21[11:19])
+    
+    wire n17707;
+    wire [31:0]\FRAME_MATCHER.state ;   // verilog/coms.v(417[11:16])
+    
+    wire n17819, n18131;
+    wire [7:0]\data_out[1] ;   // verilog/coms.v(21[11:19])
+    
+    wire n11157, n63, n11665;
+    wire [31:0]\UART_TRANSMITTER.sp ;   // verilog/coms.v(274[21:23])
+    
+    wire n19017, n16900, n18655, n16921, n18516, n1622, n18293, 
+        n83, n10515;
+    wire [31:0]\FRAME_MATCHER.state_31__N_1161 ;
+    
+    wire n11841, n1621, n3_c, n3_adj_2223, n3_adj_2224, n2_adj_2225, 
+        n3_adj_2226, n11744, n2_adj_2227, n4_c, n3_adj_2228, n3_adj_2229, 
+        n3_adj_2230, n3_adj_2231, n11565, n11564, n11161, n2093, 
+        n18466, n11916, n2_adj_2233, n3_adj_2234, n2_adj_2235, n3_adj_2236, 
+        n2_adj_2237, n3_adj_2238, n2_adj_2239, n3_adj_2240, n2_adj_2241, 
+        n3_adj_2242, n2_adj_2243, n3_adj_2244, n3_adj_2245, n2_adj_2246, 
+        n3_adj_2247, n2_adj_2248, n3_adj_2249, n16957, n16901, n11561;
     wire [7:0]\data_out[2] ;   // verilog/coms.v(21[11:19])
     
-    wire n16_adj_2358, n45, n56, n51, n3465, n16514, n16513, n16498, 
-        n17810, n17798, n18735, n10577, n14_adj_2359, n6_adj_2360, 
-        n18371, n10700, n17841, n17761, n6_adj_2361, n10734, n10524, 
-        n130, n17736, n17914, n17962, n10617, n14_adj_2362, n17835, 
-        n14_adj_2363, n13_c, n6_adj_2364, n10425, n17819, n6_adj_2365, 
-        n10537, n10_adj_2366, n7199, n16863, n17807, n18008, n10346, 
-        n10353, n16512, n6_adj_2367, data_out_10__2__N_157, n16497, 
-        n6_adj_2368, n113, n10533, n8_adj_2369, n13693, n10493, 
-        data_out_10__3__N_146, n18723, n16511, n18_adj_2370, n20_adj_2371, 
-        n15_adj_2372, data_out_10__4__N_135, n22_adj_2373, n16510, n18726, 
-        n18225, n10516, n10367, n18002, n10498, n18006, data_out_10__5__N_124, 
-        data_out_10__6__N_113, n14_adj_2375, n232, n10542, data_out_10__7__N_101, 
-        data_out_10__1__N_168, n10_adj_2378, n26_adj_2379, n42, n13_adj_2380, 
-        n40, n41, n5_adj_2381, n39, n44_adj_2382, n48_adj_2383, 
-        n43_adj_2384, n8_adj_2385, n5_adj_2386, n18226, n14_adj_2388, 
-        n15_adj_2389, n17721, n16496, n115, n29, n16487, n10_adj_2390, 
-        n16495, n10761, n16509, n17733, n18230, n16981, n17735, 
-        n18234, n16982, n17725, n18238, n11520, n16508, n17722, 
-        n16994, n10905, n16_adj_2391, n22_adj_2392, n17734, n17912, 
-        n17793, n17913, n17918, n17893, n17901, n17890, n17858, 
-        n17894, n17907, n17906, n17872, n17915, n17922, n18_adj_2393, 
-        n17751, n17868, n17902, n24_adj_2394, n22_adj_2395, n26_adj_2396, 
-        n20_adj_2397, n18_adj_2398, n16507, n10887, n16_adj_2399, 
-        n19_adj_2400, n17823, n17853, n17_adj_2401, n17895, n18000, 
-        n10825, n10703, n18_adj_2402, n16494, n28_adj_2403, n17871, 
-        n10710, n10877, n20_adj_2404, n10839, n27_adj_2405, n17905, 
-        n14_adj_2406, n10583, n17780, n15_adj_2407, n17856, n29_adj_2408, 
-        n6_adj_2409, n17862, n17889, n12_adj_2410, n10_adj_2411, n10782, 
-        n10852, n16_adj_2412, n17789, n17_adj_2413, n18254, n10813, 
-        n15_adj_2414;
-    wire [7:0]\data_in_frame[3] ;   // verilog/coms.v(379[12:25])
+    wire n11747, n2_adj_2250, n3_adj_2251, n2_adj_2252, n3_adj_2253, 
+        n2_adj_2254, n3_adj_2255, n2_adj_2256, n3_adj_2257, n11559, 
+        n2_adj_2258, n3_adj_2259, n2_adj_2260, n3_adj_2261, n2_adj_2262, 
+        n3_adj_2263, n2_adj_2264, n3_adj_2265;
+    wire [0:0]n2891;
     
-    wire n19_adj_2415, n15_adj_2416, n18_adj_2417, n24_adj_2418, n22_adj_2419, 
-        n23_adj_2420, n21_adj_2421, n6_adj_2422, n18_adj_2423, n30_adj_2424, 
-        n17739, n17755, n28_adj_2425, n27_adj_2426, n29_adj_2427, 
-        n18242, n10870, n27_adj_2428, n15_adj_2429, n17765, n109, 
-        n6_adj_2430, n10_adj_2431, n18247, n5_adj_2433, n10929, n30_adj_2434, 
-        n11473, n11472, n11471, n34, n11470, n11469, n11468, n32, 
-        n11467, n17792, n17838, n17865, n33, n11466, n31, n18314, 
-        n10829, n5_adj_2435, n5_adj_2436, n18_adj_2437, n20_adj_2438, 
-        n10893, n5_adj_2439, n10861, n10_adj_2440, n11457, n11456, 
-        n11455, n11454, n11453, n11452, n11451, n11450, n10911, 
-        n18_adj_2441, n20_adj_2442, n10867, n6_adj_2443, n10819, n14_adj_2444, 
-        n17748, n15_adj_2445, n10890, n12_adj_2446, n14_adj_2447, 
-        n16_adj_2448, n17_adj_2449;
+    wire n2_adj_2266, n3_adj_2267, n3_adj_2268, n7_adj_2269, n8, n18315, 
+        n17745, n18312, n17735, n7_adj_2270, n8_adj_2271, n18303, 
+        n17737, n2_adj_2272, n3_adj_2273, n18304, n17685, n18311, 
+        n17681, n18314, n17679, n18308, n17673, n7_adj_2274, n8_adj_2275, 
+        n7_adj_2276, n8_adj_2277, n18313, n17729, n18310, n17675, 
+        n18302, n17741, n14700, n14697, n7_adj_2278, n8_adj_2279, 
+        n7_adj_2280, n8_adj_2281, n14738, n14731, n7_adj_2282, n8_adj_2283, 
+        n18301, n17743, n7_adj_2284, n8_adj_2285, n18309, n17709, 
+        n7_adj_2286, n8_adj_2287, n18306, n17671, n18305, n17739, 
+        n7_adj_2288, n8_adj_2289, n7_adj_2290, n8_adj_2291, n7_adj_2292, 
+        n8_adj_2293, n18307, n17677, n2_adj_2294, n3_adj_2295, n11666, 
+        n16899, n18333;
+    wire [7:0]\data_in_frame[5] ;   // verilog/coms.v(387[12:25])
     
-    SB_LUT4 n18801_bdd_4_lut (.I0(n18801), .I1(\data_out_frame2[17] [7]), 
-            .I2(\data_out_frame2[16] [7]), .I3(byte_transmit_counter2[1]), 
-            .O(n18804));
-    defparam n18801_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_DFFE \data_out_7[[7__2193  (.Q(\data_out[7] [7]), .C(CLK_c), .E(VCC_net), 
-            .D(n11376));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i15682_4_lut (.I0(n17816), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(\data_out[5] [5]), .I3(n10680), .O(n18250));   // verilog/coms.v(283[4] 369[11])
-    defparam i15682_4_lut.LUT_INIT = 16'h4884;
-    SB_LUT4 i1_2_lut (.I0(\data_out_frame2[16] [0]), .I1(\data_out_frame2[15] [0]), 
-            .I2(GND_net), .I3(GND_net), .O(n17804));   // verilog/coms.v(237[17:221])
-    defparam i1_2_lut.LUT_INIT = 16'h6666;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_0_i8_3_lut (.I0(\data_out[8] [0]), 
-            .I1(\data_out[9] [0]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n8_c));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_0_i8_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_0_i10_4_lut (.I0(n8_c), .I1(\data_out[10] [0]), 
-            .I2(byte_transmit_counter[1]), .I3(byte_transmit_counter[0]), 
-            .O(n10));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_0_i10_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 mux_746_i1_4_lut (.I0(n18250), .I1(\rand_setpoint[8] ), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[0] ), .O(n2136[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_746_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i2_3_lut (.I0(data_out_6__1__N_537), .I1(\data_out[5][1] ), 
-            .I2(\data_out[5] [2]), .I3(GND_net), .O(n10680));   // verilog/coms.v(130[17:68])
-    defparam i2_3_lut.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_426 (.I0(\data_out_frame2[6] [5]), .I1(\data_out_frame2[10] [3]), 
-            .I2(GND_net), .I3(GND_net), .O(n17874));   // verilog/coms.v(227[16:31])
-    defparam i1_2_lut_adj_426.LUT_INIT = 16'h6666;
-    SB_CARRY add_977_9 (.CI(n16492), .I0(\FRAME_MATCHER.i [7]), .I1(n18631), 
-            .CO(n16493));
-    SB_LUT4 i8_4_lut (.I0(\data_out_frame2[16] [5]), .I1(\data_out_frame2[13] [1]), 
-            .I2(n10816), .I3(\data_out_frame2[8] [3]), .O(n20));   // verilog/coms.v(227[16:31])
-    defparam i8_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 i15706_3_lut_4_lut (.I0(tx_transmit_N_1947[3]), .I1(n155), .I2(\UART_TRANSMITTER.state[2] ), 
-            .I3(n14068), .O(n18260));   // verilog/coms.v(25[6:17])
-    defparam i15706_3_lut_4_lut.LUT_INIT = 16'hff8f;
-    SB_LUT4 i7_4_lut (.I0(\data_out_frame2[0] [7]), .I1(\data_out_frame2[14] [1]), 
-            .I2(n10920), .I3(\data_out_frame2[12] [1]), .O(n19));   // verilog/coms.v(227[16:31])
-    defparam i7_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 i9_4_lut (.I0(n17715), .I1(n17874), .I2(n17804), .I3(n17908), 
-            .O(n21));   // verilog/coms.v(227[16:31])
-    defparam i9_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 i11_3_lut (.I0(n21), .I1(n19), .I2(n20), .I3(GND_net), .O(n17909));   // verilog/coms.v(227[16:31])
-    defparam i11_3_lut.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_427 (.I0(\data_out_frame2[12] [0]), .I1(\data_out_frame2[14] [6]), 
-            .I2(GND_net), .I3(GND_net), .O(n10788));   // verilog/coms.v(234[16:291])
-    defparam i1_2_lut_adj_427.LUT_INIT = 16'h6666;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_6_i5_3_lut (.I0(\data_out[6] [6]), 
-            .I1(\data_out[7] [6]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n5_c));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_6_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i15645_2_lut (.I0(data_out_7__2__N_447), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18311));
-    defparam i15645_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_428 (.I0(\data_out_frame2[8] [3]), .I1(\data_out_frame2[6] [4]), 
-            .I2(GND_net), .I3(GND_net), .O(n10720));   // verilog/coms.v(239[17:230])
-    defparam i1_2_lut_adj_428.LUT_INIT = 16'h6666;
-    SB_LUT4 i3_4_lut (.I0(\data_out_frame2[9] [4]), .I1(\data_out_frame2[6] [0]), 
-            .I2(\data_out_frame2[7] [7]), .I3(\data_out_frame2[9] [6]), 
-            .O(n10778));   // verilog/coms.v(231[16:291])
-    defparam i3_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_adj_429 (.I0(\data_out_frame2[15] [7]), .I1(\data_out_frame2[14] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n10920));   // verilog/coms.v(227[16:31])
-    defparam i1_2_lut_adj_429.LUT_INIT = 16'h6666;
-    SB_LUT4 i3_4_lut_adj_430 (.I0(\FRAME_MATCHER.state [1]), .I1(\FRAME_MATCHER.state [2]), 
-            .I2(n14161), .I3(n50), .O(n11114));
-    defparam i3_4_lut_adj_430.LUT_INIT = 16'h0002;
-    SB_LUT4 i3_4_lut_adj_431 (.I0(\data_out_frame2[15] [6]), .I1(\data_out_frame2[13] [0]), 
-            .I2(\data_out_frame2[14] [0]), .I3(\data_out_frame2[16] [6]), 
-            .O(n17783));   // verilog/coms.v(228[16:596])
-    defparam i3_4_lut_adj_431.LUT_INIT = 16'h6996;
-    SB_LUT4 i2_3_lut_adj_432 (.I0(\data_out_frame2[10] [2]), .I1(\data_out_frame2[16] [4]), 
-            .I2(\data_out_frame2[12] [1]), .I3(GND_net), .O(n10849));   // verilog/coms.v(241[17:248])
-    defparam i2_3_lut_adj_432.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_433 (.I0(\data_out_frame2[0] [6]), .I1(\data_out_frame2[0] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n17777));   // verilog/coms.v(380[12:27])
-    defparam i1_2_lut_adj_433.LUT_INIT = 16'h6666;
-    SB_LUT4 add_2506_9_lut (.I0(GND_net), .I1(byte_transmit_counter[7]), 
-            .I2(GND_net), .I3(n16523), .O(tx_transmit_N_1947[7])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2506_9_lut.LUT_INIT = 16'hC33C;
-    SB_DFF \data_out_3[[6__2226  (.Q(\data_out[3] [6]), .C(CLK_c), .D(n11325));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15909 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[14] [1]), .I2(\data_out_frame2[15] [1]), 
-            .I3(byte_transmit_counter2[1]), .O(n18795));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15909.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18795_bdd_4_lut (.I0(n18795), .I1(\data_out_frame2[13] [1]), 
-            .I2(\data_out_frame2[12] [1]), .I3(byte_transmit_counter2[1]), 
-            .O(n18798));
-    defparam n18795_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i5_3_lut (.I0(n17920), .I1(n10593), .I2(\data_out_frame2[7] [6]), 
-            .I3(GND_net), .O(n14_c));   // verilog/coms.v(241[17:248])
-    defparam i5_3_lut.LUT_INIT = 16'h9696;
-    SB_LUT4 i6_4_lut (.I0(\data_out_frame2[11] [7]), .I1(n17777), .I2(n10849), 
-            .I3(n17783), .O(n15_c));   // verilog/coms.v(241[17:248])
-    defparam i6_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_3_lut_4_lut (.I0(tx_transmit_N_1947[3]), .I1(n155), .I2(n14068), 
-            .I3(n12227), .O(n574));   // verilog/coms.v(25[6:17])
-    defparam i1_3_lut_4_lut.LUT_INIT = 16'hff07;
-    SB_LUT4 i8_4_lut_adj_434 (.I0(n15_c), .I1(n17859), .I2(n14_c), .I3(n17899), 
-            .O(n17921));   // verilog/coms.v(241[17:248])
-    defparam i8_4_lut_adj_434.LUT_INIT = 16'h6996;
-    SB_LUT4 i11_4_lut (.I0(byte_transmit_counter[2]), .I1(tx_transmit_N_1947_c[2]), 
-            .I2(n10973), .I3(n5341), .O(n17157));   // verilog/coms.v(19[11:32])
-    defparam i11_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i15218_4_lut (.I0(\data_out_frame2[0] [7]), .I1(n18270), .I2(n6035), 
-            .I3(n12704), .O(n18079));
-    defparam i15218_4_lut.LUT_INIT = 16'hfaca;
-    SB_LUT4 i15220_4_lut (.I0(n18079), .I1(n4494), .I2(n6033), .I3(n6035), 
-            .O(n18081));
-    defparam i15220_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i15221_4_lut (.I0(\data_out_frame2[0] [6]), .I1(n28), .I2(n6035), 
-            .I3(n12704), .O(n18082));
-    defparam i15221_4_lut.LUT_INIT = 16'hfa8a;
-    SB_LUT4 i15223_4_lut (.I0(n18082), .I1(n4494), .I2(n6033), .I3(n6035), 
-            .O(n18084));
-    defparam i15223_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i15224_4_lut (.I0(\data_out_frame2[0] [5]), .I1(n28), .I2(n6035), 
-            .I3(n12704), .O(n18085));
-    defparam i15224_4_lut.LUT_INIT = 16'hfa8a;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15904 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[18] [1]), .I2(\data_out_frame2[19] [1]), 
-            .I3(byte_transmit_counter2[1]), .O(n18789));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15904.LUT_INIT = 16'he4aa;
-    SB_LUT4 i15226_4_lut (.I0(n18085), .I1(n4494), .I2(n6033), .I3(n6035), 
-            .O(n18087));
-    defparam i15226_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i1_2_lut_3_lut (.I0(tx_transmit_N_1947_c[1]), .I1(tx_transmit_N_1947_c[0]), 
-            .I2(tx_transmit_N_1947_c[2]), .I3(GND_net), .O(n85));   // verilog/coms.v(25[6:17])
-    defparam i1_2_lut_3_lut.LUT_INIT = 16'h8080;
-    SB_LUT4 i4_2_lut (.I0(delay_counter[8]), .I1(delay_counter[3]), .I2(GND_net), 
-            .I3(GND_net), .O(n18_c));   // verilog/coms.v(306[11:30])
-    defparam i4_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 i10_4_lut (.I0(delay_counter[7]), .I1(delay_counter[12]), .I2(delay_counter[11]), 
-            .I3(delay_counter[4]), .O(n24));   // verilog/coms.v(306[11:30])
-    defparam i10_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 i8_4_lut_adj_435 (.I0(delay_counter[6]), .I1(delay_counter[0]), 
-            .I2(delay_counter[10]), .I3(delay_counter[13]), .O(n22_c));   // verilog/coms.v(306[11:30])
-    defparam i8_4_lut_adj_435.LUT_INIT = 16'hfffe;
-    SB_LUT4 i12_4_lut (.I0(delay_counter[2]), .I1(n24), .I2(n18_c), .I3(delay_counter[5]), 
-            .O(n26));   // verilog/coms.v(306[11:30])
-    defparam i12_4_lut.LUT_INIT = 16'hfffe;
-    SB_DFF tx_active_prev_2167 (.Q(tx_active_prev), .C(CLK_c), .D(tx_active));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i11_3_lut_adj_436 (.I0(delay_counter[1]), .I1(n22_c), .I2(delay_counter[9]), 
-            .I3(GND_net), .O(n25));   // verilog/coms.v(306[11:30])
-    defparam i11_3_lut_adj_436.LUT_INIT = 16'hfefe;
-    SB_LUT4 i156_2_lut_3_lut (.I0(tx_transmit_N_1947_c[1]), .I1(tx_transmit_N_1947_c[0]), 
-            .I2(tx_transmit_N_1947_c[2]), .I3(GND_net), .O(n155));   // verilog/coms.v(25[6:17])
-    defparam i156_2_lut_3_lut.LUT_INIT = 16'hf8f8;
-    SB_LUT4 i15707_3_lut (.I0(n17786), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(\data_out[5] [5]), .I3(GND_net), .O(n18184));   // verilog/coms.v(283[4] 369[11])
-    defparam i15707_3_lut.LUT_INIT = 16'h4848;
-    SB_LUT4 n18789_bdd_4_lut (.I0(n18789), .I1(\data_out_frame2[17] [1]), 
-            .I2(\data_out_frame2[16] [1]), .I3(byte_transmit_counter2[1]), 
-            .O(n18792));
-    defparam n18789_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i15651_2_lut (.I0(\data_out[0][5] ), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18189));
-    defparam i15651_2_lut.LUT_INIT = 16'heeee;
+    wire n11585;
+    wire [7:0]\data_out[3] ;   // verilog/coms.v(21[11:19])
+    
+    wire n19097, n19079;
+    wire [7:0]n4858;
+    wire [7:0]\data_out_frame2[0] ;   // verilog/coms.v(388[12:27])
+    
+    wire n6394, n19088, n19082, n19076, n18766, n13636, n19067, 
+        n18778, n18777, n18761, n5_c, n19061, n2_adj_2296, n1_c, 
+        n22, n18754, n5_adj_2297, n19055, n2_adj_2298, n1_adj_2299, 
+        n18749, n5_adj_2300, n19049, n18780, n18779, n14, n18746, 
+        n5_adj_2301, n19043, n2_adj_2302, n3_adj_2303, n16955, n2_adj_2304, 
+        n3_adj_2305, n18458, n2_adj_2306, n3_adj_2307, n18534, n11558, 
+        n16888, n16889, n6_c, n10987, n2_adj_2308, n2_adj_2309, 
+        n2_adj_2310, n2_adj_2311, n2_adj_2312, n2_adj_2313, n2_adj_2314, 
+        n2_adj_2315, n18474, n11139, n12_c, n13, n11169, n8_adj_2316, 
+        n103, n29, n12_adj_2317, n11145, n18464, n14_adj_2318, n2615, 
+        n18656, n16920, n3898, n482, n2580, n4_adj_2319, n11138, 
+        n2510, n2437_adj_2320, n2150, n2154, n20_adj_2321, n16954, 
+        n2170, n23, n11586, n11678, n16887, n11750, n22_adj_2322, 
+        n2148, n27, n2152, n18, n18609, n16919, n11667, n16898, 
+        n2650, n2160, n26, n3280, n31, n11173, n14931, n30, 
+        n16876, n16877, n2156, n17, n22_adj_2323, n6396, n18547, 
+        n11668, n16897, n18702, n18549, n16953, n11783, n18550, 
+        n4515, n18552, n47, n17302, n18209, n15121, n18695, n16879, 
+        n18977, n18553, n11756, n18555, n11587, n11679, n16886, 
+        n15_c, n11588, n11200, n11775, n25, n28, n11669, n16896, 
+        n63_adj_2324, n18482, n6_adj_2325, n10281, n18528, n63_adj_2326, 
+        n18478, n18480, n10, n63_adj_2327, n11589, n11772;
+    wire [7:0]\data_out_frame2[20] ;   // verilog/coms.v(388[12:27])
+    
+    wire n12016, n7_adj_2328;
+    wire [7:0]\data_in_frame[0]_c ;   // verilog/coms.v(387[12:25])
+    
+    wire n11591, n11769, n11592, n18628, n12966, n83_adj_2329;
+    wire [7:0]\data_in_frame[3] ;   // verilog/coms.v(387[12:25])
+    
+    wire n19_adj_2330, n15_adj_2331, n2158, n18_adj_2332;
+    wire [7:0]\data_in_frame[2] ;   // verilog/coms.v(387[12:25])
+    
+    wire n18432, n24, n22_adj_2333, n23_adj_2334, n21_adj_2335, n18127, 
+        n15567, n11880, n65, n439, n18442, n4_adj_2337, n11766, 
+        tx_transmit_N_1779, n10_adj_2338, n10_adj_2339, n11593, n15004, 
+        n10_adj_2340, n11765, n16952, n11136, n20_adj_2341;
+    wire [7:0]\data_in_frame[1] ;   // verilog/coms.v(387[12:25])
+    
+    wire n23_adj_2342, n16951, n22_adj_2343, n27_adj_2344, n11959, 
+        n11988, n18_adj_2345, n18151, n11590, n11956, n26_adj_2346, 
+        n30_adj_2347, n17_adj_2348, n16755, n11682, n11554, n11683, 
+        n11684, n17244, n9, n17593;
+    wire [7:0]byte_transmit_counter_c;   // verilog/coms.v(19[11:32])
+    
+    wire n11762, n11685, n11686, n11687, n17589, n11688, n11680, 
+        n16885, n11689, n18657, n16918, n11690, n11691, n2_adj_2349, 
+        n1_adj_2350;
+    wire [31:0]n1536;
+    
+    wire n16873, n16874, n16950, n18664, n16917, n18742, n5_adj_2351, 
+        n19037, n3286, n18765, n18565, n17587, n16949;
+    wire [0:0]n4667;
+    wire [2:0]r_SM_Main_2__N_1837_adj_2408;
+    
+    wire n18570, n18567, n11692;
+    wire [0:0]n2707;
+    
+    wire n11465, n11670, n16895, n18636, n7847, n18_adj_2353, n11693, 
+        n2_adj_2354, n1_adj_2355, n11712, n27_adj_2356, n11711, n18737, 
+        n5_adj_2357, n19031, n11710, n2_adj_2358, n18781, n11709, 
+        n11708, n11707, n11706, n11705, n11704, n11573, n11703, 
+        n11702, n11701, n11700, n11699, n90, n11698;
+    wire [7:0]tx_transmit_N_1750_c;
+    
+    wire n11697, n68, n11696, n11551, n11695, n11694, n11552, 
+        n18633;
+    wire [7:0]tx2_data;   // verilog/coms.v(410[13:21])
+    wire [13:0]n6587;
+    
+    wire n16875, n18735, n18734, n18678, n1601;
+    wire [0:0]n2637;
+    
+    wire n18708, n20_adj_2359;
+    wire [0:0]n2602;
+    
+    wire n18755, n22_adj_2360, n18270, n4_adj_2361, n2_adj_2362, n4_adj_2363, 
+        n2_adj_2364, n4_adj_2365, n18269, n4_adj_2366, n2_adj_2367, 
+        n4_adj_2368, n2_adj_2369, n4_adj_2370, n2_adj_2371, n4_adj_2372, 
+        n11677, n11676, n11675, n11674, n4_adj_2373, n11673, n26_adj_2374, 
+        n11672, n11671, n42, n40, n16948, n41, n39, n44, n11664, 
+        n48, n11663, n11662, n43, n11661, n11660, n11659, n11658, 
+        n10957, n11657, n18703, n11656, n11655, n11654, n11653, 
+        n19_adj_2375, n11652, n11651, n11650;
+    wire [0:0]n2567;
+    
+    wire n10323, n18762, n18764, n11638, n18472, n11636, n11635, 
+        n11634;
+    wire [0:0]n2532;
+    
+    wire n16947, n11633, n11632, n11631, n18700, n19_adj_2376, n16946, 
+        n18681, n16916, n11630, n11629, n11626, n18697, n11625, 
+        n11624, n11623, n16945, n16944;
+    wire [0:0]n2497;
+    
+    wire n11621, n16943, n17591, tx2_active, n10546, n4_adj_2377, 
+        n10557, n10_adj_2378, n16872, n1_adj_2379, n136, n17585;
+    wire [0:0]n2462;
+    
+    wire n11620, n11619, n11618, n16915, n16894, n16942, n3_adj_2380, 
+        n7_adj_2383, n16893, n16941, n16892, n16914, n16891, n18687, 
+        n16884, n11617, n16940, n16913, n18679, n16883, n11616, 
+        n16890, n16912, n16880, n18618, n11549, n18782, n25_adj_2384, 
+        n7_adj_2385, n11610, n11611, n16878, n11612, n11613, n16939, 
+        n11614, n11615, n30_adj_2386, n14800, n18630, n18422, n1_adj_2387, 
+        n16911, n16938, n18616, n20_adj_2388, n15953, n16910, n16937, 
+        n16936, n34, n16935, n16909, n11174, n16934, n18675, n16908, 
+        n16933, n16932, n18268, n16907, n11609, n32, n33, n31_adj_2391, 
+        n18747, n11608, n16969, n16906;
+    wire [7:0]\data_out_frame2[19] ;   // verilog/coms.v(388[12:27])
+    
+    wire n16882, n16968, n11607, n11606, n11605, n11604, n11603, 
+        n16967, n16966, n11602, n18688, n16881, n18686, n16965, 
+        n16905, n11598, n176, n16964, n11597, n16904, n16963, 
+        n5_adj_2392, n11596, n11572, n16903, n3287, n18568, n16902, 
+        n11595, n11594, n18653, n18281, n16962, n16961, n16960, 
+        n16959, n11, n11183, n10723, n16958;
+    
+    SB_DFF \data_in_3[[3__1950  (.Q(\data_in[3] [3]), .C(CLK_c), .D(n11874));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_8[[0__1875  (.Q(\data_out[8] [0]), .C(CLK_c), .D(n11873));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 add_698_27_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [25]), .I2(GND_net), 
+            .I3(n16956), .O(n2_c)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_27_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i8813_3_lut_4_lut (.I0(n7_c), .I1(n18328), .I2(rx_data[2]), 
+            .I3(\data_in_frame[4] [2]), .O(n11599));
+    defparam i8813_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF \data_out_8[[1__1874  (.Q(\data_out[8] [1]), .C(CLK_c), .D(n11872));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_8[[2__1873  (.Q(\data_out[8] [2]), .C(CLK_c), .D(n11871));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_8[[3__1872  (.Q(\data_out[8] [3]), .C(CLK_c), .D(n11870));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_8[[4__1871  (.Q(\data_out[8] [4]), .C(CLK_c), .D(n11869));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_8[[5__1870  (.Q(\data_out[8] [5]), .C(CLK_c), .D(n11868));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 add_2200_9_lut (.I0(tx2_transmit_N_1799), .I1(byte_transmit_counter2[7]), 
+            .I2(GND_net), .I3(n16922), .O(n18654)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2200_9_lut.LUT_INIT = 16'h8228;
+    SB_DFF \data_out_8[[6__1869  (.Q(\data_out[8] [6]), .C(CLK_c), .D(n11864));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_in_1[[6__1963  (.Q(\data_in[1] [6]), .C(CLK_c), .D(n11863));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_0[[5__1934  (.Q(\data_out[0] [5]), .C(CLK_c), .D(n11571));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_0[[6__1933  (.Q(\data_out[0] [6]), .C(CLK_c), .D(n11570));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_0[[7__1932  (.Q(\data_out[0][7] ), .C(CLK_c), .D(n11569));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_in_1[[5__1964  (.Q(\data_in[1] [5]), .C(CLK_c), .D(n11862));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i8814_3_lut_4_lut (.I0(n7_c), .I1(n18328), .I2(rx_data[1]), 
+            .I3(\data_in_frame[4] [1]), .O(n11600));
+    defparam i8814_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF \data_in_1[[4__1965  (.Q(\data_in[1] [4]), .C(CLK_c), .D(n11861));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF delay_counter_i0_i1 (.Q(delay_counter[1]), .C(CLK_c), .D(n11738));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i8815_3_lut_4_lut (.I0(n7_c), .I1(n18328), .I2(rx_data[0]), 
+            .I3(\data_in_frame[4] [0]), .O(n11601));
+    defparam i8815_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF tx_active_prev_1850 (.Q(tx_active_prev), .C(CLK_c), .D(tx_active));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFSR tx_transmit_1851 (.Q(r_SM_Main_2__N_1837[0]), .C(CLK_c), .D(n18263), 
+            .R(n5222));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i11_3_lut (.I0(n21), .I1(n19), .I2(n20), .I3(GND_net), .O(n18211));   // verilog/coms.v(303[11:30])
+    defparam i11_3_lut.LUT_INIT = 16'hfefe;
+    SB_DFFE \data_out_7[[1__1882  (.Q(\data_out[7] [1]), .C(CLK_c), .E(n11210), 
+            .D(n2121[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_6[[7__1884  (.Q(\data_out[6] [7]), .C(CLK_c), .E(n11211), 
+            .D(n2191[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_6[[6__1885  (.Q(\data_out[6] [6]), .C(CLK_c), .E(n11211), 
+            .D(n2226[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_6[[5__1886  (.Q(\data_out[6] [5]), .C(CLK_c), .E(n11211), 
+            .D(n2261[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_6[[4__1887  (.Q(\data_out[6] [4]), .C(CLK_c), .E(n11211), 
+            .D(n2296[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_6[[3__1888  (.Q(\data_out[6] [3]), .C(CLK_c), .E(n11211), 
+            .D(n2331[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_6[[2__1889  (.Q(\data_out[6] [2]), .C(CLK_c), .E(n11211), 
+            .D(n2366[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_6[[1__1890  (.Q(\data_out[6] [1]), .C(CLK_c), .E(n11211), 
+            .D(n2401[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_6[[0__1891  (.Q(\data_out[6] [0]), .C(CLK_c), .E(n11211), 
+            .D(n2436[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE \data_out_5[[1__1898  (.Q(\data_out[5] [1]), .C(CLK_c), .E(n11211), 
+            .D(n2681[0]));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFSS \FRAME_MATCHER.state_i0  (.Q(\FRAME_MATCHER.state [0]), .C(CLK_c), 
+            .D(n17707), .S(n17819));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_1[[0__1931  (.Q(\data_out[1] [0]), .C(CLK_c), .D(n18131));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i2_3_lut_4_lut (.I0(\FRAME_MATCHER.state [1]), .I1(n11157), 
+            .I2(\FRAME_MATCHER.state [0]), .I3(\FRAME_MATCHER.state[2] ), 
+            .O(n63));   // verilog/coms.v(454[5:29])
+    defparam i2_3_lut_4_lut.LUT_INIT = 16'hfdff;
+    SB_LUT4 add_62_18_lut (.I0(\UART_TRANSMITTER.sp [16]), .I1(\UART_TRANSMITTER.sp [16]), 
+            .I2(n19017), .I3(n16900), .O(n11665)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_18_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 add_2200_8_lut (.I0(tx2_transmit_N_1799), .I1(byte_transmit_counter2[6]), 
+            .I2(GND_net), .I3(n16921), .O(n18655)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2200_8_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i15565_4_lut (.I0(n11172), .I1(n18516), .I2(n11148), .I3(n11157), 
+            .O(n1622));
+    defparam i15565_4_lut.LUT_INIT = 16'h8880;
+    SB_LUT4 i2_4_lut (.I0(n18293), .I1(n83), .I2(\UART_TRANSMITTER.state[1] ), 
+            .I3(\UART_TRANSMITTER.state[0] ), .O(n5558));
+    defparam i2_4_lut.LUT_INIT = 16'h0020;
+    SB_CARRY add_2200_8 (.CI(n16921), .I0(byte_transmit_counter2[6]), .I1(GND_net), 
+            .CO(n16922));
+    SB_LUT4 i11991_2_lut (.I0(\FRAME_MATCHER.state [0]), .I1(n10515), .I2(GND_net), 
+            .I3(GND_net), .O(\FRAME_MATCHER.state_31__N_1161 [0]));
+    defparam i11991_2_lut.LUT_INIT = 16'hbbbb;
+    SB_DFF delay_counter_i0_i2 (.Q(delay_counter[2]), .C(CLK_c), .D(n11841));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 select_373_Select_1_i3_2_lut (.I0(\FRAME_MATCHER.i [1]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_c));
+    defparam select_373_Select_1_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i16043_1_lut (.I0(n5558), .I1(GND_net), .I2(GND_net), .I3(GND_net), 
+            .O(n19017));
+    defparam i16043_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 select_373_Select_2_i3_2_lut (.I0(\FRAME_MATCHER.i [2]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2223));
+    defparam select_373_Select_2_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_3_i3_2_lut (.I0(\FRAME_MATCHER.i [3]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2224));
+    defparam select_373_Select_3_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_DFFSS \FRAME_MATCHER.i_i0  (.Q(\FRAME_MATCHER.i [0]), .C(CLK_c), 
+            .D(n2_adj_2225), .S(n3_adj_2226));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF delay_counter_i0_i3 (.Q(delay_counter[3]), .C(CLK_c), .D(n11744));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFSS byte_transmit_counter2_i0 (.Q(byte_transmit_counter2[0]), .C(CLK_c), 
+            .D(n2_adj_2227), .S(n4_c));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 select_373_Select_4_i3_2_lut (.I0(\FRAME_MATCHER.i [4]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2228));
+    defparam select_373_Select_4_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_5_i3_2_lut (.I0(\FRAME_MATCHER.i [5]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2229));
+    defparam select_373_Select_5_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_6_i3_2_lut (.I0(\FRAME_MATCHER.i [6]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2230));
+    defparam select_373_Select_6_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_DFF \data_out_1[[2__1929  (.Q(\data_out[1][2] ), .C(CLK_c), .D(n11567));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_1[[3__1928  (.Q(\data_out[1][3] ), .C(CLK_c), .D(n11566));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 select_373_Select_7_i3_2_lut (.I0(\FRAME_MATCHER.i [7]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2231));
+    defparam select_373_Select_7_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_DFF \data_out_1[[4__1927  (.Q(\data_out[1] [4]), .C(CLK_c), .D(n11565));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_1[[5__1926  (.Q(\data_out[1] [5]), .C(CLK_c), .D(n11564));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i15494_4_lut (.I0(n11150), .I1(n11161), .I2(n3811), .I3(n2093), 
+            .O(n18466));
+    defparam i15494_4_lut.LUT_INIT = 16'hfac8;
+    SB_DFF \data_out_1[[6__1925  (.Q(\data_out[1][6] ), .C(CLK_c), .D(n11563));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i1_4_lut (.I0(n2), .I1(\data_out[7] [0]), .I2(\UART_TRANSMITTER.sp [8]), 
+            .I3(n11210), .O(n11916));
+    defparam i1_4_lut.LUT_INIT = 16'h5044;
+    SB_DFFSS \FRAME_MATCHER.i_i31  (.Q(\FRAME_MATCHER.i [31]), .C(CLK_c), 
+            .D(n2_adj_2233), .S(n3_adj_2234));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i30  (.Q(\FRAME_MATCHER.i [30]), .C(CLK_c), 
+            .D(n2_adj_2235), .S(n3_adj_2236));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i29  (.Q(\FRAME_MATCHER.i [29]), .C(CLK_c), 
+            .D(n2_adj_2237), .S(n3_adj_2238));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i28  (.Q(\FRAME_MATCHER.i [28]), .C(CLK_c), 
+            .D(n2_adj_2239), .S(n3_adj_2240));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i27  (.Q(\FRAME_MATCHER.i [27]), .C(CLK_c), 
+            .D(n2_adj_2241), .S(n3_adj_2242));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i26  (.Q(\FRAME_MATCHER.i [26]), .C(CLK_c), 
+            .D(n2_adj_2243), .S(n3_adj_2244));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_2[[0__1923  (.Q(\data_out[2][0] ), .C(CLK_c), .D(n11562));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFSS \FRAME_MATCHER.i_i25  (.Q(\FRAME_MATCHER.i [25]), .C(CLK_c), 
+            .D(n2_c), .S(n3_adj_2245));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i24  (.Q(\FRAME_MATCHER.i [24]), .C(CLK_c), 
+            .D(n2_adj_2246), .S(n3_adj_2247));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i23  (.Q(\FRAME_MATCHER.i [23]), .C(CLK_c), 
+            .D(n2_adj_2248), .S(n3_adj_2249));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_698_27 (.CI(n16956), .I0(\FRAME_MATCHER.i [25]), .I1(GND_net), 
+            .CO(n16957));
+    SB_CARRY add_62_18 (.CI(n16900), .I0(\UART_TRANSMITTER.sp [16]), .I1(n19017), 
+            .CO(n16901));
+    SB_DFF \data_out_2[[1__1922  (.Q(\data_out[2] [1]), .C(CLK_c), .D(n11561));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF delay_counter_i0_i4 (.Q(delay_counter[4]), .C(CLK_c), .D(n11747));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFSS \FRAME_MATCHER.i_i22  (.Q(\FRAME_MATCHER.i [22]), .C(CLK_c), 
+            .D(n2_adj_2250), .S(n3_adj_2251));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_2[[2__1921  (.Q(\data_out[2][2] ), .C(CLK_c), .D(n11560));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_in_1[[3__1966  (.Q(\data_in[1] [3]), .C(CLK_c), .D(n11823));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i21  (.Q(\FRAME_MATCHER.i [21]), .C(CLK_c), 
+            .D(n2_adj_2252), .S(n3_adj_2253));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i20  (.Q(\FRAME_MATCHER.i [20]), .C(CLK_c), 
+            .D(n2_adj_2254), .S(n3_adj_2255));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i19  (.Q(\FRAME_MATCHER.i [19]), .C(CLK_c), 
+            .D(n2_adj_2256), .S(n3_adj_2257));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_2[[3__1920  (.Q(\data_out[2] [3]), .C(CLK_c), .D(n11559));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFSS \FRAME_MATCHER.i_i18  (.Q(\FRAME_MATCHER.i [18]), .C(CLK_c), 
+            .D(n2_adj_2258), .S(n3_adj_2259));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i17  (.Q(\FRAME_MATCHER.i [17]), .C(CLK_c), 
+            .D(n2_adj_2260), .S(n3_adj_2261));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i16  (.Q(\FRAME_MATCHER.i [16]), .C(CLK_c), 
+            .D(n2_adj_2262), .S(n3_adj_2263));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i15  (.Q(\FRAME_MATCHER.i [15]), .C(CLK_c), 
+            .D(n2_adj_2264), .S(n3_adj_2265));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2891[0]));   // verilog/coms.v(277[12] 378[6])
+    defparam i1_2_lut.LUT_INIT = 16'h2222;
+    SB_DFFSS \FRAME_MATCHER.i_i14  (.Q(\FRAME_MATCHER.i [14]), .C(CLK_c), 
+            .D(n2_adj_2266), .S(n3_adj_2267));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 select_373_Select_8_i3_2_lut (.I0(\FRAME_MATCHER.i [8]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2268));
+    defparam select_373_Select_8_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_DFFSS \FRAME_MATCHER.state_i31  (.Q(\FRAME_MATCHER.state [31]), .C(CLK_c), 
+            .D(n7_adj_2269), .S(n8));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i30  (.Q(\FRAME_MATCHER.state [30]), .C(CLK_c), 
+            .D(n18315), .S(n17745));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_3_lut (.I0(\FRAME_MATCHER.state [1]), .I1(n11157), 
+            .I2(\FRAME_MATCHER.state [0]), .I3(GND_net), .O(n11172));   // verilog/coms.v(454[5:29])
+    defparam i1_2_lut_3_lut.LUT_INIT = 16'hdfdf;
+    SB_DFFSS \FRAME_MATCHER.state_i29  (.Q(\FRAME_MATCHER.state [29]), .C(CLK_c), 
+            .D(n18312), .S(n17735));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i28  (.Q(\FRAME_MATCHER.state [28]), .C(CLK_c), 
+            .D(n7_adj_2270), .S(n8_adj_2271));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i27  (.Q(\FRAME_MATCHER.state [27]), .C(CLK_c), 
+            .D(n18303), .S(n17737));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i13  (.Q(\FRAME_MATCHER.i [13]), .C(CLK_c), 
+            .D(n2_adj_2272), .S(n3_adj_2273));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i26  (.Q(\FRAME_MATCHER.state [26]), .C(CLK_c), 
+            .D(n18304), .S(n17685));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i25  (.Q(\FRAME_MATCHER.state [25]), .C(CLK_c), 
+            .D(n18311), .S(n17681));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i24  (.Q(\FRAME_MATCHER.state [24]), .C(CLK_c), 
+            .D(n18314), .S(n17679));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i23  (.Q(\FRAME_MATCHER.state [23]), .C(CLK_c), 
+            .D(n18308), .S(n17673));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i22  (.Q(\FRAME_MATCHER.state [22]), .C(CLK_c), 
+            .D(n7_adj_2274), .S(n8_adj_2275));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i21  (.Q(\FRAME_MATCHER.state [21]), .C(CLK_c), 
+            .D(n7_adj_2276), .S(n8_adj_2277));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i20  (.Q(\FRAME_MATCHER.state [20]), .C(CLK_c), 
+            .D(n18313), .S(n17729));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i19  (.Q(\FRAME_MATCHER.state [19]), .C(CLK_c), 
+            .D(n18310), .S(n17675));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i18  (.Q(\FRAME_MATCHER.state [18]), .C(CLK_c), 
+            .D(n18302), .S(n17741));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i17  (.Q(\FRAME_MATCHER.state [17]), .C(CLK_c), 
+            .D(n14700), .S(n14697));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i16  (.Q(\FRAME_MATCHER.state [16]), .C(CLK_c), 
+            .D(n7_adj_2278), .S(n8_adj_2279));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i15  (.Q(\FRAME_MATCHER.state [15]), .C(CLK_c), 
+            .D(n7_adj_2280), .S(n8_adj_2281));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i14  (.Q(\FRAME_MATCHER.state [14]), .C(CLK_c), 
+            .D(n14738), .S(n14731));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i13  (.Q(\FRAME_MATCHER.state [13]), .C(CLK_c), 
+            .D(n7_adj_2282), .S(n8_adj_2283));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i12  (.Q(\FRAME_MATCHER.state [12]), .C(CLK_c), 
+            .D(n18301), .S(n17743));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i11  (.Q(\FRAME_MATCHER.state [11]), .C(CLK_c), 
+            .D(n7_adj_2284), .S(n8_adj_2285));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i10  (.Q(\FRAME_MATCHER.state [10]), .C(CLK_c), 
+            .D(n18309), .S(n17709));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i9  (.Q(\FRAME_MATCHER.state [9]), .C(CLK_c), 
+            .D(n7_adj_2286), .S(n8_adj_2287));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i8  (.Q(\FRAME_MATCHER.state [8]), .C(CLK_c), 
+            .D(n18306), .S(n17671));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i7  (.Q(\FRAME_MATCHER.state [7]), .C(CLK_c), 
+            .D(n18305), .S(n17739));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i6  (.Q(\FRAME_MATCHER.state [6]), .C(CLK_c), 
+            .D(n7_adj_2288), .S(n8_adj_2289));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i5  (.Q(\FRAME_MATCHER.state [5]), .C(CLK_c), 
+            .D(n7_adj_2290), .S(n8_adj_2291));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i4  (.Q(\FRAME_MATCHER.state [4]), .C(CLK_c), 
+            .D(n7_adj_2292), .S(n8_adj_2293));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.state_i3  (.Q(\FRAME_MATCHER.state [3]), .C(CLK_c), 
+            .D(n18307), .S(n17677));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS \FRAME_MATCHER.i_i12  (.Q(\FRAME_MATCHER.i [12]), .C(CLK_c), 
+            .D(n2_adj_2294), .S(n3_adj_2295));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFE byte_transmit_counter__i0 (.Q(byte_transmit_counter[0]), .C(CLK_c), 
+            .E(VCC_net), .D(n17597));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 add_62_17_lut (.I0(\UART_TRANSMITTER.sp [15]), .I1(\UART_TRANSMITTER.sp [15]), 
+            .I2(n19017), .I3(n16899), .O(n11666)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_17_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i8799_3_lut_4_lut (.I0(n7_c), .I1(n18333), .I2(rx_data[7]), 
+            .I3(\data_in_frame[5] [7]), .O(n11585));
+    defparam i8799_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 byte_transmit_counter_2__bdd_4_lut (.I0(byte_transmit_counter[2]), 
+            .I1(\data_out[3] [0]), .I2(\data_out[7] [0]), .I3(byte_transmit_counter[1]), 
+            .O(n19097));
+    defparam byte_transmit_counter_2__bdd_4_lut.LUT_INIT = 16'he4aa;
+    SB_LUT4 n19097_bdd_4_lut (.I0(n19097), .I1(\data_out[5] [0]), .I2(\data_out[1] [0]), 
+            .I3(byte_transmit_counter[1]), .O(n19100));
+    defparam n19097_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 n19085_bdd_4_lut (.I0(n19079), .I1(n4858[4]), .I2(\data_out_frame2[0] [4]), 
+            .I3(n6394), .O(n19088));
+    defparam n19085_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 n19079_bdd_4_lut (.I0(n19079), .I1(n4858[3]), .I2(\data_out_frame2[0] [3]), 
+            .I3(n6394), .O(n19082));
+    defparam n19079_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 n19073_bdd_4_lut (.I0(n19079), .I1(n4858[2]), .I2(\data_out_frame2[0] [2]), 
+            .I3(n6394), .O(n19076));
+    defparam n19073_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 byte_transmit_counter_1__bdd_4_lut (.I0(byte_transmit_counter[1]), 
+            .I1(n18766), .I2(n13636), .I3(byte_transmit_counter[0]), .O(n19067));
+    defparam byte_transmit_counter_1__bdd_4_lut.LUT_INIT = 16'he4aa;
+    SB_LUT4 n19067_bdd_4_lut (.I0(n19067), .I1(n18778), .I2(n18777), .I3(byte_transmit_counter[0]), 
+            .O(n19070));
+    defparam n19067_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_16085 (.I0(byte_transmit_counter[1]), 
+            .I1(n18761), .I2(n5_c), .I3(byte_transmit_counter[2]), .O(n19061));
+    defparam byte_transmit_counter_1__bdd_4_lut_16085.LUT_INIT = 16'he4aa;
+    SB_LUT4 n19061_bdd_4_lut (.I0(n19061), .I1(n2_adj_2296), .I2(n1_c), 
+            .I3(byte_transmit_counter[2]), .O(n19064));
+    defparam n19061_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 i1_2_lut_adj_181 (.I0(byte_transmit_counter2[3]), .I1(byte_transmit_counter2[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n22));   // verilog/coms.v(407[12:34])
+    defparam i1_2_lut_adj_181.LUT_INIT = 16'heeee;
+    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_16080 (.I0(byte_transmit_counter[1]), 
+            .I1(n18754), .I2(n5_adj_2297), .I3(byte_transmit_counter[2]), 
+            .O(n19055));
+    defparam byte_transmit_counter_1__bdd_4_lut_16080.LUT_INIT = 16'he4aa;
+    SB_LUT4 n19055_bdd_4_lut (.I0(n19055), .I1(n2_adj_2298), .I2(n1_adj_2299), 
+            .I3(byte_transmit_counter[2]), .O(n19058));
+    defparam n19055_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_16075 (.I0(byte_transmit_counter[1]), 
+            .I1(n18749), .I2(n5_adj_2300), .I3(byte_transmit_counter[2]), 
+            .O(n19049));
+    defparam byte_transmit_counter_1__bdd_4_lut_16075.LUT_INIT = 16'he4aa;
+    SB_LUT4 n19049_bdd_4_lut (.I0(n19049), .I1(n18780), .I2(n18779), .I3(byte_transmit_counter[2]), 
+            .O(n19052));
+    defparam n19049_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 i12325_4_lut (.I0(byte_transmit_counter2[7]), .I1(byte_transmit_counter2[5]), 
+            .I2(byte_transmit_counter2[6]), .I3(n14), .O(tx2_transmit_N_1799));
+    defparam i12325_4_lut.LUT_INIT = 16'h0001;
+    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_16070 (.I0(byte_transmit_counter[1]), 
+            .I1(n18746), .I2(n5_adj_2301), .I3(byte_transmit_counter[2]), 
+            .O(n19043));
+    defparam byte_transmit_counter_1__bdd_4_lut_16070.LUT_INIT = 16'he4aa;
+    SB_DFFSS \FRAME_MATCHER.i_i11  (.Q(\FRAME_MATCHER.i [11]), .C(CLK_c), 
+            .D(n2_adj_2302), .S(n3_adj_2303));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_698_26_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [24]), .I2(GND_net), 
+            .I3(n16955), .O(n2_adj_2246)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_26_lut.LUT_INIT = 16'h8228;
+    SB_DFFSS \FRAME_MATCHER.i_i10  (.Q(\FRAME_MATCHER.i [10]), .C(CLK_c), 
+            .D(n2_adj_2304), .S(n3_adj_2305));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_62_17 (.CI(n16899), .I0(\UART_TRANSMITTER.sp [15]), .I1(n19017), 
+            .CO(n16900));
+    SB_LUT4 i15486_2_lut (.I0(\data_in[2] [2]), .I1(\data_in[0] [3]), .I2(GND_net), 
+            .I3(GND_net), .O(n18458));
+    defparam i15486_2_lut.LUT_INIT = 16'h8888;
+    SB_DFFSS \FRAME_MATCHER.i_i9  (.Q(\FRAME_MATCHER.i [9]), .C(CLK_c), 
+            .D(n2_adj_2306), .S(n3_adj_2307));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i15559_4_lut (.I0(\data_in[1] [5]), .I1(\data_in[1] [0]), .I2(\data_in[3] [0]), 
+            .I3(n18458), .O(n18534));
+    defparam i15559_4_lut.LUT_INIT = 16'h8000;
+    SB_LUT4 select_373_Select_9_i3_2_lut (.I0(\FRAME_MATCHER.i [9]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2307));
+    defparam select_373_Select_9_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_10_i3_2_lut (.I0(\FRAME_MATCHER.i [10]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2305));
+    defparam select_373_Select_10_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_DFF \data_out_2[[4__1919  (.Q(\data_out[2] [4]), .C(CLK_c), .D(n11558));   // verilog/coms.v(277[12] 378[6])
+    SB_CARRY add_62_6 (.CI(n16888), .I0(\UART_TRANSMITTER.sp [4]), .I1(n19017), 
+            .CO(n16889));
+    SB_LUT4 i4_4_lut (.I0(\data_in[1] [4]), .I1(n18534), .I2(\data_in[2] [4]), 
+            .I3(n6_c), .O(n10987));
+    defparam i4_4_lut.LUT_INIT = 16'hfffb;
+    SB_LUT4 select_373_Select_11_i3_2_lut (.I0(\FRAME_MATCHER.i [11]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2303));
+    defparam select_373_Select_11_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_3_i5_3_lut (.I0(\data_out[6] [3]), 
+            .I1(\data_out[7][3] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n5_adj_2301));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_3_i5_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15981_2_lut (.I0(\data_out[5] [3]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18746));
+    defparam i15981_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i15985_2_lut (.I0(\data_out[1] [4]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18779));
+    defparam i15985_2_lut.LUT_INIT = 16'hbbbb;
+    SB_LUT4 i15884_2_lut (.I0(\data_out[2] [4]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18780));
+    defparam i15884_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_4_i5_3_lut (.I0(\data_out[6] [4]), 
+            .I1(\data_out[7] [4]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n5_adj_2300));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_4_i5_3_lut.LUT_INIT = 16'hcaca;
+    SB_DFF \data_out_2[[5__1918  (.Q(\data_out[2][5] ), .C(CLK_c), .D(n11557));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i15880_2_lut (.I0(\data_out[5] [4]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18749));
+    defparam i15880_2_lut.LUT_INIT = 16'h8888;
+    SB_DFF \data_out_2[[6__1917  (.Q(\data_out[2][6] ), .C(CLK_c), .D(n11556));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFSS \FRAME_MATCHER.i_i8  (.Q(\FRAME_MATCHER.i [8]), .C(CLK_c), 
+            .D(n2_adj_2308), .S(n3_adj_2268));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i13243_3_lut (.I0(\data_out[0] [5]), .I1(\data_out[1] [5]), 
+            .I2(byte_transmit_counter[0]), .I3(GND_net), .O(n1_adj_2299));   // verilog/coms.v(19[11:32])
+    defparam i13243_3_lut.LUT_INIT = 16'hcaca;
     SB_LUT4 byte_transmit_counter_4__I_0_Mux_5_i2_3_lut (.I0(\data_out[2][5] ), 
-            .I1(\data_out[3][5] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n2));   // verilog/coms.v(257[28:49])
+            .I1(\data_out[3] [5]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n2_adj_2298));   // verilog/coms.v(253[28:49])
     defparam byte_transmit_counter_4__I_0_Mux_5_i2_3_lut.LUT_INIT = 16'hcaca;
     SB_LUT4 byte_transmit_counter_4__I_0_Mux_5_i5_3_lut (.I0(\data_out[6] [5]), 
             .I1(\data_out[7] [5]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n5_adj_2196));   // verilog/coms.v(257[28:49])
+            .O(n5_adj_2297));   // verilog/coms.v(253[28:49])
     defparam byte_transmit_counter_4__I_0_Mux_5_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 add_977_8_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [6]), .I1(\FRAME_MATCHER.i [6]), 
-            .I2(n18631), .I3(n16491), .O(\FRAME_MATCHER.i_31__N_1278 [6])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_8_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i15657_2_lut (.I0(\data_out[5] [5]), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18335));
-    defparam i15657_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i15158_4_lut (.I0(n14068), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(tx_transmit_N_1947[3]), .I3(n155), .O(n18019));
-    defparam i15158_4_lut.LUT_INIT = 16'hfaea;
-    SB_DFFSR tx_transmit_2168 (.Q(r_SM_Main_2__N_2034[0]), .C(CLK_c), .D(n17146), 
-            .R(n4806));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i1_2_lut_adj_437 (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state_7__N_1223[1] ), 
-            .I2(GND_net), .I3(GND_net), .O(n4_c));
-    defparam i1_2_lut_adj_437.LUT_INIT = 16'heeee;
-    SB_LUT4 i15608_3_lut (.I0(\data_out_frame2[0] [1]), .I1(byte_transmit_counter2[0]), 
-            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18256));
-    defparam i15608_3_lut.LUT_INIT = 16'hcece;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_1_i5_3_lut (.I0(\data_out_frame2[6] [1]), 
-            .I1(\data_out_frame2[7] [1]), .I2(byte_transmit_counter2[0]), 
-            .I3(GND_net), .O(n5_adj_2197));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_1_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_1_i6_4_lut (.I0(\data_out_frame2[5] [1]), 
-            .I1(n5_adj_2197), .I2(byte_transmit_counter2[1]), .I3(byte_transmit_counter2[0]), 
-            .O(n6_c));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_1_i6_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 i1_2_lut_3_lut_adj_438 (.I0(tx_transmit_N_1947[3]), .I1(n14068), 
-            .I2(n12227), .I3(GND_net), .O(n98));
-    defparam i1_2_lut_3_lut_adj_438.LUT_INIT = 16'h0e0e;
-    SB_LUT4 i15139_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(n12227), .I3(n18019), .O(n17998));
-    defparam i15139_4_lut.LUT_INIT = 16'h2022;
-    SB_DFFE \data_out_7[[6__2194  (.Q(\data_out[7] [6]), .C(CLK_c), .E(VCC_net), 
-            .D(n11373));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i2_4_lut (.I0(n9), .I1(n17998), .I2(n4_c), .I3(n10973), 
-            .O(n5341));
-    defparam i2_4_lut.LUT_INIT = 16'h3200;
-    SB_DFFE \data_out_7[[3__2197  (.Q(\data_out[7] [3]), .C(CLK_c), .E(n11016), 
-            .D(n2031[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_7[[2__2198  (.Q(\data_out[7] [2]), .C(CLK_c), .E(n11016), 
-            .D(n2066[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_7[[1__2199  (.Q(\data_out[7] [1]), .C(CLK_c), .E(n11016), 
-            .D(n2101[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_7[[0__2200  (.Q(\data_out[7] [0]), .C(CLK_c), .E(n11016), 
-            .D(n2136[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_6[[7__2201  (.Q(\data_out[6] [7]), .C(CLK_c), .E(n11017), 
-            .D(n2171[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_6[[6__2202  (.Q(\data_out[6] [6]), .C(CLK_c), .E(n11017), 
-            .D(n2206[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_6[[5__2203  (.Q(\data_out[6] [5]), .C(CLK_c), .E(n11017), 
-            .D(n2241[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_6[[4__2204  (.Q(\data_out[6] [4]), .C(CLK_c), .E(n11017), 
-            .D(n2276[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_6[[3__2205  (.Q(\data_out[6] [3]), .C(CLK_c), .E(n11017), 
-            .D(n2311[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_6[[2__2206  (.Q(\data_out[6] [2]), .C(CLK_c), .E(n11017), 
-            .D(n2346[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_6[[1__2207  (.Q(\data_out[6] [1]), .C(CLK_c), .E(n11017), 
-            .D(n2381[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_5[[1__2215  (.Q(\data_out[5][1] ), .C(CLK_c), .E(n11017), 
-            .D(n2661[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15899 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[14] [4]), .I2(\data_out_frame2[15] [4]), 
-            .I3(byte_transmit_counter2[1]), .O(n18783));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15899.LUT_INIT = 16'he4aa;
-    SB_DFFE \data_out_1[[1__2247  (.Q(\data_out[1] [1]), .C(CLK_c), .E(n11017), 
-            .D(n3256[0]));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_7[[5__2195  (.Q(\data_out[7] [5]), .C(CLK_c), .E(VCC_net), 
-            .D(n11370));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFSS byte_transmit_counter2_i7 (.Q(byte_transmit_counter2[7]), .C(CLK_c), 
-            .D(n2_adj_2198), .S(n4_adj_2199));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i11047_3_lut (.I0(byte_transmit_counter2[2]), .I1(byte_transmit_counter2[4]), 
-            .I2(byte_transmit_counter2[3]), .I3(GND_net), .O(n13808));
-    defparam i11047_3_lut.LUT_INIT = 16'hc8c8;
-    SB_DFFE \data_out_7[[4__2196  (.Q(\data_out[7] [4]), .C(CLK_c), .E(VCC_net), 
-            .D(n11367));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 mux_720_i1_4_lut (.I0(n18184), .I1(\rand_setpoint[9] ), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[0] ), .O(n2101[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_720_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i3_4_lut_adj_439 (.I0(byte_transmit_counter2[6]), .I1(byte_transmit_counter2[7]), 
-            .I2(byte_transmit_counter2[5]), .I3(n13808), .O(n14064));
-    defparam i3_4_lut_adj_439.LUT_INIT = 16'hfffe;
-    SB_DFFSS byte_transmit_counter2_i6 (.Q(byte_transmit_counter2[6]), .C(CLK_c), 
-            .D(n2_adj_2200), .S(n4_adj_2201));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i11_4_lut_adj_440 (.I0(byte_transmit_counter[1]), .I1(tx_transmit_N_1947_c[1]), 
-            .I2(n10973), .I3(n5341), .O(n17153));   // verilog/coms.v(19[11:32])
-    defparam i11_4_lut_adj_440.LUT_INIT = 16'h0aca;
-    SB_LUT4 i15522_2_lut (.I0(\rand_setpoint[10] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n18199));   // verilog/coms.v(283[4] 369[11])
-    defparam i15522_2_lut.LUT_INIT = 16'h8888;
-    SB_DFFSS byte_transmit_counter2_i5 (.Q(byte_transmit_counter2[5]), .C(CLK_c), 
-            .D(n2_adj_2202), .S(n4_adj_2203));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS byte_transmit_counter2_i4 (.Q(byte_transmit_counter2[4]), .C(CLK_c), 
-            .D(n17335), .S(n4_adj_2204));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_out_3[[7__2225  (.Q(\data_out[3][7] ), .C(CLK_c), .D(n11324));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i11300_1_lut (.I0(n14064), .I1(GND_net), .I2(GND_net), .I3(GND_net), 
-            .O(tx2_transmit_N_1996));
-    defparam i11300_1_lut.LUT_INIT = 16'h5555;
-    SB_LUT4 i9522_4_lut (.I0(byte_transmit_counter_c[5]), .I1(tx_transmit_N_1947_c[5]), 
-            .I2(n10973), .I3(n5341), .O(n11556));
-    defparam i9522_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 add_2506_8_lut (.I0(GND_net), .I1(\byte_transmit_counter[6] ), 
-            .I2(GND_net), .I3(n16522), .O(\tx_transmit_N_1947[6] )) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2506_8_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i1_4_lut (.I0(\FRAME_MATCHER.i_31__N_1272 ), .I1(n18362), .I2(byte_transmit_counter2[4]), 
-            .I3(n12359), .O(n17335));
-    defparam i1_4_lut.LUT_INIT = 16'ha088;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[14] [0]), .I2(\data_out_frame2[15] [0]), 
-            .I3(byte_transmit_counter2[1]), .O(n18897));
-    defparam byte_transmit_counter2_0__bdd_4_lut.LUT_INIT = 16'he4aa;
-    SB_LUT4 i1_2_lut_3_lut_adj_441 (.I0(tx_transmit_N_1947[3]), .I1(n14068), 
-            .I2(n85), .I3(GND_net), .O(n129));
-    defparam i1_2_lut_3_lut_adj_441.LUT_INIT = 16'hfefe;
-    SB_CARRY add_977_22 (.CI(n16505), .I0(\FRAME_MATCHER.i [20]), .I1(n18631), 
-            .CO(n16506));
-    SB_LUT4 n18897_bdd_4_lut (.I0(n18897), .I1(\data_out_frame2[13] [0]), 
-            .I2(\data_out_frame2[12] [0]), .I3(byte_transmit_counter2[1]), 
-            .O(n18057));
-    defparam n18897_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15988 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[10] [0]), .I2(\data_out_frame2[11] [0]), 
-            .I3(byte_transmit_counter2[1]), .O(n18891));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15988.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18891_bdd_4_lut (.I0(n18891), .I1(\data_out_frame2[9] [0]), 
-            .I2(\data_out_frame2[8] [0]), .I3(byte_transmit_counter2[1]), 
-            .O(n18060));
-    defparam n18891_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_7_i8_3_lut (.I0(\data_out[8] [7]), 
-            .I1(\data_out[9] [7]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n8_adj_2205));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_7_i8_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 mux_694_i1_4_lut (.I0(data_out_7__2__N_447), .I1(n18199), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[2] ), .O(n2066[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_694_i1_4_lut.LUT_INIT = 16'hc5c0;
-    SB_LUT4 i15579_3_lut_4_lut (.I0(tx_transmit_N_1947[3]), .I1(n14068), 
-            .I2(\UART_TRANSMITTER.state[2] ), .I3(n85), .O(n18259));
-    defparam i15579_3_lut_4_lut.LUT_INIT = 16'hefee;
-    SB_LUT4 byte_transmit_counter2_2__bdd_4_lut (.I0(byte_transmit_counter2[2]), 
-            .I1(n18810), .I2(n18798), .I3(byte_transmit_counter2[3]), 
-            .O(n18885));
-    defparam byte_transmit_counter2_2__bdd_4_lut.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18783_bdd_4_lut (.I0(n18783), .I1(\data_out_frame2[13] [4]), 
-            .I2(\data_out_frame2[12] [4]), .I3(byte_transmit_counter2[1]), 
-            .O(n18161));
-    defparam n18783_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_7_i10_4_lut (.I0(n8_adj_2205), 
-            .I1(\data_out[10] [7]), .I2(byte_transmit_counter[1]), .I3(byte_transmit_counter[0]), 
-            .O(n10_adj_2));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_7_i10_4_lut.LUT_INIT = 16'h0aca;
-    SB_CARRY add_977_2 (.CI(VCC_net), .I0(\FRAME_MATCHER.i [0]), .I1(n18631), 
-            .CO(n16486));
-    SB_CARRY add_2510_7 (.CI(n16483), .I0(byte_transmit_counter2[5]), .I1(GND_net), 
-            .CO(n16484));
-    SB_LUT4 add_2510_6_lut (.I0(tx2_transmit_N_1996), .I1(byte_transmit_counter2[4]), 
-            .I2(GND_net), .I3(n16482), .O(n18362)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2510_6_lut.LUT_INIT = 16'h8228;
-    SB_CARRY add_2506_8 (.CI(n16522), .I0(\byte_transmit_counter[6] ), .I1(GND_net), 
-            .CO(n16523));
-    SB_LUT4 add_2506_7_lut (.I0(GND_net), .I1(byte_transmit_counter_c[5]), 
-            .I2(GND_net), .I3(n16521), .O(tx_transmit_N_1947_c[5])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2506_7_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_977_8 (.CI(n16491), .I0(\FRAME_MATCHER.i [6]), .I1(n18631), 
-            .CO(n16492));
-    SB_LUT4 add_977_21_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [19]), .I1(\FRAME_MATCHER.i [19]), 
-            .I2(n18631), .I3(n16504), .O(\FRAME_MATCHER.i_31__N_1278 [19])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_21_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i15532_2_lut (.I0(\rand_setpoint[11] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n18201));   // verilog/coms.v(283[4] 369[11])
-    defparam i15532_2_lut.LUT_INIT = 16'h8888;
-    SB_CARRY add_2510_4 (.CI(n16480), .I0(byte_transmit_counter2[2]), .I1(GND_net), 
-            .CO(n16481));
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_6_i8_3_lut (.I0(\data_out[8] [6]), 
-            .I1(\data_out[9] [6]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n8_adj_2207));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_6_i8_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 add_2510_9_lut (.I0(tx2_transmit_N_1996), .I1(byte_transmit_counter2[7]), 
-            .I2(GND_net), .I3(n16485), .O(n18318)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2510_9_lut.LUT_INIT = 16'h8228;
-    SB_LUT4 add_977_7_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [5]), .I1(\FRAME_MATCHER.i [5]), 
-            .I2(n18631), .I3(n16490), .O(\FRAME_MATCHER.i_31__N_1278 [5])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_7_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_6_i10_4_lut (.I0(n8_adj_2207), 
-            .I1(\data_out[10][6] ), .I2(byte_transmit_counter[1]), .I3(byte_transmit_counter[0]), 
-            .O(n10_adj_3));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_6_i10_4_lut.LUT_INIT = 16'h0aca;
-    SB_CARRY add_2510_6 (.CI(n16482), .I0(byte_transmit_counter2[4]), .I1(GND_net), 
-            .CO(n16483));
-    SB_LUT4 add_2510_5_lut (.I0(tx2_transmit_N_1996), .I1(byte_transmit_counter2[3]), 
-            .I2(GND_net), .I3(n16481), .O(n18315)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2510_5_lut.LUT_INIT = 16'h8228;
-    SB_LUT4 add_2510_3_lut (.I0(tx2_transmit_N_1996), .I1(byte_transmit_counter2[1]), 
-            .I2(GND_net), .I3(n16479), .O(n18253)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2510_3_lut.LUT_INIT = 16'h8228;
-    SB_CARRY add_2506_7 (.CI(n16521), .I0(byte_transmit_counter_c[5]), .I1(GND_net), 
-            .CO(n16522));
-    SB_LUT4 delay_counter_2484_add_4_15_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[13]), .I3(n16646), .O(n61[13])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_15_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 n18885_bdd_4_lut (.I0(n18885), .I1(n6_c), .I2(n18256), .I3(byte_transmit_counter2[3]), 
-            .O(n18888));
-    defparam n18885_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 delay_counter_2484_add_4_14_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[12]), .I3(n16645), .O(n61[12])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_14_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15983 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[10] [4]), .I2(\data_out_frame2[11] [4]), 
-            .I3(byte_transmit_counter2[1]), .O(n18879));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15983.LUT_INIT = 16'he4aa;
-    SB_CARRY delay_counter_2484_add_4_14 (.CI(n16645), .I0(GND_net), .I1(delay_counter[12]), 
-            .CO(n16646));
-    SB_LUT4 n18879_bdd_4_lut (.I0(n18879), .I1(\data_out_frame2[9] [4]), 
-            .I2(\data_out_frame2[8] [4]), .I3(byte_transmit_counter2[1]), 
-            .O(n18160));
-    defparam n18879_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 delay_counter_2484_add_4_13_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[11]), .I3(n16644), .O(n61[11])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_13_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 byte_transmit_counter_1__bdd_4_lut (.I0(byte_transmit_counter[1]), 
-            .I1(n18335), .I2(n5_adj_2196), .I3(byte_transmit_counter[2]), 
-            .O(n18873));
-    defparam byte_transmit_counter_1__bdd_4_lut.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18873_bdd_4_lut (.I0(n18873), .I1(n2), .I2(n18189), .I3(byte_transmit_counter[2]), 
-            .O(n18876));
-    defparam n18873_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_CARRY delay_counter_2484_add_4_13 (.CI(n16644), .I0(GND_net), .I1(delay_counter[11]), 
-            .CO(n16645));
-    SB_LUT4 delay_counter_2484_add_4_12_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[10]), .I3(n16643), .O(n61[10])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_12_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY delay_counter_2484_add_4_12 (.CI(n16643), .I0(GND_net), .I1(delay_counter[10]), 
-            .CO(n16644));
-    SB_LUT4 delay_counter_2484_add_4_11_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[9]), .I3(n16642), .O(n61[9])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_11_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_5_i8_3_lut (.I0(\data_out[8] [5]), 
-            .I1(\data_out[9] [5]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n8_adj_2209));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_5_i8_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_5_i10_4_lut (.I0(n8_adj_2209), 
-            .I1(\data_out[10] [5]), .I2(byte_transmit_counter[1]), .I3(byte_transmit_counter[0]), 
-            .O(n10_adj_4));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_5_i10_4_lut.LUT_INIT = 16'h0aca;
-    SB_CARRY delay_counter_2484_add_4_11 (.CI(n16642), .I0(GND_net), .I1(delay_counter[9]), 
-            .CO(n16643));
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_4_i8_3_lut (.I0(\data_out[8] [4]), 
-            .I1(\data_out[9] [4]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n8_adj_2211));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_4_i8_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_4_i10_4_lut (.I0(n8_adj_2211), 
-            .I1(\data_out[10] [4]), .I2(byte_transmit_counter[1]), .I3(byte_transmit_counter[0]), 
-            .O(n10_adj_5));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_4_i10_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFFE \data_out_6[[0__2208  (.Q(\data_out[6][0] ), .C(CLK_c), .E(VCC_net), 
-            .D(n17533));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 delay_counter_2484_add_4_10_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[8]), .I3(n16641), .O(n61[8])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_10_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY delay_counter_2484_add_4_10 (.CI(n16641), .I0(GND_net), .I1(delay_counter[8]), 
-            .CO(n16642));
-    SB_DFFSR tx2_transmit_2261 (.Q(r_SM_Main_2__N_2034_adj_2457[0]), .C(CLK_c), 
-            .D(n17447), .R(n10513));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_15968 (.I0(byte_transmit_counter[1]), 
-            .I1(n18334), .I2(n5_adj_2214), .I3(byte_transmit_counter[2]), 
-            .O(n18867));
-    defparam byte_transmit_counter_1__bdd_4_lut_15968.LUT_INIT = 16'he4aa;
-    SB_DFFESS \data_out_5[[0__2216  (.Q(data_out_6__1__N_537), .C(CLK_c), 
-            .E(n11017), .D(n2687[0]), .S(n11277));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 delay_counter_2484_add_4_9_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[7]), .I3(n16640), .O(n61[7])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_9_lut.LUT_INIT = 16'hC33C;
-    SB_DFFESS \data_out_5[[2__2214  (.Q(\data_out[5] [2]), .C(CLK_c), .E(n11017), 
-            .D(n2617[0]), .S(n11277));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFESS \data_out_5[[3__2213  (.Q(\data_out[5] [3]), .C(CLK_c), .E(n11017), 
-            .D(n2582[0]), .S(n11277));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFESS \data_out_5[[4__2212  (.Q(\data_out[5] [4]), .C(CLK_c), .E(n11017), 
-            .D(n2547[0]), .S(n11277));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFESS \data_out_5[[5__2211  (.Q(\data_out[5] [5]), .C(CLK_c), .E(n11017), 
-            .D(n2512[0]), .S(n11277));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFESS \data_out_5[[6__2210  (.Q(data_out_7__2__N_447), .C(CLK_c), 
-            .E(n11017), .D(n2477[0]), .S(n11277));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFESS \data_out_5[[7__2209  (.Q(data_out_7__3__N_441), .C(CLK_c), 
-            .E(n11017), .D(n2442[0]), .S(n11277));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFSS byte_transmit_counter2_i3 (.Q(byte_transmit_counter2[3]), .C(CLK_c), 
-            .D(n2_adj_2215), .S(n4_adj_2216));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 n18867_bdd_4_lut (.I0(n18867), .I1(n18191), .I2(n18190), .I3(byte_transmit_counter[2]), 
-            .O(n18870));
-    defparam n18867_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter2_2__bdd_4_lut_15943 (.I0(byte_transmit_counter2[2]), 
-            .I1(n18762), .I2(n18708), .I3(byte_transmit_counter2[3]), 
-            .O(n18777));
-    defparam byte_transmit_counter2_2__bdd_4_lut_15943.LUT_INIT = 16'he4aa;
-    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_15963 (.I0(byte_transmit_counter[1]), 
-            .I1(n18365), .I2(n5_adj_2217), .I3(byte_transmit_counter[2]), 
-            .O(n18861));
-    defparam byte_transmit_counter_1__bdd_4_lut_15963.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18777_bdd_4_lut (.I0(n18777), .I1(n6_adj_2218), .I2(n18308), 
-            .I3(byte_transmit_counter2[3]), .O(n18780));
-    defparam n18777_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 n18861_bdd_4_lut (.I0(n18861), .I1(n18377), .I2(n18376), .I3(byte_transmit_counter[2]), 
-            .O(n18864));
-    defparam n18861_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter2_2__bdd_4_lut_15889 (.I0(byte_transmit_counter2[2]), 
-            .I1(n18160), .I2(n18161), .I3(byte_transmit_counter2[3]), 
-            .O(n18771));
-    defparam byte_transmit_counter2_2__bdd_4_lut_15889.LUT_INIT = 16'he4aa;
-    SB_CARRY delay_counter_2484_add_4_9 (.CI(n16640), .I0(GND_net), .I1(delay_counter[7]), 
-            .CO(n16641));
-    SB_LUT4 n18771_bdd_4_lut (.I0(n18771), .I1(n18068), .I2(n18067), .I3(byte_transmit_counter2[3]), 
-            .O(n18774));
-    defparam n18771_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter2_2__bdd_4_lut_15884 (.I0(byte_transmit_counter2[2]), 
-            .I1(n18648), .I2(n18642), .I3(byte_transmit_counter2[3]), 
-            .O(n18765));
-    defparam byte_transmit_counter2_2__bdd_4_lut_15884.LUT_INIT = 16'he4aa;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15973 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[10] [7]), .I2(\data_out_frame2[11] [7]), 
-            .I3(byte_transmit_counter2[1]), .O(n18855));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15973.LUT_INIT = 16'he4aa;
-    SB_LUT4 mux_668_i1_4_lut (.I0(data_out_7__3__N_441), .I1(n18201), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[2] ), .O(n2031[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_668_i1_4_lut.LUT_INIT = 16'hc5c0;
-    SB_LUT4 n18855_bdd_4_lut (.I0(n18855), .I1(\data_out_frame2[9] [7]), 
-            .I2(\data_out_frame2[8] [7]), .I3(byte_transmit_counter2[1]), 
-            .O(n18072));
-    defparam n18855_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_3_i8_3_lut (.I0(\data_out[8] [3]), 
-            .I1(\data_out[9] [3]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n8_adj_2219));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_3_i8_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 select_289_Select_6_i2_4_lut (.I0(byte_transmit_counter2[6]), 
-            .I1(\FRAME_MATCHER.i_31__N_1272 ), .I2(n18317), .I3(n12359), 
-            .O(n2_adj_2200));
-    defparam select_289_Select_6_i2_4_lut.LUT_INIT = 16'h88c0;
-    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_15958 (.I0(byte_transmit_counter[1]), 
-            .I1(n18322), .I2(n5_adj_2220), .I3(byte_transmit_counter[2]), 
-            .O(n18849));
-    defparam byte_transmit_counter_1__bdd_4_lut_15958.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18849_bdd_4_lut (.I0(n18849), .I1(n2_adj_2221), .I2(n18264), 
-            .I3(byte_transmit_counter[2]), .O(n18852));
-    defparam n18849_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_3_i10_4_lut (.I0(n8_adj_2219), 
-            .I1(\data_out[10] [3]), .I2(byte_transmit_counter[1]), .I3(byte_transmit_counter[0]), 
-            .O(n10_adj_6));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_3_i10_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 byte_transmit_counter2_2__bdd_4_lut_15978 (.I0(byte_transmit_counter2[2]), 
-            .I1(n18072), .I2(n18816), .I3(byte_transmit_counter2[3]), 
-            .O(n18843));
-    defparam byte_transmit_counter2_2__bdd_4_lut_15978.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18843_bdd_4_lut (.I0(n18843), .I1(n6_adj_2223), .I2(n18266), 
-            .I3(byte_transmit_counter2[3]), .O(n18846));
-    defparam n18843_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15953 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[18] [0]), .I2(\data_out_frame2[19] [0]), 
-            .I3(byte_transmit_counter2[1]), .O(n18837));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15953.LUT_INIT = 16'he4aa;
-    SB_LUT4 delay_counter_2484_add_4_8_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[6]), .I3(n16639), .O(n61[6])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_8_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_977_21 (.CI(n16504), .I0(\FRAME_MATCHER.i [19]), .I1(n18631), 
-            .CO(n16505));
-    SB_CARRY delay_counter_2484_add_4_8 (.CI(n16639), .I0(GND_net), .I1(delay_counter[6]), 
-            .CO(n16640));
-    SB_LUT4 delay_counter_2484_add_4_7_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[5]), .I3(n16638), .O(n61[5])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_7_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY delay_counter_2484_add_4_7 (.CI(n16638), .I0(GND_net), .I1(delay_counter[5]), 
-            .CO(n16639));
-    SB_DFFSS byte_transmit_counter2_i2 (.Q(byte_transmit_counter2[2]), .C(CLK_c), 
-            .D(n2_adj_2224), .S(n4_adj_2225));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 delay_counter_2484_add_4_6_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[4]), .I3(n16637), .O(n61[4])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_6_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 add_2506_6_lut (.I0(GND_net), .I1(\byte_transmit_counter[4] ), 
-            .I2(GND_net), .I3(n16520), .O(\tx_transmit_N_1947[4] )) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2506_6_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 n18837_bdd_4_lut (.I0(n18837), .I1(\data_out_frame2[17] [0]), 
-            .I2(\data_out_frame2[16] [0]), .I3(byte_transmit_counter2[1]), 
-            .O(n18840));
-    defparam n18837_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_DFFSS byte_transmit_counter2_i1 (.Q(byte_transmit_counter2[1]), .C(CLK_c), 
-            .D(n17465), .S(n4_adj_2226));   // verilog/coms.v(416[12] 543[6])
-    SB_CARRY delay_counter_2484_add_4_6 (.CI(n16637), .I0(GND_net), .I1(delay_counter[4]), 
-            .CO(n16638));
-    SB_LUT4 i1010_2_lut (.I0(\data_in_frame[0] [4]), .I1(\data_in_frame[0] [3]), 
-            .I2(GND_net), .I3(GND_net), .O(n2122));   // verilog/coms.v(66[15:26])
-    defparam i1010_2_lut.LUT_INIT = 16'h6666;
-    SB_LUT4 i15239_4_lut (.I0(\data_out_frame2[0] [1]), .I1(n28), .I2(n6035), 
-            .I3(n12704), .O(n18100));
-    defparam i15239_4_lut.LUT_INIT = 16'hfa8a;
-    SB_LUT4 n18765_bdd_4_lut (.I0(n18765), .I1(n6_adj_2227), .I2(n18221), 
-            .I3(byte_transmit_counter2[3]), .O(n18768));
-    defparam n18765_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i1008_2_lut (.I0(\data_in_frame[0] [3]), .I1(\data_in_frame[0] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n2120));   // verilog/coms.v(65[15:26])
-    defparam i1008_2_lut.LUT_INIT = 16'h6666;
-    SB_LUT4 i15241_4_lut (.I0(n18100), .I1(n4494), .I2(n6033), .I3(n6035), 
-            .O(n18102));
-    defparam i15241_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 delay_counter_2484_add_4_5_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[3]), .I3(n16636), .O(n61[3])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_5_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i1012_2_lut (.I0(\data_in_frame[0] [5]), .I1(\data_in_frame[0] [4]), 
-            .I2(GND_net), .I3(GND_net), .O(n2124));   // verilog/coms.v(67[15:26])
-    defparam i1012_2_lut.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_4_lut (.I0(n10497), .I1(n17713), .I2(n13033), .I3(\FRAME_MATCHER.state [3]), 
-            .O(n17281));
-    defparam i1_2_lut_4_lut.LUT_INIT = 16'hdc00;
-    SB_LUT4 i15687_2_lut (.I0(\data_out[1][7] ), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18354));
-    defparam i15687_2_lut.LUT_INIT = 16'hbbbb;
-    SB_DFFSS \FRAME_MATCHER.i_i0  (.Q(\FRAME_MATCHER.i [0]), .C(CLK_c), 
-            .D(n2_adj_2228), .S(n3_c));   // verilog/coms.v(416[12] 543[6])
-    SB_CARRY delay_counter_2484_add_4_5 (.CI(n16636), .I0(GND_net), .I1(delay_counter[3]), 
-            .CO(n16637));
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_7_i2_3_lut (.I0(\data_out[2][7] ), 
-            .I1(\data_out[3][7] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n2_adj_2229));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_7_i2_3_lut.LUT_INIT = 16'hcaca;
-    SB_DFFSS byte_transmit_counter2_i0 (.Q(byte_transmit_counter2[0]), .C(CLK_c), 
-            .D(n2_adj_2230), .S(n4_adj_2231));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_2_i8_3_lut (.I0(\data_out[8] [2]), 
-            .I1(\data_out[9][2] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n8_adj_2232));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_2_i8_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_2_i10_4_lut (.I0(n8_adj_2232), 
-            .I1(\data_out[10] [2]), .I2(byte_transmit_counter[1]), .I3(byte_transmit_counter[0]), 
-            .O(n10_adj_7));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_2_i10_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 n18831_bdd_4_lut (.I0(n18831), .I1(n18284), .I2(\data_out_frame2[0] [4]), 
-            .I3(n6033), .O(n18834));
-    defparam n18831_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 delay_counter_2484_add_4_4_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[2]), .I3(n16635), .O(n61[2])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_4_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY delay_counter_2484_add_4_4 (.CI(n16635), .I0(GND_net), .I1(delay_counter[2]), 
-            .CO(n16636));
-    SB_LUT4 i1014_2_lut (.I0(\data_in_frame[0] [6]), .I1(\data_in_frame[0] [5]), 
-            .I2(GND_net), .I3(GND_net), .O(n2126));   // verilog/coms.v(68[15:26])
-    defparam i1014_2_lut.LUT_INIT = 16'h6666;
-    SB_LUT4 delay_counter_2484_add_4_3_lut (.I0(GND_net), .I1(GND_net), 
-            .I2(delay_counter[1]), .I3(n16634), .O(n61[1])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_3_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY delay_counter_2484_add_4_3 (.CI(n16634), .I0(GND_net), .I1(delay_counter[1]), 
-            .CO(n16635));
-    SB_LUT4 i1_2_lut_4_lut_adj_442 (.I0(n10497), .I1(n17713), .I2(n13033), 
-            .I3(\FRAME_MATCHER.state [4]), .O(n8_adj_2234));
-    defparam i1_2_lut_4_lut_adj_442.LUT_INIT = 16'hdc00;
-    SB_LUT4 i1_2_lut_3_lut_adj_443 (.I0(\data_out[5] [3]), .I1(\data_out[5] [4]), 
-            .I2(data_out_7__3__N_441), .I3(GND_net), .O(n17816));   // verilog/coms.v(115[16:67])
-    defparam i1_2_lut_3_lut_adj_443.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_444 (.I0(\data_in_frame[0] [1]), .I1(\data_in_frame[0] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n10569));   // verilog/coms.v(76[16:62])
-    defparam i1_2_lut_adj_444.LUT_INIT = 16'h6666;
-    SB_LUT4 n18825_bdd_4_lut (.I0(n18831), .I1(n18287), .I2(\data_out_frame2[0] [3]), 
-            .I3(n6033), .O(n18828));
-    defparam n18825_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i3_4_lut_adj_445 (.I0(\data_in_frame[0] [5]), .I1(\data_in_frame[0] [3]), 
-            .I2(\data_in_frame[0] [4]), .I3(n10569), .O(n17813));   // verilog/coms.v(76[16:62])
-    defparam i3_4_lut_adj_445.LUT_INIT = 16'h6996;
-    SB_LUT4 delay_counter_2484_add_4_2_lut (.I0(GND_net), .I1(n1693[0]), 
-            .I2(delay_counter[0]), .I3(GND_net), .O(n61[0])) /* synthesis syn_instantiated=1 */ ;
-    defparam delay_counter_2484_add_4_2_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_1_i5_3_lut (.I0(\data_out[6] [1]), 
-            .I1(\data_out[7] [1]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n5));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_1_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i10351_3_lut (.I0(\data_out[8]_c [1]), .I1(\data_out[10] [1]), 
-            .I2(byte_transmit_counter[1]), .I3(GND_net), .O(n1_c));   // verilog/coms.v(19[11:32])
-    defparam i10351_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 n18819_bdd_4_lut (.I0(n18831), .I1(n18289), .I2(\data_out_frame2[0] [2]), 
-            .I3(n6033), .O(n18822));
-    defparam n18819_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15894 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[10] [6]), .I2(\data_out_frame2[11] [6]), 
-            .I3(byte_transmit_counter2[1]), .O(n18759));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15894.LUT_INIT = 16'he4aa;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_1_i1_3_lut (.I0(\data_out[0][1] ), 
-            .I1(\data_out[1] [1]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n1));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_1_i1_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY delay_counter_2484_add_4_2 (.CI(GND_net), .I0(n1693[0]), .I1(delay_counter[0]), 
-            .CO(n16634));
-    SB_LUT4 i1016_2_lut (.I0(\data_in_frame[0] [7]), .I1(\data_in_frame[0] [6]), 
-            .I2(GND_net), .I3(GND_net), .O(n2128));   // verilog/coms.v(69[15:26])
-    defparam i1016_2_lut.LUT_INIT = 16'h6666;
-    SB_LUT4 n18759_bdd_4_lut (.I0(n18759), .I1(\data_out_frame2[9] [6]), 
-            .I2(\data_out_frame2[8] [6]), .I3(byte_transmit_counter2[1]), 
-            .O(n18762));
-    defparam n18759_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i1026_2_lut (.I0(n2137_adj_2237), .I1(\data_in_frame[0] [0]), 
-            .I2(GND_net), .I3(GND_net), .O(n2138));   // verilog/coms.v(76[16:69])
-    defparam i1026_2_lut.LUT_INIT = 16'h6666;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15938 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[14] [7]), .I2(\data_out_frame2[15] [7]), 
-            .I3(byte_transmit_counter2[1]), .O(n18813));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15938.LUT_INIT = 16'he4aa;
-    SB_LUT4 i29_4_lut (.I0(n1_c), .I1(byte_transmit_counter[1]), .I2(byte_transmit_counter[0]), 
-            .I3(\data_out[9] [1]), .O(n22));   // verilog/coms.v(19[11:32])
-    defparam i29_4_lut.LUT_INIT = 16'h3a0a;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_7_i22_4_lut (.I0(n18804), .I1(\data_out_frame2[20] [7]), 
-            .I2(byte_transmit_counter2[2]), .I3(n7263), .O(n22_adj_2239));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_7_i22_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFF \FRAME_MATCHER.state_i0  (.Q(\FRAME_MATCHER.state [0]), .C(CLK_c), 
-           .D(n18906));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_7_i31_4_lut (.I0(n18846), .I1(n22_adj_2239), 
-            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
-            .O(tx2_data[7]));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_7_i31_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFF \data_out_0[[0__2256  (.Q(\data_out[0][0] ), .C(CLK_c), .D(n11343));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_6_i22_4_lut (.I0(n18702), .I1(\data_out_frame2[20] [6]), 
-            .I2(byte_transmit_counter2[2]), .I3(n7263), .O(n22_adj_2240));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_6_i22_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i1_2_lut_4_lut_adj_446 (.I0(n10497), .I1(n17713), .I2(n13033), 
-            .I3(\FRAME_MATCHER.state [5]), .O(n17259));
-    defparam i1_2_lut_4_lut_adj_446.LUT_INIT = 16'hdc00;
-    SB_LUT4 n18813_bdd_4_lut (.I0(n18813), .I1(\data_out_frame2[13] [7]), 
-            .I2(\data_out_frame2[12] [7]), .I3(byte_transmit_counter2[1]), 
-            .O(n18816));
-    defparam n18813_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_6_i31_4_lut (.I0(n18780), .I1(n22_adj_2240), 
-            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
-            .O(tx2_data[6]));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_6_i31_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i1_2_lut_adj_447 (.I0(\data_in_frame[0] [1]), .I1(\data_in_frame[0] [0]), 
-            .I2(GND_net), .I3(GND_net), .O(n10613));   // verilog/coms.v(117[16:35])
-    defparam i1_2_lut_adj_447.LUT_INIT = 16'h6666;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15919 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[10] [1]), .I2(\data_out_frame2[11] [1]), 
-            .I3(byte_transmit_counter2[1]), .O(n18807));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15919.LUT_INIT = 16'he4aa;
-    SB_DFF \data_out_0[[1__2255  (.Q(\data_out[0][1] ), .C(CLK_c), .D(n11342));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_15948 (.I0(byte_transmit_counter[1]), 
-            .I1(n18265), .I2(n5_adj_2241), .I3(byte_transmit_counter[2]), 
-            .O(n18753));
-    defparam byte_transmit_counter_1__bdd_4_lut_15948.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18807_bdd_4_lut (.I0(n18807), .I1(\data_out_frame2[9] [1]), 
-            .I2(\data_out_frame2[8] [1]), .I3(byte_transmit_counter2[1]), 
-            .O(n18810));
-    defparam n18807_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_DFFE delay_counter_2484__i0 (.Q(delay_counter[0]), .C(CLK_c), .E(n11056), 
-            .D(n61[0]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFSS \FRAME_MATCHER.state_i31  (.Q(\FRAME_MATCHER.state [31]), .C(CLK_c), 
-            .D(n17343), .S(n17279));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_5_i22_4_lut (.I0(n18678), .I1(\data_out_frame2[20] [5]), 
-            .I2(byte_transmit_counter2[2]), .I3(n7263), .O(n22_adj_2242));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_5_i22_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_5_i31_4_lut (.I0(n18744), .I1(n22_adj_2242), 
-            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
-            .O(tx2_data[5]));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_5_i31_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFF \data_out_0[[3__2253  (.Q(\data_out[0][3] ), .C(CLK_c), .D(n11341));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i1_2_lut_adj_448 (.I0(\FRAME_MATCHER.state [0]), .I1(\FRAME_MATCHER.state [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n10958));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_2_lut_adj_448.LUT_INIT = 16'h4444;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15914 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[18] [7]), .I2(\data_out_frame2[19] [7]), 
-            .I3(byte_transmit_counter2[1]), .O(n18801));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15914.LUT_INIT = 16'he4aa;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15874 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[14] [6]), .I2(\data_out_frame2[15] [6]), 
-            .I3(byte_transmit_counter2[1]), .O(n18705));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15874.LUT_INIT = 16'he4aa;
-    SB_LUT4 add_977_20_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [18]), .I1(\FRAME_MATCHER.i [18]), 
-            .I2(n18631), .I3(n16503), .O(\FRAME_MATCHER.i_31__N_1278 [18])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_20_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_4_i22_4_lut (.I0(n18672), .I1(\data_out_frame2[20] [4]), 
-            .I2(byte_transmit_counter2[2]), .I3(n7263), .O(n22_adj_2243));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_4_i22_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_4_i31_4_lut (.I0(n18774), .I1(n22_adj_2243), 
-            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
-            .O(tx2_data[4]));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_4_i31_4_lut.LUT_INIT = 16'h0aca;
-    SB_CARRY add_2506_6 (.CI(n16520), .I0(\byte_transmit_counter[4] ), .I1(GND_net), 
-            .CO(n16521));
-    SB_DFFSS \FRAME_MATCHER.state_i30  (.Q(\FRAME_MATCHER.state [30]), .C(CLK_c), 
-            .D(n17341), .S(n17283));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i2_3_lut_4_lut (.I0(\data_out[5] [3]), .I1(\data_out[5] [4]), 
-            .I2(n10680), .I3(data_out_7__2__N_447), .O(n17786));   // verilog/coms.v(115[16:67])
-    defparam i2_3_lut_4_lut.LUT_INIT = 16'h6996;
-    SB_DFFSS \FRAME_MATCHER.state_i29  (.Q(\FRAME_MATCHER.state [29]), .C(CLK_c), 
-            .D(n17355), .S(n8_adj_2244));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i28  (.Q(\FRAME_MATCHER.state [28]), .C(CLK_c), 
-            .D(n17357), .S(n17299));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i27  (.Q(\FRAME_MATCHER.state [27]), .C(CLK_c), 
-            .D(n17359), .S(n17277));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i26  (.Q(\FRAME_MATCHER.state [26]), .C(CLK_c), 
-            .D(n17361), .S(n8_adj_2245));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i25  (.Q(\FRAME_MATCHER.state [25]), .C(CLK_c), 
-            .D(n13902), .S(n13900));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i24  (.Q(\FRAME_MATCHER.state [24]), .C(CLK_c), 
-            .D(n7), .S(n8_adj_2246));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i23  (.Q(\FRAME_MATCHER.state [23]), .C(CLK_c), 
-            .D(n17365), .S(n17275));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i22  (.Q(\FRAME_MATCHER.state [22]), .C(CLK_c), 
-            .D(n17373), .S(n17273));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_out_0[[5__2251  (.Q(\data_out[0][5] ), .C(CLK_c), .D(n11340));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFSS \FRAME_MATCHER.state_i21  (.Q(\FRAME_MATCHER.state [21]), .C(CLK_c), 
-            .D(n17375), .S(n8_adj_2247));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i20  (.Q(\FRAME_MATCHER.state [20]), .C(CLK_c), 
-            .D(n7_adj_2248), .S(n8_adj_2249));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i19  (.Q(\FRAME_MATCHER.state [19]), .C(CLK_c), 
-            .D(n17377), .S(n8_adj_2250));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i18  (.Q(\FRAME_MATCHER.state [18]), .C(CLK_c), 
-            .D(n17297), .S(n17293));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i17  (.Q(\FRAME_MATCHER.state [17]), .C(CLK_c), 
-            .D(n7_adj_2251), .S(n8_adj_2252));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i16  (.Q(\FRAME_MATCHER.state [16]), .C(CLK_c), 
-            .D(n7_adj_2253), .S(n8_adj_2254));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i15  (.Q(\FRAME_MATCHER.state [15]), .C(CLK_c), 
-            .D(n17379), .S(n17271));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i14  (.Q(\FRAME_MATCHER.state [14]), .C(CLK_c), 
-            .D(n17397), .S(n17303));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i13  (.Q(\FRAME_MATCHER.state [13]), .C(CLK_c), 
-            .D(n17381), .S(n17269));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i12  (.Q(\FRAME_MATCHER.state [12]), .C(CLK_c), 
-            .D(n17383), .S(n17267));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i11  (.Q(\FRAME_MATCHER.state [11]), .C(CLK_c), 
-            .D(n17385), .S(n17265));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i10  (.Q(\FRAME_MATCHER.state [10]), .C(CLK_c), 
-            .D(n17387), .S(n17263));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i9  (.Q(\FRAME_MATCHER.state [9]), .C(CLK_c), 
-            .D(n7_adj_2255), .S(n17239));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i8  (.Q(\FRAME_MATCHER.state [8]), .C(CLK_c), 
-            .D(n7_adj_2256), .S(n8_adj_2257));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i7  (.Q(\FRAME_MATCHER.state [7]), .C(CLK_c), 
-            .D(n17389), .S(n8_adj_2258));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i6  (.Q(\FRAME_MATCHER.state [6]), .C(CLK_c), 
-            .D(n17391), .S(n17261));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i5  (.Q(\FRAME_MATCHER.state [5]), .C(CLK_c), 
-            .D(n17393), .S(n17259));   // verilog/coms.v(416[12] 543[6])
-    SB_CARRY add_977_20 (.CI(n16503), .I0(\FRAME_MATCHER.i [18]), .I1(n18631), 
-            .CO(n16504));
-    SB_LUT4 add_2506_5_lut (.I0(GND_net), .I1(\byte_transmit_counter[3] ), 
-            .I2(GND_net), .I3(n16519), .O(tx_transmit_N_1947[3])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2506_5_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_2506_5 (.CI(n16519), .I0(\byte_transmit_counter[3] ), .I1(GND_net), 
-            .CO(n16520));
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_3_i22_4_lut (.I0(n18654), .I1(\data_out_frame2[20] [3]), 
-            .I2(byte_transmit_counter2[2]), .I3(n7263), .O(n22_adj_2259));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_3_i22_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFFSS \FRAME_MATCHER.state_i4  (.Q(\FRAME_MATCHER.state [4]), .C(CLK_c), 
-            .D(n7_adj_2260), .S(n8_adj_2234));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_3_lut (.I0(\FRAME_MATCHER.state [2]), .I1(n63), .I2(n63_adj_2262), 
-            .I3(GND_net), .O(n1472[2]));   // verilog/coms.v(409[11:16])
-    defparam i1_3_lut.LUT_INIT = 16'hb3b3;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_3_i31_4_lut (.I0(n18738), .I1(n22_adj_2259), 
-            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
-            .O(tx2_data[3]));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_3_i31_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFFSS \FRAME_MATCHER.state_i3  (.Q(\FRAME_MATCHER.state [3]), .C(CLK_c), 
-            .D(n17395), .S(n17281));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.state_i2  (.Q(\FRAME_MATCHER.state [2]), .C(CLK_c), 
-            .D(n17301), .S(n18907));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 add_2506_4_lut (.I0(GND_net), .I1(byte_transmit_counter[2]), 
-            .I2(GND_net), .I3(n16518), .O(tx_transmit_N_1947_c[2])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2506_4_lut.LUT_INIT = 16'hC33C;
-    SB_DFF \data_out_0[[6__2250  (.Q(\data_out[0] [6]), .C(CLK_c), .D(n11339));   // verilog/coms.v(280[12] 370[6])
-    SB_CARRY add_2506_4 (.CI(n16518), .I0(byte_transmit_counter[2]), .I1(GND_net), 
-            .CO(n16519));
-    SB_DFF \data_out_1[[2__2246  (.Q(\data_out[1] [2]), .C(CLK_c), .D(n11338));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 add_977_19_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [17]), .I1(\FRAME_MATCHER.i [17]), 
-            .I2(n18631), .I3(n16502), .O(\FRAME_MATCHER.i_31__N_1278 [17])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_19_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 n18753_bdd_4_lut (.I0(n18753), .I1(n2_adj_2229), .I2(n18354), 
-            .I3(byte_transmit_counter[2]), .O(n18756));
-    defparam n18753_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_CARRY add_977_7 (.CI(n16490), .I0(\FRAME_MATCHER.i [5]), .I1(n18631), 
-            .CO(n16491));
-    SB_LUT4 i3_4_lut_adj_449 (.I0(n1472[2]), .I1(n63_adj_8), .I2(\FRAME_MATCHER.i_31__N_1270 ), 
-            .I3(n7528), .O(n16685));
-    defparam i3_4_lut_adj_449.LUT_INIT = 16'h8000;
-    SB_CARRY add_977_19 (.CI(n16502), .I0(\FRAME_MATCHER.i [17]), .I1(n18631), 
-            .CO(n16503));
-    SB_LUT4 i1_3_lut_4_lut_adj_450 (.I0(\FRAME_MATCHER.i[31] ), .I1(n10522), 
-            .I2(n10429), .I3(n1437), .O(n12965));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_3_lut_4_lut_adj_450.LUT_INIT = 16'hf444;
-    SB_LUT4 i1_4_lut_adj_451 (.I0(n43), .I1(\FRAME_MATCHER.i_31__N_1272 ), 
-            .I2(n10958), .I3(n10513), .O(n17694));
-    defparam i1_4_lut_adj_451.LUT_INIT = 16'h2202;
-    SB_LUT4 i1_3_lut_adj_452 (.I0(n1472[2]), .I1(n8), .I2(n63_adj_8), 
-            .I3(GND_net), .O(n6_adj_2265));   // verilog/coms.v(523[6] 525[9])
-    defparam i1_3_lut_adj_452.LUT_INIT = 16'h4c4c;
-    SB_LUT4 i2_4_lut_adj_453 (.I0(n16685), .I1(n15118), .I2(\FRAME_MATCHER.i_31__N_1273 ), 
-            .I3(n4_adj_2266), .O(n6_adj_2267));
-    defparam i2_4_lut_adj_453.LUT_INIT = 16'hfaea;
-    SB_LUT4 i1_3_lut_4_lut_adj_454 (.I0(\FRAME_MATCHER.i[31] ), .I1(n10522), 
-            .I2(n63_adj_8), .I3(n1472[2]), .O(n4_adj_2266));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_3_lut_4_lut_adj_454.LUT_INIT = 16'hf444;
-    SB_LUT4 i3_4_lut_adj_455 (.I0(n13849), .I1(n6_adj_2267), .I2(n6_adj_2265), 
-            .I3(\FRAME_MATCHER.i_31__N_1275 ), .O(n18907));
-    defparam i3_4_lut_adj_455.LUT_INIT = 16'hdfdd;
-    SB_LUT4 add_2506_3_lut (.I0(GND_net), .I1(byte_transmit_counter[1]), 
-            .I2(GND_net), .I3(n16517), .O(tx_transmit_N_1947_c[1])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2506_3_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 add_977_6_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [4]), .I1(\FRAME_MATCHER.i [4]), 
-            .I2(n18631), .I3(n16489), .O(\FRAME_MATCHER.i_31__N_1278 [4])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_6_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 n18705_bdd_4_lut (.I0(n18705), .I1(\data_out_frame2[13] [6]), 
-            .I2(\data_out_frame2[12] [6]), .I3(byte_transmit_counter2[1]), 
-            .O(n18708));
-    defparam n18705_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_2_i22_4_lut (.I0(n18636), .I1(\data_out_frame2[20] [2]), 
-            .I2(byte_transmit_counter2[2]), .I3(n7263), .O(n22_adj_2268));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_2_i22_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_2_i31_4_lut (.I0(n18768), .I1(n22_adj_2268), 
-            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
-            .O(tx2_data[2]));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_2_i31_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i1_3_lut_adj_456 (.I0(n63_adj_8), .I1(n15), .I2(n1472[2]), 
-            .I3(GND_net), .O(n17301));
-    defparam i1_3_lut_adj_456.LUT_INIT = 16'h8080;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_1_i22_4_lut (.I0(n18792), .I1(\data_out_frame2[20] [1]), 
-            .I2(byte_transmit_counter2[2]), .I3(n7263), .O(n22_adj_2270));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_1_i22_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_1_i31_4_lut (.I0(n18888), .I1(n22_adj_2270), 
-            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
-            .O(tx2_data[1]));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_1_i31_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFF byte_transmit_counter__i1 (.Q(byte_transmit_counter[1]), .C(CLK_c), 
-           .D(n17153));   // verilog/coms.v(280[12] 370[6])
-    SB_CARRY add_977_6 (.CI(n16489), .I0(\FRAME_MATCHER.i [4]), .I1(n18631), 
-            .CO(n16490));
-    SB_LUT4 i1_2_lut_adj_457 (.I0(\FRAME_MATCHER.state [3]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17395));
-    defparam i1_2_lut_adj_457.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_458 (.I0(\FRAME_MATCHER.state [4]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n7_adj_2260));
-    defparam i1_2_lut_adj_458.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_459 (.I0(\FRAME_MATCHER.state [5]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17393));
-    defparam i1_2_lut_adj_459.LUT_INIT = 16'h8888;
-    SB_DFF \data_out_1[[4__2244  (.Q(\data_out[1] [4]), .C(CLK_c), .D(n11337));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i1_2_lut_adj_460 (.I0(\FRAME_MATCHER.state [6]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17391));
-    defparam i1_2_lut_adj_460.LUT_INIT = 16'h8888;
-    SB_DFF byte_transmit_counter__i2 (.Q(byte_transmit_counter[2]), .C(CLK_c), 
-           .D(n17157));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF byte_transmit_counter__i3 (.Q(\byte_transmit_counter[3] ), .C(CLK_c), 
-           .D(n11506));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF data_out_frame2_0___i152 (.Q(\data_out_frame2[18] [7]), .C(CLK_c), 
-           .D(n11669));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_461 (.I0(\FRAME_MATCHER.state [7]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17389));
-    defparam i1_2_lut_adj_461.LUT_INIT = 16'h8888;
-    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_15869 (.I0(byte_transmit_counter[1]), 
-            .I1(n18311), .I2(n5_c), .I3(byte_transmit_counter[2]), .O(n18747));
-    defparam byte_transmit_counter_1__bdd_4_lut_15869.LUT_INIT = 16'he4aa;
-    SB_LUT4 i1_2_lut_adj_462 (.I0(\FRAME_MATCHER.state [8]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n7_adj_2256));
-    defparam i1_2_lut_adj_462.LUT_INIT = 16'h8888;
-    SB_LUT4 add_2510_8_lut (.I0(tx2_transmit_N_1996), .I1(byte_transmit_counter2[6]), 
-            .I2(GND_net), .I3(n16484), .O(n18317)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2510_8_lut.LUT_INIT = 16'h8228;
-    SB_LUT4 i10860_2_lut (.I0(tx_active), .I1(r_SM_Main_2__N_2034[0]), .I2(GND_net), 
-            .I3(GND_net), .O(n12227));
-    defparam i10860_2_lut.LUT_INIT = 16'heeee;
-    SB_DFF data_out_frame2_0___i151 (.Q(\data_out_frame2[18] [6]), .C(CLK_c), 
-           .D(n11668));   // verilog/coms.v(416[12] 543[6])
-    SB_CARRY add_2506_3 (.CI(n16517), .I0(byte_transmit_counter[1]), .I1(GND_net), 
-            .CO(n16518));
-    SB_DFF data_out_frame2_0___i150 (.Q(\data_out_frame2[18] [5]), .C(CLK_c), 
-           .D(n11667));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i149 (.Q(\data_out_frame2[18] [4]), .C(CLK_c), 
-           .D(n11666));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_463 (.I0(\FRAME_MATCHER.state [9]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n7_adj_2255));
-    defparam i1_2_lut_adj_463.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i148 (.Q(\data_out_frame2[18] [3]), .C(CLK_c), 
-           .D(n11665));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 add_977_18_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [16]), .I1(\FRAME_MATCHER.i [16]), 
-            .I2(n18631), .I3(n16501), .O(\FRAME_MATCHER.i_31__N_1278 [16])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_18_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i1_2_lut_adj_464 (.I0(\FRAME_MATCHER.state [10]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17387));
-    defparam i1_2_lut_adj_464.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i147 (.Q(\data_out_frame2[18] [2]), .C(CLK_c), 
-           .D(n11664));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i146 (.Q(\data_out_frame2[18] [1]), .C(CLK_c), 
-           .D(n11663));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_465 (.I0(\FRAME_MATCHER.state [11]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17385));
-    defparam i1_2_lut_adj_465.LUT_INIT = 16'h8888;
-    SB_LUT4 add_2506_2_lut (.I0(GND_net), .I1(byte_transmit_counter[0]), 
-            .I2(n44), .I3(GND_net), .O(tx_transmit_N_1947_c[0])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2506_2_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i1_2_lut_adj_466 (.I0(\FRAME_MATCHER.state [12]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17383));
-    defparam i1_2_lut_adj_466.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i145 (.Q(\data_out_frame2[18] [0]), .C(CLK_c), 
-           .D(n11662));   // verilog/coms.v(416[12] 543[6])
-    SB_CARRY add_977_18 (.CI(n16501), .I0(\FRAME_MATCHER.i [16]), .I1(n18631), 
-            .CO(n16502));
-    SB_LUT4 i1_2_lut_adj_467 (.I0(\FRAME_MATCHER.state [13]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17381));
-    defparam i1_2_lut_adj_467.LUT_INIT = 16'h8888;
-    SB_CARRY add_2510_2 (.CI(VCC_net), .I0(byte_transmit_counter2[0]), .I1(GND_net), 
-            .CO(n16479));
-    SB_LUT4 n18747_bdd_4_lut (.I0(n18747), .I1(n18188), .I2(n1_adj_2272), 
-            .I3(byte_transmit_counter[2]), .O(n18750));
-    defparam n18747_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i1_2_lut_adj_468 (.I0(\FRAME_MATCHER.state [14]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17397));
-    defparam i1_2_lut_adj_468.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i144 (.Q(\data_out_frame2[17] [7]), .C(CLK_c), 
-           .D(n11661));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_out_1[[6__2242  (.Q(\data_out[1][6] ), .C(CLK_c), .D(n11336));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i7_4_lut_adj_469 (.I0(n2138), .I1(\data_in_frame[0] [7]), .I2(\data_in_frame[1] [7]), 
-            .I3(\data_in_frame[1] [1]), .O(n23));
-    defparam i7_4_lut_adj_469.LUT_INIT = 16'hb7ed;
-    SB_DFF \data_out_1[[7__2241  (.Q(\data_out[1][7] ), .C(CLK_c), .D(n11335));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF data_out_frame2_0___i143 (.Q(\data_out_frame2[17] [6]), .C(CLK_c), 
-           .D(n11660));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_470 (.I0(\FRAME_MATCHER.state [15]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17379));
-    defparam i1_2_lut_adj_470.LUT_INIT = 16'h8888;
-    SB_LUT4 add_977_5_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [3]), .I1(\FRAME_MATCHER.i [3]), 
-            .I2(n18631), .I3(n16488), .O(\FRAME_MATCHER.i_31__N_1278 [3])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_5_lut.LUT_INIT = 16'hA3AC;
-    SB_DFF \data_out_2[[0__2240  (.Q(\data_out[2][0] ), .C(CLK_c), .D(n11334));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF data_out_frame2_0___i142 (.Q(\data_out_frame2[17] [5]), .C(CLK_c), 
-           .D(n11659));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_471 (.I0(\FRAME_MATCHER.state [16]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n7_adj_2253));   // verilog/coms.v(412[11:12])
-    defparam i1_2_lut_adj_471.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i141 (.Q(\data_out_frame2[17] [4]), .C(CLK_c), 
-           .D(n11658));   // verilog/coms.v(416[12] 543[6])
-    SB_CARRY add_2510_8 (.CI(n16484), .I0(byte_transmit_counter2[6]), .I1(GND_net), 
-            .CO(n16485));
-    SB_DFF data_out_frame2_0___i140 (.Q(\data_out_frame2[17] [3]), .C(CLK_c), 
-           .D(n11657));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i139 (.Q(\data_out_frame2[17] [2]), .C(CLK_c), 
-           .D(n11656));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_472 (.I0(\FRAME_MATCHER.state [17]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n7_adj_2251));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_2_lut_adj_472.LUT_INIT = 16'h8888;
-    SB_CARRY add_2506_2 (.CI(GND_net), .I0(byte_transmit_counter[0]), .I1(n44), 
-            .CO(n16517));
-    SB_LUT4 i1_2_lut_adj_473 (.I0(\FRAME_MATCHER.state [18]), .I1(n8_adj_2273), 
-            .I2(GND_net), .I3(GND_net), .O(n17293));
-    defparam i1_2_lut_adj_473.LUT_INIT = 16'h8888;
-    SB_LUT4 i15704_3_lut (.I0(\data_out_frame2[0] [0]), .I1(byte_transmit_counter2[1]), 
-            .I2(byte_transmit_counter2[0]), .I3(GND_net), .O(n18374));
-    defparam i15704_3_lut.LUT_INIT = 16'h3232;
-    SB_LUT4 i1_2_lut_adj_474 (.I0(\FRAME_MATCHER.state [18]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17297));
-    defparam i1_2_lut_adj_474.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i138 (.Q(\data_out_frame2[17] [1]), .C(CLK_c), 
-           .D(n11655));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i137 (.Q(\data_out_frame2[17] [0]), .C(CLK_c), 
-           .D(n11654));   // verilog/coms.v(416[12] 543[6])
-    SB_CARRY add_2510_5 (.CI(n16481), .I0(byte_transmit_counter2[3]), .I1(GND_net), 
-            .CO(n16482));
-    SB_LUT4 i1_2_lut_adj_475 (.I0(n8_adj_2273), .I1(\FRAME_MATCHER.state [19]), 
-            .I2(GND_net), .I3(GND_net), .O(n8_adj_2250));   // verilog/coms.v(412[11:12])
-    defparam i1_2_lut_adj_475.LUT_INIT = 16'h8888;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_0_i5_3_lut (.I0(\data_out_frame2[6] [0]), 
-            .I1(\data_out_frame2[7] [0]), .I2(byte_transmit_counter2[0]), 
-            .I3(GND_net), .O(n5_adj_2274));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_0_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_0_i6_4_lut (.I0(\data_out_frame2[5] [0]), 
-            .I1(n5_adj_2274), .I2(byte_transmit_counter2[1]), .I3(byte_transmit_counter2[0]), 
-            .O(n6_adj_2275));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_0_i6_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 i1_2_lut_adj_476 (.I0(\FRAME_MATCHER.state [19]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17377));
-    defparam i1_2_lut_adj_476.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_477 (.I0(n8_adj_2273), .I1(\FRAME_MATCHER.state [20]), 
-            .I2(GND_net), .I3(GND_net), .O(n8_adj_2249));   // verilog/coms.v(412[11:12])
-    defparam i1_2_lut_adj_477.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_478 (.I0(\FRAME_MATCHER.state [20]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n7_adj_2248));   // verilog/coms.v(412[11:12])
-    defparam i1_2_lut_adj_478.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_3_lut_adj_479 (.I0(\data_out_frame2[12] [0]), .I1(\data_out_frame2[11] [7]), 
-            .I2(\data_out_frame2[10] [1]), .I3(GND_net), .O(n17727));   // verilog/coms.v(238[17:230])
-    defparam i1_2_lut_3_lut_adj_479.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_480 (.I0(n8_adj_2273), .I1(\FRAME_MATCHER.state [21]), 
-            .I2(GND_net), .I3(GND_net), .O(n8_adj_2247));   // verilog/coms.v(412[11:12])
-    defparam i1_2_lut_adj_480.LUT_INIT = 16'h8888;
-    SB_LUT4 i2_3_lut_adj_481 (.I0(n17844), .I1(\data_out[8] [5]), .I2(n10746), 
-            .I3(GND_net), .O(data_out_9__0__N_389));   // verilog/coms.v(178[16:77])
-    defparam i2_3_lut_adj_481.LUT_INIT = 16'h9696;
-    SB_DFF data_out_frame2_0___i136 (.Q(\data_out_frame2[16] [7]), .C(CLK_c), 
-           .D(n11653));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_482 (.I0(\FRAME_MATCHER.state [21]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17375));
-    defparam i1_2_lut_adj_482.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_3_lut_adj_483 (.I0(\data_out_frame2[12] [0]), .I1(\data_out_frame2[11] [7]), 
-            .I2(\data_out_frame2[10] [4]), .I3(GND_net), .O(n17911));   // verilog/coms.v(238[17:230])
-    defparam i1_2_lut_3_lut_adj_483.LUT_INIT = 16'h9696;
-    SB_LUT4 i4_4_lut (.I0(\data_out[6] [7]), .I1(n17745), .I2(\data_out[8] [3]), 
-            .I3(n6_adj_2276), .O(data_out_9__1__N_378));   // verilog/coms.v(179[16:84])
-    defparam i4_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 mux_1266_i1_3_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n2836[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_1266_i1_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i3_4_lut_adj_484 (.I0(\data_out[10] [7]), .I1(n17771), .I2(n10749), 
-            .I3(n17850), .O(data_out_9__3__N_356));   // verilog/coms.v(181[17:93])
-    defparam i3_4_lut_adj_484.LUT_INIT = 16'h9669;
-    SB_DFF data_out_frame2_0___i135 (.Q(\data_out_frame2[16] [6]), .C(CLK_c), 
-           .D(n11652));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_485 (.I0(\data_out[8] [6]), .I1(\data_out[5] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n6_adj_2277));   // verilog/coms.v(182[17:86])
-    defparam i1_2_lut_adj_485.LUT_INIT = 16'h6666;
-    SB_DFFSS \FRAME_MATCHER.i_i31  (.Q(\FRAME_MATCHER.i[31] ), .C(CLK_c), 
-            .D(n2_adj_2278), .S(n3_adj_2279));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i4_4_lut_adj_486 (.I0(\data_out[7] [0]), .I1(n17832), .I2(n17742), 
-            .I3(n6_adj_2277), .O(data_out_9__4__N_345));   // verilog/coms.v(182[17:86])
-    defparam i4_4_lut_adj_486.LUT_INIT = 16'h9669;
-    SB_LUT4 i3_4_lut_adj_487 (.I0(\data_out[5] [3]), .I1(\data_out[8] [7]), 
-            .I2(\data_out[9] [1]), .I3(\data_out[9] [0]), .O(n17742));   // verilog/coms.v(182[17:86])
-    defparam i3_4_lut_adj_487.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_adj_488 (.I0(\FRAME_MATCHER.state [22]), .I1(n8_adj_2273), 
-            .I2(GND_net), .I3(GND_net), .O(n17273));
-    defparam i1_2_lut_adj_488.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_489 (.I0(\FRAME_MATCHER.state [22]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17373));
-    defparam i1_2_lut_adj_489.LUT_INIT = 16'h8888;
-    SB_DFFSS \FRAME_MATCHER.i_i30  (.Q(\FRAME_MATCHER.i [30]), .C(CLK_c), 
-            .D(n2_adj_2280), .S(n3_adj_2281));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i29  (.Q(\FRAME_MATCHER.i [29]), .C(CLK_c), 
-            .D(n2_adj_2282), .S(n3_adj_2283));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i28  (.Q(\FRAME_MATCHER.i [28]), .C(CLK_c), 
-            .D(n2_adj_2284), .S(n3_adj_2285));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i27  (.Q(\FRAME_MATCHER.i [27]), .C(CLK_c), 
-            .D(n2_adj_2286), .S(n3_adj_2287));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i26  (.Q(\FRAME_MATCHER.i [26]), .C(CLK_c), 
-            .D(n2_adj_2288), .S(n3_adj_2289));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i25  (.Q(\FRAME_MATCHER.i [25]), .C(CLK_c), 
-            .D(n2_adj_2290), .S(n3_adj_2291));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i24  (.Q(\FRAME_MATCHER.i [24]), .C(CLK_c), 
-            .D(n2_adj_2292), .S(n3_adj_2293));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i23  (.Q(\FRAME_MATCHER.i [23]), .C(CLK_c), 
-            .D(n2_adj_2294), .S(n3_adj_2295));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i22  (.Q(\FRAME_MATCHER.i [22]), .C(CLK_c), 
-            .D(n2_adj_2296), .S(n3_adj_2297));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i21  (.Q(\FRAME_MATCHER.i [21]), .C(CLK_c), 
-            .D(n2_adj_2298), .S(n3_adj_2299));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i20  (.Q(\FRAME_MATCHER.i [20]), .C(CLK_c), 
-            .D(n2_adj_2300), .S(n3_adj_2301));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i19  (.Q(\FRAME_MATCHER.i [19]), .C(CLK_c), 
-            .D(n2_adj_2302), .S(n3_adj_2303));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i18  (.Q(\FRAME_MATCHER.i [18]), .C(CLK_c), 
-            .D(n2_adj_2304), .S(n3_adj_2305));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i17  (.Q(\FRAME_MATCHER.i [17]), .C(CLK_c), 
-            .D(n2_adj_2306), .S(n3_adj_2307));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i16  (.Q(\FRAME_MATCHER.i [16]), .C(CLK_c), 
-            .D(n2_adj_2308), .S(n3_adj_2309));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i15  (.Q(\FRAME_MATCHER.i [15]), .C(CLK_c), 
-            .D(n2_adj_2310), .S(n3_adj_2311));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i134 (.Q(\data_out_frame2[16] [5]), .C(CLK_c), 
-           .D(n11651));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i14  (.Q(\FRAME_MATCHER.i [14]), .C(CLK_c), 
-            .D(n2_adj_2312), .S(n3_adj_2313));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_490 (.I0(\data_out[10] [5]), .I1(\data_out[7] [1]), 
-            .I2(GND_net), .I3(GND_net), .O(n6_adj_2314));   // verilog/coms.v(182[17:86])
-    defparam i1_2_lut_adj_490.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_4_lut_adj_491 (.I0(n46), .I1(n9575), .I2(n10497), .I3(n2_adj_2315), 
-            .O(n8_adj_2273));
-    defparam i1_4_lut_adj_491.LUT_INIT = 16'heeae;
-    SB_LUT4 i4_4_lut_adj_492 (.I0(\data_out[7] [3]), .I1(n17742), .I2(n10558), 
-            .I3(n6_adj_2314), .O(data_out_9__5__N_334));   // verilog/coms.v(182[17:86])
-    defparam i4_4_lut_adj_492.LUT_INIT = 16'h6996;
-    SB_LUT4 i11_4_lut_adj_493 (.I0(byte_transmit_counter[0]), .I1(tx_transmit_N_1947_c[0]), 
-            .I2(n10973), .I3(n5341), .O(n17149));   // verilog/coms.v(19[11:32])
-    defparam i11_4_lut_adj_493.LUT_INIT = 16'h0aca;
-    SB_DFF data_out_frame2_0___i133 (.Q(\data_out_frame2[16] [4]), .C(CLK_c), 
-           .D(n11650));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_494 (.I0(\data_out_frame2[16] [7]), .I1(\data_out_frame2[12] [0]), 
-            .I2(\data_out_frame2[11] [7]), .I3(\data_out_frame2[10] [1]), 
-            .O(n10816));   // verilog/coms.v(238[17:230])
-    defparam i1_2_lut_4_lut_adj_494.LUT_INIT = 16'h6996;
-    SB_DFFSS \FRAME_MATCHER.i_i13  (.Q(\FRAME_MATCHER.i [13]), .C(CLK_c), 
-            .D(n2_adj_2316), .S(n3_adj_2317));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i4_4_lut_adj_495 (.I0(\data_out[7] [4]), .I1(n17730), .I2(\data_out[9] [0]), 
-            .I3(n6_adj_2318), .O(data_out_9__6__N_324));   // verilog/coms.v(21[11:19])
-    defparam i4_4_lut_adj_495.LUT_INIT = 16'h9669;
-    SB_LUT4 i1_2_lut_adj_496 (.I0(\data_out[10] [3]), .I1(n10550), .I2(GND_net), 
-            .I3(GND_net), .O(n17850));   // verilog/coms.v(181[17:93])
-    defparam i1_2_lut_adj_496.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_adj_497 (.I0(\FRAME_MATCHER.state [23]), .I1(n8_adj_2273), 
-            .I2(GND_net), .I3(GND_net), .O(n17275));
-    defparam i1_2_lut_adj_497.LUT_INIT = 16'h8888;
-    SB_LUT4 i10991_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [16]), .I1(n63_adj_8), 
-            .I2(n63_adj_2262), .I3(n63), .O(\FRAME_MATCHER.i_31__N_1310 [16]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10991_2_lut_3_lut_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i1_2_lut_adj_498 (.I0(\data_out[10] [4]), .I1(\data_out[7] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n17832));   // verilog/coms.v(182[17:86])
-    defparam i1_2_lut_adj_498.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.state [2]), .I1(\FRAME_MATCHER.state [0]), 
-            .I2(\FRAME_MATCHER.state [1]), .I3(n10513), .O(\FRAME_MATCHER.i_31__N_1273 ));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_2_lut_3_lut_4_lut.LUT_INIT = 16'h0008;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15833 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[18] [6]), .I2(\data_out_frame2[19] [6]), 
-            .I3(byte_transmit_counter2[1]), .O(n18699));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15833.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18699_bdd_4_lut (.I0(n18699), .I1(\data_out_frame2[17] [6]), 
-            .I2(\data_out_frame2[16] [6]), .I3(byte_transmit_counter2[1]), 
-            .O(n18702));
-    defparam n18699_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i1_2_lut_adj_499 (.I0(\data_out[10][6] ), .I1(n17758), .I2(GND_net), 
-            .I3(GND_net), .O(data_out_9__2__N_367));   // verilog/coms.v(171[16:93])
-    defparam i1_2_lut_adj_499.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_adj_500 (.I0(\FRAME_MATCHER.state [23]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n17365));
-    defparam i1_2_lut_adj_500.LUT_INIT = 16'h8888;
-    SB_LUT4 add_977_17_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [15]), .I1(\FRAME_MATCHER.i [15]), 
-            .I2(n18631), .I3(n16500), .O(\FRAME_MATCHER.i_31__N_1278 [15])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_17_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i1_2_lut_3_lut_adj_501 (.I0(\data_out_frame2[9] [6]), .I1(\data_out_frame2[8] [1]), 
-            .I2(\data_out_frame2[6] [2]), .I3(GND_net), .O(n10725));   // verilog/coms.v(237[17:221])
-    defparam i1_2_lut_3_lut_adj_501.LUT_INIT = 16'h9696;
-    SB_LUT4 i6_4_lut_adj_502 (.I0(data_out_9__2__N_367), .I1(n17768), .I2(n17718), 
-            .I3(n17774), .O(n15_adj_2319));   // verilog/coms.v(182[17:86])
-    defparam i6_4_lut_adj_502.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_adj_503 (.I0(\FRAME_MATCHER.state [24]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n7));   // verilog/coms.v(412[11:12])
-    defparam i1_2_lut_adj_503.LUT_INIT = 16'h8888;
-    SB_LUT4 i8_4_lut_adj_504 (.I0(n15_adj_2319), .I1(n17826), .I2(n14_adj_2320), 
-            .I3(n17832), .O(data_out_9__7__N_272));   // verilog/coms.v(182[17:86])
-    defparam i8_4_lut_adj_504.LUT_INIT = 16'h9669;
-    SB_LUT4 add_977_33_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [31]), .I1(\FRAME_MATCHER.i[31] ), 
-            .I2(n18631), .I3(n16516), .O(\FRAME_MATCHER.i_31__N_1278 [31])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_33_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i1_3_lut_4_lut_adj_505 (.I0(\data_out_frame2[16] [6]), .I1(\data_out_frame2[13] [2]), 
-            .I2(\data_out_frame2[16] [0]), .I3(\data_out_frame2[15] [0]), 
-            .O(n17880));   // verilog/coms.v(237[17:221])
-    defparam i1_3_lut_4_lut_adj_505.LUT_INIT = 16'h6996;
-    SB_LUT4 i15242_4_lut (.I0(\data_out_frame2[0] [0]), .I1(n28), .I2(n6035), 
-            .I3(n12704), .O(n18103));
-    defparam i15242_4_lut.LUT_INIT = 16'hfa8a;
-    SB_LUT4 i15244_4_lut (.I0(n18103), .I1(n4494), .I2(n6033), .I3(n6035), 
-            .O(n18105));
-    defparam i15244_4_lut.LUT_INIT = 16'h0aca;
-    SB_DFFSS \FRAME_MATCHER.i_i12  (.Q(\FRAME_MATCHER.i [12]), .C(CLK_c), 
-            .D(n2_adj_2321), .S(n3_adj_2322));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_506 (.I0(\data_out_frame2[5] [0]), .I1(\data_out_frame2[15] [2]), 
-            .I2(\data_out_frame2[8] [2]), .I3(\data_out_frame2[16] [2]), 
-            .O(n10864));   // verilog/coms.v(228[16:596])
-    defparam i1_2_lut_4_lut_adj_506.LUT_INIT = 16'h6996;
-    SB_DFFSS \FRAME_MATCHER.i_i11  (.Q(\FRAME_MATCHER.i [11]), .C(CLK_c), 
-            .D(n2_adj_2323), .S(n3_adj_2324));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i10  (.Q(\FRAME_MATCHER.i [10]), .C(CLK_c), 
-            .D(n2_adj_2325), .S(n3_adj_2326));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFSS \FRAME_MATCHER.i_i9  (.Q(\FRAME_MATCHER.i [9]), .C(CLK_c), 
-            .D(n2_adj_2327), .S(n3_adj_2328));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i5_4_lut (.I0(\data_out[9] [3]), .I1(n17829), .I2(n17816), 
-            .I3(n17877), .O(n12));   // verilog/coms.v(174[16:77])
-    defparam i5_4_lut.LUT_INIT = 16'h6996;
-    SB_DFFSS \FRAME_MATCHER.i_i8  (.Q(\FRAME_MATCHER.i [8]), .C(CLK_c), 
-            .D(n2_adj_2329), .S(n3_adj_2330));   // verilog/coms.v(416[12] 543[6])
+    SB_LUT4 i15904_2_lut (.I0(\data_out[5] [5]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18754));
+    defparam i15904_2_lut.LUT_INIT = 16'h8888;
+    SB_DFFE \data_out_7[[0__1883  (.Q(\data_out[7] [0]), .C(CLK_c), .E(VCC_net), 
+            .D(n11916));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_in_1[[2__1967  (.Q(\data_in[1] [2]), .C(CLK_c), .D(n11807));   // verilog/coms.v(424[12] 554[6])
     SB_DFFSS \FRAME_MATCHER.i_i7  (.Q(\FRAME_MATCHER.i [7]), .C(CLK_c), 
-            .D(n2_adj_2331), .S(n3_adj_2332));   // verilog/coms.v(416[12] 543[6])
+            .D(n2_adj_2309), .S(n3_adj_2231));   // verilog/coms.v(424[12] 554[6])
     SB_DFFSS \FRAME_MATCHER.i_i6  (.Q(\FRAME_MATCHER.i [6]), .C(CLK_c), 
-            .D(n2_adj_2333), .S(n3_adj_2334));   // verilog/coms.v(416[12] 543[6])
+            .D(n2_adj_2310), .S(n3_adj_2230));   // verilog/coms.v(424[12] 554[6])
     SB_DFFSS \FRAME_MATCHER.i_i5  (.Q(\FRAME_MATCHER.i [5]), .C(CLK_c), 
-            .D(n2_adj_2335), .S(n3_adj_2336));   // verilog/coms.v(416[12] 543[6])
+            .D(n2_adj_2311), .S(n3_adj_2229));   // verilog/coms.v(424[12] 554[6])
     SB_DFFSS \FRAME_MATCHER.i_i4  (.Q(\FRAME_MATCHER.i [4]), .C(CLK_c), 
-            .D(n2_adj_2337), .S(n3_adj_2338));   // verilog/coms.v(416[12] 543[6])
+            .D(n2_adj_2312), .S(n3_adj_2228));   // verilog/coms.v(424[12] 554[6])
     SB_DFFSS \FRAME_MATCHER.i_i3  (.Q(\FRAME_MATCHER.i [3]), .C(CLK_c), 
-            .D(n2_adj_2339), .S(n3_adj_2340));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_4_lut_adj_507 (.I0(n2_adj_2341), .I1(n63_adj_2262), .I2(\FRAME_MATCHER.i_31__N_1275 ), 
-            .I3(n10465), .O(n4_adj_2271));
-    defparam i1_4_lut_adj_507.LUT_INIT = 16'heaaa;
+            .D(n2_adj_2313), .S(n3_adj_2224));   // verilog/coms.v(424[12] 554[6])
     SB_DFFSS \FRAME_MATCHER.i_i2  (.Q(\FRAME_MATCHER.i [2]), .C(CLK_c), 
-            .D(n2_adj_2342), .S(n3_adj_2343));   // verilog/coms.v(416[12] 543[6])
+            .D(n2_adj_2314), .S(n3_adj_2223));   // verilog/coms.v(424[12] 554[6])
     SB_DFFSS \FRAME_MATCHER.i_i1  (.Q(\FRAME_MATCHER.i [1]), .C(CLK_c), 
-            .D(n2_adj_2344), .S(n3_adj_2345));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i132 (.Q(\data_out_frame2[16] [3]), .C(CLK_c), 
-           .D(n11649));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i131 (.Q(\data_out_frame2[16] [2]), .C(CLK_c), 
-           .D(n11648));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_out_2[[2__2238  (.Q(\data_out[2][2] ), .C(CLK_c), .D(n11333));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i1_2_lut_3_lut_adj_508 (.I0(\data_out_frame2[12] [4]), .I1(\data_out_frame2[12] [2]), 
-            .I2(\data_out_frame2[8] [6]), .I3(GND_net), .O(n10688));   // verilog/coms.v(228[16:596])
-    defparam i1_2_lut_3_lut_adj_508.LUT_INIT = 16'h9696;
-    SB_LUT4 i11_4_lut_adj_509 (.I0(n2126), .I1(n22_adj_2346), .I2(\data_in_frame[1] [6]), 
-            .I3(\data_in_frame[2] [7]), .O(n27));
-    defparam i11_4_lut_adj_509.LUT_INIT = 16'hdfef;
-    SB_LUT4 i1_2_lut_adj_510 (.I0(\FRAME_MATCHER.state [1]), .I1(n63_adj_2262), 
-            .I2(GND_net), .I3(GND_net), .O(n1437));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_2_lut_adj_510.LUT_INIT = 16'hbbbb;
-    SB_LUT4 i11137_2_lut (.I0(\FRAME_MATCHER.state [25]), .I1(n4_adj_2271), 
-            .I2(GND_net), .I3(GND_net), .O(n13902));
-    defparam i11137_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i6_4_lut_adj_511 (.I0(n17883), .I1(n12), .I2(n10801), .I3(\data_out[6] [5]), 
-            .O(data_out_10__0__N_219));   // verilog/coms.v(174[16:77])
-    defparam i6_4_lut_adj_511.LUT_INIT = 16'h6996;
-    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_15864 (.I0(byte_transmit_counter[1]), 
-            .I1(n18222), .I2(n5_adj_2347), .I3(byte_transmit_counter[2]), 
-            .O(n18693));
-    defparam byte_transmit_counter_1__bdd_4_lut_15864.LUT_INIT = 16'he4aa;
-    SB_LUT4 i5_2_lut_3_lut (.I0(\data_out_frame2[8] [4]), .I1(\data_out_frame2[5] [2]), 
-            .I2(n17886), .I3(GND_net), .O(n16));   // verilog/coms.v(240[17:239])
-    defparam i5_2_lut_3_lut.LUT_INIT = 16'h9696;
-    SB_LUT4 n18693_bdd_4_lut (.I0(n18693), .I1(n2_adj_2348), .I2(n18223), 
-            .I3(byte_transmit_counter[2]), .O(n18696));
-    defparam n18693_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i1_2_lut_adj_512 (.I0(\FRAME_MATCHER.state [26]), .I1(n4_adj_2349), 
-            .I2(GND_net), .I3(GND_net), .O(n17361));
-    defparam i1_2_lut_adj_512.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_513 (.I0(\data_out[8] [5]), .I1(\data_out[8] [6]), 
-            .I2(GND_net), .I3(GND_net), .O(n17771));   // verilog/coms.v(181[17:93])
-    defparam i1_2_lut_adj_513.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_4_lut_adj_514 (.I0(n2124), .I1(n2138), .I2(\data_in_frame[2] [6]), 
-            .I3(\data_in_frame[2] [0]), .O(n17));
-    defparam i1_4_lut_adj_514.LUT_INIT = 16'h7bde;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_515 (.I0(n63_adj_8), .I1(n63_adj_2262), 
-            .I2(n63), .I3(\FRAME_MATCHER.i [5]), .O(\FRAME_MATCHER.i_31__N_1310 [5]));
-    defparam i1_2_lut_3_lut_4_lut_adj_515.LUT_INIT = 16'h8000;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15828 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[10] [5]), .I2(\data_out_frame2[11] [5]), 
-            .I3(byte_transmit_counter2[1]), .O(n18687));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15828.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18687_bdd_4_lut (.I0(n18687), .I1(\data_out_frame2[9] [5]), 
-            .I2(\data_out_frame2[8] [5]), .I3(byte_transmit_counter2[1]), 
-            .O(n18690));
-    defparam n18687_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i4_4_lut_adj_516 (.I0(n2120), .I1(n2128), .I2(\data_in_frame[2] [4]), 
-            .I3(\data_in_frame[1] [0]), .O(n20_adj_2350));
-    defparam i4_4_lut_adj_516.LUT_INIT = 16'hde7b;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15819 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[14] [5]), .I2(\data_out_frame2[15] [5]), 
-            .I3(byte_transmit_counter2[1]), .O(n18681));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15819.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18681_bdd_4_lut (.I0(n18681), .I1(\data_out_frame2[13] [5]), 
-            .I2(\data_out_frame2[12] [5]), .I3(byte_transmit_counter2[1]), 
-            .O(n18684));
-    defparam n18681_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i1_2_lut_adj_517 (.I0(\FRAME_MATCHER.state [27]), .I1(n4_adj_2349), 
-            .I2(GND_net), .I3(GND_net), .O(n17359));
-    defparam i1_2_lut_adj_517.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_4_lut_adj_518 (.I0(\data_out_frame2[13] [5]), .I1(\data_out_frame2[10] [7]), 
-            .I2(\data_out_frame2[6] [5]), .I3(\data_out_frame2[10] [3]), 
-            .O(n17795));   // verilog/coms.v(240[17:239])
-    defparam i1_2_lut_4_lut_adj_518.LUT_INIT = 16'h6996;
-    SB_LUT4 i3_4_lut_adj_519 (.I0(n2122), .I1(n2137_adj_2237), .I2(\data_in_frame[2] [5]), 
-            .I3(\data_in_frame[2] [1]), .O(n19_adj_2351));
-    defparam i3_4_lut_adj_519.LUT_INIT = 16'hde7b;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15814 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[18] [5]), .I2(\data_out_frame2[19] [5]), 
-            .I3(byte_transmit_counter2[1]), .O(n18675));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15814.LUT_INIT = 16'he4aa;
-    SB_LUT4 byte_transmit_counter2_2__bdd_4_lut_15879 (.I0(byte_transmit_counter2[2]), 
-            .I1(n18690), .I2(n18684), .I3(byte_transmit_counter2[3]), 
-            .O(n18741));
-    defparam byte_transmit_counter2_2__bdd_4_lut_15879.LUT_INIT = 16'he4aa;
-    SB_LUT4 i1_2_lut_3_lut_adj_520 (.I0(\data_out_frame2[10] [1]), .I1(\data_out_frame2[11] [7]), 
-            .I2(\data_out_frame2[14] [5]), .I3(GND_net), .O(n17917));   // verilog/coms.v(240[17:239])
-    defparam i1_2_lut_3_lut_adj_520.LUT_INIT = 16'h9696;
-    SB_LUT4 n18675_bdd_4_lut (.I0(n18675), .I1(\data_out_frame2[17] [5]), 
-            .I2(\data_out_frame2[16] [5]), .I3(byte_transmit_counter2[1]), 
-            .O(n18678));
-    defparam n18675_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i14_4_lut (.I0(n27), .I1(n23), .I2(\data_in_frame[1] [3]), 
-            .I3(\data_in_frame[1] [4]), .O(n30));
-    defparam i14_4_lut.LUT_INIT = 16'hefff;
-    SB_LUT4 i10986_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [19]), .I1(n63_adj_8), 
-            .I2(n63_adj_2262), .I3(n63), .O(\FRAME_MATCHER.i_31__N_1310 [19]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10986_2_lut_3_lut_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15809 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[18] [4]), .I2(\data_out_frame2[19] [4]), 
-            .I3(byte_transmit_counter2[1]), .O(n18669));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15809.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18669_bdd_4_lut (.I0(n18669), .I1(\data_out_frame2[17] [4]), 
-            .I2(\data_out_frame2[16] [4]), .I3(byte_transmit_counter2[1]), 
-            .O(n18672));
-    defparam n18669_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i9_4_lut_adj_521 (.I0(n17), .I1(\data_in_frame[1] [5]), .I2(\data_in_frame[2] [3]), 
-            .I3(n10569), .O(n25_adj_2352));
-    defparam i9_4_lut_adj_521.LUT_INIT = 16'hbffb;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15804 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[10] [3]), .I2(\data_out_frame2[11] [3]), 
-            .I3(byte_transmit_counter2[1]), .O(n18663));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15804.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18663_bdd_4_lut (.I0(n18663), .I1(\data_out_frame2[9] [3]), 
-            .I2(\data_out_frame2[8] [3]), .I3(byte_transmit_counter2[1]), 
-            .O(n18666));
-    defparam n18663_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i15_4_lut (.I0(n25_adj_2352), .I1(n30), .I2(n19_adj_2351), 
-            .I3(n20_adj_2350), .O(n50));
-    defparam i15_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15799 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[14] [3]), .I2(\data_out_frame2[15] [3]), 
-            .I3(byte_transmit_counter2[1]), .O(n18657));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15799.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18657_bdd_4_lut (.I0(n18657), .I1(\data_out_frame2[13] [3]), 
-            .I2(\data_out_frame2[12] [3]), .I3(byte_transmit_counter2[1]), 
-            .O(n18660));
-    defparam n18657_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i21_4_lut (.I0(\FRAME_MATCHER.state [15]), .I1(\FRAME_MATCHER.state [26]), 
-            .I2(\FRAME_MATCHER.state [9]), .I3(\FRAME_MATCHER.state [14]), 
-            .O(n50_adj_2353));   // verilog/coms.v(503[5:23])
-    defparam i21_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15794 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[18] [3]), .I2(\data_out_frame2[19] [3]), 
-            .I3(byte_transmit_counter2[1]), .O(n18651));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15794.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18651_bdd_4_lut (.I0(n18651), .I1(\data_out_frame2[17] [3]), 
-            .I2(\data_out_frame2[16] [3]), .I3(byte_transmit_counter2[1]), 
-            .O(n18654));
-    defparam n18651_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i19_4_lut (.I0(\FRAME_MATCHER.state [25]), .I1(\FRAME_MATCHER.state [22]), 
-            .I2(\FRAME_MATCHER.state [17]), .I3(\FRAME_MATCHER.state [13]), 
-            .O(n48));   // verilog/coms.v(503[5:23])
-    defparam i19_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15789 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[10] [2]), .I2(\data_out_frame2[11] [2]), 
-            .I3(byte_transmit_counter2[1]), .O(n18645));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15789.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18645_bdd_4_lut (.I0(n18645), .I1(\data_out_frame2[9] [2]), 
-            .I2(\data_out_frame2[8] [2]), .I3(byte_transmit_counter2[1]), 
-            .O(n18648));
-    defparam n18645_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i20_4_lut (.I0(\FRAME_MATCHER.state [7]), .I1(\FRAME_MATCHER.state [6]), 
-            .I2(\FRAME_MATCHER.state [3]), .I3(\FRAME_MATCHER.state [19]), 
-            .O(n49));   // verilog/coms.v(503[5:23])
-    defparam i20_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15784 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[14] [2]), .I2(\data_out_frame2[15] [2]), 
-            .I3(byte_transmit_counter2[1]), .O(n18639));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15784.LUT_INIT = 16'he4aa;
-    SB_CARRY add_977_17 (.CI(n16500), .I0(\FRAME_MATCHER.i [15]), .I1(n18631), 
-            .CO(n16501));
-    SB_LUT4 n18639_bdd_4_lut (.I0(n18639), .I1(\data_out_frame2[13] [2]), 
-            .I2(\data_out_frame2[12] [2]), .I3(byte_transmit_counter2[1]), 
-            .O(n18642));
-    defparam n18639_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 add_977_16_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [14]), .I1(\FRAME_MATCHER.i [14]), 
-            .I2(n18631), .I3(n16499), .O(\FRAME_MATCHER.i_31__N_1278 [14])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_16_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 add_977_32_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [30]), .I1(\FRAME_MATCHER.i [30]), 
-            .I2(n18631), .I3(n16515), .O(\FRAME_MATCHER.i_31__N_1278 [30])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_32_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i1_2_lut_4_lut_adj_522 (.I0(\data_out_frame2[9] [0]), .I1(\data_out_frame2[12] [2]), 
-            .I2(\data_out_frame2[5] [2]), .I3(\data_out_frame2[10] [4]), 
-            .O(n17892));   // verilog/coms.v(228[16:596])
-    defparam i1_2_lut_4_lut_adj_522.LUT_INIT = 16'h6996;
-    SB_CARRY add_977_32 (.CI(n16515), .I0(\FRAME_MATCHER.i [30]), .I1(n18631), 
-            .CO(n16516));
-    SB_CARRY add_977_16 (.CI(n16499), .I0(\FRAME_MATCHER.i [14]), .I1(n18631), 
-            .CO(n16500));
-    SB_LUT4 i1_2_lut_adj_523 (.I0(\FRAME_MATCHER.state [28]), .I1(n4_adj_2349), 
-            .I2(GND_net), .I3(GND_net), .O(n17357));
-    defparam i1_2_lut_adj_523.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_524 (.I0(n63_adj_8), .I1(n63_adj_2262), 
-            .I2(n63), .I3(\FRAME_MATCHER.i [4]), .O(\FRAME_MATCHER.i_31__N_1310 [4]));
-    defparam i1_2_lut_3_lut_4_lut_adj_524.LUT_INIT = 16'h8000;
-    SB_LUT4 n18741_bdd_4_lut (.I0(n18741), .I1(n6_adj_2354), .I2(n18360), 
-            .I3(byte_transmit_counter2[3]), .O(n18744));
-    defparam n18741_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 add_2510_7_lut (.I0(tx2_transmit_N_1996), .I1(byte_transmit_counter2[5]), 
-            .I2(GND_net), .I3(n16483), .O(n18316)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2510_7_lut.LUT_INIT = 16'h8228;
-    SB_LUT4 i18_4_lut (.I0(\FRAME_MATCHER.state [23]), .I1(\FRAME_MATCHER.state [10]), 
-            .I2(\FRAME_MATCHER.state [31]), .I3(\FRAME_MATCHER.state [27]), 
-            .O(n47));   // verilog/coms.v(503[5:23])
-    defparam i18_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 byte_transmit_counter2_0__bdd_4_lut_15779 (.I0(byte_transmit_counter2[0]), 
-            .I1(\data_out_frame2[18] [2]), .I2(\data_out_frame2[19] [2]), 
-            .I3(byte_transmit_counter2[1]), .O(n18633));
-    defparam byte_transmit_counter2_0__bdd_4_lut_15779.LUT_INIT = 16'he4aa;
-    SB_LUT4 i1_2_lut_adj_525 (.I0(\FRAME_MATCHER.state [29]), .I1(\FRAME_MATCHER.state [20]), 
-            .I2(GND_net), .I3(GND_net), .O(n30_adj_2355));   // verilog/coms.v(503[5:23])
-    defparam i1_2_lut_adj_525.LUT_INIT = 16'heeee;
-    SB_LUT4 i1_2_lut_adj_526 (.I0(\FRAME_MATCHER.state [29]), .I1(n4_adj_2349), 
-            .I2(GND_net), .I3(GND_net), .O(n17355));
-    defparam i1_2_lut_adj_526.LUT_INIT = 16'h8888;
-    SB_LUT4 i10989_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [17]), .I1(n63_adj_8), 
-            .I2(n63_adj_2262), .I3(n63), .O(\FRAME_MATCHER.i_31__N_1310 [17]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10989_2_lut_3_lut_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i17_4_lut (.I0(\FRAME_MATCHER.state [18]), .I1(\FRAME_MATCHER.state [28]), 
-            .I2(\FRAME_MATCHER.state [24]), .I3(\FRAME_MATCHER.state [21]), 
-            .O(n46_adj_2356));   // verilog/coms.v(503[5:23])
-    defparam i17_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 i1_2_lut_3_lut_adj_527 (.I0(\data_out_frame2[12] [7]), .I1(\data_out_frame2[12] [3]), 
-            .I2(\data_out_frame2[5] [3]), .I3(GND_net), .O(n17847));   // verilog/coms.v(227[16:31])
-    defparam i1_2_lut_3_lut_adj_527.LUT_INIT = 16'h9696;
-    SB_LUT4 n18633_bdd_4_lut (.I0(n18633), .I1(\data_out_frame2[17] [2]), 
-            .I2(\data_out_frame2[16] [2]), .I3(byte_transmit_counter2[1]), 
-            .O(n18636));
-    defparam n18633_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i1_2_lut_adj_528 (.I0(\data_out[5][1] ), .I1(\data_out[8] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n10749));   // verilog/coms.v(181[17:93])
-    defparam i1_2_lut_adj_528.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_adj_529 (.I0(\FRAME_MATCHER.state [30]), .I1(n4_adj_2349), 
-            .I2(GND_net), .I3(GND_net), .O(n17341));
-    defparam i1_2_lut_adj_529.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_3_lut_adj_530 (.I0(\data_out_frame2[16] [5]), .I1(\data_out_frame2[5] [0]), 
-            .I2(\data_out_frame2[15] [4]), .I3(GND_net), .O(n6_adj_2357));   // verilog/coms.v(228[16:596])
-    defparam i1_2_lut_3_lut_adj_530.LUT_INIT = 16'h9696;
-    SB_DFF \data_out_2[[3__2237  (.Q(\data_out[2] [3]), .C(CLK_c), .D(n11332));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i1_2_lut_adj_531 (.I0(\data_out[8] [4]), .I1(\data_out[6] [6]), 
-            .I2(GND_net), .I3(GND_net), .O(n10746));   // verilog/coms.v(178[16:77])
-    defparam i1_2_lut_adj_531.LUT_INIT = 16'h6666;
-    SB_LUT4 i5_2_lut_3_lut_adj_532 (.I0(\data_out_frame2[12] [5]), .I1(\data_out_frame2[11] [0]), 
-            .I2(\data_out_frame2[5] [5]), .I3(GND_net), .O(n16_adj_2358));   // verilog/coms.v(232[16:229])
-    defparam i5_2_lut_3_lut_adj_532.LUT_INIT = 16'h9696;
-    SB_LUT4 i16_4_lut (.I0(\FRAME_MATCHER.state [8]), .I1(\FRAME_MATCHER.state [11]), 
-            .I2(\FRAME_MATCHER.state [12]), .I3(\FRAME_MATCHER.state [30]), 
-            .O(n45));   // verilog/coms.v(503[5:23])
-    defparam i16_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 i3_4_lut_adj_533 (.I0(tx_transmit_N_1947[7]), .I1(tx_transmit_N_1947_c[5]), 
-            .I2(\tx_transmit_N_1947[4] ), .I3(\tx_transmit_N_1947[6] ), 
-            .O(n14068));
-    defparam i3_4_lut_adj_533.LUT_INIT = 16'hfffe;
-    SB_LUT4 i27_4_lut (.I0(n47), .I1(n49), .I2(n48), .I3(n50_adj_2353), 
-            .O(n56));   // verilog/coms.v(503[5:23])
-    defparam i27_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 i15557_2_lut_3_lut (.I0(\data_out_frame2[0] [2]), .I1(byte_transmit_counter2[0]), 
-            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18221));
-    defparam i15557_2_lut_3_lut.LUT_INIT = 16'h0202;
-    SB_LUT4 i22_4_lut (.I0(\FRAME_MATCHER.state [4]), .I1(\FRAME_MATCHER.state [16]), 
-            .I2(\FRAME_MATCHER.state [5]), .I3(n30_adj_2355), .O(n51));   // verilog/coms.v(503[5:23])
-    defparam i22_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 i6_3_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(\UART_TRANSMITTER.state[0] ), .I3(GND_net), .O(n3465));
-    defparam i6_3_lut.LUT_INIT = 16'h2323;
-    SB_LUT4 add_977_31_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [29]), .I1(\FRAME_MATCHER.i [29]), 
-            .I2(n18631), .I3(n16514), .O(\FRAME_MATCHER.i_31__N_1278 [29])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_31_lut.LUT_INIT = 16'hA3AC;
-    SB_CARRY add_977_31 (.CI(n16514), .I0(\FRAME_MATCHER.i [29]), .I1(n18631), 
-            .CO(n16515));
-    SB_LUT4 i28_4_lut (.I0(n51), .I1(n56), .I2(n45), .I3(n46_adj_2356), 
-            .O(n10513));   // verilog/coms.v(503[5:23])
-    defparam i28_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 add_977_30_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [28]), .I1(\FRAME_MATCHER.i [28]), 
-            .I2(n18631), .I3(n16513), .O(\FRAME_MATCHER.i_31__N_1278 [28])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_30_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 add_977_15_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [13]), .I1(\FRAME_MATCHER.i [13]), 
-            .I2(n18631), .I3(n16498), .O(\FRAME_MATCHER.i_31__N_1278 [13])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_15_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i1_2_lut_4_lut_adj_534 (.I0(\data_out_frame2[11] [3]), .I1(n17810), 
-            .I2(\data_out_frame2[11] [2]), .I3(\data_out_frame2[11] [1]), 
-            .O(n17798));   // verilog/coms.v(234[16:291])
-    defparam i1_2_lut_4_lut_adj_534.LUT_INIT = 16'h6996;
-    SB_LUT4 byte_transmit_counter2_2__bdd_4_lut_15859 (.I0(byte_transmit_counter2[2]), 
-            .I1(n18666), .I2(n18660), .I3(byte_transmit_counter2[3]), 
-            .O(n18735));
-    defparam byte_transmit_counter2_2__bdd_4_lut_15859.LUT_INIT = 16'he4aa;
-    SB_LUT4 i5_3_lut_4_lut (.I0(\data_out_frame2[16] [7]), .I1(\data_out_frame2[15] [7]), 
-            .I2(n10577), .I3(\data_out_frame2[12] [5]), .O(n14_adj_2359));   // verilog/coms.v(227[16:31])
-    defparam i5_3_lut_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 n18735_bdd_4_lut (.I0(n18735), .I1(n6_adj_2360), .I2(n18371), 
-            .I3(byte_transmit_counter2[3]), .O(n18738));
-    defparam n18735_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i2_3_lut_4_lut_adj_535 (.I0(\data_out_frame2[16] [1]), .I1(\data_out_frame2[9] [1]), 
-            .I2(\data_out_frame2[13] [3]), .I3(n10700), .O(n17841));   // verilog/coms.v(380[12:27])
-    defparam i2_3_lut_4_lut_adj_535.LUT_INIT = 16'h6996;
-    SB_LUT4 i3_4_lut_adj_536 (.I0(\data_out[10] [4]), .I1(\data_out[6] [4]), 
-            .I2(\data_out[10] [0]), .I3(n17761), .O(n17844));   // verilog/coms.v(178[16:77])
-    defparam i3_4_lut_adj_536.LUT_INIT = 16'h6996;
-    SB_LUT4 i10936_2_lut (.I0(tx2_active), .I1(r_SM_Main_2__N_2034_adj_2457[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n12359));
-    defparam i10936_2_lut.LUT_INIT = 16'heeee;
-    SB_CARRY add_977_30 (.CI(n16513), .I0(\FRAME_MATCHER.i [28]), .I1(n18631), 
-            .CO(n16514));
-    SB_LUT4 i1_2_lut_adj_537 (.I0(\data_out[7] [0]), .I1(\data_out[10] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n6_adj_2361));   // verilog/coms.v(171[16:93])
-    defparam i1_2_lut_adj_537.LUT_INIT = 16'h6666;
-    SB_LUT4 i4_4_lut_adj_538 (.I0(n10746), .I1(n10749), .I2(n10734), .I3(n6_adj_2361), 
-            .O(n17758));   // verilog/coms.v(171[16:93])
-    defparam i4_4_lut_adj_538.LUT_INIT = 16'h6996;
-    SB_LUT4 i3_4_lut_adj_539 (.I0(\data_out[5] [5]), .I1(\data_out[10][6] ), 
-            .I2(\data_out[7] [2]), .I3(\data_out[9] [1]), .O(n17730));   // verilog/coms.v(21[11:19])
-    defparam i3_4_lut_adj_539.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_adj_540 (.I0(\data_out[10] [1]), .I1(\data_out[10] [5]), 
-            .I2(GND_net), .I3(GND_net), .O(n10524));   // verilog/coms.v(171[16:93])
-    defparam i1_2_lut_adj_540.LUT_INIT = 16'h6666;
-    SB_LUT4 i15745_4_lut (.I0(n130), .I1(n18259), .I2(n18260), .I3(n3465), 
-            .O(n17146));
-    defparam i15745_4_lut.LUT_INIT = 16'h0511;
-    SB_LUT4 i1_2_lut_4_lut_adj_541 (.I0(\data_out_frame2[9] [6]), .I1(n17736), 
-            .I2(\data_out_frame2[9] [4]), .I3(\data_out_frame2[5] [6]), 
-            .O(n17914));   // verilog/coms.v(240[17:239])
-    defparam i1_2_lut_4_lut_adj_541.LUT_INIT = 16'h6996;
-    SB_LUT4 i15103_3_lut_4_lut (.I0(\data_in_frame[0] [7]), .I1(\data_in_frame[0] [6]), 
-            .I2(\data_in_frame[2] [5]), .I3(\data_in_frame[2] [0]), .O(n17962));
-    defparam i15103_3_lut_4_lut.LUT_INIT = 16'h9060;
-    SB_LUT4 i5_3_lut_4_lut_adj_542 (.I0(\data_out_frame2[9] [2]), .I1(\data_out_frame2[5] [4]), 
-            .I2(\data_out_frame2[12] [6]), .I3(n10617), .O(n14_adj_2362));   // verilog/coms.v(228[16:596])
-    defparam i5_3_lut_4_lut_adj_542.LUT_INIT = 16'h6996;
-    SB_LUT4 i3_4_lut_adj_543 (.I0(\data_out[5] [2]), .I1(\data_out[6] [7]), 
-            .I2(\data_out[7] [1]), .I3(\data_out[9] [0]), .O(n10550));   // verilog/coms.v(181[17:93])
-    defparam i3_4_lut_adj_543.LUT_INIT = 16'h6996;
-    SB_LUT4 i6_4_lut_adj_544 (.I0(n17730), .I1(n17835), .I2(n17758), .I3(n17844), 
-            .O(n14_adj_2363));   // verilog/coms.v(178[16:77])
-    defparam i6_4_lut_adj_544.LUT_INIT = 16'h6996;
-    SB_DFF \data_out_2[[5__2235  (.Q(\data_out[2][5] ), .C(CLK_c), .D(n11331));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i5_4_lut_adj_545 (.I0(n10550), .I1(n10524), .I2(\data_out[10] [7]), 
-            .I3(\data_out[9] [6]), .O(n13_c));   // verilog/coms.v(178[16:77])
-    defparam i5_4_lut_adj_545.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_3_lut_adj_546 (.I0(\data_out[7] [3]), .I1(n13_c), .I2(n14_adj_2363), 
-            .I3(GND_net), .O(n17877));   // verilog/coms.v(171[16:355])
-    defparam i1_3_lut_adj_546.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_3_lut_4_lut_adj_547 (.I0(\FRAME_MATCHER.state [0]), .I1(n10513), 
-            .I2(\FRAME_MATCHER.state [2]), .I3(\FRAME_MATCHER.state [1]), 
-            .O(n6033));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_3_lut_4_lut_adj_547.LUT_INIT = 16'h0110;
-    SB_DFF data_out_frame2_0___i130 (.Q(\data_out_frame2[16] [1]), .C(CLK_c), 
-           .D(n11647));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_4_lut_adj_548 (.I0(\FRAME_MATCHER.i_31__N_1273 ), .I1(n46), 
-            .I2(n6_adj_2364), .I3(n13033), .O(n17713));
-    defparam i1_4_lut_adj_548.LUT_INIT = 16'heccc;
-    SB_LUT4 i1_2_lut_adj_549 (.I0(\data_out[5] [4]), .I1(\data_out[9][2] ), 
-            .I2(GND_net), .I3(GND_net), .O(n10558));   // verilog/coms.v(184[17:86])
-    defparam i1_2_lut_adj_549.LUT_INIT = 16'h6666;
-    SB_LUT4 i15633_3_lut_4_lut (.I0(\data_out_frame2[0] [4]), .I1(n12704), 
-            .I2(\FRAME_MATCHER.state [0]), .I3(n612), .O(n18284));
-    defparam i15633_3_lut_4_lut.LUT_INIT = 16'heccc;
-    SB_LUT4 i10988_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [18]), .I1(n63_adj_8), 
-            .I2(n63_adj_2262), .I3(n63), .O(\FRAME_MATCHER.i_31__N_1310 [18]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10988_2_lut_3_lut_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i1_2_lut_adj_550 (.I0(n63_adj_8), .I1(n8), .I2(GND_net), .I3(GND_net), 
-            .O(n10425));   // verilog/coms.v(523[6] 525[9])
-    defparam i1_2_lut_adj_550.LUT_INIT = 16'h8888;
-    SB_LUT4 i4_4_lut_adj_551 (.I0(data_out_7__2__N_447), .I1(n17819), .I2(\data_out[6] [5]), 
-            .I3(n6_adj_2365), .O(n17768));   // verilog/coms.v(171[16:355])
-    defparam i4_4_lut_adj_551.LUT_INIT = 16'h6996;
-    SB_LUT4 i4_4_lut_adj_552 (.I0(\data_out[6] [2]), .I1(\data_out[9] [4]), 
-            .I2(n10537), .I3(n17768), .O(n10_adj_2366));   // verilog/coms.v(171[16:355])
-    defparam i4_4_lut_adj_552.LUT_INIT = 16'h6996;
-    SB_DFF data_out_frame2_0___i129 (.Q(\data_out_frame2[16] [0]), .C(CLK_c), 
-           .D(n11646));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_4_lut_adj_553 (.I0(\FRAME_MATCHER.i_31__N_1275 ), .I1(n2_adj_2341), 
-            .I2(n7199), .I3(n10425), .O(n4_adj_2349));
-    defparam i1_4_lut_adj_553.LUT_INIT = 16'heccc;
-    SB_LUT4 i2_3_lut_4_lut_adj_554 (.I0(\data_in_frame[0] [1]), .I1(\data_in_frame[0] [0]), 
-            .I2(\data_in_frame[1] [6]), .I3(\data_in_frame[6] [2]), .O(n16863));
-    defparam i2_3_lut_4_lut_adj_554.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_adj_555 (.I0(\data_out[7] [4]), .I1(\data_out[6][0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n17807));   // verilog/coms.v(172[16:77])
-    defparam i1_2_lut_adj_555.LUT_INIT = 16'h6666;
-    SB_LUT4 i15148_3_lut (.I0(\data_in[0] [1]), .I1(\data_in[2] [5]), .I2(\data_in[2] [7]), 
-            .I3(GND_net), .O(n18008));
-    defparam i15148_3_lut.LUT_INIT = 16'h8080;
-    SB_LUT4 i1_3_lut_4_lut_adj_556 (.I0(\FRAME_MATCHER.state [2]), .I1(n10346), 
-            .I2(\FRAME_MATCHER.state [0]), .I3(n1166), .O(n10353));
-    defparam i1_3_lut_4_lut_adj_556.LUT_INIT = 16'hff01;
-    SB_LUT4 add_977_29_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [27]), .I1(\FRAME_MATCHER.i [27]), 
-            .I2(n18631), .I3(n16512), .O(\FRAME_MATCHER.i_31__N_1278 [27])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_29_lut.LUT_INIT = 16'hA3AC;
-    SB_CARRY add_977_29 (.CI(n16512), .I0(\FRAME_MATCHER.i [27]), .I1(n18631), 
-            .CO(n16513));
-    SB_LUT4 i1_2_lut_adj_557 (.I0(\FRAME_MATCHER.state [31]), .I1(n4_adj_2349), 
-            .I2(GND_net), .I3(GND_net), .O(n17343));
-    defparam i1_2_lut_adj_557.LUT_INIT = 16'h8888;
-    SB_CARRY add_977_15 (.CI(n16498), .I0(\FRAME_MATCHER.i [13]), .I1(n18631), 
-            .CO(n16499));
-    SB_LUT4 i2_2_lut_3_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n4806));
-    defparam i2_2_lut_3_lut.LUT_INIT = 16'h8080;
-    SB_LUT4 i4_4_lut_adj_558 (.I0(\data_out[9][2] ), .I1(n17807), .I2(data_out_7__2__N_447), 
-            .I3(n6_adj_2367), .O(data_out_10__2__N_157));   // verilog/coms.v(172[16:77])
-    defparam i4_4_lut_adj_558.LUT_INIT = 16'h6996;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_7_i5_3_lut (.I0(\data_out[6] [7]), 
-            .I1(\data_out[7] [7]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n5_adj_2241));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_7_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_DFF \data_out_2[[7__2233  (.Q(\data_out[2][7] ), .C(CLK_c), .D(n11330));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 add_977_14_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [12]), .I1(\FRAME_MATCHER.i [12]), 
-            .I2(n18631), .I3(n16497), .O(\FRAME_MATCHER.i_31__N_1278 [12])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_14_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i15584_2_lut (.I0(data_out_7__3__N_441), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18265));
-    defparam i15584_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_559 (.I0(\data_in[3] [7]), .I1(\data_in[0] [0]), 
-            .I2(GND_net), .I3(GND_net), .O(n6_adj_2368));   // verilog/coms.v(424[7:86])
-    defparam i1_2_lut_adj_559.LUT_INIT = 16'heeee;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_560 (.I0(n63_adj_8), .I1(n63_adj_2262), 
-            .I2(n63), .I3(\FRAME_MATCHER.i [1]), .O(n113));
-    defparam i1_2_lut_3_lut_4_lut_adj_560.LUT_INIT = 16'h8000;
-    SB_LUT4 i1_2_lut_3_lut_adj_561 (.I0(n63_adj_8), .I1(n63_adj_2262), .I2(n63), 
-            .I3(GND_net), .O(n13033));   // verilog/coms.v(499[6] 501[9])
-    defparam i1_2_lut_3_lut_adj_561.LUT_INIT = 16'h8080;
-    SB_LUT4 i2_3_lut_adj_562 (.I0(\data_out[7] [5]), .I1(\data_out[7] [6]), 
-            .I2(\data_out[7] [7]), .I3(GND_net), .O(n10533));   // verilog/coms.v(172[16:77])
-    defparam i2_3_lut_adj_562.LUT_INIT = 16'h9696;
-    SB_LUT4 i3_4_lut_adj_563 (.I0(\data_in[2] [2]), .I1(n6_adj_2368), .I2(n18008), 
-            .I3(\data_in[2] [0]), .O(n8_adj_2369));   // verilog/coms.v(424[7:86])
-    defparam i3_4_lut_adj_563.LUT_INIT = 16'hdfff;
-    SB_LUT4 i10932_2_lut (.I0(\data_in[0] [3]), .I1(\data_in[1] [7]), .I2(GND_net), 
-            .I3(GND_net), .O(n13693));
-    defparam i10932_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 select_289_Select_7_i2_4_lut (.I0(byte_transmit_counter2[7]), 
-            .I1(\FRAME_MATCHER.i_31__N_1272 ), .I2(n18318), .I3(n12359), 
-            .O(n2_adj_2198));
-    defparam select_289_Select_7_i2_4_lut.LUT_INIT = 16'h88c0;
-    SB_LUT4 i15621_3_lut_4_lut (.I0(\data_out_frame2[0] [3]), .I1(n12704), 
-            .I2(\FRAME_MATCHER.state [0]), .I3(n612), .O(n18287));
-    defparam i15621_3_lut_4_lut.LUT_INIT = 16'heccc;
-    SB_LUT4 n6035_bdd_4_lut_4_lut (.I0(n50), .I1(n6033), .I2(n4494), .I3(n6035), 
-            .O(n18831));
-    defparam n6035_bdd_4_lut_4_lut.LUT_INIT = 16'h77c0;
-    SB_LUT4 i3_4_lut_adj_564 (.I0(\data_out[9] [7]), .I1(\data_out[8] [0]), 
-            .I2(data_out_7__3__N_441), .I3(n10533), .O(n17774));   // verilog/coms.v(21[11:19])
-    defparam i3_4_lut_adj_564.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_4_lut_adj_565 (.I0(\data_in[1] [6]), .I1(n13693), .I2(n8_adj_2369), 
-            .I3(\data_in[3] [5]), .O(n10493));   // verilog/coms.v(424[7:86])
-    defparam i1_4_lut_adj_565.LUT_INIT = 16'hfffb;
-    SB_LUT4 i2_3_lut_adj_566 (.I0(n17774), .I1(\data_out[6] [1]), .I2(\data_out[9] [3]), 
-            .I3(GND_net), .O(data_out_10__3__N_146));   // verilog/coms.v(21[11:19])
-    defparam i2_3_lut_adj_566.LUT_INIT = 16'h9696;
-    SB_LUT4 byte_transmit_counter2_2__bdd_4_lut_15854 (.I0(byte_transmit_counter2[2]), 
-            .I1(n18060), .I2(n18057), .I3(byte_transmit_counter2[3]), 
-            .O(n18723));
-    defparam byte_transmit_counter2_2__bdd_4_lut_15854.LUT_INIT = 16'he4aa;
-    SB_LUT4 i1_2_lut_3_lut_adj_567 (.I0(tx_active), .I1(r_SM_Main_2__N_2034[0]), 
-            .I2(n129), .I3(GND_net), .O(n1693[0]));
-    defparam i1_2_lut_3_lut_adj_567.LUT_INIT = 16'h1010;
-    SB_CARRY add_977_14 (.CI(n16497), .I0(\FRAME_MATCHER.i [12]), .I1(n18631), 
-            .CO(n16498));
-    SB_LUT4 add_977_28_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [26]), .I1(\FRAME_MATCHER.i [26]), 
-            .I2(n18631), .I3(n16511), .O(\FRAME_MATCHER.i_31__N_1278 [26])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_28_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i15636_3_lut_4_lut (.I0(\data_out_frame2[0] [2]), .I1(n12704), 
-            .I2(\FRAME_MATCHER.state [0]), .I3(n612), .O(n18289));
-    defparam i15636_3_lut_4_lut.LUT_INIT = 16'heccc;
-    SB_CARRY add_977_28 (.CI(n16511), .I0(\FRAME_MATCHER.i [26]), .I1(n18631), 
-            .CO(n16512));
-    SB_CARRY add_977_5 (.CI(n16488), .I0(\FRAME_MATCHER.i [3]), .I1(n18631), 
-            .CO(n16489));
-    SB_LUT4 i1_2_lut_adj_568 (.I0(\data_out[6] [2]), .I1(\data_out[6][0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n10801));   // verilog/coms.v(170[16:355])
-    defparam i1_2_lut_adj_568.LUT_INIT = 16'h6666;
-    SB_LUT4 i7_4_lut_adj_569 (.I0(\data_in[1] [3]), .I1(\data_in[3] [1]), 
-            .I2(\data_in[1] [5]), .I3(\data_in[2] [4]), .O(n18_adj_2370));   // verilog/coms.v(424[7:86])
-    defparam i7_4_lut_adj_569.LUT_INIT = 16'hffdf;
-    SB_LUT4 mux_1578_i1_3_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n3256[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_1578_i1_3_lut.LUT_INIT = 16'hc5c5;
-    SB_LUT4 i9_4_lut_adj_570 (.I0(\data_in[0] [4]), .I1(n18_adj_2370), .I2(\data_in[0] [2]), 
-            .I3(\data_in[0] [7]), .O(n20_adj_2371));   // verilog/coms.v(424[7:86])
-    defparam i9_4_lut_adj_570.LUT_INIT = 16'hfdff;
-    SB_DFF data_out_frame2_0___i128 (.Q(\data_out_frame2[15] [7]), .C(CLK_c), 
-           .D(n11645));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_3_lut_adj_571 (.I0(\FRAME_MATCHER.state [0]), .I1(n9575), 
-            .I2(\FRAME_MATCHER.i[31] ), .I3(GND_net), .O(n12966));
-    defparam i1_2_lut_3_lut_adj_571.LUT_INIT = 16'hb0b0;
-    SB_LUT4 i1_2_lut_adj_572 (.I0(n10537), .I1(\data_out[7] [6]), .I2(GND_net), 
-            .I3(GND_net), .O(n17829));   // verilog/coms.v(174[16:77])
-    defparam i1_2_lut_adj_572.LUT_INIT = 16'h6666;
-    SB_LUT4 i4_2_lut_adj_573 (.I0(\data_in[2] [6]), .I1(\data_in[3] [3]), 
-            .I2(GND_net), .I3(GND_net), .O(n15_adj_2372));   // verilog/coms.v(424[7:86])
-    defparam i4_2_lut_adj_573.LUT_INIT = 16'heeee;
-    SB_LUT4 mux_1136_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\rand_setpoint[25] ), 
-            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
-            .O(n2661[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_1136_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i1_2_lut_adj_574 (.I0(n17718), .I1(n17829), .I2(GND_net), 
-            .I3(GND_net), .O(data_out_10__4__N_135));   // verilog/coms.v(174[16:77])
-    defparam i1_2_lut_adj_574.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_3_lut_adj_575 (.I0(\FRAME_MATCHER.state [0]), .I1(n9575), 
-            .I2(n10522), .I3(GND_net), .O(n12999));
-    defparam i1_2_lut_3_lut_adj_575.LUT_INIT = 16'h0b0b;
-    SB_LUT4 i1_2_lut_3_lut_adj_576 (.I0(n63_adj_2262), .I1(n63_adj_8), .I2(n63), 
-            .I3(GND_net), .O(n9575));   // verilog/coms.v(427[13] 433[7])
-    defparam i1_2_lut_3_lut_adj_576.LUT_INIT = 16'h8080;
-    SB_LUT4 i1_2_lut_adj_577 (.I0(\data_out[6] [1]), .I1(\data_out[6] [3]), 
-            .I2(GND_net), .I3(GND_net), .O(n17819));   // verilog/coms.v(175[16:77])
-    defparam i1_2_lut_adj_577.LUT_INIT = 16'h6666;
-    SB_LUT4 i15737_4_lut_4_lut_4_lut_3_lut (.I0(\UART_TRANSMITTER.state[0] ), 
-            .I1(\UART_TRANSMITTER.state[1] ), .I2(\UART_TRANSMITTER.state[2] ), 
-            .I3(GND_net), .O(n11017));   // verilog/coms.v(283[4] 369[11])
-    defparam i15737_4_lut_4_lut_4_lut_3_lut.LUT_INIT = 16'h2a2a;
-    SB_LUT4 i1_2_lut_3_lut_adj_578 (.I0(\FRAME_MATCHER.i [2]), .I1(\FRAME_MATCHER.i [0]), 
-            .I2(\FRAME_MATCHER.i [1]), .I3(GND_net), .O(n237));
-    defparam i1_2_lut_3_lut_adj_578.LUT_INIT = 16'h8080;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_0_i22_4_lut (.I0(n18840), .I1(\data_out_frame2[20] [0]), 
-            .I2(byte_transmit_counter2[2]), .I3(n7263), .O(n22_adj_2373));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_0_i22_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i15718_2_lut_3_lut (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(data_out_10__7__N_110));   // verilog/coms.v(316[5:21])
-    defparam i15718_2_lut_3_lut.LUT_INIT = 16'h2020;
-    SB_LUT4 add_977_27_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [25]), .I1(\FRAME_MATCHER.i [25]), 
-            .I2(n18631), .I3(n16510), .O(\FRAME_MATCHER.i_31__N_1278 [25])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_27_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_0_i31_4_lut (.I0(n18726), .I1(n22_adj_2373), 
-            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
-            .O(tx2_data[0]));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_0_i31_4_lut.LUT_INIT = 16'h0aca;
-    SB_LUT4 i8588_4_lut_4_lut (.I0(n11016), .I1(n2731[0]), .I2(\rand_setpoint[12] ), 
-            .I3(\data_out[7] [4]), .O(n11367));
-    defparam i8588_4_lut_4_lut.LUT_INIT = 16'hd580;
-    SB_LUT4 i15562_2_lut (.I0(\rand_setpoint[17] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n18225));   // verilog/coms.v(283[4] 369[11])
-    defparam i15562_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i2_3_lut_adj_579 (.I0(\data_out[7] [7]), .I1(\data_out[8]_c [1]), 
-            .I2(\data_out[8] [0]), .I3(GND_net), .O(n10537));   // verilog/coms.v(174[16:77])
-    defparam i2_3_lut_adj_579.LUT_INIT = 16'h9696;
-    SB_LUT4 i8591_4_lut_4_lut (.I0(n11016), .I1(n2731[0]), .I2(\rand_setpoint[13] ), 
-            .I3(\data_out[7] [5]), .O(n11370));
-    defparam i8591_4_lut_4_lut.LUT_INIT = 16'hd580;
-    SB_LUT4 i8594_4_lut_4_lut (.I0(n11016), .I1(n2731[0]), .I2(\rand_setpoint[14] ), 
-            .I3(\data_out[7] [6]), .O(n11373));
-    defparam i8594_4_lut_4_lut.LUT_INIT = 16'hd580;
-    SB_LUT4 i8597_4_lut_4_lut (.I0(n11016), .I1(n2731[0]), .I2(\rand_setpoint[15] ), 
-            .I3(\data_out[7] [7]), .O(n11376));
-    defparam i8597_4_lut_4_lut.LUT_INIT = 16'hd580;
-    SB_LUT4 i10_4_lut_adj_580 (.I0(n15_adj_2372), .I1(n20_adj_2371), .I2(\data_in[2] [1]), 
-            .I3(\data_in[1] [0]), .O(n10516));   // verilog/coms.v(424[7:86])
-    defparam i10_4_lut_adj_580.LUT_INIT = 16'hfeff;
-    SB_LUT4 i3_4_lut_adj_581 (.I0(\data_in[1] [2]), .I1(\data_in[1] [1]), 
-            .I2(\data_in[3] [6]), .I3(n10516), .O(n10367));   // verilog/coms.v(424[7:86])
-    defparam i3_4_lut_adj_581.LUT_INIT = 16'hfffb;
-    SB_LUT4 i15143_4_lut (.I0(\data_in[0] [5]), .I1(\data_in[3] [0]), .I2(\data_in[3] [4]), 
-            .I3(\data_in[3] [2]), .O(n18002));
-    defparam i15143_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i3_4_lut_adj_582 (.I0(\data_in[2] [3]), .I1(\data_in[0] [6]), 
-            .I2(\data_in[1] [4]), .I3(n18002), .O(n10498));
-    defparam i3_4_lut_adj_582.LUT_INIT = 16'hfeff;
-    SB_LUT4 i8553_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(n11017), .I3(\data_out[2] [3]), .O(n11332));
-    defparam i8553_3_lut_4_lut.LUT_INIT = 16'h1f10;
-    SB_LUT4 i15146_4_lut (.I0(\data_in[3] [5]), .I1(\data_in[1] [6]), .I2(\data_in[3] [7]), 
-            .I3(\data_in[0] [0]), .O(n18006));
-    defparam i15146_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i11086_2_lut (.I0(n50), .I1(n43), .I2(GND_net), .I3(GND_net), 
-            .O(n13849));
-    defparam i11086_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 i3_4_lut_adj_583 (.I0(\data_out[10] [1]), .I1(n10537), .I2(\data_out[8] [2]), 
-            .I3(n17883), .O(data_out_10__5__N_124));   // verilog/coms.v(175[16:77])
-    defparam i3_4_lut_adj_583.LUT_INIT = 16'h6996;
-    SB_LUT4 i8558_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(n11017), .I3(\data_out[1] [4]), .O(n11337));
-    defparam i8558_3_lut_4_lut.LUT_INIT = 16'h1f10;
-    SB_LUT4 i3_4_lut_adj_584 (.I0(\data_out[8] [0]), .I1(\data_out[6] [2]), 
-            .I2(\data_out[10] [2]), .I3(n17826), .O(data_out_10__6__N_113));   // verilog/coms.v(176[16:77])
-    defparam i3_4_lut_adj_584.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_3_lut_adj_585 (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(\UART_TRANSMITTER.state[0] ), .I3(GND_net), .O(n10973));
-    defparam i1_2_lut_3_lut_adj_585.LUT_INIT = 16'h0e0e;
-    SB_DFF data_out_frame2_0___i127 (.Q(\data_out_frame2[15] [6]), .C(CLK_c), 
-           .D(n11644));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i8560_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(n11017), .I3(\data_out[0] [6]), .O(n11339));
-    defparam i8560_3_lut_4_lut.LUT_INIT = 16'h1f10;
-    SB_LUT4 i15731_2_lut_3_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(n11017), .I3(GND_net), .O(n11016));
-    defparam i15731_2_lut_3_lut.LUT_INIT = 16'he0e0;
-    SB_LUT4 i1_2_lut_adj_586 (.I0(\data_out[8] [3]), .I1(\data_out[8] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n17761));   // verilog/coms.v(178[16:77])
-    defparam i1_2_lut_adj_586.LUT_INIT = 16'h6666;
-    SB_LUT4 i2_2_lut_3_lut_adj_587 (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(\UART_TRANSMITTER.state_7__N_1223[1] ), .I3(GND_net), .O(n6));   // verilog/coms.v(283[4] 369[11])
-    defparam i2_2_lut_3_lut_adj_587.LUT_INIT = 16'h0404;
-    SB_LUT4 i1_2_lut_adj_588 (.I0(n1166), .I1(n17694), .I2(GND_net), .I3(GND_net), 
-            .O(n10497));
-    defparam i1_2_lut_adj_588.LUT_INIT = 16'hbbbb;
-    SB_LUT4 i8546_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(n11017), .I3(\data_out[3] [6]), .O(n11325));   // verilog/coms.v(283[4] 369[11])
-    defparam i8546_3_lut_4_lut.LUT_INIT = 16'h2f20;
-    SB_LUT4 i8559_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(n11017), .I3(\data_out[1] [2]), .O(n11338));   // verilog/coms.v(283[4] 369[11])
-    defparam i8559_3_lut_4_lut.LUT_INIT = 16'h2f20;
-    SB_LUT4 i6_4_lut_adj_589 (.I0(\data_in[2] [0]), .I1(\data_in[1] [7]), 
-            .I2(\data_in[0] [3]), .I3(n18006), .O(n14_adj_2375));   // verilog/coms.v(427[16:89])
-    defparam i6_4_lut_adj_589.LUT_INIT = 16'hfeff;
-    SB_LUT4 i1_2_lut_adj_590 (.I0(\data_out[10] [3]), .I1(\data_out[9] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n17835));   // verilog/coms.v(179[16:84])
-    defparam i1_2_lut_adj_590.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_3_lut_4_lut_adj_591 (.I0(\FRAME_MATCHER.i [2]), .I1(n12999), 
-            .I2(n232), .I3(n12966), .O(n18));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_3_lut_4_lut_adj_591.LUT_INIT = 16'hff04;
-    SB_LUT4 i1_2_lut_adj_592 (.I0(\data_out[6] [5]), .I1(\data_out[8] [4]), 
-            .I2(GND_net), .I3(GND_net), .O(n17745));   // verilog/coms.v(179[16:84])
-    defparam i1_2_lut_adj_592.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_3_lut_4_lut_adj_593 (.I0(\FRAME_MATCHER.i [2]), .I1(n12999), 
-            .I2(n12966), .I3(\FRAME_MATCHER.i_31__N_1275 ), .O(n13));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_3_lut_4_lut_adj_593.LUT_INIT = 16'hf400;
-    SB_LUT4 i1_2_lut_3_lut_adj_594 (.I0(\data_out[8]_c [1]), .I1(\data_out[8] [3]), 
-            .I2(\data_out[8] [2]), .I3(GND_net), .O(n10542));   // verilog/coms.v(176[16:77])
-    defparam i1_2_lut_3_lut_adj_594.LUT_INIT = 16'h9696;
-    SB_LUT4 i3_4_lut_adj_595 (.I0(n10542), .I1(n17745), .I2(\data_out[6] [3]), 
-            .I3(n17835), .O(data_out_10__7__N_101));   // verilog/coms.v(179[16:84])
-    defparam i3_4_lut_adj_595.LUT_INIT = 16'h6996;
-    SB_DFFE \data_out_10[[7__2169  (.Q(\data_out[10] [7]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_10__7__N_101));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_10[[6__2170  (.Q(\data_out[10][6] ), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_10__6__N_113));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_10[[5__2171  (.Q(\data_out[10] [5]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_10__5__N_124));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_10[[4__2172  (.Q(\data_out[10] [4]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_10__4__N_135));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_10[[3__2173  (.Q(\data_out[10] [3]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_10__3__N_146));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_10[[2__2174  (.Q(\data_out[10] [2]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_10__2__N_157));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_10[[1__2175  (.Q(\data_out[10] [1]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_10__1__N_168));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_10[[0__2176  (.Q(\data_out[10] [0]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_10__0__N_219));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF data_out_frame2_0___i1 (.Q(\data_out_frame2[0] [0]), .C(CLK_c), 
-           .D(n18105));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE \data_out_9[[7__2177  (.Q(\data_out[9] [7]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_9__7__N_272));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_9[[6__2178  (.Q(\data_out[9] [6]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_9__6__N_324));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_9[[5__2179  (.Q(\data_out[9] [5]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_9__5__N_334));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_9[[4__2180  (.Q(\data_out[9] [4]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_9__4__N_345));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_9[[3__2181  (.Q(\data_out[9] [3]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_9__3__N_356));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_9[[1__2183  (.Q(\data_out[9] [1]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_9__1__N_378));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE \data_out_9[[0__2184  (.Q(\data_out[9] [0]), .C(CLK_c), .E(data_out_10__7__N_110), 
-            .D(data_out_9__0__N_389));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF data_out_frame2_0___i126 (.Q(\data_out_frame2[15] [5]), .C(CLK_c), 
-           .D(n11643));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i125 (.Q(\data_out_frame2[15] [4]), .C(CLK_c), 
-           .D(n11642));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_596 (.I0(n63_adj_8), .I1(n7199), .I2(\FRAME_MATCHER.i [1]), 
-            .I3(n10353), .O(n3_adj_2345));
-    defparam i1_2_lut_3_lut_4_lut_adj_596.LUT_INIT = 16'h0080;
-    SB_DFF data_out_frame2_0___i124 (.Q(\data_out_frame2[15] [3]), .C(CLK_c), 
-           .D(n11641));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_597 (.I0(n63_adj_8), .I1(n63), .I2(GND_net), 
-            .I3(GND_net), .O(n10429));   // verilog/coms.v(427[13] 433[7])
-    defparam i1_2_lut_adj_597.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_598 (.I0(\FRAME_MATCHER.i [2]), .I1(n63_adj_8), 
-            .I2(n7199), .I3(n10353), .O(n3_adj_2343));
-    defparam i1_2_lut_3_lut_4_lut_adj_598.LUT_INIT = 16'h0080;
-    SB_DFF data_out_frame2_0___i123 (.Q(\data_out_frame2[15] [2]), .C(CLK_c), 
-           .D(n11640));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_6_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [6]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2334));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_6_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_5_i3_2_lut_3_lut_4_lut (.I0(n63_adj_8), .I1(n7199), 
-            .I2(\FRAME_MATCHER.i [5]), .I3(n10353), .O(n3_adj_2336));
-    defparam select_284_Select_5_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i2_3_lut_adj_599 (.I0(\FRAME_MATCHER.i [4]), .I1(\FRAME_MATCHER.i [3]), 
-            .I2(\FRAME_MATCHER.i [5]), .I3(GND_net), .O(n10_adj_2378));   // verilog/coms.v(416[12] 543[6])
-    defparam i2_3_lut_adj_599.LUT_INIT = 16'hfefe;
-    SB_LUT4 i1_2_lut_adj_600 (.I0(\FRAME_MATCHER.i [11]), .I1(\FRAME_MATCHER.i [27]), 
-            .I2(GND_net), .I3(GND_net), .O(n26_adj_2379));   // verilog/coms.v(440[7:23])
-    defparam i1_2_lut_adj_600.LUT_INIT = 16'heeee;
-    SB_LUT4 n18723_bdd_4_lut (.I0(n18723), .I1(n6_adj_2275), .I2(n18374), 
-            .I3(byte_transmit_counter2[3]), .O(n18726));
-    defparam n18723_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i2_3_lut_4_lut_adj_601 (.I0(\data_out[8]_c [1]), .I1(n17761), 
-            .I2(\data_out[6] [4]), .I3(\data_out[9] [6]), .O(n17826));   // verilog/coms.v(176[16:77])
-    defparam i2_3_lut_4_lut_adj_601.LUT_INIT = 16'h6996;
-    SB_LUT4 i17_4_lut_adj_602 (.I0(\FRAME_MATCHER.i [21]), .I1(\FRAME_MATCHER.i [24]), 
-            .I2(\FRAME_MATCHER.i [22]), .I3(\FRAME_MATCHER.i [29]), .O(n42));   // verilog/coms.v(440[7:23])
-    defparam i17_4_lut_adj_602.LUT_INIT = 16'hfffe;
-    SB_LUT4 i1_2_lut_3_lut_adj_603 (.I0(\data_out[9] [5]), .I1(\data_out[6] [1]), 
-            .I2(\data_out[6] [3]), .I3(GND_net), .O(n17883));   // verilog/coms.v(175[16:77])
-    defparam i1_2_lut_3_lut_adj_603.LUT_INIT = 16'h9696;
-    SB_LUT4 i5_4_lut_adj_604 (.I0(\data_in[2] [7]), .I1(\data_in[2] [5]), 
-            .I2(\data_in[2] [2]), .I3(\data_in[0] [1]), .O(n13_adj_2380));   // verilog/coms.v(427[16:89])
-    defparam i5_4_lut_adj_604.LUT_INIT = 16'hfffe;
-    SB_LUT4 i15695_3_lut (.I0(\data_out_frame2[0] [3]), .I1(byte_transmit_counter2[0]), 
-            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18371));
-    defparam i15695_3_lut.LUT_INIT = 16'hcece;
-    SB_LUT4 i15_4_lut_adj_605 (.I0(\FRAME_MATCHER.i [23]), .I1(\FRAME_MATCHER.i [26]), 
-            .I2(\FRAME_MATCHER.i [25]), .I3(\FRAME_MATCHER.i [6]), .O(n40));   // verilog/coms.v(440[7:23])
-    defparam i15_4_lut_adj_605.LUT_INIT = 16'hfffe;
-    SB_DFF data_out_frame2_0___i122 (.Q(\data_out_frame2[15] [1]), .C(CLK_c), 
-           .D(n11639));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i121 (.Q(\data_out_frame2[15] [0]), .C(CLK_c), 
-           .D(n11638));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i120 (.Q(\data_out_frame2[14] [7]), .C(CLK_c), 
-           .D(n11637));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i119 (.Q(\data_out_frame2[14] [6]), .C(CLK_c), 
-           .D(n11636));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i118 (.Q(\data_out_frame2[14] [5]), .C(CLK_c), 
-           .D(n11635));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i117 (.Q(\data_out_frame2[14] [4]), .C(CLK_c), 
-           .D(n11634));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i116 (.Q(\data_out_frame2[14] [3]), .C(CLK_c), 
-           .D(n11633));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i115 (.Q(\data_out_frame2[14] [2]), .C(CLK_c), 
-           .D(n11632));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i114 (.Q(\data_out_frame2[14] [1]), .C(CLK_c), 
-           .D(n11631));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i113 (.Q(\data_out_frame2[14] [0]), .C(CLK_c), 
-           .D(n11630));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i112 (.Q(\data_out_frame2[13] [7]), .C(CLK_c), 
-           .D(n11629));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i111 (.Q(\data_out_frame2[13] [6]), .C(CLK_c), 
-           .D(n11628));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i110 (.Q(\data_out_frame2[13] [5]), .C(CLK_c), 
-           .D(n11627));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i109 (.Q(\data_out_frame2[13] [4]), .C(CLK_c), 
-           .D(n11626));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i108 (.Q(\data_out_frame2[13] [3]), .C(CLK_c), 
-           .D(n11625));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i107 (.Q(\data_out_frame2[13] [2]), .C(CLK_c), 
-           .D(n11624));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i106 (.Q(\data_out_frame2[13] [1]), .C(CLK_c), 
-           .D(n11623));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i105 (.Q(\data_out_frame2[13] [0]), .C(CLK_c), 
-           .D(n11622));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i104 (.Q(\data_out_frame2[12] [7]), .C(CLK_c), 
-           .D(n11621));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i103 (.Q(\data_out_frame2[12] [6]), .C(CLK_c), 
-           .D(n11620));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i102 (.Q(\data_out_frame2[12] [5]), .C(CLK_c), 
-           .D(n11619));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i101 (.Q(\data_out_frame2[12] [4]), .C(CLK_c), 
-           .D(n11618));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i100 (.Q(\data_out_frame2[12] [3]), .C(CLK_c), 
-           .D(n11617));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i99 (.Q(\data_out_frame2[12] [2]), .C(CLK_c), 
-           .D(n11616));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i98 (.Q(\data_out_frame2[12] [1]), .C(CLK_c), 
-           .D(n11615));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i97 (.Q(\data_out_frame2[12] [0]), .C(CLK_c), 
-           .D(n11614));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i96 (.Q(\data_out_frame2[11] [7]), .C(CLK_c), 
-           .D(n11613));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i95 (.Q(\data_out_frame2[11] [6]), .C(CLK_c), 
-           .D(n11612));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i94 (.Q(\data_out_frame2[11] [5]), .C(CLK_c), 
-           .D(n11611));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_out_3[[0__2232  (.Q(\data_out[3][0] ), .C(CLK_c), .D(n11329));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i16_4_lut_adj_606 (.I0(\FRAME_MATCHER.i [8]), .I1(\FRAME_MATCHER.i [17]), 
-            .I2(\FRAME_MATCHER.i [15]), .I3(\FRAME_MATCHER.i [18]), .O(n41));   // verilog/coms.v(440[7:23])
-    defparam i16_4_lut_adj_606.LUT_INIT = 16'hfffe;
-    SB_LUT4 select_284_Select_7_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [7]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2332));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_7_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_3_i5_3_lut (.I0(\data_out_frame2[6] [3]), 
-            .I1(\data_out_frame2[7] [3]), .I2(byte_transmit_counter2[0]), 
-            .I3(GND_net), .O(n5_adj_2381));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_3_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i14_4_lut_adj_607 (.I0(\FRAME_MATCHER.i [7]), .I1(\FRAME_MATCHER.i [10]), 
-            .I2(\FRAME_MATCHER.i [9]), .I3(\FRAME_MATCHER.i [19]), .O(n39));   // verilog/coms.v(440[7:23])
-    defparam i14_4_lut_adj_607.LUT_INIT = 16'hfffe;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_3_i6_4_lut (.I0(\data_out_frame2[5] [3]), 
-            .I1(n5_adj_2381), .I2(byte_transmit_counter2[1]), .I3(byte_transmit_counter2[0]), 
-            .O(n6_adj_2360));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_3_i6_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 select_284_Select_8_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [8]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2330));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_8_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i19_4_lut_adj_608 (.I0(\FRAME_MATCHER.i [20]), .I1(\FRAME_MATCHER.i [12]), 
-            .I2(\FRAME_MATCHER.i [28]), .I3(n26_adj_2379), .O(n44_adj_2382));   // verilog/coms.v(440[7:23])
-    defparam i19_4_lut_adj_608.LUT_INIT = 16'hfffe;
-    SB_LUT4 i23_4_lut (.I0(n39), .I1(n41), .I2(n40), .I3(n42), .O(n48_adj_2383));   // verilog/coms.v(440[7:23])
-    defparam i23_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 mux_928_i1_4_lut (.I0(data_out_6__1__N_537), .I1(n18225), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[2] ), .O(n2381[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_928_i1_4_lut.LUT_INIT = 16'hcacf;
-    SB_DFF data_out_frame2_0___i93 (.Q(\data_out_frame2[11] [4]), .C(CLK_c), 
-           .D(n11610));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_4_lut_adj_609 (.I0(n13_adj_2380), .I1(n10498), .I2(n14_adj_2375), 
-            .I3(n10367), .O(n63));   // verilog/coms.v(427[16:89])
-    defparam i1_4_lut_adj_609.LUT_INIT = 16'hfffe;
-    SB_LUT4 i2_3_lut_4_lut_adj_610 (.I0(\data_out[9] [4]), .I1(\data_out[10] [0]), 
-            .I2(\data_out[6] [2]), .I3(\data_out[6][0] ), .O(n17718));   // verilog/coms.v(174[16:77])
-    defparam i2_3_lut_4_lut_adj_610.LUT_INIT = 16'h6996;
-    SB_LUT4 i18_4_lut_adj_611 (.I0(\FRAME_MATCHER.i [30]), .I1(\FRAME_MATCHER.i [14]), 
-            .I2(\FRAME_MATCHER.i [13]), .I3(\FRAME_MATCHER.i [16]), .O(n43_adj_2384));   // verilog/coms.v(440[7:23])
-    defparam i18_4_lut_adj_611.LUT_INIT = 16'hfffe;
-    SB_LUT4 i1_4_lut_adj_612 (.I0(n43_adj_2384), .I1(n10_adj_2378), .I2(n48_adj_2383), 
-            .I3(n44_adj_2382), .O(n10522));   // verilog/coms.v(440[7:23])
-    defparam i1_4_lut_adj_612.LUT_INIT = 16'hfffe;
-    SB_LUT4 i3_4_lut_adj_613 (.I0(\data_in[1] [2]), .I1(n10493), .I2(\data_in[3] [6]), 
-            .I3(\data_in[1] [1]), .O(n8_adj_2385));
-    defparam i3_4_lut_adj_613.LUT_INIT = 16'hffdf;
-    SB_LUT4 i15606_3_lut (.I0(\data_out_frame2[0] [5]), .I1(byte_transmit_counter2[1]), 
-            .I2(byte_transmit_counter2[0]), .I3(GND_net), .O(n18360));
-    defparam i15606_3_lut.LUT_INIT = 16'h3232;
-    SB_DFF data_out_frame2_0___i92 (.Q(\data_out_frame2[11] [3]), .C(CLK_c), 
-           .D(n11609));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_9_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [9]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2328));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_9_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_DFF data_out_frame2_0___i91 (.Q(\data_out_frame2[11] [2]), .C(CLK_c), 
-           .D(n11608));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_10_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [10]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2326));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_10_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_11_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [11]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2324));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_11_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_12_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [12]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2322));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_12_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_DFF data_out_frame2_0___i90 (.Q(\data_out_frame2[11] [1]), .C(CLK_c), 
-           .D(n11607));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i10973_2_lut (.I0(\FRAME_MATCHER.state [0]), .I1(n9575), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.state_31__N_1406[0] ));
-    defparam i10973_2_lut.LUT_INIT = 16'hbbbb;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_5_i5_3_lut (.I0(\data_out_frame2[6] [5]), 
-            .I1(\data_out_frame2[7] [5]), .I2(byte_transmit_counter2[0]), 
-            .I3(GND_net), .O(n5_adj_2386));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_5_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_DFF data_out_frame2_0___i89 (.Q(\data_out_frame2[11] [0]), .C(CLK_c), 
-           .D(n11606));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_5_i6_4_lut (.I0(\data_out_frame2[5] [5]), 
-            .I1(n5_adj_2386), .I2(byte_transmit_counter2[1]), .I3(byte_transmit_counter2[0]), 
-            .O(n6_adj_2354));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_5_i6_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 select_284_Select_19_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [19]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2303));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_19_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i15665_2_lut (.I0(\data_out[1] [2]), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18223));
-    defparam i15665_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_614 (.I0(\FRAME_MATCHER.i [0]), .I1(\FRAME_MATCHER.i [1]), 
-            .I2(GND_net), .I3(GND_net), .O(n232));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_2_lut_adj_614.LUT_INIT = 16'h8888;
-    SB_DFFE delay_counter_2484__i1 (.Q(delay_counter[1]), .C(CLK_c), .E(n11056), 
-            .D(n61[1]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i2 (.Q(delay_counter[2]), .C(CLK_c), .E(n11056), 
-            .D(n61[2]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i3 (.Q(delay_counter[3]), .C(CLK_c), .E(n11056), 
-            .D(n61[3]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i4 (.Q(delay_counter[4]), .C(CLK_c), .E(n11056), 
-            .D(n61[4]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i5 (.Q(delay_counter[5]), .C(CLK_c), .E(n11056), 
-            .D(n61[5]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i6 (.Q(delay_counter[6]), .C(CLK_c), .E(n11056), 
-            .D(n61[6]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i7 (.Q(delay_counter[7]), .C(CLK_c), .E(n11056), 
-            .D(n61[7]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i8 (.Q(delay_counter[8]), .C(CLK_c), .E(n11056), 
-            .D(n61[8]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i9 (.Q(delay_counter[9]), .C(CLK_c), .E(n11056), 
-            .D(n61[9]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i10 (.Q(delay_counter[10]), .C(CLK_c), .E(n11056), 
-            .D(n61[10]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i11 (.Q(delay_counter[11]), .C(CLK_c), .E(n11056), 
-            .D(n61[11]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i12 (.Q(delay_counter[12]), .C(CLK_c), .E(n11056), 
-            .D(n61[12]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFFE delay_counter_2484__i13 (.Q(delay_counter[13]), .C(CLK_c), .E(n11056), 
-            .D(n61[13]));   // verilog/coms.v(305[16] 313[10])
-    SB_DFF data_out_frame2_0___i88 (.Q(\data_out_frame2[10] [7]), .C(CLK_c), 
-           .D(n11605));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i87 (.Q(\data_out_frame2[10] [6]), .C(CLK_c), 
-           .D(n11604));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i86 (.Q(\data_out_frame2[10] [5]), .C(CLK_c), 
-           .D(n11603));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i85 (.Q(\data_out_frame2[10] [4]), .C(CLK_c), 
-           .D(n11602));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i84 (.Q(\data_out_frame2[10] [3]), .C(CLK_c), 
-           .D(n11601));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i83 (.Q(\data_out_frame2[10] [2]), .C(CLK_c), 
-           .D(n11600));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i82 (.Q(\data_out_frame2[10] [1]), .C(CLK_c), 
-           .D(n11599));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i81 (.Q(\data_out_frame2[10] [0]), .C(CLK_c), 
-           .D(n11598));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i80 (.Q(\data_out_frame2[9] [7]), .C(CLK_c), 
-           .D(n11597));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i79 (.Q(\data_out_frame2[9] [6]), .C(CLK_c), 
-           .D(n11596));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i78 (.Q(\data_out_frame2[9] [5]), .C(CLK_c), 
-           .D(n11595));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i77 (.Q(\data_out_frame2[9] [4]), .C(CLK_c), 
-           .D(n11594));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i76 (.Q(\data_out_frame2[9] [3]), .C(CLK_c), 
-           .D(n11593));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_13_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [13]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2317));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_13_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i15726_2_lut_3_lut (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n11056));   // verilog/coms.v(298[5:24])
-    defparam i15726_2_lut_3_lut.LUT_INIT = 16'h1010;
-    SB_DFF data_out_frame2_0___i2 (.Q(\data_out_frame2[0] [1]), .C(CLK_c), 
-           .D(n18102));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i75 (.Q(\data_out_frame2[9] [2]), .C(CLK_c), 
-           .D(n11592));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_14_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [14]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2313));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_14_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_15_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [15]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2311));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_15_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_DFF data_out_frame2_0___i74 (.Q(\data_out_frame2[9] [1]), .C(CLK_c), 
-           .D(n11591));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i4_3_lut (.I0(n10498), .I1(n8_adj_2385), .I2(n10516), .I3(GND_net), 
-            .O(n63_adj_2262));
-    defparam i4_3_lut.LUT_INIT = 16'hfefe;
-    SB_DFF data_out_frame2_0___i73 (.Q(\data_out_frame2[9] [0]), .C(CLK_c), 
-           .D(n11590));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_2_i2_3_lut (.I0(\data_out[2][2] ), 
-            .I1(\data_out[3][2] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n2_adj_2348));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_2_i2_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i1_2_lut_4_lut_adj_615 (.I0(\data_out[9] [6]), .I1(\data_out[7] [5]), 
-            .I2(\data_out[7] [6]), .I3(\data_out[7] [7]), .O(n6_adj_2367));   // verilog/coms.v(172[16:77])
-    defparam i1_2_lut_4_lut_adj_615.LUT_INIT = 16'h6996;
-    SB_DFF data_out_frame2_0___i72 (.Q(\data_out_frame2[8] [7]), .C(CLK_c), 
-           .D(n11589));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_616 (.I0(\FRAME_MATCHER.state [2]), .I1(\FRAME_MATCHER.state [1]), 
-            .I2(n10513), .I3(\FRAME_MATCHER.state [0]), .O(\FRAME_MATCHER.i_31__N_1270 ));
-    defparam i1_2_lut_3_lut_4_lut_adj_616.LUT_INIT = 16'h0100;
-    SB_DFF data_out_frame2_0___i71 (.Q(\data_out_frame2[8] [6]), .C(CLK_c), 
-           .D(n11588));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i70 (.Q(\data_out_frame2[8] [5]), .C(CLK_c), 
-           .D(n11587));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i5_3_lut_4_lut_adj_617 (.I0(\data_out[7] [4]), .I1(\data_out[6][0] ), 
-            .I2(n10_adj_2366), .I3(n17877), .O(data_out_10__1__N_168));   // verilog/coms.v(171[16:355])
-    defparam i5_3_lut_4_lut_adj_617.LUT_INIT = 16'h6996;
-    SB_DFF data_out_frame2_0___i69 (.Q(\data_out_frame2[8] [4]), .C(CLK_c), 
-           .D(n11586));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_2_i5_3_lut (.I0(\data_out[6] [2]), 
-            .I1(\data_out[7] [2]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n5_adj_2347));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_2_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_DFF data_out_frame2_0___i68 (.Q(\data_out_frame2[8] [3]), .C(CLK_c), 
-           .D(n11585));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i4650_2_lut (.I0(n63_adj_2262), .I1(n63), .I2(GND_net), .I3(GND_net), 
-            .O(n7199));   // verilog/coms.v(430[13] 433[7])
-    defparam i4650_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i67 (.Q(\data_out_frame2[8] [2]), .C(CLK_c), 
-           .D(n11584));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i66 (.Q(\data_out_frame2[8] [1]), .C(CLK_c), 
-           .D(n11583));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i65 (.Q(\data_out_frame2[8] [0]), .C(CLK_c), 
-           .D(n11582));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i15528_2_lut (.I0(\data_out[5] [2]), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18222));
-    defparam i15528_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i64 (.Q(\data_out_frame2[7] [7]), .C(CLK_c), 
-           .D(n11581));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i63 (.Q(\data_out_frame2[7] [6]), .C(CLK_c), 
-           .D(n11580));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i62 (.Q(\data_out_frame2[7] [5]), .C(CLK_c), 
-           .D(n11579));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_4_lut_adj_618 (.I0(n574), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(\UART_TRANSMITTER.state[0] ), .I3(n98), .O(n4));
-    defparam i1_4_lut_adj_618.LUT_INIT = 16'h02ce;
-    SB_DFF data_out_frame2_0___i61 (.Q(\data_out_frame2[7] [4]), .C(CLK_c), 
-           .D(n11578));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i60 (.Q(\data_out_frame2[7] [3]), .C(CLK_c), 
-           .D(n11577));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i59 (.Q(\data_out_frame2[7] [2]), .C(CLK_c), 
-           .D(n11576));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i15560_3_lut (.I0(\data_out[5][1] ), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(data_out_6__1__N_537), .I3(GND_net), .O(n18226));   // verilog/coms.v(283[4] 369[11])
-    defparam i15560_3_lut.LUT_INIT = 16'h4848;
-    SB_LUT4 i5_3_lut_adj_619 (.I0(\data_in[2] [3]), .I1(n10493), .I2(\data_in[3] [2]), 
-            .I3(GND_net), .O(n14_adj_2388));
-    defparam i5_3_lut_adj_619.LUT_INIT = 16'hfdfd;
-    SB_DFF data_out_frame2_0___i58 (.Q(\data_out_frame2[7] [1]), .C(CLK_c), 
-           .D(n11575));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i57 (.Q(\data_out_frame2[7] [0]), .C(CLK_c), 
-           .D(n11574));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i56 (.Q(\data_out_frame2[6] [7]), .C(CLK_c), 
-           .D(n11573));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i55 (.Q(\data_out_frame2[6] [6]), .C(CLK_c), 
-           .D(n11572));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i54 (.Q(\data_out_frame2[6] [5]), .C(CLK_c), 
-           .D(n11571));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i53 (.Q(\data_out_frame2[6] [4]), .C(CLK_c), 
-           .D(n11570));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i52 (.Q(\data_out_frame2[6] [3]), .C(CLK_c), 
-           .D(n11569));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i51 (.Q(\data_out_frame2[6] [2]), .C(CLK_c), 
-           .D(n11568));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i50 (.Q(\data_out_frame2[6] [1]), .C(CLK_c), 
-           .D(n11567));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_out_3[[2__2230  (.Q(\data_out[3][2] ), .C(CLK_c), .D(n11328));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 select_284_Select_20_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [20]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2301));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_20_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_DFF \data_out_3[[4__2228  (.Q(\data_out[3][4] ), .C(CLK_c), .D(n11327));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF \data_out_3[[5__2227  (.Q(\data_out[3][5] ), .C(CLK_c), .D(n11326));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i1_3_lut_4_lut_adj_620 (.I0(\FRAME_MATCHER.i_31__N_1272 ), .I1(n612), 
-            .I2(n63_adj_8), .I3(n7199), .O(n2_adj_2341));   // verilog/coms.v(412[11:12])
-    defparam i1_3_lut_4_lut_adj_620.LUT_INIT = 16'h8000;
-    SB_DFF data_out_frame2_0___i49 (.Q(\data_out_frame2[6] [0]), .C(CLK_c), 
-           .D(n11566));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_3_lut_adj_621 (.I0(\data_out[5] [3]), .I1(\data_out[5] [4]), 
-            .I2(\data_out[9][2] ), .I3(GND_net), .O(n6_adj_2365));   // verilog/coms.v(171[16:355])
-    defparam i1_2_lut_3_lut_adj_621.LUT_INIT = 16'h9696;
-    SB_LUT4 select_284_Select_21_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [21]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2299));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_21_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i6_4_lut_adj_622 (.I0(\data_in[3] [0]), .I1(\data_in[0] [5]), 
-            .I2(n10367), .I3(\data_in[3] [4]), .O(n15_adj_2389));
-    defparam i6_4_lut_adj_622.LUT_INIT = 16'hfffe;
-    SB_LUT4 i8_4_lut_adj_623 (.I0(n15_adj_2389), .I1(\data_in[0] [6]), .I2(n14_adj_2388), 
-            .I3(\data_in[1] [4]), .O(n63_adj_8));
-    defparam i8_4_lut_adj_623.LUT_INIT = 16'hfbff;
-    SB_LUT4 mux_902_i1_4_lut (.I0(n18226), .I1(\rand_setpoint[18] ), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[0] ), .O(n2346[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_902_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i1_2_lut_adj_624 (.I0(\data_in_frame[1] [1]), .I1(\data_in_frame[1] [0]), 
-            .I2(GND_net), .I3(GND_net), .O(n17721));   // verilog/coms.v(505[9:81])
-    defparam i1_2_lut_adj_624.LUT_INIT = 16'h6666;
-    SB_DFF data_out_frame2_0___i48 (.Q(\data_out_frame2[5] [7]), .C(CLK_c), 
-           .D(n11565));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i47 (.Q(\data_out_frame2[5] [6]), .C(CLK_c), 
-           .D(n11564));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i46 (.Q(\data_out_frame2[5] [5]), .C(CLK_c), 
-           .D(n11563));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i45 (.Q(\data_out_frame2[5] [4]), .C(CLK_c), 
-           .D(n11562));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 add_977_13_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [11]), .I1(\FRAME_MATCHER.i [11]), 
-            .I2(n18631), .I3(n16496), .O(\FRAME_MATCHER.i_31__N_1278 [11])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_13_lut.LUT_INIT = 16'hA3AC;
-    SB_DFF data_out_frame2_0___i44 (.Q(\data_out_frame2[5] [3]), .C(CLK_c), 
-           .D(n11561));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i43 (.Q(\data_out_frame2[5] [2]), .C(CLK_c), 
-           .D(n11560));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_625 (.I0(\FRAME_MATCHER.i [2]), .I1(n63_adj_8), 
-            .I2(n63_adj_2262), .I3(n63), .O(n115));
-    defparam i1_2_lut_3_lut_4_lut_adj_625.LUT_INIT = 16'h8000;
-    SB_LUT4 i11001_2_lut (.I0(\FRAME_MATCHER.i [6]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [6]));   // verilog/coms.v(430[13] 433[7])
-    defparam i11001_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_out_frame2_0___i42 (.Q(\data_out_frame2[5] [1]), .C(CLK_c), 
-           .D(n11559));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 add_977_4_lut (.I0(n115), .I1(\FRAME_MATCHER.i [2]), .I2(n18631), 
-            .I3(n16487), .O(n29)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_4_lut.LUT_INIT = 16'hA3AC;
-    SB_DFF data_out_frame2_0___i41 (.Q(\data_out_frame2[5] [0]), .C(CLK_c), 
-           .D(n11558));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i4_4_lut_adj_626 (.I0(\data_in_frame[0] [6]), .I1(\data_in_frame[1] [4]), 
-            .I2(\data_in_frame[0] [7]), .I3(n17721), .O(n10_adj_2390));   // verilog/coms.v(505[9:81])
-    defparam i4_4_lut_adj_626.LUT_INIT = 16'h6996;
-    SB_DFF byte_transmit_counter__i4 (.Q(\byte_transmit_counter[4] ), .C(CLK_c), 
-           .D(n11535));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF byte_transmit_counter__i5 (.Q(byte_transmit_counter_c[5]), .C(CLK_c), 
-           .D(n11556));   // verilog/coms.v(280[12] 370[6])
-    SB_DFFE byte_transmit_counter__i7 (.Q(byte_transmit_counter[7]), .C(CLK_c), 
-            .E(VCC_net), .D(n11555));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF byte_transmit_counter__i6 (.Q(\byte_transmit_counter[6] ), .C(CLK_c), 
-           .D(n11542));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_627 (.I0(\FRAME_MATCHER.i [0]), .I1(n63_adj_8), 
-            .I2(n7199), .I3(n10353), .O(n3_c));
-    defparam i1_2_lut_3_lut_4_lut_adj_627.LUT_INIT = 16'h0080;
-    SB_CARRY add_977_13 (.CI(n16496), .I0(\FRAME_MATCHER.i [11]), .I1(n18631), 
-            .CO(n16497));
-    SB_CARRY add_977_27 (.CI(n16510), .I0(\FRAME_MATCHER.i [25]), .I1(n18631), 
-            .CO(n16511));
-    SB_LUT4 add_977_12_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [10]), .I1(\FRAME_MATCHER.i [10]), 
-            .I2(n18631), .I3(n16495), .O(\FRAME_MATCHER.i_31__N_1278 [10])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_12_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i5_4_lut_adj_628 (.I0(\data_in_frame[1] [3]), .I1(n10_adj_2390), 
-            .I2(n17813), .I3(\data_in_frame[1] [2]), .O(n10761));   // verilog/coms.v(505[9:81])
-    defparam i5_4_lut_adj_628.LUT_INIT = 16'h6996;
-    SB_LUT4 add_977_26_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [24]), .I1(\FRAME_MATCHER.i [24]), 
-            .I2(n18631), .I3(n16509), .O(\FRAME_MATCHER.i_31__N_1278 [24])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_26_lut.LUT_INIT = 16'hA3AC;
-    SB_CARRY add_977_26 (.CI(n16509), .I0(\FRAME_MATCHER.i [24]), .I1(n18631), 
-            .CO(n16510));
-    SB_LUT4 i2_3_lut_adj_629 (.I0(\data_in_frame[1] [7]), .I1(\data_in_frame[0] [0]), 
-            .I2(n10761), .I3(GND_net), .O(n17733));   // verilog/coms.v(130[17:124])
-    defparam i2_3_lut_adj_629.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_630 (.I0(\FRAME_MATCHER.state [0]), .I1(n612), 
-            .I2(GND_net), .I3(GND_net), .O(n28));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_2_lut_adj_630.LUT_INIT = 16'h8888;
-    SB_CARRY add_977_12 (.CI(n16495), .I0(\FRAME_MATCHER.i [10]), .I1(n18631), 
-            .CO(n16496));
-    SB_LUT4 i15533_3_lut (.I0(\data_out[5] [2]), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(\data_out[5][1] ), .I3(GND_net), .O(n18230));   // verilog/coms.v(283[4] 369[11])
-    defparam i15533_3_lut.LUT_INIT = 16'h4848;
-    SB_LUT4 i2_3_lut_adj_631 (.I0(\data_in_frame[1] [2]), .I1(\data_in_frame[5] [3]), 
-            .I2(\data_in_frame[1] [1]), .I3(GND_net), .O(n16981));   // verilog/coms.v(505[9:81])
-    defparam i2_3_lut_adj_631.LUT_INIT = 16'h9696;
-    SB_LUT4 mux_876_i1_4_lut (.I0(n18230), .I1(\rand_setpoint[19] ), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[0] ), .O(n2311[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_876_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i2_3_lut_adj_632 (.I0(n17733), .I1(\data_in_frame[6] [0]), .I2(\data_in_frame[1] [5]), 
-            .I3(GND_net), .O(n17735));   // verilog/coms.v(130[17:124])
-    defparam i2_3_lut_adj_632.LUT_INIT = 16'h9696;
-    SB_LUT4 i57_3_lut_4_lut (.I0(\FRAME_MATCHER.i_31__N_1270 ), .I1(n7528), 
-            .I2(n63_adj_8), .I3(n7199), .O(n46));
-    defparam i57_3_lut_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i15534_3_lut (.I0(\data_out[5] [3]), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(\data_out[5] [2]), .I3(GND_net), .O(n18234));   // verilog/coms.v(283[4] 369[11])
-    defparam i15534_3_lut.LUT_INIT = 16'h4848;
-    SB_DFF \data_out_8[[2__2190  (.Q(\data_out[8] [2]), .C(CLK_c), .D(n11532));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 select_284_Select_3_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [3]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2339));
-    defparam select_284_Select_3_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i2_3_lut_adj_633 (.I0(\data_in_frame[1] [0]), .I1(\data_in_frame[5] [1]), 
-            .I2(\data_in_frame[0] [7]), .I3(GND_net), .O(n16982));   // verilog/coms.v(505[9:81])
-    defparam i2_3_lut_adj_633.LUT_INIT = 16'h9696;
-    SB_LUT4 i11016_2_lut (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(GND_net), .I3(GND_net), .O(n2731[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam i11016_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_3_lut_4_lut_adj_634 (.I0(\FRAME_MATCHER.i[31] ), .I1(\FRAME_MATCHER.i [2]), 
-            .I2(n232), .I3(n10522), .O(n6_adj_2364));   // verilog/coms.v(412[11:12])
-    defparam i1_3_lut_4_lut_adj_634.LUT_INIT = 16'haabf;
-    SB_LUT4 i1_3_lut_adj_635 (.I0(\data_in_frame[5] [4]), .I1(\data_in_frame[1] [3]), 
-            .I2(\data_in_frame[1] [2]), .I3(GND_net), .O(n17725));   // verilog/coms.v(505[9:81])
-    defparam i1_3_lut_adj_635.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_636 (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(GND_net), .I3(GND_net), .O(n9));
-    defparam i1_2_lut_adj_636.LUT_INIT = 16'hbbbb;
-    SB_LUT4 select_284_Select_22_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [22]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2297));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_22_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_23_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [23]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2295));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_23_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_4_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [4]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2337));
-    defparam select_284_Select_4_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 select_284_Select_24_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [24]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2293));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_24_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 mux_850_i1_4_lut (.I0(n18234), .I1(\rand_setpoint[20] ), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[0] ), .O(n2276[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_850_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i1_2_lut_3_lut_adj_637 (.I0(tx_active), .I1(r_SM_Main_2__N_2034[0]), 
-            .I2(\UART_TRANSMITTER.state[0] ), .I3(GND_net), .O(n130));   // verilog/coms.v(300[31:54])
-    defparam i1_2_lut_3_lut_adj_637.LUT_INIT = 16'hfefe;
-    SB_LUT4 i15535_3_lut (.I0(\data_out[5] [4]), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(\data_out[5] [3]), .I3(GND_net), .O(n18238));   // verilog/coms.v(283[4] 369[11])
-    defparam i15535_3_lut.LUT_INIT = 16'h4848;
-    SB_LUT4 i1_2_lut_4_lut_adj_638 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [6]), .O(n17261));
-    defparam i1_2_lut_4_lut_adj_638.LUT_INIT = 16'hdc00;
-    SB_DFF \data_in_3[[7__2262  (.Q(\data_in[3] [7]), .C(CLK_c), .D(n11531));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_25_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [25]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2291));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_25_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i1_2_lut_4_lut_adj_639 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [7]), .O(n8_adj_2258));
-    defparam i1_2_lut_4_lut_adj_639.LUT_INIT = 16'hdc00;
-    SB_LUT4 i10371_3_lut (.I0(\data_out[8]_c [1]), .I1(\rand_setpoint[1] ), 
-            .I2(data_out_10__7__N_110), .I3(GND_net), .O(n11520));   // verilog/coms.v(21[11:19])
-    defparam i10371_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 add_977_25_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [23]), .I1(\FRAME_MATCHER.i [23]), 
-            .I2(n18631), .I3(n16508), .O(\FRAME_MATCHER.i_31__N_1278 [23])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_25_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 select_284_Select_5_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [5]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2335));
-    defparam select_284_Select_5_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_4_lut_adj_640 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [8]), .O(n8_adj_2257));
-    defparam i1_2_lut_4_lut_adj_640.LUT_INIT = 16'hdc00;
-    SB_LUT4 i1_3_lut_adj_641 (.I0(\data_in_frame[5] [2]), .I1(\data_in_frame[1] [1]), 
-            .I2(\data_in_frame[1] [0]), .I3(GND_net), .O(n17722));   // verilog/coms.v(505[9:81])
-    defparam i1_3_lut_adj_641.LUT_INIT = 16'h9696;
-    SB_CARRY add_977_25 (.CI(n16508), .I0(\FRAME_MATCHER.i [23]), .I1(n18631), 
-            .CO(n16509));
-    SB_LUT4 i1_2_lut_2_lut_3_lut (.I0(n14064), .I1(tx2_active), .I2(r_SM_Main_2__N_2034_adj_2457[0]), 
-            .I3(GND_net), .O(n612));
-    defparam i1_2_lut_2_lut_3_lut.LUT_INIT = 16'hfdfd;
-    SB_LUT4 select_284_Select_26_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [26]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2289));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_26_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i3_4_lut_adj_642 (.I0(\data_in_frame[1] [6]), .I1(\data_in_frame[1] [5]), 
-            .I2(\data_in_frame[6] [1]), .I3(n10761), .O(n16994));   // verilog/coms.v(130[17:124])
-    defparam i3_4_lut_adj_642.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_6_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [6]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2333));
-    defparam select_284_Select_6_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i11000_2_lut (.I0(\FRAME_MATCHER.i [7]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [7]));   // verilog/coms.v(430[13] 433[7])
-    defparam i11000_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i5_2_lut_3_lut_4_lut (.I0(\data_out_frame2[12] [5]), .I1(\data_out_frame2[11] [0]), 
-            .I2(\data_out_frame2[12] [7]), .I3(n10905), .O(n16_adj_2391));   // verilog/coms.v(232[16:229])
-    defparam i5_2_lut_3_lut_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 i6_4_lut_adj_643 (.I0(n2120), .I1(n2128), .I2(\data_in_frame[6] [4]), 
-            .I3(\data_in_frame[5] [0]), .O(n22_adj_2392));
-    defparam i6_4_lut_adj_643.LUT_INIT = 16'h7bde;
-    SB_DFF data_out_frame2_0___i3 (.Q(\data_out_frame2[0] [2]), .C(CLK_c), 
-           .D(n18822));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_644 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [9]), .O(n17239));
-    defparam i1_2_lut_4_lut_adj_644.LUT_INIT = 16'hdc00;
-    SB_LUT4 i2_3_lut_adj_645 (.I0(n17733), .I1(\data_in_frame[1] [6]), .I2(\data_in_frame[5] [7]), 
-            .I3(GND_net), .O(n17734));   // verilog/coms.v(130[17:124])
-    defparam i2_3_lut_adj_645.LUT_INIT = 16'h9696;
-    SB_DFF data_out_frame2_0___i4 (.Q(\data_out_frame2[0] [3]), .C(CLK_c), 
-           .D(n18828));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i5 (.Q(\data_out_frame2[0] [4]), .C(CLK_c), 
-           .D(n18834));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i6 (.Q(\data_out_frame2[0] [5]), .C(CLK_c), 
-           .D(n18087));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i7 (.Q(\data_out_frame2[0] [6]), .C(CLK_c), 
-           .D(n18084));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_out_frame2_0___i8 (.Q(\data_out_frame2[0] [7]), .C(CLK_c), 
-           .D(n18081));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i153 (.Q(\data_out_frame2[19] [0]), .C(CLK_c), 
-            .E(n11114), .D(n17921));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i154 (.Q(\data_out_frame2[19] [1]), .C(CLK_c), 
-            .E(n11114), .D(n17909));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i155 (.Q(\data_out_frame2[19] [2]), .C(CLK_c), 
-            .E(n11114), .D(n17912));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i156 (.Q(\data_out_frame2[19] [3]), .C(CLK_c), 
-            .E(n11114), .D(n17793));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i157 (.Q(\data_out_frame2[19] [4]), .C(CLK_c), 
-            .E(n11114), .D(n17913));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i158 (.Q(\data_out_frame2[19] [5]), .C(CLK_c), 
-            .E(n11114), .D(n17918));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i159 (.Q(\data_out_frame2[19] [6]), .C(CLK_c), 
-            .E(n11114), .D(n17893));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i160 (.Q(\data_out_frame2[19] [7]), .C(CLK_c), 
-            .E(n11114), .D(n17901));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i161 (.Q(\data_out_frame2[20] [0]), .C(CLK_c), 
-            .E(n11114), .D(n17890));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i162 (.Q(\data_out_frame2[20] [1]), .C(CLK_c), 
-            .E(n11114), .D(n17858));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i163 (.Q(\data_out_frame2[20] [2]), .C(CLK_c), 
-            .E(n11114), .D(n17894));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i164 (.Q(\data_out_frame2[20] [3]), .C(CLK_c), 
-            .E(n11114), .D(n17907));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i165 (.Q(\data_out_frame2[20] [4]), .C(CLK_c), 
-            .E(n11114), .D(n17906));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i166 (.Q(\data_out_frame2[20] [5]), .C(CLK_c), 
-            .E(n11114), .D(n17872));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i167 (.Q(\data_out_frame2[20] [6]), .C(CLK_c), 
-            .E(n11114), .D(n17915));   // verilog/coms.v(416[12] 543[6])
-    SB_DFFE data_out_frame2_0___i168 (.Q(\data_out_frame2[20] [7]), .C(CLK_c), 
-            .E(n11114), .D(n17922));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_out_8[[3__2189  (.Q(\data_out[8] [3]), .C(CLK_c), .D(n11530));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i4_2_lut_adj_646 (.I0(\data_out_frame2[15] [6]), .I1(\data_out_frame2[0] [6]), 
-            .I2(GND_net), .I3(GND_net), .O(n18_adj_2393));   // verilog/coms.v(234[16:291])
-    defparam i4_2_lut_adj_646.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_4_lut_adj_647 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [10]), .O(n17263));
-    defparam i1_2_lut_4_lut_adj_647.LUT_INIT = 16'hdc00;
-    SB_LUT4 i10_4_lut_adj_648 (.I0(n17751), .I1(n17868), .I2(n17798), 
-            .I3(n17902), .O(n24_adj_2394));   // verilog/coms.v(234[16:291])
-    defparam i10_4_lut_adj_648.LUT_INIT = 16'h6996;
-    SB_DFF \data_out_8[[4__2188  (.Q(\data_out[8] [4]), .C(CLK_c), .D(n11529));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF \data_in_3[[6__2263  (.Q(\data_in[3] [6]), .C(CLK_c), .D(n11528));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_7_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [7]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2331));
-    defparam select_284_Select_7_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10999_2_lut (.I0(\FRAME_MATCHER.i [8]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [8]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10999_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF \data_out_8[[5__2187  (.Q(\data_out[8] [5]), .C(CLK_c), .D(n11527));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i8_4_lut_adj_649 (.I0(\data_out_frame2[0] [5]), .I1(\data_out_frame2[8] [1]), 
-            .I2(\data_out_frame2[12] [7]), .I3(\data_out_frame2[7] [5]), 
-            .O(n22_adj_2395));   // verilog/coms.v(234[16:291])
-    defparam i8_4_lut_adj_649.LUT_INIT = 16'h6996;
-    SB_DFF \data_out_8[[6__2186  (.Q(\data_out[8] [6]), .C(CLK_c), .D(n11526));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_650 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [11]), .O(n17265));
-    defparam i1_2_lut_4_lut_adj_650.LUT_INIT = 16'hdc00;
-    SB_DFF \data_out_8[[7__2185  (.Q(\data_out[8] [7]), .C(CLK_c), .D(n11525));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 select_284_Select_27_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [27]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2287));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_27_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i12_4_lut_adj_651 (.I0(\data_out_frame2[15] [5]), .I1(n24_adj_2394), 
-            .I2(n18_adj_2393), .I3(\data_out_frame2[16] [5]), .O(n26_adj_2396));   // verilog/coms.v(234[16:291])
-    defparam i12_4_lut_adj_651.LUT_INIT = 16'h6996;
-    SB_DFF \data_out_9[[2__2182  (.Q(\data_out[9][2] ), .C(CLK_c), .D(n11524));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i4_4_lut_adj_652 (.I0(\data_in_frame[1] [4]), .I1(n16981), .I2(\data_in_frame[5] [5]), 
-            .I3(\data_in_frame[1] [3]), .O(n20_adj_2397));
-    defparam i4_4_lut_adj_652.LUT_INIT = 16'hedde;
-    SB_DFF \data_out_8[[1__2191  (.Q(\data_out[8]_c [1]), .C(CLK_c), .D(n11520));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 i13_4_lut (.I0(n17917), .I1(n26_adj_2396), .I2(n22_adj_2395), 
-            .I3(n17920), .O(n17922));   // verilog/coms.v(234[16:291])
-    defparam i13_4_lut.LUT_INIT = 16'h6996;
-    SB_LUT4 i2_4_lut_adj_653 (.I0(n2124), .I1(\data_in_frame[6] [7]), .I2(\data_in_frame[6] [6]), 
-            .I3(n2126), .O(n18_adj_2398));
-    defparam i2_4_lut_adj_653.LUT_INIT = 16'h7bde;
-    SB_LUT4 add_977_24_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [22]), .I1(\FRAME_MATCHER.i [22]), 
-            .I2(n18631), .I3(n16507), .O(\FRAME_MATCHER.i_31__N_1278 [22])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_24_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i6_4_lut_adj_654 (.I0(n10887), .I1(\data_out_frame2[16] [2]), 
-            .I2(\data_out_frame2[10] [0]), .I3(\data_out_frame2[9] [2]), 
-            .O(n16_adj_2399));   // verilog/coms.v(240[17:239])
-    defparam i6_4_lut_adj_654.LUT_INIT = 16'h6996;
-    SB_CARRY add_977_4 (.CI(n16487), .I0(\FRAME_MATCHER.i [2]), .I1(n18631), 
-            .CO(n16488));
-    SB_LUT4 i3_4_lut_adj_655 (.I0(\data_in_frame[5] [6]), .I1(n17735), .I2(\data_in_frame[1] [4]), 
-            .I3(\data_in_frame[1] [5]), .O(n19_adj_2400));
-    defparam i3_4_lut_adj_655.LUT_INIT = 16'hb77b;
-    SB_DFF \data_out_8[[0__2192  (.Q(\data_out[8] [0]), .C(CLK_c), .D(n11519));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF \data_in_3[[5__2264  (.Q(\data_in[3] [5]), .C(CLK_c), .D(n11518));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_in_3[[4__2265  (.Q(\data_in[3] [4]), .C(CLK_c), .D(n11517));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i7_4_lut_adj_656 (.I0(\data_out_frame2[11] [0]), .I1(n17823), 
-            .I2(\data_out_frame2[14] [4]), .I3(n17853), .O(n17_adj_2401));   // verilog/coms.v(240[17:239])
-    defparam i7_4_lut_adj_656.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_4_lut_adj_657 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [12]), .O(n17267));
-    defparam i1_2_lut_4_lut_adj_657.LUT_INIT = 16'hdc00;
-    SB_DFF \data_in_3[[3__2266  (.Q(\data_in[3] [3]), .C(CLK_c), .D(n11516));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i9_4_lut_adj_658 (.I0(n17_adj_2401), .I1(n17895), .I2(n16_adj_2399), 
-            .I3(n17914), .O(n17915));   // verilog/coms.v(240[17:239])
-    defparam i9_4_lut_adj_658.LUT_INIT = 16'h6996;
-    SB_DFF \data_in_3[[2__2267  (.Q(\data_in[3] [2]), .C(CLK_c), .D(n11515));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_in_3[[1__2268  (.Q(\data_in[3] [1]), .C(CLK_c), .D(n11514));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_in_3[[0__2269  (.Q(\data_in[3] [0]), .C(CLK_c), .D(n11513));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_in_2[[7__2270  (.Q(\data_in[2] [7]), .C(CLK_c), .D(n11512));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i15141_4_lut (.I0(n10569), .I1(n17734), .I2(\data_in_frame[1] [7]), 
-            .I3(\data_in_frame[6] [3]), .O(n18000));
-    defparam i15141_4_lut.LUT_INIT = 16'h8448;
-    SB_DFF \data_in_2[[6__2271  (.Q(\data_in[2] [6]), .C(CLK_c), .D(n11511));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_8_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [8]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2329));
-    defparam select_284_Select_8_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF \data_in_2[[5__2272  (.Q(\data_in[2] [5]), .C(CLK_c), .D(n11510));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_in_2[[4__2273  (.Q(\data_in[2] [4]), .C(CLK_c), .D(n11509));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i10998_2_lut (.I0(\FRAME_MATCHER.i [9]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [9]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10998_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_4_lut_adj_659 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [13]), .O(n17269));
-    defparam i1_2_lut_4_lut_adj_659.LUT_INIT = 16'hdc00;
-    SB_DFF \data_in_2[[3__2274  (.Q(\data_in[2] [3]), .C(CLK_c), .D(n11508));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i7_4_lut_adj_660 (.I0(n10825), .I1(\data_out_frame2[9] [3]), 
-            .I2(n10703), .I3(\data_out_frame2[14] [4]), .O(n18_adj_2402));   // verilog/coms.v(232[16:229])
-    defparam i7_4_lut_adj_660.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_28_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [28]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2285));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_28_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_DFF \data_in_2[[2__2275  (.Q(\data_in[2] [2]), .C(CLK_c), .D(n11507));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 add_977_11_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [9]), .I1(\FRAME_MATCHER.i [9]), 
-            .I2(n18631), .I3(n16494), .O(\FRAME_MATCHER.i_31__N_1278 [9])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_11_lut.LUT_INIT = 16'hA3AC;
-    SB_DFF \data_in_2[[1__2276  (.Q(\data_in[2] [1]), .C(CLK_c), .D(n11503));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i12_4_lut_adj_661 (.I0(n17722), .I1(n16863), .I2(n17725), 
-            .I3(n16982), .O(n28_adj_2403));
-    defparam i12_4_lut_adj_661.LUT_INIT = 16'hfffb;
-    SB_LUT4 i9_4_lut_adj_662 (.I0(n17871), .I1(n18_adj_2402), .I2(n10710), 
-            .I3(n10877), .O(n20_adj_2404));   // verilog/coms.v(232[16:229])
-    defparam i9_4_lut_adj_662.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_4_lut_adj_663 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [14]), .O(n17303));
-    defparam i1_2_lut_4_lut_adj_663.LUT_INIT = 16'hdc00;
-    SB_LUT4 i10_4_lut_adj_664 (.I0(n10839), .I1(n20_adj_2404), .I2(n16_adj_2358), 
-            .I3(\data_out_frame2[0] [4]), .O(n17872));   // verilog/coms.v(232[16:229])
-    defparam i10_4_lut_adj_664.LUT_INIT = 16'h9669;
-    SB_LUT4 i11_4_lut_adj_665 (.I0(n2122), .I1(n22_adj_2392), .I2(n16994), 
-            .I3(\data_in_frame[6] [5]), .O(n27_adj_2405));
-    defparam i11_4_lut_adj_665.LUT_INIT = 16'hfdfe;
-    SB_LUT4 i1_2_lut_3_lut_adj_666 (.I0(data_out_6__1__N_537), .I1(\data_out[8] [5]), 
-            .I2(\data_out[8] [6]), .I3(GND_net), .O(n10734));   // verilog/coms.v(181[17:93])
-    defparam i1_2_lut_3_lut_adj_666.LUT_INIT = 16'h9696;
-    SB_LUT4 i2_3_lut_adj_667 (.I0(\data_out_frame2[14] [3]), .I1(\data_out_frame2[7] [3]), 
-            .I2(\data_out_frame2[0] [3]), .I3(GND_net), .O(n17871));   // verilog/coms.v(232[16:229])
-    defparam i2_3_lut_adj_667.LUT_INIT = 16'h9696;
-    SB_DFF \data_in_2[[0__2277  (.Q(\data_in[2] [0]), .C(CLK_c), .D(n11502));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i5_3_lut_adj_668 (.I0(n17905), .I1(\data_out_frame2[16] [2]), 
-            .I2(n10778), .I3(GND_net), .O(n14_adj_2406));   // verilog/coms.v(231[16:291])
-    defparam i5_3_lut_adj_668.LUT_INIT = 16'h9696;
-    SB_DFF \data_in_1[[7__2278  (.Q(\data_in[1] [7]), .C(CLK_c), .D(n11501));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_669 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [15]), .O(n17271));
-    defparam i1_2_lut_4_lut_adj_669.LUT_INIT = 16'hdc00;
-    SB_LUT4 i6_4_lut_adj_670 (.I0(\data_out_frame2[11] [5]), .I1(n10583), 
-            .I2(\data_out_frame2[12] [4]), .I3(n17780), .O(n15_adj_2407));   // verilog/coms.v(231[16:291])
-    defparam i6_4_lut_adj_670.LUT_INIT = 16'h6996;
-    SB_DFF \data_in_1[[6__2279  (.Q(\data_in[1] [6]), .C(CLK_c), .D(n11500));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_in_1[[5__2280  (.Q(\data_in[1] [5]), .C(CLK_c), .D(n11499));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i8_4_lut_adj_671 (.I0(n15_adj_2407), .I1(n17856), .I2(n14_adj_2406), 
-            .I3(n17871), .O(n17906));   // verilog/coms.v(231[16:291])
-    defparam i8_4_lut_adj_671.LUT_INIT = 16'h6996;
-    SB_DFF \data_in_1[[4__2281  (.Q(\data_in[1] [4]), .C(CLK_c), .D(n11498));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_in_1[[3__2282  (.Q(\data_in[1] [3]), .C(CLK_c), .D(n11497));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF \data_in_1[[2__2283  (.Q(\data_in[1] [2]), .C(CLK_c), .D(n11496));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i13_4_lut_adj_672 (.I0(n18000), .I1(n19_adj_2400), .I2(n18_adj_2398), 
-            .I3(n20_adj_2397), .O(n29_adj_2408));
-    defparam i13_4_lut_adj_672.LUT_INIT = 16'hfffd;
-    SB_LUT4 i1_2_lut_4_lut_adj_673 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [16]), .O(n8_adj_2254));
-    defparam i1_2_lut_4_lut_adj_673.LUT_INIT = 16'hdc00;
-    SB_LUT4 i1_2_lut_adj_674 (.I0(\data_out_frame2[7] [2]), .I1(\data_out_frame2[15] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n6_adj_2409));   // verilog/coms.v(231[16:291])
-    defparam i1_2_lut_adj_674.LUT_INIT = 16'h6666;
-    SB_CARRY add_977_11 (.CI(n16494), .I0(\FRAME_MATCHER.i [9]), .I1(n18631), 
-            .CO(n16495));
-    SB_LUT4 i4_4_lut_adj_675 (.I0(\data_out_frame2[14] [2]), .I1(\data_out_frame2[0] [2]), 
-            .I2(\data_out_frame2[11] [4]), .I3(n6_adj_2409), .O(n17905));   // verilog/coms.v(231[16:291])
-    defparam i4_4_lut_adj_675.LUT_INIT = 16'h6996;
-    SB_LUT4 i5_4_lut_adj_676 (.I0(n17751), .I1(n17862), .I2(n17841), .I3(n17889), 
-            .O(n12_adj_2410));   // verilog/coms.v(380[12:27])
-    defparam i5_4_lut_adj_676.LUT_INIT = 16'h6996;
-    SB_LUT4 i6_4_lut_adj_677 (.I0(n17905), .I1(n12_adj_2410), .I2(\data_out_frame2[8] [7]), 
-            .I3(n10905), .O(n17907));   // verilog/coms.v(380[12:27])
-    defparam i6_4_lut_adj_677.LUT_INIT = 16'h6996;
-    SB_LUT4 i4_4_lut_adj_678 (.I0(\data_out_frame2[11] [0]), .I1(\data_out_frame2[11] [1]), 
-            .I2(\data_out_frame2[11] [2]), .I3(\data_out_frame2[11] [3]), 
-            .O(n10_adj_2411));   // verilog/coms.v(227[16:31])
-    defparam i4_4_lut_adj_678.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_9_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [9]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2327));
-    defparam select_284_Select_9_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10997_2_lut (.I0(\FRAME_MATCHER.i [10]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [10]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10997_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i5_3_lut_adj_679 (.I0(\data_out_frame2[10] [7]), .I1(n10_adj_2411), 
-            .I2(\data_out_frame2[10] [6]), .I3(GND_net), .O(n10583));   // verilog/coms.v(227[16:31])
-    defparam i5_3_lut_adj_679.LUT_INIT = 16'h9696;
-    SB_LUT4 select_284_Select_29_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [29]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2283));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_29_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_10_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [10]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2325));
-    defparam select_284_Select_10_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_4_lut_adj_680 (.I0(\FRAME_MATCHER.state [0]), .I1(n29_adj_2408), 
-            .I2(n27_adj_2405), .I3(n28_adj_2403), .O(n12704));   // verilog/coms.v(416[12] 543[6])
-    defparam i1_4_lut_adj_680.LUT_INIT = 16'h5554;
-    SB_LUT4 i3_4_lut_adj_681 (.I0(\data_out_frame2[0] [1]), .I1(n10583), 
-            .I2(\data_out_frame2[14] [1]), .I3(n10782), .O(n17862));   // verilog/coms.v(229[16:299])
-    defparam i3_4_lut_adj_681.LUT_INIT = 16'h6996;
-    SB_LUT4 i10996_2_lut (.I0(\FRAME_MATCHER.i [11]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [11]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10996_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i6_4_lut_adj_682 (.I0(\data_out_frame2[7] [4]), .I1(n10852), 
-            .I2(\data_out_frame2[8] [6]), .I3(\data_out_frame2[0] [0]), 
-            .O(n16_adj_2412));   // verilog/coms.v(229[16:299])
-    defparam i6_4_lut_adj_682.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_30_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [30]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2281));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_30_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_11_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [11]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2323));
-    defparam select_284_Select_11_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 select_284_Select_4_i3_2_lut_3_lut_4_lut (.I0(n63_adj_8), .I1(n7199), 
-            .I2(\FRAME_MATCHER.i [4]), .I3(n10353), .O(n3_adj_2338));
-    defparam select_284_Select_4_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i7_4_lut_adj_683 (.I0(\data_out_frame2[14] [0]), .I1(n10700), 
-            .I2(\data_out_frame2[7] [0]), .I3(n17789), .O(n17_adj_2413));   // verilog/coms.v(229[16:299])
-    defparam i7_4_lut_adj_683.LUT_INIT = 16'h6996;
-    SB_CARRY add_977_24 (.CI(n16507), .I0(\FRAME_MATCHER.i [22]), .I1(n18631), 
-            .CO(n16508));
-    SB_LUT4 select_289_Select_0_i2_4_lut (.I0(byte_transmit_counter2[0]), 
-            .I1(\FRAME_MATCHER.i_31__N_1272 ), .I2(n18254), .I3(n12359), 
-            .O(n2_adj_2230));
-    defparam select_289_Select_0_i2_4_lut.LUT_INIT = 16'h88c0;
-    SB_LUT4 i10995_2_lut (.I0(\FRAME_MATCHER.i [12]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [12]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10995_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i9_4_lut_adj_684 (.I0(n17_adj_2413), .I1(n17862), .I2(n16_adj_2412), 
-            .I3(n17892), .O(n17894));   // verilog/coms.v(229[16:299])
-    defparam i9_4_lut_adj_684.LUT_INIT = 16'h9669;
-    SB_LUT4 i11390_2_lut (.I0(\FRAME_MATCHER.state [0]), .I1(n10513), .I2(GND_net), 
-            .I3(GND_net), .O(n14161));
-    defparam i11390_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 i1_2_lut_adj_685 (.I0(\data_out_frame2[9] [2]), .I1(\data_out_frame2[5] [4]), 
-            .I2(GND_net), .I3(GND_net), .O(n17856));   // verilog/coms.v(231[16:291])
-    defparam i1_2_lut_adj_685.LUT_INIT = 16'h6666;
-    SB_LUT4 select_284_Select_31_i3_2_lut_3_lut_4_lut (.I0(n63_adj_8), .I1(n7199), 
-            .I2(\FRAME_MATCHER.i[31] ), .I3(n10353), .O(n3_adj_2279));
-    defparam select_284_Select_31_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_12_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [12]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2321));
-    defparam select_284_Select_12_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10994_2_lut (.I0(\FRAME_MATCHER.i [13]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [13]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10994_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_3_lut_adj_686 (.I0(\FRAME_MATCHER.i [0]), .I1(\FRAME_MATCHER.i [1]), 
-            .I2(\FRAME_MATCHER.i [2]), .I3(GND_net), .O(n242));
-    defparam i1_2_lut_3_lut_adj_686.LUT_INIT = 16'hf8f8;
-    SB_DFF \data_in_1[[1__2284  (.Q(\data_in[1] [1]), .C(CLK_c), .D(n11495));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_17_i3_2_lut_3_lut_4_lut (.I0(\FRAME_MATCHER.i [17]), 
-            .I1(n63_adj_8), .I2(n7199), .I3(n10353), .O(n3_adj_2307));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_17_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_13_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [13]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2316));
-    defparam select_284_Select_13_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF \data_in_1[[0__2285  (.Q(\data_in[1] [0]), .C(CLK_c), .D(n11494));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i10993_2_lut (.I0(\FRAME_MATCHER.i [14]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [14]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10993_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i6_4_lut_adj_687 (.I0(n10577), .I1(n10813), .I2(n10688), .I3(\data_out_frame2[11] [0]), 
-            .O(n15_adj_2414));   // verilog/coms.v(228[16:596])
-    defparam i6_4_lut_adj_687.LUT_INIT = 16'h6996;
-    SB_DFF \data_in_0[[7__2286  (.Q(\data_in[0] [7]), .C(CLK_c), .D(n11490));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i8_4_lut_adj_688 (.I0(n15_adj_2414), .I1(\data_out_frame2[7] [0]), 
-            .I2(n14_adj_2362), .I3(n17783), .O(n17858));   // verilog/coms.v(228[16:596])
-    defparam i8_4_lut_adj_688.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_14_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [14]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2312));
-    defparam select_284_Select_14_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_689 (.I0(\data_out_frame2[7] [5]), .I1(\data_out_frame2[15] [1]), 
-            .I2(GND_net), .I3(GND_net), .O(n10700));   // verilog/coms.v(229[16:299])
-    defparam i1_2_lut_adj_689.LUT_INIT = 16'h6666;
-    SB_LUT4 i10992_2_lut (.I0(\FRAME_MATCHER.i [15]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [15]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10992_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i5_4_lut_adj_690 (.I0(n2124), .I1(n2120), .I2(\data_in_frame[3] [6]), 
-            .I3(\data_in_frame[3] [4]), .O(n19_adj_2415));
-    defparam i5_4_lut_adj_690.LUT_INIT = 16'h7bde;
-    SB_LUT4 i1_4_lut_adj_691 (.I0(n2137_adj_2237), .I1(\data_in_frame[3] [3]), 
-            .I2(\data_in_frame[3] [1]), .I3(n10569), .O(n15_adj_2416));
-    defparam i1_4_lut_adj_691.LUT_INIT = 16'hb7ed;
-    SB_LUT4 i4_4_lut_adj_692 (.I0(n2126), .I1(n2138), .I2(\data_in_frame[3] [7]), 
-            .I3(\data_in_frame[3] [0]), .O(n18_adj_2417));
-    defparam i4_4_lut_adj_692.LUT_INIT = 16'h7bde;
-    SB_LUT4 i1_2_lut_adj_693 (.I0(\data_out_frame2[16] [1]), .I1(\data_out_frame2[9] [1]), 
-            .I2(GND_net), .I3(GND_net), .O(n10825));   // verilog/coms.v(230[16:237])
-    defparam i1_2_lut_adj_693.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_adj_694 (.I0(\data_out_frame2[9] [4]), .I1(\data_out_frame2[5] [6]), 
-            .I2(GND_net), .I3(GND_net), .O(n10852));   // verilog/coms.v(229[16:299])
-    defparam i1_2_lut_adj_694.LUT_INIT = 16'h6666;
-    SB_LUT4 select_284_Select_15_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [15]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2310));
-    defparam select_284_Select_15_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10_4_lut_adj_695 (.I0(n19_adj_2415), .I1(\data_in_frame[2] [3]), 
-            .I2(n17962), .I3(\data_in_frame[2] [4]), .O(n24_adj_2418));
-    defparam i10_4_lut_adj_695.LUT_INIT = 16'hbfff;
-    SB_LUT4 add_977_23_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [21]), .I1(\FRAME_MATCHER.i [21]), 
-            .I2(n18631), .I3(n16506), .O(\FRAME_MATCHER.i_31__N_1278 [21])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_23_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i1_2_lut_adj_696 (.I0(\data_out_frame2[16] [3]), .I1(\data_out_frame2[13] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n17902));   // verilog/coms.v(228[16:596])
-    defparam i1_2_lut_adj_696.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_4_lut_adj_697 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [17]), .O(n8_adj_2252));
-    defparam i1_2_lut_4_lut_adj_697.LUT_INIT = 16'hdc00;
-    SB_LUT4 i1_2_lut_4_lut_adj_698 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [24]), .O(n8_adj_2246));
-    defparam i1_2_lut_4_lut_adj_698.LUT_INIT = 16'hdc00;
-    SB_LUT4 i8_4_lut_adj_699 (.I0(n15_adj_2416), .I1(\data_in_frame[2] [6]), 
-            .I2(n2138), .I3(\data_in_frame[2] [7]), .O(n22_adj_2419));
-    defparam i8_4_lut_adj_699.LUT_INIT = 16'hfbbf;
-    SB_LUT4 i9_4_lut_adj_700 (.I0(\data_in_frame[2] [2]), .I1(n18_adj_2417), 
-            .I2(\data_in_frame[0] [7]), .I3(\data_in_frame[2] [1]), .O(n23_adj_2420));
-    defparam i9_4_lut_adj_700.LUT_INIT = 16'hdffd;
-    SB_LUT4 i7_4_lut_adj_701 (.I0(n2122), .I1(\data_in_frame[3] [2]), .I2(\data_in_frame[3] [5]), 
-            .I3(n10613), .O(n21_adj_2421));
-    defparam i7_4_lut_adj_701.LUT_INIT = 16'h7bde;
-    SB_LUT4 i1_2_lut_adj_702 (.I0(\data_out_frame2[7] [6]), .I1(\data_out_frame2[16] [0]), 
-            .I2(GND_net), .I3(GND_net), .O(n6_adj_2422));   // verilog/coms.v(231[16:291])
-    defparam i1_2_lut_adj_702.LUT_INIT = 16'h6666;
-    SB_LUT4 i13_4_lut_adj_703 (.I0(n21_adj_2421), .I1(n23_adj_2420), .I2(n22_adj_2419), 
-            .I3(n24_adj_2418), .O(n4494));
-    defparam i13_4_lut_adj_703.LUT_INIT = 16'hfffe;
-    SB_LUT4 mux_824_i1_4_lut (.I0(n18238), .I1(\rand_setpoint[21] ), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[0] ), .O(n2241[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_824_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 select_284_Select_16_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [16]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2308));
-    defparam select_284_Select_16_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i4_4_lut_adj_704 (.I0(\data_out_frame2[13] [4]), .I1(\data_out_frame2[15] [3]), 
-            .I2(\data_out_frame2[9] [0]), .I3(n6_adj_2422), .O(n17780));   // verilog/coms.v(231[16:291])
-    defparam i4_4_lut_adj_704.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_adj_705 (.I0(\data_out_frame2[5] [1]), .I1(\data_out_frame2[6] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n18_adj_2423));   // verilog/coms.v(228[16:596])
-    defparam i1_2_lut_adj_705.LUT_INIT = 16'h6666;
-    SB_LUT4 i13_4_lut_adj_706 (.I0(n17902), .I1(n17914), .I2(n17908), 
-            .I3(n18_adj_2423), .O(n30_adj_2424));   // verilog/coms.v(228[16:596])
-    defparam i13_4_lut_adj_706.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_4_lut_adj_707 (.I0(\FRAME_MATCHER.state [1]), .I1(n10513), 
-            .I2(\FRAME_MATCHER.state [0]), .I3(\FRAME_MATCHER.state [2]), 
-            .O(n6035));   // verilog/coms.v(409[11:16])
-    defparam i1_4_lut_adj_707.LUT_INIT = 16'h2202;
-    SB_LUT4 i1_2_lut_3_lut_adj_708 (.I0(n63), .I1(n63_adj_8), .I2(n8), 
-            .I3(GND_net), .O(n10465));   // verilog/coms.v(523[6] 525[9])
-    defparam i1_2_lut_3_lut_adj_708.LUT_INIT = 16'h8080;
-    SB_LUT4 i11_4_lut_adj_709 (.I0(\data_out_frame2[5] [7]), .I1(n17739), 
-            .I2(n17727), .I3(n17755), .O(n28_adj_2425));   // verilog/coms.v(228[16:596])
-    defparam i11_4_lut_adj_709.LUT_INIT = 16'h6996;
-    SB_LUT4 add_977_3_lut (.I0(n113), .I1(\FRAME_MATCHER.i [1]), .I2(n18631), 
-            .I3(n16486), .O(n27_adj_2426)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_3_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i12_4_lut_adj_710 (.I0(n17780), .I1(n17841), .I2(n17795), 
-            .I3(n17859), .O(n29_adj_2427));   // verilog/coms.v(228[16:596])
-    defparam i12_4_lut_adj_710.LUT_INIT = 16'h6996;
-    SB_LUT4 i15536_3_lut (.I0(\data_out[5] [5]), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(\data_out[5] [4]), .I3(GND_net), .O(n18242));   // verilog/coms.v(283[4] 369[11])
-    defparam i15536_3_lut.LUT_INIT = 16'h4848;
-    SB_LUT4 i1_2_lut_3_lut_adj_711 (.I0(\data_out_frame2[11] [3]), .I1(n17810), 
-            .I2(\data_out_frame2[11] [2]), .I3(GND_net), .O(n10593));   // verilog/coms.v(237[17:221])
-    defparam i1_2_lut_3_lut_adj_711.LUT_INIT = 16'h9696;
-    SB_LUT4 select_284_Select_17_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [17]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2306));
-    defparam select_284_Select_17_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i5_3_lut_4_lut_adj_712 (.I0(\data_out[10] [3]), .I1(n10550), 
-            .I2(\data_out[9] [5]), .I3(n10524), .O(n14_adj_2320));   // verilog/coms.v(182[17:86])
-    defparam i5_3_lut_4_lut_adj_712.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_18_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [18]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2304));
-    defparam select_284_Select_18_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10_4_lut_adj_713 (.I0(\data_out_frame2[6] [0]), .I1(n10870), 
-            .I2(\data_out_frame2[13] [2]), .I3(\data_out_frame2[6] [3]), 
-            .O(n27_adj_2428));   // verilog/coms.v(228[16:596])
-    defparam i10_4_lut_adj_713.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_adj_714 (.I0(\FRAME_MATCHER.state [1]), .I1(n10513), 
-            .I2(GND_net), .I3(GND_net), .O(n10346));   // verilog/coms.v(482[5:16])
-    defparam i1_2_lut_adj_714.LUT_INIT = 16'heeee;
-    SB_LUT4 i1_2_lut_3_lut_adj_715 (.I0(\data_out[5] [4]), .I1(\data_out[9][2] ), 
-            .I2(\data_out[9] [3]), .I3(GND_net), .O(n6_adj_2318));   // verilog/coms.v(21[11:19])
-    defparam i1_2_lut_3_lut_adj_715.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_4_lut_adj_716 (.I0(\FRAME_MATCHER.i_31__N_1273 ), .I1(\FRAME_MATCHER.i[31] ), 
-            .I2(n237), .I3(n10522), .O(n2_adj_2315));
-    defparam i1_2_lut_4_lut_adj_716.LUT_INIT = 16'h888a;
-    SB_LUT4 select_284_Select_3_i3_2_lut_3_lut_4_lut (.I0(n63_adj_8), .I1(n7199), 
-            .I2(\FRAME_MATCHER.i [3]), .I3(n10353), .O(n3_adj_2340));
-    defparam select_284_Select_3_i3_2_lut_3_lut_4_lut.LUT_INIT = 16'h0080;
-    SB_LUT4 i16_4_lut_adj_717 (.I0(n27_adj_2428), .I1(n29_adj_2427), .I2(n28_adj_2425), 
-            .I3(n30_adj_2424), .O(n10577));   // verilog/coms.v(228[16:596])
-    defparam i16_4_lut_adj_717.LUT_INIT = 16'h6996;
-    SB_LUT4 mux_798_i1_4_lut (.I0(n18242), .I1(\rand_setpoint[22] ), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[0] ), .O(n2206[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_798_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i2_3_lut_adj_718 (.I0(\FRAME_MATCHER.i_31__N_1275 ), .I1(\FRAME_MATCHER.i_31__N_1270 ), 
-            .I2(\FRAME_MATCHER.i_31__N_1273 ), .I3(GND_net), .O(n1166));
-    defparam i2_3_lut_adj_718.LUT_INIT = 16'hfefe;
-    SB_LUT4 select_284_Select_19_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [19]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2302));
-    defparam select_284_Select_19_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10985_2_lut (.I0(\FRAME_MATCHER.i [20]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [20]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10985_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_719 (.I0(\data_out_frame2[16] [7]), .I1(\data_out_frame2[15] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n17889));   // verilog/coms.v(227[16:31])
-    defparam i1_2_lut_adj_719.LUT_INIT = 16'h6666;
-    SB_LUT4 select_284_Select_20_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [20]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2300));
-    defparam select_284_Select_20_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10984_2_lut (.I0(\FRAME_MATCHER.i [21]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [21]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10984_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i11136_2_lut_4_lut (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [25]), .O(n13900));
-    defparam i11136_2_lut_4_lut.LUT_INIT = 16'hdc00;
-    SB_LUT4 i1_2_lut_4_lut_adj_720 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [26]), .O(n8_adj_2245));
-    defparam i1_2_lut_4_lut_adj_720.LUT_INIT = 16'hdc00;
-    SB_LUT4 i6_4_lut_adj_721 (.I0(\data_out_frame2[7] [4]), .I1(\data_out_frame2[15] [0]), 
-            .I2(\data_out_frame2[11] [2]), .I3(\data_out_frame2[9] [3]), 
-            .O(n15_adj_2429));   // verilog/coms.v(227[16:31])
-    defparam i6_4_lut_adj_721.LUT_INIT = 16'h6996;
-    SB_DFF \data_in_0[[6__2287  (.Q(\data_in[0] [6]), .C(CLK_c), .D(n11489));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i8_4_lut_adj_722 (.I0(n15_adj_2429), .I1(n17765), .I2(n14_adj_2359), 
-            .I3(n17847), .O(n17890));   // verilog/coms.v(227[16:31])
-    defparam i8_4_lut_adj_722.LUT_INIT = 16'h9669;
-    SB_LUT4 i1_2_lut_adj_723 (.I0(\data_out_frame2[0] [5]), .I1(\data_out_frame2[0] [4]), 
-            .I2(GND_net), .I3(GND_net), .O(n17853));   // verilog/coms.v(380[12:27])
-    defparam i1_2_lut_adj_723.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_adj_724 (.I0(\FRAME_MATCHER.i [0]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(n109));
-    defparam i1_2_lut_adj_724.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_725 (.I0(\data_out_frame2[0] [3]), .I1(\data_out_frame2[0] [1]), 
-            .I2(GND_net), .I3(GND_net), .O(n6_adj_2430));   // verilog/coms.v(380[12:27])
-    defparam i1_2_lut_adj_725.LUT_INIT = 16'h6666;
-    SB_LUT4 i4_4_lut_adj_726 (.I0(\data_out_frame2[0] [2]), .I1(n17853), 
-            .I2(n17777), .I3(n6_adj_2430), .O(n10617));   // verilog/coms.v(380[12:27])
-    defparam i4_4_lut_adj_726.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_21_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [21]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2298));
-    defparam select_284_Select_21_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_4_lut_adj_727 (.I0(\data_out[10] [1]), .I1(\data_out[10] [5]), 
-            .I2(data_out_6__1__N_537), .I3(n17771), .O(n6_adj_2276));   // verilog/coms.v(179[16:84])
-    defparam i1_2_lut_4_lut_adj_727.LUT_INIT = 16'h6996;
-    SB_LUT4 i2_3_lut_adj_728 (.I0(n17880), .I1(\data_out_frame2[15] [6]), 
-            .I2(\data_out_frame2[9] [2]), .I3(GND_net), .O(n17789));   // verilog/coms.v(229[16:299])
-    defparam i2_3_lut_adj_728.LUT_INIT = 16'h9696;
-    SB_LUT4 i3_4_lut_adj_729 (.I0(\data_out_frame2[7] [6]), .I1(\data_out_frame2[9] [5]), 
-            .I2(\data_out_frame2[5] [7]), .I3(\data_out_frame2[9] [3]), 
-            .O(n17751));   // verilog/coms.v(234[16:291])
-    defparam i3_4_lut_adj_729.LUT_INIT = 16'h6996;
-    SB_DFF \data_in_0[[5__2288  (.Q(\data_in[0] [5]), .C(CLK_c), .D(n11488));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i10983_2_lut (.I0(\FRAME_MATCHER.i [22]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [22]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10983_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF \data_in_0[[4__2289  (.Q(\data_in[0] [4]), .C(CLK_c), .D(n11487));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i4_4_lut_adj_730 (.I0(\data_out_frame2[8] [7]), .I1(\data_out_frame2[0] [0]), 
-            .I2(\data_out_frame2[10] [6]), .I3(\data_out_frame2[13] [1]), 
-            .O(n10_adj_2431));   // verilog/coms.v(227[16:31])
-    defparam i4_4_lut_adj_730.LUT_INIT = 16'h6996;
-    SB_DFF \data_in_0[[3__2290  (.Q(\data_in[0] [3]), .C(CLK_c), .D(n11486));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i5_3_lut_adj_731 (.I0(n10617), .I1(n10_adj_2431), .I2(\data_out_frame2[5] [5]), 
-            .I3(GND_net), .O(n17765));   // verilog/coms.v(227[16:31])
-    defparam i5_3_lut_adj_731.LUT_INIT = 16'h9696;
-    SB_LUT4 select_284_Select_0_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [0]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2228));
-    defparam select_284_Select_0_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_4_lut_adj_732 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [27]), .O(n17277));
-    defparam i1_2_lut_4_lut_adj_732.LUT_INIT = 16'hdc00;
-    SB_DFF \data_in_0[[2__2291  (.Q(\data_in[0] [2]), .C(CLK_c), .D(n11485));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i4698_2_lut (.I0(byte_transmit_counter2[0]), .I1(byte_transmit_counter2[1]), 
-            .I2(GND_net), .I3(GND_net), .O(n7263));   // verilog/coms.v(403[36:58])
-    defparam i4698_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 i15570_3_lut (.I0(data_out_7__3__N_441), .I1(\UART_TRANSMITTER.state[2] ), 
-            .I2(n17786), .I3(GND_net), .O(n18247));   // verilog/coms.v(283[4] 369[11])
-    defparam i15570_3_lut.LUT_INIT = 16'h8484;
-    SB_DFF \data_in_0[[1__2292  (.Q(\data_in[0] [1]), .C(CLK_c), .D(n11484));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_22_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [22]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2296));
-    defparam select_284_Select_22_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF \data_in_0[[0__2293  (.Q(\data_in[0] [0]), .C(CLK_c), .D(n11483));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i3_4_lut_adj_733 (.I0(\data_out_frame2[8] [0]), .I1(\data_out_frame2[7] [4]), 
-            .I2(\data_out_frame2[15] [4]), .I3(n17798), .O(n10710));   // verilog/coms.v(234[16:291])
-    defparam i3_4_lut_adj_733.LUT_INIT = 16'h6996;
-    SB_LUT4 i10982_2_lut (.I0(\FRAME_MATCHER.i [23]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [23]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10982_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF \UART_TRANSMITTER.state__i2  (.Q(\UART_TRANSMITTER.state[1] ), 
-           .C(CLK_c), .D(n17181));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF \UART_TRANSMITTER.state__i3  (.Q(\UART_TRANSMITTER.state[2] ), 
-           .C(CLK_c), .D(n14));   // verilog/coms.v(280[12] 370[6])
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_2_i5_3_lut (.I0(\data_out_frame2[6] [2]), 
-            .I1(\data_out_frame2[7] [2]), .I2(byte_transmit_counter2[0]), 
-            .I3(GND_net), .O(n5_adj_2433));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_2_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_DFF data_in_frame_0__i2 (.Q(\data_in_frame[0] [1]), .C(CLK_c), .D(n11480));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 add_977_10_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [8]), .I1(\FRAME_MATCHER.i [8]), 
-            .I2(n18631), .I3(n16493), .O(\FRAME_MATCHER.i_31__N_1278 [8])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_10_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i2_3_lut_adj_734 (.I0(n10710), .I1(\data_out_frame2[7] [5]), 
-            .I2(n10929), .I3(GND_net), .O(n17823));   // verilog/coms.v(240[17:239])
-    defparam i2_3_lut_adj_734.LUT_INIT = 16'h9696;
-    SB_DFF data_in_frame_0__i3 (.Q(\data_in_frame[0] [2]), .C(CLK_c), .D(n11479));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_2_i6_4_lut (.I0(\data_out_frame2[5] [2]), 
-            .I1(n5_adj_2433), .I2(byte_transmit_counter2[1]), .I3(byte_transmit_counter2[0]), 
-            .O(n6_adj_2227));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_2_i6_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 i11_4_lut_adj_735 (.I0(\data_out_frame2[6] [1]), .I1(\data_out_frame2[7] [3]), 
-            .I2(\data_out_frame2[6] [5]), .I3(\data_out_frame2[9] [0]), 
-            .O(n30_adj_2434));   // verilog/coms.v(233[16:291])
-    defparam i11_4_lut_adj_735.LUT_INIT = 16'h6996;
-    SB_DFF data_in_frame_0__i4 (.Q(\data_in_frame[0] [3]), .C(CLK_c), .D(n11478));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i5 (.Q(\data_in_frame[0] [4]), .C(CLK_c), .D(n11477));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i6 (.Q(\data_in_frame[0] [5]), .C(CLK_c), .D(n11476));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_736 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [28]), .O(n17299));
-    defparam i1_2_lut_4_lut_adj_736.LUT_INIT = 16'hdc00;
-    SB_DFF data_in_frame_0__i7 (.Q(\data_in_frame[0] [6]), .C(CLK_c), .D(n11475));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_23_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [23]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2294));
-    defparam select_284_Select_23_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i8 (.Q(\data_in_frame[0] [7]), .C(CLK_c), .D(n11474));   // verilog/coms.v(416[12] 543[6])
-    SB_CARRY add_977_23 (.CI(n16506), .I0(\FRAME_MATCHER.i [21]), .I1(n18631), 
-            .CO(n16507));
-    SB_DFF data_in_frame_0__i9 (.Q(\data_in_frame[1] [0]), .C(CLK_c), .D(n11473));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i10981_2_lut (.I0(\FRAME_MATCHER.i [24]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [24]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10981_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i10 (.Q(\data_in_frame[1] [1]), .C(CLK_c), .D(n11472));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_4_lut_adj_737 (.I0(\FRAME_MATCHER.i_31__N_1272 ), .I1(n18253), 
-            .I2(byte_transmit_counter2[1]), .I3(n12359), .O(n17465));
-    defparam i1_4_lut_adj_737.LUT_INIT = 16'ha088;
-    SB_DFF data_in_frame_0__i11 (.Q(\data_in_frame[1] [2]), .C(CLK_c), .D(n11471));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i15_4_lut_adj_738 (.I0(n17899), .I1(n30_adj_2434), .I2(\data_out_frame2[5] [6]), 
-            .I3(\data_out_frame2[13] [6]), .O(n34));   // verilog/coms.v(233[16:291])
-    defparam i15_4_lut_adj_738.LUT_INIT = 16'h6996;
-    SB_DFF data_in_frame_0__i12 (.Q(\data_in_frame[1] [3]), .C(CLK_c), .D(n11470));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i13 (.Q(\data_in_frame[1] [4]), .C(CLK_c), .D(n11469));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i14 (.Q(\data_in_frame[1] [5]), .C(CLK_c), .D(n11468));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i13_4_lut_adj_739 (.I0(n17736), .I1(n17765), .I2(n17751), 
-            .I3(n17789), .O(n32));   // verilog/coms.v(233[16:291])
-    defparam i13_4_lut_adj_739.LUT_INIT = 16'h6996;
-    SB_DFF data_in_frame_0__i15 (.Q(\data_in_frame[1] [6]), .C(CLK_c), .D(n11467));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i14_4_lut_adj_740 (.I0(n17792), .I1(n17838), .I2(n17823), 
-            .I3(n17865), .O(n33));   // verilog/coms.v(233[16:291])
-    defparam i14_4_lut_adj_740.LUT_INIT = 16'h6996;
-    SB_DFF data_in_frame_0__i16 (.Q(\data_in_frame[1] [7]), .C(CLK_c), .D(n11466));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i17 (.Q(\data_in_frame[2] [0]), .C(CLK_c), .D(n11465));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i12_4_lut_adj_741 (.I0(\data_out_frame2[6] [6]), .I1(\data_out_frame2[13] [0]), 
-            .I2(\data_out_frame2[13] [5]), .I3(\data_out_frame2[5] [4]), 
-            .O(n31));   // verilog/coms.v(233[16:291])
-    defparam i12_4_lut_adj_741.LUT_INIT = 16'h6996;
-    SB_DFF data_in_frame_0__i18 (.Q(\data_in_frame[2] [1]), .C(CLK_c), .D(n11464));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i6_3_lut_4_lut (.I0(\data_in_frame[1] [2]), .I1(\data_in_frame[2] [2]), 
-            .I2(\data_in_frame[0] [1]), .I3(\data_in_frame[0] [0]), .O(n22_adj_2346));
-    defparam i6_3_lut_4_lut.LUT_INIT = 16'hd77d;
-    SB_LUT4 select_289_Select_2_i2_4_lut (.I0(byte_transmit_counter2[2]), 
-            .I1(\FRAME_MATCHER.i_31__N_1272 ), .I2(n18314), .I3(n12359), 
-            .O(n2_adj_2224));
-    defparam select_289_Select_2_i2_4_lut.LUT_INIT = 16'h88c0;
-    SB_LUT4 i1_2_lut_4_lut_adj_742 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [29]), .O(n8_adj_2244));
-    defparam i1_2_lut_4_lut_adj_742.LUT_INIT = 16'hdc00;
-    SB_LUT4 i18_4_lut_adj_743 (.I0(n31), .I1(n33), .I2(n32), .I3(n34), 
-            .O(n17901));   // verilog/coms.v(233[16:291])
-    defparam i18_4_lut_adj_743.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_adj_744 (.I0(\data_out_frame2[13] [6]), .I1(\data_out_frame2[15] [5]), 
-            .I2(GND_net), .I3(GND_net), .O(n10887));   // verilog/coms.v(233[16:291])
-    defparam i1_2_lut_adj_744.LUT_INIT = 16'h6666;
-    SB_LUT4 select_284_Select_24_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [24]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2292));
-    defparam select_284_Select_24_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10980_2_lut (.I0(\FRAME_MATCHER.i [25]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [25]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10980_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_4_lut_adj_745 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [30]), .O(n17283));
-    defparam i1_2_lut_4_lut_adj_745.LUT_INIT = 16'hdc00;
-    SB_LUT4 i2_3_lut_4_lut_adj_746 (.I0(\FRAME_MATCHER.i [0]), .I1(\FRAME_MATCHER.i [1]), 
-            .I2(\FRAME_MATCHER.i [2]), .I3(\FRAME_MATCHER.i[31] ), .O(n15118));   // verilog/coms.v(416[12] 543[6])
-    defparam i2_3_lut_4_lut_adj_746.LUT_INIT = 16'h0080;
-    SB_LUT4 select_284_Select_25_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [25]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2290));
-    defparam select_284_Select_25_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10979_2_lut (.I0(\FRAME_MATCHER.i [26]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [26]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10979_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i15649_3_lut (.I0(\data_out_frame2[0] [7]), .I1(byte_transmit_counter2[0]), 
-            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18266));
-    defparam i15649_3_lut.LUT_INIT = 16'hcece;
-    SB_LUT4 i4_4_lut_adj_747 (.I0(n10829), .I1(n10887), .I2(n10849), .I3(n6_adj_2357), 
-            .O(n17755));   // verilog/coms.v(228[16:596])
-    defparam i4_4_lut_adj_747.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_3_lut_adj_748 (.I0(\data_in_frame[0] [7]), .I1(\data_in_frame[0] [6]), 
-            .I2(n17813), .I3(GND_net), .O(n2137_adj_2237));   // verilog/coms.v(76[16:62])
-    defparam i1_2_lut_3_lut_adj_748.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_4_lut_adj_749 (.I0(n10497), .I1(n17713), .I2(n9575), 
-            .I3(\FRAME_MATCHER.state [31]), .O(n17279));
-    defparam i1_2_lut_4_lut_adj_749.LUT_INIT = 16'hdc00;
-    SB_LUT4 i1_2_lut_adj_750 (.I0(\data_out_frame2[12] [3]), .I1(\data_out_frame2[5] [3]), 
-            .I2(GND_net), .I3(GND_net), .O(n10905));   // verilog/coms.v(241[17:248])
-    defparam i1_2_lut_adj_750.LUT_INIT = 16'h6666;
-    SB_LUT4 select_284_Select_26_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [26]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2288));
-    defparam select_284_Select_26_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_7_i5_3_lut (.I0(\data_out_frame2[6] [7]), 
-            .I1(\data_out_frame2[7] [7]), .I2(byte_transmit_counter2[0]), 
-            .I3(GND_net), .O(n5_adj_2435));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_7_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_7_i6_4_lut (.I0(\data_out_frame2[5] [7]), 
-            .I1(n5_adj_2435), .I2(byte_transmit_counter2[1]), .I3(byte_transmit_counter2[0]), 
-            .O(n6_adj_2223));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_7_i6_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 i15580_2_lut (.I0(\data_out[0][0] ), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18264));
-    defparam i15580_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_0_i2_3_lut (.I0(\data_out[2][0] ), 
-            .I1(\data_out[3][0] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n2_adj_2221));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_0_i2_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i1_2_lut_adj_751 (.I0(\data_out_frame2[5] [2]), .I1(\data_out_frame2[10] [4]), 
-            .I2(GND_net), .I3(GND_net), .O(n10813));   // verilog/coms.v(228[16:596])
-    defparam i1_2_lut_adj_751.LUT_INIT = 16'h6666;
-    SB_LUT4 i10978_2_lut (.I0(\FRAME_MATCHER.i [27]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [27]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10978_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_0_i5_3_lut (.I0(\data_out[6][0] ), 
-            .I1(\data_out[7] [0]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n5_adj_2220));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_0_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i15643_2_lut (.I0(data_out_6__1__N_537), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18322));
-    defparam i15643_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i15206_3_lut (.I0(byte_transmit_counter2[0]), .I1(byte_transmit_counter2[1]), 
-            .I2(\data_out_frame2[0] [4]), .I3(GND_net), .O(n18067));
-    defparam i15206_3_lut.LUT_INIT = 16'h9898;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_4_i5_3_lut (.I0(\data_out_frame2[6] [4]), 
-            .I1(\data_out_frame2[7] [4]), .I2(byte_transmit_counter2[0]), 
-            .I3(GND_net), .O(n5_adj_2436));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_4_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i7_4_lut_adj_752 (.I0(\data_out_frame2[7] [2]), .I1(\data_out_frame2[10] [6]), 
-            .I2(n10788), .I3(\data_out_frame2[8] [4]), .O(n18_adj_2437));   // verilog/coms.v(228[16:596])
-    defparam i7_4_lut_adj_752.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_27_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [27]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2286));
-    defparam select_284_Select_27_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10977_2_lut (.I0(\FRAME_MATCHER.i [28]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [28]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10977_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i15207_4_lut (.I0(\data_out_frame2[5] [4]), .I1(n5_adj_2436), 
-            .I2(byte_transmit_counter2[1]), .I3(byte_transmit_counter2[0]), 
-            .O(n18068));
-    defparam i15207_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 i15544_2_lut (.I0(\data_out[0][3] ), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18376));
-    defparam i15544_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 i15604_2_lut (.I0(\data_out[2] [3]), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18377));
-    defparam i15604_2_lut.LUT_INIT = 16'h2222;
-    SB_LUT4 i15690_3_lut (.I0(\data_out_frame2[0] [6]), .I1(byte_transmit_counter2[0]), 
-            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18308));
-    defparam i15690_3_lut.LUT_INIT = 16'hcece;
-    SB_LUT4 i9_4_lut_adj_753 (.I0(n17892), .I1(n18_adj_2437), .I2(\data_out_frame2[12] [6]), 
-            .I3(\data_out_frame2[9] [1]), .O(n20_adj_2438));   // verilog/coms.v(228[16:596])
-    defparam i9_4_lut_adj_753.LUT_INIT = 16'h6996;
-    SB_LUT4 i10_4_lut_adj_754 (.I0(n10893), .I1(n20_adj_2438), .I2(n16_adj_2391), 
-            .I3(n17755), .O(n17893));   // verilog/coms.v(228[16:596])
-    defparam i10_4_lut_adj_754.LUT_INIT = 16'h6996;
-    SB_LUT4 i1_2_lut_4_lut_adj_755 (.I0(n50), .I1(n17694), .I2(n43), .I3(byte_transmit_counter2[0]), 
-            .O(n4_adj_2231));
-    defparam i1_2_lut_4_lut_adj_755.LUT_INIT = 16'hce00;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_6_i5_3_lut (.I0(\data_out_frame2[6] [6]), 
-            .I1(\data_out_frame2[7] [6]), .I2(byte_transmit_counter2[0]), 
-            .I3(GND_net), .O(n5_adj_2439));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_6_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i1_2_lut_adj_756 (.I0(\data_out_frame2[11] [7]), .I1(\data_out_frame2[14] [5]), 
-            .I2(GND_net), .I3(GND_net), .O(n17895));   // verilog/coms.v(240[17:239])
-    defparam i1_2_lut_adj_756.LUT_INIT = 16'h6666;
-    SB_LUT4 select_284_Select_28_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [28]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2284));
-    defparam select_284_Select_28_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10976_2_lut (.I0(\FRAME_MATCHER.i [29]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [29]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10976_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_6_i6_4_lut (.I0(\data_out_frame2[5] [6]), 
-            .I1(n5_adj_2439), .I2(byte_transmit_counter2[1]), .I3(byte_transmit_counter2[0]), 
-            .O(n6_adj_2218));   // verilog/coms.v(403[36:58])
-    defparam byte_transmit_counter2_4__I_0_Mux_6_i6_4_lut.LUT_INIT = 16'hcac0;
-    SB_LUT4 i1_2_lut_3_lut_adj_757 (.I0(\data_out_frame2[11] [3]), .I1(n17810), 
-            .I2(n10703), .I3(GND_net), .O(n17908));   // verilog/coms.v(237[17:221])
-    defparam i1_2_lut_3_lut_adj_757.LUT_INIT = 16'h9696;
-    SB_CARRY add_2510_3 (.CI(n16479), .I0(byte_transmit_counter2[1]), .I1(GND_net), 
-            .CO(n16480));
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_3_i5_3_lut (.I0(\data_out[6] [3]), 
-            .I1(\data_out[7] [3]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n5_adj_2217));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_3_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i1_2_lut_adj_758 (.I0(\data_out_frame2[9] [0]), .I1(\data_out_frame2[12] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n10861));   // verilog/coms.v(229[16:299])
-    defparam i1_2_lut_adj_758.LUT_INIT = 16'h6666;
-    SB_LUT4 select_284_Select_29_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [29]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2282));
-    defparam select_284_Select_29_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i10975_2_lut (.I0(\FRAME_MATCHER.i [30]), .I1(n13033), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [30]));   // verilog/coms.v(430[13] 433[7])
-    defparam i10975_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i15693_2_lut (.I0(\data_out[5] [3]), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18365));
-    defparam i15693_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i15601_2_lut (.I0(\data_out[1] [4]), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18190));
-    defparam i15601_2_lut.LUT_INIT = 16'hbbbb;
-    SB_LUT4 i1_2_lut_adj_759 (.I0(\data_out_frame2[10] [5]), .I1(\data_out_frame2[7] [1]), 
-            .I2(GND_net), .I3(GND_net), .O(n10782));   // verilog/coms.v(229[16:299])
-    defparam i1_2_lut_adj_759.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_4_lut_adj_760 (.I0(n50), .I1(n17694), .I2(n43), .I3(byte_transmit_counter2[1]), 
-            .O(n4_adj_2226));
-    defparam i1_2_lut_4_lut_adj_760.LUT_INIT = 16'hce00;
-    SB_DFF data_in_frame_0__i19 (.Q(\data_in_frame[2] [2]), .C(CLK_c), .D(n11463));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_30_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [30]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2280));
-    defparam select_284_Select_30_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i20 (.Q(\data_in_frame[2] [3]), .C(CLK_c), .D(n11462));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_761 (.I0(n50), .I1(n17694), .I2(n43), .I3(byte_transmit_counter2[2]), 
-            .O(n4_adj_2225));
-    defparam i1_2_lut_4_lut_adj_761.LUT_INIT = 16'hce00;
-    SB_DFF data_in_frame_0__i21 (.Q(\data_in_frame[2] [4]), .C(CLK_c), .D(n11461));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i22 (.Q(\data_in_frame[2] [5]), .C(CLK_c), .D(n11460));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i23 (.Q(\data_in_frame[2] [6]), .C(CLK_c), .D(n11459));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i24 (.Q(\data_in_frame[2] [7]), .C(CLK_c), .D(n11458));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i2_2_lut_3_lut_adj_762 (.I0(\data_out_frame2[11] [6]), .I1(\data_out_frame2[11] [5]), 
-            .I2(\data_out_frame2[14] [3]), .I3(GND_net), .O(n10_adj_2440));   // verilog/coms.v(238[17:230])
-    defparam i2_2_lut_3_lut_adj_762.LUT_INIT = 16'h9696;
-    SB_DFF data_in_frame_0__i25 (.Q(\data_in_frame[3] [0]), .C(CLK_c), .D(n11457));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_763 (.I0(n13033), .I1(\FRAME_MATCHER.i[31] ), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [31]));
-    defparam i1_2_lut_adj_763.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i26 (.Q(\data_in_frame[3] [1]), .C(CLK_c), .D(n11456));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i27 (.Q(\data_in_frame[3] [2]), .C(CLK_c), .D(n11455));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i28 (.Q(\data_in_frame[3] [3]), .C(CLK_c), .D(n11454));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i29 (.Q(\data_in_frame[3] [4]), .C(CLK_c), .D(n11453));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i30 (.Q(\data_in_frame[3] [5]), .C(CLK_c), .D(n11452));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_764 (.I0(\data_out_frame2[13] [5]), .I1(\data_out_frame2[10] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n10877));   // verilog/coms.v(232[16:229])
-    defparam i1_2_lut_adj_764.LUT_INIT = 16'h6666;
-    SB_DFF data_in_frame_0__i31 (.Q(\data_in_frame[3] [6]), .C(CLK_c), .D(n11451));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i32 (.Q(\data_in_frame[3] [7]), .C(CLK_c), .D(n11450));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_4_lut_adj_765 (.I0(n50), .I1(n17694), .I2(n43), .I3(byte_transmit_counter2[3]), 
-            .O(n4_adj_2216));
-    defparam i1_2_lut_4_lut_adj_765.LUT_INIT = 16'hce00;
-    SB_DFF data_in_frame_0__i41 (.Q(\data_in_frame[5] [0]), .C(CLK_c), .D(n11449));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i42 (.Q(\data_in_frame[5] [1]), .C(CLK_c), .D(n11448));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_766 (.I0(\data_out_frame2[8] [4]), .I1(\data_out_frame2[5] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n17865));   // verilog/coms.v(240[17:239])
-    defparam i1_2_lut_adj_766.LUT_INIT = 16'h6666;
-    SB_DFF data_in_frame_0__i43 (.Q(\data_in_frame[5] [2]), .C(CLK_c), .D(n11447));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_767 (.I0(\data_out_frame2[16] [4]), .I1(\data_out_frame2[12] [6]), 
-            .I2(GND_net), .I3(GND_net), .O(n10929));   // verilog/coms.v(242[17:884])
-    defparam i1_2_lut_adj_767.LUT_INIT = 16'h6666;
-    SB_DFF data_in_frame_0__i44 (.Q(\data_in_frame[5] [3]), .C(CLK_c), .D(n11446));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i15603_2_lut (.I0(\data_out[3][4] ), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18191));
-    defparam i15603_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i45 (.Q(\data_in_frame[5] [4]), .C(CLK_c), .D(n11445));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i46 (.Q(\data_in_frame[5] [5]), .C(CLK_c), .D(n11444));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i47 (.Q(\data_in_frame[5] [6]), .C(CLK_c), .D(n11443));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i48 (.Q(\data_in_frame[5] [7]), .C(CLK_c), .D(n11442));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i49 (.Q(\data_in_frame[6] [0]), .C(CLK_c), .D(n11441));   // verilog/coms.v(416[12] 543[6])
-    SB_DFF data_in_frame_0__i50 (.Q(\data_in_frame[6] [1]), .C(CLK_c), .D(n11440));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_284_Select_31_i2_2_lut (.I0(\FRAME_MATCHER.i_31__N_1278 [31]), 
-            .I1(n1166), .I2(GND_net), .I3(GND_net), .O(n2_adj_2278));
-    defparam select_284_Select_31_i2_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i51 (.Q(\data_in_frame[6] [2]), .C(CLK_c), .D(n11439));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 select_289_Select_3_i2_4_lut (.I0(byte_transmit_counter2[3]), 
-            .I1(\FRAME_MATCHER.i_31__N_1272 ), .I2(n18315), .I3(n12359), 
-            .O(n2_adj_2215));
-    defparam select_289_Select_3_i2_4_lut.LUT_INIT = 16'h88c0;
-    SB_LUT4 i1_2_lut_4_lut_adj_768 (.I0(n50), .I1(n17694), .I2(n43), .I3(byte_transmit_counter2[4]), 
-            .O(n4_adj_2204));
-    defparam i1_2_lut_4_lut_adj_768.LUT_INIT = 16'hce00;
-    SB_DFF data_in_frame_0__i52 (.Q(\data_in_frame[6] [3]), .C(CLK_c), .D(n11438));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_2_lut_adj_769 (.I0(\data_out_frame2[5] [0]), .I1(\data_out_frame2[15] [4]), 
-            .I2(GND_net), .I3(GND_net), .O(n10911));   // verilog/coms.v(241[17:248])
-    defparam i1_2_lut_adj_769.LUT_INIT = 16'h6666;
-    SB_DFF data_in_frame_0__i53 (.Q(\data_in_frame[6] [4]), .C(CLK_c), .D(n11437));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 add_977_22_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [20]), .I1(\FRAME_MATCHER.i [20]), 
-            .I2(n18631), .I3(n16505), .O(\FRAME_MATCHER.i_31__N_1278 [20])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_22_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 i10960_2_lut (.I0(\rand_setpoint[31] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n2442[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam i10960_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i54 (.Q(\data_in_frame[6] [5]), .C(CLK_c), .D(n11436));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i10957_2_lut (.I0(\rand_setpoint[30] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n2477[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam i10957_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i55 (.Q(\data_in_frame[6] [6]), .C(CLK_c), .D(n11435));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i10956_2_lut (.I0(\rand_setpoint[29] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n2512[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam i10956_2_lut.LUT_INIT = 16'h8888;
-    SB_DFF data_in_frame_0__i56 (.Q(\data_in_frame[6] [7]), .C(CLK_c), .D(n11431));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i7_4_lut_adj_770 (.I0(\data_out_frame2[12] [0]), .I1(n10911), 
-            .I2(n10929), .I3(\data_out_frame2[8] [3]), .O(n18_adj_2441));   // verilog/coms.v(240[17:239])
-    defparam i7_4_lut_adj_770.LUT_INIT = 16'h6996;
-    SB_LUT4 i10949_2_lut (.I0(\rand_setpoint[28] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n2547[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam i10949_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_4_lut_adj_771 (.I0(n50), .I1(n17694), .I2(n43), .I3(byte_transmit_counter2[5]), 
-            .O(n4_adj_2203));
-    defparam i1_2_lut_4_lut_adj_771.LUT_INIT = 16'hce00;
-    SB_LUT4 i1_2_lut_3_lut_adj_772 (.I0(\data_out_frame2[11] [6]), .I1(\data_out_frame2[11] [5]), 
-            .I2(\data_out_frame2[11] [4]), .I3(GND_net), .O(n17810));   // verilog/coms.v(238[17:230])
-    defparam i1_2_lut_3_lut_adj_772.LUT_INIT = 16'h9696;
-    SB_DFF \FRAME_MATCHER.state_i1  (.Q(\FRAME_MATCHER.state [1]), .C(CLK_c), 
-           .D(n18910));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i10916_2_lut (.I0(\rand_setpoint[27] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n2582[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam i10916_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_4_lut_adj_773 (.I0(n50), .I1(n17694), .I2(n43), .I3(byte_transmit_counter2[6]), 
-            .O(n4_adj_2201));
-    defparam i1_2_lut_4_lut_adj_773.LUT_INIT = 16'hce00;
-    SB_LUT4 i1_2_lut_4_lut_adj_774 (.I0(n50), .I1(n17694), .I2(n43), .I3(byte_transmit_counter2[7]), 
-            .O(n4_adj_2199));
-    defparam i1_2_lut_4_lut_adj_774.LUT_INIT = 16'hce00;
-    SB_LUT4 i9_4_lut_adj_775 (.I0(n17917), .I1(n18_adj_2441), .I2(n10782), 
-            .I3(n10861), .O(n20_adj_2442));   // verilog/coms.v(240[17:239])
-    defparam i9_4_lut_adj_775.LUT_INIT = 16'h6996;
-    SB_LUT4 i10_4_lut_adj_776 (.I0(n10839), .I1(n20_adj_2442), .I2(n16), 
-            .I3(n17795), .O(n17918));   // verilog/coms.v(240[17:239])
-    defparam i10_4_lut_adj_776.LUT_INIT = 16'h9669;
-    SB_DFF byte_transmit_counter__i0 (.Q(byte_transmit_counter[0]), .C(CLK_c), 
-           .D(n17149));   // verilog/coms.v(280[12] 370[6])
-    SB_DFF data_in_frame_0__i1 (.Q(\data_in_frame[0] [0]), .C(CLK_c), .D(n11421));   // verilog/coms.v(416[12] 543[6])
-    SB_LUT4 i1_3_lut_4_lut_adj_777 (.I0(n10522), .I1(\FRAME_MATCHER.i [2]), 
-            .I2(n232), .I3(\FRAME_MATCHER.i[31] ), .O(n7528));
-    defparam i1_3_lut_4_lut_adj_777.LUT_INIT = 16'hff01;
-    SB_LUT4 i1_2_lut_adj_778 (.I0(\data_out_frame2[16] [3]), .I1(\data_out_frame2[15] [3]), 
-            .I2(GND_net), .I3(GND_net), .O(n10839));   // verilog/coms.v(240[17:239])
-    defparam i1_2_lut_adj_778.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_3_lut_adj_779 (.I0(n10522), .I1(\FRAME_MATCHER.i [2]), 
-            .I2(\FRAME_MATCHER.i[31] ), .I3(GND_net), .O(n8));
-    defparam i1_2_lut_3_lut_adj_779.LUT_INIT = 16'hf1f1;
-    SB_DFF \UART_TRANSMITTER.state__i1  (.Q(\UART_TRANSMITTER.state[0] ), 
-           .C(CLK_c), .D(n17177));   // verilog/coms.v(280[12] 370[6])
-    SB_CARRY add_977_3 (.CI(n16486), .I0(\FRAME_MATCHER.i [1]), .I1(n18631), 
-            .CO(n16487));
-    SB_LUT4 i10914_2_lut (.I0(\rand_setpoint[26] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n2617[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam i10914_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_780 (.I0(\data_out_frame2[5] [1]), .I1(\data_out_frame2[12] [4]), 
-            .I2(GND_net), .I3(GND_net), .O(n10893));   // verilog/coms.v(239[17:230])
-    defparam i1_2_lut_adj_780.LUT_INIT = 16'h6666;
-    SB_LUT4 i15721_2_lut (.I0(n11017), .I1(\UART_TRANSMITTER.state[1] ), 
-            .I2(GND_net), .I3(GND_net), .O(n11277));
-    defparam i15721_2_lut.LUT_INIT = 16'h2222;
-    SB_LUT4 i11013_2_lut (.I0(\rand_setpoint[24] ), .I1(\UART_TRANSMITTER.state[0] ), 
-            .I2(GND_net), .I3(GND_net), .O(n2687[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam i11013_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 byte_transmit_counter_4__I_0_Mux_4_i5_3_lut (.I0(\data_out[6] [4]), 
-            .I1(\data_out[7] [4]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n5_adj_2214));   // verilog/coms.v(257[28:49])
-    defparam byte_transmit_counter_4__I_0_Mux_4_i5_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i3_4_lut_adj_781 (.I0(\data_out_frame2[8] [7]), .I1(\data_out_frame2[12] [5]), 
-            .I2(n10893), .I3(n10867), .O(n17886));   // verilog/coms.v(239[17:230])
-    defparam i3_4_lut_adj_781.LUT_INIT = 16'h6996;
-    SB_LUT4 i15666_2_lut (.I0(\data_out[5] [4]), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18334));
-    defparam i15666_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i2_4_lut_adj_782 (.I0(n12359), .I1(\FRAME_MATCHER.state [1]), 
-            .I2(n14064), .I3(\FRAME_MATCHER.state [2]), .O(n6_adj_2443));   // verilog/coms.v(409[11:16])
-    defparam i2_4_lut_adj_782.LUT_INIT = 16'h0400;
-    SB_LUT4 mux_772_i1_4_lut (.I0(n18247), .I1(\rand_setpoint[23] ), .I2(\UART_TRANSMITTER.state[1] ), 
-            .I3(\UART_TRANSMITTER.state[0] ), .O(n2171[0]));   // verilog/coms.v(283[4] 369[11])
-    defparam mux_772_i1_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 select_284_Select_18_i3_2_lut_3_lut (.I0(\FRAME_MATCHER.i [18]), 
-            .I1(n13033), .I2(n10353), .I3(GND_net), .O(n3_adj_2305));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_18_i3_2_lut_3_lut.LUT_INIT = 16'h0808;
-    SB_LUT4 i3_4_lut_adj_783 (.I0(n10720), .I1(n10839), .I2(n10819), .I3(\data_out_frame2[13] [4]), 
-            .O(n17838));   // verilog/coms.v(239[17:230])
-    defparam i3_4_lut_adj_783.LUT_INIT = 16'h6996;
-    SB_LUT4 i5_3_lut_adj_784 (.I0(n17911), .I1(n10864), .I2(\data_out_frame2[7] [0]), 
-            .I3(GND_net), .O(n14_adj_2444));   // verilog/coms.v(239[17:230])
-    defparam i5_3_lut_adj_784.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_4_lut_adj_785 (.I0(n6_adj_2443), .I1(\FRAME_MATCHER.state [0]), 
-            .I2(\FRAME_MATCHER.state [1]), .I3(\FRAME_MATCHER.state [2]), 
-            .O(n17447));   // verilog/coms.v(409[11:16])
-    defparam i1_4_lut_adj_785.LUT_INIT = 16'hbbba;
-    SB_LUT4 select_289_Select_5_i2_4_lut (.I0(byte_transmit_counter2[5]), 
-            .I1(\FRAME_MATCHER.i_31__N_1272 ), .I2(n18316), .I3(n12359), 
-            .O(n2_adj_2202));
-    defparam select_289_Select_5_i2_4_lut.LUT_INIT = 16'h88c0;
-    SB_LUT4 i6_4_lut_adj_786 (.I0(\data_out_frame2[10] [6]), .I1(\data_out_frame2[14] [4]), 
-            .I2(\data_out_frame2[11] [6]), .I3(n17748), .O(n15_adj_2445));   // verilog/coms.v(239[17:230])
-    defparam i6_4_lut_adj_786.LUT_INIT = 16'h6996;
-    SB_LUT4 i8_4_lut_adj_787 (.I0(n15_adj_2445), .I1(n17838), .I2(n14_adj_2444), 
-            .I3(n17886), .O(n17913));   // verilog/coms.v(239[17:230])
-    defparam i8_4_lut_adj_787.LUT_INIT = 16'h9669;
-    SB_LUT4 i1_2_lut_adj_788 (.I0(\data_out_frame2[12] [2]), .I1(\data_out_frame2[8] [6]), 
-            .I2(GND_net), .I3(GND_net), .O(n17748));   // verilog/coms.v(228[16:596])
-    defparam i1_2_lut_adj_788.LUT_INIT = 16'h6666;
-    SB_LUT4 i2_3_lut_adj_789 (.I0(\data_out_frame2[15] [2]), .I1(\data_out_frame2[8] [2]), 
-            .I2(\data_out_frame2[16] [2]), .I3(GND_net), .O(n17739));   // verilog/coms.v(228[16:596])
-    defparam i2_3_lut_adj_789.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_790 (.I0(\data_out_frame2[6] [3]), .I1(\data_out_frame2[9] [7]), 
-            .I2(GND_net), .I3(GND_net), .O(n17868));   // verilog/coms.v(234[16:291])
-    defparam i1_2_lut_adj_790.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_791 (.I0(\FRAME_MATCHER.state [1]), .I1(n10513), 
-            .I2(\FRAME_MATCHER.state [0]), .I3(\FRAME_MATCHER.state [2]), 
-            .O(n43));   // verilog/coms.v(503[5:23])
-    defparam i1_2_lut_3_lut_4_lut_adj_791.LUT_INIT = 16'hfffd;
-    SB_LUT4 i5_4_lut_adj_792 (.I0(\data_out_frame2[10] [5]), .I1(n10864), 
-            .I2(n10890), .I3(n10688), .O(n12_adj_2446));   // verilog/coms.v(238[17:230])
-    defparam i5_4_lut_adj_792.LUT_INIT = 16'h6996;
-    SB_LUT4 i6_4_lut_adj_793 (.I0(n17868), .I1(n12_adj_2446), .I2(\data_out_frame2[13] [3]), 
-            .I3(n10816), .O(n17792));   // verilog/coms.v(238[17:230])
-    defparam i6_4_lut_adj_793.LUT_INIT = 16'h6996;
-    SB_LUT4 i6_4_lut_adj_794 (.I0(\data_out_frame2[8] [5]), .I1(n10867), 
-            .I2(\data_out_frame2[8] [1]), .I3(n17792), .O(n14_adj_2447));   // verilog/coms.v(238[17:230])
-    defparam i6_4_lut_adj_794.LUT_INIT = 16'h6996;
-    SB_LUT4 i7_4_lut_adj_795 (.I0(\data_out_frame2[10] [3]), .I1(n14_adj_2447), 
-            .I2(n10_adj_2440), .I3(\data_out_frame2[6] [7]), .O(n17793));   // verilog/coms.v(238[17:230])
-    defparam i7_4_lut_adj_795.LUT_INIT = 16'h9669;
-    SB_LUT4 i1_2_lut_adj_796 (.I0(\data_out_frame2[8] [1]), .I1(\data_out_frame2[6] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n17736));   // verilog/coms.v(237[17:221])
-    defparam i1_2_lut_adj_796.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_adj_797 (.I0(\data_out_frame2[10] [0]), .I1(\data_out_frame2[10] [2]), 
-            .I2(GND_net), .I3(GND_net), .O(n10819));   // verilog/coms.v(239[17:230])
-    defparam i1_2_lut_adj_797.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_adj_798 (.I0(\data_out_frame2[12] [1]), .I1(\data_out_frame2[12] [3]), 
-            .I2(GND_net), .I3(GND_net), .O(n10867));   // verilog/coms.v(239[17:230])
-    defparam i1_2_lut_adj_798.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_799 (.I0(\FRAME_MATCHER.state [1]), .I1(n10513), 
-            .I2(\FRAME_MATCHER.state [0]), .I3(\FRAME_MATCHER.state [2]), 
-            .O(\FRAME_MATCHER.i_31__N_1272 ));   // verilog/coms.v(503[5:23])
-    defparam i1_2_lut_3_lut_4_lut_adj_799.LUT_INIT = 16'h2000;
-    SB_LUT4 i15527_3_lut_4_lut (.I0(\data_out_frame2[0] [7]), .I1(n14064), 
-            .I2(n12359), .I3(\FRAME_MATCHER.state [0]), .O(n18270));
-    defparam i15527_3_lut_4_lut.LUT_INIT = 16'ha200;
-    SB_LUT4 i1_2_lut_adj_800 (.I0(\data_out_frame2[6] [6]), .I1(\data_out_frame2[8] [5]), 
-            .I2(GND_net), .I3(GND_net), .O(n10829));   // verilog/coms.v(241[17:248])
-    defparam i1_2_lut_adj_800.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_3_lut_adj_801 (.I0(\data_out_frame2[8] [2]), .I1(\data_out_frame2[12] [0]), 
-            .I2(\data_out_frame2[14] [6]), .I3(GND_net), .O(n17920));   // verilog/coms.v(241[17:248])
-    defparam i1_2_lut_3_lut_adj_801.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_adj_802 (.I0(\data_out_frame2[16] [1]), .I1(\data_out_frame2[15] [1]), 
-            .I2(GND_net), .I3(GND_net), .O(n10890));   // verilog/coms.v(238[17:230])
-    defparam i1_2_lut_adj_802.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_3_lut_adj_803 (.I0(\data_out_frame2[8] [3]), .I1(\data_out_frame2[6] [4]), 
-            .I2(\data_out_frame2[10] [0]), .I3(GND_net), .O(n17859));   // verilog/coms.v(241[17:248])
-    defparam i1_2_lut_3_lut_adj_803.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_804 (.I0(\FRAME_MATCHER.state [1]), .I1(n10513), 
-            .I2(\FRAME_MATCHER.state [0]), .I3(\FRAME_MATCHER.state [2]), 
-            .O(\FRAME_MATCHER.i_31__N_1275 ));   // verilog/coms.v(503[5:23])
-    defparam i1_2_lut_3_lut_4_lut_adj_804.LUT_INIT = 16'h0020;
-    SB_LUT4 i6_4_lut_adj_805 (.I0(n10725), .I1(n10890), .I2(\data_out_frame2[14] [2]), 
-            .I3(n10829), .O(n16_adj_2448));   // verilog/coms.v(237[17:221])
-    defparam i6_4_lut_adj_805.LUT_INIT = 16'h6996;
-    SB_LUT4 i7_4_lut_adj_806 (.I0(n10867), .I1(n17715), .I2(n10819), .I3(n17810), 
-            .O(n17_adj_2449));   // verilog/coms.v(237[17:221])
-    defparam i7_4_lut_adj_806.LUT_INIT = 16'h6996;
-    SB_LUT4 i9_4_lut_adj_807 (.I0(n17_adj_2449), .I1(n17880), .I2(n16_adj_2448), 
-            .I3(n17911), .O(n17912));   // verilog/coms.v(237[17:221])
-    defparam i9_4_lut_adj_807.LUT_INIT = 16'h9669;
-    SB_LUT4 i1_2_lut_adj_808 (.I0(\data_out_frame2[8] [4]), .I1(\data_out_frame2[8] [0]), 
-            .I2(GND_net), .I3(GND_net), .O(n10870));   // verilog/coms.v(227[16:31])
-    defparam i1_2_lut_adj_808.LUT_INIT = 16'h6666;
-    SB_LUT4 i1_2_lut_adj_809 (.I0(n13033), .I1(\FRAME_MATCHER.i [3]), .I2(GND_net), 
-            .I3(GND_net), .O(\FRAME_MATCHER.i_31__N_1310 [3]));
-    defparam i1_2_lut_adj_809.LUT_INIT = 16'h8888;
-    SB_LUT4 add_2510_2_lut (.I0(tx2_transmit_N_1996), .I1(byte_transmit_counter2[0]), 
-            .I2(GND_net), .I3(VCC_net), .O(n18254)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2510_2_lut.LUT_INIT = 16'h8228;
-    SB_LUT4 i1_2_lut_3_lut_adj_810 (.I0(\data_out_frame2[15] [7]), .I1(\data_out_frame2[14] [7]), 
-            .I2(n10778), .I3(GND_net), .O(n17899));   // verilog/coms.v(241[17:248])
-    defparam i1_2_lut_3_lut_adj_810.LUT_INIT = 16'h9696;
-    SB_LUT4 i1_2_lut_3_lut_adj_811 (.I0(\data_out_frame2[12] [2]), .I1(\data_out_frame2[8] [4]), 
-            .I2(\data_out_frame2[8] [0]), .I3(GND_net), .O(n17715));   // verilog/coms.v(227[16:31])
-    defparam i1_2_lut_3_lut_adj_811.LUT_INIT = 16'h9696;
-    SB_LUT4 add_977_2_lut (.I0(n109), .I1(\FRAME_MATCHER.i [0]), .I2(n18631), 
-            .I3(VCC_net), .O(\FRAME_MATCHER.i_31__N_1278 [0])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_2_lut.LUT_INIT = 16'hA3AC;
-    SB_CARRY add_977_10 (.CI(n16493), .I0(\FRAME_MATCHER.i [8]), .I1(n18631), 
-            .CO(n16494));
-    SB_LUT4 add_977_9_lut (.I0(\FRAME_MATCHER.i_31__N_1310 [7]), .I1(\FRAME_MATCHER.i [7]), 
-            .I2(n18631), .I3(n16492), .O(\FRAME_MATCHER.i_31__N_1278 [7])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_977_9_lut.LUT_INIT = 16'hA3AC;
-    SB_LUT4 add_2510_4_lut (.I0(tx2_transmit_N_1996), .I1(byte_transmit_counter2[2]), 
-            .I2(GND_net), .I3(n16480), .O(n18314)) /* synthesis syn_instantiated=1 */ ;
-    defparam add_2510_4_lut.LUT_INIT = 16'h8228;
+            .D(n2_adj_2315), .S(n3_c));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_in_1[[1__1968  (.Q(\data_in[1] [1]), .C(CLK_c), .D(n11806));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_in_1[[0__1969  (.Q(\data_in[1] [0]), .C(CLK_c), .D(n11805));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i15502_4_lut (.I0(\data_in[1] [7]), .I1(\data_in[0] [4]), .I2(\data_in[3] [4]), 
+            .I3(\data_in[2] [7]), .O(n18474));
+    defparam i15502_4_lut.LUT_INIT = 16'h8000;
+    SB_LUT4 i2_3_lut (.I0(n18474), .I1(\data_in[1] [1]), .I2(\data_in[0] [0]), 
+            .I3(GND_net), .O(n11139));
+    defparam i2_3_lut.LUT_INIT = 16'hfdfd;
+    SB_LUT4 i4_4_lut_adj_182 (.I0(\data_in[0] [1]), .I1(\data_in[2] [6]), 
+            .I2(\data_in[1] [6]), .I3(\data_in[3] [7]), .O(n12_c));   // verilog/coms.v(432[7:86])
+    defparam i4_4_lut_adj_182.LUT_INIT = 16'hbfff;
+    SB_LUT4 i5_4_lut (.I0(\data_in[1] [3]), .I1(\data_in[0] [5]), .I2(\data_in[1] [2]), 
+            .I3(\data_in[2] [5]), .O(n13));   // verilog/coms.v(432[7:86])
+    defparam i5_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i7_4_lut (.I0(n13), .I1(\data_in[3] [2]), .I2(n12_c), .I3(\data_in[2] [0]), 
+            .O(n11169));   // verilog/coms.v(432[7:86])
+    defparam i7_4_lut.LUT_INIT = 16'hfffe;
     SB_LUT4 byte_transmit_counter_4__I_0_Mux_6_i1_3_lut (.I0(\data_out[0] [6]), 
             .I1(\data_out[1][6] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
-            .O(n1_adj_2272));   // verilog/coms.v(257[28:49])
+            .O(n1_c));   // verilog/coms.v(253[28:49])
     defparam byte_transmit_counter_4__I_0_Mux_6_i1_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i15574_2_lut (.I0(\data_out[3] [6]), .I1(byte_transmit_counter[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18188));
-    defparam i15574_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i3_4_lut_adj_812 (.I0(\data_out_frame2[9] [5]), .I1(\data_out_frame2[6] [1]), 
-            .I2(\data_out_frame2[7] [7]), .I3(\data_out_frame2[9] [7]), 
-            .O(n10703));   // verilog/coms.v(234[16:291])
-    defparam i3_4_lut_adj_812.LUT_INIT = 16'h6996;
-    SB_LUT4 select_284_Select_16_i3_2_lut_3_lut (.I0(\FRAME_MATCHER.i [16]), 
-            .I1(n13033), .I2(n10353), .I3(GND_net), .O(n3_adj_2309));   // verilog/coms.v(430[13] 433[7])
-    defparam select_284_Select_16_i3_2_lut_3_lut.LUT_INIT = 16'h0808;
-    uart_tx tx (.r_Bit_Index({r_Bit_Index}), .GND_net(GND_net), .n5440(n5440), 
-            .VCC_net(VCC_net), .CLK_c(CLK_c), .n17541(n17541), .r_Tx_Data({r_Tx_Data}), 
-            .n5155(n5155), .n11379(n11379), .n11382(n11382), .n17583(n17583), 
-            .n17581(n17581), .n17579(n17579), .n17577(n17577), .n17575(n17575), 
-            .n17573(n17573), .n17571(n17571), .n3(n3), .tx_active(tx_active), 
-            .\r_SM_Main_2__N_2034[0] (r_SM_Main_2__N_2034[0]), .n18012(n18012), 
-            .n18016(n18016), .n9667(n9667), .n11423(n11423), .tx_o(tx_o), 
-            .tx_enable(tx_enable), .tx_active_prev(tx_active_prev), .n44(n44)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/coms.v(259[10:70])
-    uart_tx_U0 tx2 (.n11096(n11096), .CLK_c(CLK_c), .r_Bit_Index({r_Bit_Index_adj_15}), 
-            .n4(n4_adj_12), .GND_net(GND_net), .n18014(n18014), .r_SM_Main({r_SM_Main}), 
-            .n11545(n11545), .tx2_data({tx2_data}), .n11523(n11523), .VCC_net(VCC_net), 
-            .n3(n3_adj_13), .\r_SM_Main_2__N_2034[0] (r_SM_Main_2__N_2034_adj_2457[0]), 
-            .\r_SM_Main_2__N_2031[1] (\r_SM_Main_2__N_2031[1] ), .n6707(n6707), 
-            .n17689(n17689), .n11546(n11546), .n11549(n11549), .n18908(n18908), 
-            .n11429(n11429), .n11428(n11428), .tx2_active(tx2_active), 
-            .n11427(n11427), .tx2_o(tx2_o), .tx2_enable(tx2_enable)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/coms.v(404[10:77])
-    uart_rx rx (.GND_net(GND_net), .CLK_c(CLK_c), .r_Rx_Data(r_Rx_Data), 
-            .rx_data({rx_data}), .rx_data_ready(rx_data_ready), .rx_i(rx_i), 
-            .n151(n151), .n12527(n12527), .n158(n158), .n164(n164), 
-            .\FRAME_MATCHER.i[1] (\FRAME_MATCHER.i [1]), .\FRAME_MATCHER.i[2] (\FRAME_MATCHER.i [2]), 
-            .\FRAME_MATCHER.i[0] (\FRAME_MATCHER.i [0]), .n16802(n16802), 
-            .n11058(n11058), .\data_in_frame[1] ({\data_in_frame[1] }), 
-            .n11466(n11466), .n11467(n11467), .n11468(n11468), .n11469(n11469), 
-            .n11470(n11470), .n11471(n11471), .n11472(n11472), .n11473(n11473), 
-            .n120(n120), .n12582(n12582), .n12600(n12600), .n16797(n16797), 
-            .n10(n10_adj_2378), .n1166(n1166), .\data_in_frame[3] ({\data_in_frame[3] }), 
-            .n11450(n11450), .n11451(n11451), .n11452(n11452), .n11453(n11453), 
-            .n11454(n11454), .n11455(n11455), .n11456(n11456), .VCC_net(VCC_net), 
-            .n27(n27_adj_2426), .n2(n2_adj_2344), .n29(n29), .n2_adj_1(n2_adj_2342), 
-            .n11457(n11457), .n18631(n18631), .n135(n135), .n4(n4_adj_14), 
-            .n11412(n11412), .n11409(n11409), .n11408(n11408), .n11407(n11407), 
-            .n11406(n11406)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/coms.v(376[10:44])
+    SB_LUT4 i1_2_lut_adj_183 (.I0(\data_in[3] [5]), .I1(\data_in[3] [3]), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2316));   // verilog/coms.v(438[7:84])
+    defparam i1_2_lut_adj_183.LUT_INIT = 16'heeee;
+    SB_LUT4 i1_2_lut_adj_184 (.I0(n103), .I1(tx_transmit_N_1750[2]), .I2(GND_net), 
+            .I3(GND_net), .O(n29));   // verilog/coms.v(25[6:17])
+    defparam i1_2_lut_adj_184.LUT_INIT = 16'heeee;
+    SB_DFF \data_in_0[[7__1970  (.Q(\data_in[0] [7]), .C(CLK_c), .D(n11804));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_6_i2_3_lut (.I0(\data_out[2][6] ), 
+            .I1(\data_out[3][6] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n2_adj_2296));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_6_i2_3_lut.LUT_INIT = 16'hcaca;
+    SB_DFF \data_in_0[[6__1971  (.Q(\data_in[0] [6]), .C(CLK_c), .D(n11800));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_6_i5_3_lut (.I0(\data_out[6] [6]), 
+            .I1(\data_out[7][6] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n5_c));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_6_i5_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15986_2_lut (.I0(\data_out[5] [6]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18761));
+    defparam i15986_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i15888_2_lut (.I0(\data_out[0][7] ), .I1(byte_transmit_counter[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n18777));
+    defparam i15888_2_lut.LUT_INIT = 16'h2222;
+    SB_LUT4 i15984_2_lut (.I0(\data_out[6] [7]), .I1(byte_transmit_counter[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n18778));
+    defparam i15984_2_lut.LUT_INIT = 16'hbbbb;
+    SB_LUT4 i1_4_lut_adj_185 (.I0(n14713), .I1(\FRAME_MATCHER.state_31__N_1161 [0]), 
+            .I2(n18408), .I3(n18466), .O(n17819));
+    defparam i1_4_lut_adj_185.LUT_INIT = 16'h5ddd;
+    SB_LUT4 i5_4_lut_adj_186 (.I0(\data_in[2] [1]), .I1(\data_in[2] [3]), 
+            .I2(\data_in[3] [1]), .I3(\data_in[0] [2]), .O(n12_adj_2317));   // verilog/coms.v(438[7:84])
+    defparam i5_4_lut_adj_186.LUT_INIT = 16'hfffe;
+    SB_LUT4 i6_4_lut (.I0(\data_in[3] [6]), .I1(n12_adj_2317), .I2(n8_adj_2316), 
+            .I3(\data_in[0] [7]), .O(n11145));   // verilog/coms.v(438[7:84])
+    defparam i6_4_lut.LUT_INIT = 16'hfdff;
+    SB_LUT4 i15492_2_lut (.I0(\data_in[1] [4]), .I1(\data_in[0] [6]), .I2(GND_net), 
+            .I3(GND_net), .O(n18464));
+    defparam i15492_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i5_4_lut_adj_187 (.I0(\data_in[2] [4]), .I1(n11145), .I2(n18464), 
+            .I3(\data_in[2] [2]), .O(n14_adj_2318));
+    defparam i5_4_lut_adj_187.LUT_INIT = 16'hffdf;
+    SB_DFF \data_in_0[[5__1972  (.Q(\data_in[0] [5]), .C(CLK_c), .D(n11798));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_in_0[[4__1973  (.Q(\data_in[0] [4]), .C(CLK_c), .D(n11797));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_698_26 (.CI(n16955), .I0(\FRAME_MATCHER.i [24]), .I1(GND_net), 
+            .CO(n16956));
+    SB_LUT4 i10863_3_lut (.I0(\data_out[3] [7]), .I1(\data_out[7] [7]), 
+            .I2(byte_transmit_counter[2]), .I3(GND_net), .O(n13636));   // verilog/coms.v(19[11:32])
+    defparam i10863_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15837_2_lut (.I0(\data_out[5] [7]), .I1(byte_transmit_counter[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n18766));
+    defparam i15837_2_lut.LUT_INIT = 16'hbbbb;
+    SB_LUT4 i1192_2_lut (.I0(\data_out_frame2[0] [6]), .I1(\data_out_frame2[0] [5]), 
+            .I2(GND_net), .I3(GND_net), .O(n2615));   // verilog/coms.v(230[16:291])
+    defparam i1192_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 add_2200_7_lut (.I0(tx2_transmit_N_1799), .I1(byte_transmit_counter2[5]), 
+            .I2(GND_net), .I3(n16920), .O(n18656)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2200_7_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i11215_4_lut (.I0(n3898), .I1(n482), .I2(\FRAME_MATCHER.state [0]), 
+            .I3(\data_out_frame2[0] [2]), .O(n4858[2]));   // verilog/coms.v(417[11:16])
+    defparam i11215_4_lut.LUT_INIT = 16'hfa3a;
+    SB_LUT4 i1157_2_lut (.I0(\data_out_frame2[0] [5]), .I1(\data_out_frame2[0] [4]), 
+            .I2(GND_net), .I3(GND_net), .O(n2580));   // verilog/coms.v(229[16:291])
+    defparam i1157_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 i2_4_lut_adj_188 (.I0(\FRAME_MATCHER.state [1]), .I1(n63), .I2(n4_adj_2319), 
+            .I3(n11138), .O(n15079));
+    defparam i2_4_lut_adj_188.LUT_INIT = 16'hc800;
+    SB_LUT4 i1087_2_lut (.I0(\data_out_frame2[0] [3]), .I1(\data_out_frame2[0] [2]), 
+            .I2(GND_net), .I3(GND_net), .O(n2510));   // verilog/coms.v(227[16:291])
+    defparam i1087_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 i1014_2_lut (.I0(\data_out_frame2[0] [1]), .I1(\data_out_frame2[0][0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2437_adj_2320));   // verilog/coms.v(225[16:299])
+    defparam i1014_2_lut.LUT_INIT = 16'h9999;
+    SB_LUT4 mux_2133_i4_4_lut (.I0(n3898), .I1(\data_out_frame2[0] [3]), 
+            .I2(\FRAME_MATCHER.state [0]), .I3(n482), .O(n4858[3]));
+    defparam mux_2133_i4_4_lut.LUT_INIT = 16'hcafa;
+    SB_LUT4 i4_4_lut_adj_189 (.I0(n2150), .I1(n2154), .I2(\data_in_frame[6] [3]), 
+            .I3(\data_in_frame[6] [5]), .O(n20_adj_2321));
+    defparam i4_4_lut_adj_189.LUT_INIT = 16'h7bde;
+    SB_DFF \data_in_0[[3__1974  (.Q(\data_in[0] [3]), .C(CLK_c), .D(n11793));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_698_25_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [23]), .I2(GND_net), 
+            .I3(n16954), .O(n2_adj_2248)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_25_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i7_4_lut_adj_190 (.I0(\data_in_frame[0] [7]), .I1(n2170), .I2(\data_in_frame[5] [1]), 
+            .I3(\data_in_frame[5] [7]), .O(n23));
+    defparam i7_4_lut_adj_190.LUT_INIT = 16'hde7b;
+    SB_DFF \data_in_0[[2__1975  (.Q(\data_in[0] [2]), .C(CLK_c), .D(n11792));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i8800_3_lut_4_lut (.I0(n7_c), .I1(n18333), .I2(rx_data[6]), 
+            .I3(\data_in_frame[5] [6]), .O(n11586));
+    defparam i8800_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_62_5_lut (.I0(\UART_TRANSMITTER.sp [3]), .I1(\UART_TRANSMITTER.sp [3]), 
+            .I2(n19017), .I3(n16887), .O(n11678)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_5_lut.LUT_INIT = 16'hA3AC;
+    SB_DFF delay_counter_i0_i5 (.Q(delay_counter[5]), .C(CLK_c), .D(n11750));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_in_0[[1__1976  (.Q(\data_in[0] [1]), .C(CLK_c), .D(n11790));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i11_4_lut (.I0(\data_in_frame[5] [2]), .I1(n22_adj_2322), .I2(n2148), 
+            .I3(\data_in_frame[6] [2]), .O(n27));
+    defparam i11_4_lut.LUT_INIT = 16'hdffd;
+    SB_LUT4 i2_4_lut_adj_191 (.I0(n2169), .I1(n2152), .I2(\data_in_frame[6] [1]), 
+            .I3(\data_in_frame[6] [4]), .O(n18));
+    defparam i2_4_lut_adj_191.LUT_INIT = 16'hb7ed;
+    SB_CARRY add_2200_7 (.CI(n16920), .I0(byte_transmit_counter2[5]), .I1(GND_net), 
+            .CO(n16921));
+    SB_LUT4 add_2200_6_lut (.I0(tx2_transmit_N_1799), .I1(byte_transmit_counter2[4]), 
+            .I2(GND_net), .I3(n16919), .O(n18609)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2200_6_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 add_62_16_lut (.I0(\UART_TRANSMITTER.sp[14] ), .I1(\UART_TRANSMITTER.sp[14] ), 
+            .I2(n19017), .I3(n16898), .O(n11667)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_16_lut.LUT_INIT = 16'hA3AC;
+    SB_CARRY add_62_16 (.CI(n16898), .I0(\UART_TRANSMITTER.sp[14] ), .I1(n19017), 
+            .CO(n16899));
+    SB_LUT4 mux_1309_i1_3_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n2786[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_1309_i1_3_lut.LUT_INIT = 16'hcaca;
+    SB_CARRY add_698_25 (.CI(n16954), .I0(\FRAME_MATCHER.i [23]), .I1(GND_net), 
+            .CO(n16955));
+    SB_LUT4 i1227_2_lut (.I0(\data_out_frame2[0][7] ), .I1(\data_out_frame2[0] [6]), 
+            .I2(GND_net), .I3(GND_net), .O(n2650));   // verilog/coms.v(231[16:291])
+    defparam i1227_2_lut.LUT_INIT = 16'h6666;
+    SB_CARRY add_62_5 (.CI(n16887), .I0(\UART_TRANSMITTER.sp [3]), .I1(n19017), 
+            .CO(n16888));
+    SB_LUT4 i10_4_lut (.I0(n2160), .I1(n20_adj_2321), .I2(\data_in_frame[5] [5]), 
+            .I3(\data_in_frame[5] [0]), .O(n26));
+    defparam i10_4_lut.LUT_INIT = 16'hefdf;
+    SB_LUT4 mux_2133_i8_4_lut (.I0(n2170), .I1(n3280), .I2(\FRAME_MATCHER.state [0]), 
+            .I3(n3898), .O(n4858[7]));
+    defparam mux_2133_i8_4_lut.LUT_INIT = 16'hc5c0;
+    SB_LUT4 i12164_4_lut (.I0(n31), .I1(n11173), .I2(n11138), .I3(n15079), 
+            .O(n14931));
+    defparam i12164_4_lut.LUT_INIT = 16'h31f5;
+    SB_LUT4 i14_4_lut (.I0(n27), .I1(n23), .I2(\data_in_frame[5] [3]), 
+            .I3(\data_in_frame[5] [4]), .O(n30));
+    defparam i14_4_lut.LUT_INIT = 16'hefff;
+    SB_CARRY add_2195_7 (.CI(n16876), .I0(delay_counter[5]), .I1(GND_net), 
+            .CO(n16877));
+    SB_LUT4 i1_4_lut_adj_192 (.I0(n2170), .I1(n2156), .I2(\data_in_frame[6] [0]), 
+            .I3(\data_in_frame[6] [6]), .O(n17));
+    defparam i1_4_lut_adj_192.LUT_INIT = 16'h7bde;
+    SB_LUT4 i15_4_lut (.I0(n17), .I1(n30), .I2(n26), .I3(n18), .O(n3898));
+    defparam i15_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 mux_1231_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [25]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2681[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_1231_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 mux_1049_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [16]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2436[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_1049_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i42_4_lut (.I0(n103), .I1(tx_transmit_N_1750[3]), .I2(\UART_TRANSMITTER.state[1] ), 
+            .I3(\UART_TRANSMITTER.state[2] ), .O(n22_adj_2323));   // verilog/coms.v(273[13:18])
+    defparam i42_4_lut.LUT_INIT = 16'h3530;
+    SB_LUT4 i15572_3_lut (.I0(\data_out_frame2[0][7] ), .I1(n4858[7]), .I2(n6396), 
+            .I3(GND_net), .O(n18547));
+    defparam i15572_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 add_62_15_lut (.I0(\UART_TRANSMITTER.sp [13]), .I1(\UART_TRANSMITTER.sp [13]), 
+            .I2(n19017), .I3(n16897), .O(n11668)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_15_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i15574_4_lut (.I0(n18547), .I1(n18702), .I2(n6394), .I3(n6396), 
+            .O(n18549));
+    defparam i15574_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 mux_2133_i5_4_lut (.I0(n3898), .I1(\data_out_frame2[0] [4]), 
+            .I2(\FRAME_MATCHER.state [0]), .I3(n482), .O(n4858[4]));
+    defparam mux_2133_i5_4_lut.LUT_INIT = 16'hcafa;
+    SB_LUT4 add_698_24_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [22]), .I2(GND_net), 
+            .I3(n16953), .O(n2_adj_2250)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_24_lut.LUT_INIT = 16'h8228;
+    SB_DFF delay_counter_i0_i6 (.Q(delay_counter[6]), .C(CLK_c), .D(n11783));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 mux_2133_i7_4_lut (.I0(n3898), .I1(n482), .I2(\FRAME_MATCHER.state [0]), 
+            .I3(\data_out_frame2[0] [6]), .O(n4858[6]));
+    defparam mux_2133_i7_4_lut.LUT_INIT = 16'hfa3a;
+    SB_LUT4 i15575_3_lut (.I0(\data_out_frame2[0] [6]), .I1(n4858[6]), .I2(n6396), 
+            .I3(GND_net), .O(n18550));
+    defparam i15575_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15577_4_lut (.I0(n18550), .I1(n4515), .I2(n6394), .I3(n6396), 
+            .O(n18552));
+    defparam i15577_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i15_2_lut (.I0(\FRAME_MATCHER.state [3]), .I1(\FRAME_MATCHER.state[2] ), 
+            .I2(GND_net), .I3(GND_net), .O(n47));
+    defparam i15_2_lut.LUT_INIT = 16'h4444;
+    SB_LUT4 i1_2_lut_adj_193 (.I0(n17302), .I1(n18209), .I2(GND_net), 
+            .I3(GND_net), .O(n15121));
+    defparam i1_2_lut_adj_193.LUT_INIT = 16'heeee;
+    SB_LUT4 add_2195_10_lut (.I0(n18977), .I1(delay_counter[8]), .I2(GND_net), 
+            .I3(n16879), .O(n18695)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_10_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 mux_2133_i6_4_lut (.I0(n3898), .I1(n482), .I2(\FRAME_MATCHER.state [0]), 
+            .I3(\data_out_frame2[0] [5]), .O(n4858[5]));
+    defparam mux_2133_i6_4_lut.LUT_INIT = 16'hfa3a;
+    SB_LUT4 i15578_3_lut (.I0(\data_out_frame2[0] [5]), .I1(n4858[5]), .I2(n6396), 
+            .I3(GND_net), .O(n18553));
+    defparam i15578_3_lut.LUT_INIT = 16'hcaca;
+    SB_DFF delay_counter_i0_i7 (.Q(delay_counter[7]), .C(CLK_c), .D(n11756));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i15580_4_lut (.I0(n18553), .I1(n4515), .I2(n6394), .I3(n6396), 
+            .O(n18555));
+    defparam i15580_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i8801_3_lut_4_lut (.I0(n7_c), .I1(n18333), .I2(rx_data[5]), 
+            .I3(\data_in_frame[5] [5]), .O(n11587));
+    defparam i8801_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_62_4_lut (.I0(\UART_TRANSMITTER.sp [2]), .I1(\UART_TRANSMITTER.sp [2]), 
+            .I2(n19017), .I3(n16886), .O(n11679)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_4_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i6_4_lut_adj_194 (.I0(\data_in[3] [0]), .I1(\data_in[1] [5]), 
+            .I2(\data_in[0] [3]), .I3(\data_in[1] [0]), .O(n15_c));
+    defparam i6_4_lut_adj_194.LUT_INIT = 16'hfffe;
+    SB_LUT4 mux_1023_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [17]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2401[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_1023_i1_4_lut.LUT_INIT = 16'hc505;
+    SB_CARRY add_62_4 (.CI(n16886), .I0(\UART_TRANSMITTER.sp [2]), .I1(n19017), 
+            .CO(n16887));
+    SB_LUT4 i8802_3_lut_4_lut (.I0(n7_c), .I1(n18333), .I2(rx_data[4]), 
+            .I3(\data_in_frame[5] [4]), .O(n11588));
+    defparam i8802_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_2_lut_adj_195 (.I0(n14931), .I1(byte_transmit_counter2[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n4_c));   // verilog/coms.v(417[11:16])
+    defparam i1_2_lut_adj_195.LUT_INIT = 16'h4444;
+    SB_CARRY add_2200_6 (.CI(n16919), .I0(byte_transmit_counter2[4]), .I1(GND_net), 
+            .CO(n16920));
+    SB_LUT4 i2_4_lut_adj_196 (.I0(\FRAME_MATCHER.state [1]), .I1(\FRAME_MATCHER.state [0]), 
+            .I2(\FRAME_MATCHER.state[2] ), .I3(\FRAME_MATCHER.state [3]), 
+            .O(n11200));
+    defparam i2_4_lut_adj_196.LUT_INIT = 16'h0012;
+    SB_DFFE delay_counter_i0_i13 (.Q(delay_counter[13]), .C(CLK_c), .E(VCC_net), 
+            .D(n11775));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i1_4_lut_adj_197 (.I0(tx_transmit_N_1750[2]), .I1(tx_transmit_N_1750[3]), 
+            .I2(n22_adj_2323), .I3(n25), .O(n28));   // verilog/coms.v(273[13:18])
+    defparam i1_4_lut_adj_197.LUT_INIT = 16'h7350;
+    SB_CARRY add_62_15 (.CI(n16897), .I0(\UART_TRANSMITTER.sp [13]), .I1(n19017), 
+            .CO(n16898));
+    SB_LUT4 add_62_14_lut (.I0(\UART_TRANSMITTER.sp [12]), .I1(\UART_TRANSMITTER.sp [12]), 
+            .I2(n19017), .I3(n16896), .O(n11669)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_14_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i8_4_lut (.I0(n15_c), .I1(n11139), .I2(n14_adj_2318), .I3(n11169), 
+            .O(n63_adj_2324));
+    defparam i8_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i15510_4_lut (.I0(\data_in[3] [3]), .I1(\data_in[3] [1]), .I2(\data_in[2] [3]), 
+            .I3(\data_in[3] [5]), .O(n18482));
+    defparam i15510_4_lut.LUT_INIT = 16'h8000;
+    SB_LUT4 i1_2_lut_adj_198 (.I0(\data_in[0] [7]), .I1(n11169), .I2(GND_net), 
+            .I3(GND_net), .O(n6_adj_2325));
+    defparam i1_2_lut_adj_198.LUT_INIT = 16'heeee;
+    SB_LUT4 i2_3_lut_adj_199 (.I0(n11200), .I1(n10281), .I2(n15121), .I3(GND_net), 
+            .O(n6394));
+    defparam i2_3_lut_adj_199.LUT_INIT = 16'h0202;
+    SB_LUT4 i15553_3_lut (.I0(\data_in[2] [1]), .I1(n18482), .I2(\data_in[0] [2]), 
+            .I3(GND_net), .O(n18528));
+    defparam i15553_3_lut.LUT_INIT = 16'h8080;
+    SB_LUT4 i4_4_lut_adj_200 (.I0(n10987), .I1(n18528), .I2(\data_in[3] [6]), 
+            .I3(n6_adj_2325), .O(n63_adj_2326));
+    defparam i4_4_lut_adj_200.LUT_INIT = 16'hfffb;
+    SB_LUT4 i15506_4_lut (.I0(\data_in[2] [0]), .I1(\data_in[0] [1]), .I2(\data_in[1] [3]), 
+            .I3(\data_in[3] [2]), .O(n18478));
+    defparam i15506_4_lut.LUT_INIT = 16'h8000;
+    SB_LUT4 i15508_3_lut (.I0(\data_in[2] [5]), .I1(\data_in[0] [5]), .I2(\data_in[1] [2]), 
+            .I3(GND_net), .O(n18480));
+    defparam i15508_3_lut.LUT_INIT = 16'h8080;
+    SB_LUT4 i4_4_lut_adj_201 (.I0(\data_in[1] [6]), .I1(\data_in[3] [7]), 
+            .I2(n11145), .I3(\data_in[2] [6]), .O(n10));
+    defparam i4_4_lut_adj_201.LUT_INIT = 16'hfffe;
+    SB_LUT4 i5_4_lut_adj_202 (.I0(n10987), .I1(n10), .I2(n18480), .I3(n18478), 
+            .O(n63_adj_2327));
+    defparam i5_4_lut_adj_202.LUT_INIT = 16'hefff;
+    SB_LUT4 i8803_3_lut_4_lut (.I0(n7_c), .I1(n18333), .I2(rx_data[3]), 
+            .I3(\data_in_frame[5] [3]), .O(n11589));
+    defparam i8803_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFFE delay_counter_i0_i12 (.Q(delay_counter[12]), .C(CLK_c), .E(VCC_net), 
+            .D(n11772));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 mux_997_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [18]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2366[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_997_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i9230_3_lut_4_lut (.I0(\data_out_frame2[0] [2]), .I1(\data_out_frame2[0] [1]), 
+            .I2(n11365), .I3(\data_out_frame2[20] [3]), .O(n12016));
+    defparam i9230_3_lut_4_lut.LUT_INIT = 16'h6f60;
+    SB_LUT4 mux_971_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [19]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2331[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_971_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i2_2_lut_3_lut (.I0(\data_out_frame2[0] [2]), .I1(\data_out_frame2[0] [1]), 
+            .I2(\data_out_frame2[0][7] ), .I3(GND_net), .O(n7_adj_2328));
+    defparam i2_2_lut_3_lut.LUT_INIT = 16'h9696;
+    SB_LUT4 i733_2_lut (.I0(\data_in_frame[0]_c [5]), .I1(\data_in_frame[0]_c [4]), 
+            .I2(GND_net), .I3(GND_net), .O(n2156));   // verilog/coms.v(67[15:26])
+    defparam i733_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 i8805_3_lut_4_lut (.I0(n7_c), .I1(n18333), .I2(rx_data[2]), 
+            .I3(\data_in_frame[5] [2]), .O(n11591));
+    defparam i8805_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFFE delay_counter_i0_i11 (.Q(delay_counter[11]), .C(CLK_c), .E(VCC_net), 
+            .D(n11769));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i8806_3_lut_4_lut (.I0(n7_c), .I1(n18333), .I2(rx_data[1]), 
+            .I3(\data_in_frame[5] [1]), .O(n11592));
+    defparam i8806_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i729_2_lut (.I0(\data_in_frame[0]_c [3]), .I1(\data_in_frame[0]_c [2]), 
+            .I2(GND_net), .I3(GND_net), .O(n2152));   // verilog/coms.v(65[15:26])
+    defparam i729_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 select_380_Select_0_i2_4_lut (.I0(byte_transmit_counter2[0]), 
+            .I1(n11173), .I2(n18628), .I3(n12966), .O(n2_adj_2227));
+    defparam select_380_Select_0_i2_4_lut.LUT_INIT = 16'h2230;
+    SB_LUT4 mux_945_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [20]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2296[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_945_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i9087_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(n83_adj_2329), 
+            .I2(\UART_TRANSMITTER.sp[0] ), .I3(\data_out[8] [0]), .O(n11873));   // verilog/coms.v(277[12] 378[6])
+    defparam i9087_3_lut_4_lut.LUT_INIT = 16'hfb40;
+    SB_LUT4 mux_919_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [21]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2261[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_919_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i725_2_lut (.I0(\data_in_frame[0]_c [1]), .I1(\data_in_frame[0][0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2148));   // verilog/coms.v(63[15:26])
+    defparam i725_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 i5_4_lut_adj_203 (.I0(n2156), .I1(n2152), .I2(\data_in_frame[3] [6]), 
+            .I3(\data_in_frame[3] [4]), .O(n19_adj_2330));
+    defparam i5_4_lut_adj_203.LUT_INIT = 16'h7bde;
+    SB_LUT4 mux_893_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [22]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2226[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_893_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i9086_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(n83_adj_2329), 
+            .I2(\UART_TRANSMITTER.sp [1]), .I3(\data_out[8] [1]), .O(n11872));   // verilog/coms.v(277[12] 378[6])
+    defparam i9086_3_lut_4_lut.LUT_INIT = 16'hfb40;
+    SB_LUT4 i9085_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(n83_adj_2329), 
+            .I2(\UART_TRANSMITTER.sp [2]), .I3(\data_out[8] [2]), .O(n11871));   // verilog/coms.v(277[12] 378[6])
+    defparam i9085_3_lut_4_lut.LUT_INIT = 16'hfb40;
+    SB_LUT4 i1_4_lut_adj_204 (.I0(n2169), .I1(n2150), .I2(\data_in_frame[3] [1]), 
+            .I3(\data_in_frame[3] [3]), .O(n15_adj_2331));
+    defparam i1_4_lut_adj_204.LUT_INIT = 16'hb7ed;
+    SB_LUT4 i2_3_lut_adj_205 (.I0(n18328), .I1(\FRAME_MATCHER.i [1]), .I2(\FRAME_MATCHER.i [2]), 
+            .I3(GND_net), .O(n18329));
+    defparam i2_3_lut_adj_205.LUT_INIT = 16'hbfbf;
+    SB_LUT4 i4_4_lut_adj_206 (.I0(n2158), .I1(n2170), .I2(\data_in_frame[3] [7]), 
+            .I3(\data_in_frame[3] [0]), .O(n18_adj_2332));
+    defparam i4_4_lut_adj_206.LUT_INIT = 16'h7bde;
+    SB_LUT4 i10_4_lut_adj_207 (.I0(n19_adj_2330), .I1(\data_in_frame[2] [3]), 
+            .I2(n18432), .I3(\data_in_frame[2] [4]), .O(n24));
+    defparam i10_4_lut_adj_207.LUT_INIT = 16'hbfff;
+    SB_LUT4 i8_4_lut_adj_208 (.I0(n15_adj_2331), .I1(\data_in_frame[2] [6]), 
+            .I2(n2170), .I3(\data_in_frame[2] [7]), .O(n22_adj_2333));
+    defparam i8_4_lut_adj_208.LUT_INIT = 16'hfbbf;
+    SB_LUT4 i9_4_lut (.I0(\data_in_frame[2] [2]), .I1(n18_adj_2332), .I2(\data_in_frame[0] [7]), 
+            .I3(\data_in_frame[2] [1]), .O(n23_adj_2334));
+    defparam i9_4_lut.LUT_INIT = 16'hdffd;
+    SB_LUT4 i7_4_lut_adj_209 (.I0(n2154), .I1(n2148), .I2(\data_in_frame[3] [5]), 
+            .I3(\data_in_frame[3] [2]), .O(n21_adj_2335));
+    defparam i7_4_lut_adj_209.LUT_INIT = 16'h7bde;
+    SB_DFF \data_out_3[[0__1915  (.Q(\data_out[3] [0]), .C(CLK_c), .D(n18127));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 mux_867_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [23]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2191[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_867_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i1_4_lut_adj_210 (.I0(\UART_TRANSMITTER.state[0] ), .I1(n15567), 
+            .I2(n28), .I3(n83), .O(n18263));   // verilog/coms.v(273[13:18])
+    defparam i1_4_lut_adj_210.LUT_INIT = 16'h0010;
+    SB_LUT4 i9094_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(n83_adj_2329), 
+            .I2(\UART_TRANSMITTER.sp [7]), .I3(\data_out[8] [7]), .O(n11880));   // verilog/coms.v(277[12] 378[6])
+    defparam i9094_3_lut_4_lut.LUT_INIT = 16'hfb40;
+    SB_LUT4 i1_3_lut (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[2] ), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n11210));
+    defparam i1_3_lut.LUT_INIT = 16'h2828;
+    SB_LUT4 i13_4_lut (.I0(n21_adj_2335), .I1(n23_adj_2334), .I2(n22_adj_2333), 
+            .I3(n24), .O(n4515));
+    defparam i13_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i1_4_lut_adj_211 (.I0(\FRAME_MATCHER.state [1]), .I1(n47), .I2(n15121), 
+            .I3(n11200), .O(n6396));
+    defparam i1_4_lut_adj_211.LUT_INIT = 16'h0a08;
+    SB_LUT4 i9083_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(n83_adj_2329), 
+            .I2(\UART_TRANSMITTER.sp [4]), .I3(\data_out[8] [4]), .O(n11869));   // verilog/coms.v(277[12] 378[6])
+    defparam i9083_3_lut_4_lut.LUT_INIT = 16'hfb40;
+    SB_LUT4 i55_2_lut (.I0(tx_active), .I1(tx_active_prev), .I2(GND_net), 
+            .I3(GND_net), .O(n65));   // verilog/coms.v(296[9:37])
+    defparam i55_2_lut.LUT_INIT = 16'h4444;
+    SB_LUT4 mux_815_i1_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.sp [9]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(\UART_TRANSMITTER.state[0] ), 
+            .O(n2121[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_815_i1_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i9082_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(n83_adj_2329), 
+            .I2(\UART_TRANSMITTER.sp [5]), .I3(\data_out[8] [5]), .O(n11868));   // verilog/coms.v(277[12] 378[6])
+    defparam i9082_3_lut_4_lut.LUT_INIT = 16'hfb40;
+    SB_LUT4 i5_3_lut (.I0(\data_out[2][0] ), .I1(\data_out[6] [0]), .I2(byte_transmit_counter[2]), 
+            .I3(GND_net), .O(n1));   // verilog/coms.v(19[11:32])
+    defparam i5_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i9078_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(n83_adj_2329), 
+            .I2(\UART_TRANSMITTER.sp [6]), .I3(\data_out[8] [6]), .O(n11864));   // verilog/coms.v(277[12] 378[6])
+    defparam i9078_3_lut_4_lut.LUT_INIT = 16'hfb40;
+    SB_LUT4 i1_3_lut_adj_212 (.I0(tx_transmit_N_1750[3]), .I1(n15567), .I2(n29), 
+            .I3(GND_net), .O(n439));   // verilog/coms.v(297[31:54])
+    defparam i1_3_lut_adj_212.LUT_INIT = 16'hecec;
+    SB_LUT4 i1_4_lut_adj_213 (.I0(n5558), .I1(n18442), .I2(n439), .I3(n2891[0]), 
+            .O(n4_adj_2337));
+    defparam i1_4_lut_adj_213.LUT_INIT = 16'hbaaa;
+    SB_DFF delay_counter_i0_i8 (.Q(delay_counter[8]), .C(CLK_c), .D(n11766));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i1_4_lut_adj_214 (.I0(n4_adj_2337), .I1(n15937), .I2(tx_transmit_N_1779), 
+            .I3(n18442), .O(n10_adj_2338));
+    defparam i1_4_lut_adj_214.LUT_INIT = 16'haaea;
+    SB_LUT4 i737_2_lut (.I0(\data_in_frame[0] [7]), .I1(\data_in_frame[0][6] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2160));   // verilog/coms.v(69[15:26])
+    defparam i737_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 i3_4_lut (.I0(n18211), .I1(delay_counter[0]), .I2(delay_counter[1]), 
+            .I3(n10_adj_2338), .O(n11195));
+    defparam i3_4_lut.LUT_INIT = 16'h0100;
+    SB_LUT4 i4_4_lut_adj_215 (.I0(\data_in_frame[0]_c [4]), .I1(\data_in_frame[0]_c [5]), 
+            .I2(n2160), .I3(\data_in_frame[0]_c [2]), .O(n10_adj_2339));   // verilog/coms.v(76[16:62])
+    defparam i4_4_lut_adj_215.LUT_INIT = 16'h6996;
+    SB_LUT4 i9084_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(n83_adj_2329), 
+            .I2(\UART_TRANSMITTER.sp [3]), .I3(\data_out[8] [3]), .O(n11870));   // verilog/coms.v(277[12] 378[6])
+    defparam i9084_3_lut_4_lut.LUT_INIT = 16'hfb40;
+    SB_LUT4 i8807_3_lut_4_lut (.I0(n7_c), .I1(n18333), .I2(rx_data[0]), 
+            .I3(\data_in_frame[5] [0]), .O(n11593));
+    defparam i8807_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_3_lut_4_lut_4_lut (.I0(n15004), .I1(\FRAME_MATCHER.i [0]), 
+            .I2(n10_adj_2340), .I3(rx_data_ready), .O(n18328));
+    defparam i1_3_lut_4_lut_4_lut.LUT_INIT = 16'hfeff;
+    SB_LUT4 i5_3_lut_adj_216 (.I0(\data_in_frame[0]_c [1]), .I1(n10_adj_2339), 
+            .I2(\data_in_frame[0]_c [3]), .I3(GND_net), .O(n2169));   // verilog/coms.v(76[16:62])
+    defparam i5_3_lut_adj_216.LUT_INIT = 16'h9696;
+    SB_DFFE delay_counter_i0_i10 (.Q(delay_counter[10]), .C(CLK_c), .E(VCC_net), 
+            .D(n11765));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i747_2_lut (.I0(n2169), .I1(\data_in_frame[0][0] ), .I2(GND_net), 
+            .I3(GND_net), .O(n2170));   // verilog/coms.v(76[16:69])
+    defparam i747_2_lut.LUT_INIT = 16'h6666;
+    SB_DFF data_out_frame2_0___i160 (.Q(\data_out_frame2[19][7] ), .C(CLK_c), 
+           .D(n12014));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_3_lut_4_lut_4_lut_adj_217 (.I0(n15004), .I1(n10_adj_2340), 
+            .I2(\FRAME_MATCHER.i [0]), .I3(rx_data_ready), .O(n18333));
+    defparam i1_3_lut_4_lut_4_lut_adj_217.LUT_INIT = 16'hefff;
+    SB_LUT4 i735_2_lut (.I0(\data_in_frame[0][6] ), .I1(\data_in_frame[0]_c [5]), 
+            .I2(GND_net), .I3(GND_net), .O(n2158));   // verilog/coms.v(68[15:26])
+    defparam i735_2_lut.LUT_INIT = 16'h6666;
+    SB_CARRY add_698_24 (.CI(n16953), .I0(\FRAME_MATCHER.i [22]), .I1(GND_net), 
+            .CO(n16954));
+    SB_LUT4 i731_2_lut (.I0(\data_in_frame[0]_c [4]), .I1(\data_in_frame[0]_c [3]), 
+            .I2(GND_net), .I3(GND_net), .O(n2154));   // verilog/coms.v(66[15:26])
+    defparam i731_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 add_698_23_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [21]), .I2(GND_net), 
+            .I3(n16952), .O(n2_adj_2252)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_23_lut.LUT_INIT = 16'h8228;
+    SB_DFF data_out_frame2_0___i154 (.Q(\data_out_frame2[19][1] ), .C(CLK_c), 
+           .D(n12013));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_out_frame2_0___i164 (.Q(\data_out_frame2[20] [3]), .C(CLK_c), 
+           .D(n12016));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_698_23 (.CI(n16952), .I0(\FRAME_MATCHER.i [21]), .I1(GND_net), 
+            .CO(n16953));
+    SB_DFF data_out_frame2_0___i162 (.Q(\data_out_frame2[20][1] ), .C(CLK_c), 
+           .D(n12015));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i727_2_lut (.I0(\data_in_frame[0]_c [2]), .I1(\data_in_frame[0]_c [1]), 
+            .I2(GND_net), .I3(GND_net), .O(n2150));   // verilog/coms.v(64[15:26])
+    defparam i727_2_lut.LUT_INIT = 16'h6666;
+    SB_LUT4 i1_2_lut_adj_218 (.I0(\FRAME_MATCHER.state [0]), .I1(\FRAME_MATCHER.state[2] ), 
+            .I2(GND_net), .I3(GND_net), .O(n11136));   // verilog/coms.v(442[5:9])
+    defparam i1_2_lut_adj_218.LUT_INIT = 16'heeee;
+    SB_LUT4 i4_4_lut_adj_219 (.I0(n2150), .I1(n2154), .I2(\data_in_frame[2] [3]), 
+            .I3(\data_in_frame[2] [5]), .O(n20_adj_2341));
+    defparam i4_4_lut_adj_219.LUT_INIT = 16'h7bde;
+    SB_LUT4 i7_4_lut_adj_220 (.I0(\data_in_frame[0] [7]), .I1(n2170), .I2(\data_in_frame[1] [1]), 
+            .I3(\data_in_frame[1] [7]), .O(n23_adj_2342));
+    defparam i7_4_lut_adj_220.LUT_INIT = 16'hde7b;
+    SB_LUT4 add_698_22_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [20]), .I2(GND_net), 
+            .I3(n16951), .O(n2_adj_2254)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_22_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i11_4_lut_adj_221 (.I0(\data_in_frame[1] [2]), .I1(n22_adj_2343), 
+            .I2(n2148), .I3(\data_in_frame[2] [2]), .O(n27_adj_2344));
+    defparam i11_4_lut_adj_221.LUT_INIT = 16'hdffd;
+    SB_DFF \data_out_7[[5__1878  (.Q(\data_out[7] [5]), .C(CLK_c), .D(n11959));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE delay_counter_i0_i0 (.Q(delay_counter[0]), .C(CLK_c), .E(VCC_net), 
+            .D(n11988));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i2_4_lut_adj_222 (.I0(n2169), .I1(n2152), .I2(\data_in_frame[2] [1]), 
+            .I3(\data_in_frame[2] [4]), .O(n18_adj_2345));
+    defparam i2_4_lut_adj_222.LUT_INIT = 16'hb7ed;
+    SB_DFF \data_out_7[[6__1877  (.Q(\data_out[7][6] ), .C(CLK_c), .D(n11962));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_7[[7__1876  (.Q(\data_out[7] [7]), .C(CLK_c), .D(n18151));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_7[[2__1881  (.Q(\data_out[7][2] ), .C(CLK_c), .D(n11950));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i8804_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[4] [0]), 
+            .I3(\pwm_31__N_2046[0] ), .O(n11590));
+    defparam i8804_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF \data_out_7[[3__1880  (.Q(\data_out[7][3] ), .C(CLK_c), .D(n11953));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_7[[4__1879  (.Q(\data_out[7] [4]), .C(CLK_c), .D(n11956));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i10_4_lut_adj_223 (.I0(n2160), .I1(n20_adj_2341), .I2(\data_in_frame[1] [5]), 
+            .I3(\data_in_frame[1] [0]), .O(n26_adj_2346));
+    defparam i10_4_lut_adj_223.LUT_INIT = 16'hefdf;
+    SB_LUT4 select_373_Select_12_i3_2_lut (.I0(\FRAME_MATCHER.i [12]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2295));
+    defparam select_373_Select_12_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i14_4_lut_adj_224 (.I0(n27_adj_2344), .I1(n23_adj_2342), .I2(\data_in_frame[1] [3]), 
+            .I3(\data_in_frame[1] [4]), .O(n30_adj_2347));
+    defparam i14_4_lut_adj_224.LUT_INIT = 16'hefff;
+    SB_LUT4 i1_4_lut_adj_225 (.I0(n2170), .I1(n2156), .I2(\data_in_frame[2] [0]), 
+            .I3(\data_in_frame[2] [6]), .O(n17_adj_2348));
+    defparam i1_4_lut_adj_225.LUT_INIT = 16'h7bde;
+    SB_LUT4 i15_4_lut_adj_226 (.I0(n17_adj_2348), .I1(n30_adj_2347), .I2(n26_adj_2346), 
+            .I3(n18_adj_2345), .O(n31));
+    defparam i15_4_lut_adj_226.LUT_INIT = 16'hfffe;
+    SB_LUT4 n6396_bdd_4_lut_16099_4_lut (.I0(n31), .I1(n6394), .I2(n4515), 
+            .I3(n6396), .O(n19079));   // verilog/coms.v(456[9:87])
+    defparam n6396_bdd_4_lut_16099_4_lut.LUT_INIT = 16'h77c0;
+    SB_LUT4 i1_2_lut_adj_227 (.I0(\FRAME_MATCHER.state[2] ), .I1(n11157), 
+            .I2(GND_net), .I3(GND_net), .O(n11008));   // verilog/coms.v(501[5:21])
+    defparam i1_2_lut_adj_227.LUT_INIT = 16'hdddd;
+    SB_LUT4 i1_2_lut_adj_228 (.I0(\FRAME_MATCHER.state [4]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2293));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_2_lut_adj_228.LUT_INIT = 16'h8888;
+    SB_CARRY add_698_22 (.CI(n16951), .I0(\FRAME_MATCHER.i [20]), .I1(GND_net), 
+            .CO(n16952));
+    SB_LUT4 i8896_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[1] [7]), 
+            .I3(\setpoint[31] ), .O(n11682));
+    defparam i8896_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_2_lut_adj_229 (.I0(\FRAME_MATCHER.state [5]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2291));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_2_lut_adj_229.LUT_INIT = 16'h8888;
+    SB_DFF \data_out_3[[1__1914  (.Q(\data_out[3] [1]), .C(CLK_c), .D(n11554));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_3[[2__1913  (.Q(\data_out[3][2] ), .C(CLK_c), .D(n11553));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 equal_41_i7_2_lut (.I0(\FRAME_MATCHER.i [1]), .I1(\FRAME_MATCHER.i [2]), 
+            .I2(GND_net), .I3(GND_net), .O(n7_c));   // verilog/coms.v(447[7:23])
+    defparam equal_41_i7_2_lut.LUT_INIT = 16'hbbbb;
+    SB_LUT4 i8897_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[1] [6]), 
+            .I3(\setpoint[30] ), .O(n11683));
+    defparam i8897_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8898_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[1] [5]), 
+            .I3(\setpoint[29] ), .O(n11684));
+    defparam i8898_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF \UART_TRANSMITTER.state__i3  (.Q(\UART_TRANSMITTER.state[2] ), 
+           .C(CLK_c), .D(n17244));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.state__i2  (.Q(\UART_TRANSMITTER.state[1] ), 
+           .C(CLK_c), .D(n9));   // verilog/coms.v(277[12] 378[6])
+    SB_CARRY add_62_14 (.CI(n16896), .I0(\UART_TRANSMITTER.sp [12]), .I1(n19017), 
+            .CO(n16897));
+    SB_DFF rx_crc_i15 (.Q(\rx_crc[15] ), .C(CLK_c), .D(n11910));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF rx_crc_i9 (.Q(\rx_crc[9] ), .C(CLK_c), .D(n11909));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF rx_crc_i8 (.Q(\rx_crc[8] ), .C(CLK_c), .D(n11908));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF byte_transmit_counter__i7 (.Q(byte_transmit_counter_c[7]), .C(CLK_c), 
+           .D(n17593));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE delay_counter_i0_i9 (.Q(delay_counter[9]), .C(CLK_c), .E(VCC_net), 
+            .D(n11762));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i8899_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[1] [4]), 
+            .I3(\setpoint[28] ), .O(n11685));
+    defparam i8899_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8900_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[1] [3]), 
+            .I3(\setpoint[27] ), .O(n11686));
+    defparam i8900_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8901_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[1] [2]), 
+            .I3(\setpoint[26] ), .O(n11687));
+    defparam i8901_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF byte_transmit_counter__i6 (.Q(byte_transmit_counter_c[6]), .C(CLK_c), 
+           .D(n17589));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i1_2_lut_adj_230 (.I0(\FRAME_MATCHER.state [6]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2289));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_2_lut_adj_230.LUT_INIT = 16'h8888;
+    SB_LUT4 i8902_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[1] [1]), 
+            .I3(\setpoint[25] ), .O(n11688));
+    defparam i8902_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_2_lut_3_lut_adj_231 (.I0(n63_adj_2326), .I1(n63_adj_2324), 
+            .I2(n63_adj_2327), .I3(GND_net), .O(n10515));   // verilog/coms.v(435[4] 437[7])
+    defparam i1_2_lut_3_lut_adj_231.LUT_INIT = 16'h8080;
+    SB_LUT4 add_62_3_lut (.I0(\UART_TRANSMITTER.sp [1]), .I1(\UART_TRANSMITTER.sp [1]), 
+            .I2(n19017), .I3(n16885), .O(n11680)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_3_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i8903_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[1] [0]), 
+            .I3(\setpoint[24] ), .O(n11689));
+    defparam i8903_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i12332_4_lut (.I0(n15004), .I1(n11136), .I2(n11157), .I3(\FRAME_MATCHER.state [1]), 
+            .O(n1621));
+    defparam i12332_4_lut.LUT_INIT = 16'haaa8;
+    SB_LUT4 add_2200_5_lut (.I0(tx2_transmit_N_1799), .I1(byte_transmit_counter2[3]), 
+            .I2(GND_net), .I3(n16918), .O(n18657)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2200_5_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i1_2_lut_adj_232 (.I0(\UART_TRANSMITTER.state[1] ), .I1(\UART_TRANSMITTER.state[2] ), 
+            .I2(GND_net), .I3(GND_net), .O(n15937));   // verilog/coms.v(277[12] 378[6])
+    defparam i1_2_lut_adj_232.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_2_lut_adj_233 (.I0(\FRAME_MATCHER.state [9]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2287));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_2_lut_adj_233.LUT_INIT = 16'h8888;
+    SB_LUT4 i8904_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[2] [7]), 
+            .I3(\setpoint[23] ), .O(n11690));
+    defparam i8904_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_CARRY add_2200_5 (.CI(n16918), .I0(byte_transmit_counter2[3]), .I1(GND_net), 
+            .CO(n16919));
+    SB_LUT4 select_373_Select_0_i3_2_lut (.I0(\FRAME_MATCHER.i [0]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2226));
+    defparam select_373_Select_0_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_2_lut_adj_234 (.I0(\FRAME_MATCHER.state [11]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2285));
+    defparam i1_2_lut_adj_234.LUT_INIT = 16'h8888;
+    SB_LUT4 i8905_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[2] [6]), 
+            .I3(\setpoint[22] ), .O(n11691));
+    defparam i8905_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_2_lut_adj_235 (.I0(\FRAME_MATCHER.state [13]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2283));
+    defparam i1_2_lut_adj_235.LUT_INIT = 16'h8888;
+    SB_LUT4 n19043_bdd_4_lut (.I0(n19043), .I1(n2_adj_2349), .I2(n1_adj_2350), 
+            .I3(byte_transmit_counter[2]), .O(n19046));
+    defparam n19043_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 i11965_2_lut (.I0(\FRAME_MATCHER.state [14]), .I1(n16755), .I2(GND_net), 
+            .I3(GND_net), .O(n14731));
+    defparam i11965_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i12080_2_lut_3_lut (.I0(n63_adj_2326), .I1(n63_adj_2324), .I2(\FRAME_MATCHER.state [1]), 
+            .I3(GND_net), .O(n1536[1]));   // verilog/coms.v(435[4] 437[7])
+    defparam i12080_2_lut_3_lut.LUT_INIT = 16'h8080;
+    SB_CARRY add_2195_4 (.CI(n16873), .I0(delay_counter[2]), .I1(GND_net), 
+            .CO(n16874));
+    SB_LUT4 add_698_21_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [19]), .I2(GND_net), 
+            .I3(n16950), .O(n2_adj_2256)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_21_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 add_2200_4_lut (.I0(tx2_transmit_N_1799), .I1(byte_transmit_counter2[2]), 
+            .I2(GND_net), .I3(n16917), .O(n18664)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2200_4_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_16065 (.I0(byte_transmit_counter[1]), 
+            .I1(n18742), .I2(n5_adj_2351), .I3(byte_transmit_counter[2]), 
+            .O(n19037));
+    defparam byte_transmit_counter_1__bdd_4_lut_16065.LUT_INIT = 16'he4aa;
+    SB_CARRY add_698_21 (.CI(n16950), .I0(\FRAME_MATCHER.i [19]), .I1(GND_net), 
+            .CO(n16951));
+    SB_LUT4 mux_2133_i2_4_lut (.I0(\data_in_frame[0] [7]), .I1(n3286), .I2(\FRAME_MATCHER.state [0]), 
+            .I3(n3898), .O(n4858[1]));
+    defparam mux_2133_i2_4_lut.LUT_INIT = 16'hcac0;
+    SB_LUT4 i1_2_lut_adj_236 (.I0(\FRAME_MATCHER.state [15]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2281));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_2_lut_adj_236.LUT_INIT = 16'h8888;
+    SB_LUT4 i15964_2_lut (.I0(\data_in_frame[0] [7]), .I1(n4515), .I2(GND_net), 
+            .I3(GND_net), .O(n18765));
+    defparam i15964_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i15590_3_lut (.I0(\data_out_frame2[0] [1]), .I1(n4858[1]), .I2(n6396), 
+            .I3(GND_net), .O(n18565));
+    defparam i15590_3_lut.LUT_INIT = 16'hcaca;
+    SB_DFF byte_transmit_counter__i5 (.Q(byte_transmit_counter_c[5]), .C(CLK_c), 
+           .D(n17587));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 add_698_20_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [18]), .I2(GND_net), 
+            .I3(n16949), .O(n2_adj_2258)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_20_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i1_2_lut_adj_237 (.I0(\FRAME_MATCHER.state [16]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2279));
+    defparam i1_2_lut_adj_237.LUT_INIT = 16'h8888;
+    SB_DFFSR tx2_transmit_1945 (.Q(r_SM_Main_2__N_1837_adj_2408[0]), .C(CLK_c), 
+            .D(n4667[0]), .R(n11157));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_out_frame2_0___i1 (.Q(\data_out_frame2[0][0] ), .C(CLK_c), 
+           .D(n18570));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_698_20 (.CI(n16949), .I0(\FRAME_MATCHER.i [18]), .I1(GND_net), 
+            .CO(n16950));
+    SB_LUT4 i15592_4_lut (.I0(n18565), .I1(n18765), .I2(n6394), .I3(n6396), 
+            .O(n18567));
+    defparam i15592_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i8906_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[2] [5]), 
+            .I3(\setpoint[21] ), .O(n11692));
+    defparam i8906_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i11933_2_lut (.I0(\FRAME_MATCHER.state [17]), .I1(n16755), .I2(GND_net), 
+            .I3(GND_net), .O(n14697));
+    defparam i11933_2_lut.LUT_INIT = 16'h8888;
+    SB_DFFESS \data_out_5[[0__1899  (.Q(\data_out[5] [0]), .C(CLK_c), .E(n11211), 
+            .D(n2707[0]), .S(n11465));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_in_0[[0__1977  (.Q(\data_in[0] [0]), .C(CLK_c), .D(n11713));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i11948_2_lut (.I0(n31), .I1(n11138), .I2(GND_net), .I3(GND_net), 
+            .O(n14713));
+    defparam i11948_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 add_62_13_lut (.I0(\UART_TRANSMITTER.sp[11] ), .I1(\UART_TRANSMITTER.sp[11] ), 
+            .I2(n19017), .I3(n16895), .O(n11670)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_13_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i36_4_lut (.I0(n18636), .I1(\data_out_frame2[20] [7]), .I2(byte_transmit_counter2[2]), 
+            .I3(n7847), .O(n18_adj_2353));   // verilog/coms.v(407[12:34])
+    defparam i36_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i8907_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[2] [4]), 
+            .I3(\setpoint[20] ), .O(n11693));
+    defparam i8907_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 n19037_bdd_4_lut (.I0(n19037), .I1(n2_adj_2354), .I2(n1_adj_2355), 
+            .I3(byte_transmit_counter[2]), .O(n19040));
+    defparam n19037_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_CARRY add_62_3 (.CI(n16885), .I0(\UART_TRANSMITTER.sp [1]), .I1(n19017), 
+            .CO(n16886));
+    SB_DFF setpoint_i0_i1 (.Q(\setpoint[1] ), .C(CLK_c), .D(n11712));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_62_2_lut (.I0(GND_net), .I1(\UART_TRANSMITTER.sp[0] ), .I2(n27_adj_2356), 
+            .I3(GND_net), .O(n147)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_2_lut.LUT_INIT = 16'hC33C;
+    SB_DFF setpoint_i0_i2 (.Q(\setpoint[2] ), .C(CLK_c), .D(n11711));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 byte_transmit_counter_1__bdd_4_lut_16060 (.I0(byte_transmit_counter[1]), 
+            .I1(n18737), .I2(n5_adj_2357), .I3(byte_transmit_counter[2]), 
+            .O(n19031));
+    defparam byte_transmit_counter_1__bdd_4_lut_16060.LUT_INIT = 16'he4aa;
+    SB_DFF setpoint_i0_i3 (.Q(\setpoint[3] ), .C(CLK_c), .D(n11710));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 n19031_bdd_4_lut (.I0(n19031), .I1(n2_adj_2358), .I2(n18781), 
+            .I3(byte_transmit_counter[2]), .O(n19034));
+    defparam n19031_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_DFF setpoint_i0_i4 (.Q(\setpoint[4] ), .C(CLK_c), .D(n11709));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i5 (.Q(\setpoint[5] ), .C(CLK_c), .D(n11708));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i6 (.Q(\setpoint[6] ), .C(CLK_c), .D(n11707));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i7 (.Q(\setpoint[7] ), .C(CLK_c), .D(n11706));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i8 (.Q(\setpoint[8] ), .C(CLK_c), .D(n11705));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i9 (.Q(\setpoint[9] ), .C(CLK_c), .D(n11704));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i8787_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(n11211), .I3(\data_out[0] [2]), .O(n11573));
+    defparam i8787_3_lut_4_lut.LUT_INIT = 16'h1f10;
+    SB_DFF setpoint_i0_i10 (.Q(\setpoint[10] ), .C(CLK_c), .D(n11703));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i8_4_lut_adj_238 (.I0(delay_counter[5]), .I1(delay_counter[3]), 
+            .I2(delay_counter[8]), .I3(delay_counter[7]), .O(n20));   // verilog/coms.v(303[11:30])
+    defparam i8_4_lut_adj_238.LUT_INIT = 16'hfffe;
+    SB_DFF setpoint_i0_i11 (.Q(\setpoint[11] ), .C(CLK_c), .D(n11702));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i7_4_lut_adj_239 (.I0(delay_counter[6]), .I1(delay_counter[13]), 
+            .I2(delay_counter[10]), .I3(delay_counter[2]), .O(n19));   // verilog/coms.v(303[11:30])
+    defparam i7_4_lut_adj_239.LUT_INIT = 16'hfffe;
+    SB_DFF setpoint_i0_i12 (.Q(\setpoint[12] ), .C(CLK_c), .D(n11701));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i16009_3_lut (.I0(n18211), .I1(delay_counter[0]), .I2(delay_counter[1]), 
+            .I3(GND_net), .O(n27_adj_2356));   // verilog/coms.v(303[11:30])
+    defparam i16009_3_lut.LUT_INIT = 16'h0101;
+    SB_DFF setpoint_i0_i13 (.Q(\setpoint[13] ), .C(CLK_c), .D(n11700));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i14 (.Q(\setpoint[14] ), .C(CLK_c), .D(n11699));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_3_lut_adj_240 (.I0(tx_transmit_N_1750[2]), .I1(tx_transmit_N_1779), 
+            .I2(n103), .I3(GND_net), .O(n90));   // verilog/coms.v(25[6:17])
+    defparam i1_3_lut_adj_240.LUT_INIT = 16'hecec;
+    SB_DFF setpoint_i0_i15 (.Q(\setpoint[15] ), .C(CLK_c), .D(n11698));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_adj_241 (.I0(tx_transmit_N_1750_c[1]), .I1(\tx_transmit_N_1750[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n103));   // verilog/coms.v(25[6:17])
+    defparam i1_2_lut_adj_241.LUT_INIT = 16'h8888;
+    SB_DFF setpoint_i0_i16 (.Q(\setpoint[16] ), .C(CLK_c), .D(n11697));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_4_lut_adj_242 (.I0(tx_transmit_N_1750[3]), .I1(n15567), .I2(\UART_TRANSMITTER.state[1] ), 
+            .I3(n29), .O(n68));   // verilog/coms.v(25[6:17])
+    defparam i1_4_lut_adj_242.LUT_INIT = 16'heeec;
+    SB_DFF setpoint_i0_i17 (.Q(\setpoint[17] ), .C(CLK_c), .D(n11696));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i8765_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(n11211), .I3(\data_out[3] [5]), .O(n11551));
+    defparam i8765_3_lut_4_lut.LUT_INIT = 16'h1f10;
+    SB_DFF setpoint_i0_i18 (.Q(\setpoint[18] ), .C(CLK_c), .D(n11695));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i8908_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[2] [3]), 
+            .I3(\setpoint[19] ), .O(n11694));
+    defparam i8908_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF setpoint_i0_i19 (.Q(\setpoint[19] ), .C(CLK_c), .D(n11694));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i20 (.Q(\setpoint[20] ), .C(CLK_c), .D(n11693));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i21 (.Q(\setpoint[21] ), .C(CLK_c), .D(n11692));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i22 (.Q(\setpoint[22] ), .C(CLK_c), .D(n11691));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i23 (.Q(\setpoint[23] ), .C(CLK_c), .D(n11690));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i24 (.Q(\setpoint[24] ), .C(CLK_c), .D(n11689));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i25 (.Q(\setpoint[25] ), .C(CLK_c), .D(n11688));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i26 (.Q(\setpoint[26] ), .C(CLK_c), .D(n11687));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF setpoint_i0_i27 (.Q(\setpoint[27] ), .C(CLK_c), .D(n11686));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_3[[3__1912  (.Q(\data_out[3] [3]), .C(CLK_c), .D(n11552));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF setpoint_i0_i28 (.Q(\setpoint[28] ), .C(CLK_c), .D(n11685));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i15828_4_lut (.I0(byte_transmit_counter2[1]), .I1(byte_transmit_counter2[2]), 
+            .I2(byte_transmit_counter2[0]), .I3(\data_out_frame2[0][7] ), 
+            .O(n18633));   // verilog/coms.v(407[12:34])
+    defparam i15828_4_lut.LUT_INIT = 16'h3130;
+    SB_LUT4 i1_4_lut_adj_243 (.I0(byte_transmit_counter2[3]), .I1(n18633), 
+            .I2(n18_adj_2353), .I3(byte_transmit_counter2[4]), .O(tx2_data[7]));   // verilog/coms.v(407[12:34])
+    defparam i1_4_lut_adj_243.LUT_INIT = 16'h5044;
+    SB_DFF setpoint_i0_i29 (.Q(\setpoint[29] ), .C(CLK_c), .D(n11684));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_3[[5__1910  (.Q(\data_out[3] [5]), .C(CLK_c), .D(n11551));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i8909_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[2] [2]), 
+            .I3(\setpoint[18] ), .O(n11695));
+    defparam i8909_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_2195_6_lut (.I0(GND_net), .I1(delay_counter[4]), .I2(GND_net), 
+            .I3(n16875), .O(n6587[4])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_6_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i8910_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[2] [1]), 
+            .I3(\setpoint[17] ), .O(n11696));
+    defparam i8910_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF setpoint_i0_i30 (.Q(\setpoint[30] ), .C(CLK_c), .D(n11683));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i15962_4_lut (.I0(byte_transmit_counter2[0]), .I1(\data_out_frame2[20] [6]), 
+            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[1]), 
+            .O(n18735));   // verilog/coms.v(407[12:34])
+    defparam i15962_4_lut.LUT_INIT = 16'h0040;
+    SB_LUT4 i15820_4_lut (.I0(byte_transmit_counter2[4]), .I1(byte_transmit_counter2[0]), 
+            .I2(byte_transmit_counter2[1]), .I3(\data_out_frame2[0] [6]), 
+            .O(n18734));   // verilog/coms.v(407[12:34])
+    defparam i15820_4_lut.LUT_INIT = 16'h4544;
+    SB_LUT4 i8912_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[3] [7]), 
+            .I3(\setpoint[15] ), .O(n11698));
+    defparam i8912_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_4_lut_adj_244 (.I0(byte_transmit_counter2[3]), .I1(n18734), 
+            .I2(n18735), .I3(byte_transmit_counter2[2]), .O(tx2_data[6]));   // verilog/coms.v(407[12:34])
+    defparam i1_4_lut_adj_244.LUT_INIT = 16'h5044;
+    SB_LUT4 i8766_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(n11211), .I3(\data_out[3] [3]), .O(n11552));
+    defparam i8766_3_lut_4_lut.LUT_INIT = 16'h1f10;
+    SB_LUT4 i8913_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[3] [6]), 
+            .I3(\setpoint[14] ), .O(n11699));
+    defparam i8913_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i10005_3_lut (.I0(delay_counter[2]), .I1(n18678), .I2(n1601), 
+            .I3(GND_net), .O(n11841));
+    defparam i10005_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i1_2_lut_adj_245 (.I0(\FRAME_MATCHER.state [21]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2277));
+    defparam i1_2_lut_adj_245.LUT_INIT = 16'h8888;
+    SB_DFF setpoint_i0_i31 (.Q(\setpoint[31] ), .C(CLK_c), .D(n11682));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFESS \data_out_5[[2__1897  (.Q(\data_out[5] [2]), .C(CLK_c), .E(n11211), 
+            .D(n2637[0]), .S(n11465));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i1_4_lut_adj_246 (.I0(byte_transmit_counter2[3]), .I1(n18708), 
+            .I2(n20_adj_2359), .I3(byte_transmit_counter2[4]), .O(tx2_data[5]));   // verilog/coms.v(411[36:58])
+    defparam i1_4_lut_adj_246.LUT_INIT = 16'h5044;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i1  (.Q(\UART_TRANSMITTER.sp [1]), .C(CLK_c), 
+           .D(n11680));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i8914_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[3] [5]), 
+            .I3(\setpoint[13] ), .O(n11700));
+    defparam i8914_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i2  (.Q(\UART_TRANSMITTER.sp [2]), .C(CLK_c), 
+           .D(n11679));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFESS \data_out_5[[3__1896  (.Q(\data_out[5] [3]), .C(CLK_c), .E(n11211), 
+            .D(n2602[0]), .S(n11465));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i15976_4_lut (.I0(n22), .I1(byte_transmit_counter2[0]), .I2(byte_transmit_counter2[1]), 
+            .I3(\data_out_frame2[0] [4]), .O(n18755));   // verilog/coms.v(411[36:58])
+    defparam i15976_4_lut.LUT_INIT = 16'h4140;
+    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_4_i31_4_lut (.I0(n18755), .I1(n22_adj_2360), 
+            .I2(byte_transmit_counter2[4]), .I3(byte_transmit_counter2[3]), 
+            .O(tx2_data[4]));   // verilog/coms.v(411[36:58])
+    defparam byte_transmit_counter2_4__I_0_Mux_4_i31_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i1_2_lut_adj_247 (.I0(\FRAME_MATCHER.state [22]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2275));
+    defparam i1_2_lut_adj_247.LUT_INIT = 16'h8888;
+    SB_LUT4 i8915_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[3] [4]), 
+            .I3(\setpoint[12] ), .O(n11701));
+    defparam i8915_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFFSS byte_transmit_counter2_i1 (.Q(byte_transmit_counter2[1]), .C(CLK_c), 
+            .D(n18270), .S(n4_adj_2361));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS byte_transmit_counter2_i2 (.Q(byte_transmit_counter2[2]), .C(CLK_c), 
+            .D(n2_adj_2362), .S(n4_adj_2363));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS byte_transmit_counter2_i3 (.Q(byte_transmit_counter2[3]), .C(CLK_c), 
+            .D(n2_adj_2364), .S(n4_adj_2365));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS byte_transmit_counter2_i4 (.Q(byte_transmit_counter2[4]), .C(CLK_c), 
+            .D(n18269), .S(n4_adj_2366));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS byte_transmit_counter2_i5 (.Q(byte_transmit_counter2[5]), .C(CLK_c), 
+            .D(n2_adj_2367), .S(n4_adj_2368));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS byte_transmit_counter2_i6 (.Q(byte_transmit_counter2[6]), .C(CLK_c), 
+            .D(n2_adj_2369), .S(n4_adj_2370));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFSS byte_transmit_counter2_i7 (.Q(byte_transmit_counter2[7]), .C(CLK_c), 
+            .D(n2_adj_2371), .S(n4_adj_2372));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i3  (.Q(\UART_TRANSMITTER.sp [3]), .C(CLK_c), 
+           .D(n11678));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i4  (.Q(\UART_TRANSMITTER.sp [4]), .C(CLK_c), 
+           .D(n11677));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i2_3_lut_adj_248 (.I0(\FRAME_MATCHER.i [5]), .I1(\FRAME_MATCHER.i [3]), 
+            .I2(\FRAME_MATCHER.i [4]), .I3(GND_net), .O(n10_adj_2340));   // verilog/coms.v(447[7:23])
+    defparam i2_3_lut_adj_248.LUT_INIT = 16'hfefe;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i5  (.Q(\UART_TRANSMITTER.sp [5]), .C(CLK_c), 
+           .D(n11676));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i6  (.Q(\UART_TRANSMITTER.sp [6]), .C(CLK_c), 
+           .D(n11675));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i7  (.Q(\UART_TRANSMITTER.sp [7]), .C(CLK_c), 
+           .D(n11674));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i3508_2_lut (.I0(\FRAME_MATCHER.i [0]), .I1(\FRAME_MATCHER.i [1]), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2373));
+    defparam i3508_2_lut.LUT_INIT = 16'h8888;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i8  (.Q(\UART_TRANSMITTER.sp [8]), .C(CLK_c), 
+           .D(n11673));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i1_2_lut_adj_249 (.I0(\FRAME_MATCHER.i [10]), .I1(\FRAME_MATCHER.i [26]), 
+            .I2(GND_net), .I3(GND_net), .O(n26_adj_2374));   // verilog/coms.v(447[7:23])
+    defparam i1_2_lut_adj_249.LUT_INIT = 16'heeee;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i9  (.Q(\UART_TRANSMITTER.sp [9]), .C(CLK_c), 
+           .D(n11672));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i10  (.Q(\UART_TRANSMITTER.sp[10] ), .C(CLK_c), 
+           .D(n11671));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i17_4_lut (.I0(\FRAME_MATCHER.i [20]), .I1(\FRAME_MATCHER.i [23]), 
+            .I2(\FRAME_MATCHER.i [21]), .I3(\FRAME_MATCHER.i [28]), .O(n42));   // verilog/coms.v(447[7:23])
+    defparam i17_4_lut.LUT_INIT = 16'hfffe;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i11  (.Q(\UART_TRANSMITTER.sp[11] ), .C(CLK_c), 
+           .D(n11670));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i15_4_lut_adj_250 (.I0(\FRAME_MATCHER.i [22]), .I1(\FRAME_MATCHER.i [25]), 
+            .I2(\FRAME_MATCHER.i [24]), .I3(\FRAME_MATCHER.i [30]), .O(n40));   // verilog/coms.v(447[7:23])
+    defparam i15_4_lut_adj_250.LUT_INIT = 16'hfffe;
+    SB_LUT4 i8916_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[3] [3]), 
+            .I3(\setpoint[11] ), .O(n11702));
+    defparam i8916_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_698_19_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [17]), .I2(GND_net), 
+            .I3(n16948), .O(n2_adj_2260)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_19_lut.LUT_INIT = 16'h8228;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i12  (.Q(\UART_TRANSMITTER.sp [12]), .C(CLK_c), 
+           .D(n11669));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i13  (.Q(\UART_TRANSMITTER.sp [13]), .C(CLK_c), 
+           .D(n11668));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i16_4_lut (.I0(\FRAME_MATCHER.i [7]), .I1(\FRAME_MATCHER.i [16]), 
+            .I2(\FRAME_MATCHER.i [14]), .I3(\FRAME_MATCHER.i [17]), .O(n41));   // verilog/coms.v(447[7:23])
+    defparam i16_4_lut.LUT_INIT = 16'hfffe;
+    SB_CARRY add_698_19 (.CI(n16948), .I0(\FRAME_MATCHER.i [17]), .I1(GND_net), 
+            .CO(n16949));
+    SB_DFF \UART_TRANSMITTER.sp_i0_i14  (.Q(\UART_TRANSMITTER.sp[14] ), .C(CLK_c), 
+           .D(n11667));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i14_4_lut_adj_251 (.I0(\FRAME_MATCHER.i [6]), .I1(\FRAME_MATCHER.i [9]), 
+            .I2(\FRAME_MATCHER.i [8]), .I3(\FRAME_MATCHER.i [18]), .O(n39));   // verilog/coms.v(447[7:23])
+    defparam i14_4_lut_adj_251.LUT_INIT = 16'hfffe;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i15  (.Q(\UART_TRANSMITTER.sp [15]), .C(CLK_c), 
+           .D(n11666));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i3_4_lut_adj_252 (.I0(tx_transmit_N_1750_c[7]), .I1(tx_transmit_N_1750_c[5]), 
+            .I2(tx_transmit_N_1750_c[6]), .I3(tx_transmit_N_1750_c[4]), 
+            .O(n15567));   // verilog/coms.v(25[6:17])
+    defparam i3_4_lut_adj_252.LUT_INIT = 16'hfffe;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i16  (.Q(\UART_TRANSMITTER.sp [16]), .C(CLK_c), 
+           .D(n11665));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i19_4_lut (.I0(\FRAME_MATCHER.i [19]), .I1(\FRAME_MATCHER.i [11]), 
+            .I2(\FRAME_MATCHER.i [27]), .I3(n26_adj_2374), .O(n44));   // verilog/coms.v(447[7:23])
+    defparam i19_4_lut.LUT_INIT = 16'hfffe;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i17  (.Q(\UART_TRANSMITTER.sp [17]), .C(CLK_c), 
+           .D(n11664));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i23_4_lut (.I0(n39), .I1(n41), .I2(n40), .I3(n42), .O(n48));   // verilog/coms.v(447[7:23])
+    defparam i23_4_lut.LUT_INIT = 16'hfffe;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i18  (.Q(\UART_TRANSMITTER.sp [18]), .C(CLK_c), 
+           .D(n11663));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i19  (.Q(\UART_TRANSMITTER.sp [19]), .C(CLK_c), 
+           .D(n11662));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i18_4_lut (.I0(\FRAME_MATCHER.i [29]), .I1(\FRAME_MATCHER.i [13]), 
+            .I2(\FRAME_MATCHER.i [12]), .I3(\FRAME_MATCHER.i [15]), .O(n43));   // verilog/coms.v(447[7:23])
+    defparam i18_4_lut.LUT_INIT = 16'hfffe;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i20  (.Q(\UART_TRANSMITTER.sp [20]), .C(CLK_c), 
+           .D(n11661));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i21  (.Q(\UART_TRANSMITTER.sp [21]), .C(CLK_c), 
+           .D(n11660));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i22  (.Q(\UART_TRANSMITTER.sp [22]), .C(CLK_c), 
+           .D(n11659));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i23  (.Q(\UART_TRANSMITTER.sp [23]), .C(CLK_c), 
+           .D(n11658));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i1_4_lut_adj_253 (.I0(n43), .I1(n10_adj_2340), .I2(n48), .I3(n44), 
+            .O(n10957));   // verilog/coms.v(447[7:23])
+    defparam i1_4_lut_adj_253.LUT_INIT = 16'hfffe;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i24  (.Q(\UART_TRANSMITTER.sp [24]), .C(CLK_c), 
+           .D(n11657));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i15836_4_lut (.I0(\data_out_frame2[0] [3]), .I1(byte_transmit_counter2[2]), 
+            .I2(byte_transmit_counter2[0]), .I3(byte_transmit_counter2[1]), 
+            .O(n18703));   // verilog/coms.v(411[36:58])
+    defparam i15836_4_lut.LUT_INIT = 16'h3032;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i25  (.Q(\UART_TRANSMITTER.sp [25]), .C(CLK_c), 
+           .D(n11656));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i26  (.Q(\UART_TRANSMITTER.sp [26]), .C(CLK_c), 
+           .D(n11655));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i27  (.Q(\UART_TRANSMITTER.sp [27]), .C(CLK_c), 
+           .D(n11654));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i28  (.Q(\UART_TRANSMITTER.sp [28]), .C(CLK_c), 
+           .D(n11653));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i1_4_lut_adj_254 (.I0(byte_transmit_counter2[3]), .I1(n18703), 
+            .I2(n19_adj_2375), .I3(byte_transmit_counter2[4]), .O(tx2_data[3]));   // verilog/coms.v(411[36:58])
+    defparam i1_4_lut_adj_254.LUT_INIT = 16'h5044;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i29  (.Q(\UART_TRANSMITTER.sp [29]), .C(CLK_c), 
+           .D(n11652));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i8917_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[3] [2]), 
+            .I3(\setpoint[10] ), .O(n11703));
+    defparam i8917_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF \UART_TRANSMITTER.sp_i0_i30  (.Q(\UART_TRANSMITTER.sp [30]), .C(CLK_c), 
+           .D(n11651));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \UART_TRANSMITTER.sp_i0_i31  (.Q(\UART_TRANSMITTER.sp [31]), .C(CLK_c), 
+           .D(n11650));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \FRAME_MATCHER.state_i1  (.Q(\FRAME_MATCHER.state [1]), .C(CLK_c), 
+           .D(n19112));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \FRAME_MATCHER.state_i2  (.Q(\FRAME_MATCHER.state[2] ), .C(CLK_c), 
+           .D(n19113));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i8768_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(n11211), .I3(\data_out[3] [1]), .O(n11554));
+    defparam i8768_3_lut_4_lut.LUT_INIT = 16'h1f10;
+    SB_DFFESS \data_out_5[[4__1895  (.Q(\data_out[5] [4]), .C(CLK_c), .E(n11211), 
+            .D(n2567[0]), .S(n11465));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i15970_4_lut (.I0(n10323), .I1(byte_transmit_counter2[3]), .I2(n18762), 
+            .I3(byte_transmit_counter2[2]), .O(n18764));   // verilog/coms.v(411[36:58])
+    defparam i15970_4_lut.LUT_INIT = 16'h3022;
+    SB_DFF data_in_frame_0__i2 (.Q(\data_in_frame[0]_c [1]), .C(CLK_c), 
+           .D(n11638));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i15500_4_lut (.I0(byte_transmit_counter2[2]), .I1(byte_transmit_counter2[0]), 
+            .I2(byte_transmit_counter2[3]), .I3(byte_transmit_counter2[1]), 
+            .O(n18472));
+    defparam i15500_4_lut.LUT_INIT = 16'hfffe;
+    SB_DFF data_in_frame_0__i3 (.Q(\data_in_frame[0]_c [2]), .C(CLK_c), 
+           .D(n11636));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i4 (.Q(\data_in_frame[0]_c [3]), .C(CLK_c), 
+           .D(n11635));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_62_13 (.CI(n16895), .I0(\UART_TRANSMITTER.sp[11] ), .I1(n19017), 
+            .CO(n16896));
+    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_2_i31_4_lut (.I0(n18472), .I1(n18764), 
+            .I2(byte_transmit_counter2[4]), .I3(\data_out_frame2[0] [2]), 
+            .O(tx2_data[2]));   // verilog/coms.v(411[36:58])
+    defparam byte_transmit_counter2_4__I_0_Mux_2_i31_4_lut.LUT_INIT = 16'hc5c0;
+    SB_DFF data_in_frame_0__i5 (.Q(\data_in_frame[0]_c [4]), .C(CLK_c), 
+           .D(n11634));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFESS \data_out_5[[5__1894  (.Q(\data_out[5] [5]), .C(CLK_c), .E(n11211), 
+            .D(n2532[0]), .S(n11465));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 add_698_18_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [16]), .I2(GND_net), 
+            .I3(n16947), .O(n2_adj_2262)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_18_lut.LUT_INIT = 16'h8228;
+    SB_DFF data_in_frame_0__i6 (.Q(\data_in_frame[0]_c [5]), .C(CLK_c), 
+           .D(n11633));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i7 (.Q(\data_in_frame[0][6] ), .C(CLK_c), .D(n11632));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_2200_4 (.CI(n16917), .I0(byte_transmit_counter2[2]), .I1(GND_net), 
+            .CO(n16918));
+    SB_CARRY add_698_18 (.CI(n16947), .I0(\FRAME_MATCHER.i [16]), .I1(GND_net), 
+            .CO(n16948));
+    SB_DFF data_in_frame_0__i8 (.Q(\data_in_frame[0] [7]), .C(CLK_c), .D(n11631));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i37_4_lut (.I0(n18700), .I1(\data_out_frame2[20][1] ), .I2(byte_transmit_counter2[2]), 
+            .I3(n7847), .O(n19_adj_2376));   // verilog/coms.v(411[36:58])
+    defparam i37_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i8918_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[3] [1]), 
+            .I3(\setpoint[9] ), .O(n11704));
+    defparam i8918_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_698_17_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [15]), .I2(GND_net), 
+            .I3(n16946), .O(n2_adj_2264)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_17_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i8919_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[3] [0]), 
+            .I3(\setpoint[8] ), .O(n11705));
+    defparam i8919_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8920_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[4] [7]), 
+            .I3(\setpoint[7] ), .O(n11706));
+    defparam i8920_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_2200_3_lut (.I0(tx2_transmit_N_1799), .I1(byte_transmit_counter2[1]), 
+            .I2(GND_net), .I3(n16916), .O(n18681)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2200_3_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i8921_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[4] [6]), 
+            .I3(\setpoint[6] ), .O(n11707));
+    defparam i8921_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 select_373_Select_13_i3_2_lut (.I0(\FRAME_MATCHER.i [13]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2273));
+    defparam select_373_Select_13_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_DFF data_in_frame_0__i9 (.Q(\data_in_frame[1] [0]), .C(CLK_c), .D(n11630));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i10 (.Q(\data_in_frame[1] [1]), .C(CLK_c), .D(n11629));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_2200_3 (.CI(n16916), .I0(byte_transmit_counter2[1]), .I1(GND_net), 
+            .CO(n16917));
+    SB_DFF data_in_frame_0__i11 (.Q(\data_in_frame[1] [2]), .C(CLK_c), .D(n11626));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i15918_4_lut (.I0(\data_out_frame2[0] [1]), .I1(byte_transmit_counter2[2]), 
+            .I2(byte_transmit_counter2[0]), .I3(byte_transmit_counter2[1]), 
+            .O(n18697));   // verilog/coms.v(411[36:58])
+    defparam i15918_4_lut.LUT_INIT = 16'h3032;
+    SB_DFF data_in_frame_0__i12 (.Q(\data_in_frame[1] [3]), .C(CLK_c), .D(n11625));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i13 (.Q(\data_in_frame[1] [4]), .C(CLK_c), .D(n11624));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_698_17 (.CI(n16946), .I0(\FRAME_MATCHER.i [15]), .I1(GND_net), 
+            .CO(n16947));
+    SB_DFF \UART_TRANSMITTER.state__i1  (.Q(\UART_TRANSMITTER.state[0] ), 
+           .C(CLK_c), .D(n11623));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 add_2200_2_lut (.I0(tx2_transmit_N_1799), .I1(byte_transmit_counter2[0]), 
+            .I2(GND_net), .I3(VCC_net), .O(n18628)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2200_2_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 add_698_16_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [14]), .I2(GND_net), 
+            .I3(n16945), .O(n2_adj_2266)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_16_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_698_16 (.CI(n16945), .I0(\FRAME_MATCHER.i [14]), .I1(GND_net), 
+            .CO(n16946));
+    SB_LUT4 i8922_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[4] [5]), 
+            .I3(\setpoint[5] ), .O(n11708));
+    defparam i8922_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_698_15_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [13]), .I2(GND_net), 
+            .I3(n16944), .O(n2_adj_2272)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_15_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_698_15 (.CI(n16944), .I0(\FRAME_MATCHER.i [13]), .I1(GND_net), 
+            .CO(n16945));
+    SB_DFFESS \data_out_5[[6__1893  (.Q(\data_out[5] [6]), .C(CLK_c), .E(n11211), 
+            .D(n2497[0]), .S(n11465));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i11936_4_lut (.I0(\FRAME_MATCHER.i [2]), .I1(\FRAME_MATCHER.i [31]), 
+            .I2(n10957), .I3(n4_adj_2373), .O(n3811));   // verilog/coms.v(506[9:54])
+    defparam i11936_4_lut.LUT_INIT = 16'h3230;
+    SB_LUT4 i8923_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[4] [4]), 
+            .I3(\setpoint[4] ), .O(n11709));
+    defparam i8923_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_4_lut_adj_255 (.I0(byte_transmit_counter2[3]), .I1(n18697), 
+            .I2(n19_adj_2376), .I3(byte_transmit_counter2[4]), .O(tx2_data[1]));   // verilog/coms.v(411[36:58])
+    defparam i1_4_lut_adj_255.LUT_INIT = 16'h5044;
+    SB_DFF data_in_frame_0__i14 (.Q(\data_in_frame[1] [5]), .C(CLK_c), .D(n11621));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_adj_256 (.I0(\FRAME_MATCHER.state [28]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8_adj_2271));
+    defparam i1_2_lut_adj_256.LUT_INIT = 16'h8888;
+    SB_LUT4 add_698_14_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [12]), .I2(GND_net), 
+            .I3(n16943), .O(n2_adj_2294)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_14_lut.LUT_INIT = 16'h8228;
+    SB_DFF byte_transmit_counter__i4 (.Q(\byte_transmit_counter[4] ), .C(CLK_c), 
+           .D(n17591));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i7279_2_lut (.I0(byte_transmit_counter[1]), .I1(byte_transmit_counter[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n9972));   // verilog/coms.v(253[28:49])
+    defparam i7279_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i8773_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(n11211), .I3(\data_out[2] [3]), .O(n11559));
+    defparam i8773_3_lut_4_lut.LUT_INIT = 16'h1f10;
+    SB_LUT4 i8924_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[4] [3]), 
+            .I3(\setpoint[3] ), .O(n11710));
+    defparam i8924_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8925_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[4] [2]), 
+            .I3(\setpoint[2] ), .O(n11711));
+    defparam i8925_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8775_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(n11211), .I3(\data_out[2] [1]), .O(n11561));
+    defparam i8775_3_lut_4_lut.LUT_INIT = 16'h1f10;
+    SB_LUT4 i11814_2_lut (.I0(tx2_active), .I1(r_SM_Main_2__N_1837_adj_2408[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n12966));
+    defparam i11814_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i1_4_lut_adj_257 (.I0(n10546), .I1(n11008), .I2(n4_adj_2377), 
+            .I3(n10557), .O(n10_adj_2378));
+    defparam i1_4_lut_adj_257.LUT_INIT = 16'h3b0a;
+    SB_DFF byte_transmit_counter__i3 (.Q(\byte_transmit_counter[3] ), .C(CLK_c), 
+           .D(n17601));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF byte_transmit_counter__i2 (.Q(byte_transmit_counter[2]), .C(CLK_c), 
+           .D(n17599));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_in_1[[7__1962  (.Q(\data_in[1] [7]), .C(CLK_c), .D(n11901));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_out_3[[6__1909  (.Q(\data_out[3][6] ), .C(CLK_c), .D(n11550));   // verilog/coms.v(277[12] 378[6])
+    SB_CARRY add_2195_2 (.CI(VCC_net), .I0(delay_counter[0]), .I1(GND_net), 
+            .CO(n16872));
+    SB_DFF \data_in_2[[0__1961  (.Q(\data_in[2] [0]), .C(CLK_c), .D(n11900));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_adj_258 (.I0(n3811), .I1(n10515), .I2(GND_net), .I3(GND_net), 
+            .O(n10557));   // verilog/coms.v(506[6] 508[9])
+    defparam i1_2_lut_adj_258.LUT_INIT = 16'h4444;
+    SB_LUT4 i1_2_lut_adj_259 (.I0(n10515), .I1(n1622), .I2(GND_net), .I3(GND_net), 
+            .O(n1_adj_2379));
+    defparam i1_2_lut_adj_259.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_2_lut_adj_260 (.I0(n2093), .I1(n10515), .I2(GND_net), .I3(GND_net), 
+            .O(n10546));   // verilog/coms.v(450[6] 452[9])
+    defparam i1_2_lut_adj_260.LUT_INIT = 16'h4444;
+    SB_LUT4 i8926_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[4] [1]), 
+            .I3(\setpoint[1] ), .O(n11712));
+    defparam i8926_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8911_3_lut_4_lut (.I0(n3898), .I1(n63), .I2(\data_in_frame[2] [0]), 
+            .I3(\setpoint[16] ), .O(n11697));
+    defparam i8911_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_DFF \data_in_2[[1__1960  (.Q(\data_in[2] [1]), .C(CLK_c), .D(n11899));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i2_4_lut_adj_261 (.I0(n11150), .I1(n1_adj_2379), .I2(n10557), 
+            .I3(n136), .O(n16755));
+    defparam i2_4_lut_adj_261.LUT_INIT = 16'hffdc;
+    SB_DFF \data_in_3[[7__1946  (.Q(\data_in[3] [7]), .C(CLK_c), .D(n11898));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_in_3[[6__1947  (.Q(\data_in[3] [6]), .C(CLK_c), .D(n11897));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i12_4_lut (.I0(byte_transmit_counter[1]), .I1(tx_transmit_N_1750_c[1]), 
+            .I2(n11340), .I3(n11195), .O(n17585));   // verilog/coms.v(19[11:32])
+    defparam i12_4_lut.LUT_INIT = 16'h0aca;
+    SB_DFFESS \data_out_5[[7__1892  (.Q(\data_out[5] [7]), .C(CLK_c), .E(n11211), 
+            .D(n2462[0]), .S(n11465));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF data_in_frame_0__i15 (.Q(\data_in_frame[1] [6]), .C(CLK_c), .D(n11620));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i16 (.Q(\data_in_frame[1] [7]), .C(CLK_c), .D(n11619));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i1 (.Q(\data_in_frame[0][0] ), .C(CLK_c), .D(n11618));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_2200_2 (.CI(VCC_net), .I0(byte_transmit_counter2[0]), .I1(GND_net), 
+            .CO(n16916));
+    SB_LUT4 i1_2_lut_adj_262 (.I0(\FRAME_MATCHER.state [31]), .I1(n16755), 
+            .I2(GND_net), .I3(GND_net), .O(n8));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_2_lut_adj_262.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_14_i3_2_lut (.I0(\FRAME_MATCHER.i [14]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2267));
+    defparam select_373_Select_14_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_CARRY add_698_14 (.CI(n16943), .I0(\FRAME_MATCHER.i [12]), .I1(GND_net), 
+            .CO(n16944));
+    SB_LUT4 add_62_33_lut (.I0(\UART_TRANSMITTER.sp [31]), .I1(\UART_TRANSMITTER.sp [31]), 
+            .I2(n19017), .I3(n16915), .O(n11650)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_33_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 add_62_12_lut (.I0(\UART_TRANSMITTER.sp[10] ), .I1(\UART_TRANSMITTER.sp[10] ), 
+            .I2(n19017), .I3(n16894), .O(n11671)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_12_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 add_698_13_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [11]), .I2(GND_net), 
+            .I3(n16942), .O(n2_adj_2302)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_13_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_62_12 (.CI(n16894), .I0(\UART_TRANSMITTER.sp[10] ), .I1(n19017), 
+            .CO(n16895));
+    SB_LUT4 i6_2_lut_3_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(\UART_TRANSMITTER.state[0] ), .I3(GND_net), .O(n11340));
+    defparam i6_2_lut_3_lut.LUT_INIT = 16'h0e0e;
+    SB_LUT4 i1_2_lut_adj_263 (.I0(\FRAME_MATCHER.state[2] ), .I1(n11172), 
+            .I2(GND_net), .I3(GND_net), .O(n11173));   // verilog/coms.v(489[5:16])
+    defparam i1_2_lut_adj_263.LUT_INIT = 16'hdddd;
+    SB_LUT4 select_373_Select_15_i3_2_lut (.I0(\FRAME_MATCHER.i [15]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2265));
+    defparam select_373_Select_15_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_16_i3_2_lut (.I0(\FRAME_MATCHER.i [16]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2263));
+    defparam select_373_Select_16_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_4_lut_4_lut (.I0(n63_adj_2327), .I1(n2093), .I2(n3_adj_2380), 
+            .I3(n11161), .O(n5));   // verilog/coms.v(450[6] 452[9])
+    defparam i1_4_lut_4_lut.LUT_INIT = 16'ha0a2;
+    SB_LUT4 select_373_Select_17_i3_2_lut (.I0(\FRAME_MATCHER.i [17]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2261));
+    defparam select_373_Select_17_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_371_Select_1_i1_3_lut_4_lut (.I0(n63_adj_2327), .I1(n2093), 
+            .I2(n11161), .I3(n1536[1]), .O(n1_adj_8));   // verilog/coms.v(450[6] 452[9])
+    defparam select_371_Select_1_i1_3_lut_4_lut.LUT_INIT = 16'h0f0d;
+    SB_LUT4 i8832_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18328), .I2(rx_data[0]), 
+            .I3(\data_in_frame[0][0] ), .O(n11618));
+    defparam i8832_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8845_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18328), .I2(rx_data[7]), 
+            .I3(\data_in_frame[0] [7]), .O(n11631));
+    defparam i8845_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8846_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18328), .I2(rx_data[6]), 
+            .I3(\data_in_frame[0][6] ), .O(n11632));
+    defparam i8846_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8847_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18328), .I2(rx_data[5]), 
+            .I3(\data_in_frame[0]_c [5]), .O(n11633));
+    defparam i8847_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8848_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18328), .I2(rx_data[4]), 
+            .I3(\data_in_frame[0]_c [4]), .O(n11634));
+    defparam i8848_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8849_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18328), .I2(rx_data[3]), 
+            .I3(\data_in_frame[0]_c [3]), .O(n11635));
+    defparam i8849_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_CARRY add_698_13 (.CI(n16942), .I0(\FRAME_MATCHER.i [11]), .I1(GND_net), 
+            .CO(n16943));
+    SB_LUT4 i8850_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18328), .I2(rx_data[2]), 
+            .I3(\data_in_frame[0]_c [2]), .O(n11636));
+    defparam i8850_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8852_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18328), .I2(rx_data[1]), 
+            .I3(\data_in_frame[0]_c [1]), .O(n11638));
+    defparam i8852_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 select_373_Select_18_i3_2_lut (.I0(\FRAME_MATCHER.i [18]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2259));
+    defparam select_373_Select_18_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 add_62_11_lut (.I0(\UART_TRANSMITTER.sp [9]), .I1(\UART_TRANSMITTER.sp [9]), 
+            .I2(n19017), .I3(n16893), .O(n11672)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_11_lut.LUT_INIT = 16'hA3AC;
+    SB_CARRY add_62_11 (.CI(n16893), .I0(\UART_TRANSMITTER.sp [9]), .I1(n19017), 
+            .CO(n16894));
+    SB_CARRY add_62_2 (.CI(GND_net), .I0(\UART_TRANSMITTER.sp[0] ), .I1(n27_adj_2356), 
+            .CO(n16885));
+    SB_LUT4 add_698_12_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [10]), .I2(GND_net), 
+            .I3(n16941), .O(n2_adj_2304)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_12_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 add_62_10_lut (.I0(\UART_TRANSMITTER.sp [8]), .I1(\UART_TRANSMITTER.sp [8]), 
+            .I2(n19017), .I3(n16892), .O(n11673)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_10_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 add_62_32_lut (.I0(\UART_TRANSMITTER.sp [30]), .I1(\UART_TRANSMITTER.sp [30]), 
+            .I2(n19017), .I3(n16914), .O(n11651)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_32_lut.LUT_INIT = 16'hA3AC;
+    SB_CARRY add_62_10 (.CI(n16892), .I0(\UART_TRANSMITTER.sp [8]), .I1(n19017), 
+            .CO(n16893));
+    SB_LUT4 add_62_9_lut (.I0(\UART_TRANSMITTER.sp [7]), .I1(\UART_TRANSMITTER.sp [7]), 
+            .I2(n19017), .I3(n16891), .O(n11674)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_9_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 add_2195_15_lut (.I0(n18977), .I1(delay_counter[13]), .I2(GND_net), 
+            .I3(n16884), .O(n18687)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_15_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_698_12 (.CI(n16941), .I0(\FRAME_MATCHER.i [10]), .I1(GND_net), 
+            .CO(n16942));
+    SB_DFF data_in_frame_0__i17 (.Q(\data_in_frame[2] [0]), .C(CLK_c), .D(n11617));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_62_32 (.CI(n16914), .I0(\UART_TRANSMITTER.sp [30]), .I1(n19017), 
+            .CO(n16915));
+    SB_LUT4 add_698_11_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [9]), .I2(GND_net), 
+            .I3(n16940), .O(n2_adj_2306)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_11_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 add_62_31_lut (.I0(\UART_TRANSMITTER.sp [29]), .I1(\UART_TRANSMITTER.sp [29]), 
+            .I2(n19017), .I3(n16913), .O(n11652)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_31_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 add_2195_14_lut (.I0(n18977), .I1(delay_counter[12]), .I2(GND_net), 
+            .I3(n16883), .O(n18679)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_14_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_698_11 (.CI(n16940), .I0(\FRAME_MATCHER.i [9]), .I1(GND_net), 
+            .CO(n16941));
+    SB_LUT4 i8833_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18333), .I2(rx_data[7]), 
+            .I3(\data_in_frame[1] [7]), .O(n11619));
+    defparam i8833_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_CARRY add_62_9 (.CI(n16891), .I0(\UART_TRANSMITTER.sp [7]), .I1(n19017), 
+            .CO(n16892));
+    SB_DFF data_in_frame_0__i18 (.Q(\data_in_frame[2] [1]), .C(CLK_c), .D(n11616));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_62_31 (.CI(n16913), .I0(\UART_TRANSMITTER.sp [29]), .I1(n19017), 
+            .CO(n16914));
+    SB_LUT4 add_62_8_lut (.I0(\UART_TRANSMITTER.sp [6]), .I1(\UART_TRANSMITTER.sp [6]), 
+            .I2(n19017), .I3(n16890), .O(n11675)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_8_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 add_62_30_lut (.I0(\UART_TRANSMITTER.sp [28]), .I1(\UART_TRANSMITTER.sp [28]), 
+            .I2(n19017), .I3(n16912), .O(n11653)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_30_lut.LUT_INIT = 16'hA3AC;
+    SB_CARRY add_2195_10 (.CI(n16879), .I0(delay_counter[8]), .I1(GND_net), 
+            .CO(n16880));
+    SB_LUT4 i8834_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18333), .I2(rx_data[6]), 
+            .I3(\data_in_frame[1] [6]), .O(n11620));
+    defparam i8834_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8835_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18333), .I2(rx_data[5]), 
+            .I3(\data_in_frame[1] [5]), .O(n11621));
+    defparam i8835_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8838_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18333), .I2(rx_data[4]), 
+            .I3(\data_in_frame[1] [4]), .O(n11624));
+    defparam i8838_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8839_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18333), .I2(rx_data[3]), 
+            .I3(\data_in_frame[1] [3]), .O(n11625));
+    defparam i8839_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8840_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18333), .I2(rx_data[2]), 
+            .I3(\data_in_frame[1] [2]), .O(n11626));
+    defparam i8840_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 select_373_Select_19_i3_2_lut (.I0(\FRAME_MATCHER.i [19]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2257));
+    defparam select_373_Select_19_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i8843_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18333), .I2(rx_data[1]), 
+            .I3(\data_in_frame[1] [1]), .O(n11629));
+    defparam i8843_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 select_373_Select_20_i3_2_lut (.I0(\FRAME_MATCHER.i [20]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2255));
+    defparam select_373_Select_20_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i8844_3_lut_4_lut (.I0(n7_adj_2383), .I1(n18333), .I2(rx_data[0]), 
+            .I3(\data_in_frame[1] [0]), .O(n11630));
+    defparam i8844_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 select_373_Select_21_i3_2_lut (.I0(\FRAME_MATCHER.i [21]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2253));
+    defparam select_373_Select_21_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_2_lut_adj_264 (.I0(tx_active), .I1(r_SM_Main_2__N_1837[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n83));   // verilog/coms.v(297[31:54])
+    defparam i1_2_lut_adj_264.LUT_INIT = 16'heeee;
+    SB_LUT4 select_373_Select_22_i3_2_lut (.I0(\FRAME_MATCHER.i [22]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2251));
+    defparam select_373_Select_22_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i15905_3_lut_4_lut (.I0(byte_transmit_counter2[1]), .I1(byte_transmit_counter2[2]), 
+            .I2(byte_transmit_counter2[0]), .I3(\data_out_frame2[0] [5]), 
+            .O(n18708));
+    defparam i15905_3_lut_4_lut.LUT_INIT = 16'h1110;
+    SB_LUT4 i1_2_lut_adj_265 (.I0(tx_transmit_N_1750[3]), .I1(n15567), .I2(GND_net), 
+            .I3(GND_net), .O(tx_transmit_N_1779));   // verilog/coms.v(297[31:54])
+    defparam i1_2_lut_adj_265.LUT_INIT = 16'heeee;
+    SB_LUT4 i15819_3_lut_4_lut (.I0(byte_transmit_counter2[1]), .I1(byte_transmit_counter2[2]), 
+            .I2(byte_transmit_counter2[0]), .I3(\data_out_frame2[0][0] ), 
+            .O(n18618));
+    defparam i15819_3_lut_4_lut.LUT_INIT = 16'h1110;
+    SB_LUT4 i10874_3_lut (.I0(\data_out[3] [7]), .I1(n2751[0]), .I2(n11211), 
+            .I3(GND_net), .O(n11549));
+    defparam i10874_3_lut.LUT_INIT = 16'hcaca;
+    SB_CARRY add_62_30 (.CI(n16912), .I0(\UART_TRANSMITTER.sp [28]), .I1(n19017), 
+            .CO(n16913));
+    SB_LUT4 i12841_4_lut (.I0(n18782), .I1(n68), .I2(\UART_TRANSMITTER.state[2] ), 
+            .I3(n83), .O(n25_adj_2384));   // verilog/coms.v(273[13:18])
+    defparam i12841_4_lut.LUT_INIT = 16'hfa3a;
+    SB_LUT4 select_373_Select_23_i3_2_lut (.I0(\FRAME_MATCHER.i [23]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2249));
+    defparam select_373_Select_23_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_24_i3_2_lut (.I0(\FRAME_MATCHER.i [24]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2247));
+    defparam select_373_Select_24_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_25_i3_2_lut (.I0(\FRAME_MATCHER.i [25]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2245));
+    defparam select_373_Select_25_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i8824_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18328), .I2(rx_data[7]), 
+            .I3(\data_in_frame[2] [7]), .O(n11610));
+    defparam i8824_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8825_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18328), .I2(rx_data[6]), 
+            .I3(\data_in_frame[2] [6]), .O(n11611));
+    defparam i8825_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 equal_43_i7_2_lut (.I0(\FRAME_MATCHER.i [1]), .I1(\FRAME_MATCHER.i [2]), 
+            .I2(GND_net), .I3(GND_net), .O(n7_adj_2385));   // verilog/coms.v(447[7:23])
+    defparam equal_43_i7_2_lut.LUT_INIT = 16'hdddd;
+    SB_LUT4 add_2195_9_lut (.I0(GND_net), .I1(delay_counter[7]), .I2(GND_net), 
+            .I3(n16878), .O(n6587[7])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_9_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i8826_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18328), .I2(rx_data[5]), 
+            .I3(\data_in_frame[2] [5]), .O(n11612));
+    defparam i8826_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8827_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18328), .I2(rx_data[4]), 
+            .I3(\data_in_frame[2] [4]), .O(n11613));
+    defparam i8827_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_698_10_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [8]), .I2(GND_net), 
+            .I3(n16939), .O(n2_adj_2308)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_10_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i15999_1_lut (.I0(n27_adj_2356), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n18977));   // verilog/coms.v(303[11:30])
+    defparam i15999_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 select_373_Select_26_i3_2_lut (.I0(\FRAME_MATCHER.i [26]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2244));
+    defparam select_373_Select_26_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i8828_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18328), .I2(rx_data[3]), 
+            .I3(\data_in_frame[2] [3]), .O(n11614));
+    defparam i8828_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 select_373_Select_27_i3_2_lut (.I0(\FRAME_MATCHER.i [27]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2242));
+    defparam select_373_Select_27_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 select_373_Select_28_i3_2_lut (.I0(\FRAME_MATCHER.i [28]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2240));
+    defparam select_373_Select_28_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i8829_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18328), .I2(rx_data[2]), 
+            .I3(\data_in_frame[2] [2]), .O(n11615));
+    defparam i8829_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8830_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18328), .I2(rx_data[1]), 
+            .I3(\data_in_frame[2] [1]), .O(n11616));
+    defparam i8830_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i11_4_lut_adj_266 (.I0(\FRAME_MATCHER.state [15]), .I1(\FRAME_MATCHER.state [19]), 
+            .I2(\FRAME_MATCHER.state [28]), .I3(\FRAME_MATCHER.state [21]), 
+            .O(n30_adj_2386));
+    defparam i11_4_lut_adj_266.LUT_INIT = 16'hfffe;
+    SB_LUT4 i7220_2_lut (.I0(byte_transmit_counter2[0]), .I1(byte_transmit_counter2[1]), 
+            .I2(GND_net), .I3(GND_net), .O(n7847));   // verilog/coms.v(411[36:58])
+    defparam i7220_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i11844_2_lut (.I0(\UART_TRANSMITTER.sp [31]), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2462[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam i11844_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i8831_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18328), .I2(rx_data[0]), 
+            .I3(\data_in_frame[2] [0]), .O(n11617));
+    defparam i8831_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8976_4_lut_4_lut (.I0(n1601), .I1(n27_adj_2356), .I2(n6587[9]), 
+            .I3(delay_counter[9]), .O(n11762));
+    defparam i8976_4_lut_4_lut.LUT_INIT = 16'hba10;
+    SB_LUT4 i7556_2_lut (.I0(byte_transmit_counter2[0]), .I1(byte_transmit_counter2[1]), 
+            .I2(GND_net), .I3(GND_net), .O(n10323));   // verilog/coms.v(411[36:58])
+    defparam i7556_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i9202_4_lut_4_lut (.I0(n1601), .I1(n27_adj_2356), .I2(n6587[0]), 
+            .I3(delay_counter[0]), .O(n11988));
+    defparam i9202_4_lut_4_lut.LUT_INIT = 16'hfe54;
+    SB_LUT4 i8983_4_lut_4_lut (.I0(n1601), .I1(n27_adj_2356), .I2(n6587[11]), 
+            .I3(delay_counter[11]), .O(n11769));
+    defparam i8983_4_lut_4_lut.LUT_INIT = 16'hba10;
+    SB_LUT4 i8970_4_lut_4_lut (.I0(n1601), .I1(n27_adj_2356), .I2(n6587[7]), 
+            .I3(delay_counter[7]), .O(n11756));
+    defparam i8970_4_lut_4_lut.LUT_INIT = 16'hba10;
+    SB_LUT4 i8964_4_lut_4_lut (.I0(n1601), .I1(n27_adj_2356), .I2(n6587[5]), 
+            .I3(delay_counter[5]), .O(n11750));
+    defparam i8964_4_lut_4_lut.LUT_INIT = 16'hba10;
+    SB_LUT4 i8961_4_lut_4_lut (.I0(n1601), .I1(n27_adj_2356), .I2(n6587[4]), 
+            .I3(delay_counter[4]), .O(n11747));
+    defparam i8961_4_lut_4_lut.LUT_INIT = 16'hba10;
+    SB_LUT4 i8958_4_lut_4_lut (.I0(n1601), .I1(n27_adj_2356), .I2(n6587[3]), 
+            .I3(delay_counter[3]), .O(n11744));
+    defparam i8958_4_lut_4_lut.LUT_INIT = 16'hba10;
+    SB_LUT4 i8952_4_lut_4_lut (.I0(n1601), .I1(n27_adj_2356), .I2(n6587[1]), 
+            .I3(delay_counter[1]), .O(n11738));
+    defparam i8952_4_lut_4_lut.LUT_INIT = 16'hba10;
+    SB_LUT4 i12_4_lut_adj_267 (.I0(\byte_transmit_counter[4] ), .I1(tx_transmit_N_1750_c[4]), 
+            .I2(n11340), .I3(n11195), .O(n17591));
+    defparam i12_4_lut_adj_267.LUT_INIT = 16'h0aca;
+    SB_LUT4 i11841_2_lut (.I0(\UART_TRANSMITTER.sp [30]), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2497[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam i11841_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i9_4_lut_adj_268 (.I0(delay_counter[11]), .I1(delay_counter[4]), 
+            .I2(delay_counter[12]), .I3(delay_counter[9]), .O(n21));   // verilog/coms.v(303[11:30])
+    defparam i9_4_lut_adj_268.LUT_INIT = 16'hfffe;
+    SB_LUT4 i2_2_lut_3_lut_adj_269 (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[2] ), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n2));   // verilog/coms.v(273[13:18])
+    defparam i2_2_lut_3_lut_adj_269.LUT_INIT = 16'h0808;
+    SB_LUT4 i1_2_lut_3_lut_adj_270 (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[2] ), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n5222));   // verilog/coms.v(273[13:18])
+    defparam i1_2_lut_3_lut_adj_270.LUT_INIT = 16'h8080;
+    SB_LUT4 i15831_3_lut (.I0(n439), .I1(\UART_TRANSMITTER.state[2] ), .I2(n14800), 
+            .I3(GND_net), .O(n18630));   // verilog/coms.v(273[13:18])
+    defparam i15831_3_lut.LUT_INIT = 16'h3b3b;
+    SB_LUT4 i1_2_lut_4_lut (.I0(n11172), .I1(n10515), .I2(n18422), .I3(\FRAME_MATCHER.state [3]), 
+            .O(n18307));
+    defparam i1_2_lut_4_lut.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_4_lut_adj_271 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [4]), .O(n7_adj_2292));
+    defparam i1_2_lut_4_lut_adj_271.LUT_INIT = 16'h4000;
+    SB_LUT4 i13195_4_lut (.I0(n18630), .I1(n14800), .I2(\UART_TRANSMITTER.state[1] ), 
+            .I3(n18293), .O(n1_adj_2387));   // verilog/coms.v(273[13:18])
+    defparam i13195_4_lut.LUT_INIT = 16'h3a0a;
+    SB_LUT4 i1_2_lut_4_lut_adj_272 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [5]), .O(n7_adj_2290));
+    defparam i1_2_lut_4_lut_adj_272.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_4_lut_adj_273 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [6]), .O(n7_adj_2288));
+    defparam i1_2_lut_4_lut_adj_273.LUT_INIT = 16'h4000;
+    SB_LUT4 add_62_29_lut (.I0(\UART_TRANSMITTER.sp [27]), .I1(\UART_TRANSMITTER.sp [27]), 
+            .I2(n19017), .I3(n16911), .O(n11654)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_29_lut.LUT_INIT = 16'hA3AC;
+    SB_CARRY add_698_10 (.CI(n16939), .I0(\FRAME_MATCHER.i [8]), .I1(GND_net), 
+            .CO(n16940));
+    SB_DFF \data_out_3[[7__1908  (.Q(\data_out[3] [7]), .C(CLK_c), .D(n11549));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF data_in_frame_0__i19 (.Q(\data_in_frame[2] [2]), .C(CLK_c), .D(n11615));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i20 (.Q(\data_in_frame[2] [3]), .C(CLK_c), .D(n11614));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_4_lut_adj_274 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [7]), .O(n18305));
+    defparam i1_2_lut_4_lut_adj_274.LUT_INIT = 16'h4000;
+    SB_LUT4 add_698_9_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [7]), .I2(GND_net), 
+            .I3(n16938), .O(n2_adj_2309)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_9_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i36_4_lut_adj_275 (.I0(n18616), .I1(\data_out_frame2[20] [0]), 
+            .I2(byte_transmit_counter2[2]), .I3(n7847), .O(n20_adj_2388));   // verilog/coms.v(411[36:58])
+    defparam i36_4_lut_adj_275.LUT_INIT = 16'h0aca;
+    SB_LUT4 i11836_2_lut (.I0(\UART_TRANSMITTER.sp [29]), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2532[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam i11836_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i2_3_lut_4_lut_adj_276 (.I0(n11150), .I1(n11161), .I2(\FRAME_MATCHER.state[2] ), 
+            .I3(n11172), .O(n15004));
+    defparam i2_3_lut_4_lut_adj_276.LUT_INIT = 16'h8880;
+    SB_LUT4 i1_2_lut_4_lut_adj_277 (.I0(\FRAME_MATCHER.state[2] ), .I1(n11157), 
+            .I2(\FRAME_MATCHER.state [1]), .I3(\FRAME_MATCHER.state [0]), 
+            .O(n11150));   // verilog/coms.v(501[5:21])
+    defparam i1_2_lut_4_lut_adj_277.LUT_INIT = 16'hfdff;
+    SB_LUT4 i1_2_lut_4_lut_adj_278 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [8]), .O(n18306));
+    defparam i1_2_lut_4_lut_adj_278.LUT_INIT = 16'h4000;
+    SB_DFF data_in_frame_0__i21 (.Q(\data_in_frame[2] [4]), .C(CLK_c), .D(n11613));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i2_2_lut_4_lut (.I0(\FRAME_MATCHER.state [1]), .I1(\FRAME_MATCHER.state [0]), 
+            .I2(n11157), .I3(\FRAME_MATCHER.state[2] ), .O(n11161));   // verilog/coms.v(445[5:27])
+    defparam i2_2_lut_4_lut.LUT_INIT = 16'hfffb;
+    SB_LUT4 i1_2_lut_4_lut_adj_279 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [9]), .O(n7_adj_2286));
+    defparam i1_2_lut_4_lut_adj_279.LUT_INIT = 16'h4000;
+    SB_CARRY add_698_9 (.CI(n16938), .I0(\FRAME_MATCHER.i [7]), .I1(GND_net), 
+            .CO(n16939));
+    SB_LUT4 i1_2_lut_3_lut_4_lut (.I0(n1622), .I1(n3_adj_2380), .I2(\FRAME_MATCHER.state [0]), 
+            .I3(n10515), .O(n17707));
+    defparam i1_2_lut_3_lut_4_lut.LUT_INIT = 16'he0ee;
+    SB_LUT4 i1_2_lut_4_lut_adj_280 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [10]), .O(n18309));
+    defparam i1_2_lut_4_lut_adj_280.LUT_INIT = 16'h4000;
+    SB_DFF \data_in_2[[2__1959  (.Q(\data_in[2] [2]), .C(CLK_c), .D(n11896));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_62_29 (.CI(n16911), .I0(\UART_TRANSMITTER.sp [27]), .I1(n19017), 
+            .CO(n16912));
+    SB_LUT4 i1_2_lut_4_lut_adj_281 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [11]), .O(n7_adj_2284));
+    defparam i1_2_lut_4_lut_adj_281.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_4_lut_adj_282 (.I0(byte_transmit_counter2[3]), .I1(n18618), 
+            .I2(n20_adj_2388), .I3(byte_transmit_counter2[4]), .O(tx2_data[0]));   // verilog/coms.v(411[36:58])
+    defparam i1_4_lut_adj_282.LUT_INIT = 16'h5044;
+    SB_LUT4 equal_45_i7_2_lut (.I0(\FRAME_MATCHER.i [1]), .I1(\FRAME_MATCHER.i [2]), 
+            .I2(GND_net), .I3(GND_net), .O(n7_adj_2383));   // verilog/coms.v(447[7:23])
+    defparam equal_45_i7_2_lut.LUT_INIT = 16'heeee;
+    SB_DFF \data_in_3[[5__1948  (.Q(\data_in[3] [5]), .C(CLK_c), .D(n11895));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_in_2[[3__1958  (.Q(\data_in[2] [3]), .C(CLK_c), .D(n11894));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_4_lut_adj_283 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [12]), .O(n18301));
+    defparam i1_2_lut_4_lut_adj_283.LUT_INIT = 16'h4000;
+    SB_LUT4 i2_4_lut_4_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(n15953), .I3(\UART_TRANSMITTER.state[0] ), .O(n17244));
+    defparam i2_4_lut_4_lut.LUT_INIT = 16'heea2;
+    SB_LUT4 i1_2_lut_3_lut_adj_284 (.I0(tx_transmit_N_1750[3]), .I1(n15567), 
+            .I2(n14800), .I3(GND_net), .O(n15953));
+    defparam i1_2_lut_3_lut_adj_284.LUT_INIT = 16'hf1f1;
+    SB_DFF byte_transmit_counter__i1 (.Q(byte_transmit_counter[1]), .C(CLK_c), 
+           .D(n17585));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF data_in_frame_0__i22 (.Q(\data_in_frame[2] [5]), .C(CLK_c), .D(n11612));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_62_28_lut (.I0(\UART_TRANSMITTER.sp [26]), .I1(\UART_TRANSMITTER.sp [26]), 
+            .I2(n19017), .I3(n16910), .O(n11655)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_28_lut.LUT_INIT = 16'hA3AC;
+    SB_DFF data_in_frame_0__i23 (.Q(\data_in_frame[2] [6]), .C(CLK_c), .D(n11611));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_698_8_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [6]), .I2(GND_net), 
+            .I3(n16937), .O(n2_adj_2310)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_8_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_698_8 (.CI(n16937), .I0(\FRAME_MATCHER.i [6]), .I1(GND_net), 
+            .CO(n16938));
+    SB_LUT4 add_698_7_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [5]), .I2(GND_net), 
+            .I3(n16936), .O(n2_adj_2311)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_7_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_698_7 (.CI(n16936), .I0(\FRAME_MATCHER.i [5]), .I1(GND_net), 
+            .CO(n16937));
+    SB_LUT4 i12033_2_lut_3_lut (.I0(tx_active), .I1(r_SM_Main_2__N_1837[0]), 
+            .I2(n27_adj_2356), .I3(GND_net), .O(n14800));
+    defparam i12033_2_lut_3_lut.LUT_INIT = 16'hefef;
+    SB_LUT4 i11834_2_lut (.I0(\UART_TRANSMITTER.sp [28]), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2567[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam i11834_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i15_4_lut_adj_285 (.I0(\FRAME_MATCHER.state [27]), .I1(n30_adj_2386), 
+            .I2(\FRAME_MATCHER.state [23]), .I3(\FRAME_MATCHER.state [8]), 
+            .O(n34));
+    defparam i15_4_lut_adj_285.LUT_INIT = 16'hfffe;
+    SB_LUT4 add_698_6_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [4]), .I2(GND_net), 
+            .I3(n16935), .O(n2_adj_2312)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_6_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_62_28 (.CI(n16910), .I0(\UART_TRANSMITTER.sp [26]), .I1(n19017), 
+            .CO(n16911));
+    SB_DFF data_in_frame_0__i24 (.Q(\data_in_frame[2] [7]), .C(CLK_c), .D(n11610));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i11958_3_lut (.I0(\FRAME_MATCHER.state[2] ), .I1(n63_adj_2324), 
+            .I2(n63_adj_2326), .I3(GND_net), .O(n1566));   // verilog/coms.v(435[4] 437[7])
+    defparam i11958_3_lut.LUT_INIT = 16'hb3b3;
+    SB_CARRY add_698_6 (.CI(n16935), .I0(\FRAME_MATCHER.i [4]), .I1(GND_net), 
+            .CO(n16936));
+    SB_LUT4 add_62_27_lut (.I0(\UART_TRANSMITTER.sp [25]), .I1(\UART_TRANSMITTER.sp [25]), 
+            .I2(n19017), .I3(n16909), .O(n11656)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_27_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 select_371_Select_2_i6_4_lut (.I0(n1566), .I1(n11174), .I2(n4428), 
+            .I3(n63_adj_2327), .O(n6));
+    defparam select_371_Select_2_i6_4_lut.LUT_INIT = 16'h3230;
+    SB_LUT4 select_371_Select_2_i7_3_lut (.I0(n1566), .I1(n1622), .I2(n63_adj_2327), 
+            .I3(GND_net), .O(n7));
+    defparam select_371_Select_2_i7_3_lut.LUT_INIT = 16'h8080;
+    SB_LUT4 add_698_5_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [3]), .I2(GND_net), 
+            .I3(n16934), .O(n2_adj_2313)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_5_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i11847_3_lut (.I0(n1566), .I1(n3811), .I2(n63_adj_2327), .I3(GND_net), 
+            .O(\FRAME_MATCHER.state_31__N_1289[2] ));   // verilog/coms.v(506[6] 508[9])
+    defparam i11847_3_lut.LUT_INIT = 16'hecec;
+    SB_CARRY add_2195_14 (.CI(n16883), .I0(delay_counter[12]), .I1(GND_net), 
+            .CO(n16884));
+    SB_CARRY add_62_27 (.CI(n16909), .I0(\UART_TRANSMITTER.sp [25]), .I1(n19017), 
+            .CO(n16910));
+    SB_LUT4 i1_2_lut_4_lut_adj_286 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [13]), .O(n7_adj_2282));
+    defparam i1_2_lut_4_lut_adj_286.LUT_INIT = 16'h4000;
+    SB_LUT4 i15895_3_lut_4_lut (.I0(tx2_active), .I1(r_SM_Main_2__N_1837_adj_2408[0]), 
+            .I2(tx2_transmit_N_1799), .I3(\FRAME_MATCHER.state [1]), .O(n18675));   // verilog/coms.v(441[4] 553[11])
+    defparam i15895_3_lut_4_lut.LUT_INIT = 16'h1000;
+    SB_LUT4 i12355_2_lut_3_lut (.I0(\FRAME_MATCHER.state [3]), .I1(n17302), 
+            .I2(n18209), .I3(GND_net), .O(n11157));
+    defparam i12355_2_lut_3_lut.LUT_INIT = 16'hfefe;
+    SB_CARRY add_698_5 (.CI(n16934), .I0(\FRAME_MATCHER.i [3]), .I1(GND_net), 
+            .CO(n16935));
+    SB_LUT4 i11971_2_lut_4_lut (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [14]), .O(n14738));
+    defparam i11971_2_lut_4_lut.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_4_lut_adj_287 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [15]), .O(n7_adj_2280));
+    defparam i1_2_lut_4_lut_adj_287.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_adj_288 (.I0(byte_transmit_counter2[7]), .I1(n14931), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2372));   // verilog/coms.v(417[11:16])
+    defparam i1_2_lut_adj_288.LUT_INIT = 16'h2222;
+    SB_LUT4 select_380_Select_7_i2_4_lut (.I0(byte_transmit_counter2[7]), 
+            .I1(n11173), .I2(n18654), .I3(n12966), .O(n2_adj_2371));
+    defparam select_380_Select_7_i2_4_lut.LUT_INIT = 16'h2230;
+    SB_LUT4 i1_2_lut_adj_289 (.I0(byte_transmit_counter2[6]), .I1(n14931), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2370));   // verilog/coms.v(417[11:16])
+    defparam i1_2_lut_adj_289.LUT_INIT = 16'h2222;
+    SB_LUT4 select_380_Select_6_i2_4_lut (.I0(byte_transmit_counter2[6]), 
+            .I1(n11173), .I2(n18655), .I3(n12966), .O(n2_adj_2369));
+    defparam select_380_Select_6_i2_4_lut.LUT_INIT = 16'h2230;
+    SB_LUT4 i1_2_lut_4_lut_adj_290 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [16]), .O(n7_adj_2278));
+    defparam i1_2_lut_4_lut_adj_290.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_adj_291 (.I0(byte_transmit_counter2[5]), .I1(n14931), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2368));   // verilog/coms.v(417[11:16])
+    defparam i1_2_lut_adj_291.LUT_INIT = 16'h2222;
+    SB_LUT4 add_62_26_lut (.I0(\UART_TRANSMITTER.sp [24]), .I1(\UART_TRANSMITTER.sp [24]), 
+            .I2(n19017), .I3(n16908), .O(n11657)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_26_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i11935_2_lut_4_lut (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [17]), .O(n14700));
+    defparam i11935_2_lut_4_lut.LUT_INIT = 16'h4000;
+    SB_LUT4 select_380_Select_5_i2_4_lut (.I0(byte_transmit_counter2[5]), 
+            .I1(n11173), .I2(n18656), .I3(n12966), .O(n2_adj_2367));
+    defparam select_380_Select_5_i2_4_lut.LUT_INIT = 16'h2230;
+    SB_LUT4 i1_2_lut_4_lut_adj_292 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [18]), .O(n18302));
+    defparam i1_2_lut_4_lut_adj_292.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_adj_293 (.I0(byte_transmit_counter2[4]), .I1(n14931), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2366));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_2_lut_adj_293.LUT_INIT = 16'h2222;
+    SB_LUT4 add_698_4_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [2]), .I2(GND_net), 
+            .I3(n16933), .O(n2_adj_2314)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_4_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_698_4 (.CI(n16933), .I0(\FRAME_MATCHER.i [2]), .I1(GND_net), 
+            .CO(n16934));
+    SB_LUT4 add_698_3_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [1]), .I2(GND_net), 
+            .I3(n16932), .O(n2_adj_2315)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_3_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i1_4_lut_adj_294 (.I0(n18609), .I1(n18268), .I2(byte_transmit_counter2[4]), 
+            .I3(n12966), .O(n18269));
+    defparam i1_4_lut_adj_294.LUT_INIT = 16'hc088;
+    SB_CARRY add_62_8 (.CI(n16890), .I0(\UART_TRANSMITTER.sp [6]), .I1(n19017), 
+            .CO(n16891));
+    SB_LUT4 i1_2_lut_adj_295 (.I0(n14931), .I1(byte_transmit_counter2[3]), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2365));   // verilog/coms.v(417[11:16])
+    defparam i1_2_lut_adj_295.LUT_INIT = 16'h4444;
+    SB_CARRY add_62_26 (.CI(n16908), .I0(\UART_TRANSMITTER.sp [24]), .I1(n19017), 
+            .CO(n16909));
+    SB_LUT4 select_380_Select_3_i2_4_lut (.I0(byte_transmit_counter2[3]), 
+            .I1(n11173), .I2(n18657), .I3(n12966), .O(n2_adj_2364));
+    defparam select_380_Select_3_i2_4_lut.LUT_INIT = 16'h2230;
+    SB_LUT4 i1_2_lut_4_lut_adj_296 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [19]), .O(n18310));
+    defparam i1_2_lut_4_lut_adj_296.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_adj_297 (.I0(n14931), .I1(byte_transmit_counter2[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2363));   // verilog/coms.v(417[11:16])
+    defparam i1_2_lut_adj_297.LUT_INIT = 16'h4444;
+    SB_LUT4 add_62_25_lut (.I0(\UART_TRANSMITTER.sp [23]), .I1(\UART_TRANSMITTER.sp [23]), 
+            .I2(n19017), .I3(n16907), .O(n11658)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_25_lut.LUT_INIT = 16'hA3AC;
+    SB_DFF data_out_frame2_0___i2 (.Q(\data_out_frame2[0] [1]), .C(CLK_c), 
+           .D(n18567));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_698_3 (.CI(n16932), .I0(\FRAME_MATCHER.i [1]), .I1(GND_net), 
+            .CO(n16933));
+    SB_CARRY add_62_25 (.CI(n16907), .I0(\UART_TRANSMITTER.sp [23]), .I1(n19017), 
+            .CO(n16908));
+    SB_DFF data_in_frame_0__i25 (.Q(\data_in_frame[3] [0]), .C(CLK_c), .D(n11609));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_4_lut_adj_298 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [20]), .O(n18313));
+    defparam i1_2_lut_4_lut_adj_298.LUT_INIT = 16'h4000;
+    SB_LUT4 select_380_Select_2_i2_4_lut (.I0(byte_transmit_counter2[2]), 
+            .I1(n11173), .I2(n18664), .I3(n12966), .O(n2_adj_2362));
+    defparam select_380_Select_2_i2_4_lut.LUT_INIT = 16'h2230;
+    SB_LUT4 i1_2_lut_4_lut_adj_299 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [21]), .O(n7_adj_2276));
+    defparam i1_2_lut_4_lut_adj_299.LUT_INIT = 16'h4000;
+    SB_LUT4 i13_4_lut_adj_300 (.I0(\FRAME_MATCHER.state [16]), .I1(\FRAME_MATCHER.state [22]), 
+            .I2(\FRAME_MATCHER.state [7]), .I3(\FRAME_MATCHER.state [9]), 
+            .O(n32));
+    defparam i13_4_lut_adj_300.LUT_INIT = 16'hfffe;
+    SB_LUT4 i14_4_lut_adj_301 (.I0(\FRAME_MATCHER.state [17]), .I1(\FRAME_MATCHER.state [29]), 
+            .I2(\FRAME_MATCHER.state [20]), .I3(\FRAME_MATCHER.state [30]), 
+            .O(n33));
+    defparam i14_4_lut_adj_301.LUT_INIT = 16'hfffe;
+    SB_LUT4 i12_4_lut_adj_302 (.I0(\FRAME_MATCHER.state [18]), .I1(\FRAME_MATCHER.state [4]), 
+            .I2(\FRAME_MATCHER.state [24]), .I3(\FRAME_MATCHER.state [31]), 
+            .O(n31_adj_2391));
+    defparam i12_4_lut_adj_302.LUT_INIT = 16'hfffe;
+    SB_DFF \data_in_2[[4__1957  (.Q(\data_in[2] [4]), .C(CLK_c), .D(n11889));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_4_lut_adj_303 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [22]), .O(n7_adj_2274));
+    defparam i1_2_lut_4_lut_adj_303.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_adj_304 (.I0(n11172), .I1(\FRAME_MATCHER.state[2] ), 
+            .I2(GND_net), .I3(GND_net), .O(n18268));
+    defparam i1_2_lut_adj_304.LUT_INIT = 16'h4444;
+    SB_DFF \data_in_2[[5__1956  (.Q(\data_in[2] [5]), .C(CLK_c), .D(n11888));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_adj_305 (.I0(byte_transmit_counter2[1]), .I1(n14931), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2361));   // verilog/coms.v(424[12] 554[6])
+    defparam i1_2_lut_adj_305.LUT_INIT = 16'h2222;
+    SB_LUT4 i1_4_lut_adj_306 (.I0(n18681), .I1(n18268), .I2(byte_transmit_counter2[1]), 
+            .I3(n12966), .O(n18270));
+    defparam i1_4_lut_adj_306.LUT_INIT = 16'hc088;
+    SB_LUT4 i11833_2_lut (.I0(\UART_TRANSMITTER.sp [27]), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2602[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam i11833_2_lut.LUT_INIT = 16'h8888;
+    SB_DFF \data_in_3[[4__1949  (.Q(\data_in[3] [4]), .C(CLK_c), .D(n11887));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i11831_2_lut (.I0(\UART_TRANSMITTER.sp [26]), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2637[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam i11831_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i15980_2_lut_3_lut (.I0(\data_in_frame[0] [7]), .I1(\data_in_frame[0][6] ), 
+            .I2(n4515), .I3(GND_net), .O(n18747));
+    defparam i15980_2_lut_3_lut.LUT_INIT = 16'h9090;
+    SB_LUT4 i12_3_lut_4_lut_4_lut (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(\UART_TRANSMITTER.state[2] ), .I3(\data_out[1] [0]), .O(n18131));
+    defparam i12_3_lut_4_lut_4_lut.LUT_INIT = 16'hf722;
+    SB_LUT4 i1_3_lut_4_lut (.I0(\UART_TRANSMITTER.state[1] ), .I1(\UART_TRANSMITTER.state[2] ), 
+            .I2(tx_transmit_N_1750_c[1]), .I3(\tx_transmit_N_1750[0] ), 
+            .O(n25));   // verilog/coms.v(273[13:18])
+    defparam i1_3_lut_4_lut.LUT_INIT = 16'hceee;
+    SB_LUT4 add_698_2_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [0]), .I2(rx_data_ready), 
+            .I3(GND_net), .O(n2_adj_2225)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_2_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i11956_2_lut_4_lut (.I0(n63_adj_2326), .I1(n63_adj_2324), .I2(\FRAME_MATCHER.state [1]), 
+            .I3(n63_adj_2327), .O(\FRAME_MATCHER.state_31__N_1161[1] ));   // verilog/coms.v(438[4] 440[7])
+    defparam i11956_2_lut_4_lut.LUT_INIT = 16'h80ff;
+    SB_DFF \data_in_2[[6__1955  (.Q(\data_in[2] [6]), .C(CLK_c), .D(n11886));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_62_7_lut (.I0(\UART_TRANSMITTER.sp [5]), .I1(\UART_TRANSMITTER.sp [5]), 
+            .I2(n19017), .I3(n16889), .O(n11676)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_7_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i12_3_lut_4_lut_4_lut_adj_307 (.I0(\UART_TRANSMITTER.state[0] ), 
+            .I1(\UART_TRANSMITTER.state[1] ), .I2(\UART_TRANSMITTER.state[2] ), 
+            .I3(\data_out[3] [0]), .O(n18127));
+    defparam i12_3_lut_4_lut_4_lut_adj_307.LUT_INIT = 16'hf722;
+    SB_DFF data_in_frame_0__i26 (.Q(\data_in_frame[3] [1]), .C(CLK_c), .D(n11608));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i15998_2_lut_3_lut_3_lut (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(GND_net), .I3(GND_net), .O(n11465));
+    defparam i15998_2_lut_3_lut_3_lut.LUT_INIT = 16'h2222;
+    SB_CARRY add_62_7 (.CI(n16889), .I0(\UART_TRANSMITTER.sp [5]), .I1(n19017), 
+            .CO(n16890));
+    SB_LUT4 add_62_6_lut (.I0(\UART_TRANSMITTER.sp [4]), .I1(\UART_TRANSMITTER.sp [4]), 
+            .I2(n19017), .I3(n16888), .O(n11677)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_6_lut.LUT_INIT = 16'hA3AC;
+    SB_CARRY add_2195_9 (.CI(n16878), .I0(delay_counter[7]), .I1(GND_net), 
+            .CO(n16879));
+    SB_LUT4 i1_2_lut_4_lut_adj_308 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [23]), .O(n18308));
+    defparam i1_2_lut_4_lut_adj_308.LUT_INIT = 16'h4000;
+    SB_CARRY add_698_2 (.CI(GND_net), .I0(\FRAME_MATCHER.i [0]), .I1(rx_data_ready), 
+            .CO(n16932));
+    SB_LUT4 add_2194_9_lut (.I0(GND_net), .I1(byte_transmit_counter_c[7]), 
+            .I2(GND_net), .I3(n16969), .O(tx_transmit_N_1750_c[7])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2194_9_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_62_24_lut (.I0(\UART_TRANSMITTER.sp [22]), .I1(\UART_TRANSMITTER.sp [22]), 
+            .I2(n19017), .I3(n16906), .O(n11659)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_24_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i15975_2_lut_3_lut (.I0(\data_out_frame2[19] [0]), .I1(byte_transmit_counter2[0]), 
+            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18616));   // verilog/coms.v(411[36:58])
+    defparam i15975_2_lut_3_lut.LUT_INIT = 16'h8080;
+    SB_LUT4 add_2195_13_lut (.I0(GND_net), .I1(delay_counter[11]), .I2(GND_net), 
+            .I3(n16882), .O(n6587[11])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_13_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_2194_8_lut (.I0(GND_net), .I1(byte_transmit_counter_c[6]), 
+            .I2(GND_net), .I3(n16968), .O(tx_transmit_N_1750_c[6])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2194_8_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i1_2_lut_4_lut_adj_309 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [24]), .O(n18314));
+    defparam i1_2_lut_4_lut_adj_309.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_4_lut_adj_310 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [25]), .O(n18311));
+    defparam i1_2_lut_4_lut_adj_310.LUT_INIT = 16'h4000;
+    SB_DFF data_in_frame_0__i27 (.Q(\data_in_frame[3] [2]), .C(CLK_c), .D(n11607));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_2195_13 (.CI(n16882), .I0(delay_counter[11]), .I1(GND_net), 
+            .CO(n16883));
+    SB_LUT4 i1_2_lut_4_lut_adj_311 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [26]), .O(n18304));
+    defparam i1_2_lut_4_lut_adj_311.LUT_INIT = 16'h4000;
+    SB_CARRY add_2194_8 (.CI(n16968), .I0(byte_transmit_counter_c[6]), .I1(GND_net), 
+            .CO(n16969));
+    SB_DFF data_in_frame_0__i28 (.Q(\data_in_frame[3] [3]), .C(CLK_c), .D(n11606));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_4_lut_adj_312 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [27]), .O(n18303));
+    defparam i1_2_lut_4_lut_adj_312.LUT_INIT = 16'h4000;
+    SB_DFF data_in_frame_0__i29 (.Q(\data_in_frame[3] [4]), .C(CLK_c), .D(n11605));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_4_lut_adj_313 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [28]), .O(n7_adj_2270));
+    defparam i1_2_lut_4_lut_adj_313.LUT_INIT = 16'h4000;
+    SB_DFF data_in_frame_0__i30 (.Q(\data_in_frame[3] [5]), .C(CLK_c), .D(n11604));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_4_lut_adj_314 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [29]), .O(n18312));
+    defparam i1_2_lut_4_lut_adj_314.LUT_INIT = 16'h4000;
+    SB_DFF data_in_frame_0__i31 (.Q(\data_in_frame[3] [6]), .C(CLK_c), .D(n11603));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_3_lut_4_lut_adj_315 (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[2] ), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(n1_adj_2387), .O(n11623));
+    defparam i1_3_lut_4_lut_adj_315.LUT_INIT = 16'hd580;
+    SB_LUT4 i1_2_lut_4_lut_adj_316 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [30]), .O(n18315));
+    defparam i1_2_lut_4_lut_adj_316.LUT_INIT = 16'h4000;
+    SB_LUT4 add_2194_7_lut (.I0(GND_net), .I1(byte_transmit_counter_c[5]), 
+            .I2(GND_net), .I3(n16967), .O(tx_transmit_N_1750_c[5])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2194_7_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_2195_3_lut (.I0(GND_net), .I1(delay_counter[1]), .I2(GND_net), 
+            .I3(n16872), .O(n6587[1])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_3_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_62_24 (.CI(n16906), .I0(\UART_TRANSMITTER.sp [22]), .I1(n19017), 
+            .CO(n16907));
+    SB_CARRY add_2194_7 (.CI(n16967), .I0(byte_transmit_counter_c[5]), .I1(GND_net), 
+            .CO(n16968));
+    SB_LUT4 i1_2_lut_3_lut_adj_317 (.I0(\FRAME_MATCHER.state[2] ), .I1(n11172), 
+            .I2(n482), .I3(GND_net), .O(n3_adj_2380));
+    defparam i1_2_lut_3_lut_adj_317.LUT_INIT = 16'h2020;
+    SB_DFF \data_in_2[[7__1954  (.Q(\data_in[2] [7]), .C(CLK_c), .D(n11885));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i18_4_lut_adj_318 (.I0(n31_adj_2391), .I1(n33), .I2(n32), 
+            .I3(n34), .O(n18209));
+    defparam i18_4_lut_adj_318.LUT_INIT = 16'hfffe;
+    SB_LUT4 add_2194_6_lut (.I0(GND_net), .I1(\byte_transmit_counter[4] ), 
+            .I2(GND_net), .I3(n16966), .O(tx_transmit_N_1750_c[4])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2194_6_lut.LUT_INIT = 16'hC33C;
+    SB_DFF data_in_frame_0__i32 (.Q(\data_in_frame[3] [7]), .C(CLK_c), .D(n11602));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i33 (.Q(\data_in_frame[4] [0]), .C(CLK_c), .D(n11601));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_in_3[[0__1953  (.Q(\data_in[3] [0]), .C(CLK_c), .D(n11881));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_2195_12_lut (.I0(n18977), .I1(delay_counter[10]), .I2(GND_net), 
+            .I3(n16881), .O(n18688)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_12_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_2194_6 (.CI(n16966), .I0(\byte_transmit_counter[4] ), .I1(GND_net), 
+            .CO(n16967));
+    SB_LUT4 i1_2_lut_3_lut_adj_319 (.I0(tx2_active), .I1(r_SM_Main_2__N_1837_adj_2408[0]), 
+            .I2(tx2_transmit_N_1799), .I3(GND_net), .O(n482));
+    defparam i1_2_lut_3_lut_adj_319.LUT_INIT = 16'hfefe;
+    SB_LUT4 i18_3_lut_4_lut (.I0(n4428), .I1(n12966), .I2(tx2_transmit_N_1799), 
+            .I3(\FRAME_MATCHER.state[2] ), .O(n18422));
+    defparam i18_3_lut_4_lut.LUT_INIT = 16'hfc55;
+    SB_DFF \data_out_8[[7__1868  (.Q(\data_out[8] [7]), .C(CLK_c), .D(n11880));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_in_3[[1__1952  (.Q(\data_in[3] [1]), .C(CLK_c), .D(n11879));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i34 (.Q(\data_in_frame[4] [1]), .C(CLK_c), .D(n11600));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_2195_8_lut (.I0(n18977), .I1(delay_counter[6]), .I2(GND_net), 
+            .I3(n16877), .O(n18686)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_8_lut.LUT_INIT = 16'h8228;
+    SB_DFF data_in_frame_0__i35 (.Q(\data_in_frame[4] [2]), .C(CLK_c), .D(n11599));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i119_2_lut_4_lut (.I0(n11148), .I1(n4_adj_2377), .I2(n2093), 
+            .I3(n10515), .O(n136));   // verilog/coms.v(420[11:12])
+    defparam i119_2_lut_4_lut.LUT_INIT = 16'h0100;
+    SB_LUT4 add_2194_5_lut (.I0(GND_net), .I1(\byte_transmit_counter[3] ), 
+            .I2(GND_net), .I3(n16965), .O(tx_transmit_N_1750[3])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2194_5_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i1_2_lut_4_lut_adj_320 (.I0(n11172), .I1(n10515), .I2(n18422), 
+            .I3(\FRAME_MATCHER.state [31]), .O(n7_adj_2269));
+    defparam i1_2_lut_4_lut_adj_320.LUT_INIT = 16'h4000;
+    SB_LUT4 i1_2_lut_4_lut_adj_321 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [3]), .O(n17677));
+    defparam i1_2_lut_4_lut_adj_321.LUT_INIT = 16'hba00;
+    SB_CARRY add_2194_5 (.CI(n16965), .I0(\byte_transmit_counter[3] ), .I1(GND_net), 
+            .CO(n16966));
+    SB_LUT4 i15925_2_lut_3_lut (.I0(\data_out_frame2[19][1] ), .I1(byte_transmit_counter2[0]), 
+            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18700));   // verilog/coms.v(411[36:58])
+    defparam i15925_2_lut_3_lut.LUT_INIT = 16'h8080;
+    SB_CARRY add_2195_6 (.CI(n16875), .I0(delay_counter[4]), .I1(GND_net), 
+            .CO(n16876));
+    SB_LUT4 i15974_2_lut_3_lut (.I0(\data_out_frame2[20] [2]), .I1(byte_transmit_counter2[0]), 
+            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18762));   // verilog/coms.v(411[36:58])
+    defparam i15974_2_lut_3_lut.LUT_INIT = 16'h0202;
+    SB_LUT4 i37_4_lut_4_lut (.I0(byte_transmit_counter2[0]), .I1(byte_transmit_counter2[1]), 
+            .I2(\data_out_frame2[20] [3]), .I3(byte_transmit_counter2[2]), 
+            .O(n19_adj_2375));   // verilog/coms.v(411[36:58])
+    defparam i37_4_lut_4_lut.LUT_INIT = 16'h1088;
+    SB_LUT4 byte_transmit_counter2_4__I_0_Mux_4_i22_4_lut_4_lut (.I0(byte_transmit_counter2[0]), 
+            .I1(byte_transmit_counter2[1]), .I2(\data_out_frame2[20] [4]), 
+            .I3(byte_transmit_counter2[2]), .O(n22_adj_2360));   // verilog/coms.v(411[36:58])
+    defparam byte_transmit_counter2_4__I_0_Mux_4_i22_4_lut_4_lut.LUT_INIT = 16'h1088;
+    SB_LUT4 i36_4_lut_4_lut (.I0(byte_transmit_counter2[0]), .I1(byte_transmit_counter2[1]), 
+            .I2(\data_out_frame2[20] [5]), .I3(byte_transmit_counter2[2]), 
+            .O(n20_adj_2359));   // verilog/coms.v(411[36:58])
+    defparam i36_4_lut_4_lut.LUT_INIT = 16'h1088;
+    SB_LUT4 add_62_23_lut (.I0(\UART_TRANSMITTER.sp [21]), .I1(\UART_TRANSMITTER.sp [21]), 
+            .I2(n19017), .I3(n16905), .O(n11660)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_23_lut.LUT_INIT = 16'hA3AC;
+    SB_CARRY add_2195_3 (.CI(n16872), .I0(delay_counter[1]), .I1(GND_net), 
+            .CO(n16873));
+    SB_DFF data_in_frame_0__i36 (.Q(\data_in_frame[4] [3]), .C(CLK_c), .D(n11598));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i2_3_lut_adj_322 (.I0(\FRAME_MATCHER.state [11]), .I1(\FRAME_MATCHER.state [14]), 
+            .I2(\FRAME_MATCHER.state [13]), .I3(GND_net), .O(n176));
+    defparam i2_3_lut_adj_322.LUT_INIT = 16'hfefe;
+    SB_LUT4 add_2195_5_lut (.I0(GND_net), .I1(delay_counter[3]), .I2(GND_net), 
+            .I3(n16874), .O(n6587[3])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_5_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i1_2_lut_4_lut_adj_323 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [7]), .O(n17739));
+    defparam i1_2_lut_4_lut_adj_323.LUT_INIT = 16'hba00;
+    SB_LUT4 i15877_3_lut_4_lut (.I0(tx_active), .I1(r_SM_Main_2__N_1837[0]), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(n90), .O(n18782));   // verilog/coms.v(273[13:18])
+    defparam i15877_3_lut_4_lut.LUT_INIT = 16'he0f0;
+    SB_LUT4 add_2194_4_lut (.I0(GND_net), .I1(byte_transmit_counter[2]), 
+            .I2(GND_net), .I3(n16964), .O(tx_transmit_N_1750[2])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2194_4_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_2194_4 (.CI(n16964), .I0(byte_transmit_counter[2]), .I1(GND_net), 
+            .CO(n16965));
+    SB_DFF data_in_frame_0__i37 (.Q(\data_in_frame[4] [4]), .C(CLK_c), .D(n11597));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_2195_8 (.CI(n16877), .I0(delay_counter[6]), .I1(GND_net), 
+            .CO(n16878));
+    SB_LUT4 i1_2_lut_4_lut_adj_324 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [8]), .O(n17671));
+    defparam i1_2_lut_4_lut_adj_324.LUT_INIT = 16'hba00;
+    SB_CARRY add_62_23 (.CI(n16905), .I0(\UART_TRANSMITTER.sp [21]), .I1(n19017), 
+            .CO(n16906));
+    SB_LUT4 add_62_22_lut (.I0(\UART_TRANSMITTER.sp [20]), .I1(\UART_TRANSMITTER.sp [20]), 
+            .I2(n19017), .I3(n16904), .O(n11661)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_22_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i1_2_lut_4_lut_adj_325 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [10]), .O(n17709));
+    defparam i1_2_lut_4_lut_adj_325.LUT_INIT = 16'hba00;
+    SB_LUT4 add_2194_3_lut (.I0(GND_net), .I1(byte_transmit_counter[1]), 
+            .I2(GND_net), .I3(n16963), .O(tx_transmit_N_1750_c[1])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2194_3_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_2195_12 (.CI(n16881), .I0(delay_counter[10]), .I1(GND_net), 
+            .CO(n16882));
+    SB_LUT4 i15841_2_lut_3_lut (.I0(\data_out_frame2[19][7] ), .I1(byte_transmit_counter2[0]), 
+            .I2(byte_transmit_counter2[1]), .I3(GND_net), .O(n18636));   // verilog/coms.v(407[12:34])
+    defparam i15841_2_lut_3_lut.LUT_INIT = 16'h8080;
+    SB_CARRY add_2195_5 (.CI(n16874), .I0(delay_counter[3]), .I1(GND_net), 
+            .CO(n16875));
+    SB_LUT4 i1_4_lut_adj_326 (.I0(\FRAME_MATCHER.state [6]), .I1(\FRAME_MATCHER.state [26]), 
+            .I2(\FRAME_MATCHER.state [5]), .I3(\FRAME_MATCHER.state [25]), 
+            .O(n5_adj_2392));
+    defparam i1_4_lut_adj_326.LUT_INIT = 16'hfffe;
+    SB_CARRY add_2194_3 (.CI(n16963), .I0(byte_transmit_counter[1]), .I1(GND_net), 
+            .CO(n16964));
+    SB_LUT4 add_2195_4_lut (.I0(n18977), .I1(delay_counter[2]), .I2(GND_net), 
+            .I3(n16873), .O(n18678)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_4_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i4932_3_lut_4_lut (.I0(\rx_crc[9] ), .I1(\data_out_frame2[0] [1]), 
+            .I2(n12966), .I3(tx2_transmit_N_1799), .O(n3286));   // verilog/coms.v(490[6] 499[9])
+    defparam i4932_3_lut_4_lut.LUT_INIT = 16'hccca;
+    SB_LUT4 i1_2_lut_3_lut_adj_327 (.I0(\UART_TRANSMITTER.state[0] ), .I1(\UART_TRANSMITTER.state[1] ), 
+            .I2(\UART_TRANSMITTER.state[2] ), .I3(GND_net), .O(n11211));
+    defparam i1_2_lut_3_lut_adj_327.LUT_INIT = 16'h2a2a;
+    SB_LUT4 add_2195_2_lut (.I0(GND_net), .I1(delay_counter[0]), .I2(GND_net), 
+            .I3(VCC_net), .O(n6587[0])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_2_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_2195_11_lut (.I0(GND_net), .I1(delay_counter[9]), .I2(GND_net), 
+            .I3(n16880), .O(n6587[9])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_11_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i1_2_lut_4_lut_adj_328 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [12]), .O(n17743));
+    defparam i1_2_lut_4_lut_adj_328.LUT_INIT = 16'hba00;
+    SB_LUT4 i15907_2_lut (.I0(\data_out[0][1] ), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18781));
+    defparam i15907_2_lut.LUT_INIT = 16'h2222;
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_1_i2_3_lut (.I0(\data_out[2] [1]), 
+            .I1(\data_out[3] [1]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n2_adj_2358));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_1_i2_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i1_3_lut_4_lut_4_lut_adj_329 (.I0(\UART_TRANSMITTER.state[1] ), 
+            .I1(\UART_TRANSMITTER.state[0] ), .I2(\data_out[1] [5]), .I3(\UART_TRANSMITTER.state[2] ), 
+            .O(n11564));   // verilog/coms.v(277[12] 378[6])
+    defparam i1_3_lut_4_lut_4_lut_adj_329.LUT_INIT = 16'hf474;
+    SB_LUT4 select_373_Select_29_i3_2_lut (.I0(\FRAME_MATCHER.i [29]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2238));
+    defparam select_373_Select_29_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i3_4_lut_adj_330 (.I0(n5_adj_2392), .I1(n176), .I2(\FRAME_MATCHER.state [10]), 
+            .I3(\FRAME_MATCHER.state [12]), .O(n17302));
+    defparam i3_4_lut_adj_330.LUT_INIT = 16'hfffe;
+    SB_LUT4 add_2195_7_lut (.I0(GND_net), .I1(delay_counter[5]), .I2(GND_net), 
+            .I3(n16876), .O(n6587[5])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2195_7_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_62_22 (.CI(n16904), .I0(\UART_TRANSMITTER.sp [20]), .I1(n19017), 
+            .CO(n16905));
+    SB_LUT4 select_373_Select_30_i3_2_lut (.I0(\FRAME_MATCHER.i [30]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2236));
+    defparam select_373_Select_30_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i6_3_lut_4_lut (.I0(\data_in_frame[0][6] ), .I1(\data_in_frame[0]_c [5]), 
+            .I2(\data_in_frame[1] [6]), .I3(\data_in_frame[2] [7]), .O(n22_adj_2343));
+    defparam i6_3_lut_4_lut.LUT_INIT = 16'h9f6f;
+    SB_DFF data_in_frame_0__i38 (.Q(\data_in_frame[4] [5]), .C(CLK_c), .D(n11596));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_1_i5_3_lut (.I0(\data_out[6] [1]), 
+            .I1(\data_out[7] [1]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n5_adj_2357));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_1_i5_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15952_2_lut (.I0(\data_out[5] [1]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18737));
+    defparam i15952_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_2_lut_4_lut_adj_331 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [18]), .O(n17741));
+    defparam i1_2_lut_4_lut_adj_331.LUT_INIT = 16'hba00;
+    SB_LUT4 i1_3_lut_4_lut_4_lut_adj_332 (.I0(\UART_TRANSMITTER.state[1] ), 
+            .I1(\UART_TRANSMITTER.state[0] ), .I2(\data_out[0] [3]), .I3(\UART_TRANSMITTER.state[2] ), 
+            .O(n11572));   // verilog/coms.v(277[12] 378[6])
+    defparam i1_3_lut_4_lut_4_lut_adj_332.LUT_INIT = 16'hf474;
+    SB_LUT4 add_62_21_lut (.I0(\UART_TRANSMITTER.sp [19]), .I1(\UART_TRANSMITTER.sp [19]), 
+            .I2(n19017), .I3(n16903), .O(n11662)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_21_lut.LUT_INIT = 16'hA3AC;
+    SB_CARRY add_2195_11 (.CI(n16880), .I0(delay_counter[9]), .I1(GND_net), 
+            .CO(n16881));
+    SB_LUT4 i1_2_lut_adj_333 (.I0(n11157), .I1(\FRAME_MATCHER.state[2] ), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_2377));   // verilog/coms.v(445[5:27])
+    defparam i1_2_lut_adj_333.LUT_INIT = 16'heeee;
+    SB_LUT4 i1_3_lut_4_lut_4_lut_adj_334 (.I0(\UART_TRANSMITTER.state[2] ), 
+            .I1(\UART_TRANSMITTER.state[1] ), .I2(\UART_TRANSMITTER.state[0] ), 
+            .I3(\data_out[0] [6]), .O(n11570));   // verilog/coms.v(277[12] 378[6])
+    defparam i1_3_lut_4_lut_4_lut_adj_334.LUT_INIT = 16'hcf40;
+    SB_LUT4 i1_2_lut_4_lut_adj_335 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [19]), .O(n17675));
+    defparam i1_2_lut_4_lut_adj_335.LUT_INIT = 16'hba00;
+    SB_LUT4 i1_2_lut_adj_336 (.I0(\FRAME_MATCHER.state [1]), .I1(\FRAME_MATCHER.state [0]), 
+            .I2(GND_net), .I3(GND_net), .O(n11148));   // verilog/coms.v(445[5:27])
+    defparam i1_2_lut_adj_336.LUT_INIT = 16'hbbbb;
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_2_i1_3_lut (.I0(\data_out[0] [2]), 
+            .I1(\data_out[1][2] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n1_adj_2355));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_2_i1_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_2_i2_3_lut (.I0(\data_out[2][2] ), 
+            .I1(\data_out[3][2] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n2_adj_2354));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_2_i2_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 select_373_Select_31_i3_2_lut (.I0(\FRAME_MATCHER.i [31]), .I1(n1621), 
+            .I2(GND_net), .I3(GND_net), .O(n3_adj_2234));
+    defparam select_373_Select_31_i3_2_lut.LUT_INIT = 16'h8888;
+    SB_CARRY add_62_21 (.CI(n16903), .I0(\UART_TRANSMITTER.sp [19]), .I1(n19017), 
+            .CO(n16904));
+    SB_LUT4 i15470_2_lut_3_lut (.I0(\UART_TRANSMITTER.state[0] ), .I1(tx_active), 
+            .I2(r_SM_Main_2__N_1837[0]), .I3(GND_net), .O(n18442));
+    defparam i15470_2_lut_3_lut.LUT_INIT = 16'hfefe;
+    SB_LUT4 i11805_2_lut (.I0(\UART_TRANSMITTER.sp [24]), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n2707[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam i11805_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i4934_3_lut (.I0(\rx_crc[8] ), .I1(\data_out_frame2[0][0] ), 
+            .I2(n482), .I3(GND_net), .O(n3287));   // verilog/coms.v(490[6] 499[9])
+    defparam i4934_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 mux_2133_i1_4_lut (.I0(n2160), .I1(n3287), .I2(\FRAME_MATCHER.state [0]), 
+            .I3(n3898), .O(n4858[0]));
+    defparam mux_2133_i1_4_lut.LUT_INIT = 16'hc5c0;
+    SB_LUT4 mux_1283_i1_3_lut (.I0(\UART_TRANSMITTER.state[2] ), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(\UART_TRANSMITTER.state[1] ), .I3(GND_net), .O(n2751[0]));   // verilog/coms.v(280[4] 377[11])
+    defparam mux_1283_i1_3_lut.LUT_INIT = 16'hc5c5;
+    SB_LUT4 i1_3_lut_4_lut_4_lut_adj_337 (.I0(\UART_TRANSMITTER.state[2] ), 
+            .I1(\UART_TRANSMITTER.state[1] ), .I2(\UART_TRANSMITTER.state[0] ), 
+            .I3(\data_out[2] [4]), .O(n11558));   // verilog/coms.v(277[12] 378[6])
+    defparam i1_3_lut_4_lut_4_lut_adj_337.LUT_INIT = 16'hcf40;
+    SB_LUT4 i15593_3_lut (.I0(\data_out_frame2[0][0] ), .I1(n4858[0]), .I2(n6396), 
+            .I3(GND_net), .O(n18568));
+    defparam i15593_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i1_3_lut_4_lut_adj_338 (.I0(n1622), .I1(n3_adj_2380), .I2(n18408), 
+            .I3(\FRAME_MATCHER.state_31__N_1161[1] ), .O(n7_adj_9));
+    defparam i1_3_lut_4_lut_adj_338.LUT_INIT = 16'hef00;
+    SB_LUT4 i1_3_lut_4_lut_4_lut_adj_339 (.I0(\UART_TRANSMITTER.state[2] ), 
+            .I1(\UART_TRANSMITTER.state[1] ), .I2(\UART_TRANSMITTER.state[0] ), 
+            .I3(\data_out[1] [4]), .O(n11565));   // verilog/coms.v(277[12] 378[6])
+    defparam i1_3_lut_4_lut_4_lut_adj_339.LUT_INIT = 16'hcf40;
+    SB_LUT4 i15595_4_lut (.I0(n18568), .I1(n18747), .I2(n6394), .I3(n6396), 
+            .O(n18570));
+    defparam i15595_4_lut.LUT_INIT = 16'h0aca;
+    SB_LUT4 i1_2_lut_4_lut_adj_340 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [20]), .O(n17729));
+    defparam i1_2_lut_4_lut_adj_340.LUT_INIT = 16'hba00;
+    SB_LUT4 i15460_3_lut_4_lut (.I0(\data_in_frame[0] [7]), .I1(\data_in_frame[0][6] ), 
+            .I2(\data_in_frame[2] [5]), .I3(\data_in_frame[2] [0]), .O(n18432));
+    defparam i15460_3_lut_4_lut.LUT_INIT = 16'h9060;
+    SB_LUT4 mux_2114_i1_4_lut (.I0(\FRAME_MATCHER.state [0]), .I1(n18675), 
+            .I2(\FRAME_MATCHER.state[2] ), .I3(\FRAME_MATCHER.state [1]), 
+            .O(n4667[0]));   // verilog/coms.v(441[4] 553[11])
+    defparam mux_2114_i1_4_lut.LUT_INIT = 16'hd5d0;
+    SB_LUT4 i1_2_lut_4_lut_adj_341 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [23]), .O(n17673));
+    defparam i1_2_lut_4_lut_adj_341.LUT_INIT = 16'hba00;
+    SB_LUT4 i1_2_lut_4_lut_adj_342 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [24]), .O(n17679));
+    defparam i1_2_lut_4_lut_adj_342.LUT_INIT = 16'hba00;
+    SB_LUT4 i1_2_lut_4_lut_adj_343 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [25]), .O(n17681));
+    defparam i1_2_lut_4_lut_adj_343.LUT_INIT = 16'hba00;
+    SB_LUT4 i1_2_lut_4_lut_adj_344 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [26]), .O(n17685));
+    defparam i1_2_lut_4_lut_adj_344.LUT_INIT = 16'hba00;
+    SB_LUT4 i12_4_lut_adj_345 (.I0(byte_transmit_counter_c[5]), .I1(tx_transmit_N_1750_c[5]), 
+            .I2(n11340), .I3(n11195), .O(n17587));
+    defparam i12_4_lut_adj_345.LUT_INIT = 16'h0aca;
+    SB_LUT4 i1_2_lut_4_lut_adj_346 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [27]), .O(n17737));
+    defparam i1_2_lut_4_lut_adj_346.LUT_INIT = 16'hba00;
+    SB_LUT4 i1_2_lut_4_lut_adj_347 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [29]), .O(n17735));
+    defparam i1_2_lut_4_lut_adj_347.LUT_INIT = 16'hba00;
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_2_i5_3_lut (.I0(\data_out[6] [2]), 
+            .I1(\data_out[7][2] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n5_adj_2351));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_2_i5_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15811_2_lut (.I0(\data_out[5] [2]), .I1(byte_transmit_counter[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n18742));
+    defparam i15811_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_3_i1_3_lut (.I0(\data_out[0] [3]), 
+            .I1(\data_out[1][3] ), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n1_adj_2350));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_3_i1_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 byte_transmit_counter_4__I_0_Mux_3_i2_3_lut (.I0(\data_out[2] [3]), 
+            .I1(\data_out[3] [3]), .I2(byte_transmit_counter[0]), .I3(GND_net), 
+            .O(n2_adj_2349));   // verilog/coms.v(253[28:49])
+    defparam byte_transmit_counter_4__I_0_Mux_3_i2_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i12_4_lut_adj_348 (.I0(byte_transmit_counter_c[6]), .I1(tx_transmit_N_1750_c[6]), 
+            .I2(n11340), .I3(n11195), .O(n17589));
+    defparam i12_4_lut_adj_348.LUT_INIT = 16'h0aca;
+    SB_LUT4 add_62_20_lut (.I0(\UART_TRANSMITTER.sp [18]), .I1(\UART_TRANSMITTER.sp [18]), 
+            .I2(n19017), .I3(n16902), .O(n11663)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_20_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i1_2_lut_4_lut_adj_349 (.I0(n1_adj_2379), .I1(n11148), .I2(n10_adj_2378), 
+            .I3(\FRAME_MATCHER.state [30]), .O(n17745));
+    defparam i1_2_lut_4_lut_adj_349.LUT_INIT = 16'hba00;
+    SB_LUT4 i7568_2_lut_3_lut (.I0(\FRAME_MATCHER.state [3]), .I1(\FRAME_MATCHER.state[2] ), 
+            .I2(\FRAME_MATCHER.state [1]), .I3(GND_net), .O(n10281));
+    defparam i7568_2_lut_3_lut.LUT_INIT = 16'h4040;
+    SB_LUT4 i12_4_lut_adj_350 (.I0(byte_transmit_counter_c[7]), .I1(tx_transmit_N_1750_c[7]), 
+            .I2(n11340), .I3(n11195), .O(n17593));
+    defparam i12_4_lut_adj_350.LUT_INIT = 16'h0aca;
+    SB_LUT4 i15901_2_lut_3_lut (.I0(n2169), .I1(\data_in_frame[0][0] ), 
+            .I2(n4515), .I3(GND_net), .O(n18702));
+    defparam i15901_2_lut_3_lut.LUT_INIT = 16'h9090;
+    SB_LUT4 i4920_3_lut_4_lut (.I0(\rx_crc[15] ), .I1(\data_out_frame2[0][7] ), 
+            .I2(n12966), .I3(tx2_transmit_N_1799), .O(n3280));   // verilog/coms.v(490[6] 499[9])
+    defparam i4920_3_lut_4_lut.LUT_INIT = 16'hccca;
+    SB_DFF data_in_frame_0__i39 (.Q(\data_in_frame[4] [6]), .C(CLK_c), .D(n11595));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i40 (.Q(\data_in_frame[4] [7]), .C(CLK_c), .D(n11594));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i23_4_lut_adj_351 (.I0(n18653), .I1(n18281), .I2(\UART_TRANSMITTER.state[0] ), 
+            .I3(\UART_TRANSMITTER.state[1] ), .O(n9));
+    defparam i23_4_lut_adj_351.LUT_INIT = 16'h3530;
+    SB_DFF data_in_frame_0__i41 (.Q(\data_in_frame[5] [0]), .C(CLK_c), .D(n11593));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i42 (.Q(\data_in_frame[5] [1]), .C(CLK_c), .D(n11592));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_3_lut_adj_352 (.I0(n11340), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(n25_adj_2384), .I3(GND_net), .O(n1601));
+    defparam i1_3_lut_adj_352.LUT_INIT = 16'h7575;
+    SB_DFF data_in_frame_0__i43 (.Q(\data_in_frame[5] [2]), .C(CLK_c), .D(n11591));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_adj_353 (.I0(\FRAME_MATCHER.state[2] ), .I1(n11172), 
+            .I2(GND_net), .I3(GND_net), .O(n11174));   // verilog/coms.v(529[5:25])
+    defparam i1_2_lut_adj_353.LUT_INIT = 16'heeee;
+    SB_DFF setpoint_i0_i0 (.Q(\pwm_31__N_2046[0] ), .C(CLK_c), .D(n11590));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i6_3_lut_4_lut_adj_354 (.I0(\data_in_frame[0][6] ), .I1(\data_in_frame[0]_c [5]), 
+            .I2(\data_in_frame[5] [6]), .I3(\data_in_frame[6] [7]), .O(n22_adj_2322));
+    defparam i6_3_lut_4_lut_adj_354.LUT_INIT = 16'h9f6f;
+    SB_LUT4 add_2194_2_lut (.I0(GND_net), .I1(byte_transmit_counter[0]), 
+            .I2(n65), .I3(GND_net), .O(\tx_transmit_N_1750[0] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_2194_2_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i11929_2_lut_3_lut (.I0(\FRAME_MATCHER.i [2]), .I1(n10957), 
+            .I2(\FRAME_MATCHER.i [31]), .I3(GND_net), .O(n4428));
+    defparam i11929_2_lut_3_lut.LUT_INIT = 16'h0e0e;
+    SB_LUT4 i1_2_lut_3_lut_adj_355 (.I0(\FRAME_MATCHER.state[2] ), .I1(n11157), 
+            .I2(\FRAME_MATCHER.state [0]), .I3(GND_net), .O(n4_adj_2319));   // verilog/coms.v(538[5:27])
+    defparam i1_2_lut_3_lut_adj_355.LUT_INIT = 16'hfdfd;
+    SB_DFF data_in_frame_0__i44 (.Q(\data_in_frame[5] [3]), .C(CLK_c), .D(n11589));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_2194_2 (.CI(GND_net), .I0(byte_transmit_counter[0]), .I1(n65), 
+            .CO(n16963));
+    SB_DFF data_in_frame_0__i45 (.Q(\data_in_frame[5] [4]), .C(CLK_c), .D(n11588));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_698_33_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [31]), .I2(GND_net), 
+            .I3(n16962), .O(n2_adj_2233)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_33_lut.LUT_INIT = 16'h8228;
+    SB_DFF data_in_frame_0__i46 (.Q(\data_in_frame[5] [5]), .C(CLK_c), .D(n11587));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i11953_3_lut_4_lut (.I0(\FRAME_MATCHER.i [2]), .I1(n10957), 
+            .I2(\FRAME_MATCHER.i [31]), .I3(n4_adj_2373), .O(n2093));
+    defparam i11953_3_lut_4_lut.LUT_INIT = 16'h0f0e;
+    SB_DFF data_in_frame_0__i47 (.Q(\data_in_frame[5] [6]), .C(CLK_c), .D(n11586));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i48 (.Q(\data_in_frame[5] [7]), .C(CLK_c), .D(n11585));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_4_lut_adj_356 (.I0(\data_in[0] [6]), .I1(n18474), .I2(\data_in[1] [1]), 
+            .I3(\data_in[0] [0]), .O(n6_c));
+    defparam i1_2_lut_4_lut_adj_356.LUT_INIT = 16'hfffb;
+    SB_LUT4 i1_4_lut_adj_357 (.I0(n2), .I1(\data_out[7] [4]), .I2(\UART_TRANSMITTER.sp [12]), 
+            .I3(n11210), .O(n11956));   // verilog/coms.v(273[13:18])
+    defparam i1_4_lut_adj_357.LUT_INIT = 16'h5044;
+    SB_DFF data_in_frame_0__i49 (.Q(\data_in_frame[6] [0]), .C(CLK_c), .D(n11584));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i50 (.Q(\data_in_frame[6] [1]), .C(CLK_c), .D(n11583));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 add_698_32_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [30]), .I2(GND_net), 
+            .I3(n16961), .O(n2_adj_2235)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_32_lut.LUT_INIT = 16'h8228;
+    SB_DFF data_in_frame_0__i51 (.Q(\data_in_frame[6] [2]), .C(CLK_c), .D(n11582));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i52 (.Q(\data_in_frame[6] [3]), .C(CLK_c), .D(n11581));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i53 (.Q(\data_in_frame[6] [4]), .C(CLK_c), .D(n11579));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_698_32 (.CI(n16961), .I0(\FRAME_MATCHER.i [30]), .I1(GND_net), 
+            .CO(n16962));
+    SB_LUT4 add_698_31_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [29]), .I2(GND_net), 
+            .I3(n16960), .O(n2_adj_2237)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_31_lut.LUT_INIT = 16'h8228;
+    SB_DFF data_out_frame2_0___i3 (.Q(\data_out_frame2[0] [2]), .C(CLK_c), 
+           .D(n19076));   // verilog/coms.v(424[12] 554[6])
+    SB_CARRY add_698_31 (.CI(n16960), .I0(\FRAME_MATCHER.i [29]), .I1(GND_net), 
+            .CO(n16961));
+    SB_LUT4 add_698_30_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [28]), .I2(GND_net), 
+            .I3(n16959), .O(n2_adj_2239)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_30_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i8816_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18333), .I2(rx_data[7]), 
+            .I3(\data_in_frame[3] [7]), .O(n11602));
+    defparam i8816_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8817_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18333), .I2(rx_data[6]), 
+            .I3(\data_in_frame[3] [6]), .O(n11603));
+    defparam i8817_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_CARRY add_698_30 (.CI(n16959), .I0(\FRAME_MATCHER.i [28]), .I1(GND_net), 
+            .CO(n16960));
+    SB_LUT4 i8818_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18333), .I2(rx_data[5]), 
+            .I3(\data_in_frame[3] [5]), .O(n11604));
+    defparam i8818_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8819_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18333), .I2(rx_data[4]), 
+            .I3(\data_in_frame[3] [4]), .O(n11605));
+    defparam i8819_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_2_lut_adj_358 (.I0(\UART_TRANSMITTER.state[1] ), .I1(\UART_TRANSMITTER.state[2] ), 
+            .I2(GND_net), .I3(GND_net), .O(n18281));
+    defparam i1_2_lut_adj_358.LUT_INIT = 16'h2222;
+    SB_LUT4 i1_4_lut_adj_359 (.I0(\data_out[7] [7]), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(\UART_TRANSMITTER.state[2] ), .I3(\UART_TRANSMITTER.state[1] ), 
+            .O(n11));
+    defparam i1_4_lut_adj_359.LUT_INIT = 16'ha22a;
+    SB_LUT4 i1_4_lut_adj_360 (.I0(n18281), .I1(n11), .I2(\UART_TRANSMITTER.state[0] ), 
+            .I3(\UART_TRANSMITTER.sp [15]), .O(n18151));
+    defparam i1_4_lut_adj_360.LUT_INIT = 16'heccc;
+    SB_LUT4 i8820_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18333), .I2(rx_data[3]), 
+            .I3(\data_in_frame[3] [3]), .O(n11606));
+    defparam i8820_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8821_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18333), .I2(rx_data[2]), 
+            .I3(\data_in_frame[3] [2]), .O(n11607));
+    defparam i8821_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8822_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18333), .I2(rx_data[1]), 
+            .I3(\data_in_frame[3] [1]), .O(n11608));
+    defparam i8822_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8823_3_lut_4_lut (.I0(n7_adj_2385), .I1(n18333), .I2(rx_data[0]), 
+            .I3(\data_in_frame[3] [0]), .O(n11609));
+    defparam i8823_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i1_2_lut_3_lut_adj_361 (.I0(byte_transmit_counter2[4]), .I1(byte_transmit_counter2[3]), 
+            .I2(byte_transmit_counter2[2]), .I3(GND_net), .O(n14));
+    defparam i1_2_lut_3_lut_adj_361.LUT_INIT = 16'ha8a8;
+    SB_LUT4 i13221_4_lut_4_lut (.I0(\data_out[0] [5]), .I1(\UART_TRANSMITTER.state[2] ), 
+            .I2(\UART_TRANSMITTER.state[0] ), .I3(\UART_TRANSMITTER.state[1] ), 
+            .O(n11571));   // verilog/coms.v(273[13:18])
+    defparam i13221_4_lut_4_lut.LUT_INIT = 16'h8aca;
+    SB_LUT4 i1_4_lut_adj_362 (.I0(n2), .I1(\data_out[7] [5]), .I2(\UART_TRANSMITTER.sp [13]), 
+            .I3(n11210), .O(n11959));   // verilog/coms.v(273[13:18])
+    defparam i1_4_lut_adj_362.LUT_INIT = 16'h5044;
+    SB_LUT4 i8808_3_lut_4_lut (.I0(n7_c), .I1(n18328), .I2(rx_data[7]), 
+            .I3(\data_in_frame[4] [7]), .O(n11594));
+    defparam i8808_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i8809_3_lut_4_lut (.I0(n7_c), .I1(n18328), .I2(rx_data[6]), 
+            .I3(\data_in_frame[4] [6]), .O(n11595));
+    defparam i8809_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i12238_1_lut (.I0(n15004), .I1(GND_net), .I2(GND_net), .I3(GND_net), 
+            .O(n1203));
+    defparam i12238_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 i1_2_lut_adj_363 (.I0(\UART_TRANSMITTER.state[1] ), .I1(\UART_TRANSMITTER.state[0] ), 
+            .I2(GND_net), .I3(GND_net), .O(n83_adj_2329));   // verilog/coms.v(277[12] 378[6])
+    defparam i1_2_lut_adj_363.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_2_lut_adj_364 (.I0(\data_out_frame2[0] [4]), .I1(\data_out_frame2[0] [3]), 
+            .I2(GND_net), .I3(GND_net), .O(n11183));
+    defparam i1_2_lut_adj_364.LUT_INIT = 16'h9999;
+    SB_LUT4 i4_4_lut_adj_365 (.I0(n7_adj_2328), .I1(\data_out_frame2[0] [5]), 
+            .I2(\data_out_frame2[0] [6]), .I3(n11183), .O(n11179));   // verilog/coms.v(238[17:884])
+    defparam i4_4_lut_adj_365.LUT_INIT = 16'h9669;
+    SB_LUT4 i16037_4_lut (.I0(n31), .I1(n10281), .I2(n6396), .I3(n15121), 
+            .O(n11365));
+    defparam i16037_4_lut.LUT_INIT = 16'h5010;
+    SB_DFF data_out_frame2_0___i4 (.Q(\data_out_frame2[0] [3]), .C(CLK_c), 
+           .D(n19082));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_out_frame2_0___i5 (.Q(\data_out_frame2[0] [4]), .C(CLK_c), 
+           .D(n19088));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_out_frame2_0___i6 (.Q(\data_out_frame2[0] [5]), .C(CLK_c), 
+           .D(n18555));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_out_frame2_0___i7 (.Q(\data_out_frame2[0] [6]), .C(CLK_c), 
+           .D(n18552));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_out_frame2_0___i8 (.Q(\data_out_frame2[0][7] ), .C(CLK_c), 
+           .D(n18549));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFE data_out_frame2_0___i153 (.Q(\data_out_frame2[19] [0]), .C(CLK_c), 
+            .E(n11365), .D(n2650));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i54 (.Q(\data_in_frame[6] [5]), .C(CLK_c), .D(n11578));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i1_2_lut_adj_366 (.I0(\data_out_frame2[0][0] ), .I1(n11179), 
+            .I2(GND_net), .I3(GND_net), .O(n10723));   // verilog/coms.v(238[17:884])
+    defparam i1_2_lut_adj_366.LUT_INIT = 16'h9999;
+    SB_LUT4 i8810_3_lut_4_lut (.I0(n7_c), .I1(n18328), .I2(rx_data[5]), 
+            .I3(\data_in_frame[4] [5]), .O(n11596));
+    defparam i8810_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 add_698_29_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [27]), .I2(GND_net), 
+            .I3(n16958), .O(n2_adj_2241)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_29_lut.LUT_INIT = 16'h8228;
+    SB_DFF data_in_frame_0__i55 (.Q(\data_in_frame[6] [6]), .C(CLK_c), .D(n11577));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF data_in_frame_0__i56 (.Q(\data_in_frame[6] [7]), .C(CLK_c), .D(n11576));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i9951_3_lut (.I0(delay_counter[10]), .I1(n18688), .I2(n1601), 
+            .I3(GND_net), .O(n11765));
+    defparam i9951_3_lut.LUT_INIT = 16'hacac;
+    SB_CARRY add_698_29 (.CI(n16958), .I0(\FRAME_MATCHER.i [27]), .I1(GND_net), 
+            .CO(n16959));
+    SB_DFF \UART_TRANSMITTER.sp_i0_i0  (.Q(\UART_TRANSMITTER.sp[0] ), .C(CLK_c), 
+           .D(n11575));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_0[[1__1938  (.Q(\data_out[0][1] ), .C(CLK_c), .D(n11574));   // verilog/coms.v(277[12] 378[6])
+    SB_LUT4 i9961_3_lut (.I0(delay_counter[8]), .I1(n18695), .I2(n1601), 
+            .I3(GND_net), .O(n11766));
+    defparam i9961_3_lut.LUT_INIT = 16'hacac;
+    SB_DFF \data_out_0[[2__1937  (.Q(\data_out[0] [2]), .C(CLK_c), .D(n11573));   // verilog/coms.v(277[12] 378[6])
+    SB_DFF \data_out_0[[3__1936  (.Q(\data_out[0] [3]), .C(CLK_c), .D(n11572));   // verilog/coms.v(277[12] 378[6])
+    SB_DFFE data_out_frame2_0___i161 (.Q(\data_out_frame2[20] [0]), .C(CLK_c), 
+            .E(n11365), .D(n10723));   // verilog/coms.v(424[12] 554[6])
+    SB_LUT4 i15542_4_lut_4_lut_4_lut (.I0(\FRAME_MATCHER.state [1]), .I1(n11157), 
+            .I2(\FRAME_MATCHER.state[2] ), .I3(\FRAME_MATCHER.state [0]), 
+            .O(n18516));   // verilog/coms.v(454[5:29])
+    defparam i15542_4_lut_4_lut_4_lut.LUT_INIT = 16'hffcd;
+    SB_LUT4 add_698_28_lut (.I0(n1203), .I1(\FRAME_MATCHER.i [26]), .I2(GND_net), 
+            .I3(n16957), .O(n2_adj_2243)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_698_28_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i8811_3_lut_4_lut (.I0(n7_c), .I1(n18328), .I2(rx_data[4]), 
+            .I3(\data_in_frame[4] [4]), .O(n11597));
+    defparam i8811_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i15851_2_lut_3_lut_4_lut (.I0(tx_transmit_N_1750[3]), .I1(n15567), 
+            .I2(n14800), .I3(\UART_TRANSMITTER.state[2] ), .O(n18653));
+    defparam i15851_2_lut_3_lut_4_lut.LUT_INIT = 16'h0e00;
+    SB_CARRY add_62_20 (.CI(n16902), .I0(\UART_TRANSMITTER.sp [18]), .I1(n19017), 
+            .CO(n16903));
+    SB_LUT4 add_62_19_lut (.I0(\UART_TRANSMITTER.sp [17]), .I1(\UART_TRANSMITTER.sp [17]), 
+            .I2(n19017), .I3(n16901), .O(n11664)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_62_19_lut.LUT_INIT = 16'hA3AC;
+    SB_LUT4 i10008_3_lut (.I0(delay_counter[12]), .I1(n18679), .I2(n1601), 
+            .I3(GND_net), .O(n11772));
+    defparam i10008_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i9987_3_lut (.I0(delay_counter[13]), .I1(n18687), .I2(n1601), 
+            .I3(GND_net), .O(n11775));
+    defparam i9987_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_367 (.I0(\FRAME_MATCHER.state [1]), .I1(n11157), 
+            .I2(\FRAME_MATCHER.state [0]), .I3(\FRAME_MATCHER.state[2] ), 
+            .O(n11138));   // verilog/coms.v(454[5:29])
+    defparam i1_2_lut_3_lut_4_lut_adj_367.LUT_INIT = 16'hfffd;
+    SB_LUT4 i8812_3_lut_4_lut (.I0(n7_c), .I1(n18328), .I2(rx_data[3]), 
+            .I3(\data_in_frame[4] [3]), .O(n11598));
+    defparam i8812_3_lut_4_lut.LUT_INIT = 16'hfe10;
+    SB_LUT4 i9984_3_lut (.I0(delay_counter[6]), .I1(n18686), .I2(n1601), 
+            .I3(GND_net), .O(n11783));
+    defparam i9984_3_lut.LUT_INIT = 16'hacac;
+    SB_CARRY add_62_19 (.CI(n16901), .I0(\UART_TRANSMITTER.sp [17]), .I1(n19017), 
+            .CO(n16902));
+    SB_CARRY add_698_28 (.CI(n16957), .I0(\FRAME_MATCHER.i [26]), .I1(GND_net), 
+            .CO(n16958));
+    SB_LUT4 i1_2_lut_4_lut_adj_368 (.I0(\UART_TRANSMITTER.state[2] ), .I1(tx_transmit_N_1750[2]), 
+            .I2(tx_transmit_N_1779), .I3(n103), .O(n18293));
+    defparam i1_2_lut_4_lut_adj_368.LUT_INIT = 16'h5450;
+    SB_DFFE data_out_frame2_0___i163 (.Q(\data_out_frame2[20] [2]), .C(CLK_c), 
+            .E(n11365), .D(n2437_adj_2320));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFE data_out_frame2_0___i165 (.Q(\data_out_frame2[20] [4]), .C(CLK_c), 
+            .E(n11365), .D(n2510));   // verilog/coms.v(424[12] 554[6])
+    SB_DFF \data_in_3[[2__1951  (.Q(\data_in[3] [2]), .C(CLK_c), .D(n11875));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFE data_out_frame2_0___i166 (.Q(\data_out_frame2[20] [5]), .C(CLK_c), 
+            .E(n11365), .D(n11183));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFE data_out_frame2_0___i167 (.Q(\data_out_frame2[20] [6]), .C(CLK_c), 
+            .E(n11365), .D(n2580));   // verilog/coms.v(424[12] 554[6])
+    SB_DFFE data_out_frame2_0___i168 (.Q(\data_out_frame2[20] [7]), .C(CLK_c), 
+            .E(n11365), .D(n2615));   // verilog/coms.v(424[12] 554[6])
+    uart_tx tx (.n18035(n18035), .VCC_net(VCC_net), .r_Tx_Data({r_Tx_Data}), 
+            .CLK_c(CLK_c), .GND_net(GND_net), .n17895(n17895), .n11844(n11844), 
+            .\r_Clock_Count[4] (\r_Clock_Count[4] ), .n11840(n11840), .\r_Clock_Count[3] (\r_Clock_Count[3] ), 
+            .\r_SM_Main[2] (\r_SM_Main[2] ), .n18043(n18043), .n18045(n18045), 
+            .n16065(n16065), .n317(n317), .\r_SM_Main_2__N_1837[0] (r_SM_Main_2__N_1837[0]), 
+            .n18067(n18067), .n18091(n18091), .n18065(n18065), .n18073(n18073), 
+            .n318(n318), .tx_active(tx_active), .tx_o(tx_o), .n10424(n10424), 
+            .tx_enable(tx_enable)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/coms.v(255[10:70])
+    uart_tx_U0 tx2 (.GND_net(GND_net), .n11302(n11302), .CLK_c(CLK_c), 
+            .n12005(n12005), .VCC_net(VCC_net), .r_Bit_Index({r_Bit_Index}), 
+            .tx2_data({tx2_data}), .n5759(n5759), .n11364(n11364), .n11546(n11546), 
+            .n11778(n11778), .\r_SM_Main_2__N_1837[0] (r_SM_Main_2__N_1837_adj_2408[0]), 
+            .n11995(n11995), .tx2_active(tx2_active), .n11645(n11645), 
+            .tx2_o(tx2_o), .n3(n3), .tx2_enable(tx2_enable)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/coms.v(412[10:77])
+    uart_rx rx (.r_SM_Main({r_SM_Main}), .\r_SM_Main_2__N_1891[2] (\r_SM_Main_2__N_1891[2] ), 
+            .GND_net(GND_net), .r_Rx_Data(r_Rx_Data), .n11218(n11218), 
+            .n4(n4), .n10974(n10974), .n18386(n18386), .n15(n15), .n219(n219), 
+            .\r_Clock_Count[7] (\r_Clock_Count[7] ), .n220(n220), .\r_Clock_Count[6] (\r_Clock_Count[6] ), 
+            .n12(n12), .VCC_net(VCC_net), .CLK_c(CLK_c), .n12_adj_1(n12_adj_11), 
+            .rx_i(rx_i), .n222(n222), .\r_Clock_Count[4] (\r_Clock_Count[4]_adj_12 ), 
+            .n12_adj_2(n12_adj_13), .n12_adj_3(n12_adj_14), .\r_Clock_Count[3] (\r_Clock_Count[3]_adj_15 ), 
+            .n223(n223), .n224(n224), .\r_Clock_Count[2] (\r_Clock_Count[2] ), 
+            .n11799(n11799), .rx_data({rx_data}), .n17769(n17769), .rx_data_ready(rx_data_ready), 
+            .n225(n225), .\r_Clock_Count[1] (\r_Clock_Count[1] ), .n12_adj_4(n12_adj_16), 
+            .n12_adj_5(n12_adj_17), .n18342(n18342), .n12012(n12012), 
+            .n11681(n11681), .n11644(n11644), .n11643(n11643), .n11637(n11637), 
+            .n11622(n11622), .n4_adj_6(n4_adj_18), .n4_adj_7(n4_adj_19), 
+            .n11580(n11580), .n11162(n11162), .n14605(n14605)) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;   // verilog/coms.v(384[10:44])
     
 endmodule
 //
 // Verilog Description of module uart_tx
 //
 
-module uart_tx (r_Bit_Index, GND_net, n5440, VCC_net, CLK_c, n17541, 
-            r_Tx_Data, n5155, n11379, n11382, n17583, n17581, n17579, 
-            n17577, n17575, n17573, n17571, n3, tx_active, \r_SM_Main_2__N_2034[0] , 
-            n18012, n18016, n9667, n11423, tx_o, tx_enable, tx_active_prev, 
-            n44) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
-    output [2:0]r_Bit_Index;
-    input GND_net;
-    output n5440;
+module uart_tx (n18035, VCC_net, r_Tx_Data, CLK_c, GND_net, n17895, 
+            n11844, \r_Clock_Count[4] , n11840, \r_Clock_Count[3] , 
+            \r_SM_Main[2] , n18043, n18045, n16065, n317, \r_SM_Main_2__N_1837[0] , 
+            n18067, n18091, n18065, n18073, n318, tx_active, tx_o, 
+            n10424, tx_enable) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
+    input n18035;
     input VCC_net;
-    input CLK_c;
-    input n17541;
     output [7:0]r_Tx_Data;
-    output n5155;
-    input n11379;
-    input n11382;
-    input n17583;
-    input n17581;
-    input n17579;
-    input n17577;
-    input n17575;
-    input n17573;
-    input n17571;
-    output n3;
+    input CLK_c;
+    input GND_net;
+    input n17895;
+    input n11844;
+    output \r_Clock_Count[4] ;
+    input n11840;
+    output \r_Clock_Count[3] ;
+    output \r_SM_Main[2] ;
+    input n18043;
+    input n18045;
+    output n16065;
+    output n317;
+    input \r_SM_Main_2__N_1837[0] ;
+    input n18067;
+    input n18091;
+    input n18065;
+    input n18073;
+    output n318;
     output tx_active;
-    input \r_SM_Main_2__N_2034[0] ;
-    output n18012;
-    output n18016;
-    output n9667;
-    input n11423;
     output tx_o;
+    output n10424;
     output tx_enable;
-    input tx_active_prev;
-    output n44;
     
     wire CLK_c /* synthesis SET_AS_NETWORK=CLK_c, is_clock=1 */ ;   // verilog/TinyFPGA_B.v(3[9:12])
+    wire [2:0]r_Bit_Index;   // verilog/uart_tx.v(33[16:27])
     
-    wire n18166, n18167, n18711, n18041, n18040, o_Tx_Serial_N_2062;
+    wire n11331;
+    wire [2:0]r_SM_Main;   // verilog/uart_tx.v(31[16:25])
+    
+    wire n17877, n12675;
     wire [8:0]r_Clock_Count;   // verilog/uart_tx.v(32[16:29])
     
-    wire n54, n10, n47, n11361, n17603;
-    wire [2:0]r_SM_Main;   // verilog/uart_tx.v(31[16:25])
+    wire n11850, n11847, n11836, n11833, n18691, n18692, n6, n57, 
+        n18624, n18694, n17008, n17007, n17006, n18620, n17005, 
+        n18623, n17004;
+    wire [2:0]r_SM_Main_2__N_1834;
+    
+    wire n17193, n18252, n11973, n11986, n11983, n11991, n11990, 
+        n17003, n17002, n17001;
     wire [8:0]n312;
     
-    wire n11297, n17938, n17697, n10_adj_2195, n13802;
-    wire [2:0]r_SM_Main_2__N_2031;
+    wire n34, n17975, n17831, n11639, n18574, n18575, n19019, 
+        n18545, n18544, o_Tx_Serial_N_1865, n36, n11, n17209, n3, 
+        n4, n18648, n18374, n31, n28, n7, n5715;
     
-    wire n6796, n17698, n11030, n16531, n16530, n16529, n16528, 
-        n16527, n11425, n16526, n16525, n16524, n17984;
-    
-    SB_LUT4 r_Bit_Index_1__bdd_4_lut (.I0(r_Bit_Index[1]), .I1(n18166), 
-            .I2(n18167), .I3(r_Bit_Index[2]), .O(n18711));
-    defparam r_Bit_Index_1__bdd_4_lut.LUT_INIT = 16'he4aa;
-    SB_LUT4 n18711_bdd_4_lut (.I0(n18711), .I1(n18041), .I2(n18040), .I3(r_Bit_Index[2]), 
-            .O(o_Tx_Serial_N_2062));
-    defparam n18711_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_LUT4 i2_3_lut (.I0(r_Clock_Count[6]), .I1(r_Clock_Count[7]), .I2(r_Clock_Count[8]), 
-            .I3(GND_net), .O(n54));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i2_3_lut.LUT_INIT = 16'hfefe;
-    SB_LUT4 i4_4_lut (.I0(r_Clock_Count[1]), .I1(r_Clock_Count[4]), .I2(r_Clock_Count[5]), 
-            .I3(r_Clock_Count[2]), .O(n10));   // verilog/uart_tx.v(32[16:29])
-    defparam i4_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i5_3_lut (.I0(r_Clock_Count[0]), .I1(n10), .I2(r_Clock_Count[3]), 
-            .I3(GND_net), .O(n47));   // verilog/uart_tx.v(32[16:29])
-    defparam i5_3_lut.LUT_INIT = 16'h8080;
-    SB_LUT4 i2723_2_lut (.I0(r_Bit_Index[1]), .I1(r_Bit_Index[0]), .I2(GND_net), 
-            .I3(GND_net), .O(n5440));   // verilog/uart_tx.v(98[36:51])
-    defparam i2723_2_lut.LUT_INIT = 16'h8888;
+    SB_DFFE r_Tx_Data_i5 (.Q(r_Tx_Data[5]), .C(CLK_c), .E(VCC_net), .D(n18035));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 i12_3_lut (.I0(r_Bit_Index[0]), .I1(n11331), .I2(r_SM_Main[1]), 
+            .I3(GND_net), .O(n17877));   // verilog/uart_tx.v(33[16:27])
+    defparam i12_3_lut.LUT_INIT = 16'h6262;
     SB_DFFE r_Bit_Index_i0 (.Q(r_Bit_Index[0]), .C(CLK_c), .E(VCC_net), 
-            .D(n11361));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFE r_Tx_Data_i0 (.Q(r_Tx_Data[0]), .C(CLK_c), .E(VCC_net), .D(n17541));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_SM_Main_i1 (.Q(r_SM_Main[1]), .C(CLK_c), .D(n17603));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i0 (.Q(r_Clock_Count[0]), .C(CLK_c), .E(n5155), 
-            .D(n312[0]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i1 (.Q(r_Clock_Count[1]), .C(CLK_c), .E(n5155), 
-            .D(n312[1]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i2 (.Q(r_Clock_Count[2]), .C(CLK_c), .E(n5155), 
-            .D(n312[2]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i3 (.Q(r_Clock_Count[3]), .C(CLK_c), .E(n5155), 
-            .D(n312[3]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i4 (.Q(r_Clock_Count[4]), .C(CLK_c), .E(n5155), 
-            .D(n312[4]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i5 (.Q(r_Clock_Count[5]), .C(CLK_c), .E(n5155), 
-            .D(n312[5]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Bit_Index_i1 (.Q(r_Bit_Index[1]), .C(CLK_c), .D(n11379));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Bit_Index_i2 (.Q(r_Bit_Index[2]), .C(CLK_c), .D(n11382));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Data_i1 (.Q(r_Tx_Data[1]), .C(CLK_c), .D(n17583));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Data_i2 (.Q(r_Tx_Data[2]), .C(CLK_c), .D(n17581));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Data_i3 (.Q(r_Tx_Data[3]), .C(CLK_c), .D(n17579));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Data_i4 (.Q(r_Tx_Data[4]), .C(CLK_c), .D(n17577));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Data_i5 (.Q(r_Tx_Data[5]), .C(CLK_c), .D(n17575));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Data_i6 (.Q(r_Tx_Data[6]), .C(CLK_c), .D(n17573));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Data_i7 (.Q(r_Tx_Data[7]), .C(CLK_c), .D(n17571));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i6 (.Q(r_Clock_Count[6]), .C(CLK_c), .E(n5155), 
-            .D(n312[6]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i7 (.Q(r_Clock_Count[7]), .C(CLK_c), .E(n5155), 
-            .D(n312[7]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 r_SM_Main_2__I_0_56_i3_3_lut (.I0(r_SM_Main[0]), .I1(o_Tx_Serial_N_2062), 
-            .I2(r_SM_Main[1]), .I3(GND_net), .O(n3));   // verilog/uart_tx.v(43[7] 142[14])
-    defparam r_SM_Main_2__I_0_56_i3_3_lut.LUT_INIT = 16'he5e5;
-    SB_LUT4 i15742_4_lut (.I0(r_SM_Main[1]), .I1(tx_active), .I2(n17938), 
-            .I3(n17697), .O(n10_adj_2195));   // verilog/uart_tx.v(31[16:25])
-    defparam i15742_4_lut.LUT_INIT = 16'h54dc;
-    SB_LUT4 i4255_4_lut (.I0(\r_SM_Main_2__N_2034[0] ), .I1(n13802), .I2(r_SM_Main[1]), 
-            .I3(r_SM_Main_2__N_2031[1]), .O(n6796));   // verilog/uart_tx.v(43[7] 142[14])
-    defparam i4255_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i1_2_lut_4_lut_4_lut (.I0(r_SM_Main[1]), .I1(r_SM_Main_2__N_2031[1]), 
-            .I2(r_SM_Main[2]), .I3(r_SM_Main[0]), .O(n17698));
-    defparam i1_2_lut_4_lut_4_lut.LUT_INIT = 16'h0800;
-    SB_LUT4 i15079_2_lut_3_lut_3_lut (.I0(\r_SM_Main_2__N_2034[0] ), .I1(r_SM_Main[0]), 
-            .I2(r_SM_Main[2]), .I3(GND_net), .O(n17938));   // verilog/uart_tx.v(43[7] 142[14])
-    defparam i15079_2_lut_3_lut_3_lut.LUT_INIT = 16'h0202;
-    SB_DFFESR r_Clock_Count__i8 (.Q(r_Clock_Count[8]), .C(CLK_c), .E(n5155), 
-            .D(n312[8]), .R(n11297));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 i15156_2_lut_3_lut (.I0(n13802), .I1(r_SM_Main[1]), .I2(n18012), 
-            .I3(GND_net), .O(n18016));   // verilog/uart_tx.v(43[7] 142[14])
-    defparam i15156_2_lut_3_lut.LUT_INIT = 16'hf4f4;
-    SB_LUT4 i8582_3_lut_4_lut (.I0(n13802), .I1(r_SM_Main[1]), .I2(r_Bit_Index[0]), 
-            .I3(n11030), .O(n11361));   // verilog/uart_tx.v(43[7] 142[14])
-    defparam i8582_3_lut_4_lut.LUT_INIT = 16'h04f0;
-    SB_LUT4 add_59_10_lut (.I0(GND_net), .I1(r_Clock_Count[8]), .I2(GND_net), 
-            .I3(n16531), .O(n312[8])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_10_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 add_59_9_lut (.I0(GND_net), .I1(r_Clock_Count[7]), .I2(GND_net), 
-            .I3(n16530), .O(n312[7])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_9_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i15179_3_lut (.I0(r_Tx_Data[0]), .I1(r_Tx_Data[1]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n18040));
-    defparam i15179_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i15152_3_lut_4_lut (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(r_SM_Main[1]), 
-            .I3(r_SM_Main_2__N_2031[1]), .O(n18012));
-    defparam i15152_3_lut_4_lut.LUT_INIT = 16'heefe;
-    SB_LUT4 i15180_3_lut (.I0(r_Tx_Data[2]), .I1(r_Tx_Data[3]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n18041));
-    defparam i15180_3_lut.LUT_INIT = 16'hcaca;
-    SB_CARRY add_59_9 (.CI(n16530), .I0(r_Clock_Count[7]), .I1(GND_net), 
-            .CO(n16531));
-    SB_LUT4 i15306_3_lut (.I0(r_Tx_Data[6]), .I1(r_Tx_Data[7]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n18167));
-    defparam i15306_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i15305_3_lut (.I0(r_Tx_Data[4]), .I1(r_Tx_Data[5]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n18166));
-    defparam i15305_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i2_3_lut_4_lut (.I0(\r_SM_Main_2__N_2034[0] ), .I1(r_SM_Main[0]), 
-            .I2(r_SM_Main[1]), .I3(r_SM_Main[2]), .O(n9667));   // verilog/uart_tx.v(43[7] 142[14])
-    defparam i2_3_lut_4_lut.LUT_INIT = 16'h0002;
-    SB_LUT4 add_59_8_lut (.I0(GND_net), .I1(r_Clock_Count[6]), .I2(GND_net), 
-            .I3(n16529), .O(n312[6])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_8_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_8 (.CI(n16529), .I0(r_Clock_Count[6]), .I1(GND_net), 
-            .CO(n16530));
-    SB_LUT4 add_59_7_lut (.I0(GND_net), .I1(r_Clock_Count[5]), .I2(GND_net), 
-            .I3(n16528), .O(n312[5])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_7_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_7 (.CI(n16528), .I0(r_Clock_Count[5]), .I1(GND_net), 
-            .CO(n16529));
-    SB_LUT4 i1_3_lut_4_lut (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(r_SM_Main[1]), 
-            .I3(r_SM_Main_2__N_2031[1]), .O(n11030));
-    defparam i1_3_lut_4_lut.LUT_INIT = 16'h1101;
-    SB_LUT4 add_59_6_lut (.I0(GND_net), .I1(r_Clock_Count[4]), .I2(GND_net), 
-            .I3(n16527), .O(n312[4])) /* synthesis syn_instantiated=1 */ ;
+            .D(n17877));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i0 (.Q(r_Tx_Data[0]), .C(CLK_c), .E(VCC_net), .D(n17895));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Clock_Count__i7 (.Q(r_Clock_Count[7]), .C(CLK_c), .E(VCC_net), 
+            .D(n12675));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Clock_Count__i6 (.Q(r_Clock_Count[6]), .C(CLK_c), .E(VCC_net), 
+            .D(n11850));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Clock_Count__i5 (.Q(r_Clock_Count[5]), .C(CLK_c), .E(VCC_net), 
+            .D(n11847));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Clock_Count__i4 (.Q(\r_Clock_Count[4] ), .C(CLK_c), .E(VCC_net), 
+            .D(n11844));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Clock_Count__i3 (.Q(\r_Clock_Count[3] ), .C(CLK_c), .E(VCC_net), 
+            .D(n11840));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Clock_Count__i2 (.Q(r_Clock_Count[2]), .C(CLK_c), .E(VCC_net), 
+            .D(n11836));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Clock_Count__i1 (.Q(r_Clock_Count[1]), .C(CLK_c), .E(VCC_net), 
+            .D(n11833));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 i13338_3_lut (.I0(r_Clock_Count[6]), .I1(n18691), .I2(\r_SM_Main[2] ), 
+            .I3(GND_net), .O(n11850));
+    defparam i13338_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i13348_3_lut (.I0(r_Clock_Count[7]), .I1(n18692), .I2(\r_SM_Main[2] ), 
+            .I3(GND_net), .O(n12675));
+    defparam i13348_3_lut.LUT_INIT = 16'hacac;
+    SB_DFFE r_Tx_Data_i6 (.Q(r_Tx_Data[6]), .C(CLK_c), .E(VCC_net), .D(n18043));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i7 (.Q(r_Tx_Data[7]), .C(CLK_c), .E(VCC_net), .D(n18045));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 i4_4_lut (.I0(\r_Clock_Count[3] ), .I1(r_Clock_Count[1]), .I2(r_Clock_Count[5]), 
+            .I3(n6), .O(n57));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i4_4_lut.LUT_INIT = 16'h8000;
+    SB_LUT4 i13577_3_lut (.I0(r_Clock_Count[1]), .I1(n18624), .I2(\r_SM_Main[2] ), 
+            .I3(GND_net), .O(n11833));
+    defparam i13577_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 add_59_10_lut (.I0(n16065), .I1(r_Clock_Count[8]), .I2(GND_net), 
+            .I3(n17008), .O(n18694)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_10_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 add_59_9_lut (.I0(n16065), .I1(r_Clock_Count[7]), .I2(GND_net), 
+            .I3(n17007), .O(n18692)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_9_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_59_9 (.CI(n17007), .I0(r_Clock_Count[7]), .I1(GND_net), 
+            .CO(n17008));
+    SB_LUT4 add_59_8_lut (.I0(n16065), .I1(r_Clock_Count[6]), .I2(GND_net), 
+            .I3(n17006), .O(n18691)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_8_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_59_8 (.CI(n17006), .I0(r_Clock_Count[6]), .I1(GND_net), 
+            .CO(n17007));
+    SB_LUT4 add_59_7_lut (.I0(n16065), .I1(r_Clock_Count[5]), .I2(GND_net), 
+            .I3(n17005), .O(n18620)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_7_lut.LUT_INIT = 16'h8228;
+    SB_LUT4 i13576_3_lut (.I0(r_Clock_Count[2]), .I1(n18623), .I2(\r_SM_Main[2] ), 
+            .I3(GND_net), .O(n11836));
+    defparam i13576_3_lut.LUT_INIT = 16'hacac;
+    SB_CARRY add_59_7 (.CI(n17005), .I0(r_Clock_Count[5]), .I1(GND_net), 
+            .CO(n17006));
+    SB_LUT4 add_59_6_lut (.I0(GND_net), .I1(\r_Clock_Count[4] ), .I2(GND_net), 
+            .I3(n17004), .O(n317)) /* synthesis syn_instantiated=1 */ ;
     defparam add_59_6_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i1_4_lut_4_lut (.I0(r_SM_Main[2]), .I1(n6796), .I2(r_SM_Main_2__N_2031[1]), 
-            .I3(r_SM_Main[0]), .O(n11425));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i1_4_lut_4_lut.LUT_INIT = 16'h0544;
-    SB_CARRY add_59_6 (.CI(n16527), .I0(r_Clock_Count[4]), .I1(GND_net), 
-            .CO(n16528));
-    SB_LUT4 i2_3_lut_3_lut (.I0(r_SM_Main_2__N_2031[1]), .I1(r_SM_Main[2]), 
-            .I2(r_SM_Main[0]), .I3(GND_net), .O(n17697));   // verilog/uart_tx.v(31[16:25])
-    defparam i2_3_lut_3_lut.LUT_INIT = 16'h2020;
-    SB_LUT4 add_59_5_lut (.I0(GND_net), .I1(r_Clock_Count[3]), .I2(GND_net), 
-            .I3(n16526), .O(n312[3])) /* synthesis syn_instantiated=1 */ ;
+    SB_LUT4 i2_2_lut_3_lut_4_lut (.I0(r_SM_Main_2__N_1834[1]), .I1(r_SM_Main[0]), 
+            .I2(\r_SM_Main[2] ), .I3(r_SM_Main[1]), .O(n17193));   // verilog/uart_tx.v(43[7] 142[14])
+    defparam i2_2_lut_3_lut_4_lut.LUT_INIT = 16'h0800;
+    SB_LUT4 i15993_3_lut_4_lut_4_lut (.I0(r_SM_Main_2__N_1834[1]), .I1(r_SM_Main[0]), 
+            .I2(r_SM_Main[1]), .I3(\r_SM_Main_2__N_1837[0] ), .O(n18252));   // verilog/uart_tx.v(43[7] 142[14])
+    defparam i15993_3_lut_4_lut_4_lut.LUT_INIT = 16'h8380;
+    SB_LUT4 i1_3_lut_4_lut (.I0(r_SM_Main_2__N_1834[1]), .I1(r_SM_Main[0]), 
+            .I2(r_SM_Main[1]), .I3(\r_SM_Main[2] ), .O(n11973));   // verilog/uart_tx.v(43[7] 142[14])
+    defparam i1_3_lut_4_lut.LUT_INIT = 16'h0078;
+    SB_DFFE r_Tx_Data_i2 (.Q(r_Tx_Data[2]), .C(CLK_c), .E(VCC_net), .D(n18067));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Bit_Index_i1 (.Q(r_Bit_Index[1]), .C(CLK_c), .E(VCC_net), 
+            .D(n11986));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF r_Tx_Data_i4 (.Q(r_Tx_Data[4]), .C(CLK_c), .D(n18091));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Bit_Index_i2 (.Q(r_Bit_Index[2]), .C(CLK_c), .E(VCC_net), 
+            .D(n11983));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i1 (.Q(r_Tx_Data[1]), .C(CLK_c), .E(VCC_net), .D(n18065));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF r_Clock_Count__i8 (.Q(r_Clock_Count[8]), .C(CLK_c), .D(n11991));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF r_Clock_Count__i0 (.Q(r_Clock_Count[0]), .C(CLK_c), .D(n11990));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF r_SM_Main_i1 (.Q(r_SM_Main[1]), .C(CLK_c), .D(n11973));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i3 (.Q(r_Tx_Data[3]), .C(CLK_c), .E(VCC_net), .D(n18073));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_CARRY add_59_6 (.CI(n17004), .I0(\r_Clock_Count[4] ), .I1(GND_net), 
+            .CO(n17005));
+    SB_LUT4 add_59_5_lut (.I0(GND_net), .I1(\r_Clock_Count[3] ), .I2(GND_net), 
+            .I3(n17003), .O(n318)) /* synthesis syn_instantiated=1 */ ;
     defparam add_59_5_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_5 (.CI(n16526), .I0(r_Clock_Count[3]), .I1(GND_net), 
-            .CO(n16527));
-    SB_LUT4 add_59_4_lut (.I0(GND_net), .I1(r_Clock_Count[2]), .I2(GND_net), 
-            .I3(n16525), .O(n312[2])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_4_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_4 (.CI(n16525), .I0(r_Clock_Count[2]), .I1(GND_net), 
-            .CO(n16526));
-    SB_LUT4 add_59_3_lut (.I0(GND_net), .I1(r_Clock_Count[1]), .I2(GND_net), 
-            .I3(n16524), .O(n312[1])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_3_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_3 (.CI(n16524), .I0(r_Clock_Count[1]), .I1(GND_net), 
-            .CO(n16525));
-    SB_DFF r_SM_Main_i0 (.Q(r_SM_Main[0]), .C(CLK_c), .D(n11425));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Active_47 (.Q(tx_active), .C(CLK_c), .D(n10_adj_2195));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF o_Tx_Serial_45 (.Q(tx_o), .C(CLK_c), .D(n11423));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_SM_Main_i2 (.Q(r_SM_Main[2]), .C(CLK_c), .D(n17698));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 i15125_2_lut (.I0(r_SM_Main[0]), .I1(r_SM_Main[1]), .I2(GND_net), 
-            .I3(GND_net), .O(n17984));
-    defparam i15125_2_lut.LUT_INIT = 16'heeee;
-    SB_LUT4 i1_4_lut (.I0(n5155), .I1(n47), .I2(n54), .I3(n17984), .O(n11297));   // verilog/uart_tx.v(31[16:25])
-    defparam i1_4_lut.LUT_INIT = 16'ha8aa;
-    SB_LUT4 i2_1_lut (.I0(r_SM_Main[2]), .I1(GND_net), .I2(GND_net), .I3(GND_net), 
-            .O(n5155));   // verilog/uart_tx.v(31[16:25])
-    defparam i2_1_lut.LUT_INIT = 16'h5555;
-    SB_LUT4 i1_4_lut_adj_425 (.I0(r_SM_Main[2]), .I1(r_SM_Main[1]), .I2(r_SM_Main_2__N_2031[1]), 
-            .I3(r_SM_Main[0]), .O(n17603));   // verilog/uart_tx.v(31[16:25])
-    defparam i1_4_lut_adj_425.LUT_INIT = 16'h1444;
-    SB_LUT4 i2_2_lut_3_lut (.I0(r_Bit_Index[2]), .I1(r_Bit_Index[1]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n13802));
-    defparam i2_2_lut_3_lut.LUT_INIT = 16'h8080;
-    SB_LUT4 o_Tx_Serial_I_0_1_lut (.I0(tx_o), .I1(GND_net), .I2(GND_net), 
-            .I3(GND_net), .O(tx_enable));   // verilog/uart_tx.v(38[24:36])
-    defparam o_Tx_Serial_I_0_1_lut.LUT_INIT = 16'h5555;
-    SB_LUT4 i11043_2_lut_4_lut (.I0(r_Clock_Count[0]), .I1(n10), .I2(r_Clock_Count[3]), 
-            .I3(n54), .O(r_SM_Main_2__N_2031[1]));
-    defparam i11043_2_lut_4_lut.LUT_INIT = 16'hff80;
+    SB_CARRY add_59_5 (.CI(n17003), .I0(\r_Clock_Count[3] ), .I1(GND_net), 
+            .CO(n17004));
+    SB_LUT4 add_59_4_lut (.I0(n16065), .I1(r_Clock_Count[2]), .I2(GND_net), 
+            .I3(n17002), .O(n18623)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_4_lut.LUT_INIT = 16'h8228;
+    SB_CARRY add_59_4 (.CI(n17002), .I0(r_Clock_Count[2]), .I1(GND_net), 
+            .CO(n17003));
+    SB_LUT4 add_59_3_lut (.I0(n16065), .I1(r_Clock_Count[1]), .I2(GND_net), 
+            .I3(n17001), .O(n18624)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_3_lut.LUT_INIT = 16'h8228;
+    SB_DFF r_SM_Main_i2 (.Q(\r_SM_Main[2] ), .C(CLK_c), .D(n17193));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_CARRY add_59_3 (.CI(n17001), .I0(r_Clock_Count[1]), .I1(GND_net), 
+            .CO(n17002));
     SB_LUT4 add_59_2_lut (.I0(GND_net), .I1(r_Clock_Count[0]), .I2(GND_net), 
             .I3(VCC_net), .O(n312[0])) /* synthesis syn_instantiated=1 */ ;
     defparam add_59_2_lut.LUT_INIT = 16'hC33C;
     SB_CARRY add_59_2 (.CI(VCC_net), .I0(r_Clock_Count[0]), .I1(GND_net), 
-            .CO(n16524));
-    SB_LUT4 i1_2_lut (.I0(tx_active), .I1(tx_active_prev), .I2(GND_net), 
-            .I3(GND_net), .O(n44));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i1_2_lut.LUT_INIT = 16'h4444;
+            .CO(n17001));
+    SB_LUT4 i1_2_lut (.I0(r_Clock_Count[2]), .I1(\r_Clock_Count[4] ), .I2(GND_net), 
+            .I3(GND_net), .O(n6));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i1_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_3_lut (.I0(r_Clock_Count[6]), .I1(r_Clock_Count[8]), .I2(r_Clock_Count[7]), 
+            .I3(GND_net), .O(n34));   // verilog/uart_tx.v(31[16:25])
+    defparam i1_3_lut.LUT_INIT = 16'hfefe;
+    SB_DFF r_SM_Main_i0 (.Q(r_SM_Main[0]), .C(CLK_c), .D(n17975));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF r_Tx_Active_47 (.Q(tx_active), .C(CLK_c), .D(n17831));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF o_Tx_Serial_45 (.Q(tx_o), .C(CLK_c), .D(n11639));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 r_Bit_Index_1__bdd_4_lut (.I0(r_Bit_Index[1]), .I1(n18574), 
+            .I2(n18575), .I3(r_Bit_Index[2]), .O(n19019));
+    defparam r_Bit_Index_1__bdd_4_lut.LUT_INIT = 16'he4aa;
+    SB_LUT4 i13569_3_lut (.I0(r_Clock_Count[5]), .I1(n18620), .I2(\r_SM_Main[2] ), 
+            .I3(GND_net), .O(n11847));
+    defparam i13569_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 n19019_bdd_4_lut (.I0(n19019), .I1(n18545), .I2(n18544), .I3(r_Bit_Index[2]), 
+            .O(o_Tx_Serial_N_1865));
+    defparam n19019_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_LUT4 i1_4_lut (.I0(\r_SM_Main[2] ), .I1(n36), .I2(n34), .I3(n11), 
+            .O(n16065));   // verilog/uart_tx.v(31[16:25])
+    defparam i1_4_lut.LUT_INIT = 16'habaa;
+    SB_LUT4 i15569_3_lut (.I0(r_Tx_Data[0]), .I1(r_Tx_Data[1]), .I2(r_Bit_Index[0]), 
+            .I3(GND_net), .O(n18544));
+    defparam i15569_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15570_3_lut (.I0(r_Tx_Data[2]), .I1(r_Tx_Data[3]), .I2(r_Bit_Index[0]), 
+            .I3(GND_net), .O(n18545));
+    defparam i15570_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15600_3_lut (.I0(r_Tx_Data[6]), .I1(r_Tx_Data[7]), .I2(r_Bit_Index[0]), 
+            .I3(GND_net), .O(n18575));
+    defparam i15600_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i15599_3_lut (.I0(r_Tx_Data[4]), .I1(r_Tx_Data[5]), .I2(r_Bit_Index[0]), 
+            .I3(GND_net), .O(n18574));
+    defparam i15599_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i1_2_lut_adj_172 (.I0(r_Clock_Count[0]), .I1(n57), .I2(GND_net), 
+            .I3(GND_net), .O(n36));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i1_2_lut_adj_172.LUT_INIT = 16'h8888;
+    SB_LUT4 i2_2_lut_3_lut (.I0(r_Bit_Index[2]), .I1(r_Bit_Index[1]), .I2(r_Bit_Index[0]), 
+            .I3(GND_net), .O(n17209));
+    defparam i2_2_lut_3_lut.LUT_INIT = 16'h8080;
+    SB_LUT4 r_SM_Main_2__I_0_56_i3_3_lut (.I0(r_SM_Main[0]), .I1(o_Tx_Serial_N_1865), 
+            .I2(r_SM_Main[1]), .I3(GND_net), .O(n3));   // verilog/uart_tx.v(43[7] 142[14])
+    defparam r_SM_Main_2__I_0_56_i3_3_lut.LUT_INIT = 16'he5e5;
+    SB_LUT4 i13360_3_lut (.I0(n3), .I1(tx_o), .I2(\r_SM_Main[2] ), .I3(GND_net), 
+            .O(n11639));   // verilog/uart_tx.v(31[16:25])
+    defparam i13360_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i12_4_lut (.I0(tx_active), .I1(r_SM_Main[1]), .I2(\r_SM_Main[2] ), 
+            .I3(n18252), .O(n17831));   // verilog/uart_tx.v(31[16:25])
+    defparam i12_4_lut.LUT_INIT = 16'ha3aa;
+    SB_LUT4 i1_2_lut_adj_173 (.I0(r_SM_Main[1]), .I1(r_Clock_Count[0]), 
+            .I2(GND_net), .I3(GND_net), .O(n4));   // verilog/uart_tx.v(31[16:25])
+    defparam i1_2_lut_adj_173.LUT_INIT = 16'h8888;
+    SB_LUT4 i15850_4_lut (.I0(n57), .I1(n4), .I2(n17209), .I3(\r_SM_Main[2] ), 
+            .O(n18648));   // verilog/uart_tx.v(31[16:25])
+    defparam i15850_4_lut.LUT_INIT = 16'h0080;
+    SB_LUT4 i15403_2_lut (.I0(r_SM_Main[0]), .I1(\r_SM_Main[2] ), .I2(GND_net), 
+            .I3(GND_net), .O(n18374));
+    defparam i15403_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i51_4_lut (.I0(n18648), .I1(\r_SM_Main[2] ), .I2(r_SM_Main[0]), 
+            .I3(n36), .O(n31));   // verilog/uart_tx.v(31[16:25])
+    defparam i51_4_lut.LUT_INIT = 16'h0a3a;
+    SB_LUT4 i50_4_lut (.I0(\r_SM_Main_2__N_1837[0] ), .I1(n17209), .I2(r_SM_Main[1]), 
+            .I3(n34), .O(n28));   // verilog/uart_tx.v(31[16:25])
+    defparam i50_4_lut.LUT_INIT = 16'hca0a;
+    SB_LUT4 i1_4_lut_adj_174 (.I0(n28), .I1(n31), .I2(n18374), .I3(n34), 
+            .O(n17975));   // verilog/uart_tx.v(31[16:25])
+    defparam i1_4_lut_adj_174.LUT_INIT = 16'h0ace;
+    SB_LUT4 i1_4_lut_adj_175 (.I0(\r_SM_Main[2] ), .I1(r_SM_Main[0]), .I2(r_SM_Main[1]), 
+            .I3(r_SM_Main_2__N_1834[1]), .O(n11331));
+    defparam i1_4_lut_adj_175.LUT_INIT = 16'h1101;
+    SB_LUT4 i1_2_lut_3_lut (.I0(r_Clock_Count[0]), .I1(n57), .I2(n34), 
+            .I3(GND_net), .O(r_SM_Main_2__N_1834[1]));   // verilog/uart_tx.v(32[16:29])
+    defparam i1_2_lut_3_lut.LUT_INIT = 16'hf8f8;
+    SB_LUT4 i1_2_lut_3_lut_adj_176 (.I0(r_SM_Main[1]), .I1(\r_SM_Main[2] ), 
+            .I2(r_SM_Main[0]), .I3(GND_net), .O(n11));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i1_2_lut_3_lut_adj_176.LUT_INIT = 16'hf2f2;
+    SB_LUT4 i1_4_lut_adj_177 (.I0(n16065), .I1(r_Clock_Count[0]), .I2(n312[0]), 
+            .I3(\r_SM_Main[2] ), .O(n11990));
+    defparam i1_4_lut_adj_177.LUT_INIT = 16'h88a0;
+    SB_LUT4 i13358_3_lut (.I0(r_Clock_Count[8]), .I1(n18694), .I2(\r_SM_Main[2] ), 
+            .I3(GND_net), .O(n11991));
+    defparam i13358_3_lut.LUT_INIT = 16'hacac;
+    SB_LUT4 i2_3_lut_4_lut (.I0(r_SM_Main[0]), .I1(\r_SM_Main_2__N_1837[0] ), 
+            .I2(r_SM_Main[1]), .I3(\r_SM_Main[2] ), .O(n10424));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i2_3_lut_4_lut.LUT_INIT = 16'h0004;
+    SB_LUT4 i1_4_lut_adj_178 (.I0(n7), .I1(r_Bit_Index[2]), .I2(n5715), 
+            .I3(n11331), .O(n11983));
+    defparam i1_4_lut_adj_178.LUT_INIT = 16'h1444;
+    SB_LUT4 i3003_2_lut (.I0(r_Bit_Index[1]), .I1(r_Bit_Index[0]), .I2(GND_net), 
+            .I3(GND_net), .O(n5715));   // verilog/uart_tx.v(98[36:51])
+    defparam i3003_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_3_lut_adj_179 (.I0(n11331), .I1(r_SM_Main[1]), .I2(n17209), 
+            .I3(GND_net), .O(n7));
+    defparam i1_3_lut_adj_179.LUT_INIT = 16'ha2a2;
+    SB_LUT4 i1_4_lut_adj_180 (.I0(n7), .I1(r_Bit_Index[1]), .I2(r_Bit_Index[0]), 
+            .I3(n11331), .O(n11986));
+    defparam i1_4_lut_adj_180.LUT_INIT = 16'h1444;
+    SB_LUT4 i13370_1_lut (.I0(tx_o), .I1(GND_net), .I2(GND_net), .I3(GND_net), 
+            .O(tx_enable));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i13370_1_lut.LUT_INIT = 16'h5555;
     
 endmodule
 //
 // Verilog Description of module uart_tx_U0
 //
 
-module uart_tx_U0 (n11096, CLK_c, r_Bit_Index, n4, GND_net, n18014, 
-            r_SM_Main, n11545, tx2_data, n11523, VCC_net, n3, \r_SM_Main_2__N_2034[0] , 
-            \r_SM_Main_2__N_2031[1] , n6707, n17689, n11546, n11549, 
-            n18908, n11429, n11428, tx2_active, n11427, tx2_o, tx2_enable) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
-    output n11096;
-    input CLK_c;
-    output [2:0]r_Bit_Index;
-    output n4;
+module uart_tx_U0 (GND_net, n11302, CLK_c, n12005, VCC_net, r_Bit_Index, 
+            tx2_data, n5759, n11364, n11546, n11778, \r_SM_Main_2__N_1837[0] , 
+            n11995, tx2_active, n11645, tx2_o, n3, tx2_enable) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
     input GND_net;
-    output n18014;
-    output [2:0]r_SM_Main;
-    output n11545;
-    input [7:0]tx2_data;
-    input n11523;
+    output n11302;
+    input CLK_c;
+    input n12005;
     input VCC_net;
-    output n3;
-    input \r_SM_Main_2__N_2034[0] ;
-    output \r_SM_Main_2__N_2031[1] ;
-    output n6707;
-    output n17689;
-    input n11546;
-    input n11549;
-    input n18908;
-    input n11429;
-    input n11428;
+    output [2:0]r_Bit_Index;
+    input [7:0]tx2_data;
+    output n5759;
+    output n11364;
+    output n11546;
+    input n11778;
+    input \r_SM_Main_2__N_1837[0] ;
+    input n11995;
     output tx2_active;
-    input n11427;
+    input n11645;
     output tx2_o;
+    output n3;
     output tx2_enable;
     
     wire CLK_c /* synthesis SET_AS_NETWORK=CLK_c, is_clock=1 */ ;   // verilog/TinyFPGA_B.v(3[9:12])
     wire [8:0]n312;
     wire [8:0]r_Clock_Count;   // verilog/uart_tx.v(32[16:29])
     
-    wire n11312, n13800, n16546, n16545, n16544, n18717, n18062, 
-        n18061, o_Tx_Serial_N_2062, n9639;
+    wire n17019, n11512, n17020, n17018, n17017, n17016, n19103;
     wire [7:0]r_Tx_Data;   // verilog/uart_tx.v(34[16:25])
     
-    wire n16543, n16542, n16541, n16540, n16539, n12769, n12775, 
-        n14, n18164, n18163, n11539, n10;
+    wire n19106, n10449;
+    wire [2:0]r_SM_Main;   // verilog/uart_tx.v(31[16:25])
     
-    SB_DFFESR r_Clock_Count__i3 (.Q(r_Clock_Count[3]), .C(CLK_c), .E(n11096), 
-            .D(n312[3]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 i1_2_lut (.I0(r_Bit_Index[0]), .I1(r_Bit_Index[1]), .I2(GND_net), 
-            .I3(GND_net), .O(n4));
-    defparam i1_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i15159_3_lut (.I0(n18014), .I1(n13800), .I2(r_SM_Main[1]), 
-            .I3(GND_net), .O(n11545));
-    defparam i15159_3_lut.LUT_INIT = 16'hbaba;
-    SB_DFFESR r_Clock_Count__i4 (.Q(r_Clock_Count[4]), .C(CLK_c), .E(n11096), 
-            .D(n312[4]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i5 (.Q(r_Clock_Count[5]), .C(CLK_c), .E(n11096), 
-            .D(n312[5]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i6 (.Q(r_Clock_Count[6]), .C(CLK_c), .E(n11096), 
-            .D(n312[6]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i7 (.Q(r_Clock_Count[7]), .C(CLK_c), .E(n11096), 
-            .D(n312[7]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFESR r_Clock_Count__i8 (.Q(r_Clock_Count[8]), .C(CLK_c), .E(n11096), 
-            .D(n312[8]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 add_59_10_lut (.I0(GND_net), .I1(r_Clock_Count[8]), .I2(GND_net), 
-            .I3(n16546), .O(n312[8])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_10_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 add_59_9_lut (.I0(GND_net), .I1(r_Clock_Count[7]), .I2(GND_net), 
-            .I3(n16545), .O(n312[7])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_9_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_9 (.CI(n16545), .I0(r_Clock_Count[7]), .I1(GND_net), 
-            .CO(n16546));
-    SB_DFFESR r_Clock_Count__i0 (.Q(r_Clock_Count[0]), .C(CLK_c), .E(n11096), 
-            .D(n312[0]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 add_59_8_lut (.I0(GND_net), .I1(r_Clock_Count[6]), .I2(GND_net), 
-            .I3(n16544), .O(n312[6])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_8_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_8 (.CI(n16544), .I0(r_Clock_Count[6]), .I1(GND_net), 
-            .CO(n16545));
-    SB_LUT4 n18717_bdd_4_lut (.I0(n18717), .I1(n18062), .I2(n18061), .I3(r_Bit_Index[2]), 
-            .O(o_Tx_Serial_N_2062));
-    defparam n18717_bdd_4_lut.LUT_INIT = 16'haad8;
-    SB_DFFE r_Tx_Data_i0 (.Q(r_Tx_Data[0]), .C(CLK_c), .E(n9639), .D(tx2_data[0]));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 add_59_7_lut (.I0(GND_net), .I1(r_Clock_Count[5]), .I2(GND_net), 
-            .I3(n16543), .O(n312[5])) /* synthesis syn_instantiated=1 */ ;
-    defparam add_59_7_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_7 (.CI(n16543), .I0(r_Clock_Count[5]), .I1(GND_net), 
-            .CO(n16544));
+    wire n15059, n19091, n19094;
+    wire [2:0]r_SM_Main_2__N_1834;
+    
+    wire n18254, n18085, n19111, n180, n17971, o_Tx_Serial_N_1865, 
+        n9670, n10, n17211, n17023, n17022, n17021;
+    
     SB_LUT4 add_59_6_lut (.I0(GND_net), .I1(r_Clock_Count[4]), .I2(GND_net), 
-            .I3(n16542), .O(n312[4])) /* synthesis syn_instantiated=1 */ ;
+            .I3(n17019), .O(n312[4])) /* synthesis syn_instantiated=1 */ ;
     defparam add_59_6_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_6 (.CI(n16542), .I0(r_Clock_Count[4]), .I1(GND_net), 
-            .CO(n16543));
+    SB_DFFESR r_Clock_Count__i1 (.Q(r_Clock_Count[1]), .C(CLK_c), .E(n11302), 
+            .D(n312[1]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_CARRY add_59_6 (.CI(n17019), .I0(r_Clock_Count[4]), .I1(GND_net), 
+            .CO(n17020));
+    SB_DFFESR r_Clock_Count__i2 (.Q(r_Clock_Count[2]), .C(CLK_c), .E(n11302), 
+            .D(n312[2]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFESR r_Clock_Count__i3 (.Q(r_Clock_Count[3]), .C(CLK_c), .E(n11302), 
+            .D(n312[3]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
     SB_LUT4 add_59_5_lut (.I0(GND_net), .I1(r_Clock_Count[3]), .I2(GND_net), 
-            .I3(n16541), .O(n312[3])) /* synthesis syn_instantiated=1 */ ;
+            .I3(n17018), .O(n312[3])) /* synthesis syn_instantiated=1 */ ;
     defparam add_59_5_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_5 (.CI(n16541), .I0(r_Clock_Count[3]), .I1(GND_net), 
-            .CO(n16542));
+    SB_DFFESR r_Clock_Count__i4 (.Q(r_Clock_Count[4]), .C(CLK_c), .E(n11302), 
+            .D(n312[4]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_CARRY add_59_5 (.CI(n17018), .I0(r_Clock_Count[3]), .I1(GND_net), 
+            .CO(n17019));
     SB_LUT4 add_59_4_lut (.I0(GND_net), .I1(r_Clock_Count[2]), .I2(GND_net), 
-            .I3(n16540), .O(n312[2])) /* synthesis syn_instantiated=1 */ ;
+            .I3(n17017), .O(n312[2])) /* synthesis syn_instantiated=1 */ ;
     defparam add_59_4_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_4 (.CI(n16540), .I0(r_Clock_Count[2]), .I1(GND_net), 
-            .CO(n16541));
+    SB_DFFESR r_Clock_Count__i5 (.Q(r_Clock_Count[5]), .C(CLK_c), .E(n11302), 
+            .D(n312[5]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_CARRY add_59_4 (.CI(n17017), .I0(r_Clock_Count[2]), .I1(GND_net), 
+            .CO(n17018));
     SB_LUT4 add_59_3_lut (.I0(GND_net), .I1(r_Clock_Count[1]), .I2(GND_net), 
-            .I3(n16539), .O(n312[1])) /* synthesis syn_instantiated=1 */ ;
+            .I3(n17016), .O(n312[1])) /* synthesis syn_instantiated=1 */ ;
     defparam add_59_3_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_59_3 (.CI(n16539), .I0(r_Clock_Count[1]), .I1(GND_net), 
-            .CO(n16540));
-    SB_DFF r_Bit_Index_i0 (.Q(r_Bit_Index[0]), .C(CLK_c), .D(n11523));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFESR r_Clock_Count__i6 (.Q(r_Clock_Count[6]), .C(CLK_c), .E(n11302), 
+            .D(n312[6]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFESR r_Clock_Count__i7 (.Q(r_Clock_Count[7]), .C(CLK_c), .E(n11302), 
+            .D(n312[7]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Bit_Index_i1 (.Q(r_Bit_Index[1]), .C(CLK_c), .E(VCC_net), 
+            .D(n12005));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 n19103_bdd_4_lut (.I0(n19103), .I1(r_Tx_Data[5]), .I2(r_Tx_Data[4]), 
+            .I3(r_Bit_Index[1]), .O(n19106));
+    defparam n19103_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_CARRY add_59_3 (.CI(n17016), .I0(r_Clock_Count[1]), .I1(GND_net), 
+            .CO(n17017));
     SB_LUT4 add_59_2_lut (.I0(GND_net), .I1(r_Clock_Count[0]), .I2(GND_net), 
             .I3(VCC_net), .O(n312[0])) /* synthesis syn_instantiated=1 */ ;
     defparam add_59_2_lut.LUT_INIT = 16'hC33C;
     SB_CARRY add_59_2 (.CI(VCC_net), .I0(r_Clock_Count[0]), .I1(GND_net), 
-            .CO(n16539));
-    SB_LUT4 r_SM_Main_2__I_0_56_i3_3_lut (.I0(r_SM_Main[0]), .I1(o_Tx_Serial_N_2062), 
-            .I2(r_SM_Main[1]), .I3(GND_net), .O(n3));   // verilog/uart_tx.v(43[7] 142[14])
-    defparam r_SM_Main_2__I_0_56_i3_3_lut.LUT_INIT = 16'he5e5;
-    SB_LUT4 i4167_4_lut (.I0(\r_SM_Main_2__N_2034[0] ), .I1(n13800), .I2(r_SM_Main[1]), 
-            .I3(\r_SM_Main_2__N_2031[1] ), .O(n6707));   // verilog/uart_tx.v(43[7] 142[14])
-    defparam i4167_4_lut.LUT_INIT = 16'hca0a;
-    SB_LUT4 i1_4_lut_4_lut (.I0(n12769), .I1(r_SM_Main[2]), .I2(n12775), 
-            .I3(n14), .O(n11312));
-    defparam i1_4_lut_4_lut.LUT_INIT = 16'h3233;
-    SB_LUT4 i15710_4_lut_4_lut (.I0(\r_SM_Main_2__N_2031[1] ), .I1(r_SM_Main[0]), 
-            .I2(r_SM_Main[1]), .I3(\r_SM_Main_2__N_2034[0] ), .O(n17689));
-    defparam i15710_4_lut_4_lut.LUT_INIT = 16'h8380;
-    SB_LUT4 i15303_3_lut (.I0(r_Tx_Data[6]), .I1(r_Tx_Data[7]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n18164));
-    defparam i15303_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i15302_3_lut (.I0(r_Tx_Data[4]), .I1(r_Tx_Data[5]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n18163));
-    defparam i15302_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i8760_3_lut_4_lut_4_lut (.I0(\r_SM_Main_2__N_2031[1] ), .I1(r_SM_Main[0]), 
-            .I2(r_SM_Main[1]), .I3(r_SM_Main[2]), .O(n11539));
-    defparam i8760_3_lut_4_lut_4_lut.LUT_INIT = 16'h0078;
-    SB_DFFE r_Tx_Data_i1 (.Q(r_Tx_Data[1]), .C(CLK_c), .E(n9639), .D(tx2_data[1]));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFE r_Tx_Data_i2 (.Q(r_Tx_Data[2]), .C(CLK_c), .E(n9639), .D(tx2_data[2]));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFE r_Tx_Data_i3 (.Q(r_Tx_Data[3]), .C(CLK_c), .E(n9639), .D(tx2_data[3]));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFE r_Tx_Data_i4 (.Q(r_Tx_Data[4]), .C(CLK_c), .E(n9639), .D(tx2_data[4]));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFE r_Tx_Data_i5 (.Q(r_Tx_Data[5]), .C(CLK_c), .E(n9639), .D(tx2_data[5]));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFE r_Tx_Data_i6 (.Q(r_Tx_Data[6]), .C(CLK_c), .E(n9639), .D(tx2_data[6]));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFFE r_Tx_Data_i7 (.Q(r_Tx_Data[7]), .C(CLK_c), .E(n9639), .D(tx2_data[7]));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 i15200_3_lut (.I0(r_Tx_Data[0]), .I1(r_Tx_Data[1]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n18061));
-    defparam i15200_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 i15201_3_lut (.I0(r_Tx_Data[2]), .I1(r_Tx_Data[3]), .I2(r_Bit_Index[0]), 
-            .I3(GND_net), .O(n18062));
-    defparam i15201_3_lut.LUT_INIT = 16'hcaca;
-    SB_DFFESR r_Clock_Count__i1 (.Q(r_Clock_Count[1]), .C(CLK_c), .E(n11096), 
-            .D(n312[1]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Bit_Index_i2 (.Q(r_Bit_Index[2]), .C(CLK_c), .D(n11546));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Bit_Index_i1 (.Q(r_Bit_Index[1]), .C(CLK_c), .D(n11549));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_SM_Main_i2 (.Q(r_SM_Main[2]), .C(CLK_c), .D(n18908));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_SM_Main_i1 (.Q(r_SM_Main[1]), .C(CLK_c), .D(n11539));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 i15154_3_lut_4_lut (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(r_SM_Main[1]), 
-            .I3(\r_SM_Main_2__N_2031[1] ), .O(n18014));
-    defparam i15154_3_lut_4_lut.LUT_INIT = 16'heefe;
-    SB_LUT4 i2_3_lut_4_lut (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(r_SM_Main[1]), 
-            .I3(\r_SM_Main_2__N_2034[0] ), .O(n9639));
-    defparam i2_3_lut_4_lut.LUT_INIT = 16'h0100;
-    SB_LUT4 i4_4_lut (.I0(r_Clock_Count[4]), .I1(r_Clock_Count[0]), .I2(r_Clock_Count[1]), 
-            .I3(r_Clock_Count[2]), .O(n10));   // verilog/uart_tx.v(40[10] 143[8])
+            .CO(n17016));
+    SB_DFFE r_Tx_Data_i0 (.Q(r_Tx_Data[0]), .C(CLK_c), .E(n10449), .D(tx2_data[0]));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 i3047_2_lut (.I0(r_Bit_Index[1]), .I1(r_Bit_Index[0]), .I2(GND_net), 
+            .I3(GND_net), .O(n5759));   // verilog/uart_tx.v(98[36:51])
+    defparam i3047_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i8760_3_lut (.I0(n11364), .I1(r_SM_Main[1]), .I2(n15059), 
+            .I3(GND_net), .O(n11546));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i8760_3_lut.LUT_INIT = 16'ha2a2;
+    SB_LUT4 r_Bit_Index_0__bdd_4_lut_16112 (.I0(r_Bit_Index[0]), .I1(r_Tx_Data[2]), 
+            .I2(r_Tx_Data[3]), .I3(r_Bit_Index[1]), .O(n19091));
+    defparam r_Bit_Index_0__bdd_4_lut_16112.LUT_INIT = 16'he4aa;
+    SB_LUT4 n19091_bdd_4_lut (.I0(n19091), .I1(r_Tx_Data[1]), .I2(r_Tx_Data[0]), 
+            .I3(r_Bit_Index[1]), .O(n19094));
+    defparam n19091_bdd_4_lut.LUT_INIT = 16'haad8;
+    SB_DFFESR r_Clock_Count__i8 (.Q(r_Clock_Count[8]), .C(CLK_c), .E(n11302), 
+            .D(n312[8]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Bit_Index_i0 (.Q(r_Bit_Index[0]), .C(CLK_c), .E(VCC_net), 
+            .D(n11778));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 i15992_3_lut_4_lut_4_lut (.I0(r_SM_Main[0]), .I1(r_SM_Main_2__N_1834[1]), 
+            .I2(r_SM_Main[1]), .I3(\r_SM_Main_2__N_1837[0] ), .O(n18254));
+    defparam i15992_3_lut_4_lut_4_lut.LUT_INIT = 16'h8580;
+    SB_LUT4 r_Bit_Index_0__bdd_4_lut (.I0(r_Bit_Index[0]), .I1(r_Tx_Data[6]), 
+            .I2(r_Tx_Data[7]), .I3(r_Bit_Index[1]), .O(n19103));
+    defparam r_Bit_Index_0__bdd_4_lut.LUT_INIT = 16'he4aa;
+    SB_DFF r_SM_Main_i1 (.Q(r_SM_Main[1]), .C(CLK_c), .D(n18085));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Bit_Index_i2 (.Q(r_Bit_Index[2]), .C(CLK_c), .E(VCC_net), 
+            .D(n11995));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF r_SM_Main_i2 (.Q(r_SM_Main[2]), .C(CLK_c), .D(n19111));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF r_SM_Main_i0 (.Q(r_SM_Main[0]), .C(CLK_c), .D(n180));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF r_Tx_Active_47 (.Q(tx2_active), .C(CLK_c), .D(n17971));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFF o_Tx_Serial_45 (.Q(tx2_o), .C(CLK_c), .D(n11645));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 i1_4_lut_4_lut (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(r_SM_Main_2__N_1834[1]), 
+            .I3(r_SM_Main[1]), .O(n11512));   // verilog/uart_tx.v(31[16:25])
+    defparam i1_4_lut_4_lut.LUT_INIT = 16'h5051;
+    SB_LUT4 i3_4_lut_4_lut (.I0(r_SM_Main[1]), .I1(r_SM_Main[0]), .I2(r_SM_Main[2]), 
+            .I3(r_SM_Main_2__N_1834[1]), .O(n19111));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i3_4_lut_4_lut.LUT_INIT = 16'h0800;
+    SB_LUT4 i12372182_i1_3_lut (.I0(n19094), .I1(n19106), .I2(r_Bit_Index[2]), 
+            .I3(GND_net), .O(o_Tx_Serial_N_1865));
+    defparam i12372182_i1_3_lut.LUT_INIT = 16'hcaca;
+    SB_LUT4 i10980_3_lut (.I0(o_Tx_Serial_N_1865), .I1(r_SM_Main[1]), .I2(r_SM_Main[0]), 
+            .I3(GND_net), .O(n3));   // verilog/uart_tx.v(31[16:25])
+    defparam i10980_3_lut.LUT_INIT = 16'hcbcb;
+    SB_LUT4 i6979_4_lut (.I0(\r_SM_Main_2__N_1837[0] ), .I1(n15059), .I2(r_SM_Main[1]), 
+            .I3(r_SM_Main_2__N_1834[1]), .O(n9670));   // verilog/uart_tx.v(43[7] 142[14])
+    defparam i6979_4_lut.LUT_INIT = 16'hca0a;
+    SB_DFFESR r_Clock_Count__i0 (.Q(r_Clock_Count[0]), .C(CLK_c), .E(n11302), 
+            .D(n312[0]), .R(n11512));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i1 (.Q(r_Tx_Data[1]), .C(CLK_c), .E(n10449), .D(tx2_data[1]));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i2 (.Q(r_Tx_Data[2]), .C(CLK_c), .E(n10449), .D(tx2_data[2]));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i3 (.Q(r_Tx_Data[3]), .C(CLK_c), .E(n10449), .D(tx2_data[3]));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i4 (.Q(r_Tx_Data[4]), .C(CLK_c), .E(n10449), .D(tx2_data[4]));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i5 (.Q(r_Tx_Data[5]), .C(CLK_c), .E(n10449), .D(tx2_data[5]));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i6 (.Q(r_Tx_Data[6]), .C(CLK_c), .E(n10449), .D(tx2_data[6]));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_DFFE r_Tx_Data_i7 (.Q(r_Tx_Data[7]), .C(CLK_c), .E(n10449), .D(tx2_data[7]));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 i1_4_lut_4_lut_adj_170 (.I0(r_SM_Main[2]), .I1(n9670), .I2(r_SM_Main_2__N_1834[1]), 
+            .I3(r_SM_Main[0]), .O(n180));   // verilog/uart_tx.v(40[10] 143[8])
+    defparam i1_4_lut_4_lut_adj_170.LUT_INIT = 16'h0544;
+    SB_LUT4 i12_4_lut_4_lut (.I0(tx2_active), .I1(r_SM_Main[1]), .I2(r_SM_Main[2]), 
+            .I3(n18254), .O(n17971));   // verilog/uart_tx.v(31[16:25])
+    defparam i12_4_lut_4_lut.LUT_INIT = 16'ha3aa;
+    SB_LUT4 i2_3_lut_4_lut_4_lut (.I0(\r_SM_Main_2__N_1837[0] ), .I1(r_SM_Main[0]), 
+            .I2(r_SM_Main[1]), .I3(r_SM_Main[2]), .O(n10449));   // verilog/uart_tx.v(43[7] 142[14])
+    defparam i2_3_lut_4_lut_4_lut.LUT_INIT = 16'h0002;
+    SB_LUT4 i1_3_lut_4_lut_4_lut (.I0(r_SM_Main[0]), .I1(r_SM_Main_2__N_1834[1]), 
+            .I2(r_SM_Main[1]), .I3(r_SM_Main[2]), .O(n18085));
+    defparam i1_3_lut_4_lut_4_lut.LUT_INIT = 16'h0078;
+    SB_LUT4 i4_4_lut (.I0(r_Clock_Count[5]), .I1(r_Clock_Count[0]), .I2(r_Clock_Count[2]), 
+            .I3(r_Clock_Count[1]), .O(n10));   // verilog/uart_tx.v(32[16:29])
     defparam i4_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i5_3_lut (.I0(r_Clock_Count[5]), .I1(n10), .I2(r_Clock_Count[3]), 
-            .I3(GND_net), .O(n12775));   // verilog/uart_tx.v(40[10] 143[8])
+    SB_LUT4 i5_3_lut (.I0(r_Clock_Count[3]), .I1(n10), .I2(r_Clock_Count[4]), 
+            .I3(GND_net), .O(n17211));   // verilog/uart_tx.v(32[16:29])
     defparam i5_3_lut.LUT_INIT = 16'h8080;
-    SB_LUT4 i2_3_lut (.I0(r_Clock_Count[8]), .I1(r_Clock_Count[7]), .I2(r_Clock_Count[6]), 
-            .I3(GND_net), .O(n12769));   // verilog/uart_tx.v(40[10] 143[8])
-    defparam i2_3_lut.LUT_INIT = 16'hfefe;
-    SB_LUT4 r_Bit_Index_1__bdd_4_lut (.I0(r_Bit_Index[1]), .I1(n18163), 
-            .I2(n18164), .I3(r_Bit_Index[2]), .O(n18717));
-    defparam r_Bit_Index_1__bdd_4_lut.LUT_INIT = 16'he4aa;
-    SB_LUT4 i34_2_lut (.I0(r_SM_Main[1]), .I1(r_SM_Main[0]), .I2(GND_net), 
-            .I3(GND_net), .O(n14));
-    defparam i34_2_lut.LUT_INIT = 16'heeee;
-    SB_DFF r_SM_Main_i0 (.Q(r_SM_Main[0]), .C(CLK_c), .D(n11429));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF r_Tx_Active_47 (.Q(tx2_active), .C(CLK_c), .D(n11428));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_DFF o_Tx_Serial_45 (.Q(tx2_o), .C(CLK_c), .D(n11427));   // verilog/uart_tx.v(40[10] 143[8])
-    SB_LUT4 i13_1_lut (.I0(r_SM_Main[2]), .I1(GND_net), .I2(GND_net), 
-            .I3(GND_net), .O(n11096));
-    defparam i13_1_lut.LUT_INIT = 16'h5555;
-    SB_LUT4 i11346_2_lut_4_lut (.I0(r_Clock_Count[5]), .I1(n10), .I2(r_Clock_Count[3]), 
-            .I3(n12769), .O(\r_SM_Main_2__N_2031[1] ));
-    defparam i11346_2_lut_4_lut.LUT_INIT = 16'hff80;
-    SB_LUT4 i2_2_lut_3_lut (.I0(r_Bit_Index[2]), .I1(r_Bit_Index[0]), .I2(r_Bit_Index[1]), 
-            .I3(GND_net), .O(n13800));
+    SB_LUT4 i3_4_lut (.I0(r_Clock_Count[6]), .I1(r_Clock_Count[8]), .I2(n17211), 
+            .I3(r_Clock_Count[7]), .O(r_SM_Main_2__N_1834[1]));   // verilog/uart_tx.v(32[16:29])
+    defparam i3_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i1_4_lut_4_lut_adj_171 (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), 
+            .I2(r_SM_Main[1]), .I3(r_SM_Main_2__N_1834[1]), .O(n11364));
+    defparam i1_4_lut_4_lut_adj_171.LUT_INIT = 16'h1101;
+    SB_LUT4 i2_2_lut_3_lut (.I0(r_Bit_Index[2]), .I1(r_Bit_Index[1]), .I2(r_Bit_Index[0]), 
+            .I3(GND_net), .O(n15059));
     defparam i2_2_lut_3_lut.LUT_INIT = 16'h8080;
-    SB_DFFESR r_Clock_Count__i2 (.Q(r_Clock_Count[2]), .C(CLK_c), .E(n11096), 
-            .D(n312[2]), .R(n11312));   // verilog/uart_tx.v(40[10] 143[8])
     SB_LUT4 o_Tx_Serial_I_0_1_lut (.I0(tx2_o), .I1(GND_net), .I2(GND_net), 
             .I3(GND_net), .O(tx2_enable));   // verilog/uart_tx.v(38[24:36])
     defparam o_Tx_Serial_I_0_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 i15_1_lut (.I0(r_SM_Main[2]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n11302));
+    defparam i15_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 add_59_10_lut (.I0(GND_net), .I1(r_Clock_Count[8]), .I2(GND_net), 
+            .I3(n17023), .O(n312[8])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_10_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_59_9_lut (.I0(GND_net), .I1(r_Clock_Count[7]), .I2(GND_net), 
+            .I3(n17022), .O(n312[7])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_9_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_59_9 (.CI(n17022), .I0(r_Clock_Count[7]), .I1(GND_net), 
+            .CO(n17023));
+    SB_LUT4 add_59_8_lut (.I0(GND_net), .I1(r_Clock_Count[6]), .I2(GND_net), 
+            .I3(n17021), .O(n312[6])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_8_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_59_8 (.CI(n17021), .I0(r_Clock_Count[6]), .I1(GND_net), 
+            .CO(n17022));
+    SB_LUT4 add_59_7_lut (.I0(GND_net), .I1(r_Clock_Count[5]), .I2(GND_net), 
+            .I3(n17020), .O(n312[5])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_59_7_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_59_7 (.CI(n17020), .I0(r_Clock_Count[5]), .I1(GND_net), 
+            .CO(n17021));
     
 endmodule
 //
 // Verilog Description of module uart_rx
 //
 
-module uart_rx (GND_net, CLK_c, r_Rx_Data, rx_data, rx_data_ready, 
-            rx_i, n151, n12527, n158, n164, \FRAME_MATCHER.i[1] , 
-            \FRAME_MATCHER.i[2] , \FRAME_MATCHER.i[0] , n16802, n11058, 
-            \data_in_frame[1] , n11466, n11467, n11468, n11469, n11470, 
-            n11471, n11472, n11473, n120, n12582, n12600, n16797, 
-            n10, n1166, \data_in_frame[3] , n11450, n11451, n11452, 
-            n11453, n11454, n11455, n11456, VCC_net, n27, n2, 
-            n29, n2_adj_1, n11457, n18631, n135, n4, n11412, n11409, 
-            n11408, n11407, n11406) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
+module uart_rx (r_SM_Main, \r_SM_Main_2__N_1891[2] , GND_net, r_Rx_Data, 
+            n11218, n4, n10974, n18386, n15, n219, \r_Clock_Count[7] , 
+            n220, \r_Clock_Count[6] , n12, VCC_net, CLK_c, n12_adj_1, 
+            rx_i, n222, \r_Clock_Count[4] , n12_adj_2, n12_adj_3, 
+            \r_Clock_Count[3] , n223, n224, \r_Clock_Count[2] , n11799, 
+            rx_data, n17769, rx_data_ready, n225, \r_Clock_Count[1] , 
+            n12_adj_4, n12_adj_5, n18342, n12012, n11681, n11644, 
+            n11643, n11637, n11622, n4_adj_6, n4_adj_7, n11580, 
+            n11162, n14605) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
+    output [2:0]r_SM_Main;
+    output \r_SM_Main_2__N_1891[2] ;
     input GND_net;
-    input CLK_c;
     output r_Rx_Data;
-    output [7:0]rx_data;
-    output rx_data_ready;
-    input rx_i;
-    output n151;
-    output n12527;
-    output n158;
-    output n164;
-    input \FRAME_MATCHER.i[1] ;
-    input \FRAME_MATCHER.i[2] ;
-    input \FRAME_MATCHER.i[0] ;
-    output n16802;
-    output n11058;
-    input [7:0]\data_in_frame[1] ;
-    output n11466;
-    output n11467;
-    output n11468;
-    output n11469;
-    output n11470;
-    output n11471;
-    output n11472;
-    output n11473;
-    output n120;
-    output n12582;
-    output n12600;
-    output n16797;
-    input n10;
-    input n1166;
-    input [7:0]\data_in_frame[3] ;
-    output n11450;
-    output n11451;
-    output n11452;
-    output n11453;
-    output n11454;
-    output n11455;
-    output n11456;
-    input VCC_net;
-    input n27;
-    output n2;
-    input n29;
-    output n2_adj_1;
-    output n11457;
-    output n18631;
-    output n135;
+    output n11218;
     output n4;
-    input n11412;
-    input n11409;
-    input n11408;
-    input n11407;
-    input n11406;
+    output n10974;
+    input n18386;
+    output n15;
+    output n219;
+    output \r_Clock_Count[7] ;
+    output n220;
+    output \r_Clock_Count[6] ;
+    input n12;
+    input VCC_net;
+    input CLK_c;
+    input n12_adj_1;
+    input rx_i;
+    output n222;
+    output \r_Clock_Count[4] ;
+    input n12_adj_2;
+    input n12_adj_3;
+    output \r_Clock_Count[3] ;
+    output n223;
+    output n224;
+    output \r_Clock_Count[2] ;
+    input n11799;
+    output [7:0]rx_data;
+    input n17769;
+    output rx_data_ready;
+    output n225;
+    output \r_Clock_Count[1] ;
+    input n12_adj_4;
+    input n12_adj_5;
+    output n18342;
+    input n12012;
+    input n11681;
+    input n11644;
+    input n11643;
+    input n11637;
+    input n11622;
+    output n4_adj_6;
+    output n4_adj_7;
+    input n11580;
+    output n11162;
+    output n14605;
     
     wire CLK_c /* synthesis SET_AS_NETWORK=CLK_c, is_clock=1 */ ;   // verilog/TinyFPGA_B.v(3[9:12])
-    wire [7:0]r_Clock_Count;   // verilog/uart_rx.v(32[17:30])
     
-    wire n17990, n18024, n73, n12828;
-    wire [31:0]n194;
-    
-    wire n11082, n12819;
-    wire [2:0]r_SM_Main;   // verilog/uart_rx.v(36[17:26])
-    
-    wire n5, n10988, n12624;
+    wire n11358;
     wire [2:0]r_Bit_Index;   // verilog/uart_rx.v(33[17:28])
     
-    wire n11674;
-    wire [2:0]r_SM_Main_2__N_2088;
+    wire n17755, n53;
+    wire [7:0]r_Clock_Count;   // verilog/uart_rx.v(32[17:30])
     
-    wire n57, n15905, n6, n18211, n12, n17347, n17419, n4_c, 
-        n167, n17475, r_Rx_Data_R, n11675, n13859, n161, n11, 
-        n17702, n17704, n17307, n18194, n18196, n12552, n12553, 
-        n16538, n18732, n11426, n16537, n110, n11041, n17666, 
-        n16536, n16535, n16534, n16533, n16532, n15902, n12963, 
-        n129, n18729, n18304, n18303;
+    wire n18216, n21, n93, n73, n43, n6, n10999, n17015, n17014, 
+        r_Rx_Data_R;
+    wire [31:0]n194;
     
-    SB_LUT4 i15163_4_lut (.I0(r_Clock_Count[3]), .I1(r_Clock_Count[4]), 
-            .I2(r_Clock_Count[0]), .I3(n17990), .O(n18024));
-    defparam i15163_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i2_3_lut (.I0(n18024), .I1(n73), .I2(r_Clock_Count[5]), .I3(GND_net), 
-            .O(n12828));
-    defparam i2_3_lut.LUT_INIT = 16'hfdfd;
-    SB_LUT4 i15131_2_lut (.I0(r_Clock_Count[2]), .I1(r_Clock_Count[1]), 
-            .I2(GND_net), .I3(GND_net), .O(n17990));
-    defparam i15131_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut (.I0(r_Clock_Count[6]), .I1(r_Clock_Count[7]), .I2(GND_net), 
-            .I3(GND_net), .O(n73));   // verilog/uart_rx.v(32[17:30])
-    defparam i1_2_lut.LUT_INIT = 16'heeee;
-    SB_DFFESR r_Clock_Count__i1 (.Q(r_Clock_Count[1]), .C(CLK_c), .E(n11082), 
-            .D(n194[1]), .R(n12819));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFFESR r_Clock_Count__i2 (.Q(r_Clock_Count[2]), .C(CLK_c), .E(n11082), 
-            .D(n194[2]), .R(n12819));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFFESR r_Clock_Count__i3 (.Q(r_Clock_Count[3]), .C(CLK_c), .E(n11082), 
-            .D(n194[3]), .R(n12819));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFFESR r_Clock_Count__i4 (.Q(r_Clock_Count[4]), .C(CLK_c), .E(n11082), 
-            .D(n194[4]), .R(n12819));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFFESR r_Clock_Count__i5 (.Q(r_Clock_Count[5]), .C(CLK_c), .E(n11082), 
-            .D(n194[5]), .R(n12819));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_LUT4 i1_2_lut_adj_397 (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(GND_net), 
-            .I3(GND_net), .O(n5));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i1_2_lut_adj_397.LUT_INIT = 16'hbbbb;
-    SB_LUT4 i9850_4_lut (.I0(n10988), .I1(n12624), .I2(r_SM_Main[1]), 
-            .I3(r_Bit_Index[2]), .O(n11674));   // verilog/uart_rx.v(36[17:26])
-    defparam i9850_4_lut.LUT_INIT = 16'hc5c0;
-    SB_LUT4 i1_4_lut (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(r_SM_Main[1]), 
-            .I3(r_SM_Main_2__N_2088[2]), .O(n10988));
-    defparam i1_4_lut.LUT_INIT = 16'h1101;
-    SB_LUT4 i1_2_lut_adj_398 (.I0(r_SM_Main[0]), .I1(r_Rx_Data), .I2(GND_net), 
-            .I3(GND_net), .O(n57));   // verilog/uart_rx.v(36[17:26])
-    defparam i1_2_lut_adj_398.LUT_INIT = 16'h8888;
-    SB_LUT4 i21_4_lut (.I0(r_Clock_Count[5]), .I1(n57), .I2(n5), .I3(n15905), 
+    wire n17013, n16, n17012, n17011, n17010, n18339, n17009, 
+        n12011, n12008, n11974, n17, n17797, n18731, n19025, n19028, 
+        n15107, n24, n21_adj_2220, n18217, n18622, n15087, n69, 
+        n18639, n16352, n5737, n108;
+    
+    SB_LUT4 i2_4_lut (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(r_SM_Main[1]), 
+            .I3(\r_SM_Main_2__N_1891[2] ), .O(n11358));
+    defparam i2_4_lut.LUT_INIT = 16'h1101;
+    SB_LUT4 i12_3_lut (.I0(n11358), .I1(r_Bit_Index[0]), .I2(r_SM_Main[1]), 
+            .I3(GND_net), .O(n17755));   // verilog/uart_rx.v(36[17:26])
+    defparam i12_3_lut.LUT_INIT = 16'h6464;
+    SB_LUT4 i1_4_lut (.I0(n53), .I1(r_Clock_Count[5]), .I2(r_SM_Main[1]), 
+            .I3(n18216), .O(n21));
+    defparam i1_4_lut.LUT_INIT = 16'h5150;
+    SB_LUT4 i1_3_lut (.I0(r_Clock_Count[0]), .I1(r_Clock_Count[5]), .I2(n93), 
+            .I3(GND_net), .O(n73));   // verilog/uart_rx.v(49[10] 144[8])
+    defparam i1_3_lut.LUT_INIT = 16'h8080;
+    SB_LUT4 i2_3_lut (.I0(n21), .I1(n43), .I2(r_SM_Main[1]), .I3(GND_net), 
             .O(n6));
-    defparam i21_4_lut.LUT_INIT = 16'hb1f0;
-    SB_LUT4 i13229_4_lut (.I0(n6), .I1(n18211), .I2(r_SM_Main[1]), .I3(n73), 
-            .O(n12));   // verilog/uart_rx.v(36[17:26])
-    defparam i13229_4_lut.LUT_INIT = 16'hfaca;
-    SB_LUT4 i1_2_lut_adj_399 (.I0(r_SM_Main[2]), .I1(n12), .I2(GND_net), 
-            .I3(GND_net), .O(n12819));   // verilog/uart_rx.v(36[17:26])
-    defparam i1_2_lut_adj_399.LUT_INIT = 16'h4444;
-    SB_DFF r_Rx_Byte_i0 (.Q(rx_data[0]), .C(CLK_c), .D(n17347));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_DV_52 (.Q(rx_data_ready), .C(CLK_c), .D(n17419));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFFESR r_Clock_Count__i0 (.Q(r_Clock_Count[0]), .C(CLK_c), .E(n11082), 
-            .D(n194[0]), .R(n12819));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_LUT4 i15076_4_lut (.I0(r_SM_Main[2]), .I1(n12828), .I2(n12), .I3(n4_c), 
-            .O(n11082));
-    defparam i15076_4_lut.LUT_INIT = 16'h5455;
-    SB_LUT4 i12_3_lut_4_lut (.I0(r_SM_Main_2__N_2088[2]), .I1(n167), .I2(r_SM_Main[1]), 
-            .I3(r_Bit_Index[0]), .O(n17475));
-    defparam i12_3_lut_4_lut.LUT_INIT = 16'hdc20;
-    SB_DFFESR r_Clock_Count__i6 (.Q(r_Clock_Count[6]), .C(CLK_c), .E(n11082), 
-            .D(n194[6]), .R(n12819));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFFESR r_Clock_Count__i7 (.Q(r_Clock_Count[7]), .C(CLK_c), .E(n11082), 
-            .D(n194[7]), .R(n12819));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_Data_50 (.Q(r_Rx_Data), .C(CLK_c), .D(r_Rx_Data_R));   // verilog/uart_rx.v(41[10] 45[8])
-    SB_DFF r_Rx_Data_R_49 (.Q(r_Rx_Data_R), .C(CLK_c), .D(rx_i));   // verilog/uart_rx.v(41[10] 45[8])
-    SB_DFF r_Bit_Index_i1 (.Q(r_Bit_Index[1]), .C(CLK_c), .D(n11675));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Bit_Index_i2 (.Q(r_Bit_Index[2]), .C(CLK_c), .D(n11674));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_SM_Main_i1 (.Q(r_SM_Main[1]), .C(CLK_c), .D(n13859));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_LUT4 i3_4_lut (.I0(r_SM_Main[1]), .I1(r_Bit_Index[1]), .I2(n161), 
-            .I3(n167), .O(n11));   // verilog/uart_rx.v(36[17:26])
-    defparam i3_4_lut.LUT_INIT = 16'hffdf;
-    SB_LUT4 i3_4_lut_adj_400 (.I0(n161), .I1(n167), .I2(r_Bit_Index[1]), 
-            .I3(n17702), .O(n17704));   // verilog/uart_rx.v(36[17:26])
-    defparam i3_4_lut_adj_400.LUT_INIT = 16'h0200;
-    SB_LUT4 i1_3_lut (.I0(n17704), .I1(rx_data[5]), .I2(n11), .I3(GND_net), 
-            .O(n17307));   // verilog/uart_rx.v(36[17:26])
-    defparam i1_3_lut.LUT_INIT = 16'heaea;
-    SB_LUT4 i15541_3_lut (.I0(n151), .I1(n167), .I2(r_Bit_Index[1]), .I3(GND_net), 
-            .O(n18194));   // verilog/uart_rx.v(30[17:26])
-    defparam i15541_3_lut.LUT_INIT = 16'h2020;
-    SB_LUT4 i9777_4_lut (.I0(n18196), .I1(n18194), .I2(r_Rx_Data), .I3(rx_data[6]), 
-            .O(n12552));   // verilog/uart_rx.v(30[17:26])
-    defparam i9777_4_lut.LUT_INIT = 16'hfac0;
-    SB_LUT4 i9778_3_lut (.I0(rx_data[6]), .I1(n12552), .I2(r_SM_Main[1]), 
-            .I3(GND_net), .O(n12553));   // verilog/uart_rx.v(36[17:26])
-    defparam i9778_3_lut.LUT_INIT = 16'hcaca;
-    SB_LUT4 add_62_9_lut (.I0(GND_net), .I1(r_Clock_Count[7]), .I2(GND_net), 
-            .I3(n16538), .O(n194[7])) /* synthesis syn_instantiated=1 */ ;
+    defparam i2_3_lut.LUT_INIT = 16'hfefe;
+    SB_LUT4 i1_4_lut_adj_155 (.I0(r_SM_Main[2]), .I1(r_SM_Main[0]), .I2(n6), 
+            .I3(r_Rx_Data), .O(n11218));
+    defparam i1_4_lut_adj_155.LUT_INIT = 16'h5155;
+    SB_LUT4 equal_53_i4_2_lut (.I0(r_Bit_Index[1]), .I1(r_Bit_Index[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n4));   // verilog/uart_rx.v(97[17:39])
+    defparam equal_53_i4_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i1_2_lut (.I0(r_Bit_Index[0]), .I1(n10999), .I2(GND_net), 
+            .I3(GND_net), .O(n10974));   // verilog/uart_rx.v(52[7] 143[14])
+    defparam i1_2_lut.LUT_INIT = 16'heeee;
+    SB_LUT4 i1_4_lut_adj_156 (.I0(r_SM_Main[2]), .I1(n18386), .I2(n21), 
+            .I3(r_SM_Main[0]), .O(n15));
+    defparam i1_4_lut_adj_156.LUT_INIT = 16'h5011;
+    SB_LUT4 add_62_9_lut (.I0(GND_net), .I1(\r_Clock_Count[7] ), .I2(GND_net), 
+            .I3(n17015), .O(n219)) /* synthesis syn_instantiated=1 */ ;
     defparam add_62_9_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i1_2_lut_adj_401 (.I0(r_SM_Main[2]), .I1(n18732), .I2(GND_net), 
-            .I3(GND_net), .O(n11426));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i1_2_lut_adj_401.LUT_INIT = 16'h4444;
-    SB_LUT4 i15577_3_lut_4_lut (.I0(n12527), .I1(n167), .I2(r_Bit_Index[1]), 
-            .I3(r_Bit_Index[2]), .O(n18196));   // verilog/uart_rx.v(36[17:26])
-    defparam i15577_3_lut_4_lut.LUT_INIT = 16'hefff;
-    SB_LUT4 add_62_8_lut (.I0(GND_net), .I1(r_Clock_Count[6]), .I2(GND_net), 
-            .I3(n16537), .O(n194[6])) /* synthesis syn_instantiated=1 */ ;
+    SB_LUT4 add_62_8_lut (.I0(GND_net), .I1(\r_Clock_Count[6] ), .I2(GND_net), 
+            .I3(n17014), .O(n220)) /* synthesis syn_instantiated=1 */ ;
     defparam add_62_8_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i2_3_lut_4_lut (.I0(n12527), .I1(n167), .I2(r_Bit_Index[1]), 
-            .I3(r_Bit_Index[2]), .O(n110));   // verilog/uart_rx.v(36[17:26])
-    defparam i2_3_lut_4_lut.LUT_INIT = 16'hfffe;
-    SB_LUT4 i12_3_lut_4_lut_adj_402 (.I0(r_SM_Main[1]), .I1(r_SM_Main[2]), 
-            .I2(n11041), .I3(rx_data_ready), .O(n17419));
-    defparam i12_3_lut_4_lut_adj_402.LUT_INIT = 16'h2f20;
-    SB_LUT4 i13_3_lut_4_lut_4_lut (.I0(r_SM_Main[1]), .I1(r_SM_Main[2]), 
-            .I2(r_SM_Main[0]), .I3(r_SM_Main_2__N_2088[2]), .O(n11041));
-    defparam i13_3_lut_4_lut_4_lut.LUT_INIT = 16'h2505;
-    SB_CARRY add_62_8 (.CI(n16537), .I0(r_Clock_Count[6]), .I1(GND_net), 
-            .CO(n16538));
-    SB_LUT4 i1_2_lut_3_lut_4_lut (.I0(r_SM_Main[1]), .I1(r_SM_Main[2]), 
-            .I2(r_SM_Main[0]), .I3(r_SM_Main_2__N_2088[2]), .O(n17666));
-    defparam i1_2_lut_3_lut_4_lut.LUT_INIT = 16'h2000;
+    SB_CARRY add_62_8 (.CI(n17014), .I0(\r_Clock_Count[6] ), .I1(GND_net), 
+            .CO(n17015));
+    SB_DFFE r_Clock_Count__i7 (.Q(\r_Clock_Count[7] ), .C(CLK_c), .E(VCC_net), 
+            .D(n12));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_Rx_Data_50 (.Q(r_Rx_Data), .C(CLK_c), .D(r_Rx_Data_R));   // verilog/uart_rx.v(41[10] 45[8])
+    SB_DFFE r_Clock_Count__i6 (.Q(\r_Clock_Count[6] ), .C(CLK_c), .E(VCC_net), 
+            .D(n12_adj_1));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_Rx_Data_R_49 (.Q(r_Rx_Data_R), .C(CLK_c), .D(rx_i));   // verilog/uart_rx.v(41[10] 45[8])
     SB_LUT4 add_62_7_lut (.I0(GND_net), .I1(r_Clock_Count[5]), .I2(GND_net), 
-            .I3(n16536), .O(n194[5])) /* synthesis syn_instantiated=1 */ ;
+            .I3(n17013), .O(n194[5])) /* synthesis syn_instantiated=1 */ ;
     defparam add_62_7_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_403 (.I0(r_Bit_Index[1]), .I1(r_SM_Main[1]), 
-            .I2(r_SM_Main[0]), .I3(r_SM_Main[2]), .O(n158));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i1_2_lut_3_lut_4_lut_adj_403.LUT_INIT = 16'h0008;
-    SB_CARRY add_62_7 (.CI(n16536), .I0(r_Clock_Count[5]), .I1(GND_net), 
-            .CO(n16537));
-    SB_LUT4 add_62_6_lut (.I0(GND_net), .I1(r_Clock_Count[4]), .I2(GND_net), 
-            .I3(n16535), .O(n194[4])) /* synthesis syn_instantiated=1 */ ;
+    SB_DFFE r_Clock_Count__i5 (.Q(r_Clock_Count[5]), .C(CLK_c), .E(VCC_net), 
+            .D(n16));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_CARRY add_62_7 (.CI(n17013), .I0(r_Clock_Count[5]), .I1(GND_net), 
+            .CO(n17014));
+    SB_LUT4 add_62_6_lut (.I0(GND_net), .I1(\r_Clock_Count[4] ), .I2(GND_net), 
+            .I3(n17012), .O(n222)) /* synthesis syn_instantiated=1 */ ;
     defparam add_62_6_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_62_6 (.CI(n16535), .I0(r_Clock_Count[4]), .I1(GND_net), 
-            .CO(n16536));
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_404 (.I0(r_Bit_Index[1]), .I1(r_SM_Main[1]), 
-            .I2(r_SM_Main[0]), .I3(r_SM_Main[2]), .O(n164));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i1_2_lut_3_lut_4_lut_adj_404.LUT_INIT = 16'h0004;
-    SB_LUT4 add_62_5_lut (.I0(GND_net), .I1(r_Clock_Count[3]), .I2(GND_net), 
-            .I3(n16534), .O(n194[3])) /* synthesis syn_instantiated=1 */ ;
+    SB_DFFE r_Clock_Count__i4 (.Q(\r_Clock_Count[4] ), .C(CLK_c), .E(VCC_net), 
+            .D(n12_adj_2));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_CARRY add_62_6 (.CI(n17012), .I0(\r_Clock_Count[4] ), .I1(GND_net), 
+            .CO(n17013));
+    SB_DFFE r_Clock_Count__i3 (.Q(\r_Clock_Count[3] ), .C(CLK_c), .E(VCC_net), 
+            .D(n12_adj_3));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_LUT4 add_62_5_lut (.I0(GND_net), .I1(\r_Clock_Count[3] ), .I2(GND_net), 
+            .I3(n17011), .O(n223)) /* synthesis syn_instantiated=1 */ ;
     defparam add_62_5_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i9863_4_lut_4_lut (.I0(r_Bit_Index[0]), .I1(n10988), .I2(r_Bit_Index[1]), 
-            .I3(r_SM_Main[1]), .O(n11675));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i9863_4_lut_4_lut.LUT_INIT = 16'h7830;
-    SB_LUT4 i9849_3_lut_4_lut (.I0(r_Bit_Index[0]), .I1(n10988), .I2(r_Bit_Index[1]), 
-            .I3(r_Bit_Index[2]), .O(n12624));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i9849_3_lut_4_lut.LUT_INIT = 16'h7f80;
-    SB_CARRY add_62_5 (.CI(n16534), .I0(r_Clock_Count[3]), .I1(GND_net), 
-            .CO(n16535));
-    SB_LUT4 add_62_4_lut (.I0(GND_net), .I1(r_Clock_Count[2]), .I2(GND_net), 
-            .I3(n16533), .O(n194[2])) /* synthesis syn_instantiated=1 */ ;
+    SB_CARRY add_62_5 (.CI(n17011), .I0(\r_Clock_Count[3] ), .I1(GND_net), 
+            .CO(n17012));
+    SB_LUT4 add_62_4_lut (.I0(GND_net), .I1(\r_Clock_Count[2] ), .I2(GND_net), 
+            .I3(n17010), .O(n224)) /* synthesis syn_instantiated=1 */ ;
     defparam add_62_4_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_62_4 (.CI(n16533), .I0(r_Clock_Count[2]), .I1(GND_net), 
-            .CO(n16534));
-    SB_LUT4 add_62_3_lut (.I0(GND_net), .I1(r_Clock_Count[1]), .I2(GND_net), 
-            .I3(n16532), .O(n194[1])) /* synthesis syn_instantiated=1 */ ;
+    SB_DFF r_Rx_Byte_i0 (.Q(rx_data[0]), .C(CLK_c), .D(n11799));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_CARRY add_62_4 (.CI(n17010), .I0(\r_Clock_Count[2] ), .I1(GND_net), 
+            .CO(n17011));
+    SB_DFFE r_Rx_DV_52 (.Q(rx_data_ready), .C(CLK_c), .E(VCC_net), .D(n17769));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFFSR r_SM_Main_i2 (.Q(r_SM_Main[2]), .C(CLK_c), .D(\r_SM_Main_2__N_1891[2] ), 
+            .R(n18339));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_LUT4 add_62_3_lut (.I0(GND_net), .I1(\r_Clock_Count[1] ), .I2(GND_net), 
+            .I3(n17009), .O(n225)) /* synthesis syn_instantiated=1 */ ;
     defparam add_62_3_lut.LUT_INIT = 16'hC33C;
-    SB_CARRY add_62_3 (.CI(n16532), .I0(r_Clock_Count[1]), .I1(GND_net), 
-            .CO(n16533));
-    SB_LUT4 i15551_2_lut_3_lut (.I0(n15902), .I1(r_Clock_Count[0]), .I2(r_Clock_Count[5]), 
-            .I3(GND_net), .O(n18211));   // verilog/uart_rx.v(32[17:30])
-    defparam i15551_2_lut_3_lut.LUT_INIT = 16'h8080;
-    SB_LUT4 i2_3_lut_4_lut_adj_405 (.I0(\FRAME_MATCHER.i[1] ), .I1(n12963), 
-            .I2(\FRAME_MATCHER.i[2] ), .I3(\FRAME_MATCHER.i[0] ), .O(n16802));
-    defparam i2_3_lut_4_lut_adj_405.LUT_INIT = 16'hfffe;
-    SB_LUT4 i2_3_lut_4_lut_adj_406 (.I0(\FRAME_MATCHER.i[1] ), .I1(n12963), 
-            .I2(\FRAME_MATCHER.i[2] ), .I3(\FRAME_MATCHER.i[0] ), .O(n11058));
-    defparam i2_3_lut_4_lut_adj_406.LUT_INIT = 16'h1000;
-    SB_LUT4 i8687_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[7]), 
-            .I3(\data_in_frame[1] [7]), .O(n11466));
-    defparam i8687_3_lut_4_lut.LUT_INIT = 16'hfe10;
-    SB_LUT4 i8688_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[6]), 
-            .I3(\data_in_frame[1] [6]), .O(n11467));
-    defparam i8688_3_lut_4_lut.LUT_INIT = 16'hfe10;
-    SB_LUT4 i8689_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[5]), 
-            .I3(\data_in_frame[1] [5]), .O(n11468));
-    defparam i8689_3_lut_4_lut.LUT_INIT = 16'hfe10;
-    SB_LUT4 i8690_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[4]), 
-            .I3(\data_in_frame[1] [4]), .O(n11469));
-    defparam i8690_3_lut_4_lut.LUT_INIT = 16'hfe10;
-    SB_LUT4 i8691_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[3]), 
-            .I3(\data_in_frame[1] [3]), .O(n11470));
-    defparam i8691_3_lut_4_lut.LUT_INIT = 16'hfe10;
-    SB_LUT4 i8692_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[2]), 
-            .I3(\data_in_frame[1] [2]), .O(n11471));
-    defparam i8692_3_lut_4_lut.LUT_INIT = 16'hfe10;
-    SB_LUT4 i8693_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[1]), 
-            .I3(\data_in_frame[1] [1]), .O(n11472));
-    defparam i8693_3_lut_4_lut.LUT_INIT = 16'hfe10;
-    SB_LUT4 i8694_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[0]), 
-            .I3(\data_in_frame[1] [0]), .O(n11473));
-    defparam i8694_3_lut_4_lut.LUT_INIT = 16'hfe10;
-    SB_LUT4 i1_2_lut_3_lut (.I0(\FRAME_MATCHER.i[2] ), .I1(n12963), .I2(\FRAME_MATCHER.i[0] ), 
-            .I3(GND_net), .O(n129));
-    defparam i1_2_lut_3_lut.LUT_INIT = 16'hefef;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_407 (.I0(\FRAME_MATCHER.i[2] ), .I1(n12963), 
-            .I2(\FRAME_MATCHER.i[1] ), .I3(\FRAME_MATCHER.i[0] ), .O(n120));
-    defparam i1_2_lut_3_lut_4_lut_adj_407.LUT_INIT = 16'hffef;
-    SB_LUT4 i1_2_lut_3_lut_4_lut_adj_408 (.I0(n15902), .I1(r_Clock_Count[0]), 
-            .I2(r_Clock_Count[6]), .I3(r_Clock_Count[7]), .O(n15905));   // verilog/uart_rx.v(32[17:30])
-    defparam i1_2_lut_3_lut_4_lut_adj_408.LUT_INIT = 16'h0008;
-    SB_LUT4 i1_2_lut_adj_409 (.I0(r_Bit_Index[1]), .I1(n161), .I2(GND_net), 
-            .I3(GND_net), .O(n12582));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i1_2_lut_adj_409.LUT_INIT = 16'h8888;
-    SB_LUT4 r_SM_Main_0__bdd_4_lut_4_lut (.I0(r_SM_Main_2__N_2088[2]), .I1(r_SM_Main[1]), 
-            .I2(n12582), .I3(r_SM_Main[0]), .O(n18729));
-    defparam r_SM_Main_0__bdd_4_lut_4_lut.LUT_INIT = 16'h77c0;
-    SB_LUT4 i1_2_lut_3_lut_adj_410 (.I0(r_Bit_Index[0]), .I1(r_SM_Main_2__N_2088[2]), 
-            .I2(r_Bit_Index[2]), .I3(GND_net), .O(n12600));
-    defparam i1_2_lut_3_lut_adj_410.LUT_INIT = 16'h0808;
-    SB_LUT4 i1_2_lut_3_lut_adj_411 (.I0(r_Bit_Index[0]), .I1(r_SM_Main_2__N_2088[2]), 
-            .I2(r_Bit_Index[2]), .I3(GND_net), .O(n161));
-    defparam i1_2_lut_3_lut_adj_411.LUT_INIT = 16'h8080;
-    SB_LUT4 n18729_bdd_4_lut_4_lut (.I0(r_Rx_Data), .I1(r_SM_Main[1]), .I2(n12828), 
-            .I3(n18729), .O(n18732));   // verilog/uart_rx.v(70[21:38])
-    defparam n18729_bdd_4_lut_4_lut.LUT_INIT = 16'hfc11;
-    SB_LUT4 i2_3_lut_4_lut_adj_412 (.I0(\FRAME_MATCHER.i[0] ), .I1(\FRAME_MATCHER.i[1] ), 
-            .I2(n12963), .I3(\FRAME_MATCHER.i[2] ), .O(n16797));
-    defparam i2_3_lut_4_lut_adj_412.LUT_INIT = 16'hfbff;
-    SB_LUT4 i1_3_lut_adj_413 (.I0(n10), .I1(rx_data_ready), .I2(n1166), 
-            .I3(GND_net), .O(n12963));
-    defparam i1_3_lut_adj_413.LUT_INIT = 16'hbfbf;
-    SB_LUT4 i8671_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[7]), 
-            .I3(\data_in_frame[3] [7]), .O(n11450));
-    defparam i8671_3_lut_4_lut.LUT_INIT = 16'hfd20;
-    SB_LUT4 i8672_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[6]), 
-            .I3(\data_in_frame[3] [6]), .O(n11451));
-    defparam i8672_3_lut_4_lut.LUT_INIT = 16'hfd20;
-    SB_LUT4 i8673_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[5]), 
-            .I3(\data_in_frame[3] [5]), .O(n11452));
-    defparam i8673_3_lut_4_lut.LUT_INIT = 16'hfd20;
-    SB_LUT4 i8674_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[4]), 
-            .I3(\data_in_frame[3] [4]), .O(n11453));
-    defparam i8674_3_lut_4_lut.LUT_INIT = 16'hfd20;
-    SB_LUT4 i8675_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[3]), 
-            .I3(\data_in_frame[3] [3]), .O(n11454));
-    defparam i8675_3_lut_4_lut.LUT_INIT = 16'hfd20;
-    SB_LUT4 i8676_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[2]), 
-            .I3(\data_in_frame[3] [2]), .O(n11455));
-    defparam i8676_3_lut_4_lut.LUT_INIT = 16'hfd20;
-    SB_LUT4 i8677_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[1]), 
-            .I3(\data_in_frame[3] [1]), .O(n11456));
-    defparam i8677_3_lut_4_lut.LUT_INIT = 16'hfd20;
+    SB_CARRY add_62_3 (.CI(n17009), .I0(\r_Clock_Count[1] ), .I1(GND_net), 
+            .CO(n17010));
     SB_LUT4 add_62_2_lut (.I0(GND_net), .I1(r_Clock_Count[0]), .I2(GND_net), 
             .I3(VCC_net), .O(n194[0])) /* synthesis syn_instantiated=1 */ ;
     defparam add_62_2_lut.LUT_INIT = 16'hC33C;
-    SB_LUT4 i1_2_lut_adj_414 (.I0(n1166), .I1(n27), .I2(GND_net), .I3(GND_net), 
-            .O(n2));   // verilog/coms.v(373[7:20])
-    defparam i1_2_lut_adj_414.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_2_lut_adj_415 (.I0(n1166), .I1(n29), .I2(GND_net), .I3(GND_net), 
-            .O(n2_adj_1));   // verilog/coms.v(373[7:20])
-    defparam i1_2_lut_adj_415.LUT_INIT = 16'h8888;
     SB_CARRY add_62_2 (.CI(VCC_net), .I0(r_Clock_Count[0]), .I1(GND_net), 
-            .CO(n16532));
-    SB_LUT4 i8678_3_lut_4_lut (.I0(\FRAME_MATCHER.i[1] ), .I1(n129), .I2(rx_data[0]), 
-            .I3(\data_in_frame[3] [0]), .O(n11457));
-    defparam i8678_3_lut_4_lut.LUT_INIT = 16'hfd20;
-    SB_LUT4 i15770_1_lut (.I0(rx_data_ready), .I1(GND_net), .I2(GND_net), 
-            .I3(GND_net), .O(n18631));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i15770_1_lut.LUT_INIT = 16'h5555;
-    SB_LUT4 i1_2_lut_3_lut_adj_416 (.I0(r_SM_Main[1]), .I1(r_SM_Main[0]), 
-            .I2(r_SM_Main[2]), .I3(GND_net), .O(n135));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i1_2_lut_3_lut_adj_416.LUT_INIT = 16'h0202;
-    SB_LUT4 i1_2_lut_3_lut_adj_417 (.I0(r_Bit_Index[2]), .I1(r_Bit_Index[0]), 
-            .I2(r_SM_Main_2__N_2088[2]), .I3(GND_net), .O(n151));   // verilog/uart_rx.v(36[17:26])
-    defparam i1_2_lut_3_lut_adj_417.LUT_INIT = 16'h2020;
-    SB_LUT4 i1_2_lut_3_lut_adj_418 (.I0(r_Bit_Index[2]), .I1(r_Bit_Index[1]), 
-            .I2(n135), .I3(GND_net), .O(n4));
-    defparam i1_2_lut_3_lut_adj_418.LUT_INIT = 16'h4040;
-    SB_LUT4 i1_2_lut_3_lut_adj_419 (.I0(r_SM_Main[1]), .I1(r_SM_Main[0]), 
-            .I2(r_Rx_Data), .I3(GND_net), .O(n4_c));
-    defparam i1_2_lut_3_lut_adj_419.LUT_INIT = 16'h4040;
-    SB_DFF r_SM_Main_i0 (.Q(r_SM_Main[0]), .C(CLK_c), .D(n11426));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Bit_Index_i0 (.Q(r_Bit_Index[0]), .C(CLK_c), .D(n17475));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_Byte_i7 (.Q(rx_data[7]), .C(CLK_c), .D(n11412));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_Byte_i6 (.Q(rx_data[6]), .C(CLK_c), .D(n12553));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_Byte_i5 (.Q(rx_data[5]), .C(CLK_c), .D(n17307));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_Byte_i4 (.Q(rx_data[4]), .C(CLK_c), .D(n11409));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_Byte_i3 (.Q(rx_data[3]), .C(CLK_c), .D(n11408));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_Byte_i2 (.Q(rx_data[2]), .C(CLK_c), .D(n11407));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_Rx_Byte_i1 (.Q(rx_data[1]), .C(CLK_c), .D(n11406));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_DFF r_SM_Main_i2 (.Q(r_SM_Main[2]), .C(CLK_c), .D(n17666));   // verilog/uart_rx.v(49[10] 144[8])
-    SB_LUT4 i3_3_lut_4_lut (.I0(r_Clock_Count[4]), .I1(r_Clock_Count[2]), 
-            .I2(r_Clock_Count[1]), .I3(r_Clock_Count[3]), .O(n15902));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i3_3_lut_4_lut.LUT_INIT = 16'h8000;
-    SB_LUT4 i15583_2_lut (.I0(r_SM_Main_2__N_2088[2]), .I1(r_SM_Main[0]), 
-            .I2(GND_net), .I3(GND_net), .O(n18304));   // verilog/uart_rx.v(36[17:26])
-    defparam i15583_2_lut.LUT_INIT = 16'h8888;
-    SB_LUT4 i15639_3_lut (.I0(r_SM_Main[0]), .I1(n12828), .I2(r_Rx_Data), 
-            .I3(GND_net), .O(n18303));   // verilog/uart_rx.v(36[17:26])
-    defparam i15639_3_lut.LUT_INIT = 16'hfdfd;
-    SB_LUT4 i15765_4_lut (.I0(r_SM_Main[2]), .I1(n18303), .I2(n18304), 
-            .I3(r_SM_Main[1]), .O(n13859));
-    defparam i15765_4_lut.LUT_INIT = 16'h0511;
-    SB_LUT4 i1_4_lut_adj_420 (.I0(n15902), .I1(n73), .I2(r_Clock_Count[0]), 
-            .I3(r_Clock_Count[5]), .O(r_SM_Main_2__N_2088[2]));   // verilog/uart_rx.v(32[17:30])
-    defparam i1_4_lut_adj_420.LUT_INIT = 16'heccc;
-    SB_LUT4 i1_2_lut_adj_421 (.I0(r_SM_Main[0]), .I1(r_SM_Main[2]), .I2(GND_net), 
-            .I3(GND_net), .O(n167));   // verilog/uart_rx.v(36[17:26])
-    defparam i1_2_lut_adj_421.LUT_INIT = 16'heeee;
-    SB_LUT4 i1_2_lut_adj_422 (.I0(r_Bit_Index[0]), .I1(r_SM_Main_2__N_2088[2]), 
-            .I2(GND_net), .I3(GND_net), .O(n12527));   // verilog/uart_rx.v(49[10] 144[8])
-    defparam i1_2_lut_adj_422.LUT_INIT = 16'hbbbb;
-    SB_LUT4 i1_2_lut_adj_423 (.I0(r_SM_Main[1]), .I1(r_Rx_Data), .I2(GND_net), 
-            .I3(GND_net), .O(n17702));   // verilog/uart_rx.v(36[17:26])
-    defparam i1_2_lut_adj_423.LUT_INIT = 16'h8888;
-    SB_LUT4 i1_4_lut_adj_424 (.I0(n110), .I1(rx_data[0]), .I2(n17702), 
-            .I3(r_SM_Main[1]), .O(n17347));   // verilog/uart_rx.v(36[17:26])
-    defparam i1_4_lut_adj_424.LUT_INIT = 16'hd8dc;
+            .CO(n17009));
+    SB_DFFE r_Bit_Index_i0 (.Q(r_Bit_Index[0]), .C(CLK_c), .E(VCC_net), 
+            .D(n17755));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFFE r_Clock_Count__i2 (.Q(\r_Clock_Count[2] ), .C(CLK_c), .E(VCC_net), 
+            .D(n12_adj_4));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFFE r_Clock_Count__i1 (.Q(\r_Clock_Count[1] ), .C(CLK_c), .E(VCC_net), 
+            .D(n12_adj_5));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_LUT4 i15371_2_lut_3_lut (.I0(r_Clock_Count[0]), .I1(n93), .I2(r_Clock_Count[5]), 
+            .I3(GND_net), .O(n18342));
+    defparam i15371_2_lut_3_lut.LUT_INIT = 16'h8080;
+    SB_DFF r_Rx_Byte_i7 (.Q(rx_data[7]), .C(CLK_c), .D(n12012));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFFE r_Bit_Index_i1 (.Q(r_Bit_Index[1]), .C(CLK_c), .E(VCC_net), 
+            .D(n12011));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFFE r_Bit_Index_i2 (.Q(r_Bit_Index[2]), .C(CLK_c), .E(VCC_net), 
+            .D(n12008));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_SM_Main_i1 (.Q(r_SM_Main[1]), .C(CLK_c), .D(n11974));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_Clock_Count__i0 (.Q(r_Clock_Count[0]), .C(CLK_c), .D(n17));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_Rx_Byte_i1 (.Q(rx_data[1]), .C(CLK_c), .D(n11681));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_Rx_Byte_i2 (.Q(rx_data[2]), .C(CLK_c), .D(n11644));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_Rx_Byte_i3 (.Q(rx_data[3]), .C(CLK_c), .D(n11643));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_SM_Main_i0 (.Q(r_SM_Main[0]), .C(CLK_c), .D(n17797));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_Rx_Byte_i4 (.Q(rx_data[4]), .C(CLK_c), .D(n11637));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_DFF r_Rx_Byte_i5 (.Q(rx_data[5]), .C(CLK_c), .D(n11622));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_LUT4 r_SM_Main_0__bdd_4_lut_4_lut (.I0(\r_SM_Main_2__N_1891[2] ), .I1(r_SM_Main[1]), 
+            .I2(n18731), .I3(r_SM_Main[0]), .O(n19025));
+    defparam r_SM_Main_0__bdd_4_lut_4_lut.LUT_INIT = 16'h77c0;
+    SB_LUT4 n19025_bdd_4_lut_4_lut (.I0(r_Rx_Data), .I1(r_SM_Main[1]), .I2(n43), 
+            .I3(n19025), .O(n19028));   // verilog/uart_rx.v(41[10] 45[8])
+    defparam n19025_bdd_4_lut_4_lut.LUT_INIT = 16'hfc11;
+    SB_LUT4 i40_4_lut (.I0(n15107), .I1(n53), .I2(r_SM_Main[0]), .I3(r_SM_Main[1]), 
+            .O(n24));
+    defparam i40_4_lut.LUT_INIT = 16'h3a0f;
+    SB_LUT4 i1_3_lut_adj_157 (.I0(n194[5]), .I1(r_SM_Main[2]), .I2(n24), 
+            .I3(GND_net), .O(n21_adj_2220));
+    defparam i1_3_lut_adj_157.LUT_INIT = 16'h7575;
+    SB_LUT4 i3_4_lut (.I0(r_SM_Main[2]), .I1(n18216), .I2(r_SM_Main[0]), 
+            .I3(n53), .O(n18217));
+    defparam i3_4_lut.LUT_INIT = 16'h0040;
+    SB_LUT4 i16024_4_lut (.I0(r_Clock_Count[5]), .I1(n11218), .I2(n18217), 
+            .I3(n21_adj_2220), .O(n16));
+    defparam i16024_4_lut.LUT_INIT = 16'h22ae;
+    SB_LUT4 i15938_2_lut_4_lut (.I0(r_Clock_Count[0]), .I1(n93), .I2(r_Clock_Count[5]), 
+            .I3(r_Rx_Data), .O(n18622));   // verilog/uart_rx.v(36[17:26])
+    defparam i15938_2_lut_4_lut.LUT_INIT = 16'h0800;
+    SB_LUT4 i2_2_lut_3_lut (.I0(r_Bit_Index[2]), .I1(r_Bit_Index[1]), .I2(r_Bit_Index[0]), 
+            .I3(GND_net), .O(n15087));
+    defparam i2_2_lut_3_lut.LUT_INIT = 16'h8080;
+    SB_LUT4 equal_49_i4_2_lut (.I0(r_Bit_Index[1]), .I1(r_Bit_Index[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_6));   // verilog/uart_rx.v(97[17:39])
+    defparam equal_49_i4_2_lut.LUT_INIT = 16'hbbbb;
+    SB_LUT4 i1_2_lut_3_lut (.I0(n18342), .I1(\r_Clock_Count[6] ), .I2(\r_Clock_Count[7] ), 
+            .I3(GND_net), .O(n15107));
+    defparam i1_2_lut_3_lut.LUT_INIT = 16'hfefe;
+    SB_LUT4 i1_2_lut_adj_158 (.I0(r_SM_Main[2]), .I1(n19028), .I2(GND_net), 
+            .I3(GND_net), .O(n17797));   // verilog/uart_rx.v(36[17:26])
+    defparam i1_2_lut_adj_158.LUT_INIT = 16'h4444;
+    SB_LUT4 equal_51_i4_2_lut (.I0(r_Bit_Index[1]), .I1(r_Bit_Index[2]), 
+            .I2(GND_net), .I3(GND_net), .O(n4_adj_7));   // verilog/uart_rx.v(97[17:39])
+    defparam equal_51_i4_2_lut.LUT_INIT = 16'hdddd;
+    SB_LUT4 i15833_4_lut (.I0(n73), .I1(n15087), .I2(\r_Clock_Count[6] ), 
+            .I3(\r_Clock_Count[7] ), .O(n18731));   // verilog/uart_rx.v(36[17:26])
+    defparam i15833_4_lut.LUT_INIT = 16'hccc8;
+    SB_LUT4 i1_2_lut_3_lut_4_lut (.I0(r_Clock_Count[0]), .I1(n93), .I2(\r_Clock_Count[6] ), 
+            .I3(\r_Clock_Count[7] ), .O(n18216));
+    defparam i1_2_lut_3_lut_4_lut.LUT_INIT = 16'h0008;
+    SB_LUT4 i41_4_lut (.I0(r_Clock_Count[0]), .I1(n194[0]), .I2(n11218), 
+            .I3(n15), .O(n17));
+    defparam i41_4_lut.LUT_INIT = 16'h0aca;
+    SB_DFF r_Rx_Byte_i6 (.Q(rx_data[6]), .C(CLK_c), .D(n11580));   // verilog/uart_rx.v(49[10] 144[8])
+    SB_LUT4 i1_2_lut_3_lut_adj_159 (.I0(r_SM_Main[1]), .I1(r_SM_Main[2]), 
+            .I2(r_SM_Main[0]), .I3(GND_net), .O(n18339));
+    defparam i1_2_lut_3_lut_adj_159.LUT_INIT = 16'hdfdf;
+    SB_LUT4 i1_2_lut_adj_160 (.I0(r_SM_Main[0]), .I1(\r_SM_Main_2__N_1891[2] ), 
+            .I2(GND_net), .I3(GND_net), .O(n69));
+    defparam i1_2_lut_adj_160.LUT_INIT = 16'h8888;
+    SB_LUT4 i15936_3_lut (.I0(n43), .I1(r_SM_Main[0]), .I2(r_Rx_Data), 
+            .I3(GND_net), .O(n18639));   // verilog/uart_rx.v(36[17:26])
+    defparam i15936_3_lut.LUT_INIT = 16'h0404;
+    SB_LUT4 i1_4_lut_adj_161 (.I0(r_SM_Main[2]), .I1(n18639), .I2(n69), 
+            .I3(r_SM_Main[1]), .O(n11974));   // verilog/uart_rx.v(36[17:26])
+    defparam i1_4_lut_adj_161.LUT_INIT = 16'h0544;
+    SB_LUT4 i1_4_lut_adj_162 (.I0(n16352), .I1(r_Bit_Index[2]), .I2(n5737), 
+            .I3(n11358), .O(n12008));   // verilog/uart_rx.v(36[17:26])
+    defparam i1_4_lut_adj_162.LUT_INIT = 16'h2888;
+    SB_LUT4 i3025_2_lut (.I0(r_Bit_Index[1]), .I1(r_Bit_Index[0]), .I2(GND_net), 
+            .I3(GND_net), .O(n5737));   // verilog/uart_rx.v(102[36:51])
+    defparam i3025_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i1_3_lut_adj_163 (.I0(r_SM_Main[1]), .I1(n11358), .I2(n15087), 
+            .I3(GND_net), .O(n16352));   // verilog/uart_rx.v(36[17:26])
+    defparam i1_3_lut_adj_163.LUT_INIT = 16'h3b3b;
+    SB_LUT4 i1_4_lut_adj_164 (.I0(n16352), .I1(r_Bit_Index[1]), .I2(r_Bit_Index[0]), 
+            .I3(n11358), .O(n12011));   // verilog/uart_rx.v(36[17:26])
+    defparam i1_4_lut_adj_164.LUT_INIT = 16'h2888;
+    SB_LUT4 i1_2_lut_adj_165 (.I0(r_Bit_Index[0]), .I1(n10999), .I2(GND_net), 
+            .I3(GND_net), .O(n11162));   // verilog/uart_rx.v(52[7] 143[14])
+    defparam i1_2_lut_adj_165.LUT_INIT = 16'hdddd;
+    SB_LUT4 i11842_2_lut (.I0(r_Bit_Index[1]), .I1(r_Bit_Index[2]), .I2(GND_net), 
+            .I3(GND_net), .O(n14605));
+    defparam i11842_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i2_3_lut_4_lut (.I0(r_SM_Main[1]), .I1(r_SM_Main[2]), .I2(\r_SM_Main_2__N_1891[2] ), 
+            .I3(r_SM_Main[0]), .O(n10999));
+    defparam i2_3_lut_4_lut.LUT_INIT = 16'hffdf;
+    SB_LUT4 i3_4_lut_adj_166 (.I0(\r_Clock_Count[3] ), .I1(\r_Clock_Count[4] ), 
+            .I2(\r_Clock_Count[2] ), .I3(\r_Clock_Count[1] ), .O(n93));
+    defparam i3_4_lut_adj_166.LUT_INIT = 16'h8000;
+    SB_LUT4 i1_2_lut_3_lut_adj_167 (.I0(\r_Clock_Count[6] ), .I1(\r_Clock_Count[7] ), 
+            .I2(n73), .I3(GND_net), .O(\r_SM_Main_2__N_1891[2] ));
+    defparam i1_2_lut_3_lut_adj_167.LUT_INIT = 16'hfefe;
+    SB_LUT4 i1_4_lut_adj_168 (.I0(n108), .I1(n18622), .I2(n18342), .I3(r_SM_Main[1]), 
+            .O(n53));   // verilog/uart_rx.v(36[17:26])
+    defparam i1_4_lut_adj_168.LUT_INIT = 16'h0544;
+    SB_LUT4 i1_2_lut_adj_169 (.I0(\r_Clock_Count[6] ), .I1(\r_Clock_Count[7] ), 
+            .I2(GND_net), .I3(GND_net), .O(n108));
+    defparam i1_2_lut_adj_169.LUT_INIT = 16'heeee;
+    SB_LUT4 i1_2_lut_4_lut (.I0(r_Clock_Count[0]), .I1(n93), .I2(r_Clock_Count[5]), 
+            .I3(n108), .O(n43));
+    defparam i1_2_lut_4_lut.LUT_INIT = 16'hfff7;
+    
+endmodule
+//
+// Verilog Description of module motorControl
+//
+
+module motorControl (n11924, pwm, CLK_c, pwm_delay, n11923, \pwm_31__N_2046[18] , 
+            n11922, n11921, n11920, n11918, PIN_2_c_1, n11945, n11944, 
+            n11943, n11942, \pwm[31] , n18530, n41, n18532, hall3, 
+            GND_net, hall1, hall2, n11941, n11940, PHASES_5__N_2090, 
+            n11939, \setpoint[31] , VCC_net, \pwm_31__N_2046[30] , \setpoint[30] , 
+            \pwm_31__N_2046[29] , \setpoint[29] , \pwm_31__N_2046[28] , 
+            \setpoint[28] , n11938, \pwm_31__N_2046[27] , \setpoint[27] , 
+            n11937, \pwm_31__N_2046[26] , \setpoint[26] , \pwm_31__N_2046[25] , 
+            \setpoint[25] , \pwm_31__N_2046[24] , \setpoint[24] , \pwm_31__N_2046[21] , 
+            \pwm_31__N_2046[16] , \pwm_31__N_2046[3] , \pwm_31__N_2046[0] , 
+            \pwm_31__N_2046[6] , \pwm_31__N_2046[5] , \pwm_31__N_2046[4] , 
+            \pwm_31__N_2046[7] , \pwm_31__N_2046[8] , \pwm_31__N_2046[19] , 
+            \pwm_31__N_2046[22] , \pwm_31__N_2046[20] , \pwm_31__N_2046[10] , 
+            n11928, \pwm[1] , \pwm_31__N_2046[11] , \pwm_31__N_2046[17] , 
+            \pwm_31__N_2046[13] , \pwm_31__N_2046[12] , \pwm_31__N_2046[23] , 
+            \setpoint[23] , \setpoint[22] , \setpoint[21] , \setpoint[20] , 
+            \setpoint[19] , n233, \pwm_31__N_2046[14] , \pwm_31__N_2046[9] , 
+            \pwm_31__N_2046[15] , n18366, n18368, \setpoint[18] , \setpoint[17] , 
+            n18380, \setpoint[16] , \setpoint[15] , n18382, n11927, 
+            \setpoint[14] , n18364, \setpoint[13] , \pwm[0] , \setpoint[12] , 
+            \setpoint[11] , n11926, \setpoint[10] , n507, n18362, 
+            \setpoint[9] , n509, n18370, \setpoint[8] , n11936, n11935, 
+            n11925, \pwm[9] , n11934, n11933, n11932, n11931, \setpoint[7] , 
+            \setpoint[6] , \setpoint[5] , \setpoint[4] , \setpoint[3] , 
+            \setpoint[2] , \setpoint[1] , n18378, n18356, n18358, 
+            pwm_31__N_2045, n11930, n19, PIN_3_c_2, PIN_22_c_5, PIN_24_c_3, 
+            PIN_23_c_4, n17, n11929, n15, n13, n11, n18396, n9, 
+            n18398, n7, n5, n18404, n3, n18406, n18394, n532, 
+            \PHASES_5__N_2093[25] , n18392, \PHASES_5__N_2093[23] , n18400, 
+            n18402, n18388, PIN_1_c_0, n18390, n11946) /* synthesis lattice_noprune=1, syn_preserve=0, syn_module_defined=1, syn_noprune=0 */ ;
+    input n11924;
+    output [31:0]pwm;
+    input CLK_c;
+    output [9:0]pwm_delay;
+    input n11923;
+    output \pwm_31__N_2046[18] ;
+    input n11922;
+    input n11921;
+    input n11920;
+    input n11918;
+    output PIN_2_c_1;
+    input n11945;
+    input n11944;
+    input n11943;
+    input n11942;
+    output \pwm[31] ;
+    input n18530;
+    input n41;
+    input n18532;
+    input hall3;
+    input GND_net;
+    input hall1;
+    input hall2;
+    input n11941;
+    input n11940;
+    input PHASES_5__N_2090;
+    input n11939;
+    input \setpoint[31] ;
+    input VCC_net;
+    output \pwm_31__N_2046[30] ;
+    input \setpoint[30] ;
+    output \pwm_31__N_2046[29] ;
+    input \setpoint[29] ;
+    output \pwm_31__N_2046[28] ;
+    input \setpoint[28] ;
+    input n11938;
+    output \pwm_31__N_2046[27] ;
+    input \setpoint[27] ;
+    input n11937;
+    output \pwm_31__N_2046[26] ;
+    input \setpoint[26] ;
+    output \pwm_31__N_2046[25] ;
+    input \setpoint[25] ;
+    output \pwm_31__N_2046[24] ;
+    input \setpoint[24] ;
+    output \pwm_31__N_2046[21] ;
+    output \pwm_31__N_2046[16] ;
+    output \pwm_31__N_2046[3] ;
+    input \pwm_31__N_2046[0] ;
+    output \pwm_31__N_2046[6] ;
+    output \pwm_31__N_2046[5] ;
+    output \pwm_31__N_2046[4] ;
+    output \pwm_31__N_2046[7] ;
+    output \pwm_31__N_2046[8] ;
+    output \pwm_31__N_2046[19] ;
+    output \pwm_31__N_2046[22] ;
+    output \pwm_31__N_2046[20] ;
+    output \pwm_31__N_2046[10] ;
+    input n11928;
+    output \pwm[1] ;
+    output \pwm_31__N_2046[11] ;
+    output \pwm_31__N_2046[17] ;
+    output \pwm_31__N_2046[13] ;
+    output \pwm_31__N_2046[12] ;
+    output \pwm_31__N_2046[23] ;
+    input \setpoint[23] ;
+    input \setpoint[22] ;
+    input \setpoint[21] ;
+    input \setpoint[20] ;
+    input \setpoint[19] ;
+    output n233;
+    output \pwm_31__N_2046[14] ;
+    output \pwm_31__N_2046[9] ;
+    output \pwm_31__N_2046[15] ;
+    output n18366;
+    output n18368;
+    input \setpoint[18] ;
+    input \setpoint[17] ;
+    output n18380;
+    input \setpoint[16] ;
+    input \setpoint[15] ;
+    output n18382;
+    input n11927;
+    input \setpoint[14] ;
+    output n18364;
+    input \setpoint[13] ;
+    output \pwm[0] ;
+    input \setpoint[12] ;
+    input \setpoint[11] ;
+    input n11926;
+    input \setpoint[10] ;
+    output n507;
+    output n18362;
+    input \setpoint[9] ;
+    output n509;
+    output n18370;
+    input \setpoint[8] ;
+    input n11936;
+    input n11935;
+    input n11925;
+    output \pwm[9] ;
+    input n11934;
+    input n11933;
+    input n11932;
+    input n11931;
+    input \setpoint[7] ;
+    input \setpoint[6] ;
+    input \setpoint[5] ;
+    input \setpoint[4] ;
+    input \setpoint[3] ;
+    input \setpoint[2] ;
+    input \setpoint[1] ;
+    output n18378;
+    output n18356;
+    output n18358;
+    output pwm_31__N_2045;
+    input n11930;
+    output n19;
+    output PIN_3_c_2;
+    output PIN_22_c_5;
+    output PIN_24_c_3;
+    output PIN_23_c_4;
+    output n17;
+    input n11929;
+    output n15;
+    output n13;
+    output n11;
+    output n18396;
+    output n9;
+    output n18398;
+    output n7;
+    output n5;
+    output n18404;
+    output n3;
+    output n18406;
+    output n18394;
+    output n532;
+    output \PHASES_5__N_2093[25] ;
+    output n18392;
+    output \PHASES_5__N_2093[23] ;
+    output n18400;
+    output n18402;
+    output n18388;
+    output PIN_1_c_0;
+    output n18390;
+    input n11946;
+    
+    wire CLK_c /* synthesis SET_AS_NETWORK=CLK_c, is_clock=1 */ ;   // verilog/TinyFPGA_B.v(3[9:12])
+    wire [9:0]n45;
+    
+    wire n42, n36, n24, n44;
+    wire [5:0]PHASES_5__N_1933;
+    
+    wire n11308, n11917;
+    wire [31:0]pwm_c;   // verilog/motorControl.v(15[21:24])
+    
+    wire n534, n536, n537, n567, n10222, n558, n10628;
+    wire [5:0]PHASES_5__N_2084;
+    
+    wire n7556, n10679, n18325, n18316, n4;
+    wire [31:0]pwm_31__N_1949;
+    
+    wire n17100, n17099, n17098, n17097;
+    wire [31:0]n1;
+    
+    wire n17096, n17095, n18323, n11228, n17094, n18772, n17093, 
+        n39;
+    wire [31:0]pwm_31__N_2046;
+    
+    wire n17205, n4_adj_2199, n27, n40, n39_adj_2200, n11913, n40_adj_2201, 
+        n38, n17092, n17091, n17090, n17089, n17088, n14840, n17218, 
+        n35, n37, n36_adj_2202, n38_adj_2203, n44_adj_2204, n17000;
+    wire [31:0]n500;
+    
+    wire n16999, n17087, n17086, n16998, n17085, n17084, n16997, 
+        n17083, n16996, n17082, n11628, n17081, n17080, n16995, 
+        n17079, n16994, n16993, n17078, n16992, n16991, n17077, 
+        PHASES_5__N_2091, n17076, n17075, n17074, n17073, n16990, 
+        n16989, n17072, n17071, n17070, n18436, n18714, n18509, 
+        n18511, n18292, n18689, n11013, n18213, n18319, n11316, 
+        n18717, n10238, n9573, n18672, n18291, n16988, n9592, 
+        n16987, n16986, n16985, n16984, n9588, n11312, n16983, 
+        n16982, n16981, n16980, n16979, n16978, n16977, n16976, 
+        n16975, n16974, n17044;
+    wire [31:0]PHASES_5__N_2093;
+    
+    wire n16973, n17043, n16972, n16971, n17042, n16970, n17041, 
+        n17040, n17039, n17038, n17037, n17036, n17035, n17034, 
+        n17033, n16931, n16930, n17032, n17031, n16929, n17030, 
+        n17029, n17028, n17027, n16928, n16927, n16926, n17026, 
+        n17025, n16925, n16924, n17024, n16923;
+    
+    SB_DFF pwm_i8 (.Q(pwm[8]), .C(CLK_c), .D(n11924));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_delay_2814__i0 (.Q(pwm_delay[0]), .C(CLK_c), .D(n45[0]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_i7 (.Q(pwm[7]), .C(CLK_c), .D(n11923));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 i21_4_lut (.I0(\pwm_31__N_2046[18] ), .I1(n42), .I2(n36), 
+            .I3(n24), .O(n44));
+    defparam i21_4_lut.LUT_INIT = 16'hfffe;
+    SB_DFF pwm_i6 (.Q(pwm[6]), .C(CLK_c), .D(n11922));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i5 (.Q(pwm[5]), .C(CLK_c), .D(n11921));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i4 (.Q(pwm[4]), .C(CLK_c), .D(n11920));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i3 (.Q(pwm[3]), .C(CLK_c), .D(n11918));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFFE PHASES_i2 (.Q(PIN_2_c_1), .C(CLK_c), .E(n11308), .D(PHASES_5__N_1933[1]));   // verilog/motorControl.v(40[10] 83[6])
+    SB_DFF pwm_i2 (.Q(pwm[2]), .C(CLK_c), .D(n11917));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i29 (.Q(pwm_c[29]), .C(CLK_c), .D(n11945));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i28 (.Q(pwm_c[28]), .C(CLK_c), .D(n11944));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i27 (.Q(pwm_c[27]), .C(CLK_c), .D(n11943));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i26 (.Q(pwm_c[26]), .C(CLK_c), .D(n11942));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 i1_4_lut (.I0(\pwm[31] ), .I1(n18530), .I2(n41), .I3(n18532), 
+            .O(n534));
+    defparam i1_4_lut.LUT_INIT = 16'h0020;
+    SB_LUT4 i53_2_lut (.I0(n536), .I1(hall3), .I2(GND_net), .I3(GND_net), 
+            .O(n537));   // verilog/motorControl.v(61[10:34])
+    defparam i53_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i52_2_lut (.I0(hall1), .I1(hall2), .I2(GND_net), .I3(GND_net), 
+            .O(n536));   // verilog/motorControl.v(61[10:25])
+    defparam i52_2_lut.LUT_INIT = 16'h2222;
+    SB_LUT4 i65_2_lut (.I0(hall1), .I1(hall2), .I2(GND_net), .I3(GND_net), 
+            .O(n567));   // verilog/motorControl.v(70[10:25])
+    defparam i65_2_lut.LUT_INIT = 16'h4444;
+    SB_LUT4 i2_2_lut (.I0(hall2), .I1(n10222), .I2(GND_net), .I3(GND_net), 
+            .O(n558));   // verilog/motorControl.v(67[10:34])
+    defparam i2_2_lut.LUT_INIT = 16'h8888;
+    SB_LUT4 i2_4_lut (.I0(n567), .I1(n558), .I2(hall3), .I3(n536), .O(n10628));   // verilog/motorControl.v(70[7] 72[10])
+    defparam i2_4_lut.LUT_INIT = 16'hffce;
+    SB_LUT4 i1_2_lut (.I0(hall1), .I1(hall3), .I2(GND_net), .I3(GND_net), 
+            .O(n10222));   // verilog/motorControl.v(67[10:34])
+    defparam i1_2_lut.LUT_INIT = 16'h2222;
+    SB_LUT4 i1_2_lut_adj_136 (.I0(hall1), .I1(hall3), .I2(GND_net), .I3(GND_net), 
+            .O(PHASES_5__N_2084[1]));   // verilog/motorControl.v(76[10:35])
+    defparam i1_2_lut_adj_136.LUT_INIT = 16'h4444;
+    SB_DFF pwm_delay_2814__i9 (.Q(pwm_delay[9]), .C(CLK_c), .D(n45[9]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_delay_2814__i8 (.Q(pwm_delay[8]), .C(CLK_c), .D(n45[8]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_delay_2814__i7 (.Q(pwm_delay[7]), .C(CLK_c), .D(n45[7]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_delay_2814__i6 (.Q(pwm_delay[6]), .C(CLK_c), .D(n45[6]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_delay_2814__i5 (.Q(pwm_delay[5]), .C(CLK_c), .D(n45[5]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_delay_2814__i4 (.Q(pwm_delay[4]), .C(CLK_c), .D(n45[4]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_delay_2814__i3 (.Q(pwm_delay[3]), .C(CLK_c), .D(n45[3]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_delay_2814__i2 (.Q(pwm_delay[2]), .C(CLK_c), .D(n45[2]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_delay_2814__i1 (.Q(pwm_delay[1]), .C(CLK_c), .D(n45[1]));   // verilog/motorControl.v(82[18:29])
+    SB_DFF pwm_i25 (.Q(pwm_c[25]), .C(CLK_c), .D(n11941));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i24 (.Q(pwm_c[24]), .C(CLK_c), .D(n11940));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 i2_2_lut_adj_137 (.I0(n534), .I1(n7556), .I2(GND_net), .I3(GND_net), 
+            .O(n10679));   // verilog/motorControl.v(79[14] 81[8])
+    defparam i2_2_lut_adj_137.LUT_INIT = 16'hdddd;
+    SB_LUT4 i1_4_lut_adj_138 (.I0(n10628), .I1(n18325), .I2(n18316), .I3(n4), 
+            .O(n11308));
+    defparam i1_4_lut_adj_138.LUT_INIT = 16'hfac8;
+    SB_LUT4 PHASES_5__I_0_i2_4_lut (.I0(n10679), .I1(PHASES_5__N_2084[1]), 
+            .I2(PHASES_5__N_2090), .I3(n10222), .O(PHASES_5__N_1933[1]));   // verilog/motorControl.v(60[14] 81[8])
+    defparam PHASES_5__I_0_i2_4_lut.LUT_INIT = 16'hc5c0;
+    SB_DFF pwm_i23 (.Q(pwm_c[23]), .C(CLK_c), .D(n11939));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 add_4743_32_lut (.I0(GND_net), .I1(\setpoint[31] ), .I2(VCC_net), 
+            .I3(n17100), .O(pwm_31__N_1949[31])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_32_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_4743_31_lut (.I0(GND_net), .I1(\setpoint[30] ), .I2(VCC_net), 
+            .I3(n17099), .O(\pwm_31__N_2046[30] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_31_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_31 (.CI(n17099), .I0(\setpoint[30] ), .I1(VCC_net), 
+            .CO(n17100));
+    SB_LUT4 add_4743_30_lut (.I0(GND_net), .I1(\setpoint[29] ), .I2(VCC_net), 
+            .I3(n17098), .O(\pwm_31__N_2046[29] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_30_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_30 (.CI(n17098), .I0(\setpoint[29] ), .I1(VCC_net), 
+            .CO(n17099));
+    SB_LUT4 add_4743_29_lut (.I0(GND_net), .I1(\setpoint[28] ), .I2(VCC_net), 
+            .I3(n17097), .O(\pwm_31__N_2046[28] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_29_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_29 (.CI(n17097), .I0(\setpoint[28] ), .I1(VCC_net), 
+            .CO(n17098));
+    SB_LUT4 sub_16_inv_0_i11_1_lut (.I0(pwm_c[10]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[10]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i11_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i12_1_lut (.I0(pwm_c[11]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[11]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i12_1_lut.LUT_INIT = 16'h5555;
+    SB_DFF pwm_i22 (.Q(pwm_c[22]), .C(CLK_c), .D(n11938));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 add_4743_28_lut (.I0(GND_net), .I1(\setpoint[27] ), .I2(VCC_net), 
+            .I3(n17096), .O(\pwm_31__N_2046[27] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_28_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_28 (.CI(n17096), .I0(\setpoint[27] ), .I1(VCC_net), 
+            .CO(n17097));
+    SB_DFF pwm_i21 (.Q(pwm_c[21]), .C(CLK_c), .D(n11937));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 sub_16_inv_0_i13_1_lut (.I0(pwm_c[12]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[12]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i13_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i14_1_lut (.I0(pwm_c[13]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[13]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i14_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 add_4743_27_lut (.I0(GND_net), .I1(\setpoint[26] ), .I2(VCC_net), 
+            .I3(n17095), .O(\pwm_31__N_2046[26] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_27_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 sub_16_inv_0_i15_1_lut (.I0(pwm_c[14]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[14]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i15_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i16_1_lut (.I0(pwm_c[15]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[15]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i16_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i17_1_lut (.I0(pwm_c[16]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[16]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i17_1_lut.LUT_INIT = 16'h5555;
+    SB_CARRY add_4743_27 (.CI(n17095), .I0(\setpoint[26] ), .I1(VCC_net), 
+            .CO(n17096));
+    SB_LUT4 i1_4_lut_adj_139 (.I0(n18325), .I1(n18323), .I2(n7556), .I3(PHASES_5__N_2090), 
+            .O(n11228));
+    defparam i1_4_lut_adj_139.LUT_INIT = 16'hc8cc;
+    SB_LUT4 add_4743_26_lut (.I0(GND_net), .I1(\setpoint[25] ), .I2(VCC_net), 
+            .I3(n17094), .O(\pwm_31__N_2046[25] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_26_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i8652_4_lut (.I0(n18772), .I1(n7556), .I2(PHASES_5__N_2090), 
+            .I3(n10222), .O(PHASES_5__N_1933[0]));   // verilog/motorControl.v(60[14] 81[8])
+    defparam i8652_4_lut.LUT_INIT = 16'h3a0a;
+    SB_LUT4 sub_16_inv_0_i18_1_lut (.I0(pwm_c[17]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[17]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i18_1_lut.LUT_INIT = 16'h5555;
+    SB_CARRY add_4743_26 (.CI(n17094), .I0(\setpoint[25] ), .I1(VCC_net), 
+            .CO(n17095));
+    SB_LUT4 add_4743_25_lut (.I0(GND_net), .I1(\setpoint[24] ), .I2(VCC_net), 
+            .I3(n17093), .O(\pwm_31__N_2046[24] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_25_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 sub_16_inv_0_i19_1_lut (.I0(pwm_c[18]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[18]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i19_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i20_1_lut (.I0(pwm_c[19]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[19]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i20_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 i16_4_lut (.I0(\pwm_31__N_2046[21] ), .I1(\pwm_31__N_2046[29] ), 
+            .I2(\pwm_31__N_2046[27] ), .I3(\pwm_31__N_2046[16] ), .O(n39));
+    defparam i16_4_lut.LUT_INIT = 16'h8000;
+    SB_LUT4 i2_4_lut_adj_140 (.I0(\pwm_31__N_2046[3] ), .I1(pwm_31__N_2046[2]), 
+            .I2(\pwm_31__N_2046[0] ), .I3(pwm_31__N_2046[1]), .O(n17205));
+    defparam i2_4_lut_adj_140.LUT_INIT = 16'h8880;
+    SB_LUT4 i1_4_lut_adj_141 (.I0(\pwm_31__N_2046[6] ), .I1(n17205), .I2(\pwm_31__N_2046[5] ), 
+            .I3(\pwm_31__N_2046[4] ), .O(n4_adj_2199));
+    defparam i1_4_lut_adj_141.LUT_INIT = 16'hfaea;
+    SB_LUT4 i4_4_lut (.I0(\pwm_31__N_2046[29] ), .I1(\pwm_31__N_2046[7] ), 
+            .I2(\pwm_31__N_2046[8] ), .I3(n4_adj_2199), .O(n27));
+    defparam i4_4_lut.LUT_INIT = 16'hfaea;
+    SB_LUT4 i17_4_lut (.I0(\pwm_31__N_2046[19] ), .I1(\pwm_31__N_2046[22] ), 
+            .I2(\pwm_31__N_2046[20] ), .I3(\pwm_31__N_2046[26] ), .O(n40));
+    defparam i17_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i16_4_lut_adj_142 (.I0(\pwm_31__N_2046[27] ), .I1(\pwm_31__N_2046[30] ), 
+            .I2(\pwm_31__N_2046[28] ), .I3(\pwm_31__N_2046[10] ), .O(n39_adj_2200));
+    defparam i16_4_lut_adj_142.LUT_INIT = 16'hfffe;
+    SB_DFF pwm_i12 (.Q(pwm_c[12]), .C(CLK_c), .D(n11928));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i1 (.Q(\pwm[1] ), .C(CLK_c), .D(n11913));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 i17_4_lut_adj_143 (.I0(\pwm_31__N_2046[11] ), .I1(\pwm_31__N_2046[17] ), 
+            .I2(\pwm_31__N_2046[13] ), .I3(\pwm_31__N_2046[25] ), .O(n40_adj_2201));
+    defparam i17_4_lut_adj_143.LUT_INIT = 16'h8000;
+    SB_LUT4 sub_16_inv_0_i21_1_lut (.I0(pwm_c[20]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[20]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i21_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i22_1_lut (.I0(pwm_c[21]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[21]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i22_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i23_1_lut (.I0(pwm_c[22]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[22]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i23_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i24_1_lut (.I0(pwm_c[23]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[23]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i24_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 i19_4_lut (.I0(n27), .I1(n38), .I2(\pwm_31__N_2046[11] ), 
+            .I3(\pwm_31__N_2046[12] ), .O(n42));
+    defparam i19_4_lut.LUT_INIT = 16'hfffe;
+    SB_CARRY add_4743_25 (.CI(n17093), .I0(\setpoint[24] ), .I1(VCC_net), 
+            .CO(n17094));
+    SB_LUT4 add_4743_24_lut (.I0(GND_net), .I1(\setpoint[23] ), .I2(VCC_net), 
+            .I3(n17092), .O(\pwm_31__N_2046[23] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_24_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_24 (.CI(n17092), .I0(\setpoint[23] ), .I1(VCC_net), 
+            .CO(n17093));
+    SB_LUT4 sub_16_inv_0_i25_1_lut (.I0(pwm_c[24]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[24]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i25_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i26_1_lut (.I0(pwm_c[25]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[25]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i26_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i27_1_lut (.I0(pwm_c[26]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[26]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i27_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 add_4743_23_lut (.I0(GND_net), .I1(\setpoint[22] ), .I2(VCC_net), 
+            .I3(n17091), .O(\pwm_31__N_2046[22] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_23_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 sub_16_inv_0_i28_1_lut (.I0(pwm_c[27]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[27]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i28_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i29_1_lut (.I0(pwm_c[28]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[28]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i29_1_lut.LUT_INIT = 16'h5555;
+    SB_CARRY add_4743_23 (.CI(n17091), .I0(\setpoint[22] ), .I1(VCC_net), 
+            .CO(n17092));
+    SB_LUT4 add_4743_22_lut (.I0(GND_net), .I1(\setpoint[21] ), .I2(VCC_net), 
+            .I3(n17090), .O(\pwm_31__N_2046[21] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_22_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_22 (.CI(n17090), .I0(\setpoint[21] ), .I1(VCC_net), 
+            .CO(n17091));
+    SB_LUT4 add_4743_21_lut (.I0(GND_net), .I1(\setpoint[20] ), .I2(VCC_net), 
+            .I3(n17089), .O(\pwm_31__N_2046[20] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_21_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_21 (.CI(n17089), .I0(\setpoint[20] ), .I1(VCC_net), 
+            .CO(n17090));
+    SB_LUT4 add_4743_20_lut (.I0(GND_net), .I1(\setpoint[19] ), .I2(VCC_net), 
+            .I3(n17088), .O(\pwm_31__N_2046[19] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_20_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_20 (.CI(n17088), .I0(\setpoint[19] ), .I1(VCC_net), 
+            .CO(n17089));
+    SB_LUT4 i2_4_lut_adj_144 (.I0(\pwm_31__N_2046[7] ), .I1(n14840), .I2(\pwm_31__N_2046[6] ), 
+            .I3(\pwm_31__N_2046[5] ), .O(n17218));
+    defparam i2_4_lut_adj_144.LUT_INIT = 16'ha080;
+    SB_LUT4 i12_4_lut (.I0(\pwm_31__N_2046[10] ), .I1(n17218), .I2(\pwm_31__N_2046[30] ), 
+            .I3(\pwm_31__N_2046[8] ), .O(n35));
+    defparam i12_4_lut.LUT_INIT = 16'ha080;
+    SB_LUT4 i21_4_lut_adj_145 (.I0(n35), .I1(n37), .I2(n36_adj_2202), 
+            .I3(n38_adj_2203), .O(n44_adj_2204));
+    defparam i21_4_lut_adj_145.LUT_INIT = 16'h8000;
+    SB_LUT4 i3499_4_lut (.I0(n39), .I1(pwm_31__N_1949[31]), .I2(n44_adj_2204), 
+            .I3(n40_adj_2201), .O(n233));
+    defparam i3499_4_lut.LUT_INIT = 16'h4ccc;
+    SB_LUT4 i15_4_lut (.I0(\pwm_31__N_2046[14] ), .I1(\pwm_31__N_2046[23] ), 
+            .I2(\pwm_31__N_2046[21] ), .I3(\pwm_31__N_2046[24] ), .O(n38));
+    defparam i15_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 i1_2_lut_adj_146 (.I0(\pwm_31__N_2046[17] ), .I1(\pwm_31__N_2046[9] ), 
+            .I2(GND_net), .I3(GND_net), .O(n24));
+    defparam i1_2_lut_adj_146.LUT_INIT = 16'heeee;
+    SB_LUT4 i13_4_lut (.I0(\pwm_31__N_2046[13] ), .I1(\pwm_31__N_2046[16] ), 
+            .I2(\pwm_31__N_2046[15] ), .I3(\pwm_31__N_2046[25] ), .O(n36));
+    defparam i13_4_lut.LUT_INIT = 16'hfffe;
+    SB_LUT4 add_47_33_lut (.I0(n500[13]), .I1(GND_net), .I2(\pwm[31] ), 
+            .I3(n17000), .O(n18366)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_33_lut.LUT_INIT = 16'hebbe;
+    SB_LUT4 i15_4_lut_adj_147 (.I0(\pwm_31__N_2046[20] ), .I1(\pwm_31__N_2046[15] ), 
+            .I2(\pwm_31__N_2046[24] ), .I3(\pwm_31__N_2046[19] ), .O(n38_adj_2203));
+    defparam i15_4_lut_adj_147.LUT_INIT = 16'h8000;
+    SB_LUT4 i12073_3_lut (.I0(pwm_31__N_2046[2]), .I1(\pwm_31__N_2046[4] ), 
+            .I2(\pwm_31__N_2046[3] ), .I3(GND_net), .O(n14840));
+    defparam i12073_3_lut.LUT_INIT = 16'hc8c8;
+    SB_LUT4 add_47_32_lut (.I0(n500[21]), .I1(GND_net), .I2(pwm_c[30]), 
+            .I3(n16999), .O(n18368)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_32_lut.LUT_INIT = 16'hebbe;
+    SB_LUT4 add_4743_19_lut (.I0(GND_net), .I1(\setpoint[18] ), .I2(VCC_net), 
+            .I3(n17087), .O(\pwm_31__N_2046[18] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_19_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_19 (.CI(n17087), .I0(\setpoint[18] ), .I1(VCC_net), 
+            .CO(n17088));
+    SB_CARRY add_47_32 (.CI(n16999), .I0(GND_net), .I1(pwm_c[30]), .CO(n17000));
+    SB_LUT4 add_4743_18_lut (.I0(GND_net), .I1(\setpoint[17] ), .I2(VCC_net), 
+            .I3(n17086), .O(\pwm_31__N_2046[17] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_18_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_18 (.CI(n17086), .I0(\setpoint[17] ), .I1(VCC_net), 
+            .CO(n17087));
+    SB_LUT4 add_47_31_lut (.I0(n500[26]), .I1(GND_net), .I2(pwm_c[29]), 
+            .I3(n16998), .O(n18380)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_31_lut.LUT_INIT = 16'hebbe;
+    SB_LUT4 add_4743_17_lut (.I0(GND_net), .I1(\setpoint[16] ), .I2(VCC_net), 
+            .I3(n17085), .O(\pwm_31__N_2046[16] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_17_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_17 (.CI(n17085), .I0(\setpoint[16] ), .I1(VCC_net), 
+            .CO(n17086));
+    SB_LUT4 add_4743_16_lut (.I0(GND_net), .I1(\setpoint[15] ), .I2(VCC_net), 
+            .I3(n17084), .O(\pwm_31__N_2046[15] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_16_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_16 (.CI(n17084), .I0(\setpoint[15] ), .I1(VCC_net), 
+            .CO(n17085));
+    SB_CARRY add_47_31 (.CI(n16998), .I0(GND_net), .I1(pwm_c[29]), .CO(n16999));
+    SB_LUT4 add_47_30_lut (.I0(n500[12]), .I1(GND_net), .I2(pwm_c[28]), 
+            .I3(n16997), .O(n18382)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_30_lut.LUT_INIT = 16'hebbe;
+    SB_DFF pwm_i11 (.Q(pwm_c[11]), .C(CLK_c), .D(n11927));   // verilog/motorControl.v(25[14] 36[8])
+    SB_CARRY add_47_30 (.CI(n16997), .I0(GND_net), .I1(pwm_c[28]), .CO(n16998));
+    SB_LUT4 add_4743_15_lut (.I0(GND_net), .I1(\setpoint[14] ), .I2(VCC_net), 
+            .I3(n17083), .O(\pwm_31__N_2046[14] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_15_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_15 (.CI(n17083), .I0(\setpoint[14] ), .I1(VCC_net), 
+            .CO(n17084));
+    SB_LUT4 add_47_29_lut (.I0(n500[15]), .I1(GND_net), .I2(pwm_c[27]), 
+            .I3(n16996), .O(n18364)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_29_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY add_47_29 (.CI(n16996), .I0(GND_net), .I1(pwm_c[27]), .CO(n16997));
+    SB_LUT4 add_4743_14_lut (.I0(GND_net), .I1(\setpoint[13] ), .I2(VCC_net), 
+            .I3(n17082), .O(\pwm_31__N_2046[13] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_14_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_14 (.CI(n17082), .I0(\setpoint[13] ), .I1(VCC_net), 
+            .CO(n17083));
+    SB_DFF pwm_i0 (.Q(\pwm[0] ), .C(CLK_c), .D(n11628));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 add_4743_13_lut (.I0(GND_net), .I1(\setpoint[12] ), .I2(VCC_net), 
+            .I3(n17081), .O(\pwm_31__N_2046[12] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_13_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_13 (.CI(n17081), .I0(\setpoint[12] ), .I1(VCC_net), 
+            .CO(n17082));
+    SB_LUT4 add_4743_12_lut (.I0(GND_net), .I1(\setpoint[11] ), .I2(VCC_net), 
+            .I3(n17080), .O(\pwm_31__N_2046[11] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_12_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_47_28_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[26]), 
+            .I3(n16995), .O(n500[26])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_28_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_12 (.CI(n17080), .I0(\setpoint[11] ), .I1(VCC_net), 
+            .CO(n17081));
+    SB_DFF pwm_i10 (.Q(pwm_c[10]), .C(CLK_c), .D(n11926));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 add_4743_11_lut (.I0(GND_net), .I1(\setpoint[10] ), .I2(VCC_net), 
+            .I3(n17079), .O(\pwm_31__N_2046[10] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_11_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_28 (.CI(n16995), .I0(GND_net), .I1(pwm_c[26]), .CO(n16996));
+    SB_LUT4 add_47_27_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[25]), 
+            .I3(n16994), .O(n507)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_27_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_27 (.CI(n16994), .I0(GND_net), .I1(pwm_c[25]), .CO(n16995));
+    SB_CARRY add_4743_11 (.CI(n17079), .I0(\setpoint[10] ), .I1(VCC_net), 
+            .CO(n17080));
+    SB_LUT4 add_47_26_lut (.I0(n500[11]), .I1(GND_net), .I2(pwm_c[24]), 
+            .I3(n16993), .O(n18362)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_26_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY add_47_26 (.CI(n16993), .I0(GND_net), .I1(pwm_c[24]), .CO(n16994));
+    SB_LUT4 add_4743_10_lut (.I0(GND_net), .I1(\setpoint[9] ), .I2(VCC_net), 
+            .I3(n17078), .O(\pwm_31__N_2046[9] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_10_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_47_25_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[23]), 
+            .I3(n16992), .O(n509)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_25_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_25 (.CI(n16992), .I0(GND_net), .I1(pwm_c[23]), .CO(n16993));
+    SB_CARRY add_4743_10 (.CI(n17078), .I0(\setpoint[9] ), .I1(VCC_net), 
+            .CO(n17079));
+    SB_LUT4 add_47_24_lut (.I0(n500[20]), .I1(GND_net), .I2(pwm_c[22]), 
+            .I3(n16991), .O(n18370)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_24_lut.LUT_INIT = 16'hebbe;
+    SB_LUT4 add_4743_9_lut (.I0(GND_net), .I1(\setpoint[8] ), .I2(VCC_net), 
+            .I3(n17077), .O(\pwm_31__N_2046[8] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_9_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_9 (.CI(n17077), .I0(\setpoint[8] ), .I1(VCC_net), 
+            .CO(n17078));
+    SB_LUT4 sub_16_inv_0_i30_1_lut (.I0(pwm_c[29]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[29]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i30_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 sub_16_inv_0_i31_1_lut (.I0(pwm_c[30]), .I1(GND_net), .I2(GND_net), 
+            .I3(GND_net), .O(n1[30]));   // verilog/motorControl.v(41[29:39])
+    defparam sub_16_inv_0_i31_1_lut.LUT_INIT = 16'h5555;
+    SB_LUT4 i3509_1_lut (.I0(\pwm[31] ), .I1(GND_net), .I2(GND_net), .I3(GND_net), 
+            .O(PHASES_5__N_2091));   // verilog/motorControl.v(41[9:15])
+    defparam i3509_1_lut.LUT_INIT = 16'h5555;
+    SB_DFF pwm_i20 (.Q(pwm_c[20]), .C(CLK_c), .D(n11936));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i19 (.Q(pwm_c[19]), .C(CLK_c), .D(n11935));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i9 (.Q(\pwm[9] ), .C(CLK_c), .D(n11925));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i18 (.Q(pwm_c[18]), .C(CLK_c), .D(n11934));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i17 (.Q(pwm_c[17]), .C(CLK_c), .D(n11933));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i16 (.Q(pwm_c[16]), .C(CLK_c), .D(n11932));   // verilog/motorControl.v(25[14] 36[8])
+    SB_DFF pwm_i15 (.Q(pwm_c[15]), .C(CLK_c), .D(n11931));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 add_4743_8_lut (.I0(GND_net), .I1(\setpoint[7] ), .I2(VCC_net), 
+            .I3(n17076), .O(\pwm_31__N_2046[7] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_8_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_8 (.CI(n17076), .I0(\setpoint[7] ), .I1(VCC_net), 
+            .CO(n17077));
+    SB_CARRY add_47_24 (.CI(n16991), .I0(GND_net), .I1(pwm_c[22]), .CO(n16992));
+    SB_LUT4 add_4743_7_lut (.I0(GND_net), .I1(\setpoint[6] ), .I2(VCC_net), 
+            .I3(n17075), .O(\pwm_31__N_2046[6] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_7_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_7 (.CI(n17075), .I0(\setpoint[6] ), .I1(VCC_net), 
+            .CO(n17076));
+    SB_LUT4 add_4743_6_lut (.I0(GND_net), .I1(\setpoint[5] ), .I2(VCC_net), 
+            .I3(n17074), .O(\pwm_31__N_2046[5] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_6_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_6 (.CI(n17074), .I0(\setpoint[5] ), .I1(VCC_net), 
+            .CO(n17075));
+    SB_LUT4 add_4743_5_lut (.I0(GND_net), .I1(\setpoint[4] ), .I2(VCC_net), 
+            .I3(n17073), .O(\pwm_31__N_2046[4] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_5_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_47_23_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[21]), 
+            .I3(n16990), .O(n500[21])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_23_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_23 (.CI(n16990), .I0(GND_net), .I1(pwm_c[21]), .CO(n16991));
+    SB_LUT4 add_47_22_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[20]), 
+            .I3(n16989), .O(n500[20])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_22_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_5 (.CI(n17073), .I0(\setpoint[4] ), .I1(VCC_net), 
+            .CO(n17074));
+    SB_LUT4 add_4743_4_lut (.I0(GND_net), .I1(\setpoint[3] ), .I2(VCC_net), 
+            .I3(n17072), .O(\pwm_31__N_2046[3] )) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_4_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_4 (.CI(n17072), .I0(\setpoint[3] ), .I1(VCC_net), 
+            .CO(n17073));
+    SB_LUT4 add_4743_3_lut (.I0(GND_net), .I1(\setpoint[2] ), .I2(VCC_net), 
+            .I3(n17071), .O(pwm_31__N_2046[2])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_3_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_3 (.CI(n17071), .I0(\setpoint[2] ), .I1(VCC_net), 
+            .CO(n17072));
+    SB_LUT4 add_4743_2_lut (.I0(GND_net), .I1(\setpoint[1] ), .I2(VCC_net), 
+            .I3(n17070), .O(pwm_31__N_2046[1])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_4743_2_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_4743_2 (.CI(n17070), .I0(\setpoint[1] ), .I1(VCC_net), 
+            .CO(n17071));
+    SB_CARRY add_47_22 (.CI(n16989), .I0(GND_net), .I1(pwm_c[20]), .CO(n16990));
+    SB_CARRY add_4743_1 (.CI(GND_net), .I0(\pwm_31__N_2046[0] ), .I1(\pwm_31__N_2046[0] ), 
+            .CO(n17070));
+    SB_LUT4 i15941_2_lut (.I0(n18436), .I1(n534), .I2(GND_net), .I3(GND_net), 
+            .O(n18714));
+    defparam i15941_2_lut.LUT_INIT = 16'h4444;
+    SB_LUT4 i16041_4_lut (.I0(n18714), .I1(n18509), .I2(n18511), .I3(PHASES_5__N_2090), 
+            .O(n18292));
+    defparam i16041_4_lut.LUT_INIT = 16'hfcdd;
+    SB_LUT4 i8613_4_lut (.I0(n534), .I1(n18689), .I2(PHASES_5__N_2090), 
+            .I3(n11013), .O(PHASES_5__N_1933[4]));   // verilog/motorControl.v(60[14] 81[8])
+    defparam i8613_4_lut.LUT_INIT = 16'hc0ca;
+    SB_LUT4 i15906_2_lut_3_lut (.I0(hall2), .I1(PHASES_5__N_2084[1]), .I2(n567), 
+            .I3(GND_net), .O(n18689));   // verilog/motorControl.v(76[10:35])
+    defparam i15906_2_lut_3_lut.LUT_INIT = 16'hb0b0;
+    SB_LUT4 i2_2_lut_3_lut (.I0(hall2), .I1(PHASES_5__N_2084[1]), .I2(n18436), 
+            .I3(GND_net), .O(n11013));   // verilog/motorControl.v(76[10:35])
+    defparam i2_2_lut_3_lut.LUT_INIT = 16'hf4f4;
+    SB_LUT4 i1_4_lut_adj_148 (.I0(n18316), .I1(n18213), .I2(n18319), .I3(n534), 
+            .O(n11316));
+    defparam i1_4_lut_adj_148.LUT_INIT = 16'hc8fa;
+    SB_LUT4 PHASES_5__I_0_i4_4_lut (.I0(n18717), .I1(PHASES_5__N_2084[1]), 
+            .I2(PHASES_5__N_2090), .I3(n10238), .O(PHASES_5__N_1933[3]));   // verilog/motorControl.v(60[14] 81[8])
+    defparam PHASES_5__I_0_i4_4_lut.LUT_INIT = 16'h3a0a;
+    SB_LUT4 i15536_3_lut (.I0(hall2), .I1(hall3), .I2(hall1), .I3(GND_net), 
+            .O(n18509));
+    defparam i15536_3_lut.LUT_INIT = 16'h5454;
+    SB_LUT4 i15537_3_lut (.I0(hall2), .I1(hall1), .I2(hall3), .I3(GND_net), 
+            .O(n18511));
+    defparam i15537_3_lut.LUT_INIT = 16'h2a2a;
+    SB_LUT4 i8604_2_lut_3_lut (.I0(hall2), .I1(PHASES_5__N_2084[1]), .I2(n9573), 
+            .I3(GND_net), .O(PHASES_5__N_2084[2]));   // verilog/motorControl.v(76[10:35])
+    defparam i8604_2_lut_3_lut.LUT_INIT = 16'h4f4f;
+    SB_LUT4 i16026_4_lut (.I0(n18672), .I1(n18509), .I2(n18436), .I3(PHASES_5__N_2090), 
+            .O(n18291));
+    defparam i16026_4_lut.LUT_INIT = 16'hfcdd;
+    SB_LUT4 add_47_21_lut (.I0(n500[18]), .I1(GND_net), .I2(pwm_c[19]), 
+            .I3(n16988), .O(n18378)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_21_lut.LUT_INIT = 16'hebbe;
+    SB_LUT4 i2_3_lut_4_lut (.I0(hall2), .I1(PHASES_5__N_2084[1]), .I2(n9573), 
+            .I3(n537), .O(n18213));   // verilog/motorControl.v(76[10:35])
+    defparam i2_3_lut_4_lut.LUT_INIT = 16'hfff4;
+    SB_LUT4 i6901_2_lut_3_lut (.I0(hall2), .I1(PHASES_5__N_2084[1]), .I2(n534), 
+            .I3(GND_net), .O(n9592));   // verilog/motorControl.v(76[10:35])
+    defparam i6901_2_lut_3_lut.LUT_INIT = 16'h4f4f;
+    SB_LUT4 PHASES_5__I_0_i6_4_lut (.I0(n9592), .I1(n11013), .I2(PHASES_5__N_2090), 
+            .I3(n567), .O(PHASES_5__N_1933[5]));   // verilog/motorControl.v(60[14] 81[8])
+    defparam PHASES_5__I_0_i6_4_lut.LUT_INIT = 16'h3530;
+    SB_CARRY add_47_21 (.CI(n16988), .I0(GND_net), .I1(pwm_c[19]), .CO(n16989));
+    SB_LUT4 i5014_2_lut_3_lut (.I0(hall2), .I1(PHASES_5__N_2084[1]), .I2(n567), 
+            .I3(GND_net), .O(n7556));   // verilog/motorControl.v(76[10:35])
+    defparam i5014_2_lut_3_lut.LUT_INIT = 16'hf4f4;
+    SB_LUT4 add_47_20_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[18]), 
+            .I3(n16987), .O(n500[18])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_20_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_20 (.CI(n16987), .I0(GND_net), .I1(pwm_c[18]), .CO(n16988));
+    SB_LUT4 add_47_19_lut (.I0(n500[10]), .I1(GND_net), .I2(pwm_c[17]), 
+            .I3(n16986), .O(n18356)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_19_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY add_47_19 (.CI(n16986), .I0(GND_net), .I1(pwm_c[17]), .CO(n16987));
+    SB_LUT4 add_47_18_lut (.I0(n500[14]), .I1(GND_net), .I2(pwm_c[16]), 
+            .I3(n16985), .O(n18358)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_18_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY add_47_18 (.CI(n16985), .I0(GND_net), .I1(pwm_c[16]), .CO(n16986));
+    SB_LUT4 add_47_17_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[15]), 
+            .I3(n16984), .O(n500[15])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_17_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i7497_2_lut (.I0(hall3), .I1(hall2), .I2(GND_net), .I3(GND_net), 
+            .O(n10238));   // verilog/motorControl.v(51[7] 53[10])
+    defparam i7497_2_lut.LUT_INIT = 16'h4444;
+    SB_CARRY add_47_17 (.CI(n16984), .I0(GND_net), .I1(pwm_c[15]), .CO(n16985));
+    SB_LUT4 i1_4_lut_adj_149 (.I0(n18213), .I1(n18319), .I2(PHASES_5__N_2090), 
+            .I3(n9588), .O(n11312));
+    defparam i1_4_lut_adj_149.LUT_INIT = 16'hafac;
+    SB_LUT4 add_47_16_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[14]), 
+            .I3(n16983), .O(n500[14])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_16_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 PHASES_5__I_0_i3_4_lut (.I0(n9588), .I1(PHASES_5__N_2084[2]), 
+            .I2(PHASES_5__N_2090), .I3(n10238), .O(PHASES_5__N_1933[2]));   // verilog/motorControl.v(60[14] 81[8])
+    defparam PHASES_5__I_0_i3_4_lut.LUT_INIT = 16'hc5c0;
+    SB_CARRY add_47_16 (.CI(n16983), .I0(GND_net), .I1(pwm_c[14]), .CO(n16984));
+    SB_LUT4 i9131_2_lut_3_lut (.I0(n233), .I1(pwm_31__N_2045), .I2(pwm_31__N_2046[2]), 
+            .I3(GND_net), .O(n11917));   // verilog/motorControl.v(30[16] 34[10])
+    defparam i9131_2_lut_3_lut.LUT_INIT = 16'hfefe;
+    SB_LUT4 add_47_15_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[13]), 
+            .I3(n16982), .O(n500[13])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_15_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_15 (.CI(n16982), .I0(GND_net), .I1(pwm_c[13]), .CO(n16983));
+    SB_LUT4 add_47_14_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[12]), 
+            .I3(n16981), .O(n500[12])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_14_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_14 (.CI(n16981), .I0(GND_net), .I1(pwm_c[12]), .CO(n16982));
+    SB_LUT4 add_47_13_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[11]), 
+            .I3(n16980), .O(n500[11])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_13_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i8842_2_lut_3_lut (.I0(n233), .I1(pwm_31__N_2045), .I2(\pwm_31__N_2046[0] ), 
+            .I3(GND_net), .O(n11628));   // verilog/motorControl.v(30[16] 34[10])
+    defparam i8842_2_lut_3_lut.LUT_INIT = 16'h1010;
+    SB_DFF pwm_i14 (.Q(pwm_c[14]), .C(CLK_c), .D(n11930));   // verilog/motorControl.v(25[14] 36[8])
+    SB_CARRY add_47_13 (.CI(n16980), .I0(GND_net), .I1(pwm_c[11]), .CO(n16981));
+    SB_LUT4 i15464_2_lut_3_lut (.I0(n567), .I1(hall3), .I2(n10238), .I3(GND_net), 
+            .O(n18436));   // verilog/motorControl.v(73[10:34])
+    defparam i15464_2_lut_3_lut.LUT_INIT = 16'hf8f8;
+    SB_LUT4 i6882_4_lut_4_lut (.I0(n567), .I1(hall3), .I2(hall2), .I3(hall1), 
+            .O(n9573));   // verilog/motorControl.v(73[10:34])
+    defparam i6882_4_lut_4_lut.LUT_INIT = 16'hbbb8;
+    SB_LUT4 add_47_12_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_c[10]), 
+            .I3(n16979), .O(n500[10])) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_12_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_12 (.CI(n16979), .I0(GND_net), .I1(pwm_c[10]), .CO(n16980));
+    SB_LUT4 i14_4_lut (.I0(\pwm_31__N_2046[23] ), .I1(\pwm_31__N_2046[12] ), 
+            .I2(\pwm_31__N_2046[9] ), .I3(\pwm_31__N_2046[18] ), .O(n37));
+    defparam i14_4_lut.LUT_INIT = 16'h8000;
+    SB_LUT4 i9127_2_lut_3_lut (.I0(n233), .I1(pwm_31__N_2045), .I2(pwm_31__N_2046[1]), 
+            .I3(GND_net), .O(n11913));   // verilog/motorControl.v(30[16] 34[10])
+    defparam i9127_2_lut_3_lut.LUT_INIT = 16'h1010;
+    SB_LUT4 add_47_11_lut (.I0(pwm_delay[9]), .I1(VCC_net), .I2(\pwm[9] ), 
+            .I3(n16978), .O(n19)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_11_lut.LUT_INIT = 16'h6996;
+    SB_LUT4 i13_4_lut_adj_150 (.I0(\pwm_31__N_2046[14] ), .I1(\pwm_31__N_2046[26] ), 
+            .I2(\pwm_31__N_2046[22] ), .I3(\pwm_31__N_2046[28] ), .O(n36_adj_2202));
+    defparam i13_4_lut_adj_150.LUT_INIT = 16'h8000;
+    SB_DFFE PHASES_i3 (.Q(PIN_3_c_2), .C(CLK_c), .E(n11312), .D(PHASES_5__N_1933[2]));   // verilog/motorControl.v(40[10] 83[6])
+    SB_CARRY add_47_11 (.CI(n16978), .I0(VCC_net), .I1(\pwm[9] ), .CO(n16979));
+    SB_DFFE PHASES_i6 (.Q(PIN_22_c_5), .C(CLK_c), .E(n18291), .D(PHASES_5__N_1933[5]));   // verilog/motorControl.v(40[10] 83[6])
+    SB_DFFE PHASES_i4 (.Q(PIN_24_c_3), .C(CLK_c), .E(n11316), .D(PHASES_5__N_1933[3]));   // verilog/motorControl.v(40[10] 83[6])
+    SB_DFFE PHASES_i5 (.Q(PIN_23_c_4), .C(CLK_c), .E(n18292), .D(PHASES_5__N_1933[4]));   // verilog/motorControl.v(40[10] 83[6])
+    SB_LUT4 add_47_10_lut (.I0(pwm_delay[8]), .I1(VCC_net), .I2(pwm[8]), 
+            .I3(n16977), .O(n17)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_10_lut.LUT_INIT = 16'h6996;
+    SB_DFF pwm_i13 (.Q(pwm_c[13]), .C(CLK_c), .D(n11929));   // verilog/motorControl.v(25[14] 36[8])
+    SB_CARRY add_47_10 (.CI(n16977), .I0(VCC_net), .I1(pwm[8]), .CO(n16978));
+    SB_LUT4 add_47_9_lut (.I0(pwm_delay[7]), .I1(VCC_net), .I2(pwm[7]), 
+            .I3(n16976), .O(n15)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_9_lut.LUT_INIT = 16'h6996;
+    SB_CARRY add_47_9 (.CI(n16976), .I0(VCC_net), .I1(pwm[7]), .CO(n16977));
+    SB_LUT4 add_47_8_lut (.I0(pwm_delay[6]), .I1(VCC_net), .I2(pwm[6]), 
+            .I3(n16975), .O(n13)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_8_lut.LUT_INIT = 16'h6996;
+    SB_CARRY add_47_8 (.CI(n16975), .I0(VCC_net), .I1(pwm[6]), .CO(n16976));
+    SB_LUT4 add_47_7_lut (.I0(pwm_delay[5]), .I1(VCC_net), .I2(pwm[5]), 
+            .I3(n16974), .O(n11)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_7_lut.LUT_INIT = 16'h6996;
+    SB_LUT4 sub_16_add_2_23_lut (.I0(PHASES_5__N_2093[13]), .I1(GND_net), 
+            .I2(PHASES_5__N_2091), .I3(n17044), .O(n18396)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_23_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY add_47_7 (.CI(n16974), .I0(VCC_net), .I1(pwm[5]), .CO(n16975));
+    SB_LUT4 add_47_6_lut (.I0(pwm_delay[4]), .I1(VCC_net), .I2(pwm[4]), 
+            .I3(n16973), .O(n9)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_6_lut.LUT_INIT = 16'h6996;
+    SB_LUT4 sub_16_add_2_22_lut (.I0(PHASES_5__N_2093[21]), .I1(GND_net), 
+            .I2(n1[30]), .I3(n17043), .O(n18398)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_22_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY add_47_6 (.CI(n16973), .I0(VCC_net), .I1(pwm[4]), .CO(n16974));
+    SB_CARRY sub_16_add_2_22 (.CI(n17043), .I0(GND_net), .I1(n1[30]), 
+            .CO(n17044));
+    SB_LUT4 add_47_5_lut (.I0(pwm_delay[3]), .I1(VCC_net), .I2(pwm[3]), 
+            .I3(n16972), .O(n7)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_5_lut.LUT_INIT = 16'h6996;
+    SB_CARRY add_47_5 (.CI(n16972), .I0(VCC_net), .I1(pwm[3]), .CO(n16973));
+    SB_LUT4 add_47_4_lut (.I0(pwm_delay[2]), .I1(VCC_net), .I2(pwm[2]), 
+            .I3(n16971), .O(n5)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_4_lut.LUT_INIT = 16'h6996;
+    SB_CARRY add_47_4 (.CI(n16971), .I0(VCC_net), .I1(pwm[2]), .CO(n16972));
+    SB_LUT4 sub_16_add_2_21_lut (.I0(PHASES_5__N_2093[26]), .I1(GND_net), 
+            .I2(n1[29]), .I3(n17042), .O(n18404)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_21_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY sub_16_add_2_21 (.CI(n17042), .I0(GND_net), .I1(n1[29]), 
+            .CO(n17043));
+    SB_LUT4 add_47_3_lut (.I0(pwm_delay[1]), .I1(VCC_net), .I2(\pwm[1] ), 
+            .I3(n16970), .O(n3)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_3_lut.LUT_INIT = 16'h6996;
+    SB_LUT4 sub_16_add_2_20_lut (.I0(PHASES_5__N_2093[12]), .I1(GND_net), 
+            .I2(n1[28]), .I3(n17041), .O(n18406)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_20_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY sub_16_add_2_20 (.CI(n17041), .I0(GND_net), .I1(n1[28]), 
+            .CO(n17042));
+    SB_LUT4 sub_16_add_2_19_lut (.I0(PHASES_5__N_2093[15]), .I1(GND_net), 
+            .I2(n1[27]), .I3(n17040), .O(n18394)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_19_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY sub_16_add_2_19 (.CI(n17040), .I0(GND_net), .I1(n1[27]), 
+            .CO(n17041));
+    SB_CARRY add_47_3 (.CI(n16970), .I0(VCC_net), .I1(\pwm[1] ), .CO(n16971));
+    SB_LUT4 sub_16_add_2_18_lut (.I0(GND_net), .I1(GND_net), .I2(n1[26]), 
+            .I3(n17039), .O(PHASES_5__N_2093[26])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_18_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 add_47_2_lut (.I0(GND_net), .I1(GND_net), .I2(\pwm[0] ), .I3(VCC_net), 
+            .O(n532)) /* synthesis syn_instantiated=1 */ ;
+    defparam add_47_2_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_18 (.CI(n17039), .I0(GND_net), .I1(n1[26]), 
+            .CO(n17040));
+    SB_LUT4 sub_16_add_2_17_lut (.I0(GND_net), .I1(GND_net), .I2(n1[25]), 
+            .I3(n17038), .O(\PHASES_5__N_2093[25] )) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_17_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY add_47_2 (.CI(VCC_net), .I0(GND_net), .I1(\pwm[0] ), .CO(n16970));
+    SB_CARRY sub_16_add_2_17 (.CI(n17038), .I0(GND_net), .I1(n1[25]), 
+            .CO(n17039));
+    SB_LUT4 sub_16_add_2_16_lut (.I0(PHASES_5__N_2093[11]), .I1(GND_net), 
+            .I2(n1[24]), .I3(n17037), .O(n18392)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_16_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY sub_16_add_2_16 (.CI(n17037), .I0(GND_net), .I1(n1[24]), 
+            .CO(n17038));
+    SB_LUT4 sub_16_add_2_15_lut (.I0(GND_net), .I1(GND_net), .I2(n1[23]), 
+            .I3(n17036), .O(\PHASES_5__N_2093[23] )) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_15_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_15 (.CI(n17036), .I0(GND_net), .I1(n1[23]), 
+            .CO(n17037));
+    SB_LUT4 i6897_2_lut_3_lut (.I0(hall1), .I1(hall3), .I2(n534), .I3(GND_net), 
+            .O(n9588));   // verilog/motorControl.v(79[14] 81[8])
+    defparam i6897_2_lut_3_lut.LUT_INIT = 16'h4f4f;
+    SB_LUT4 sub_16_add_2_14_lut (.I0(PHASES_5__N_2093[20]), .I1(GND_net), 
+            .I2(n1[22]), .I3(n17035), .O(n18400)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_14_lut.LUT_INIT = 16'hebbe;
+    SB_LUT4 i1_2_lut_3_lut (.I0(hall3), .I1(hall2), .I2(hall1), .I3(GND_net), 
+            .O(n18319));
+    defparam i1_2_lut_3_lut.LUT_INIT = 16'h7474;
+    SB_CARRY sub_16_add_2_14 (.CI(n17035), .I0(GND_net), .I1(n1[22]), 
+            .CO(n17036));
+    SB_LUT4 i15869_2_lut_4_lut (.I0(hall2), .I1(hall1), .I2(hall3), .I3(n534), 
+            .O(n18672));
+    defparam i15869_2_lut_4_lut.LUT_INIT = 16'hd500;
+    SB_LUT4 sub_16_add_2_13_lut (.I0(GND_net), .I1(GND_net), .I2(n1[21]), 
+            .I3(n17034), .O(PHASES_5__N_2093[21])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_13_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_13 (.CI(n17034), .I0(GND_net), .I1(n1[21]), 
+            .CO(n17035));
+    SB_LUT4 i15908_2_lut_4_lut (.I0(hall2), .I1(PHASES_5__N_2084[1]), .I2(n9573), 
+            .I3(n534), .O(n18717));   // verilog/motorControl.v(60[14] 81[8])
+    defparam i15908_2_lut_4_lut.LUT_INIT = 16'h4f00;
+    SB_LUT4 sub_16_add_2_12_lut (.I0(GND_net), .I1(GND_net), .I2(n1[20]), 
+            .I3(n17033), .O(PHASES_5__N_2093[20])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_12_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 pwm_delay_2814_add_4_11_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[9]), 
+            .I3(n16931), .O(n45[9])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_11_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_12 (.CI(n17033), .I0(GND_net), .I1(n1[20]), 
+            .CO(n17034));
+    SB_DFF pwm_i31 (.Q(\pwm[31] ), .C(CLK_c), .D(pwm_31__N_1949[31]));   // verilog/motorControl.v(25[14] 36[8])
+    SB_LUT4 pwm_delay_2814_add_4_10_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[8]), 
+            .I3(n16930), .O(n45[8])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_10_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 sub_16_add_2_11_lut (.I0(PHASES_5__N_2093[18]), .I1(GND_net), 
+            .I2(n1[19]), .I3(n17032), .O(n18402)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_11_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY sub_16_add_2_11 (.CI(n17032), .I0(GND_net), .I1(n1[19]), 
+            .CO(n17033));
+    SB_LUT4 sub_16_add_2_10_lut (.I0(GND_net), .I1(GND_net), .I2(n1[18]), 
+            .I3(n17031), .O(PHASES_5__N_2093[18])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_10_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY pwm_delay_2814_add_4_10 (.CI(n16930), .I0(GND_net), .I1(pwm_delay[8]), 
+            .CO(n16931));
+    SB_CARRY sub_16_add_2_10 (.CI(n17031), .I0(GND_net), .I1(n1[18]), 
+            .CO(n17032));
+    SB_LUT4 pwm_delay_2814_add_4_9_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[7]), 
+            .I3(n16929), .O(n45[7])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_9_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 sub_16_add_2_9_lut (.I0(PHASES_5__N_2093[10]), .I1(GND_net), 
+            .I2(n1[17]), .I3(n17030), .O(n18388)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_9_lut.LUT_INIT = 16'hebbe;
+    SB_DFFE PHASES_i1 (.Q(PIN_1_c_0), .C(CLK_c), .E(n11228), .D(PHASES_5__N_1933[0]));   // verilog/motorControl.v(40[10] 83[6])
+    SB_CARRY sub_16_add_2_9 (.CI(n17030), .I0(GND_net), .I1(n1[17]), .CO(n17031));
+    SB_LUT4 sub_16_add_2_8_lut (.I0(PHASES_5__N_2093[14]), .I1(GND_net), 
+            .I2(n1[16]), .I3(n17029), .O(n18390)) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_8_lut.LUT_INIT = 16'hebbe;
+    SB_CARRY sub_16_add_2_8 (.CI(n17029), .I0(GND_net), .I1(n1[16]), .CO(n17030));
+    SB_LUT4 sub_16_add_2_7_lut (.I0(GND_net), .I1(GND_net), .I2(n1[15]), 
+            .I3(n17028), .O(PHASES_5__N_2093[15])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_7_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_7 (.CI(n17028), .I0(GND_net), .I1(n1[15]), .CO(n17029));
+    SB_CARRY pwm_delay_2814_add_4_9 (.CI(n16929), .I0(GND_net), .I1(pwm_delay[7]), 
+            .CO(n16930));
+    SB_LUT4 sub_16_add_2_6_lut (.I0(GND_net), .I1(GND_net), .I2(n1[14]), 
+            .I3(n17027), .O(PHASES_5__N_2093[14])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_6_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 pwm_delay_2814_add_4_8_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[6]), 
+            .I3(n16928), .O(n45[6])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_8_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_6 (.CI(n17027), .I0(GND_net), .I1(n1[14]), .CO(n17028));
+    SB_LUT4 i15874_2_lut_3_lut (.I0(n534), .I1(hall1), .I2(hall3), .I3(GND_net), 
+            .O(n18772));   // verilog/motorControl.v(60[14] 81[8])
+    defparam i15874_2_lut_3_lut.LUT_INIT = 16'h2020;
+    SB_LUT4 i2_3_lut_4_lut_adj_151 (.I0(n534), .I1(n10628), .I2(hall1), 
+            .I3(hall3), .O(n18323));
+    defparam i2_3_lut_4_lut_adj_151.LUT_INIT = 16'hdfdd;
+    SB_CARRY pwm_delay_2814_add_4_8 (.CI(n16928), .I0(GND_net), .I1(pwm_delay[6]), 
+            .CO(n16929));
+    SB_LUT4 pwm_delay_2814_add_4_7_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[5]), 
+            .I3(n16927), .O(n45[5])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_7_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY pwm_delay_2814_add_4_7 (.CI(n16927), .I0(GND_net), .I1(pwm_delay[5]), 
+            .CO(n16928));
+    SB_LUT4 pwm_delay_2814_add_4_6_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[4]), 
+            .I3(n16926), .O(n45[4])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_6_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 sub_16_add_2_5_lut (.I0(GND_net), .I1(GND_net), .I2(n1[13]), 
+            .I3(n17026), .O(PHASES_5__N_2093[13])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_5_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_5 (.CI(n17026), .I0(GND_net), .I1(n1[13]), .CO(n17027));
+    SB_CARRY pwm_delay_2814_add_4_6 (.CI(n16926), .I0(GND_net), .I1(pwm_delay[4]), 
+            .CO(n16927));
+    SB_LUT4 sub_16_add_2_4_lut (.I0(GND_net), .I1(GND_net), .I2(n1[12]), 
+            .I3(n17025), .O(PHASES_5__N_2093[12])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_4_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 pwm_delay_2814_add_4_5_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[3]), 
+            .I3(n16925), .O(n45[3])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_5_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY pwm_delay_2814_add_4_5 (.CI(n16925), .I0(GND_net), .I1(pwm_delay[3]), 
+            .CO(n16926));
+    SB_LUT4 pwm_delay_2814_add_4_4_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[2]), 
+            .I3(n16924), .O(n45[2])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_4_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i1_2_lut_3_lut_adj_152 (.I0(n534), .I1(n7556), .I2(PHASES_5__N_2090), 
+            .I3(GND_net), .O(n4));
+    defparam i1_2_lut_3_lut_adj_152.LUT_INIT = 16'hfdfd;
+    SB_DFF pwm_i30 (.Q(pwm_c[30]), .C(CLK_c), .D(n11946));   // verilog/motorControl.v(25[14] 36[8])
+    SB_CARRY sub_16_add_2_4 (.CI(n17025), .I0(GND_net), .I1(n1[12]), .CO(n17026));
+    SB_CARRY pwm_delay_2814_add_4_4 (.CI(n16924), .I0(GND_net), .I1(pwm_delay[2]), 
+            .CO(n16925));
+    SB_LUT4 sub_16_add_2_3_lut (.I0(GND_net), .I1(GND_net), .I2(n1[11]), 
+            .I3(n17024), .O(PHASES_5__N_2093[11])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_3_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_3 (.CI(n17024), .I0(GND_net), .I1(n1[11]), .CO(n17025));
+    SB_LUT4 sub_16_add_2_2_lut (.I0(GND_net), .I1(GND_net), .I2(n1[10]), 
+            .I3(VCC_net), .O(PHASES_5__N_2093[10])) /* synthesis syn_instantiated=1 */ ;
+    defparam sub_16_add_2_2_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 pwm_delay_2814_add_4_3_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[1]), 
+            .I3(n16923), .O(n45[1])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_3_lut.LUT_INIT = 16'hC33C;
+    SB_LUT4 i1_2_lut_3_lut_adj_153 (.I0(hall1), .I1(hall3), .I2(n536), 
+            .I3(GND_net), .O(n18325));
+    defparam i1_2_lut_3_lut_adj_153.LUT_INIT = 16'he2e2;
+    SB_LUT4 i1_2_lut_3_lut_adj_154 (.I0(hall1), .I1(hall3), .I2(PHASES_5__N_2090), 
+            .I3(GND_net), .O(n18316));
+    defparam i1_2_lut_3_lut_adj_154.LUT_INIT = 16'h4f4f;
+    SB_LUT4 i11890_4_lut (.I0(n39_adj_2200), .I1(pwm_31__N_1949[31]), .I2(n44), 
+            .I3(n40), .O(pwm_31__N_2045));   // verilog/motorControl.v(28[10:26])
+    defparam i11890_4_lut.LUT_INIT = 16'h3332;
+    SB_CARRY pwm_delay_2814_add_4_3 (.CI(n16923), .I0(GND_net), .I1(pwm_delay[1]), 
+            .CO(n16924));
+    SB_LUT4 pwm_delay_2814_add_4_2_lut (.I0(GND_net), .I1(GND_net), .I2(pwm_delay[0]), 
+            .I3(VCC_net), .O(n45[0])) /* synthesis syn_instantiated=1 */ ;
+    defparam pwm_delay_2814_add_4_2_lut.LUT_INIT = 16'hC33C;
+    SB_CARRY sub_16_add_2_2 (.CI(VCC_net), .I0(GND_net), .I1(n1[10]), 
+            .CO(n17024));
+    SB_CARRY pwm_delay_2814_add_4_2 (.CI(VCC_net), .I0(GND_net), .I1(pwm_delay[0]), 
+            .CO(n16923));
     
 endmodule

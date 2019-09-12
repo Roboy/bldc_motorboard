@@ -25,6 +25,7 @@
 -resolve_mixed_drivers 0
 -RWCheckOnRam 0
 -fix_gated_clocks 1
+-vh2008
 -loop_limit 1950
 
 -ver "verilog/TinyFPGA_B.v"
@@ -32,6 +33,7 @@
 -ver "verilog/uart_tx.v"
 -ver "verilog/coms.v"
 -ver "verilog/motorControl.v"
+-ver "quad.v"
 -p "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1"
 
 #set result format/file last

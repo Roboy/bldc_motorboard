@@ -11,7 +11,7 @@ module coms(
 	input signed [31:0] velocity,
 	input signed [31:0] displacement,
 	input [15:0] current,
-	input signed [31:0] setpoint
+	output reg signed [31:0] setpoint
 );
 
 	localparam  MAX_FRAME_LENGTH = 21;
@@ -134,61 +134,57 @@ endfunction
 
 
 	////////////////////////////////////////////////////////////////////////////////
-	// Copyright (C) 1999-2008 Easics NV.
-	// This source file may be used and distributed without restriction
-	// provided that this copyright statement is not removed from the file
-	// and that any derivative work contains the original copyright notice
-	// and the associated disclaimer.
-	//
-	// THIS SOURCE FILE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS
-	// OR IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
-	// WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-	//
-	// Purpose : synthesizable CRC function
-	//   * polynomial: x^16 + x^15 + x^2 + 1
-	//   * data width: 56
-	//
-	// Info : tools@easics.be
-	//        http://www.easics.com
-	////////////////////////////////////////////////////////////////////////////////
-
+// Copyright (C) 1999-2008 Easics NV.
+// This source file may be used and distributed without restriction
+// provided that this copyright statement is not removed from the file
+// and that any derivative work contains the original copyright notice
+// and the associated disclaimer.
+//
+// THIS SOURCE FILE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS
+// OR IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+// WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+//
+// Purpose : synthesizable CRC function
+//   * polynomial: x^16 + x^15 + x^2 + 1
+//   * data width: 48
+//
+// Info : tools@easics.be
+//        http://www.easics.com
+////////////////////////////////////////////////////////////////////////////////
 
 	// polynomial: x^16 + x^15 + x^2 + 1
-	// data width: 56
-	// convention: the first serial bit is D[55]
-	function [15:0] nextCRC16_D56;
+	// data width: 48
+	// convention: the first serial bit is D[47]
+	function [15:0] nextCRC16_D48;
 
-		input [55:0] Data;
+		input [47:0] Data;
 		input [15:0] crc;
-		reg [55:0] d;
+		reg [47:0] d;
 		reg [15:0] c;
 		reg [15:0] newcrc;
 		begin
 			d = Data;
 			c = crc;
 
-			newcrc[0] = d[55] ^ d[54] ^ d[53] ^ d[52] ^ d[51] ^ d[50] ^ d[49] ^ d[48] ^ d[47] ^ d[46] ^ d[45] ^ d[43] ^ d[41] ^ d[40] ^ d[39] ^ d[38] ^ d[37] ^ d[36] ^ d[35] ^ d[34] ^ d[33] ^ d[32] ^ d[31] ^ d[30] ^ d[27] ^ d[26] ^ d[25] ^ d[24] ^ d[23] ^ d[22] ^ d[21] ^ d[20] ^ d[19] ^ d[18] ^ d[17] ^ d[16] ^ d[15] ^ d[13] ^ d[12] ^ d[11] ^ d[10] ^ d[9] ^ d[8] ^ d[7] ^ d[6] ^ d[5] ^ d[4] ^ d[3] ^ d[2] ^ d[1] ^ d[0] ^ c[0] ^ c[1] ^ c[3] ^ c[5] ^ c[6] ^ c[7] ^ c[8] ^ c[9] ^ c[10] ^ c[11] ^ c[12] ^ c[13] ^ c[14] ^ c[15];
-			newcrc[1] = d[55] ^ d[54] ^ d[53] ^ d[52] ^ d[51] ^ d[50] ^ d[49] ^ d[48] ^ d[47] ^ d[46] ^ d[44] ^ d[42] ^ d[41] ^ d[40] ^ d[39] ^ d[38] ^ d[37] ^ d[36] ^ d[35] ^ d[34] ^ d[33] ^ d[32] ^ d[31] ^ d[28] ^ d[27] ^ d[26] ^ d[25] ^ d[24] ^ d[23] ^ d[22] ^ d[21] ^ d[20] ^ d[19] ^ d[18] ^ d[17] ^ d[16] ^ d[14] ^ d[13] ^ d[12] ^ d[11] ^ d[10] ^ d[9] ^ d[8] ^ d[7] ^ d[6] ^ d[5] ^ d[4] ^ d[3] ^ d[2] ^ d[1] ^ c[0] ^ c[1] ^ c[2] ^ c[4] ^ c[6] ^ c[7] ^ c[8] ^ c[9] ^ c[10] ^ c[11] ^ c[12] ^ c[13] ^ c[14] ^ c[15];
-			newcrc[2] = d[46] ^ d[42] ^ d[31] ^ d[30] ^ d[29] ^ d[28] ^ d[16] ^ d[14] ^ d[1] ^ d[0] ^ c[2] ^ c[6];
-			newcrc[3] = d[47] ^ d[43] ^ d[32] ^ d[31] ^ d[30] ^ d[29] ^ d[17] ^ d[15] ^ d[2] ^ d[1] ^ c[3] ^ c[7];
-			newcrc[4] = d[48] ^ d[44] ^ d[33] ^ d[32] ^ d[31] ^ d[30] ^ d[18] ^ d[16] ^ d[3] ^ d[2] ^ c[4] ^ c[8];
-			newcrc[5] = d[49] ^ d[45] ^ d[34] ^ d[33] ^ d[32] ^ d[31] ^ d[19] ^ d[17] ^ d[4] ^ d[3] ^ c[5] ^ c[9];
-			newcrc[6] = d[50] ^ d[46] ^ d[35] ^ d[34] ^ d[33] ^ d[32] ^ d[20] ^ d[18] ^ d[5] ^ d[4] ^ c[6] ^ c[10];
-			newcrc[7] = d[51] ^ d[47] ^ d[36] ^ d[35] ^ d[34] ^ d[33] ^ d[21] ^ d[19] ^ d[6] ^ d[5] ^ c[7] ^ c[11];
-			newcrc[8] = d[52] ^ d[48] ^ d[37] ^ d[36] ^ d[35] ^ d[34] ^ d[22] ^ d[20] ^ d[7] ^ d[6] ^ c[8] ^ c[12];
-			newcrc[9] = d[53] ^ d[49] ^ d[38] ^ d[37] ^ d[36] ^ d[35] ^ d[23] ^ d[21] ^ d[8] ^ d[7] ^ c[9] ^ c[13];
-			newcrc[10] = d[54] ^ d[50] ^ d[39] ^ d[38] ^ d[37] ^ d[36] ^ d[24] ^ d[22] ^ d[9] ^ d[8] ^ c[10] ^ c[14];
-			newcrc[11] = d[55] ^ d[51] ^ d[40] ^ d[39] ^ d[38] ^ d[37] ^ d[25] ^ d[23] ^ d[10] ^ d[9] ^ c[0] ^ c[11] ^ c[15];
-			newcrc[12] = d[52] ^ d[41] ^ d[40] ^ d[39] ^ d[38] ^ d[26] ^ d[24] ^ d[11] ^ d[10] ^ c[0] ^ c[1] ^ c[12];
-			newcrc[13] = d[53] ^ d[42] ^ d[41] ^ d[40] ^ d[39] ^ d[27] ^ d[25] ^ d[12] ^ d[11] ^ c[0] ^ c[1] ^ c[2] ^ c[13];
-			newcrc[14] = d[54] ^ d[43] ^ d[42] ^ d[41] ^ d[40] ^ d[28] ^ d[26] ^ d[13] ^ d[12] ^ c[0] ^ c[1] ^ c[2] ^ c[3] ^ c[14];
-			newcrc[15] = d[54] ^ d[53] ^ d[52] ^ d[51] ^ d[50] ^ d[49] ^ d[48] ^ d[47] ^ d[46] ^ d[45] ^ d[44] ^ d[42] ^ d[40] ^ d[39] ^ d[38] ^ d[37] ^ d[36] ^ d[35] ^ d[34] ^ d[33] ^ d[32] ^ d[31] ^ d[30] ^ d[29] ^ d[26] ^ d[25] ^ d[24] ^ d[23] ^ d[22] ^ d[21] ^ d[20] ^ d[19] ^ d[18] ^ d[17] ^ d[16] ^ d[15] ^ d[14] ^ d[12] ^ d[11] ^ d[10] ^ d[9] ^ d[8] ^ d[7] ^ d[6] ^ d[5] ^ d[4] ^ d[3] ^ d[2] ^ d[1] ^ d[0] ^ c[0] ^ c[2] ^ c[4] ^ c[5] ^ c[6] ^ c[7] ^ c[8] ^ c[9] ^ c[10] ^ c[11] ^ c[12] ^ c[13] ^ c[14];
-			nextCRC16_D56 = newcrc;
+			newcrc[0] = d[47] ^ d[46] ^ d[45] ^ d[43] ^ d[41] ^ d[40] ^ d[39] ^ d[38] ^ d[37] ^ d[36] ^ d[35] ^ d[34] ^ d[33] ^ d[32] ^ d[31] ^ d[30] ^ d[27] ^ d[26] ^ d[25] ^ d[24] ^ d[23] ^ d[22] ^ d[21] ^ d[20] ^ d[19] ^ d[18] ^ d[17] ^ d[16] ^ d[15] ^ d[13] ^ d[12] ^ d[11] ^ d[10] ^ d[9] ^ d[8] ^ d[7] ^ d[6] ^ d[5] ^ d[4] ^ d[3] ^ d[2] ^ d[1] ^ d[0] ^ c[0] ^ c[1] ^ c[2] ^ c[3] ^ c[4] ^ c[5] ^ c[6] ^ c[7] ^ c[8] ^ c[9] ^ c[11] ^ c[13] ^ c[14] ^ c[15];
+			newcrc[1] = d[47] ^ d[46] ^ d[44] ^ d[42] ^ d[41] ^ d[40] ^ d[39] ^ d[38] ^ d[37] ^ d[36] ^ d[35] ^ d[34] ^ d[33] ^ d[32] ^ d[31] ^ d[28] ^ d[27] ^ d[26] ^ d[25] ^ d[24] ^ d[23] ^ d[22] ^ d[21] ^ d[20] ^ d[19] ^ d[18] ^ d[17] ^ d[16] ^ d[14] ^ d[13] ^ d[12] ^ d[11] ^ d[10] ^ d[9] ^ d[8] ^ d[7] ^ d[6] ^ d[5] ^ d[4] ^ d[3] ^ d[2] ^ d[1] ^ c[0] ^ c[1] ^ c[2] ^ c[3] ^ c[4] ^ c[5] ^ c[6] ^ c[7] ^ c[8] ^ c[9] ^ c[10] ^ c[12] ^ c[14] ^ c[15];
+			newcrc[2] = d[46] ^ d[42] ^ d[31] ^ d[30] ^ d[29] ^ d[28] ^ d[16] ^ d[14] ^ d[1] ^ d[0] ^ c[10] ^ c[14];
+			newcrc[3] = d[47] ^ d[43] ^ d[32] ^ d[31] ^ d[30] ^ d[29] ^ d[17] ^ d[15] ^ d[2] ^ d[1] ^ c[0] ^ c[11] ^ c[15];
+			newcrc[4] = d[44] ^ d[33] ^ d[32] ^ d[31] ^ d[30] ^ d[18] ^ d[16] ^ d[3] ^ d[2] ^ c[0] ^ c[1] ^ c[12];
+			newcrc[5] = d[45] ^ d[34] ^ d[33] ^ d[32] ^ d[31] ^ d[19] ^ d[17] ^ d[4] ^ d[3] ^ c[0] ^ c[1] ^ c[2] ^ c[13];
+			newcrc[6] = d[46] ^ d[35] ^ d[34] ^ d[33] ^ d[32] ^ d[20] ^ d[18] ^ d[5] ^ d[4] ^ c[0] ^ c[1] ^ c[2] ^ c[3] ^ c[14];
+			newcrc[7] = d[47] ^ d[36] ^ d[35] ^ d[34] ^ d[33] ^ d[21] ^ d[19] ^ d[6] ^ d[5] ^ c[1] ^ c[2] ^ c[3] ^ c[4] ^ c[15];
+			newcrc[8] = d[37] ^ d[36] ^ d[35] ^ d[34] ^ d[22] ^ d[20] ^ d[7] ^ d[6] ^ c[2] ^ c[3] ^ c[4] ^ c[5];
+			newcrc[9] = d[38] ^ d[37] ^ d[36] ^ d[35] ^ d[23] ^ d[21] ^ d[8] ^ d[7] ^ c[3] ^ c[4] ^ c[5] ^ c[6];
+			newcrc[10] = d[39] ^ d[38] ^ d[37] ^ d[36] ^ d[24] ^ d[22] ^ d[9] ^ d[8] ^ c[4] ^ c[5] ^ c[6] ^ c[7];
+			newcrc[11] = d[40] ^ d[39] ^ d[38] ^ d[37] ^ d[25] ^ d[23] ^ d[10] ^ d[9] ^ c[5] ^ c[6] ^ c[7] ^ c[8];
+			newcrc[12] = d[41] ^ d[40] ^ d[39] ^ d[38] ^ d[26] ^ d[24] ^ d[11] ^ d[10] ^ c[6] ^ c[7] ^ c[8] ^ c[9];
+			newcrc[13] = d[42] ^ d[41] ^ d[40] ^ d[39] ^ d[27] ^ d[25] ^ d[12] ^ d[11] ^ c[7] ^ c[8] ^ c[9] ^ c[10];
+			newcrc[14] = d[43] ^ d[42] ^ d[41] ^ d[40] ^ d[28] ^ d[26] ^ d[13] ^ d[12] ^ c[8] ^ c[9] ^ c[10] ^ c[11];
+			newcrc[15] = d[47] ^ d[46] ^ d[45] ^ d[44] ^ d[42] ^ d[40] ^ d[39] ^ d[38] ^ d[37] ^ d[36] ^ d[35] ^ d[34] ^ d[33] ^ d[32] ^ d[31] ^ d[30] ^ d[29] ^ d[26] ^ d[25] ^ d[24] ^ d[23] ^ d[22] ^ d[21] ^ d[20] ^ d[19] ^ d[18] ^ d[17] ^ d[16] ^ d[15] ^ d[14] ^ d[12] ^ d[11] ^ d[10] ^ d[9] ^ d[8] ^ d[7] ^ d[6] ^ d[5] ^ d[4] ^ d[3] ^ d[2] ^ d[1] ^ d[0] ^ c[0] ^ c[1] ^ c[2] ^ c[3] ^ c[4] ^ c[5] ^ c[6] ^ c[7] ^ c[8] ^ c[10] ^ c[12] ^ c[13] ^ c[14] ^ c[15];
+			nextCRC16_D48 = newcrc;
 		end
 	endfunction
-
-
-
 
 	////////////////////////////////////////////////////////////////////////////////
 	// Copyright (C) 1999-2008 Easics NV.
@@ -245,11 +241,11 @@ endfunction
 	endfunction
 
 	localparam  MAGIC_NUMBER_LENGTH = 4;
-	localparam  STATUS_REQUEST_FRAME_MAGICNUMBER = 32'hDABBAD00;
+	localparam  STATUS_REQUEST_FRAME_MAGICNUMBER = 32'h1CE1CEBB;
 	localparam	STATUS_REQUEST_FRAME_LENGTH = 7;
 	localparam 	STATUS_FRAME_MAGICNUMBER = 32'h1CEB00DA;
 	localparam  STATUS_FRAME_LENGTH = 21;
-	localparam 	SETPOINT_FRAME_MAGICNUMBER = 32'hB16B00B5;
+	localparam 	SETPOINT_FRAME_MAGICNUMBER = 32'hD0D0D0D0;
 	localparam  SETPOINT_FRAME_LENGTH = 11;
 	localparam 	CONTROL_MODE_FRAME_MAGICNUMBER = 32'hBAADA555;
 	localparam  CONTROL_MODE_FRAME_LENGTH = 8;
@@ -272,9 +268,10 @@ endfunction
 	reg [13:0]delay_counter;
 	reg tx_active_prev;
 	always @(posedge CLK, posedge reset) begin: UART_TRANSMITTER
-		localparam IDLE=8'h0, PREPARE_STATUS_REQUEST = 8'h1, SEND_STATUS_REQUEST = 8'h2, PREPARE_SETPOINT  = 8'h3, SEND_SETPOINT = 8'h4, 
+		localparam IDLE=8'h0, PREPARE_STATUS_REQUEST = 8'h1, SEND_STATUS_REQUEST = 8'h2, PREPARE_SETPOINT  = 8'h3, SEND_SETPOINT = 8'h4,
 					PREPARE_CONTROL_MODE = 8'h5, SEND_CONTROL_MODE = 8'h6;
 		reg [7:0] state;
+		reg signed [31:0] sp;
 		if(reset) begin
 			state <= IDLE;
 		end else begin
@@ -307,6 +304,7 @@ endfunction
 								delay_counter = 1;
 								byte_transmit_counter = 0;
 								state<= PREPARE_SETPOINT;
+								sp = sp+1;
 							end else begin
 							  delay_counter = delay_counter + 1;
 							end
@@ -319,11 +317,11 @@ endfunction
 					data_out[2] = SETPOINT_FRAME_MAGICNUMBER[15:8];
 					data_out[3] = SETPOINT_FRAME_MAGICNUMBER[7:0];
 					data_out[4] = ID; // motor id
-					data_out[5] = setpoint[31:24];
-					data_out[6] = setpoint[23:16];
-					data_out[7] = setpoint[15:8];
-					data_out[8] = setpoint[7:0];
-					tx_crc = nextCRC16_D56(data_out_field,16'hFFFF);
+					data_out[5] = sp[31:24];
+					data_out[6] = sp[23:16];
+					data_out[7] = sp[15:8];
+					data_out[8] = sp[7:0];
+					tx_crc = nextCRC16_D8(data_out_field,16'hFFFF);
 					data_out[SETPOINT_FRAME_LENGTH-2] = tx_crc[15:8];
 					data_out[SETPOINT_FRAME_LENGTH-1] = tx_crc[7:0];
 					state <= SEND_SETPOINT;
@@ -336,8 +334,13 @@ endfunction
 						if(byte_transmit_counter<SETPOINT_FRAME_LENGTH)begin
 							tx_transmit <= 1;
 						end else begin
-							byte_transmit_counter = 0;
-							state<= PREPARE_CONTROL_MODE;
+							if(delay_counter==8'h0) begin
+								delay_counter = 1;
+								byte_transmit_counter = 0;
+								state <= PREPARE_CONTROL_MODE;
+							end else begin
+								delay_counter = delay_counter + 1;
+							end
 						end
 					end
 				end
@@ -348,7 +351,7 @@ endfunction
 					data_out[3] = CONTROL_MODE_FRAME_MAGICNUMBER[7:0];
 					data_out[4] = ID; // motor id
 					data_out[5] = 8'hFF; // control_mode
-					tx_crc = nextCRC16_D16(data_out_field,16'hFFFF);
+					tx_crc = nextCRC16_D8(data_out_field,16'hFFFF);
 					data_out[CONTROL_MODE_FRAME_LENGTH-2] = tx_crc[15:8];
 					data_out[CONTROL_MODE_FRAME_LENGTH-1] = tx_crc[7:0];
 					state <= SEND_CONTROL_MODE;
@@ -361,8 +364,13 @@ endfunction
 						if(byte_transmit_counter<CONTROL_MODE_FRAME_LENGTH)begin
 							tx_transmit <= 1;
 						end else begin
-							byte_transmit_counter = 0;
-							state<= IDLE;
+							if(delay_counter==8'h0) begin
+								delay_counter = 1;
+								byte_transmit_counter = 0;
+								state<= IDLE;
+							end else begin
+								delay_counter = delay_counter + 1;
+							end
 						end
 					end
 				end
@@ -404,7 +412,7 @@ endfunction
 	uart_tx tx2(CLK,tx2_transmit,tx2_data,tx2_active,tx2_o,tx2_enable,tx2_done);
 
 	always @(posedge CLK, posedge reset) begin: FRAME_MATCHER
-		localparam IDLE = 8'h0, RECEIVE_STATUS_REQUEST = 8'h1, CHECK_CRC_STATUS_REQUEST = 8'h2, RECEIVE_CONTROL_MODE = 8'h3, 
+		localparam IDLE = 8'h0, RECEIVE_STATUS_REQUEST = 8'h1, CHECK_CRC_STATUS_REQUEST = 8'h2, RECEIVE_CONTROL_MODE = 8'h3,
 				CHECK_CRC_CONTROL_MODE = 8'h4, RECEIVE_SETPOINT = 8'h5, CHECK_CRC_SETPOINT = 8'h6, SEND_STATUS = 8'h7;
 		integer state;
 		integer next_state;
@@ -418,17 +426,16 @@ endfunction
 			if(rx_data_ready)begin
 			  data_in[MAGIC_NUMBER_LENGTH-1] <= rx_data;
 			  for(j=MAGIC_NUMBER_LENGTH-2;j>=0;j=j-1)begin
-				data_in[j] <= data_in[j+1];
+					data_in[j] <= data_in[j+1];
 			  end
 			end
 			if({data_in[0],data_in[1],data_in[2],data_in[3]}==STATUS_REQUEST_FRAME_MAGICNUMBER)begin
-				i <= 0;
 			 	state <= RECEIVE_STATUS_REQUEST;
-			end else if({data_in[0],data_in[1],data_in[2],data_in[3]}==SETPOINT_FRAME_MAGICNUMBER)begin
-				i <= 0;
+			end
+			if({data_in[0],data_in[1],data_in[2],data_in[3]}==SETPOINT_FRAME_MAGICNUMBER)begin
 			 	state <= RECEIVE_SETPOINT;
-			end else if({data_in[0],data_in[1],data_in[2],data_in[3]}==CONTROL_MODE_FRAME_MAGICNUMBER)begin
-				i <= 0;
+			end
+			if({data_in[0],data_in[1],data_in[2],data_in[3]}==CONTROL_MODE_FRAME_MAGICNUMBER)begin
 			 	state <= RECEIVE_CONTROL_MODE;
 			end
 			case(state)
@@ -482,12 +489,12 @@ endfunction
 				SEND_STATUS: begin
 					if(!tx2_active && !tx2_transmit) begin
 					  if(byte_transmit_counter2<(STATUS_FRAME_LENGTH-1)) begin
-						byte_transmit_counter2 <= byte_transmit_counter2 + 1;
-						tx2_transmit <= 1;
+							byte_transmit_counter2 <= byte_transmit_counter2 + 1;
+							tx2_transmit <= 1;
 					  end else begin
-						data_out_frame2[0] <= 8'h0;
-						byte_transmit_counter2 <= 0;
-						state <= IDLE;
+							data_out_frame2[0] <= rx_crc[15:8];
+							byte_transmit_counter2 <= 0;
+							state <= IDLE;
 					  end
 					end
 				end
@@ -501,15 +508,19 @@ endfunction
 					end
 				end
 				CHECK_CRC_SETPOINT: begin
-					rx_crc = nextCRC16_D16(data_in_field,16'hFFFF);
+					rx_crc = nextCRC16_D8(data_in_field,16'hFFFF);
 					if(rx_crc[15:8]==data_in_frame[SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
 						  && rx_crc[7:0]==data_in_frame[SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]) begin // MATCH!
 						data_out_frame2[0] <= 8'h00;
 						byte_transmit_counter2 <= 0;
 						tx2_transmit <= 1;
 						state <= IDLE;
+						setpoint[31:24] <= data_in_frame[1];
+						setpoint[23:16] <= data_in_frame[2];
+						setpoint[15:8] <= data_in_frame[3];
+						setpoint[7:0] <= data_in_frame[4];
 					end else begin
-						data_out_frame2[0] <= 8'hFF;
+						data_out_frame2[0] <= rx_crc[15:8];
 						byte_transmit_counter2 <= 0;
 						tx2_transmit <= 1;
 						state <= IDLE;
@@ -533,7 +544,7 @@ endfunction
 						tx2_transmit <= 1;
 						state <= IDLE;
 					end else begin
-						data_out_frame2[0] <= 8'hFF;
+						data_out_frame2[0] <= rx_crc[15:8];
 						byte_transmit_counter2 <= 0;
 						tx2_transmit <= 1;
 						state <= IDLE;
