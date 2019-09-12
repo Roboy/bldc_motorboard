@@ -269,7 +269,7 @@ endfunction
 	endgenerate
 
 
-	reg [14:0]delay_counter;
+	reg [13:0]delay_counter;
 	reg tx_active_prev;
 	always @(posedge CLK, posedge reset) begin: UART_TRANSMITTER
 		localparam IDLE=8'h0, PREPARE_STATUS_REQUEST = 8'h1, SEND_STATUS_REQUEST = 8'h2, PREPARE_SETPOINT  = 8'h3, SEND_SETPOINT = 8'h4, 
@@ -306,7 +306,7 @@ endfunction
 							if(delay_counter==8'h0) begin
 								delay_counter = 1;
 								byte_transmit_counter = 0;
-								state<= IDLE;
+								state<= PREPARE_SETPOINT;
 							end else begin
 							  delay_counter = delay_counter + 1;
 							end
@@ -336,13 +336,8 @@ endfunction
 						if(byte_transmit_counter<SETPOINT_FRAME_LENGTH)begin
 							tx_transmit <= 1;
 						end else begin
-							if(delay_counter==8'h0) begin
-								delay_counter = 1;
-								byte_transmit_counter = 0;
-								state<= PREPARE_CONTROL_MODE;
-							end else begin
-							  delay_counter = delay_counter + 1;
-							end
+							byte_transmit_counter = 0;
+							state<= PREPARE_CONTROL_MODE;
 						end
 					end
 				end
@@ -366,13 +361,8 @@ endfunction
 						if(byte_transmit_counter<CONTROL_MODE_FRAME_LENGTH)begin
 							tx_transmit <= 1;
 						end else begin
-							if(delay_counter==8'h0) begin
-								delay_counter = 1;
-								byte_transmit_counter = 0;
-								state<= IDLE;
-							end else begin
-							  delay_counter = delay_counter + 1;
-							end
+							byte_transmit_counter = 0;
+							state<= IDLE;
 						end
 					end
 				end
@@ -431,13 +421,13 @@ endfunction
 				data_in[j] <= data_in[j+1];
 			  end
 			end
-			if({data_in[0],data_in[1],data_in[2],data_in[3]}==STATUS_REQUEST_FRAME_MAGICNUMBER && state==IDLE)begin
+			if({data_in[0],data_in[1],data_in[2],data_in[3]}==STATUS_REQUEST_FRAME_MAGICNUMBER)begin
 				i <= 0;
 			 	state <= RECEIVE_STATUS_REQUEST;
-			end else if({data_in[0],data_in[1],data_in[2],data_in[3]}==SETPOINT_FRAME_MAGICNUMBER && state==IDLE)begin
+			end else if({data_in[0],data_in[1],data_in[2],data_in[3]}==SETPOINT_FRAME_MAGICNUMBER)begin
 				i <= 0;
 			 	state <= RECEIVE_SETPOINT;
-			end else if({data_in[0],data_in[1],data_in[2],data_in[3]}==CONTROL_MODE_FRAME_MAGICNUMBER && state==IDLE)begin
+			end else if({data_in[0],data_in[1],data_in[2],data_in[3]}==CONTROL_MODE_FRAME_MAGICNUMBER)begin
 				i <= 0;
 			 	state <= RECEIVE_CONTROL_MODE;
 			end
@@ -495,6 +485,8 @@ endfunction
 						byte_transmit_counter2 <= byte_transmit_counter2 + 1;
 						tx2_transmit <= 1;
 					  end else begin
+						data_out_frame2[0] <= 8'h0;
+						byte_transmit_counter2 <= 0;
 						state <= IDLE;
 					  end
 					end
@@ -504,19 +496,21 @@ endfunction
 						data_in_frame[i] = rx_data;
 						i <= i+1;
 					end
-					if(i>STATUS_REQUEST_FRAME_LENGTH-4) begin
+					if(i>SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1) begin
 						state <= CHECK_CRC_SETPOINT;
 					end
 				end
 				CHECK_CRC_SETPOINT: begin
 					rx_crc = nextCRC16_D16(data_in_field,16'hFFFF);
-					if(rx_crc[15:8]==data_in_frame[SETPOINT_FRAME_LENGTH-2]
-						  && rx_crc[7:0]==data_in_frame[SETPOINT_FRAME_LENGTH-1]) begin // MATCH!
-						data_out_frame2[0] <= 8'hFF;
+					if(rx_crc[15:8]==data_in_frame[SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
+						  && rx_crc[7:0]==data_in_frame[SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]) begin // MATCH!
+						data_out_frame2[0] <= 8'h00;
+						byte_transmit_counter2 <= 0;
 						tx2_transmit <= 1;
 						state <= IDLE;
 					end else begin
-						data_out_frame2[0] <= 8'h0;
+						data_out_frame2[0] <= 8'hFF;
+						byte_transmit_counter2 <= 0;
 						tx2_transmit <= 1;
 						state <= IDLE;
 					end
@@ -526,19 +520,21 @@ endfunction
 						data_in_frame[i] = rx_data;
 						i <= i+1;
 					end
-					if(i>STATUS_REQUEST_FRAME_LENGTH-4) begin
+					if(i>CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1) begin
 						state <= CHECK_CRC_CONTROL_MODE;
 					end
 				end
 				CHECK_CRC_CONTROL_MODE: begin
 					rx_crc = nextCRC16_D8(data_in_field,16'hFFFF);
-					if(rx_crc[15:8]==data_in_frame[CONTROL_MODE_FRAME_LENGTH-2]
-						  && rx_crc[7:0]==data_in_frame[CONTROL_MODE_FRAME_LENGTH-1]) begin // MATCH!
-						data_out_frame2[0] <= 8'hFF;
+					if(rx_crc[15:8]==data_in_frame[CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
+						  && rx_crc[7:0]==data_in_frame[CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]) begin // MATCH!
+						data_out_frame2[0] <= 8'h00;
+						byte_transmit_counter2 <= 0;
 						tx2_transmit <= 1;
 						state <= IDLE;
 					end else begin
-						data_out_frame2[0] <= 8'h0;
+						data_out_frame2[0] <= 8'hFF;
+						byte_transmit_counter2 <= 0;
 						tx2_transmit <= 1;
 						state <= IDLE;
 					end

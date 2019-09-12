@@ -3,7 +3,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Sep 12 19:16:21 2019
+Thu Sep 12 19:43:38 2019
 
 
 Command Line:  /media/external/iCEcube2/LSE/bin/lin64/synthesis -f template_lse.prj 
@@ -107,19 +107,17 @@ WARNING - synthesis: verilog/uart_tx.v(88): expression size 32 truncated to fit 
 WARNING - synthesis: verilog/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: verilog/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
 WARNING - synthesis: coms.v(300): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: coms.v(311): expression size 32 truncated to fit in target size 15. VERI-1209
+WARNING - synthesis: coms.v(311): expression size 32 truncated to fit in target size 14. VERI-1209
 WARNING - synthesis: coms.v(333): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: coms.v(344): expression size 32 truncated to fit in target size 15. VERI-1209
-WARNING - synthesis: coms.v(363): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: coms.v(374): expression size 32 truncated to fit in target size 15. VERI-1209
+WARNING - synthesis: coms.v(358): expression size 32 truncated to fit in target size 8. VERI-1209
 INFO - synthesis: verilog/uart_rx.v(14): compiling module uart_rx. VERI-1018
 WARNING - synthesis: verilog/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: coms.v(398): index 152 is out of range [151:0] for data_in_field. VERI-1216
-WARNING - synthesis: coms.v(404): index 152 is out of range [151:0] for data_out_field2. VERI-1216
-WARNING - synthesis: coms.v(495): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: coms.v(388): index 152 is out of range [151:0] for data_in_field. VERI-1216
+WARNING - synthesis: coms.v(394): index 152 is out of range [151:0] for data_out_field2. VERI-1216
+WARNING - synthesis: coms.v(485): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: coms.v(21): net data_out[20][7] does not have a driver. VDB-1002
 WARNING - synthesis: verilog/TinyFPGA_B.v(95): actual bit length 32 differs from formal bit length 16 for port current. VERI-1330
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
@@ -244,16 +242,21 @@ WARNING - synthesis: coms.v(9): net \c0/ID[7] does not have a driver. VDB-1002
 ######## Missing driver on net \c0/data_out[11][2]. Patching with GND.
 ######## Missing driver on net \c0/data_out[11][1]. Patching with GND.
 ######## Missing driver on net \c0/data_out[11][0]. Patching with GND.
-WARNING - synthesis: coms.v(380): Register \c0/data_out[4][7]_2205 is stuck at Zero. VDB-5013
-WARNING - synthesis: coms.v(380): Register \c0/data_out[1][5]_2231 is stuck at One. VDB-5014
+WARNING - synthesis: coms.v(370): Register \c0/data_out[4][7]_2217 is stuck at Zero. VDB-5013
+WARNING - synthesis: coms.v(370): Register \c0/data_out[1][5]_2243 is stuck at One. VDB-5014
 
 
 
+WARNING - synthesis: Bit 0 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 1 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 2 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 3 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
+WARNING - synthesis: Bit 4 of Register \c0/UART_TRANSMITTER.state is stuck at Zero
 WARNING - synthesis: Skipping pad insertion on PIN_1 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_2 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_3 due to black_box_pad_pin attribute.
-WARNING - synthesis: coms.v(547): Register \c0/data_out_frame2[0]__i9 is stuck at One. VDB-5014
-WARNING - synthesis: coms.v(547): Register \c0/data_out_frame2[0]__i11 is stuck at Zero. VDB-5013
+WARNING - synthesis: coms.v(543): Register \c0/data_out_frame2[0]__i9 is stuck at One. VDB-5014
+WARNING - synthesis: coms.v(543): Register \c0/data_out_frame2[0]__i11 is stuck at Zero. VDB-5013
 Applying 1.000000 MHz constraint to all clocks
 
 Writing scf file : template_Implmnt/template.scf
@@ -261,38 +264,38 @@ Writing scf file : template_Implmnt/template.scf
 Results of NGD DRC are available in TinyFPGA_B_drc.log.
 
 ################### Begin Area Report (TinyFPGA_B)######################
-Number of register bits => 559 of 7680 (7 % )
-SB_CARRY => 169
-SB_DFF => 420
-SB_DFFE => 60
-SB_DFFESR => 8
+Number of register bits => 550 of 7680 (7 % )
+SB_CARRY => 168
+SB_DFF => 387
+SB_DFFE => 67
+SB_DFFESR => 17
 SB_DFFESS => 7
 SB_DFFSR => 3
-SB_DFFSS => 61
+SB_DFFSS => 69
 SB_GB_IO => 1
 SB_IO => 5
-SB_LUT4 => 1389
+SB_LUT4 => 1334
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : CLK_c, loads : 559
+  Net : CLK_c, loads : 550
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : c0/n10197, loads : 127
-  Net : c0/n127_adj_2151, loads : 65
-  Net : c0/rx/n17889, loads : 62
-  Net : c0/byte_transmit_counter2_1, loads : 60
-  Net : c0/byte_transmit_counter2_0, loads : 55
-  Net : c0/UART_TRANSMITTER.state_0, loads : 53
-  Net : c0/byte_transmit_counter_0, loads : 49
-  Net : c0/UART_TRANSMITTER.state_1, loads : 48
-  Net : c0/n127, loads : 40
-  Net : c0/UART_TRANSMITTER.state_2, loads : 39
+  Net : c0/n10725, loads : 127
+  Net : c0/n13146, loads : 70
+  Net : c0/byte_transmit_counter2_1, loads : 69
+  Net : c0/rx/n18008, loads : 62
+  Net : c0/byte_transmit_counter2_0, loads : 53
+  Net : c0/byte_transmit_counter_0, loads : 48
+  Net : c0/UART_TRANSMITTER.state_1, loads : 46
+  Net : c0/n10596, loads : 38
+  Net : c0/UART_TRANSMITTER.state_0, loads : 37
+  Net : c0/n1034, loads : 36
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -302,7 +305,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 1000.000000 -name  |             |             |
-clk0 [get_nets CLK_c]                   |    1.000 MHz|   17.905 MHz|    35  
+clk0 [get_nets CLK_c]                   |    1.000 MHz|   17.903 MHz|    35  
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -310,8 +313,8 @@ clk0 [get_nets CLK_c]                   |    1.000 MHz|   17.905 MHz|    35
 All constraints were met.
 
 
-Peak Memory Usage: 177.715  MB
+Peak Memory Usage: 180.906  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 3.504  secs
+Elapsed CPU time for LSE flow : 3.527  secs
 --------------------------------------------------------------
