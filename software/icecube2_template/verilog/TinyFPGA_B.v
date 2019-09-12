@@ -75,8 +75,10 @@ module TinyFPGA_B (
   assign LED = blink_pattern[blink_counter[25:21]];
 
   reg [31:0] rand_data;
+  reg [31:0] rand_setpoint;
   always @(posedge CLK) begin
       rand_data <= rand_data + 1;
+	  rand_setpoint <= rand_setpoint+rand_data;
   end
 
   coms c0(
@@ -90,7 +92,8 @@ module TinyFPGA_B (
 	.position(rand_data),
 	.velocity(rand_data),
 	.displacement(rand_data),
-	.current(rand_data)
+	.current(rand_data),
+	.setpoint(rand_setpoint)
   );
 
 endmodule
