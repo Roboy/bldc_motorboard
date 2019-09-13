@@ -272,6 +272,7 @@ endfunction
 					PREPARE_CONTROL_MODE = 8'h5, SEND_CONTROL_MODE = 8'h6;
 		reg [7:0] state;
 		reg signed [31:0] sp;
+		reg dir;
 		if(reset) begin
 			state <= IDLE;
 		end else begin
@@ -304,7 +305,21 @@ endfunction
 								delay_counter = 1;
 								byte_transmit_counter = 0;
 								state<= PREPARE_SETPOINT;
-								sp = sp+1;
+								if(dir)begin
+									if(sp<107500)begin
+										sp = sp+1000;
+									end else begin
+										sp = sp+1;
+									end
+									dir = sp>108544?!dir:dir;
+								end else begin
+								if(sp>1000)begin
+									sp = sp-1000;
+								end else begin
+									sp = sp-1;
+								end
+									dir = sp<0?!dir:dir;
+								end
 							end else begin
 							  delay_counter = delay_counter + 1;
 							end
@@ -337,7 +352,7 @@ endfunction
 							if(delay_counter==8'h0) begin
 								delay_counter = 1;
 								byte_transmit_counter = 0;
-								state <= PREPARE_CONTROL_MODE;
+								state <= IDLE;
 							end else begin
 								delay_counter = delay_counter + 1;
 							end

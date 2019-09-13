@@ -1,4 +1,4 @@
-module motorControl #(parameter MAX_LIMIT = 300, parameter MIN_LIMIT = -300)(
+module motorControl #(parameter MAX_LIMIT = 500, parameter MIN_LIMIT = -500)(
     input CLK,
     input reset,
     input hall1,
@@ -11,7 +11,6 @@ module motorControl #(parameter MAX_LIMIT = 300, parameter MIN_LIMIT = -300)(
     input signed [31:0] Kd
   );
 
-  reg [9:0] pwm_delay;
   reg signed [31:0] pwm;
 
   always @ ( posedge CLK , posedge reset) begin: PD_CONTROLLER
@@ -24,7 +23,7 @@ module motorControl #(parameter MAX_LIMIT = 300, parameter MIN_LIMIT = -300)(
       pwm = 0;
     end else begin
       err = (setpoint-state);
-      result = Kp*err + Kd * (err_prev-err);
+      result = Kp*err + Kd * (err-err_prev);
       if(result>MAX_LIMIT)begin
         pwm = MAX_LIMIT;
       end else if(result<MIN_LIMIT)begin
@@ -36,9 +35,10 @@ module motorControl #(parameter MAX_LIMIT = 300, parameter MIN_LIMIT = -300)(
     end
   end
 
+  reg [11:0] pwm_count;
 
   always @(posedge CLK) begin: BLDC_COMMUTATION
-    if( pwm>=0 && pwm_delay>(1023-pwm))begin
+    if( pwm>=0 && pwm_count<pwm)begin
       if(hall1 && ~hall2 && hall3) begin
         PHASES <= 6'b100100;
       end
@@ -57,7 +57,7 @@ module motorControl #(parameter MAX_LIMIT = 300, parameter MIN_LIMIT = -300)(
       if(~hall1 && ~hall2 && hall3)begin
         PHASES <= 6'b000110;
       end
-    end else if ( pwm<0 && pwm_delay>(1023+pwm)) begin
+    end else if ( pwm<0 && pwm_count<(-pwm)) begin
       if(hall1 && ~hall2 && hall3) begin
         PHASES <= 6'b011000;
       end
@@ -79,7 +79,7 @@ module motorControl #(parameter MAX_LIMIT = 300, parameter MIN_LIMIT = -300)(
     end else begin
       PHASES <= 0;
     end
-    pwm_delay <= pwm_delay+1;
+    pwm_count <= pwm_count+1;
   end
 
 

@@ -4,7 +4,7 @@ Version=Lattice Semiconductor Corporation iCEcube - Release: 2017.08.27940 - Bui
 ProjectName=template
 Vendor=SiliconBlue
 Synthesis=lse
-ProjectVFiles=verilog/TinyFPGA_B.v=work,verilog/uart_rx.v=work,verilog/uart_tx.v=work,verilog/coms.v,verilog/motorControl.v,quad.v
+ProjectVFiles=verilog/TinyFPGA_B.v=work,verilog/uart_rx.v=work,verilog/uart_tx.v=work,verilog/coms.v,verilog/motorControl.v,quad.v,verilog/TinyFPGA_B_pll.v
 ProjectCFiles=
 CurImplementation=template_Implmnt
 Implementations=template_Implmnt

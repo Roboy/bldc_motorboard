@@ -136,12 +136,24 @@ module TinyFPGA_B (
     .PHASES(PHASES),
     .setpoint(setpoint),
     .state(position),
-    .Kp(32'h1),
-    .Kd(32'h0)
+    .Kp(32'd1),
+    .Kd(32'd0)
     );
 
+  wire CLK120MHz;
+
+  TinyFPGA_B_pll TinyFPGA_B_pll_inst(.REFERENCECLK(CLK),
+                                     .PLLOUTCORE(CLK120MHz),
+                                     .RESET(1'b0));
+
   // optical encoder
-  quad #(40) quad_counter0 (CLK, PIN_7, PIN_8, position);
+  quad #(5) quad_counter0 (
+    .clk(CLK120MHz),
+    .quadA(PIN_7),
+    .quadB(PIN_8),
+    .count(position),
+    .A_filtered(PIN_9)
+    );
   //
   // // magnetic encoder
   // reg signed [31:0] position_encoder1;

@@ -34,6 +34,7 @@
 -ver "verilog/coms.v"
 -ver "verilog/motorControl.v"
 -ver "quad.v"
+-ver "verilog/TinyFPGA_B_pll.v"
 -p "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1"
 
 #set result format/file last
