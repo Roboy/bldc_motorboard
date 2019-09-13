@@ -137,18 +137,20 @@ module TinyFPGA_B (
     .setpoint(setpoint),
     .state(position),
     .Kp(32'd1),
+    .Ki(32'd5),
     .Kd(32'd0)
     );
 
   wire CLK120MHz;
 
-  TinyFPGA_B_pll TinyFPGA_B_pll_inst(.REFERENCECLK(CLK),
-                                     .PLLOUTCORE(CLK120MHz),
-                                     .RESET(1'b0));
+  // TinyFPGA_B_pll TinyFPGA_B_pll_inst(.REFERENCECLK(CLK),
+  //                                    .PLLOUTGLOBAL(CLK120MHz),
+  //                                    .RESET(1'b1) // active low
+  //                                    );
 
   // optical encoder
   quad #(5) quad_counter0 (
-    .clk(CLK120MHz),
+    .clk(CLK),
     .quadA(PIN_7),
     .quadB(PIN_8),
     .count(position),

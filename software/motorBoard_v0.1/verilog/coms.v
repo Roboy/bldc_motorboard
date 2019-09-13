@@ -306,20 +306,27 @@ endfunction
 								byte_transmit_counter = 0;
 								state<= PREPARE_SETPOINT;
 								if(dir)begin
-									if(sp<107500)begin
+									if(sp<107000)begin
 										sp = sp+1000;
 									end else begin
 										sp = sp+1;
 									end
-									dir = sp>108544?!dir:dir;
+									dir = sp>108543?!dir:dir;
 								end else begin
-								if(sp>1000)begin
-									sp = sp-1000;
-								end else begin
-									sp = sp-1;
+									if(sp>1543)begin
+										sp = sp-1000;
+									end else begin
+										sp = sp-1;
+									end
+									dir = sp<=0?!dir:dir;
 								end
-									dir = sp<0?!dir:dir;
-								end
+								// if(dir)begin
+								// 	sp = sp+100;
+								// 	dir = sp>108544?!dir:dir;
+								// end else begin
+								// 	sp = sp-300;
+								// 	dir = sp<0?!dir:dir;
+								// end
 							end else begin
 							  delay_counter = delay_counter + 1;
 							end

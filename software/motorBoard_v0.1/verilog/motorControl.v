@@ -1,4 +1,4 @@
-module motorControl #(parameter MAX_LIMIT = 500, parameter MIN_LIMIT = -500)(
+module motorControl #(parameter MAX_LIMIT = 128, parameter MIN_LIMIT = -128)(
     input CLK,
     input reset,
     input hall1,
@@ -8,6 +8,7 @@ module motorControl #(parameter MAX_LIMIT = 500, parameter MIN_LIMIT = -500)(
     input signed [31:0] setpoint,
     input signed [31:0] state,
     input signed [31:0] Kp,
+    input signed [31:0] Ki,
     input signed [31:0] Kd
   );
 
@@ -17,13 +18,17 @@ module motorControl #(parameter MAX_LIMIT = 500, parameter MIN_LIMIT = -500)(
     reg signed [31:0] err;
     reg signed [31:0] err_prev;
     reg signed [31:0] result;
+    reg signed [31:0] integral;
     if(reset)begin
       err = 0;
       err_prev = 0;
       pwm = 0;
     end else begin
       err = (setpoint-state);
-      result = Kp*err + Kd * (err-err_prev);
+      if(integral<MAX_LIMIT && integral>MIN_LIMIT) begin
+        integral = integral+err;
+      end
+      result = Kp*err + Kd * (err-err_prev) + Ki*integral;
       if(result>MAX_LIMIT)begin
         pwm = MAX_LIMIT;
       end else if(result<MIN_LIMIT)begin
@@ -35,7 +40,7 @@ module motorControl #(parameter MAX_LIMIT = 500, parameter MIN_LIMIT = -500)(
     end
   end
 
-  reg [11:0] pwm_count;
+  reg [8:0] pwm_count;
 
   always @(posedge CLK) begin: BLDC_COMMUTATION
     if( pwm>=0 && pwm_count<pwm)begin
