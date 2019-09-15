@@ -1,0 +1,542 @@
+# ******************************************************************************
+
+# iCEcube Static Timer
+
+# Version:            2017.08.27940
+
+# Build Date:         Sep 12 2017 08:03:55
+
+# File Generated:     Sep 13 2019 03:00:24
+
+# Purpose:            Timing Report with critical paths info
+
+# Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+# ******************************************************************************
+
+Device: iCE40LP8K
+Derating factors (Best:Typical:Worst) :-  ( 0.654293 : 0.85 : 1.03369 )
+Derating factor used to generate this timing report:  Worst
+Based on the following operating conditions 
+Junction Temperature(degree Celsius): 85
+Core Voltage(V): 1.14
+Process Corner:  Worst
+NOTE:
+Please check both worst-case and best-case scenarios for "Setup Times" 
+and "Hold Times" checks
+Maximum Operating Frequency is: N/A
+
+
+ #####################################################################
+                    3::Datasheet Report
+
+All values are in Picoseconds
+ =====================================================================
+
+                        3.1::Setup Times
+                        ----------------
+
+Data Port  Clock Port  Setup Times  Clock Reference:Phase  
+---------  ----------  -----------  ---------------------  
+
+
+                       3.2::Clock to Out
+                       -----------------
+
+Data Port  Clock Port  Clock to Out  Clock Reference:Phase  
+---------  ----------  ------------  ---------------------  
+
+
+                         3.3::Pad to Pad
+                         ---------------
+
+Port Name (Input)  Port Name (Output)  Pad to Pad  
+-----------------  ------------------  ----------  
+REFERENCECLK       PLLOUTCORE          16996       
+REFERENCECLK       PLLOUTGLOBAL        18299       
+
+
+                         3.4::Hold Times
+                         ---------------
+
+Data Port  Clock Port  Hold Times  Clock Reference:Phase  
+---------  ----------  ----------  ---------------------  
+
+
+               3.5::Minimum Clock to Out
+               -------------------------
+
+Data Port  Clock Port  Minimum Clock to Out  Clock Reference:Phase  
+---------  ----------  --------------------  ---------------------  
+
+
+                 3.6::Minimum Pad To Pad
+                 -----------------------
+
+Port Name (Input)  Port Name (Output)  Minimum Pad To Pad  
+-----------------  ------------------  ------------------  
+REFERENCECLK       PLLOUTCORE          16026               
+REFERENCECLK       PLLOUTGLOBAL        16522               
+
+ =====================================================================
+                    End of Datasheet Report
+ #####################################################################
+
+ #####################################################################
+                    6::Path Details for DataSheet
+ =====================================================================
+
+
+6.3::PI to PO Path Details              
+--------------------------------------------------
+
+6.3.1::Path details for port: PLLOUTCORE
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : PLLOUTCORE
+Input Port       : REFERENCECLK
+Pad to Pad Delay : 16996
+
+Pad to Pad Path
+pin name                              model name                          delay  cummulative delay  edge  Fanout  
+------------------------------------  ----------------------------------  -----  -----------------  ----  ------  
+REFERENCECLK                          TinyFPGA_B_pll                      0      0                  RISE  1       
+REFERENCECLK_pad_iopad/PACKAGEPIN:in  IO_PAD                              0      0                  RISE  1       
+REFERENCECLK_pad_iopad/DOUT           IO_PAD                              760    760                RISE  1       
+REFERENCECLK_pad_preio/PADIN          PRE_IO_PIN_TYPE_000001              0      760                RISE  1       
+REFERENCECLK_pad_preio/DIN0           PRE_IO_PIN_TYPE_000001              910    1670               RISE  1       
+I__20/I                               Odrv12                              0      1670               RISE  1       
+I__20/O                               Odrv12                              724    2393               RISE  1       
+I__21/I                               Sp12to4                             0      2393               RISE  1       
+I__21/O                               Sp12to4                             631    3024               RISE  1       
+I__22/I                               Span4Mux_v                          0      3024               RISE  1       
+I__22/O                               Span4Mux_v                          517    3541               RISE  1       
+I__23/I                               Span4Mux_s2_v                       0      3541               RISE  1       
+I__23/O                               Span4Mux_s2_v                       372    3913               RISE  1       
+I__24/I                               LocalMux                            0      3913               RISE  1       
+I__24/O                               LocalMux                            486    4399               RISE  1       
+I__25/I                               IoInMux                             0      4399               RISE  1       
+I__25/O                               IoInMux                             382    4781               RISE  1       
+TinyFPGA_B_pll_inst/REFERENCECLK      SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE  0      4781               RISE  1       
+TinyFPGA_B_pll_inst/PLLOUTCORE        SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE  3866   8647               RISE  1       
+I__15/I                               Odrv12                              0      8647               RISE  1       
+I__15/O                               Odrv12                              724    9371               RISE  1       
+I__16/I                               Span12Mux_h                         0      9371               RISE  1       
+I__16/O                               Span12Mux_h                         724    10094              RISE  1       
+I__17/I                               Span12Mux_s3_h                      0      10094              RISE  1       
+I__17/O                               Span12Mux_s3_h                      248    10342              RISE  1       
+I__18/I                               LocalMux                            0      10342              RISE  1       
+I__18/O                               LocalMux                            486    10828              RISE  1       
+I__19/I                               IoInMux                             0      10828              RISE  1       
+I__19/O                               IoInMux                             382    11211              RISE  1       
+PLLOUTCORE_pad_preio/DOUT0            PRE_IO_PIN_TYPE_011001              0      11211              RISE  1       
+PLLOUTCORE_pad_preio/PADOUT           PRE_IO_PIN_TYPE_011001              3297   14508              FALL  1       
+PLLOUTCORE_pad_iopad/DIN              IO_PAD                              0      14508              FALL  1       
+PLLOUTCORE_pad_iopad/PACKAGEPIN:out   IO_PAD                              2488   16996              FALL  1       
+PLLOUTCORE                            TinyFPGA_B_pll                      0      16996              FALL  1       
+
+6.3.2::Path details for port: PLLOUTGLOBAL
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : PLLOUTGLOBAL
+Input Port       : REFERENCECLK
+Pad to Pad Delay : 18299
+
+Pad to Pad Path
+pin name                                             model name                          delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  ----------------------------------  -----  -----------------  ----  ------  
+REFERENCECLK                                         TinyFPGA_B_pll                      0      0                  RISE  1       
+REFERENCECLK_pad_iopad/PACKAGEPIN:in                 IO_PAD                              0      0                  RISE  1       
+REFERENCECLK_pad_iopad/DOUT                          IO_PAD                              760    760                RISE  1       
+REFERENCECLK_pad_preio/PADIN                         PRE_IO_PIN_TYPE_000001              0      760                RISE  1       
+REFERENCECLK_pad_preio/DIN0                          PRE_IO_PIN_TYPE_000001              910    1670               RISE  1       
+I__20/I                                              Odrv12                              0      1670               RISE  1       
+I__20/O                                              Odrv12                              724    2393               RISE  1       
+I__21/I                                              Sp12to4                             0      2393               RISE  1       
+I__21/O                                              Sp12to4                             631    3024               RISE  1       
+I__22/I                                              Span4Mux_v                          0      3024               RISE  1       
+I__22/O                                              Span4Mux_v                          517    3541               RISE  1       
+I__23/I                                              Span4Mux_s2_v                       0      3541               RISE  1       
+I__23/O                                              Span4Mux_s2_v                       372    3913               RISE  1       
+I__24/I                                              LocalMux                            0      3913               RISE  1       
+I__24/O                                              LocalMux                            486    4399               RISE  1       
+I__25/I                                              IoInMux                             0      4399               RISE  1       
+I__25/O                                              IoInMux                             382    4781               RISE  1       
+TinyFPGA_B_pll_inst/REFERENCECLK                     SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE  0      4781               RISE  1       
+TinyFPGA_B_pll_inst/PLLOUTGLOBAL                     SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE  4445   9226               RISE  1       
+I__11/I                                              GlobalMux                           0      9226               RISE  1       
+I__11/O                                              GlobalMux                           227    9453               RISE  1       
+I__12/I                                              Glb2LocalMux                        0      9453               RISE  1       
+I__12/O                                              Glb2LocalMux                        662    10115              RISE  1       
+I__13/I                                              LocalMux                            0      10115              RISE  1       
+I__13/O                                              LocalMux                            486    10601              RISE  1       
+I__14/I                                              InMux                               0      10601              RISE  1       
+I__14/O                                              InMux                               382    10983              RISE  1       
+GB_BUFFER_PLLOUTGLOBAL_c_THRU_LUT4_0_LC_1_5_0/in0    LogicCell40_SEQ_MODE_0000           0      10983              RISE  1       
+GB_BUFFER_PLLOUTGLOBAL_c_THRU_LUT4_0_LC_1_5_0/lcout  LogicCell40_SEQ_MODE_0000           662    11645              RISE  1       
+I__9/I                                               LocalMux                            0      11645              RISE  1       
+I__9/O                                               LocalMux                            486    12131              RISE  1       
+I__10/I                                              IoInMux                             0      12131              RISE  1       
+I__10/O                                              IoInMux                             382    12513              RISE  1       
+PLLOUTGLOBAL_pad_preio/DOUT0                         PRE_IO_PIN_TYPE_011001              0      12513              RISE  1       
+PLLOUTGLOBAL_pad_preio/PADOUT                        PRE_IO_PIN_TYPE_011001              3297   15811              FALL  1       
+PLLOUTGLOBAL_pad_iopad/DIN                           IO_PAD                              0      15811              FALL  1       
+PLLOUTGLOBAL_pad_iopad/PACKAGEPIN:out                IO_PAD                              2488   18299              FALL  1       
+PLLOUTGLOBAL                                         TinyFPGA_B_pll                      0      18299              FALL  1       
+
+6.6::Min PI to PO Path Details          
+--------------------------------------------------
+
+6.6.1::Path details for port: PLLOUTCORE
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : PLLOUTCORE
+Input Port       : REFERENCECLK
+Pad to Pad Delay : 16026
+
+Pad to Pad Path
+pin name                              model name                          delay  cummulative delay  edge  Fanout  
+------------------------------------  ----------------------------------  -----  -----------------  ----  ------  
+REFERENCECLK                          TinyFPGA_B_pll                      0      0                  FALL  1       
+REFERENCECLK_pad_iopad/PACKAGEPIN:in  IO_PAD                              0      0                  FALL  1       
+REFERENCECLK_pad_iopad/DOUT           IO_PAD                              460    460                FALL  1       
+REFERENCECLK_pad_preio/PADIN          PRE_IO_PIN_TYPE_000001              0      460                FALL  1       
+REFERENCECLK_pad_preio/DIN0           PRE_IO_PIN_TYPE_000001              682    1142               FALL  1       
+I__20/I                               Odrv12                              0      1142               FALL  1       
+I__20/O                               Odrv12                              796    1938               FALL  1       
+I__21/I                               Sp12to4                             0      1938               FALL  1       
+I__21/O                               Sp12to4                             662    2600               FALL  1       
+I__22/I                               Span4Mux_v                          0      2600               FALL  1       
+I__22/O                               Span4Mux_v                          548    3148               FALL  1       
+I__23/I                               Span4Mux_s2_v                       0      3148               FALL  1       
+I__23/O                               Span4Mux_s2_v                       372    3520               FALL  1       
+I__24/I                               LocalMux                            0      3520               FALL  1       
+I__24/O                               LocalMux                            455    3975               FALL  1       
+I__25/I                               IoInMux                             0      3975               FALL  1       
+I__25/O                               IoInMux                             320    4295               FALL  1       
+TinyFPGA_B_pll_inst/REFERENCECLK      SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE  0      4295               FALL  1       
+TinyFPGA_B_pll_inst/PLLOUTCORE        SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE  3825   8120               FALL  1       
+I__15/I                               Odrv12                              0      8120               FALL  1       
+I__15/O                               Odrv12                              796    8916               FALL  1       
+I__16/I                               Span12Mux_h                         0      8916               FALL  1       
+I__16/O                               Span12Mux_h                         796    9712               FALL  1       
+I__17/I                               Span12Mux_s3_h                      0      9712               FALL  1       
+I__17/O                               Span12Mux_s3_h                      269    9980               FALL  1       
+I__18/I                               LocalMux                            0      9980               FALL  1       
+I__18/O                               LocalMux                            455    10435              FALL  1       
+I__19/I                               IoInMux                             0      10435              FALL  1       
+I__19/O                               IoInMux                             320    10756              FALL  1       
+PLLOUTCORE_pad_preio/DOUT0            PRE_IO_PIN_TYPE_011001              0      10756              FALL  1       
+PLLOUTCORE_pad_preio/PADOUT           PRE_IO_PIN_TYPE_011001              2956   13712              RISE  1       
+PLLOUTCORE_pad_iopad/DIN              IO_PAD                              0      13712              RISE  1       
+PLLOUTCORE_pad_iopad/PACKAGEPIN:out   IO_PAD                              2314   16026              RISE  1       
+PLLOUTCORE                            TinyFPGA_B_pll                      0      16026              RISE  1       
+
+6.6.2::Path details for port: PLLOUTGLOBAL
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : PLLOUTGLOBAL
+Input Port       : REFERENCECLK
+Pad to Pad Delay : 16522
+
+Pad to Pad Path
+pin name                                             model name                          delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  ----------------------------------  -----  -----------------  ----  ------  
+REFERENCECLK                                         TinyFPGA_B_pll                      0      0                  FALL  1       
+REFERENCECLK_pad_iopad/PACKAGEPIN:in                 IO_PAD                              0      0                  FALL  1       
+REFERENCECLK_pad_iopad/DOUT                          IO_PAD                              460    460                FALL  1       
+REFERENCECLK_pad_preio/PADIN                         PRE_IO_PIN_TYPE_000001              0      460                FALL  1       
+REFERENCECLK_pad_preio/DIN0                          PRE_IO_PIN_TYPE_000001              682    1142               FALL  1       
+I__20/I                                              Odrv12                              0      1142               FALL  1       
+I__20/O                                              Odrv12                              796    1938               FALL  1       
+I__21/I                                              Sp12to4                             0      1938               FALL  1       
+I__21/O                                              Sp12to4                             662    2600               FALL  1       
+I__22/I                                              Span4Mux_v                          0      2600               FALL  1       
+I__22/O                                              Span4Mux_v                          548    3148               FALL  1       
+I__23/I                                              Span4Mux_s2_v                       0      3148               FALL  1       
+I__23/O                                              Span4Mux_s2_v                       372    3520               FALL  1       
+I__24/I                                              LocalMux                            0      3520               FALL  1       
+I__24/O                                              LocalMux                            455    3975               FALL  1       
+I__25/I                                              IoInMux                             0      3975               FALL  1       
+I__25/O                                              IoInMux                             320    4295               FALL  1       
+TinyFPGA_B_pll_inst/REFERENCECLK                     SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE  0      4295               FALL  1       
+TinyFPGA_B_pll_inst/PLLOUTGLOBAL                     SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE  4197   8492               FALL  1       
+I__11/I                                              GlobalMux                           0      8492               FALL  1       
+I__11/O                                              GlobalMux                           114    8605               FALL  1       
+I__12/I                                              Glb2LocalMux                        0      8605               FALL  1       
+I__12/O                                              Glb2LocalMux                        527    9133               FALL  1       
+I__13/I                                              LocalMux                            0      9133               FALL  1       
+I__13/O                                              LocalMux                            455    9588               FALL  1       
+I__14/I                                              InMux                               0      9588               FALL  1       
+I__14/O                                              InMux                               320    9908               FALL  1       
+GB_BUFFER_PLLOUTGLOBAL_c_THRU_LUT4_0_LC_1_5_0/in0    LogicCell40_SEQ_MODE_0000           0      9908               FALL  1       
+GB_BUFFER_PLLOUTGLOBAL_c_THRU_LUT4_0_LC_1_5_0/lcout  LogicCell40_SEQ_MODE_0000           569    10476              FALL  1       
+I__9/I                                               LocalMux                            0      10476              FALL  1       
+I__9/O                                               LocalMux                            455    10931              FALL  1       
+I__10/I                                              IoInMux                             0      10931              FALL  1       
+I__10/O                                              IoInMux                             320    11252              FALL  1       
+PLLOUTGLOBAL_pad_preio/DOUT0                         PRE_IO_PIN_TYPE_011001              0      11252              FALL  1       
+PLLOUTGLOBAL_pad_preio/PADOUT                        PRE_IO_PIN_TYPE_011001              2956   14208              RISE  1       
+PLLOUTGLOBAL_pad_iopad/DIN                           IO_PAD                              0      14208              RISE  1       
+PLLOUTGLOBAL_pad_iopad/PACKAGEPIN:out                IO_PAD                              2314   16522              RISE  1       
+PLLOUTGLOBAL                                         TinyFPGA_B_pll                      0      16522              RISE  1       
+
+
+ =====================================================================
+                    End of Path Details for Datasheet
+ #####################################################################
+
+##################################################################### 
+                    Detailed Setup Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : REFERENCECLK
+Path End         : PLLOUTGLOBAL
+Setup Constraint : +INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)       0
++ Launch Clock Source Latency                 0
++ Input Delay                                 0
++ Data Path Delay                         17337
+---------------------------------------   ----- 
+End-of-path arrival time (ps)             17337
+ 
+Data path
+pin name                                             model name                          delay  cumulative delay  slack  edge  Fanout
+---------------------------------------------------  ----------------------------------  -----  ----------------  -----  ----  ------
+REFERENCECLK                                         TinyFPGA_B_pll                          0                 0   +INF  RISE       1
+REFERENCECLK_pad_iopad/PACKAGEPIN:in                 IO_PAD                                  0                 0   +INF  RISE       1
+REFERENCECLK_pad_iopad/DOUT                          IO_PAD                                760               760   +INF  RISE       1
+REFERENCECLK_pad_preio/PADIN                         PRE_IO_PIN_TYPE_000001                  0               760   +INF  RISE       1
+REFERENCECLK_pad_preio/DIN0                          PRE_IO_PIN_TYPE_000001                682              1442   +INF  FALL       1
+I__20/I                                              Odrv12                                  0              1442   +INF  FALL       1
+I__20/O                                              Odrv12                                796              2238   +INF  FALL       1
+I__21/I                                              Sp12to4                                 0              2238   +INF  FALL       1
+I__21/O                                              Sp12to4                               662              2900   +INF  FALL       1
+I__22/I                                              Span4Mux_v                              0              2900   +INF  FALL       1
+I__22/O                                              Span4Mux_v                            548              3448   +INF  FALL       1
+I__23/I                                              Span4Mux_s2_v                           0              3448   +INF  FALL       1
+I__23/O                                              Span4Mux_s2_v                         372              3820   +INF  FALL       1
+I__24/I                                              LocalMux                                0              3820   +INF  FALL       1
+I__24/O                                              LocalMux                              455              4275   +INF  FALL       1
+I__25/I                                              IoInMux                                 0              4275   +INF  FALL       1
+I__25/O                                              IoInMux                               320              4595   +INF  FALL       1
+TinyFPGA_B_pll_inst/REFERENCECLK                     SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE      0              4595   +INF  FALL       1
+TinyFPGA_B_pll_inst/PLLOUTGLOBAL                     SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE   4197              8792   +INF  FALL       1
+I__11/I                                              GlobalMux                               0              8792   +INF  FALL       1
+I__11/O                                              GlobalMux                             114              8905   +INF  FALL       1
+I__12/I                                              Glb2LocalMux                            0              8905   +INF  FALL       1
+I__12/O                                              Glb2LocalMux                          527              9433   +INF  FALL       1
+I__13/I                                              LocalMux                                0              9433   +INF  FALL       1
+I__13/O                                              LocalMux                              455              9888   +INF  FALL       1
+I__14/I                                              InMux                                   0              9888   +INF  FALL       1
+I__14/O                                              InMux                                 320             10208   +INF  FALL       1
+GB_BUFFER_PLLOUTGLOBAL_c_THRU_LUT4_0_LC_1_5_0/in0    LogicCell40_SEQ_MODE_0000               0             10208   +INF  FALL       1
+GB_BUFFER_PLLOUTGLOBAL_c_THRU_LUT4_0_LC_1_5_0/lcout  LogicCell40_SEQ_MODE_0000             569             10776   +INF  FALL       1
+I__9/I                                               LocalMux                                0             10776   +INF  FALL       1
+I__9/O                                               LocalMux                              455             11231   +INF  FALL       1
+I__10/I                                              IoInMux                                 0             11231   +INF  FALL       1
+I__10/O                                              IoInMux                               320             11552   +INF  FALL       1
+PLLOUTGLOBAL_pad_preio/DOUT0                         PRE_IO_PIN_TYPE_011001                  0             11552   +INF  FALL       1
+PLLOUTGLOBAL_pad_preio/PADOUT                        PRE_IO_PIN_TYPE_011001               3297             14849   +INF  FALL       1
+PLLOUTGLOBAL_pad_iopad/DIN                           IO_PAD                                  0             14849   +INF  FALL       1
+PLLOUTGLOBAL_pad_iopad/PACKAGEPIN:out                IO_PAD                               2488             17337   +INF  FALL       1
+PLLOUTGLOBAL                                         TinyFPGA_B_pll                          0             17337   +INF  FALL       1
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : REFERENCECLK
+Path End         : PLLOUTCORE
+Setup Constraint : +INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)       0
++ Launch Clock Source Latency                 0
++ Input Delay                                 0
++ Data Path Delay                         16791
+---------------------------------------   ----- 
+End-of-path arrival time (ps)             16791
+ 
+Data path
+pin name                              model name                          delay  cumulative delay  slack  edge  Fanout
+------------------------------------  ----------------------------------  -----  ----------------  -----  ----  ------
+REFERENCECLK                          TinyFPGA_B_pll                          0                 0   +INF  FALL       1
+REFERENCECLK_pad_iopad/PACKAGEPIN:in  IO_PAD                                  0                 0   +INF  FALL       1
+REFERENCECLK_pad_iopad/DOUT           IO_PAD                                710               710   +INF  FALL       1
+REFERENCECLK_pad_preio/PADIN          PRE_IO_PIN_TYPE_000001                  0               710   +INF  FALL       1
+REFERENCECLK_pad_preio/DIN0           PRE_IO_PIN_TYPE_000001                682              1392   +INF  FALL       1
+I__20/I                               Odrv12                                  0              1392   +INF  FALL       1
+I__20/O                               Odrv12                                796              2188   +INF  FALL       1
+I__21/I                               Sp12to4                                 0              2188   +INF  FALL       1
+I__21/O                               Sp12to4                               662              2850   +INF  FALL       1
+I__22/I                               Span4Mux_v                              0              2850   +INF  FALL       1
+I__22/O                               Span4Mux_v                            548              3398   +INF  FALL       1
+I__23/I                               Span4Mux_s2_v                           0              3398   +INF  FALL       1
+I__23/O                               Span4Mux_s2_v                         372              3770   +INF  FALL       1
+I__24/I                               LocalMux                                0              3770   +INF  FALL       1
+I__24/O                               LocalMux                              455              4225   +INF  FALL       1
+I__25/I                               IoInMux                                 0              4225   +INF  FALL       1
+I__25/O                               IoInMux                               320              4545   +INF  FALL       1
+TinyFPGA_B_pll_inst/REFERENCECLK      SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE      0              4545   +INF  FALL       1
+TinyFPGA_B_pll_inst/PLLOUTCORE        SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE   3825              8370   +INF  FALL       1
+I__15/I                               Odrv12                                  0              8370   +INF  FALL       1
+I__15/O                               Odrv12                                796              9166   +INF  FALL       1
+I__16/I                               Span12Mux_h                             0              9166   +INF  FALL       1
+I__16/O                               Span12Mux_h                           796              9962   +INF  FALL       1
+I__17/I                               Span12Mux_s3_h                          0              9962   +INF  FALL       1
+I__17/O                               Span12Mux_s3_h                        269             10230   +INF  FALL       1
+I__18/I                               LocalMux                                0             10230   +INF  FALL       1
+I__18/O                               LocalMux                              455             10685   +INF  FALL       1
+I__19/I                               IoInMux                                 0             10685   +INF  FALL       1
+I__19/O                               IoInMux                               320             11006   +INF  FALL       1
+PLLOUTCORE_pad_preio/DOUT0            PRE_IO_PIN_TYPE_011001                  0             11006   +INF  FALL       1
+PLLOUTCORE_pad_preio/PADOUT           PRE_IO_PIN_TYPE_011001               3297             14303   +INF  FALL       1
+PLLOUTCORE_pad_iopad/DIN              IO_PAD                                  0             14303   +INF  FALL       1
+PLLOUTCORE_pad_iopad/PACKAGEPIN:out   IO_PAD                               2488             16791   +INF  FALL       1
+PLLOUTCORE                            TinyFPGA_B_pll                          0             16791   +INF  FALL       1
+
+===================================================================== 
+                    End of Detailed Setup Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    Detailed Hold Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : REFERENCECLK
+Path End         : PLLOUTGLOBAL
+Hold Constraint  : -INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)       0
++ Launch Clock Source Latency                 0
++ Input Delay                                 0
++ Data Path Delay                         17087
+---------------------------------------   ----- 
+End-of-path arrival time (ps)             17087
+ 
+Data path
+pin name                                             model name                          delay  cumulative delay  slack  edge  Fanout
+---------------------------------------------------  ----------------------------------  -----  ----------------  -----  ----  ------
+REFERENCECLK                                         TinyFPGA_B_pll                          0                 0   +INF  RISE       1
+REFERENCECLK_pad_iopad/PACKAGEPIN:in                 IO_PAD                                  0                 0   +INF  RISE       1
+REFERENCECLK_pad_iopad/DOUT                          IO_PAD                                510               510   +INF  RISE       1
+REFERENCECLK_pad_preio/PADIN                         PRE_IO_PIN_TYPE_000001                  0               510   +INF  RISE       1
+REFERENCECLK_pad_preio/DIN0                          PRE_IO_PIN_TYPE_000001                682              1192   +INF  FALL       1
+I__20/I                                              Odrv12                                  0              1192   +INF  FALL       1
+I__20/O                                              Odrv12                                796              1988   +INF  FALL       1
+I__21/I                                              Sp12to4                                 0              1988   +INF  FALL       1
+I__21/O                                              Sp12to4                               662              2650   +INF  FALL       1
+I__22/I                                              Span4Mux_v                              0              2650   +INF  FALL       1
+I__22/O                                              Span4Mux_v                            548              3198   +INF  FALL       1
+I__23/I                                              Span4Mux_s2_v                           0              3198   +INF  FALL       1
+I__23/O                                              Span4Mux_s2_v                         372              3570   +INF  FALL       1
+I__24/I                                              LocalMux                                0              3570   +INF  FALL       1
+I__24/O                                              LocalMux                              455              4025   +INF  FALL       1
+I__25/I                                              IoInMux                                 0              4025   +INF  FALL       1
+I__25/O                                              IoInMux                               320              4345   +INF  FALL       1
+TinyFPGA_B_pll_inst/REFERENCECLK                     SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE      0              4345   +INF  FALL       1
+TinyFPGA_B_pll_inst/PLLOUTGLOBAL                     SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE   4197              8542   +INF  FALL       1
+I__11/I                                              GlobalMux                               0              8542   +INF  FALL       1
+I__11/O                                              GlobalMux                             114              8655   +INF  FALL       1
+I__12/I                                              Glb2LocalMux                            0              8655   +INF  FALL       1
+I__12/O                                              Glb2LocalMux                          527              9183   +INF  FALL       1
+I__13/I                                              LocalMux                                0              9183   +INF  FALL       1
+I__13/O                                              LocalMux                              455              9638   +INF  FALL       1
+I__14/I                                              InMux                                   0              9638   +INF  FALL       1
+I__14/O                                              InMux                                 320              9958   +INF  FALL       1
+GB_BUFFER_PLLOUTGLOBAL_c_THRU_LUT4_0_LC_1_5_0/in0    LogicCell40_SEQ_MODE_0000               0              9958   +INF  FALL       1
+GB_BUFFER_PLLOUTGLOBAL_c_THRU_LUT4_0_LC_1_5_0/lcout  LogicCell40_SEQ_MODE_0000             569             10526   +INF  FALL       1
+I__9/I                                               LocalMux                                0             10526   +INF  FALL       1
+I__9/O                                               LocalMux                              455             10981   +INF  FALL       1
+I__10/I                                              IoInMux                                 0             10981   +INF  FALL       1
+I__10/O                                              IoInMux                               320             11302   +INF  FALL       1
+PLLOUTGLOBAL_pad_preio/DOUT0                         PRE_IO_PIN_TYPE_011001                  0             11302   +INF  FALL       1
+PLLOUTGLOBAL_pad_preio/PADOUT                        PRE_IO_PIN_TYPE_011001               3297             14599   +INF  FALL       1
+PLLOUTGLOBAL_pad_iopad/DIN                           IO_PAD                                  0             14599   +INF  FALL       1
+PLLOUTGLOBAL_pad_iopad/PACKAGEPIN:out                IO_PAD                               2488             17087   +INF  FALL       1
+PLLOUTGLOBAL                                         TinyFPGA_B_pll                          0             17087   +INF  FALL       1
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : REFERENCECLK
+Path End         : PLLOUTCORE
+Hold Constraint  : -INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)       0
++ Launch Clock Source Latency                 0
++ Input Delay                                 0
++ Data Path Delay                         16541
+---------------------------------------   ----- 
+End-of-path arrival time (ps)             16541
+ 
+Data path
+pin name                              model name                          delay  cumulative delay  slack  edge  Fanout
+------------------------------------  ----------------------------------  -----  ----------------  -----  ----  ------
+REFERENCECLK                          TinyFPGA_B_pll                          0                 0   +INF  FALL       1
+REFERENCECLK_pad_iopad/PACKAGEPIN:in  IO_PAD                                  0                 0   +INF  FALL       1
+REFERENCECLK_pad_iopad/DOUT           IO_PAD                                460               460   +INF  FALL       1
+REFERENCECLK_pad_preio/PADIN          PRE_IO_PIN_TYPE_000001                  0               460   +INF  FALL       1
+REFERENCECLK_pad_preio/DIN0           PRE_IO_PIN_TYPE_000001                682              1142   +INF  FALL       1
+I__20/I                               Odrv12                                  0              1142   +INF  FALL       1
+I__20/O                               Odrv12                                796              1938   +INF  FALL       1
+I__21/I                               Sp12to4                                 0              1938   +INF  FALL       1
+I__21/O                               Sp12to4                               662              2600   +INF  FALL       1
+I__22/I                               Span4Mux_v                              0              2600   +INF  FALL       1
+I__22/O                               Span4Mux_v                            548              3148   +INF  FALL       1
+I__23/I                               Span4Mux_s2_v                           0              3148   +INF  FALL       1
+I__23/O                               Span4Mux_s2_v                         372              3520   +INF  FALL       1
+I__24/I                               LocalMux                                0              3520   +INF  FALL       1
+I__24/O                               LocalMux                              455              3975   +INF  FALL       1
+I__25/I                               IoInMux                                 0              3975   +INF  FALL       1
+I__25/O                               IoInMux                               320              4295   +INF  FALL       1
+TinyFPGA_B_pll_inst/REFERENCECLK      SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE      0              4295   +INF  FALL       1
+TinyFPGA_B_pll_inst/PLLOUTCORE        SB_PLL40_CORE_FEEDBACK_PATH_SIMPLE   3825              8120   +INF  FALL       1
+I__15/I                               Odrv12                                  0              8120   +INF  FALL       1
+I__15/O                               Odrv12                                796              8916   +INF  FALL       1
+I__16/I                               Span12Mux_h                             0              8916   +INF  FALL       1
+I__16/O                               Span12Mux_h                           796              9712   +INF  FALL       1
+I__17/I                               Span12Mux_s3_h                          0              9712   +INF  FALL       1
+I__17/O                               Span12Mux_s3_h                        269              9980   +INF  FALL       1
+I__18/I                               LocalMux                                0              9980   +INF  FALL       1
+I__18/O                               LocalMux                              455             10435   +INF  FALL       1
+I__19/I                               IoInMux                                 0             10435   +INF  FALL       1
+I__19/O                               IoInMux                               320             10756   +INF  FALL       1
+PLLOUTCORE_pad_preio/DOUT0            PRE_IO_PIN_TYPE_011001                  0             10756   +INF  FALL       1
+PLLOUTCORE_pad_preio/PADOUT           PRE_IO_PIN_TYPE_011001               3297             14053   +INF  FALL       1
+PLLOUTCORE_pad_iopad/DIN              IO_PAD                                  0             14053   +INF  FALL       1
+PLLOUTCORE_pad_iopad/PACKAGEPIN:out   IO_PAD                               2488             16541   +INF  FALL       1
+PLLOUTCORE                            TinyFPGA_B_pll                          0             16541   +INF  FALL       1
+
+===================================================================== 
+                    End of Detailed Hold Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    End of Timing Report 
+##################################################################### 
+
