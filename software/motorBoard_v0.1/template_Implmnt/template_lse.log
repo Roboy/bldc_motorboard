@@ -3,7 +3,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Fri Sep 13 04:08:48 2019
+Sun Sep 15 17:24:02 2019
 
 
 Command Line:  /media/external/iCEcube2/LSE/bin/lin64/synthesis -f template_lse.prj 
@@ -84,12 +84,12 @@ Analyzing Verilog file /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEAD
 Compile design.
 Compile Design Begin
 Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
-WARNING - synthesis: verilog/TinyFPGA_B.v(122): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(123): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(124): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(125): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(126): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(127): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(112): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(113): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(114): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(115): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(116): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(117): identifier PHASES is used before its declaration. VERI-1875
 Analyzing Verilog file verilog/uart_rx.v. VERI-1482
 Analyzing Verilog file verilog/uart_tx.v. VERI-1482
 Analyzing Verilog file verilog/coms.v. VERI-1482
@@ -111,28 +111,19 @@ Top module name (Verilog): TinyFPGA_B
 INFO - synthesis: verilog/TinyFPGA_B.v(2): compiling module TinyFPGA_B. VERI-1018
 INFO - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b101001,PULLUP=1'b1). VERI-1018
 INFO - synthesis: /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b01,PULLUP=1'b1). VERI-1018
-WARNING - synthesis: verilog/TinyFPGA_B.v(71): expression size 32 truncated to fit in target size 26. VERI-1209
+WARNING - synthesis: verilog/TinyFPGA_B.v(63): expression size 32 truncated to fit in target size 26. VERI-1209
 INFO - synthesis: verilog/coms.v(1): compiling module coms. VERI-1018
-INFO - synthesis: verilog/uart_tx.v(14): compiling module uart_tx. VERI-1018
-WARNING - synthesis: verilog/uart_tx.v(70): expression size 32 truncated to fit in target size 9. VERI-1209
-WARNING - synthesis: verilog/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
-WARNING - synthesis: verilog/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
-WARNING - synthesis: verilog/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
-WARNING - synthesis: verilog/coms.v(298): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: verilog/coms.v(331): expression size 32 truncated to fit in target size 14. VERI-1209
-WARNING - synthesis: verilog/coms.v(353): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: verilog/coms.v(364): expression size 32 truncated to fit in target size 14. VERI-1209
-WARNING - synthesis: verilog/coms.v(383): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: verilog/coms.v(394): expression size 32 truncated to fit in target size 14. VERI-1209
 INFO - synthesis: verilog/uart_rx.v(14): compiling module uart_rx. VERI-1018
 WARNING - synthesis: verilog/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
 WARNING - synthesis: verilog/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: verilog/coms.v(418): index 152 is out of range [151:0] for data_in_field. VERI-1216
-WARNING - synthesis: verilog/coms.v(424): index 152 is out of range [151:0] for data_out_field2. VERI-1216
-WARNING - synthesis: verilog/coms.v(514): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING - synthesis: verilog/coms.v(21): net data_out[20][7] does not have a driver. VDB-1002
+INFO - synthesis: verilog/uart_tx.v(14): compiling module uart_tx. VERI-1018
+WARNING - synthesis: verilog/uart_tx.v(70): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: verilog/coms.v(186): expression size 32 truncated to fit in target size 8. VERI-1209
 INFO - synthesis: verilog/motorControl.v(1): compiling module motorControl. VERI-1018
 WARNING - synthesis: verilog/motorControl.v(87): expression size 32 truncated to fit in target size 9. VERI-1209
 INFO - synthesis: quad.v(3): compiling module quad. VERI-1018
@@ -142,28 +133,26 @@ WARNING - synthesis: quad.v(42): expression size 32 truncated to fit in target s
 WARNING - synthesis: quad.v(49): expression size 32 truncated to fit in target size 16. VERI-1209
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(94): input port ID[7] is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(104): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(112): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(120): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(84): input port ID[7] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(94): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(102): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(110): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 Loading NGL library '/media/external/iCEcube2/LSE/xo2c00/data/xo2clib.ngl'...
 Loading NGL library '/media/external/iCEcube2/LSE/or5g00/data/orc5glib.ngl'...
 Top-level module name = TinyFPGA_B.
 WARNING - synthesis: verilog/TinyFPGA_B.v(45): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(53): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(61): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(94): input port ID[7] is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(104): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(112): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(120): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/coms.v(21): net data_out[20][7] does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(84): input port ID[7] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(94): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(102): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(110): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 ######## Converting I/O port PIN_1 to output.
 ######## Converting I/O port PIN_2 to output.
 ######## Converting I/O port PIN_3 to output.
 ######## Converting I/O port PIN_7 to input.
 ######## Converting I/O port PIN_8 to input.
 ######## Converting I/O port PIN_9 to output.
+######## Converting I/O port PIN_11 to input.
 ######## Converting I/O port PIN_13 to input.
 ######## Converting I/O port PIN_14 to input.
 ######## Converting I/O port PIN_15 to input.
@@ -176,7 +165,7 @@ WARNING - synthesis: verilog/coms.v(21): net data_out[20][7] does not have a dri
 ######## Converting I/O port PIN_22 to output.
 ######## Converting I/O port PIN_23 to output.
 ######## Converting I/O port PIN_24 to output.
-WARNING - synthesis: verilog/coms.v(9): net \c0/ID[7] does not have a driver. VDB-1002
+WARNING - synthesis: verilog/coms.v(7): net \c0/ID[7] does not have a driver. VDB-1002
 ######## Missing driver on net \c0/ID[7]. Patching with GND.
 ######## Missing driver on net \c0/ID[6]. Patching with GND.
 ######## Missing driver on net \c0/ID[5]. Patching with GND.
@@ -185,88 +174,6 @@ WARNING - synthesis: verilog/coms.v(9): net \c0/ID[7] does not have a driver. VD
 ######## Missing driver on net \c0/ID[2]. Patching with GND.
 ######## Missing driver on net \c0/ID[1]. Patching with GND.
 ######## Missing driver on net \c0/ID[0]. Patching with GND.
-######## Missing driver on net \c0/data_out[20][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[20][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[20][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[20][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[20][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[20][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[20][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[20][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[19][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[19][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[19][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[19][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[19][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[19][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[19][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[19][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[18][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[18][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[18][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[18][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[18][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[18][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[18][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[18][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[17][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[17][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[17][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[17][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[17][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[17][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[17][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[17][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[16][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[16][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[16][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[16][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[16][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[16][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[16][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[16][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[15][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[15][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[15][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[15][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[15][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[15][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[15][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[15][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[14][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[14][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[14][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[14][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[14][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[14][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[14][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[14][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[13][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[13][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[13][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[13][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[13][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[13][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[13][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[13][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[12][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[12][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[12][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[12][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[12][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[12][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[12][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[12][0]. Patching with GND.
-######## Missing driver on net \c0/data_out[11][7]. Patching with GND.
-######## Missing driver on net \c0/data_out[11][6]. Patching with GND.
-######## Missing driver on net \c0/data_out[11][5]. Patching with GND.
-######## Missing driver on net \c0/data_out[11][4]. Patching with GND.
-######## Missing driver on net \c0/data_out[11][3]. Patching with GND.
-######## Missing driver on net \c0/data_out[11][2]. Patching with GND.
-######## Missing driver on net \c0/data_out[11][1]. Patching with GND.
-######## Missing driver on net \c0/data_out[11][0]. Patching with GND.
-WARNING - synthesis: verilog/coms.v(400): Register \c0/data_out[9][6]_1883 is stuck at One. VDB-5014
-WARNING - synthesis: verilog/coms.v(400): Register \c0/data_out[4][7]_1922 is stuck at Zero. VDB-5013
 
 
 
@@ -274,24 +181,12 @@ WARNING - synthesis: Skipping pad insertion on PIN_4 due to black_box_pad_pin at
 WARNING - synthesis: Skipping pad insertion on PIN_5 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_6 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_10 due to black_box_pad_pin attribute.
-WARNING - synthesis: Skipping pad insertion on PIN_11 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_12 due to black_box_pad_pin attribute.
-WARNING - synthesis: verilog/coms.v(576): Register \c0/rx_crc_i10 is stuck at One. VDB-5014
-WARNING - synthesis: verilog/coms.v(576): Register \c0/data_out_frame2[0]__i11 is stuck at Zero. VDB-5013
-Duplicate register/latch removal. \control/pwm_i13 is a one-to-one match with \control/pwm_i12.
-Duplicate register/latch removal. \control/pwm_i9 is a one-to-one match with \control/pwm_i8.
-Duplicate register/latch removal. \control/pwm_i22 is a one-to-one match with \control/pwm_i19.
-Duplicate register/latch removal. \control/pwm_i13 is a one-to-one match with \control/pwm_i22.
-Duplicate register/latch removal. \control/pwm_i9 is a one-to-one match with \control/pwm_i13.
-Duplicate register/latch removal. \control/pwm_i20 is a one-to-one match with \control/pwm_i31.
-Duplicate register/latch removal. \control/pwm_i18 is a one-to-one match with \control/pwm_i20.
-Duplicate register/latch removal. \control/pwm_i15 is a one-to-one match with \control/pwm_i18.
+WARNING - synthesis: verilog/coms.v(254): Register \c0/data_out_frame[0]__i11 is stuck at Zero. VDB-5013
 Writing scf file : template_Implmnt/template.scf
 
 Writing scf file : template_Implmnt/template.scf
 
-Duplicate register/latch removal. \control/pwm_i9 is a one-to-one match with \control/pwm_i16.
-Duplicate register/latch removal. \control/pwm_i15 is a one-to-one match with \control/pwm_i9.
 Writing scf file : template_Implmnt/template.scf
 
 Writing scf file : template_Implmnt/template.scf
@@ -301,38 +196,37 @@ Writing scf file : template_Implmnt/template.scf
 Results of NGD DRC are available in TinyFPGA_B_drc.log.
 
 ################### Begin Area Report (TinyFPGA_B)######################
-Number of register bits => 610 of 7680 (7 % )
-SB_CARRY => 787
-SB_DFF => 430
-SB_DFFE => 95
-SB_DFFESR => 6
-SB_DFFESS => 7
+Number of register bits => 463 of 7680 (6 % )
+SB_CARRY => 672
+SB_DFF => 333
+SB_DFFE => 65
+SB_DFFESR => 3
 SB_DFFSR => 2
-SB_DFFSS => 70
+SB_DFFSS => 60
 SB_GB_IO => 1
-SB_IO => 17
-SB_LUT4 => 2142
+SB_IO => 16
+SB_LUT4 => 1716
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : CLK_c, loads : 610
+  Net : CLK_c, loads : 463
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : quad_counter0/n2065, loads : 63
-  Net : c0/UART_TRANSMITTER.state_1, loads : 53
-  Net : c0/UART_TRANSMITTER.state_2, loads : 50
-  Net : c0/UART_TRANSMITTER.state_0, loads : 47
-  Net : c0/n13590, loads : 47
-  Net : c0/byte_transmit_counter2_0, loads : 37
-  Net : c0/byte_transmit_counter_0, loads : 37
-  Net : c0/rx/rx_data_ready, loads : 35
-  Net : c0/n13362, loads : 33
-  Net : c0/UART_TRANSMITTER.dir, loads : 33
+  Net : quad_counter0/n1540, loads : 63
+  Net : c0/FRAME_MATCHER.state_31_N_658_2, loads : 56
+  Net : c0/n7607, loads : 54
+  Net : c0/n952, loads : 34
+  Net : c0/byte_transmit_counter_0, loads : 34
+  Net : c0/rx/rx_data_ready, loads : 33
+  Net : control/n37, loads : 32
+  Net : c0/n1385, loads : 32
+  Net : quad_counter0/count_enable, loads : 31
+  Net : c0/n16777, loads : 31
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -343,7 +237,7 @@ Constraint                              |   Constraint|       Actual|Levels
                                         |             |             |
 create_clock -period 62.500000          |             |             |
 -waveform { 0.000000 31.250000 } -name  |             |             |
-CLK [ get_ports { CLK } ]               |   16.000 MHz|    9.324 MHz|    68 *
+CLK [ get_ports { CLK } ]               |   16.000 MHz|    9.159 MHz|    69 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -351,8 +245,8 @@ CLK [ get_ports { CLK } ]               |   16.000 MHz|    9.324 MHz|    68 *
 1 constraints not met.
 
 
-Peak Memory Usage: 203.941  MB
+Peak Memory Usage: 198.750  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 7.326  secs
+Elapsed CPU time for LSE flow : 5.438  secs
 --------------------------------------------------------------

@@ -43,14 +43,6 @@ module TinyFPGA_B (
     .D_OUT_0(tx_o),
     .OUTPUT_ENABLE(tx_enable)
   );
-  SB_IO #(
-    .PIN_TYPE(6'b101001),
-    .PULLUP(1'b1)
-  ) tx2_output(
-    .PACKAGE_PIN(PIN_11),
-    .D_OUT_0(tx2_o),
-    .OUTPUT_ENABLE(tx2_enable)
-  );
   // PULLUP for UART receiver
   SB_IO #(
      .PIN_TYPE(6'b 0000_01),
@@ -72,7 +64,7 @@ module TinyFPGA_B (
   end
 
   // light up the LED according to the pattern
-  assign LED = blink_pattern[blink_counter[25:21]];
+  assign LED = rx_i;//blink_pattern[blink_counter[25:21]];
 
 
   wire signed [31:0] position;
@@ -83,8 +75,6 @@ module TinyFPGA_B (
 	.reset(1'b0),
   	.tx_o(tx_o),
 	.tx_enable(tx_enable),
-  	.tx2_o(tx2_o),
-	.tx2_enable(tx2_enable),
   	.rx_i(rx_i),
 	.position(32'h0),
 	.velocity(32'h0),
