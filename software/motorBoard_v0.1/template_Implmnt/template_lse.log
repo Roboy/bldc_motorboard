@@ -3,7 +3,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Sep 16 18:42:17 2019
+Mon Sep 16 20:24:45 2019
 
 
 Command Line:  /home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f template_lse.prj 
@@ -320,8 +320,8 @@ WARNING - synthesis: verilog/motorControl.v(15): net \control/deadband[31] does 
 
 
 
-WARNING - synthesis: verilog/coms.v(290): Register \c0/data_out_frame[29][7]_5199 is stuck at Zero. VDB-5013
-WARNING - synthesis: verilog/coms.v(290): Register \c0/data_out_frame[3][7]_5407 is stuck at One. VDB-5014
+WARNING - synthesis: verilog/coms.v(290): Register \c0/data_out_frame[27][7]_5302 is stuck at Zero. VDB-5013
+WARNING - synthesis: verilog/coms.v(290): Register \c0/data_out_frame[3][7]_5494 is stuck at One. VDB-5014
 WARNING - synthesis: Skipping pad insertion on PIN_4 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_5 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on PIN_6 due to black_box_pad_pin attribute.
@@ -342,37 +342,37 @@ Writing scf file : template_Implmnt/template.scf
 Results of NGD DRC are available in TinyFPGA_B_drc.log.
 
 ################### Begin Area Report (TinyFPGA_B)######################
-Number of register bits => 630 of 7680 (8 % )
+Number of register bits => 635 of 7680 (8 % )
 SB_CARRY => 177
-SB_DFF => 470
-SB_DFFE => 33
-SB_DFFESR => 62
+SB_DFF => 465
+SB_DFFE => 21
+SB_DFFESR => 83
 SB_DFFSR => 2
-SB_DFFSS => 63
+SB_DFFSS => 64
 SB_GB_IO => 1
 SB_IO => 17
-SB_LUT4 => 1797
+SB_LUT4 => 1931
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : CLK_c, loads : 630
+  Net : CLK_c, loads : 635
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : c0/n8112, loads : 88
-  Net : quad_counter1/n2301, loads : 63
-  Net : quad_counter0/n2228, loads : 63
-  Net : c0/n19098, loads : 57
-  Net : c0/byte_transmit_counter_0, loads : 42
-  Net : c0/n12_adj_3006, loads : 41
-  Net : c0/n12_adj_3265, loads : 41
-  Net : c0/byte_transmit_counter_1, loads : 40
-  Net : c0/rx/rx_data_ready, loads : 35
-  Net : n1295, loads : 34
+  Net : c0/FRAME_MATCHER.state_31_N_2975_2, loads : 77
+  Net : c0/n13058, loads : 76
+  Net : quad_counter0/n2313, loads : 63
+  Net : quad_counter1/n2226, loads : 63
+  Net : c0/n22120, loads : 49
+  Net : c0/n22112, loads : 49
+  Net : c0/n22104, loads : 49
+  Net : c0/byte_transmit_counter_0, loads : 45
+  Net : c0/n22134, loads : 40
+  Net : c0/byte_transmit_counter_1, loads : 39
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -383,16 +383,16 @@ Constraint                              |   Constraint|       Actual|Levels
                                         |             |             |
 create_clock -period 62.500000          |             |             |
 -waveform { 0.000000 31.250000 } -name  |             |             |
-CLK [ get_ports { CLK } ]               |   16.000 MHz|   14.698 MHz|    43 *
+CLK [ get_ports { CLK } ]               |   16.000 MHz|   17.536 MHz|    36  
                                         |             |             |
 --------------------------------------------------------------------------------
 
 
-1 constraints not met.
+All constraints were met.
 
 
-Peak Memory Usage: 194.352  MB
+Peak Memory Usage: 198.141  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 10.027  secs
+Elapsed CPU time for LSE flow : 9.554  secs
 --------------------------------------------------------------

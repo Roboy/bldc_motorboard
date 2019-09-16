@@ -91,7 +91,7 @@ module coms(
 
 	uart_rx rx(CLK,rx_i,rx_data_ready,rx_data);
 
-	reg [7:0] data_in[MAX_FRAME_LENGTH-1:0];
+	reg [7:0] data_in[MAGIC_NUMBER_LENGTH-1:0];
 	reg [7:0] data_in_frame[MAX_FRAME_LENGTH-1:0];
 	reg [7:0] data_out_frame[MAX_FRAME_LENGTH-1:0];
 
@@ -111,10 +111,10 @@ module coms(
 		integer state;
 		integer next_state;
 		reg [15:0] tx_crc;
-		integer i, j;
+		integer i, j, k;
 		reg rx_data_ready_prev;
 		if(reset) begin
-			state <= IDLE;
+			state = IDLE;
 			i <= 0;
 		end else begin
 			tx_transmit <= 0;
@@ -126,13 +126,13 @@ module coms(
 			  end
 			end
 			if({data_in[0],data_in[1],data_in[2],data_in[3]}==STATUS_REQUEST_FRAME_MAGICNUMBER)begin
-			 	state <= RECEIVE_STATUS_REQUEST;
+			 	state = RECEIVE_STATUS_REQUEST;
 			end
 			if({data_in[0],data_in[1],data_in[2],data_in[3]}==SETPOINT_FRAME_MAGICNUMBER)begin
-			 	state <= RECEIVE_SETPOINT;
+			 	state = RECEIVE_SETPOINT;
 			end
 			if({data_in[0],data_in[1],data_in[2],data_in[3]}==CONTROL_MODE_FRAME_MAGICNUMBER)begin
-			 	state <= RECEIVE_CONTROL_MODE;
+			 	state = RECEIVE_CONTROL_MODE;
 			end
 			case(state)
 				IDLE: begin
@@ -144,13 +144,13 @@ module coms(
 						i <= i+1;
 					end
 					if(i>STATUS_REQUEST_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1) begin
-						state <= CHECK_CRC_STATUS_REQUEST;
+						state = CHECK_CRC_STATUS_REQUEST;
 					end
 				end
 				CHECK_CRC_STATUS_REQUEST: begin
 					rx_crc = 16'hFFFF;
-					for(i=0;i<STATUS_REQUEST_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2;i=i+1) begin
-						rx_crc = nextCRC16_D8(data_in_frame[i],rx_crc);
+					for(k=0;k<STATUS_REQUEST_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2;k=k+1) begin
+						rx_crc = nextCRC16_D8(data_in_frame[k],rx_crc);
 					end
 					if(rx_crc[15:8]==data_in_frame[STATUS_REQUEST_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
 						  && rx_crc[7:0]==data_in_frame[STATUS_REQUEST_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]
@@ -184,16 +184,16 @@ module coms(
 						data_out_frame[26] = current_phase3[15:8];
 						data_out_frame[27] = current_phase3[7:0];
 						tx_crc = 16'hFFFF;
-						for(i=MAGIC_NUMBER_LENGTH;i<STATUS_FRAME_LENGTH-2;i=i+1) begin
-							tx_crc = nextCRC16_D8(data_out_frame[i],rx_crc);
+						for(k=MAGIC_NUMBER_LENGTH;k<STATUS_FRAME_LENGTH-2;k=k+1) begin
+							tx_crc = nextCRC16_D8(data_out_frame[k],tx_crc);
 						end
 						data_out_frame[STATUS_FRAME_LENGTH-2] = tx_crc[15:8];
 						data_out_frame[STATUS_FRAME_LENGTH-1] = tx_crc[7:0];
 						byte_transmit_counter <= 0;
 						tx_transmit <= 1;
-						state <= SEND_STATUS;
+						state = SEND_STATUS;
 					end else begin
-						state <= IDLE;
+						state = IDLE;
 					end
 				end
 				SEND_STATUS: begin
@@ -202,7 +202,7 @@ module coms(
 							byte_transmit_counter <= byte_transmit_counter + 1;
 							tx_transmit <= 1;
 					  end else begin
-							state <= IDLE;
+							state = IDLE;
 					  end
 					end
 				end
@@ -212,13 +212,13 @@ module coms(
 						i <= i+1;
 					end
 					if(i>SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1) begin
-						state <= CHECK_CRC_SETPOINT;
+						state = CHECK_CRC_SETPOINT;
 					end
 				end
 				CHECK_CRC_SETPOINT: begin
 					rx_crc = 16'hFFFF;
-					for(i=0;i<SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2;i=i+1) begin
-						rx_crc = nextCRC16_D8(data_in_frame[i],rx_crc);
+					for(k=0;k<SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2;k=k+1) begin
+						rx_crc = nextCRC16_D8(data_in_frame[k],rx_crc);
 					end
 					if(rx_crc[15:8]==data_in_frame[SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
 						  && rx_crc[7:0]==data_in_frame[SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]
@@ -226,13 +226,13 @@ module coms(
 						data_out_frame[0] <= 8'h00;
 						byte_transmit_counter <= 0;
 						tx_transmit <= 1;
-						state <= IDLE;
+						state = IDLE;
 						setpoint[31:24] <= data_in_frame[1];
 						setpoint[23:16] <= data_in_frame[2];
 						setpoint[15:8] <= data_in_frame[3];
 						setpoint[7:0] <= data_in_frame[4];
 					end else begin
-						state <= IDLE;
+						state = IDLE;
 					end
 				end
 				RECEIVE_CONTROL_MODE: begin
@@ -241,13 +241,13 @@ module coms(
 						i <= i+1;
 					end
 					if(i>CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1) begin
-						state <= CHECK_CRC_CONTROL_MODE;
+						state = CHECK_CRC_CONTROL_MODE;
 					end
 				end
 				CHECK_CRC_CONTROL_MODE: begin
 					rx_crc = 16'hFFFF;
-					for(i=0;i<CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2;i=i+1) begin
-						rx_crc = nextCRC16_D8(data_in_frame[i],rx_crc);
+					for(k=0;k<CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2;k=k+1) begin
+						rx_crc = nextCRC16_D8(data_in_frame[k],rx_crc);
 					end
 					if(rx_crc[15:8]==data_in_frame[CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
 						  && rx_crc[7:0]==data_in_frame[CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]
@@ -281,9 +281,9 @@ module coms(
 							setpoint[23:16] <= data_in_frame[27];
 							setpoint[15:8] <= data_in_frame[28];
 							setpoint[7:0] <= data_in_frame[29];
-						state <= IDLE;
+						  state = IDLE;
 					end else begin
-						state <= IDLE;
+						  state = IDLE;
 					end
 				end
 			endcase
