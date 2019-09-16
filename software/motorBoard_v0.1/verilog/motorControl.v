@@ -9,12 +9,15 @@ module motorControl #(parameter MAX_LIMIT = 128, parameter MIN_LIMIT = -128)(
     input signed [31:0] state,
     input signed [31:0] Kp,
     input signed [31:0] Ki,
-    input signed [31:0] Kd
+    input signed [31:0] Kd,
+    input signed [31:0] PWMLimit,
+    input signed [31:0] IntegralLimit,
+    input signed [31:0] deadband
   );
 
   reg signed [31:0] pwm;
 
-  always @ ( posedge CLK , posedge reset) begin: PD_CONTROLLER
+  always @ ( posedge CLK , posedge reset) begin: PID_CONTROLLER
     reg signed [31:0] err;
     reg signed [31:0] err_prev;
     reg signed [31:0] result;
@@ -25,16 +28,20 @@ module motorControl #(parameter MAX_LIMIT = 128, parameter MIN_LIMIT = -128)(
       pwm = 0;
     end else begin
       err = (setpoint-state);
-      if(integral<MAX_LIMIT && integral>MIN_LIMIT) begin
+      if(integral<IntegralLimit && integral>-IntegralLimit) begin
         integral = integral+err;
       end
       result = Kp*err + Kd * (err-err_prev) + Ki*integral;
-      if(result>MAX_LIMIT)begin
-        pwm = MAX_LIMIT;
-      end else if(result<MIN_LIMIT)begin
-        pwm = MIN_LIMIT;
+      if(result>deadband || result < -deadband)begin
+        if(result>PWMLimit)begin
+          pwm = PWMLimit;
+        end else if(result<PWMLimit)begin
+          pwm = PWMLimit;
+        end else begin
+          pwm = result;
+        end
       end else begin
-        pwm = result;
+        pwm = 0;
       end
       err_prev = err;
     end

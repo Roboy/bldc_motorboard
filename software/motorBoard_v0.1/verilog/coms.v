@@ -5,14 +5,22 @@ module coms(
 	output tx_enable,
 	input rx_i,
 	input [7:0] ID,
-	input signed [31:0] position,
-	input signed [31:0] velocity,
-	input signed [31:0] displacement,
-	input [15:0] current,
-	output reg signed [31:0] setpoint
+	input signed [31:0] encoder0_position,
+	input signed [31:0] encoder1_position,
+	input signed [31:0] encoder0_velocity,
+	input signed [31:0] encoder1_velocity,
+	input [15:0] current_phase1,
+	input [15:0] current_phase2,
+	input [15:0] current_phase3,
+	output reg signed [31:0] setpoint,
+	output reg [7:0] control_mode,
+	output reg [31:0] Kp,
+	output reg [31:0] Ki,
+	output reg [31:0] Kd,
+	output reg [31:0] PWMLimit,
+	output reg [31:0] IntegralLimit,
+	output reg [31:0] deadband
 );
-
-	localparam  MAX_FRAME_LENGTH = 21;
 
 	////////////////////////////////////////////////////////////////////////////////
 	// Copyright (C) 1999-2008 Easics NV.
@@ -71,11 +79,12 @@ module coms(
 	localparam  STATUS_REQUEST_FRAME_MAGICNUMBER = 32'h1CE1CEBB;
 	localparam	STATUS_REQUEST_FRAME_LENGTH = 7;
 	localparam 	STATUS_FRAME_MAGICNUMBER = 32'h1CEB00DA;
-	localparam  STATUS_FRAME_LENGTH = 21;
+	localparam  STATUS_FRAME_LENGTH = 30;
 	localparam 	SETPOINT_FRAME_MAGICNUMBER = 32'hD0D0D0D0;
 	localparam  SETPOINT_FRAME_LENGTH = 11;
 	localparam 	CONTROL_MODE_FRAME_MAGICNUMBER = 32'hBAADA555;
-	localparam  CONTROL_MODE_FRAME_LENGTH = 8;
+	localparam  CONTROL_MODE_FRAME_LENGTH = 34;
+	localparam  MAX_FRAME_LENGTH = CONTROL_MODE_FRAME_LENGTH;
 
 	wire rx_data_ready;
 	wire [7:0] rx_data ;
@@ -151,32 +160,39 @@ module coms(
 						data_out_frame[2] = STATUS_FRAME_MAGICNUMBER[15:8];
 						data_out_frame[3] = STATUS_FRAME_MAGICNUMBER[7:0];
 						data_out_frame[4] = ID;
-						data_out_frame[5] = position[31:24];
-						data_out_frame[6] = position[23:16];
-						data_out_frame[7] = position[15:8];
-						data_out_frame[8] = position[7:0];
-						data_out_frame[9] = velocity[31:24];
-						data_out_frame[10] = velocity[23:16];
-						data_out_frame[11] = velocity[15:8];
-						data_out_frame[12] = velocity[7:0];
-						data_out_frame[13] = displacement[31:24];
-						data_out_frame[14] = displacement[23:16];
-						data_out_frame[15] = displacement[15:8];
-						data_out_frame[16] = displacement[7:0];
-						data_out_frame[17] = current[15:8];
-						data_out_frame[18] = current[7:0];
+						data_out_frame[5] = control_mode;
+						data_out_frame[6] = encoder0_position[31:24];
+						data_out_frame[7] = encoder0_position[23:16];
+						data_out_frame[8] = encoder0_position[15:8];
+						data_out_frame[9] = encoder0_position[7:0];
+						data_out_frame[10] = encoder1_position[31:24];
+						data_out_frame[11] = encoder1_position[23:16];
+						data_out_frame[12] = encoder1_position[15:8];
+						data_out_frame[13] = encoder1_position[7:0];
+						data_out_frame[14] = encoder0_velocity[31:24];
+						data_out_frame[15] = encoder0_velocity[23:16];
+						data_out_frame[16] = encoder0_velocity[15:8];
+						data_out_frame[17] = encoder0_velocity[7:0];
+						data_out_frame[18] = encoder1_velocity[31:24];
+						data_out_frame[19] = encoder1_velocity[23:16];
+						data_out_frame[20] = encoder1_velocity[15:8];
+						data_out_frame[21] = encoder1_velocity[7:0];
+						data_out_frame[22] = current_phase1[15:8];
+						data_out_frame[23] = current_phase1[7:0];
+						data_out_frame[24] = current_phase2[15:8];
+						data_out_frame[25] = current_phase2[7:0];
+						data_out_frame[26] = current_phase3[15:8];
+						data_out_frame[27] = current_phase3[7:0];
 						tx_crc = 16'hFFFF;
-						for(i=MAGIC_NUMBER_LENGTH;i<SETPOINT_FRAME_LENGTH-2;i=i+1) begin
+						for(i=MAGIC_NUMBER_LENGTH;i<STATUS_FRAME_LENGTH-2;i=i+1) begin
 							tx_crc = nextCRC16_D8(data_out_frame[i],rx_crc);
 						end
-						data_out_frame[19] = tx_crc[15:8];
-						data_out_frame[20] = tx_crc[7:0];
+						data_out_frame[STATUS_FRAME_LENGTH-2] = tx_crc[15:8];
+						data_out_frame[STATUS_FRAME_LENGTH-1] = tx_crc[7:0];
 						byte_transmit_counter <= 0;
 						tx_transmit <= 1;
 						state <= SEND_STATUS;
 					end else begin
-						//data_out_frame[0] <= 8'h0;
-						//tx_transmit <= 1;
 						state <= IDLE;
 					end
 				end
@@ -186,8 +202,6 @@ module coms(
 							byte_transmit_counter <= byte_transmit_counter + 1;
 							tx_transmit <= 1;
 					  end else begin
-							data_out_frame[0] <= rx_crc[15:8];
-							byte_transmit_counter <= 0;
 							state <= IDLE;
 					  end
 					end
@@ -208,7 +222,7 @@ module coms(
 					end
 					if(rx_crc[15:8]==data_in_frame[SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
 						  && rx_crc[7:0]==data_in_frame[SETPOINT_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]
-						  && data_in_frame[0]==ID) begin // MATCH! and for me!
+						  && ((data_in_frame[0]==ID) || (data_in_frame[0]==8'hFF))) begin // MATCH! and for me!
 						data_out_frame[0] <= 8'h00;
 						byte_transmit_counter <= 0;
 						tx_transmit <= 1;
@@ -218,8 +232,6 @@ module coms(
 						setpoint[15:8] <= data_in_frame[3];
 						setpoint[7:0] <= data_in_frame[4];
 					end else begin
-						//data_out_frame[0] <= rx_crc[15:8];
-						//tx_transmit <= 1;
 						state <= IDLE;
 					end
 				end
@@ -239,14 +251,38 @@ module coms(
 					end
 					if(rx_crc[15:8]==data_in_frame[CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
 						  && rx_crc[7:0]==data_in_frame[CONTROL_MODE_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]
-						  && data_in_frame[0]==ID) begin // MATCH! and for me!
-						data_out_frame[0] <= 8'h00;
-						byte_transmit_counter <= 0;
-						tx_transmit <= 1;
+						  && ((data_in_frame[0]==ID) || (data_in_frame[0]==8'hFF))) begin // MATCH! and for me!
+							control_mode <= data_in_frame[1];
+							Kp[31:24] <= data_in_frame[2];
+							Kp[23:16] <= data_in_frame[3];
+							Kp[15:8] <= data_in_frame[4];
+							Kp[7:0] <= data_in_frame[5];
+							Ki[31:24] <= data_in_frame[6];
+							Ki[23:16] <= data_in_frame[7];
+							Ki[15:8] <= data_in_frame[8];
+							Ki[7:0] <= data_in_frame[9];
+							Kd[31:24] <= data_in_frame[10];
+							Kd[23:16] <= data_in_frame[11];
+							Kd[15:8] <= data_in_frame[12];
+							Kd[7:0] <= data_in_frame[13];
+							PWMLimit[31:24] <= data_in_frame[14];
+							PWMLimit[23:16] <= data_in_frame[15];
+							PWMLimit[15:8] <= data_in_frame[16];
+							PWMLimit[7:0] <= data_in_frame[17];
+							IntegralLimit[31:24] <= data_in_frame[18];
+							IntegralLimit[23:16] <= data_in_frame[19];
+							IntegralLimit[15:8] <= data_in_frame[20];
+							IntegralLimit[7:0] <= data_in_frame[21];
+							deadband[31:24] <= data_in_frame[22];
+							deadband[23:16] <= data_in_frame[23];
+							deadband[15:8] <= data_in_frame[24];
+							deadband[7:0] <= data_in_frame[25];
+							setpoint[31:24] <= data_in_frame[26];
+							setpoint[23:16] <= data_in_frame[27];
+							setpoint[15:8] <= data_in_frame[28];
+							setpoint[7:0] <= data_in_frame[29];
 						state <= IDLE;
 					end else begin
-						//data_out_frame[0] <= rx_crc[15:8];
-						//tx_transmit <= 1;
 						state <= IDLE;
 					end
 				end

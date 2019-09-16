@@ -31,9 +31,7 @@ module TinyFPGA_B (
   // drive USB pull-up resistor to '0' to disable USB
   assign USBPU = 0;
 
-  wire tx_o, tx2_o, tx_enable, tx2_enable, rx_i;
-  //assign PIN_1 = tx_o;
-  //assign PIN_3 = tx2_o;
+  wire tx_o, tx_enable, rx_i;
   // PULLUP for UART transmitters
   SB_IO #(
     .PIN_TYPE(6'b101001),
@@ -48,7 +46,7 @@ module TinyFPGA_B (
      .PIN_TYPE(6'b 0000_01),
      .PULLUP(1'b 1)
   ) rx_input(
-     .PACKAGE_PIN(PIN_12),
+     .PACKAGE_PIN(PIN_11),
      .D_IN_0(rx_i)
   );
 
@@ -67,20 +65,38 @@ module TinyFPGA_B (
   assign LED = rx_i;//blink_pattern[blink_counter[25:21]];
 
 
-  wire signed [31:0] position;
+  wire signed [31:0] encoder0_position;
+  wire signed [31:0] encoder1_position;
   wire signed [31:0] setpoint;
+  wire signed [31:0] Kp;
+  wire signed [31:0] Ki;
+  wire signed [31:0] Kd;
+  wire [7:0] control_mode;
+  wire signed [31:0] PWMLimit;
+  wire signed [31:0] IntegralLimit;
+  wire signed [31:0] deadband;
 
   coms c0(
   	.CLK(CLK),
-	.reset(1'b0),
+	  .reset(1'b0),
   	.tx_o(tx_o),
-	.tx_enable(tx_enable),
+	  .tx_enable(tx_enable),
   	.rx_i(rx_i),
-	.position(32'h0),
-	.velocity(32'h0),
-	.displacement(position),
-	.current(16'h0),
-	.setpoint(setpoint)
+  	.encoder0_position(encoder0_position),
+  	.encoder1_position(encoder1_position),
+  	.encoder0_velocity(encoder0_velocity),
+  	.encoder1_velocity(encoder1_velocity),
+  	.current_phase1(16'h0),
+  	.current_phase2(16'h0),
+  	.current_phase3(16'h0),
+  	.setpoint(setpoint),
+  	.control_mode(control_mode),
+    .Kp(Kp),
+    .Ki(Ki),
+    .Kd(Kd),
+    .PWMLimit(PWMLimit),
+    .IntegralLimit(IntegralLimit),
+    .deadband(deadband)
   );
 
   wire hall1, hall2, hall3;
@@ -117,6 +133,13 @@ module TinyFPGA_B (
   assign PIN_22 = PHASES[5];
   wire [5:0] PHASES;
 
+  wire signed [31:0] motor_state;
+
+  assign motor_state =
+    (control_mode==0)?encoder0_position:
+    (control_mode==1)?encoder1_position:
+    32'd0;
+
   motorControl control(
     .CLK(CLK),
     .reset(1'b0),
@@ -125,14 +148,13 @@ module TinyFPGA_B (
     .hall3(hall3),
     .PHASES(PHASES),
     .setpoint(setpoint),
-    .state(position),
-    .Kp(32'd1),
-    .Ki(32'd5),
-    .Kd(32'd0)
-    );
+    .state(motor_state),
+    .Kp(Kp),
+    .Ki(Ki),
+    .Kd(Kd)
+  );
 
-  wire CLK120MHz;
-
+  // wire CLK120MHz;
   // TinyFPGA_B_pll TinyFPGA_B_pll_inst(.REFERENCECLK(CLK),
   //                                    .PLLOUTGLOBAL(CLK120MHz),
   //                                    .RESET(1'b1) // active low
@@ -143,12 +165,15 @@ module TinyFPGA_B (
     .clk(CLK),
     .quadA(PIN_7),
     .quadB(PIN_8),
-    .count(position),
-    .A_filtered(PIN_9)
-    );
-  //
-  // // magnetic encoder
-  // reg signed [31:0] position_encoder1;
-  // quad quad_counter0(CLK, PIN_10, PIN_11, position_encoder1);
+    .count(encoder0_position)
+  );
+
+  // magnetic encoder
+  quad #(5) quad_counter1 (
+    .clk(CLK),
+    .quadA(PIN_12),
+    .quadB(PIN_13),
+    .count(encoder1_position)
+  );
 
 endmodule
