@@ -31,6 +31,14 @@ module TinyFPGA_B (
   // drive USB pull-up resistor to '0' to disable USB
   assign USBPU = 0;
 
+  wire clk32MHz;
+  pll20MHz pll32MHz_inst(.REFERENCECLK(CLK),
+                                     .PLLOUTGLOBAL(clk32MHz),
+                                     .RESET(1'b1) // active low
+                                     );
+
+  assign PIN_9 = clk32MHz;
+
   wire tx_o, tx_enable, rx_i;
   // PULLUP for UART transmitters
   SB_IO #(
@@ -50,19 +58,19 @@ module TinyFPGA_B (
      .D_IN_0(rx_i)
   );
 
-  // keep track of time and location in blink_pattern
-  reg [25:0] blink_counter;
-
-  // pattern that will be flashed over the LED over time
-  wire [31:0] blink_pattern = 32'b101010001110111011100010101;
-
-  // increment the blink_counter every clock
-  always @(posedge CLK) begin
-      blink_counter <= blink_counter + 1;
-  end
+  // // keep track of time and location in blink_pattern
+  // reg [25:0] blink_counter;
+  //
+  // // pattern that will be flashed over the LED over time
+  // wire [31:0] blink_pattern = 32'b101010001110111011100010101;
+  //
+  // // increment the blink_counter every clock
+  // always @(posedge clk32MHz) begin
+  //     blink_counter <= blink_counter + 1;
+  // end
 
   // light up the LED according to the pattern
-  assign LED = rx_i;//blink_pattern[blink_counter[25:21]];
+  assign LED = ~rx_i;//blink_pattern[blink_counter[25:21]];
 
 
   wire signed [31:0] encoder0_position;
@@ -77,7 +85,7 @@ module TinyFPGA_B (
   wire signed [31:0] deadband;
 
   coms c0(
-  	.CLK(CLK),
+  	.CLK(clk32MHz),
 	  .reset(1'b0),
   	.tx_o(tx_o),
 	  .tx_enable(tx_enable),
@@ -141,7 +149,7 @@ module TinyFPGA_B (
     32'd0;
 
   motorControl control(
-    .CLK(CLK),
+    .CLK(clk32MHz),
     .reset(1'b0),
     .hall1(hall1),
     .hall2(hall2),
@@ -154,15 +162,9 @@ module TinyFPGA_B (
     .Kd(Kd)
   );
 
-  // wire CLK120MHz;
-  // TinyFPGA_B_pll TinyFPGA_B_pll_inst(.REFERENCECLK(CLK),
-  //                                    .PLLOUTGLOBAL(CLK120MHz),
-  //                                    .RESET(1'b1) // active low
-  //                                    );
-
   // optical encoder
   quad #(5) quad_counter0 (
-    .clk(CLK),
+    .clk(clk32MHz),
     .quadA(PIN_7),
     .quadB(PIN_8),
     .count(encoder0_position)
@@ -170,7 +172,7 @@ module TinyFPGA_B (
 
   // magnetic encoder
   quad #(5) quad_counter1 (
-    .clk(CLK),
+    .clk(clk32MHz),
     .quadA(PIN_12),
     .quadB(PIN_13),
     .count(encoder1_position)

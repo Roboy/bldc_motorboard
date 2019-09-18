@@ -6,7 +6,7 @@
 
 * Build Date:         Sep 12 2017 08:02:28
 
-* File Generated:     Sep 16 2019 20:27:27
+* File Generated:     Sep 18 2019 23:28:13
 
 * Purpose:            Detailed IO and package pin info
 
@@ -55,7 +55,7 @@ D6, PIO, not used, , , , , , rightBank
 D7, PIO, not used, , , , , , rightBank
 D8, PIO_GBIN, not used, , , , , , rightBank
 D9, PIO, not used, , , , , , rightBank
-E1, PIO, not used, , , , , , leftBank
+E1, PIO, PIN_9, Output, , SB_LVCMOS, No Pull Up, Simple Output, leftBank
 E2, PIO, PIN_8, Input, , SB_LVCMOS, No Pull Up, Simple Input, leftBank
 E3, PIO_GBIN, not used, , , , , , leftBank
 E4, PIO, not used, , , , , , leftBank
@@ -100,4 +100,4 @@ J6, AGND_BOT, not used, , , , , , UnknownBank
 J7, AVDD_BOT, not used, , , , , , UnknownBank
 J8, PIO, not used, , , , , , rightBank
 J9, PIO, not used, , , , , , rightBank
-Total Number of Used Pins, 18
+Total Number of Used Pins, 19

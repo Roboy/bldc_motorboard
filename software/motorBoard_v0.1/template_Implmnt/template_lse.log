@@ -3,7 +3,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Sep 16 20:24:45 2019
+Wed Sep 18 23:25:32 2019
 
 
 Command Line:  /home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f template_lse.prj 
@@ -37,7 +37,7 @@ The -d option is iCE40LP8K.
                                                           
 
 Optimization goal = Area
-The -top option is not used.
+Top-level module name = TinyFPGA_B.
 Target frequency = 1.000000 MHz.
 Maximum fanout = 10000.
 Timing path count = 3
@@ -73,10 +73,10 @@ Verilog design file = verilog/uart_tx.v
 Verilog design file = verilog/coms.v
 Verilog design file = verilog/motorControl.v
 Verilog design file = quad.v
+Verilog design file = verilog/pll32MHz.v
 -sdc option: SDC file input is constraints/clk.sdc.
 -vh2008
 
-WARNING - synthesis: Setting TinyFPGA_B as the top-level module. To specify the top-level module explicitly, use the -top option.
 Technology check ok...
 
 Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
@@ -84,17 +84,18 @@ Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYN
 Compile design.
 Compile Design Begin
 Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
-WARNING - synthesis: verilog/TinyFPGA_B.v(128): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(129): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(130): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(131): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(132): identifier PHASES is used before its declaration. VERI-1875
-WARNING - synthesis: verilog/TinyFPGA_B.v(133): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(136): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(137): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(138): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(139): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(140): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(141): identifier PHASES is used before its declaration. VERI-1875
 Analyzing Verilog file verilog/uart_rx.v. VERI-1482
 Analyzing Verilog file verilog/uart_tx.v. VERI-1482
 Analyzing Verilog file verilog/coms.v. VERI-1482
 Analyzing Verilog file verilog/motorControl.v. VERI-1482
 Analyzing Verilog file quad.v. VERI-1482
+Analyzing Verilog file verilog/pll32MHz.v. VERI-1482
 Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
@@ -109,9 +110,11 @@ WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTH
 WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(3725): empty port in module declaration. VERI-1294
 Top module name (Verilog): TinyFPGA_B
 INFO - synthesis: verilog/TinyFPGA_B.v(2): compiling module TinyFPGA_B. VERI-1018
+INFO - synthesis: verilog/pll32MHz.v(1): compiling module pll20MHz. VERI-1018
+INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(699): compiling module SB_PLL40_CORE(FEEDBACK_PATH="PHASE_AND_DELAY",FDA_FEEDBACK=4'b0,FDA_RELATIVE=4'b0,PLLOUT_SELECT="SHIFTREG_0deg",DIVF=7'b01,DIVQ=3'b011,FILTER_RANGE=3'b01). VERI-1018
+WARNING - synthesis: verilog/pll32MHz.v(22): input port EXTFEEDBACK is not connected on this instance. VDB-1013
 INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b101001,PULLUP=1'b1). VERI-1018
 INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b01,PULLUP=1'b1). VERI-1018
-WARNING - synthesis: verilog/TinyFPGA_B.v(61): expression size 32 truncated to fit in target size 26. VERI-1209
 INFO - synthesis: verilog/coms.v(1): compiling module coms. VERI-1018
 INFO - synthesis: verilog/uart_rx.v(14): compiling module uart_rx. VERI-1018
 WARNING - synthesis: verilog/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
@@ -125,8 +128,8 @@ WARNING - synthesis: verilog/uart_tx.v(98): expression size 32 truncated to fit 
 WARNING - synthesis: verilog/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
 WARNING - synthesis: verilog/coms.v(202): expression size 32 truncated to fit in target size 8. VERI-1209
 WARNING - synthesis: verilog/coms.v(96): net data_out_frame[33][7] does not have a driver. VDB-1002
-WARNING - synthesis: verilog/TinyFPGA_B.v(87): actual bit length 1 differs from formal bit length 32 for port encoder0_velocity. VERI-1330
-WARNING - synthesis: verilog/TinyFPGA_B.v(88): actual bit length 1 differs from formal bit length 32 for port encoder1_velocity. VERI-1330
+WARNING - synthesis: verilog/TinyFPGA_B.v(95): actual bit length 1 differs from formal bit length 32 for port encoder0_velocity. VERI-1330
+WARNING - synthesis: verilog/TinyFPGA_B.v(96): actual bit length 1 differs from formal bit length 32 for port encoder1_velocity. VERI-1330
 INFO - synthesis: verilog/motorControl.v(1): compiling module motorControl. VERI-1018
 WARNING - synthesis: verilog/motorControl.v(94): expression size 32 truncated to fit in target size 9. VERI-1209
 INFO - synthesis: quad.v(3): compiling module quad. VERI-1018
@@ -134,34 +137,35 @@ WARNING - synthesis: quad.v(28): expression size 32 truncated to fit in target s
 WARNING - synthesis: quad.v(35): expression size 32 truncated to fit in target size 16. VERI-1209
 WARNING - synthesis: quad.v(42): expression size 32 truncated to fit in target size 16. VERI-1209
 WARNING - synthesis: quad.v(49): expression size 32 truncated to fit in target size 16. VERI-1209
-WARNING - synthesis: verilog/TinyFPGA_B.v(87): net encoder0_velocity does not have a driver. VDB-1002
-WARNING - synthesis: verilog/TinyFPGA_B.v(88): net encoder1_velocity does not have a driver. VDB-1002
-WARNING - synthesis: verilog/TinyFPGA_B.v(43): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(95): net encoder0_velocity does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(96): net encoder1_velocity does not have a driver. VDB-1002
 WARNING - synthesis: verilog/TinyFPGA_B.v(51): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(100): input port ID[7] is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(110): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(59): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(108): input port ID[7] is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(118): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(126): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(155): input port PWMLimit[31] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(134): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(163): input port PWMLimit[31] is not connected on this instance. VDB-1013
 Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/xo2c00/data/xo2clib.ngl'...
 Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/or5g00/data/orc5glib.ngl'...
 Top-level module name = TinyFPGA_B.
-WARNING - synthesis: verilog/TinyFPGA_B.v(87): net encoder0_velocity does not have a driver. VDB-1002
-WARNING - synthesis: verilog/TinyFPGA_B.v(88): net encoder1_velocity does not have a driver. VDB-1002
-WARNING - synthesis: verilog/TinyFPGA_B.v(43): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(95): net encoder0_velocity does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(96): net encoder1_velocity does not have a driver. VDB-1002
 WARNING - synthesis: verilog/TinyFPGA_B.v(51): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(100): input port ID[7] is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(110): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(59): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(108): input port ID[7] is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(118): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/TinyFPGA_B.v(126): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
-WARNING - synthesis: verilog/TinyFPGA_B.v(155): input port PWMLimit[31] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(134): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(163): input port PWMLimit[31] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/pll32MHz.v(22): input port EXTFEEDBACK is not connected on this instance. VDB-1013
 WARNING - synthesis: verilog/coms.v(96): net data_out_frame[33][7] does not have a driver. VDB-1002
 ######## Converting I/O port PIN_1 to output.
 ######## Converting I/O port PIN_2 to output.
 ######## Converting I/O port PIN_3 to output.
 ######## Converting I/O port PIN_7 to input.
 ######## Converting I/O port PIN_8 to input.
-######## Converting I/O port PIN_9 to input.
+######## Converting I/O port PIN_9 to output.
 ######## Converting I/O port PIN_12 to input.
 ######## Converting I/O port PIN_13 to input.
 ######## Converting I/O port PIN_14 to input.
@@ -344,35 +348,35 @@ Results of NGD DRC are available in TinyFPGA_B_drc.log.
 ################### Begin Area Report (TinyFPGA_B)######################
 Number of register bits => 635 of 7680 (8 % )
 SB_CARRY => 177
-SB_DFF => 465
-SB_DFFE => 21
-SB_DFFESR => 83
+SB_DFF => 469
+SB_DFFE => 24
+SB_DFFESR => 76
 SB_DFFSR => 2
 SB_DFFSS => 64
-SB_GB_IO => 1
-SB_IO => 17
-SB_LUT4 => 1931
+SB_IO => 19
+SB_LUT4 => 1677
+SB_PLL40_CORE => 1
 ################### End Area Report ##################
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : CLK_c, loads : 635
+  Net : pll32MHz_inst/PIN_9_c, loads : 641
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : c0/FRAME_MATCHER.state_31_N_2975_2, loads : 77
-  Net : c0/n13058, loads : 76
-  Net : quad_counter0/n2313, loads : 63
-  Net : quad_counter1/n2226, loads : 63
-  Net : c0/n22120, loads : 49
-  Net : c0/n22112, loads : 49
-  Net : c0/n22104, loads : 49
+  Net : c0/FRAME_MATCHER.state_31_N_2976_2, loads : 78
+  Net : c0/n22661, loads : 78
+  Net : c0/n1220, loads : 68
+  Net : quad_counter1/n2140, loads : 63
+  Net : quad_counter0/n2227, loads : 63
+  Net : c0/n21758, loads : 57
+  Net : c0/n21740, loads : 57
+  Net : c0/n21749, loads : 57
+  Net : c0/n21775, loads : 48
   Net : c0/byte_transmit_counter_0, loads : 45
-  Net : c0/n22134, loads : 40
-  Net : c0/byte_transmit_counter_1, loads : 39
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -381,9 +385,12 @@ Timing Report Summary
 Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
+create_clock -period 1000.000000 -name  |             |             |
+clk500 [get_nets PIN_9_c]               |            -|            -|     0  
+                                        |             |             |
 create_clock -period 62.500000          |             |             |
 -waveform { 0.000000 31.250000 } -name  |             |             |
-CLK [ get_ports { CLK } ]               |   16.000 MHz|   17.536 MHz|    36  
+CLK [ get_ports { CLK } ]               |            -|            -|     0  
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -391,8 +398,8 @@ CLK [ get_ports { CLK } ]               |   16.000 MHz|   17.536 MHz|    36
 All constraints were met.
 
 
-Peak Memory Usage: 198.141  MB
+Peak Memory Usage: 193.680  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 9.554  secs
+Elapsed CPU time for LSE flow : 7.811  secs
 --------------------------------------------------------------

@@ -6,7 +6,7 @@
 
 * Build Date:         Sep 12 2017 08:09:20
 
-* File Generated:     Sep 16 2019 20:27:28
+* File Generated:     Sep 18 2019 23:28:14
 
 * Purpose:            Router runtime info
 
@@ -17,16 +17,18 @@
 Executing : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbrouter /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/TinyFPGA_B_pk.sdc --outdir /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/router --sdf_file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.sdf --pin_permutation 
 I1203: Reading Design TinyFPGA_B
 I1202: Reading Architecture of device iCE40LP8K
+Info-1404: Inferred PLL generated clock at pll32MHz_inst.pll20MHz_inst/PLLOUTCORE
+Info-1404: Inferred PLL generated clock at pll32MHz_inst.pll20MHz_inst/PLLOUTGLOBAL
 I1209: Started routing
-I1223: Total Nets : 2311 
-I1212: Iteration  1 :   557 unrouted : 7 seconds
-I1212: Iteration  2 :    98 unrouted : 4 seconds
-I1212: Iteration  3 :    31 unrouted : 1 seconds
-I1212: Iteration  4 :     4 unrouted : 0 seconds
+I1223: Total Nets : 2044 
+I1212: Iteration  1 :   568 unrouted : 5 seconds
+I1212: Iteration  2 :    94 unrouted : 3 seconds
+I1212: Iteration  3 :    13 unrouted : 0 seconds
+I1212: Iteration  4 :     6 unrouted : 0 seconds
 I1212: Iteration  5 :     0 unrouted : 0 seconds
 I1215: Routing is successful
 I1206: Completed routing
 I1204: Writing Design TinyFPGA_B
 I1210: Writing routes
 I1218: Exiting the router
-I1224: Router run-time : 25 seconds
+I1224: Router run-time : 21 seconds

@@ -1,0 +1,1152 @@
+18:35
+/home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f "template_lse.prj"
+starting Synthesisrunning SynthesisCopyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
+Wed Sep 18 18:37:37 2019
+
+
+Command Line:  /home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f template_lse.prj 
+
+INFO - synthesis: Lattice Synthesis Engine Launched.
+Synthesis options:
+The -a option is SBTiCE40.
+The -t option is CM81.
+The -d option is iCE40LP8K.
+                                                          
+
+##########################################################
+
+### Lattice Family : SBTiCE40
+
+### Device  : iCE40LP8K
+
+### Package : CM81
+
+### Number of Logic Cells: 7680
+
+### Number of RAM4k Blocks: 32
+
+### Number of DSP Blocks: 0
+
+### Number of PLLs: 2
+
+### Number of IO Pins: 178
+
+##########################################################
+
+                                                          
+
+Optimization goal = Area
+The -top option is not used.
+Target frequency = 1.000000 MHz.
+Maximum fanout = 10000.
+Timing path count = 3
+RWCheckOnRam = 0
+
+BRAM utilization = 100.000000 %
+DSP usage = true (default)
+DSP utilization = 100 % (default)
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = auto (Default)
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+Output EDIF file name = template_Implmnt/template.edf.
+WARNING - synthesis: Option -force_gsr will be set to false when option -output_edif/-ngo are set
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1 (searchpath added)
+Verilog design file = verilog/TinyFPGA_B.v
+Verilog design file = verilog/uart_rx.v
+Verilog design file = verilog/uart_tx.v
+Verilog design file = verilog/coms.v
+Verilog design file = verilog/motorControl.v
+Verilog design file = quad.v
+-sdc option: SDC file input is constraints/clk.sdc.
+-vh2008
+
+WARNING - synthesis: Setting TinyFPGA_B as the top-level module. To specify the top-level module explicitly, use the -top option.
+Technology check ok...
+
+Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
+Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
+Compile design.
+Compile Design Begin
+Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
+WARNING - synthesis: verilog/TinyFPGA_B.v(128): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(129): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(130): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(131): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(132): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(133): identifier PHASES is used before its declaration. VERI-1875
+Analyzing Verilog file verilog/uart_rx.v. VERI-1482
+Analyzing Verilog file verilog/uart_tx.v. VERI-1482
+Analyzing Verilog file verilog/coms.v. VERI-1482
+Analyzing Verilog file verilog/motorControl.v. VERI-1482
+Analyzing Verilog file quad.v. VERI-1482
+Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(98): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(108): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(118): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(170): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(179): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(189): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(199): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(209): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(3725): empty port in module declaration. VERI-1294
+Top module name (Verilog): TinyFPGA_B
+INFO - synthesis: verilog/TinyFPGA_B.v(2): compiling module TinyFPGA_B. VERI-1018
+INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b101001,PULLUP=1'b1). VERI-1018
+INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502): compiling module SB_IO(PIN_TYPE=6'b01,PULLUP=1'b1). VERI-1018
+WARNING - synthesis: verilog/TinyFPGA_B.v(61): expression size 32 truncated to fit in target size 26. VERI-1209
+INFO - synthesis: verilog/coms.v(1): compiling module coms. VERI-1018
+INFO - synthesis: verilog/uart_rx.v(14): compiling module uart_rx. VERI-1018
+WARNING - synthesis: verilog/uart_rx.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/uart_rx.v(91): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/uart_rx.v(102): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING - synthesis: verilog/uart_rx.v(120): expression size 32 truncated to fit in target size 8. VERI-1209
+INFO - synthesis: verilog/uart_tx.v(14): compiling module uart_tx. VERI-1018
+WARNING - synthesis: verilog/uart_tx.v(70): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(88): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(98): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING - synthesis: verilog/uart_tx.v(118): expression size 32 truncated to fit in target size 9. VERI-1209
+WARNING - synthesis: verilog/coms.v(202): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING - synthesis: verilog/coms.v(96): net data_out_frame[33][7] does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(87): actual bit length 1 differs from formal bit length 32 for port encoder0_velocity. VERI-1330
+WARNING - synthesis: verilog/TinyFPGA_B.v(88): actual bit length 1 differs from formal bit length 32 for port encoder1_velocity. VERI-1330
+INFO - synthesis: verilog/motorControl.v(1): compiling module motorControl. VERI-1018
+WARNING - synthesis: verilog/motorControl.v(94): expression size 32 truncated to fit in target size 9. VERI-1209
+INFO - synthesis: quad.v(3): compiling module quad. VERI-1018
+WARNING - synthesis: quad.v(28): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING - synthesis: quad.v(35): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING - synthesis: quad.v(42): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING - synthesis: quad.v(49): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING - synthesis: verilog/TinyFPGA_B.v(87): net encoder0_velocity does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(88): net encoder1_velocity does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(43): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(51): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(100): input port ID[7] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(110): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(118): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(126): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(155): input port PWMLimit[31] is not connected on this instance. VDB-1013
+Last elaborated design is TinyFPGA_B()
+Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/xo2c00/data/xo2clib.ngl'...
+Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/or5g00/data/orc5glib.ngl'...
+Top-level module name = TinyFPGA_B.
+WARNING - synthesis: verilog/TinyFPGA_B.v(87): net encoder0_velocity does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(88): net encoder1_velocity does not have a driver. VDB-1002
+WARNING - synthesis: verilog/TinyFPGA_B.v(43): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(51): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(100): input port ID[7] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(110): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(118): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(126): input port LATCH_INPUT_VALUE is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/TinyFPGA_B.v(155): input port PWMLimit[31] is not connected on this instance. VDB-1013
+WARNING - synthesis: verilog/coms.v(96): net data_out_frame[33][7] does not have a driver. VDB-1002
+######## Converting I/O port PIN_1 to output.
+######## Converting I/O port PIN_2 to output.
+######## Converting I/O port PIN_3 to output.
+######## Converting I/O port PIN_7 to input.
+######## Converting I/O port PIN_8 to input.
+######## Converting I/O port PIN_9 to input.
+######## Converting I/O port PIN_12 to input.
+######## Converting I/O port PIN_13 to input.
+######## Converting I/O port PIN_14 to input.
+######## Converting I/O port PIN_15 to input.
+######## Converting I/O port PIN_16 to input.
+######## Converting I/O port PIN_17 to input.
+######## Converting I/O port PIN_18 to input.
+######## Converting I/O port PIN_19 to input.
+######## Converting I/O port PIN_20 to input.
+######## Converting I/O port PIN_21 to input.
+######## Converting I/O port PIN_22 to output.
+######## Converting I/O port PIN_23 to output.
+######## Converting I/O port PIN_24 to output.
+WARNING - synthesis: verilog/coms.v(7): net \c0/ID[7] does not have a driver. VDB-1002
+WARNING - synthesis: verilog/motorControl.v(13): net \control/PWMLimit[31] does not have a driver. VDB-1002
+WARNING - synthesis: verilog/motorControl.v(14): net \control/IntegralLimit[31] does not have a driver. VDB-1002
+WARNING - synthesis: verilog/motorControl.v(15): net \control/deadband[31] does not have a driver. VDB-1002
+######## Missing driver on net encoder0_velocity. Patching with GND.
+######## Missing driver on net encoder1_velocity. Patching with GND.
+######## Missing driver on net \c0/ID[7]. Patching with GND.
+######## Missing driver on net \c0/ID[6]. Patching with GND.
+######## Missing driver on net \c0/ID[5]. Patching with GND.
+######## Missing driver on net \c0/ID[4]. Patching with GND.
+######## Missing driver on net \c0/ID[3]. Patching with GND.
+######## Missing driver on net \c0/ID[2]. Patching with GND.
+######## Missing driver on net \c0/ID[1]. Patching with GND.
+######## Missing driver on net \c0/ID[0]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[33][7]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[33][6]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[33][5]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[33][4]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[33][3]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[33][2]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[33][1]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[33][0]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[32][7]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[32][6]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[32][5]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[32][4]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[32][3]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[32][2]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[32][1]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[32][0]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[31][7]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[31][6]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[31][5]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[31][4]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[31][3]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[31][2]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[31][1]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[31][0]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[30][7]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[30][6]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[30][5]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[30][4]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[30][3]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[30][2]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[30][1]. Patching with GND.
+######## Missing driver on net \c0/data_out_frame[30][0]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[31]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[30]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[29]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[28]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[27]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[26]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[25]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[24]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[23]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[22]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[21]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[20]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[19]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[18]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[17]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[16]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[15]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[14]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[13]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[12]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[11]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[10]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[9]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[8]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[7]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[6]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[5]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[4]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[3]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[2]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[1]. Patching with GND.
+######## Missing driver on net \control/PWMLimit[0]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[31]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[30]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[29]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[28]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[27]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[26]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[25]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[24]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[23]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[22]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[21]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[20]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[19]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[18]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[17]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[16]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[15]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[14]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[13]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[12]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[11]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[10]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[9]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[8]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[7]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[6]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[5]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[4]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[3]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[2]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[1]. Patching with GND.
+######## Missing driver on net \control/IntegralLimit[0]. Patching with GND.
+######## Missing driver on net \control/deadband[31]. Patching with GND.
+######## Missing driver on net \control/deadband[30]. Patching with GND.
+######## Missing driver on net \control/deadband[29]. Patching with GND.
+######## Missing driver on net \control/deadband[28]. Patching with GND.
+######## Missing driver on net \control/deadband[27]. Patching with GND.
+######## Missing driver on net \control/deadband[26]. Patching with GND.
+######## Missing driver on net \control/deadband[25]. Patching with GND.
+######## Missing driver on net \control/deadband[24]. Patching with GND.
+######## Missing driver on net \control/deadband[23]. Patching with GND.
+######## Missing driver on net \control/deadband[22]. Patching with GND.
+######## Missing driver on net \control/deadband[21]. Patching with GND.
+######## Missing driver on net \control/deadband[20]. Patching with GND.
+######## Missing driver on net \control/deadband[19]. Patching with GND.
+######## Missing driver on net \control/deadband[18]. Patching with GND.
+######## Missing driver on net \control/deadband[17]. Patching with GND.
+######## Missing driver on net \control/deadband[16]. Patching with GND.
+######## Missing driver on net \control/deadband[15]. Patching with GND.
+######## Missing driver on net \control/deadband[14]. Patching with GND.
+######## Missing driver on net \control/deadband[13]. Patching with GND.
+######## Missing driver on net \control/deadband[12]. Patching with GND.
+######## Missing driver on net \control/deadband[11]. Patching with GND.
+######## Missing driver on net \control/deadband[10]. Patching with GND.
+######## Missing driver on net \control/deadband[9]. Patching with GND.
+######## Missing driver on net \control/deadband[8]. Patching with GND.
+######## Missing driver on net \control/deadband[7]. Patching with GND.
+######## Missing driver on net \control/deadband[6]. Patching with GND.
+######## Missing driver on net \control/deadband[5]. Patching with GND.
+######## Missing driver on net \control/deadband[4]. Patching with GND.
+######## Missing driver on net \control/deadband[3]. Patching with GND.
+######## Missing driver on net \control/deadband[2]. Patching with GND.
+######## Missing driver on net \control/deadband[1]. Patching with GND.
+######## Missing driver on net \control/deadband[0]. Patching with GND.
+
+
+
+WARNING - synthesis: verilog/coms.v(290): Register \c0/data_out_frame[27][7]_5302 is stuck at Zero. VDB-5013
+WARNING - synthesis: verilog/coms.v(290): Register \c0/data_out_frame[3][7]_5494 is stuck at One. VDB-5014
+WARNING - synthesis: Skipping pad insertion on PIN_4 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on PIN_5 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on PIN_6 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on PIN_10 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on PIN_11 due to black_box_pad_pin attribute.
+WARNING - synthesis: verilog/motorControl.v(47): Register \control/PID_CONTROLLER.integral_i1 is stuck at Zero. VDB-5013
+WARNING - synthesis: verilog/motorControl.v(95): Register \control/PHASES_i1 is stuck at Zero. VDB-5013
+Writing scf file : template_Implmnt/template.scf
+
+Writing scf file : template_Implmnt/template.scf
+
+Writing scf file : template_Implmnt/template.scf
+
+Writing scf file : template_Implmnt/template.scf
+
+Writing scf file : template_Implmnt/template.scf
+
+Results of NGD DRC are available in TinyFPGA_B_drc.log.
+
+################### Begin Area Report (TinyFPGA_B)######################
+Number of register bits => 635 of 7680 (8 % )
+SB_CARRY => 177
+SB_DFF => 465
+SB_DFFE => 21
+SB_DFFESR => 83
+SB_DFFSR => 2
+SB_DFFSS => 64
+SB_GB_IO => 1
+SB_IO => 17
+SB_LUT4 => 1932
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 1
+  Net : CLK_c, loads : 635
+Clock Enable Nets
+Number of Clock Enables: 0
+Top 0 highest fanout Clock Enables:
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : c0/FRAME_MATCHER.state_31_N_2976_2, loads : 77
+  Net : c0/n13059, loads : 76
+  Net : quad_counter0/n2314, loads : 63
+  Net : quad_counter1/n2227, loads : 63
+  Net : c0/n22121, loads : 56
+  Net : c0/n22113, loads : 56
+  Net : c0/n22105, loads : 56
+  Net : c0/byte_transmit_counter_0, loads : 45
+  Net : c0/n22135, loads : 40
+  Net : c0/byte_transmit_counter_1, loads : 39
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 62.500000          |             |             |
+-waveform { 0.000000 31.250000 } -name  |             |             |
+CLK [ get_ports { CLK } ]               |   16.000 MHz|   17.536 MHz|    36  
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Peak Memory Usage: 198.012  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 8.963  secs
+--------------------------------------------------------------
+Current Implementation template_Implmnt its sbt path: /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt
+Synthesis succeed.
+Synthesis succeeded.
+Synthesis runtime 9 seconds
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/edifparser" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/template.edf " "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist" "-pCM81" "-y/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf " "-s/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/clk.sdc " -c --devicename iCE40LP8K
+starting edif parserrunning edif parserLattice Semiconductor Corporation  Edif Parser
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:01:35
+
+Parsing edif file: /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/template.edf...
+Parsing constraint file: /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf...
+start to read sdc/scf file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/template.scf
+sdc_reader OK /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/template.scf
+start to read sdc/scf file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/clk.sdc
+Warning: Found double defined(create_clock) at CLK. Using latest one and ignore previous one
+	Ignored create_clock  -period 62.50  -waveform {0.00 31.25}  -name {CLK} [get_ports {CLK}]
+Warning: Property lattice_noprune(1) in the instance hall1_input(ICE_IO) is not valid, it is ignored.
+Warning: Property lattice_noprune(1) in the instance hall2_input(ICE_IO) is not valid, it is ignored.
+Warning: Property lattice_noprune(1) in the instance hall3_input(ICE_IO) is not valid, it is ignored.
+Warning: Property lattice_noprune(1) in the instance rx_input(ICE_IO) is not valid, it is ignored.
+Warning: Property lattice_noprune(1) in the instance tx_output(ICE_IO) is not valid, it is ignored.
+Stored edif netlist at /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B...
+Warning: The terminal connectivity tx_output:LATCHINPUTVALUE is removed because the PIN_TYPE is configured as 101001
+Warning: The terminal connectivity tx_output:INPUTCLK is removed because the PIN_TYPE is configured as 101001
+Warning: The terminal connectivity tx_output:OUTPUTCLK is removed because the PIN_TYPE is configured as 101001
+Warning: The terminal connectivity rx_input:LATCHINPUTVALUE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity rx_input:INPUTCLK is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity rx_input:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity rx_input:OUTPUTCLK is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall3_input:LATCHINPUTVALUE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall3_input:INPUTCLK is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall3_input:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall3_input:OUTPUTCLK is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall2_input:LATCHINPUTVALUE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall2_input:INPUTCLK is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall2_input:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall2_input:OUTPUTCLK is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall1_input:LATCHINPUTVALUE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall1_input:INPUTCLK is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall1_input:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity hall1_input:OUTPUTCLK is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity USBPU_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity PIN_8_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity PIN_7_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity PIN_3_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity PIN_2_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity PIN_24_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity PIN_23_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity PIN_22_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity PIN_1_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity PIN_13_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity PIN_12_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity LED_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity CLK_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal quad_counter1.b_delay_counter__i0:E is driven by default driver : VCC, Disconnecting it.
+Warning: The terminal quad_counter1.a_delay_counter__i0:E is driven by default driver : VCC, Disconnecting it.
+Warning: The terminal c0.rx.r_Bit_Index_i0:E is driven by default driver : VCC, Disconnecting it.
+Warning: The terminal c0.rx.r_Clock_Count__i0:E is driven by default driver : VCC, Disconnecting it.
+Warning: The terminal c0.rx.r_Rx_DV_52:E is driven by default driver : VCC, Disconnecting it.
+Warning: The terminal c0.tx.r_Clock_Count__i0:E is driven by default driver : VCC, Disconnecting it.
+Warning: The terminal quad_counter0.a_delay_counter__i0:E is driven by default driver : VCC, Disconnecting it.
+Warning: The terminal quad_counter0.b_delay_counter__i0:E is driven by default driver : VCC, Disconnecting it.
+
+write Timing Constraint to /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/Temp/sbt_temp.sdc
+
+EDIF Parser succeeded
+Top module is: TinyFPGA_B
+
+EDF Parser run-time: 1 (sec)
+edif parser succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbtplacer" --des-lib "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B" --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer" --device-file "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" --package CM81 --deviceMarketName iCE40LP8K --sdc-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/Temp/sbt_temp.sdc" --lib-file "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib" --effort_level std --out-sdc-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer/TinyFPGA_B_pl.sdc"
+starting placerrunning placerExecuting : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbtplacer --des-lib /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B --outdir /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer --device-file /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev --package CM81 --deviceMarketName iCE40LP8K --sdc-file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/Temp/sbt_temp.sdc --lib-file /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib --effort_level std --out-sdc-file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer/TinyFPGA_B_pl.sdc
+Lattice Semiconductor Corporation  Placer
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:22:02
+
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_14, as it is not connected to any PAD
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_15, as it is not connected to any PAD
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_16, as it is not connected to any PAD
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_17, as it is not connected to any PAD
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_18, as it is not connected to any PAD
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_19, as it is not connected to any PAD
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_20, as it is not connected to any PAD
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_21, as it is not connected to any PAD
+W2715: Warning for set_io Constraint: Ignoring pin assignment for PIN_9, as it is not connected to any PAD
+I2004: Option and Settings Summary
+=============================================================
+Device file          - /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev
+Package              - CM81
+Design database      - /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B
+SDC file             - /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/Temp/sbt_temp.sdc
+Output directory     - /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer
+Timing library       - /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib
+Effort level         - std
+
+I2050: Starting reading inputs for placer
+=============================================================
+I2100: Reading design library: /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B/BFPGA_DESIGN_ep
+I2065: Reading device file : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev
+I2051: Reading of inputs for placer completed successfully
+
+I2053: Starting placement of the design
+=============================================================
+
+Input Design Statistics
+    Number of LUTs      	:	1932
+    Number of DFFs      	:	635
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	177
+    Number of RAMs      	:	0
+    Number of ROMs      	:	0
+    Number of IOs       	:	17
+    Number of GBIOs     	:	1
+    Number of GBs       	:	0
+    Number of WarmBoot  	:	0
+    Number of PLLs      	:	0
+
+
+Phase 1
+I2077: Start design legalization
+W2216: SB_GB_IO 'CLK_pad' is assigned to a non-GB pin 'B2'. Replacing it with SB_IO 'CLK_pad' and SB_GB 'CLK_pad_gb'
+
+Design Legalization Statistics
+    Number of feedthru LUTs inserted to legalize input of DFFs     	:	11
+    Number of feedthru LUTs inserted for LUTs driving multiple DFFs	:	0
+    Number of LUTs replicated for LUTs driving multiple DFFs       	:	1
+    Number of feedthru LUTs inserted to legalize output of CARRYs  	:	0
+    Number of feedthru LUTs inserted to legalize global signals    	:	0
+    Number of feedthru CARRYs inserted to legalize input of CARRYs 	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 01xxxx  	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 10xxxx  	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 11xxxx  	:	0
+    Total LUTs inserted                                            	:	12
+    Total CARRYs inserted                                          	:	0
+
+
+I2078: Design legalization is completed successfully
+I2088: Phase 1, elapsed time : 0.0 (sec)
+
+
+Phase 2
+I2088: Phase 2, elapsed time : 0.1 (sec)
+
+Phase 3
+Warning-1034: Found non-unate timing arc, from pin "PACKAGEPIN" to pin "DIN0" of instance "CLK_pad", in the clock network. Converting the timing arc to positive-unate
+
+Design Statistics after Packing
+    Number of LUTs      	:	1945
+    Number of DFFs      	:	635
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	394
+
+Device Utilization Summary after Packing
+    Sequential LogicCells
+        LUT and DFF      	:	528
+        LUT, DFF and CARRY	:	107
+    Combinational LogicCells
+        Only LUT         	:	1242
+        CARRY Only       	:	219
+        LUT with CARRY   	:	68
+    LogicCells                  :	2164/7680
+    PLBs                        :	304/960
+    BRAMs                       :	0/32
+    IOs and GBIOs               :	18/63
+    PLLs                        :	0/1
+
+
+I2088: Phase 3, elapsed time : 4.6 (sec)
+
+Phase 4
+I2088: Phase 4, elapsed time : 0.2 (sec)
+
+Phase 5
+I2088: Phase 5, elapsed time : 12.2 (sec)
+
+Phase 6
+I2088: Phase 6, elapsed time : 115.2 (sec)
+
+Final Design Statistics
+    Number of LUTs      	:	1945
+    Number of DFFs      	:	635
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	394
+    Number of RAMs      	:	0
+    Number of ROMs      	:	0
+    Number of IOs       	:	18
+    Number of GBIOs     	:	0
+    Number of GBs       	:	1
+    Number of WarmBoot  	:	0
+    Number of PLLs      	:	0
+
+Device Utilization Summary
+    LogicCells                  :	2164/7680
+    PLBs                        :	377/960
+    BRAMs                       :	0/32
+    IOs and GBIOs               :	18/63
+    PLLs                        :	0/1
+
+
+
+#####################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+=====================================================================
+
+#####################################################################
+                     Clock Summary 
+=====================================================================
+Number of clocks: 1
+Clock: CLK | Frequency: 17.05 MHz | Target: 16.00 MHz
+
+=====================================================================
+                     End of Clock Summary
+#####################################################################
+
+I2054: Placement of design completed successfully
+
+I2076: Placer run-time: 133.1 sec.
+
+placer succeed.
+starting IPExporterrunning IPExporterIPExporter succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/packer" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B" --package CM81 --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer" --DRC_only  --translator "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/sdc_translator.tcl" --src_sdc_file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer/TinyFPGA_B_pl.sdc" --dst_sdc_file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/TinyFPGA_B_pk.sdc" --devicename iCE40LP8K
+starting packerLattice Semiconductor Corporation  Packer
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:02:57
+
+Begin Packing...
+running packerinitializing finish
+Total HPWL cost is 9881
+used logic cells: 2164
+Design Rule Checking Succeeded
+
+DRC Checker run-time: 0 (sec)
+packer succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbrouter" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib" --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/router" --sdf_file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.sdf" --pin_permutation
+starting routerrunning routerSJRouter....
+Executing : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbrouter /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib --outdir /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/router --sdf_file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.sdf --pin_permutation 
+Lattice Semiconductor Corporation  Router
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:09:33
+
+I1203: Reading Design TinyFPGA_B
+Read design time: 1
+I1202: Reading Architecture of device iCE40LP8K
+Read device time: 11
+I1209: Started routing
+I1223: Total Nets : 2311 
+I1212: Iteration  1 :  1158 unrouted : 9 seconds
+I1212: Iteration  2 :   323 unrouted : 8 seconds
+I1212: Iteration  3 :    99 unrouted : 6 seconds
+I1212: Iteration  4 :    15 unrouted : 7 seconds
+I1212: Iteration  5 :     2 unrouted : 6 seconds
+I1212: Iteration  6 :     0 unrouted : 6 seconds
+I1215: Routing is successful
+Routing time: 43
+I1206: Completed routing
+I1204: Writing Design TinyFPGA_B
+Lib Closed
+I1210: Writing routes
+I1218: Exiting the router
+I1224: Router run-time : 56 seconds
+ total           352980K
+router succeed.
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/netlister" --verilog "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.v" --vhdl "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.vhd" --lib "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B" --view rt --device "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" --splitio 
+starting netlistLattice Semiconductor Corporation  Verilog & VHDL Netlister
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:25:37
+
+running netlistGenerating Verilog & VHDL netlist files ...
+Writing /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.v
+Writing /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.vhd
+Netlister succeeded.
+
+Netlister run-time: 14 (sec)
+netlist succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/bitmap" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" --design "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B" --device_name iCE40LP8K --package CM81 --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/bitmap" --low_power on --init_ram on --init_ram_bank 1111 --frequency low --warm_boot on
+starting bitmapLattice Semiconductor Corporation  Bit Stream Generator
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:24:49
+
+running bitmapBit Stream File Size: 1080760 (1M 31K 440 Bits)
+Bit Stream Generator succeeded
+
+Bitmap run-time: 4 (sec)
+bitmap succeed.
+/home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f "template_lse.prj"
+starting Synthesisrunning SynthesisCopyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
+Wed Sep 18 20:57:35 2019
+
+
+Command Line:  /home/letrend/lscc/iCEcube2.2017.08/LSE/bin/lin64/synthesis -f template_lse.prj 
+
+INFO - synthesis: Lattice Synthesis Engine Launched.
+Synthesis options:
+The -a option is SBTiCE40.
+The -t option is CM81.
+The -d option is iCE40LP8K.
+                                                          
+
+##########################################################
+
+### Lattice Family : SBTiCE40
+
+### Device  : iCE40LP8K
+
+### Package : CM81
+
+### Number of Logic Cells: 7680
+
+### Number of RAM4k Blocks: 32
+
+### Number of DSP Blocks: 0
+
+### Number of PLLs: 2
+
+### Number of IO Pins: 178
+
+##########################################################
+
+                                                          
+
+Optimization goal = Area
+The -top option is not used.
+Target frequency = 1.000000 MHz.
+Maximum fanout = 10000.
+Timing path count = 3
+RWCheckOnRam = 0
+
+BRAM utilization = 100.000000 %
+DSP usage = true (default)
+DSP utilization = 100 % (default)
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = auto (Default)
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+Output EDIF file name = template_Implmnt/template.edf.
+WARNING - synthesis: Option -force_gsr will be set to false when option -output_edif/-ngo are set
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1 (searchpath added)
+Verilog design file = verilog/TinyFPGA_B.v
+Verilog design file = verilog/uart_rx.v
+Verilog design file = verilog/uart_tx.v
+Verilog design file = verilog/coms.v
+Verilog design file = verilog/motorControl.v
+Verilog design file = quad.v
+Verilog design file = verilog/clock20MHz.v
+-sdc option: SDC file input is constraints/clk.sdc.
+-vh2008
+
+WARNING - synthesis: Setting clock20MHz as the top-level module. To specify the top-level module explicitly, use the -top option.
+Technology check ok...
+
+Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
+Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
+Compile design.
+Compile Design Begin
+Analyzing Verilog file verilog/TinyFPGA_B.v. VERI-1482
+WARNING - synthesis: verilog/TinyFPGA_B.v(136): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(137): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(138): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(139): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(140): identifier PHASES is used before its declaration. VERI-1875
+WARNING - synthesis: verilog/TinyFPGA_B.v(141): identifier PHASES is used before its declaration. VERI-1875
+Analyzing Verilog file verilog/uart_rx.v. VERI-1482
+Analyzing Verilog file verilog/uart_tx.v. VERI-1482
+Analyzing Verilog file verilog/coms.v. VERI-1482
+Analyzing Verilog file verilog/motorControl.v. VERI-1482
+Analyzing Verilog file quad.v. VERI-1482
+Analyzing Verilog file verilog/clock20MHz.v. VERI-1482
+Analyzing Verilog file /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v. VERI-1482
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(79): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(88): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(98): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(108): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(118): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(170): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(179): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(189): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(199): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(209): assignment to input EVERI-1214
+WARNING - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(3725): empty port in module declaration. VERI-1294
+Top module name (Verilog): clock20MHz
+INFO - synthesis: verilog/clock20MHz.v(1): compiling module clock20MHz. VERI-1018
+INFO - synthesis: /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(699): compiling module SB_PLL40_CORE(FDA_FEEDBACK=4'b0,FDA_RELATIVE=4'b0,DIVF=7'b0110001,DIVQ=3'b100,FILTER_RANGE=3'b01). VERI-1018
+WARNING - synthesis: verilog/clock20MHz.v(24): input port EXTFEEDBACK is not connected on this instance. VDB-1013
+Last elaborated design is clock20MHz()
+Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/xo2c00/data/xo2clib.ngl'...
+Loading NGL library '/home/letrend/lscc/iCEcube2.2017.08/LSE/or5g00/data/orc5glib.ngl'...
+WARNING - synthesis: No object with type PORT found matching "CLK".
+WARNING - synthesis: Ignoring Constraint: create_clock  -period 62.50 -name {CLK} [get_ports {CLK}].
+Top-level module name = clock20MHz.
+WARNING - synthesis: No object with type PORT found matching "CLK".
+WARNING - synthesis: Ignoring Constraint: create_clock  -period 62.50 -name {CLK} [get_ports {CLK}].
+WARNING - synthesis: verilog/clock20MHz.v(24): input port EXTFEEDBACK is not connected on this instance. VDB-1013
+
+
+
+Writing scf file : template_Implmnt/template.scf
+
+Results of NGD DRC are available in clock20MHz_drc.log.
+
+################### Begin Area Report (clock20MHz)######################
+Number of register bits => 0 of 7680 (0 % )
+SB_IO => 5
+SB_PLL40_CORE => 1
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 0
+Clock Enable Nets
+Number of Clock Enables: 0
+Top 0 highest fanout Clock Enables:
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : REFERENCECLK_c, loads : 1
+  Net : RESET_c, loads : 1
+  Net : PLLOUTCORE_c, loads : 1
+  Net : PLLOUTGLOBAL_c, loads : 1
+  Net : LOCK_c, loads : 1
+  Net : PLLOUTCORE, loads : 0
+  Net : PLLOUTGLOBAL, loads : 0
+  Net : LOCK, loads : 0
+  Net : REFERENCECLK, loads : 0
+  Net : RESET, loads : 0
+################### End Clock Report ##################
+
+Peak Memory Usage: 153.332  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 0.250  secs
+--------------------------------------------------------------
+Current Implementation template_Implmnt its sbt path: /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt
+Synthesis succeed.
+Synthesis succeeded.
+Synthesis runtime 0 seconds
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/edifparser" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/template.edf " "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist" "-pCM81" "-y/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf " "-s/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/clk.sdc " -c --devicename iCE40LP8K
+starting edif parserLattice Semiconductor Corporation  Edif Parser
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:01:35
+
+running edif parserParsing edif file: /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/template.edf...
+Parsing constraint file: /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf...
+Warning: pin CLK doesn't exist in the design netlist.ignoring the set_io command on line 9 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin LED doesn't exist in the design netlist.ignoring the set_io command on line 10 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin USBPU doesn't exist in the design netlist.ignoring the set_io command on line 11 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_1 doesn't exist in the design netlist.ignoring the set_io command on line 12 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_2 doesn't exist in the design netlist.ignoring the set_io command on line 13 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_3 doesn't exist in the design netlist.ignoring the set_io command on line 14 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_4 doesn't exist in the design netlist.ignoring the set_io command on line 15 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_5 doesn't exist in the design netlist.ignoring the set_io command on line 16 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_7 doesn't exist in the design netlist.ignoring the set_io command on line 17 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_8 doesn't exist in the design netlist.ignoring the set_io command on line 18 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_9 doesn't exist in the design netlist.ignoring the set_io command on line 19 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_10 doesn't exist in the design netlist.ignoring the set_io command on line 20 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_11 doesn't exist in the design netlist.ignoring the set_io command on line 21 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_12 doesn't exist in the design netlist.ignoring the set_io command on line 22 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_13 doesn't exist in the design netlist.ignoring the set_io command on line 23 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_14 doesn't exist in the design netlist.ignoring the set_io command on line 24 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_15 doesn't exist in the design netlist.ignoring the set_io command on line 25 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_16 doesn't exist in the design netlist.ignoring the set_io command on line 26 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_17 doesn't exist in the design netlist.ignoring the set_io command on line 27 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_18 doesn't exist in the design netlist.ignoring the set_io command on line 28 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_19 doesn't exist in the design netlist.ignoring the set_io command on line 29 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_20 doesn't exist in the design netlist.ignoring the set_io command on line 30 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_21 doesn't exist in the design netlist.ignoring the set_io command on line 31 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_22 doesn't exist in the design netlist.ignoring the set_io command on line 32 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_23 doesn't exist in the design netlist.ignoring the set_io command on line 33 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_24 doesn't exist in the design netlist.ignoring the set_io command on line 34 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+Warning: pin PIN_6 doesn't exist in the design netlist.ignoring the set_io command on line 35 of file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf
+parse file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/pins.pcf error. But they are ignored
+start to read sdc/scf file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/template.scf
+sdc_reader OK /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/template.scf
+start to read sdc/scf file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/clk.sdc
+sdc_reader OK /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/clk.sdc
+Stored edif netlist at /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz...
+Warning: The terminal connectivity RESET_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity REFERENCECLK_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 000001
+Warning: The terminal connectivity PLLOUTGLOBAL_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity PLLOUTCORE_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: The terminal connectivity LOCK_pad:OUTPUTENABLE is removed because the PIN_TYPE is configured as 011001
+Warning: Unable to find port "CLK" in the design.Following line is ignored:(in the file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/constraints/clk.sdc)
+    create_clock  -period 62.500000 -name {CLK} [get_ports {CLK}]
+
+write Timing Constraint to /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/Temp/sbt_temp.sdc
+
+EDIF Parser succeeded
+Top module is: clock20MHz
+
+EDF Parser run-time: 0 (sec)
+edif parser succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbtplacer" --des-lib "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz" --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer" --device-file "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" --package CM81 --deviceMarketName iCE40LP8K --sdc-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/Temp/sbt_temp.sdc" --lib-file "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib" --effort_level std --out-sdc-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer/clock20MHz_pl.sdc"
+starting placerrunning placerExecuting : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbtplacer --des-lib /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz --outdir /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer --device-file /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev --package CM81 --deviceMarketName iCE40LP8K --sdc-file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/Temp/sbt_temp.sdc --lib-file /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib --effort_level std --out-sdc-file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer/clock20MHz_pl.sdc
+Lattice Semiconductor Corporation  Placer
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:22:02
+
+I2004: Option and Settings Summary
+=============================================================
+Device file          - /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev
+Package              - CM81
+Design database      - /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz
+SDC file             - /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/Temp/sbt_temp.sdc
+Output directory     - /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer
+Timing library       - /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib
+Effort level         - std
+
+I2050: Starting reading inputs for placer
+=============================================================
+I2100: Reading design library: /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz/BFPGA_DESIGN_ep
+I2065: Reading device file : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev
+I2051: Reading of inputs for placer completed successfully
+
+I2053: Starting placement of the design
+=============================================================
+
+Input Design Statistics
+    Number of LUTs      	:	0
+    Number of DFFs      	:	0
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	0
+    Number of RAMs      	:	0
+    Number of ROMs      	:	0
+    Number of IOs       	:	5
+    Number of GBIOs     	:	0
+    Number of GBs       	:	0
+    Number of WarmBoot  	:	0
+    Number of PLLs      	:	1
+
+
+Phase 1
+I2077: Start design legalization
+
+Design Legalization Statistics
+    Number of feedthru LUTs inserted to legalize input of DFFs     	:	0
+    Number of feedthru LUTs inserted for LUTs driving multiple DFFs	:	0
+    Number of LUTs replicated for LUTs driving multiple DFFs       	:	0
+    Number of feedthru LUTs inserted to legalize output of CARRYs  	:	0
+    Number of feedthru LUTs inserted to legalize global signals    	:	1
+    Number of feedthru CARRYs inserted to legalize input of CARRYs 	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 01xxxx  	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 10xxxx  	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 11xxxx  	:	0
+    Total LUTs inserted                                            	:	1
+    Total CARRYs inserted                                          	:	0
+
+
+I2078: Design legalization is completed successfully
+I2088: Phase 1, elapsed time : 0.0 (sec)
+
+
+Phase 2
+I2088: Phase 2, elapsed time : 0.0 (sec)
+
+Phase 3
+Warning-1403: No clock is reaching the reference clock pin 'REFERENCECLK' of PLL instance 'clock20MHz_inst'. So, no clocks will be inferred at output of this PLL
+W2659: No Constrained paths were found. The placer will run in non-timing driven mode.
+
+Design Statistics after Packing
+    Number of LUTs      	:	2
+    Number of DFFs      	:	0
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	0
+
+Device Utilization Summary after Packing
+    Sequential LogicCells
+        LUT and DFF      	:	0
+        LUT, DFF and CARRY	:	0
+    Combinational LogicCells
+        Only LUT         	:	2
+        CARRY Only       	:	0
+        LUT with CARRY   	:	0
+    LogicCells                  :	2/7680
+    PLBs                        :	2/960
+    BRAMs                       :	0/32
+    IOs and GBIOs               :	5/63
+    PLLs                        :	1/1
+
+
+I2088: Phase 3, elapsed time : 0.2 (sec)
+
+Phase 4
+I2088: Phase 4, elapsed time : 0.2 (sec)
+
+Phase 5
+I2088: Phase 5, elapsed time : 0.0 (sec)
+
+Phase 6
+I2088: Phase 6, elapsed time : 0.0 (sec)
+
+Final Design Statistics
+    Number of LUTs      	:	2
+    Number of DFFs      	:	0
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	0
+    Number of RAMs      	:	0
+    Number of ROMs      	:	0
+    Number of IOs       	:	5
+    Number of GBIOs     	:	0
+    Number of GBs       	:	0
+    Number of WarmBoot  	:	0
+    Number of PLLs      	:	1
+
+Device Utilization Summary
+    LogicCells                  :	2/7680
+    PLBs                        :	2/960
+    BRAMs                       :	0/32
+    IOs and GBIOs               :	5/63
+    PLLs                        :	1/1
+
+
+I2054: Placement of design completed successfully
+
+I2076: Placer run-time: 0.7 sec.
+
+placer succeed.
+starting IPExporterrunning IPExporterIPExporter succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/packer" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz" --package CM81 --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer" --DRC_only  --translator "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/sdc_translator.tcl" --src_sdc_file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer/clock20MHz_pl.sdc" --dst_sdc_file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/clock20MHz_pk.sdc" --devicename iCE40LP8K
+starting packerrunning packerLattice Semiconductor Corporation  Packer
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:02:57
+
+Begin Packing...
+initializing finish
+Total HPWL cost is 127
+used logic cells: 2
+Design Rule Checking Succeeded
+
+DRC Checker run-time: 0 (sec)
+packer succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/packer" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz" --package CM81 --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer" --translator "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/sdc_translator.tcl" --src_sdc_file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer/clock20MHz_pl.sdc" --dst_sdc_file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/clock20MHz_pk.sdc" --devicename iCE40LP8K
+starting packerLattice Semiconductor Corporation  Packer
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:02:57
+
+Begin Packing...
+running packerinitializing finish
+Total HPWL cost is 127
+used logic cells: 2
+Translating sdc file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/placer/clock20MHz_pl.sdc...
+Translated sdc file is /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/clock20MHz_pk.sdc
+Packer succeeded
+
+Packer run-time: 1 (sec)
+packer succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbrouter" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib" "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/clock20MHz_pk.sdc" --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/router" --sdf_file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/clock20MHz_sbt.sdf" --pin_permutation
+starting routerrunning routerSJRouter....
+Executing : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbrouter /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/clock20MHz_pk.sdc --outdir /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/router --sdf_file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/clock20MHz_sbt.sdf --pin_permutation 
+Lattice Semiconductor Corporation  Router
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:09:33
+
+I1203: Reading Design clock20MHz
+Read design time: 0
+I1202: Reading Architecture of device iCE40LP8K
+Warning-1403: No clock is reaching the reference clock pin 'REFERENCECLK' of PLL instance 'clock20MHz_inst'. So, no clocks will be inferred at output of this PLL
+Read device time: 9
+I1209: Started routing
+I1223: Total Nets : 7 
+I1212: Iteration  1 :     0 unrouted : 0 seconds
+I1215: Routing is successful
+Routing time: 0
+I1206: Completed routing
+I1204: Writing Design clock20MHz
+Lib Closed
+I1210: Writing routes
+I1218: Exiting the router
+I1224: Router run-time : 9 seconds
+ total           322960K
+router succeed.
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/netlister" --verilog "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/clock20MHz_sbt.v" --vhdl "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/clock20MHz_sbt.vhd" --lib "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz" --view rt --device "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" --splitio  --in-sdc-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/clock20MHz_pk.sdc" --out-sdc-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/netlister/clock20MHz_sbt.sdc"
+starting netlistLattice Semiconductor Corporation  Verilog & VHDL Netlister
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:25:37
+
+running netlistGenerating Verilog & VHDL netlist files ...
+Writing /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/clock20MHz_sbt.v
+Writing /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/clock20MHz_sbt.vhd
+Netlister succeeded.
+
+Netlister run-time: 0 (sec)
+netlist succeed.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbtimer" --des-lib "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz" --lib-file "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib" --sdc-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/netlister/clock20MHz_sbt.sdc" --sdf-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/clock20MHz_sbt.sdf" --report-file "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/timer/clock20MHz_timing.rpt" --device-file "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" --timing-summary
+starting timerExecuting : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbtimer --des-lib /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz --lib-file /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib --sdc-file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/netlister/clock20MHz_sbt.sdc --sdf-file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/clock20MHz_sbt.sdf --report-file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/timer/clock20MHz_timing.rpt --device-file /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev --timing-summary
+Lattice Semiconductor Corporation  Timer
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:08:07
+
+running timerWarning-1403: No clock is reaching the reference clock pin 'REFERENCECLK' of PLL instance 'clock20MHz_inst'. So, no clocks will be inferred at output of this PLL
+Timer run-time: 0 seconds
+timer succeed.
+timer succeeded.
+
+
+"/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/bitmap" "/home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev" --design "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-clock20MHz" --device_name iCE40LP8K --package CM81 --outdir "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/bitmap" --low_power on --init_ram on --init_ram_bank 1111 --frequency low --warm_boot on
+starting bitmapLattice Semiconductor Corporation  Bit Stream Generator
+Release:        2017.08.27940
+Build Date:     Sep 12 2017 08:24:49
+
+running bitmapBit Stream File Size: 1080760 (1M 31K 440 Bits)
+Bit Stream Generator succeeded
+
+Bitmap run-time: 1 (sec)
+bitmap succeed.
+Unrecognizable name clock20MHz
+21:01

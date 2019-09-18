@@ -5,48 +5,38 @@ I/O cells:      0
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY       177          100.0
-                             SB_DFF       465          100.0
-                            SB_DFFE        21          100.0
-                          SB_DFFESR        83          100.0
+                             SB_DFF       469          100.0
+                            SB_DFFE        24          100.0
+                          SB_DFFESR        76          100.0
                            SB_DFFSR         2          100.0
                            SB_DFFSS        64          100.0
-                           SB_GB_IO         1          100.0
-                              SB_IO        17          100.0
-                            SB_LUT4      1931          100.0
+                              SB_IO        19          100.0
+                            SB_LUT4      1677          100.0
+                      SB_PLL40_CORE         1          100.0
 SUB MODULES
                                coms         1
+                           pll20MHz         1
                                quad         1
                             quad_U0         1
                             uart_rx         1
                             uart_tx         1
-                              TOTAL      2766
-----------------------------------------------------------------------
-Report for cell quad_U0.v1
-Instance Path : quad_counter0
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                           SB_CARRY        62           35.0
-                             SB_DFF        38            8.2
-                            SB_DFFE         2            9.5
-                          SB_DFFESR        30           36.1
-                            SB_LUT4        80            4.1
-                              TOTAL       212
+                              TOTAL      2515
 ----------------------------------------------------------------------
 Report for cell coms.v1
 Instance Path : c0
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY        53           29.9
-                             SB_DFF       389           83.7
-                            SB_DFFE        17           81.0
-                          SB_DFFESR        23           27.7
+                             SB_DFF       389           82.9
+                            SB_DFFE        24          100.0
+                          SB_DFFESR        16           21.1
                            SB_DFFSR         2          100.0
                            SB_DFFSS        64          100.0
-                            SB_LUT4      1503           77.8
+                            SB_LUT4      1257           75.0
 SUB MODULES
                             uart_rx         1
                             uart_tx         1
-                              TOTAL      2053
+                              TOTAL      1807
 ----------------------------------------------------------------------
 Report for cell uart_tx.v1
 Instance Path : c0.tx
@@ -54,10 +44,9 @@ Instance Path : c0.tx
                                cell     count   Res Usage(%)
                            SB_CARRY         8            4.5
                              SB_DFF        16            3.4
-                            SB_DFFE         1            4.8
-                          SB_DFFESR         8            9.6
-                            SB_LUT4        40            2.1
-                              TOTAL        73
+                            SB_DFFE         9           37.5
+                            SB_LUT4        37            2.2
+                              TOTAL        70
 ----------------------------------------------------------------------
 Report for cell uart_rx.v1
 Instance Path : c0.rx
@@ -65,19 +54,35 @@ Instance Path : c0.rx
                                cell     count   Res Usage(%)
                            SB_CARRY         7            4.0
                              SB_DFF        14            3.0
-                            SB_DFFE         3           14.3
-                          SB_DFFESR         7            8.4
+                            SB_DFFE         2            8.3
+                          SB_DFFESR         8           10.5
                            SB_DFFSR         1           50.0
-                            SB_LUT4        41            2.1
-                              TOTAL        73
+                            SB_LUT4        33            2.0
+                              TOTAL        65
+----------------------------------------------------------------------
+Report for cell pll20MHz.v1
+Instance Path : pll32MHz_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                      SB_PLL40_CORE         1          100.0
+                              TOTAL         1
 ----------------------------------------------------------------------
 Report for cell quad.v1
 Instance Path : quad_counter1
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY        62           35.0
-                             SB_DFF        38            8.2
-                            SB_DFFE         2            9.5
-                          SB_DFFESR        30           36.1
-                            SB_LUT4        79            4.1
+                             SB_DFF        40            8.5
+                          SB_DFFESR        30           39.5
+                            SB_LUT4        79            4.7
+                              TOTAL       211
+----------------------------------------------------------------------
+Report for cell quad_U0.v1
+Instance Path : quad_counter0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                           SB_CARRY        62           35.0
+                             SB_DFF        40            8.5
+                          SB_DFFESR        30           39.5
+                            SB_LUT4        79            4.7
                               TOTAL       211

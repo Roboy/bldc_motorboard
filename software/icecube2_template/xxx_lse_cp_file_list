@@ -1,6 +1,6 @@
-7	 /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
-7	 /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
-7	 /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
+7	 /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
+7	 /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
+7	 /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
 15	 coms.v
 15	 coms.v
 15	 coms.v
@@ -109,10 +109,10 @@
 13	 verilog/TinyFPGA_B.v
 13	 verilog/TinyFPGA_B.v
 13	 verilog/TinyFPGA_B.v
-7	 /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
+7	 /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
 15	 coms.v
 13	 verilog/TinyFPGA_B.v
-7	 /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
+7	 /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v
 15	 coms.v
 15	 coms.v
 16	 verilog/uart_tx.v

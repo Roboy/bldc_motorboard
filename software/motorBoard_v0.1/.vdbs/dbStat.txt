@@ -1,1 +1,1 @@
-template_rtl.vdb
+TinyFPGA_B_rtl.vdb

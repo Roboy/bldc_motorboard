@@ -1,5 +1,5 @@
 // Verilog netlist produced by program LSE :  version Diamond Version 0.0.0
-// Netlist written on Thu Sep 12 19:43:42 2019
+// Netlist written on Wed Sep 18 21:05:11 2019
 //
 // Verilog Description of module TinyFPGA_B
 //
@@ -184,21 +184,21 @@ module TinyFPGA_B (CLK, LED, USBPU, PIN_1, PIN_2, PIN_3, PIN_4,
     VCC i2 (.Y(VCC_net));
     SB_IO tx2_output (.PACKAGE_PIN(PIN_3), .LATCH_INPUT_VALUE(GND_net), 
           .INPUT_CLK(GND_net), .OUTPUT_CLK(GND_net), .OUTPUT_ENABLE(tx2_enable), 
-          .D_OUT_1(GND_net), .D_OUT_0(tx2_o)) /* synthesis lattice_noprune=1, syn_instantiated=1 */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+          .D_OUT_1(GND_net), .D_OUT_0(tx2_o)) /* synthesis lattice_noprune=1, syn_instantiated=1 */ ;   // /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam tx2_output.PIN_TYPE = 6'b101001;
     defparam tx2_output.PULLUP = 1'b1;
     defparam tx2_output.NEG_TRIGGER = 1'b0;
     defparam tx2_output.IO_STANDARD = "SB_LVCMOS";
     SB_IO rx_input (.PACKAGE_PIN(PIN_2), .LATCH_INPUT_VALUE(GND_net), .INPUT_CLK(GND_net), 
           .OUTPUT_CLK(GND_net), .OUTPUT_ENABLE(GND_net), .D_OUT_1(GND_net), 
-          .D_OUT_0(GND_net), .D_IN_0(rx_i)) /* synthesis lattice_noprune=1, syn_instantiated=1, IO_FF_IN=TRUE */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+          .D_OUT_0(GND_net), .D_IN_0(rx_i)) /* synthesis lattice_noprune=1, syn_instantiated=1, IO_FF_IN=TRUE */ ;   // /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam rx_input.PIN_TYPE = 6'b000001;
     defparam rx_input.PULLUP = 1'b1;
     defparam rx_input.NEG_TRIGGER = 1'b0;
     defparam rx_input.IO_STANDARD = "SB_LVCMOS";
     SB_IO tx_output (.PACKAGE_PIN(PIN_1), .LATCH_INPUT_VALUE(GND_net), .INPUT_CLK(GND_net), 
           .OUTPUT_CLK(GND_net), .OUTPUT_ENABLE(tx_enable), .D_OUT_1(GND_net), 
-          .D_OUT_0(tx_o)) /* synthesis lattice_noprune=1, syn_instantiated=1 */ ;   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+          .D_OUT_0(tx_o)) /* synthesis lattice_noprune=1, syn_instantiated=1 */ ;   // /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam tx_output.PIN_TYPE = 6'b101001;
     defparam tx_output.PULLUP = 1'b1;
     defparam tx_output.NEG_TRIGGER = 1'b0;
@@ -743,7 +743,7 @@ module TinyFPGA_B (CLK, LED, USBPU, PIN_1, PIN_2, PIN_3, PIN_4,
     SB_DFF blink_counter_2360__i4 (.Q(n22_adj_2426), .C(CLK_c), .D(n131));   // verilog/TinyFPGA_B.v(71[24:41])
     SB_DFF blink_counter_2360__i3 (.Q(n23_adj_2425), .C(CLK_c), .D(n132));   // verilog/TinyFPGA_B.v(71[24:41])
     SB_DFF blink_counter_2360__i2 (.Q(n24), .C(CLK_c), .D(n133));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_IO USBPU_pad (.PACKAGE_PIN(USBPU), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(GND_net));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+    SB_IO USBPU_pad (.PACKAGE_PIN(USBPU), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(GND_net));   // /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam USBPU_pad.PIN_TYPE = 6'b011001;
     defparam USBPU_pad.PULLUP = 1'b0;
     defparam USBPU_pad.NEG_TRIGGER = 1'b0;
@@ -755,7 +755,7 @@ module TinyFPGA_B (CLK, LED, USBPU, PIN_1, PIN_2, PIN_3, PIN_4,
             .I2(n16), .I3(n16050), .O(n125)) /* synthesis syn_instantiated=1 */ ;
     defparam blink_counter_2360_add_4_12_lut.LUT_INIT = 16'hC33C;
     SB_DFF blink_counter_2360__i1 (.Q(n25_adj_2424), .C(CLK_c), .D(n134_adj_2434));   // verilog/TinyFPGA_B.v(71[24:41])
-    SB_IO LED_pad (.PACKAGE_PIN(LED), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(LED_c));   // /media/external/iCEcube2/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
+    SB_IO LED_pad (.PACKAGE_PIN(LED), .OUTPUT_ENABLE(VCC_net), .D_OUT_0(LED_c));   // /home/letrend/lscc/iCEcube2.2017.08/LSE/userware/unix/SYNTHESIS_HEADERS/sb_ice40.v(502[8:13])
     defparam LED_pad.PIN_TYPE = 6'b011001;
     defparam LED_pad.PULLUP = 1'b0;
     defparam LED_pad.NEG_TRIGGER = 1'b0;
