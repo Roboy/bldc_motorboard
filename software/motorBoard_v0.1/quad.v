@@ -1,10 +1,11 @@
 /*From https://www.fpga4fun.com/QuadratureDecoder.html*/
 
-module quad #(parameter DELAY_LENGTH = 5)(
+module quad #(parameter DELAY_LENGTH = 5, parameter CLK_FREQ_HZ = 32_000_000)(
     input clk,
     input quadA,
     input quadB,
     output reg [31:0] count,
+    output reg [31:0] count_per_millisecond,
     output A_filtered,
     output B_filtered
   );
@@ -76,6 +77,16 @@ module quad #(parameter DELAY_LENGTH = 5)(
     if(count_enable)
     begin
       if(count_direction) count<=count+1; else count<=count-1;
+    end
+  end
+
+  reg [31:0] millisecond_counter;
+  reg [31:0] count_prev;
+  always @(posedge clk) begin : VELOCITY_CALCULATION
+    millisecond_counter <= millisecond_counter + 1;
+    if((millisecond_counter%(CLK_FREQ_HZ/1000)==0)) begin
+      count_per_millisecond <= (count_prev-count);
+      count_prev <= count;
     end
   end
 

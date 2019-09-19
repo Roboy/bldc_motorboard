@@ -32,7 +32,7 @@ module TinyFPGA_B (
   assign USBPU = 0;
 
   wire clk32MHz;
-  pll20MHz pll32MHz_inst(.REFERENCECLK(CLK),
+  pll32MHz pll32MHz_inst(.REFERENCECLK(CLK),
                                      .PLLOUTGLOBAL(clk32MHz),
                                      .RESET(1'b1) // active low
                                      );
@@ -167,7 +167,8 @@ module TinyFPGA_B (
     .clk(clk32MHz),
     .quadA(PIN_7),
     .quadB(PIN_8),
-    .count(encoder0_position)
+    .count(encoder0_position),
+    .count_per_millisecond(encoder0_velocity)
   );
 
   // magnetic encoder
@@ -175,7 +176,8 @@ module TinyFPGA_B (
     .clk(clk32MHz),
     .quadA(PIN_12),
     .quadB(PIN_13),
-    .count(encoder1_position)
+    .count(encoder1_position),
+    .count_per_millisecond(encoder1_velocity)
   );
 
 endmodule
