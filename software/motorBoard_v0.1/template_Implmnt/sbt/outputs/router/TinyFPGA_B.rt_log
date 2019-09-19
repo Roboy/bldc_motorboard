@@ -6,7 +6,7 @@
 
 * Build Date:         Sep 12 2017 08:09:20
 
-* File Generated:     Sep 19 2019 16:11:39
+* File Generated:     Sep 19 2019 19:07:25
 
 * Purpose:            Router runtime info
 
@@ -14,29 +14,19 @@
 
 * ******************************************************************************
 
-Executing : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbrouter /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/packer/TinyFPGA_B_pk.sdc --outdir /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/router --sdf_file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.sdf --pin_permutation 
+Executing : /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/bin/linux/opt/sbrouter /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ICE40P08.dev /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/netlist/oadb-TinyFPGA_B /home/letrend/lscc/iCEcube2.2017.08/sbt_backend/devices/ice40LP8K.lib --outdir /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/router --sdf_file /home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1/template_Implmnt/sbt/outputs/simulation_netlist/TinyFPGA_B_sbt.sdf --pin_permutation 
 I1203: Reading Design TinyFPGA_B
 I1202: Reading Architecture of device iCE40LP8K
-Info-1404: Inferred PLL generated clock at pll32MHz_inst.pll32MHz_inst/PLLOUTCORE
-Info-1404: Inferred PLL generated clock at pll32MHz_inst.pll32MHz_inst/PLLOUTGLOBAL
 I1209: Started routing
-I1223: Total Nets : 3510 
-I1212: Iteration  1 :  1330 unrouted : 8 seconds
-I1212: Iteration  2 :   541 unrouted : 4 seconds
-I1212: Iteration  3 :   371 unrouted : 2 seconds
-I1212: Iteration  4 :   288 unrouted : 1 seconds
-I1212: Iteration  5 :   167 unrouted : 0 seconds
-I1212: Iteration  6 :   107 unrouted : 0 seconds
-I1212: Iteration  7 :    65 unrouted : 0 seconds
-I1212: Iteration  8 :    46 unrouted : 1 seconds
-I1212: Iteration  9 :    18 unrouted : 0 seconds
-I1212: Iteration 10 :     6 unrouted : 0 seconds
-I1212: Iteration 11 :     2 unrouted : 0 seconds
-I1212: Iteration 12 :     2 unrouted : 0 seconds
-I1212: Iteration 13 :     0 unrouted : 0 seconds
+I1223: Total Nets : 3784 
+I1212: Iteration  1 :  1770 unrouted : 9 seconds
+I1212: Iteration  2 :   517 unrouted : 9 seconds
+I1212: Iteration  3 :   110 unrouted : 8 seconds
+I1212: Iteration  4 :     9 unrouted : 8 seconds
+I1212: Iteration  5 :     0 unrouted : 7 seconds
 I1215: Routing is successful
 I1206: Completed routing
 I1204: Writing Design TinyFPGA_B
 I1210: Writing routes
 I1218: Exiting the router
-I1224: Router run-time : 35 seconds
+I1224: Router run-time : 61 seconds

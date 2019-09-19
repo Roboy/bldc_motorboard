@@ -83,6 +83,9 @@ module TinyFPGA_B (
   wire signed [31:0] PWMLimit;
   wire signed [31:0] IntegralLimit;
   wire signed [31:0] deadband;
+  wire [15:0] current_phase1;
+  wire [15:0] current_phase2;
+  wire [15:0] current_phase3;
 
   coms c0(
   	.CLK(clk32MHz),
@@ -94,9 +97,9 @@ module TinyFPGA_B (
   	.encoder1_position(encoder1_position),
   	.encoder0_velocity(encoder0_velocity),
   	.encoder1_velocity(encoder1_velocity),
-  	.current_phase1(16'h0),
-  	.current_phase2(16'h0),
-  	.current_phase3(16'h0),
+  	.current_phase1(current_phase1),
+  	.current_phase2(current_phase2),
+  	.current_phase3(current_phase3),
   	.setpoint(setpoint),
   	.control_mode(control_mode),
     .Kp(Kp),
@@ -179,5 +182,29 @@ module TinyFPGA_B (
     .count(encoder1_position),
     .count_per_millisecond(encoder1_velocity)
   );
+
+  // current_sensor current_sensor_phase1(
+  //   .clk(clk32MHz),
+  //   .miso(PIN_19),
+  //   .ss_n(PIN_15),
+  //   .sck(PIN_18),
+  //   .current(current_phase1)
+  // );
+  //
+  // current_sensor current_sensor_phase2(
+  //   .clk(clk32MHz),
+  //   .miso(PIN_19),
+  //   .ss_n(PIN_17),
+  //   .sck(PIN_18),
+  //   .current(current_phase1)
+  // );
+  //
+  // current_sensor current_sensor_phase3(
+  //   .clk(clk32MHz),
+  //   .miso(PIN_19),
+  //   .ss_n(PIN_21),
+  //   .sck(PIN_18),
+  //   .current(current_phase1)
+  // );
 
 endmodule

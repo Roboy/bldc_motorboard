@@ -37,6 +37,7 @@
 -ver "verilog/motorControl.v"
 -ver "quad.v"
 -ver "verilog/pll32MHz.v"
+-lib work -vhd "vhdl/spi_master_slave/trunk/rtl/spi_master_slave/spi_master.vhd" 
 -p "/home/letrend/workspace/bldc_motorboard/software/motorBoard_v0.1"
 
 #set result format/file last

@@ -1,17 +1,17 @@
 ----------------------------------------------------------------------
 Report for cell TinyFPGA_B.TECH
-Register bits:  705 of 7680 (9.180%)
+Register bits:  780 of 7680 (10.156%)
 I/O cells:      0
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY       727          100.0
-                             SB_DFF       536          100.0
-                            SB_DFFE        18          100.0
-                          SB_DFFESR        85          100.0
+                             SB_DFF       531          100.0
+                            SB_DFFE       106          100.0
+                          SB_DFFESR        80          100.0
                            SB_DFFSR         2          100.0
-                           SB_DFFSS        64          100.0
+                           SB_DFFSS        61          100.0
                               SB_IO        19          100.0
-                            SB_LUT4      2553          100.0
+                            SB_LUT4      2828          100.0
                       SB_PLL40_CORE         1          100.0
 SUB MODULES
                                coms         1
@@ -20,67 +20,56 @@ SUB MODULES
                             quad_U0         1
                             uart_rx         1
                             uart_tx         1
-                              TOTAL      4011
+                              TOTAL      4361
 ----------------------------------------------------------------------
 Report for cell coms.v1
 Instance Path : c0
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY        53            7.3
-                             SB_DFF       391           72.9
-                            SB_DFFE        16           88.9
-                          SB_DFFESR        24           28.2
+                             SB_DFF       374           70.4
+                            SB_DFFE       101           95.3
+                          SB_DFFESR        34           42.5
                            SB_DFFSR         2          100.0
-                           SB_DFFSS        64          100.0
-                            SB_LUT4      1294           50.7
+                           SB_DFFSS        61          100.0
+                            SB_LUT4      1513           53.5
 SUB MODULES
                             uart_rx         1
                             uart_tx         1
-                              TOTAL      1846
+                              TOTAL      2140
 ----------------------------------------------------------------------
 Report for cell uart_tx.v1
 Instance Path : c0.tx
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY         8            1.1
-                             SB_DFF        15            2.8
-                            SB_DFFE         1            5.6
-                          SB_DFFESR         9           10.6
-                            SB_LUT4        22            0.9
-                              TOTAL        55
+                             SB_DFF         7            1.3
+                            SB_DFFE         9            8.5
+                          SB_DFFESR         9           11.2
+                            SB_LUT4        32            1.1
+                              TOTAL        65
 ----------------------------------------------------------------------
 Report for cell uart_rx.v1
 Instance Path : c0.rx
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY         7            1.0
-                             SB_DFF        16            3.0
-                            SB_DFFE         1            5.6
-                          SB_DFFESR         7            8.2
+                             SB_DFF        21            4.0
+                            SB_DFFE         2            1.9
+                          SB_DFFESR         1            1.2
                            SB_DFFSR         1           50.0
-                            SB_LUT4        41            1.6
-                              TOTAL        73
+                            SB_LUT4        46            1.6
+                              TOTAL        78
 ----------------------------------------------------------------------
 Report for cell quad.v1
 Instance Path : quad_counter1
                                   Cell usage:
                                cell     count   Res Usage(%)
                            SB_CARRY       337           46.4
-                             SB_DFF        72           13.4
-                            SB_DFFE         1            5.6
-                          SB_DFFESR        31           36.5
-                            SB_LUT4       515           20.2
-                              TOTAL       956
-----------------------------------------------------------------------
-Report for cell quad_U0.v1
-Instance Path : quad_counter0
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                           SB_CARRY       337           46.4
-                             SB_DFF        73           13.6
-                            SB_DFFE         1            5.6
-                          SB_DFFESR        30           35.3
-                            SB_LUT4       515           20.2
+                             SB_DFF        72           13.6
+                            SB_DFFE         2            1.9
+                          SB_DFFESR        30           37.5
+                            SB_LUT4       515           18.2
                               TOTAL       956
 ----------------------------------------------------------------------
 Report for cell pll32MHz.v1
@@ -89,3 +78,14 @@ Instance Path : pll32MHz_inst
                                cell     count   Res Usage(%)
                       SB_PLL40_CORE         1          100.0
                               TOTAL         1
+----------------------------------------------------------------------
+Report for cell quad_U0.v1
+Instance Path : quad_counter0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                           SB_CARRY       337           46.4
+                             SB_DFF        85           16.0
+                            SB_DFFE         3            2.8
+                          SB_DFFESR        16           20.0
+                            SB_LUT4       531           18.8
+                              TOTAL       972

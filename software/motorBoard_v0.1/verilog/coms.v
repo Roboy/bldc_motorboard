@@ -79,7 +79,7 @@ module coms(
 	localparam  STATUS_REQUEST_FRAME_MAGICNUMBER = 32'h1CE1CEBB;
 	localparam	STATUS_REQUEST_FRAME_LENGTH = 7;
 	localparam 	STATUS_FRAME_MAGICNUMBER = 32'h1CEB00DA;
-	localparam  STATUS_FRAME_LENGTH = 30;
+	localparam  STATUS_FRAME_LENGTH = 34;
 	localparam 	SETPOINT_FRAME_MAGICNUMBER = 32'hD0D0D0D0;
 	localparam  SETPOINT_FRAME_LENGTH = 11;
 	localparam 	CONTROL_MODE_FRAME_MAGICNUMBER = 32'hBAADA555;
@@ -183,6 +183,10 @@ module coms(
 						data_out_frame[25] = current_phase2[7:0];
 						data_out_frame[26] = current_phase3[15:8];
 						data_out_frame[27] = current_phase3[7:0];
+						data_out_frame[28] = setpoint[31:24];
+						data_out_frame[29] = setpoint[23:16];
+						data_out_frame[30] = setpoint[15:8];
+						data_out_frame[31] = setpoint[7:0];
 						tx_crc = 16'hFFFF;
 						for(k=MAGIC_NUMBER_LENGTH;k<STATUS_FRAME_LENGTH-2;k=k+1) begin
 							tx_crc = nextCRC16_D8(data_out_frame[k],tx_crc);
