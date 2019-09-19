@@ -1,3 +1,0 @@
-/home/letrend/lscc/iCEcube2.2017.08/synpbase/bin/synplify_pro  -batch  -tcl_shell  /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/pr_1/sbt_par.tcl  -log  sbt_par.log 
-rc:1 success:1 runtime:12
-file:/home/letrend/lscc/iCEcube2.2017.08/synpbase/bin/synplify_pro|io:i|time:1559397367|size:399|exec:1

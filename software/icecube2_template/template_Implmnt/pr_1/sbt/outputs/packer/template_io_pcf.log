@@ -1,5 +1,0 @@
-OUTPUT USBPU 	 location (0, 5, 1) 	 G3 	 
-INOUT PIN_3 	 location (0, 7, 0) 	 F3 	 
-INOUT PIN_1 	 location (0, 16, 0) 	 E4 	 
-OUTPUT LED 	 location (0, 3, 0) 	 H2 	 
-INPUT  CLK 	 location (0, 17, 0) 	 D3 	 

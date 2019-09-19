@@ -1,7 +1,0 @@
-@E: CG342 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":97:8:97:13|Expecting target variable, found tx_crc -- possible misspelling
-@E: CG342 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":136:4:136:15|Expecting target variable, found tx2_transmit -- possible misspelling
-@E: CG237 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":228:8:228:8|Assignment target j must be a genvar type
-@E: CG237 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":228:29:228:29|Assignment target j must be a genvar type
-@E: CG237 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":238:8:238:8|Assignment target j must be a genvar type
-@E: CG237 :"/home/letrend/workspace/bldc_motorboard/software/communication/top.v":238:29:238:29|Assignment target j must be a genvar type
-

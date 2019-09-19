@@ -1,2 +1,0 @@
-@W: MF499 |Found issues with constraints. Please check report file /home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/template_scck.rpt.
-@W: MF511 |Found issues with constraints. Please check constraint checker report "/home/letrend/workspace/bldc_motorboard/software/icecube2_template/template_Implmnt/template_cck.rpt" .
